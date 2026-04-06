@@ -218,23 +218,6 @@ impl ServerHandler for VerseMcpHandler {
         );
         reload_metadata_schema.insert("required".to_string(), serde_json::json!(["project_path"]));
 
-        let mut list_workflows_schema = rmcp::model::JsonObject::new();
-        list_workflows_schema.insert("type".to_string(), serde_json::json!("object"));
-        list_workflows_schema.insert("properties".to_string(), serde_json::json!({}));
-
-        let mut get_workflow_schema = rmcp::model::JsonObject::new();
-        get_workflow_schema.insert("type".to_string(), serde_json::json!("object"));
-        get_workflow_schema.insert(
-            "properties".to_string(),
-            serde_json::json!({
-                "name": {
-                    "type": "string",
-                    "description": "Required. Workflow name from list-agent-workflows."
-                }
-            }),
-        );
-        get_workflow_schema.insert("required".to_string(), serde_json::json!(["name"]));
-
         Ok(rmcp::model::ListToolsResult::with_all_items(vec![
             rmcp::model::Tool::new(
                 "scan_map_devices",
@@ -255,16 +238,6 @@ impl ServerHandler for VerseMcpHandler {
                 "reload-project-metadata",
                 "Drop cached project scan metadata for one UEFN project so the next scan rebuilds state without restarting the server.",
                 Arc::new(reload_metadata_schema),
-            ),
-            rmcp::model::Tool::new(
-                "list-agent-workflows",
-                "List markdown-defined Verse troubleshooting workflows available to an agent client.",
-                Arc::new(list_workflows_schema),
-            ),
-            rmcp::model::Tool::new(
-                "get-agent-workflow",
-                "Load one markdown-defined Verse troubleshooting workflow by name.",
-                Arc::new(get_workflow_schema),
             ),
         ]))
     }
@@ -411,42 +384,6 @@ impl ServerHandler for VerseMcpHandler {
                     .reload_project_metadata(&ReloadMetadataRequest { project_path });
                 let summary = format_reload_metadata_response(&response);
                 ok_with_structured(summary, &response)
-            }
-            "list-agent-workflows" => match self.grounding.list_agent_workflows() {
-                Ok(response) => {
-                    let summary = format!(
-                        "Loaded {} agent workflow(s) from {}.",
-                        response.workflows.len(),
-                        response.root
-                    );
-                    ok_with_structured(summary, &response)
-                }
-                Err(e) => Ok(err_with_text(format!(
-                        "list-agent-workflows failed: {}. Ensure the workflows directory is present and readable.",
-                        e
-                    ))),
-            },
-            "get-agent-workflow" => {
-                let name = params
-                    .arguments
-                    .as_ref()
-                    .and_then(|args| args.get("name"))
-                    .and_then(|v| v.as_str())
-                    .ok_or_else(|| rmcp::ErrorData::invalid_params("name is required", None))?;
-
-                match self.grounding.get_agent_workflow(name) {
-                    Ok(response) => {
-                        let summary = format!(
-                            "Loaded workflow {} from {}.",
-                            response.name, response.source_path
-                        );
-                        ok_with_structured(summary, &response)
-                    }
-                    Err(e) => Ok(err_with_text(format!(
-                            "get-agent-workflow failed: {}. Call list-agent-workflows first to discover valid names.",
-                            e
-                        ))),
-                }
             }
             _ => Err(rmcp::ErrorData::method_not_found::<CallToolRequestMethod>()),
         }
