@@ -1,16 +1,7 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/enableable
 
-# enableable interface
-Learn technical details about the enableable interface.
-Implemented by classes whose instances can be enabled and disabled.
-|
----|---
-Verse `using` statement | `using { /Verse.org/Verse }`
-## Members
-This interface has functions, but no data members.
-### Functions
-Function Name | Description
----|---
-[`Enable`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/enableable/enable) |  Enable this object.
-[`Disable`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/enableable/disable) |  Disable this object.
-[`IsEnabled`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/enableable/isenabled) |  Succeeds if the object is enabled, fails if it’s disabled.
+# One more step
+Please complete a security check to continue
+Verification successful. Waiting for dev.epicgames.com to respond
+**Session ID** : 9e9c58ea1bce8516
+**IP Address** : 14.191.95.176

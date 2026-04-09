@@ -1,41 +1,179 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/prehistoric-galleries-in-fortnite-creative
 
-# Prehistoric Galleries
-Go back in time with Prehistoric galleries.
-![Prehistoric Galleries](https://dev.epicgames.com/community/api/documentation/image/f65d5f2d-a670-4ce7-8692-e90501a65667?resizing_type=fill&width=1920&height=335)
-**Prehistoric** galleries share ancient [themes](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#island-theme) of pre-industrial structures and props.
-In the **Galleries** [category](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#category), you can browse for building pieces to make unique structures. The Galleries tab also offers environmental and prop items as well.
-This page is a visual guide to help you find galleries that fit this theme more quickly.
-To learn more about how to place gallery pieces to create an island that’s uniquely your own, check out [Building Basics](https://dev.epicgames.com/documentation/en-us/fortnite/building-basics-in-fortnite-creative).
-##  Coliseum Category
-|  |  |
----|---|---|---
-[![Colossal Coliseum Wall Gallery](https://dev.epicgames.com/community/api/documentation/image/bff1f8ab-fba7-4299-ace8-8d02607a0990?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/bff1f8ab-fba7-4299-ace8-8d02607a0990?resizing_type=fit) |  [![Colossal Coliseum Floor and Stair Gallery](https://dev.epicgames.com/community/api/documentation/image/7ce0a78b-50c5-4b06-8f21-c5e876423ace?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7ce0a78b-50c5-4b06-8f21-c5e876423ace?resizing_type=fit) |  [![Colossal Coliseum Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/41b518ed-5052-40fd-a387-a8b2ac28680c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/41b518ed-5052-40fd-a387-a8b2ac28680c?resizing_type=fit) |  [![Colossal Coliseum Exterior Wall Gallery](https://dev.epicgames.com/community/api/documentation/image/5b53c092-15db-49b8-be33-b85ab2d3c648?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5b53c092-15db-49b8-be33-b85ab2d3c648?resizing_type=fit)
-**Colossal Coliseum Wall Gallery** |  **Colossal Coliseum Floor and Stair Gallery** |  **Colossal Coliseum Prop Gallery** |  **Colossal Coliseum Exterior Wall Gallery**
-##  Lucky Landing Category
-|  |  |  |  |
----|---|---|---|---|---
-[![Lucky Tower Gallery](https://dev.epicgames.com/community/api/documentation/image/879dbd96-69ce-4e5e-863b-c5c611e56641?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/879dbd96-69ce-4e5e-863b-c5c611e56641?resizing_type=fit) |  [![Lucky Plaza Gallery](https://dev.epicgames.com/community/api/documentation/image/d26c28e6-0344-4bdf-b63a-05620105f1a2?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d26c28e6-0344-4bdf-b63a-05620105f1a2?resizing_type=fit) |  [![Lucky Park Gallery](https://dev.epicgames.com/community/api/documentation/image/9b0978a3-8c22-4924-bf5b-5c986e218840?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9b0978a3-8c22-4924-bf5b-5c986e218840?resizing_type=fit) |  [![Lucky Office Gallery](https://dev.epicgames.com/community/api/documentation/image/4e09000d-0fff-4b11-a230-b4899156c0ad?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4e09000d-0fff-4b11-a230-b4899156c0ad?resizing_type=fit) |  [![Lucky House Gallery](https://dev.epicgames.com/community/api/documentation/image/28355f16-f7f7-4bb9-952b-fb6497bc5c95?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/28355f16-f7f7-4bb9-952b-fb6497bc5c95?resizing_type=fit) |  [![Lucky Cafe Gallery](https://dev.epicgames.com/community/api/documentation/image/b6245a39-6403-4e96-aa19-066ea04e7959?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b6245a39-6403-4e96-aa19-066ea04e7959?resizing_type=fit)
-**Lucky Tower Gallery** |  **Lucky Plaza Gallery** |  **Lucky Park Gallery** |  **Lucky Office Gallery** |  **Lucky House Gallery** |  **Lucky Cafe Gallery**
----
-[![Lucky Landing Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/f73dc161-0197-415e-a915-8ccb2bfac8db?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f73dc161-0197-415e-a915-8ccb2bfac8db?resizing_type=fit)
-**Lucky Landing Prop Gallery**
-##  Primal Category
-|  |  |  |  |
----|---|---|---|---|---
-[![The Spire Village Wall and Roof Gallery](https://dev.epicgames.com/community/api/documentation/image/a1fa4c1e-de27-4947-8082-d23e24cd5508?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a1fa4c1e-de27-4947-8082-d23e24cd5508?resizing_type=fit) |  [![The Spire Village Floor and Stair Gallery](https://dev.epicgames.com/community/api/documentation/image/cd2829d1-3269-45d2-a31b-46779c3d6beb?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/cd2829d1-3269-45d2-a31b-46779c3d6beb?resizing_type=fit) |  [![Primal Wall and Roof Gallery](https://dev.epicgames.com/community/api/documentation/image/05e3b20e-7887-4124-b283-945afffc5dd8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/05e3b20e-7887-4124-b283-945afffc5dd8?resizing_type=fit) |  [![Primal Floor and Stair Gallery](https://dev.epicgames.com/community/api/documentation/image/1c42eea4-cdd1-401d-a6bf-9ebf2d7f6833?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1c42eea4-cdd1-401d-a6bf-9ebf2d7f6833?resizing_type=fit) |  [![The Spire Tower Gallery](https://dev.epicgames.com/community/api/documentation/image/dbed407d-fc43-47ad-ab00-fc4d69e54fbe?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/dbed407d-fc43-47ad-ab00-fc4d69e54fbe?resizing_type=fit) |  [![The Spire Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/710d226d-5f33-4b1a-841d-9dfeaaecafd5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/710d226d-5f33-4b1a-841d-9dfeaaecafd5?resizing_type=fit)
-**The Spire Village Wall and Roof Gallery** |  **The Spire Village Floor and Stair Gallery** |  **Primal Wall and Roof Gallery** |  **Primal Floor and Stair Gallery** |  **The Spire Tower Gallery** |  **The Spire Prop Gallery**
-|
+# Stat Powerup Device Design Examples
+See how you can use this device in conjunction with the Stat Creator device for custom stats or deliver pre-made stats for your players!
+![Stat Powerup Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/ae028ead-c809-4545-96fd-745183b71b6a?resizing_type=fill&width=1920&height=335)
+You can use a **Stat Powerup** device to adjust in-game statistics (stats) or assign custom stats when you use it with the [Stat Creator](https://dev.epicgames.com/documentation/assets/using-stat-creator-devices-in-fortnite-creative) device.
+##  Basic Score Powerup
+The Stat Powerup device, at its simplest, is a great way to give the player a temporary boost to a specific stat value. In this case, the player will get a score boost!
+###  Devices Used
+  * 1 x [Stat Powerup](https://dev.epicgames.com/documentation/fortnite/using-stat-powerup-devices-in-fortnite-creative) device
+  * 1 x [Player Spawner](https://dev.epicgames.com/documentation/fortnite/using-player-spawn-pad-devices-in-fortnite-creative) device
+
+###  Set Up the Devices
+  1. Place a **Player Spawner** device.
+  2. Place a **Stat Powerup** device.
+  3. Customize the Stat Powerup device to set the **Magnitude** to **10** :
+[![](https://dev.epicgames.com/community/api/documentation/image/26b93a81-b74f-4078-aa90-1bd405e9381d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/26b93a81-b74f-4078-aa90-1bd405e9381d?resizing_type=fit)
+
+###  Modify Island Settings
+Make the following modifications to the island settings.
+  1. Go to **Island Settings > User Interface**.
+  2. Under **HUD** , change **HUD Info Type** to **Score**.
+[![](https://dev.epicgames.com/community/api/documentation/image/329597c5-be44-4b37-a7e1-adfd5ff11269?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/329597c5-be44-4b37-a7e1-adfd5ff11269?resizing_type=fit)
+
+You now have the basic functionality for a score powerup!
+###  Design Tip
+As with the Stat Counter device, the Stat Powerup device can be configured to affect a number of built-in stats such as **Score** , **Eliminations** , and **Lap Time**.
+In the next two examples, you'll also see how it can be configured to affect custom stats with the Stat Creator device!
+##  Build a Grind Tracker
+You can configure the Stat Powerup device to provide a constant stat effect, then turn it on and off based on events from other devices.
+In this example, you’ll use the **infinite effect** functionality to keep track of the player’s **Grind Score**!
+###  Devices Used
+  * 1 x Stat Powerup device
+  * 1 x Player Spawner device
+  * 1 x [Grind Rail](https://dev.epicgames.com/documentation/fortnite/using-grind-rail-devices-in-fortnite-creative) device
+  * 1 x [Stat Creator](https://dev.epicgames.com/documentation/fortnite/using-stat-creator-devices-in-fortnite-creative) device
+  * 1 x [Item Granter](https://dev.epicgames.com/documentation/fortnite/using-item-granter-devices-in-fortnite-creative) device
+
+###  Set Up the Basic Gameplay
+  1. Start with the **Tilted Towers POI Island** starter island.
+  2. Place a **Player Spawner** device on top of a building.
+  3. Place a **Grind Rail** device that begins on the edge of that building.
+  4. Customize the first **Grind Rail Control Point** :
+[![](https://dev.epicgames.com/community/api/documentation/image/2e9300ac-eb6c-4623-83a6-87bcb1d0f6f9?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2e9300ac-eb6c-4623-83a6-87bcb1d0f6f9?resizing_type=fit)
+Option  |  Value  |  Description
+---|---|---
+Target Intensity |  5,000.0 |  This will give the grind rail a natural curve as you place more Control Points.
+  5. Duplicate this control point a number of times to create a grind rail that snakes between the buildings in the city.
+
+###  Configure the Custom Stat
+  1. Place a **Stat Creator** device and customzie it:
+[![](https://dev.epicgames.com/community/api/documentation/image/4c417c7e-a3d9-4eb4-bee2-bac30ddaf1e9?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4c417c7e-a3d9-4eb4-bee2-bac30ddaf1e9?resizing_type=fit)
+Option  |  Value
 ---|---
-[![Primal Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/1aa3a3fd-e49b-4fd9-a284-28cffa2c5f21?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1aa3a3fd-e49b-4fd9-a284-28cffa2c5f21?resizing_type=fit) |  [![Colossal Crops Exterior Wall Gallery](https://dev.epicgames.com/community/api/documentation/image/7f44382d-5e54-4a29-8aa9-da736a54ae36?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7f44382d-5e54-4a29-8aa9-da736a54ae36?resizing_type=fit)
-**Primal Prop Gallery** |  **Colossal Crops Exterior Wall Gallery**
-##  Sunny Steps Category
-|  |  |
----|---|---|---
-[![Jungle Temple Wall Extended Gallery](https://dev.epicgames.com/community/api/documentation/image/8aec198f-fc02-4b1d-a01c-567b9d34ed21?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8aec198f-fc02-4b1d-a01c-567b9d34ed21?resizing_type=fit) |  [![Jungle Temple Gallery](https://dev.epicgames.com/community/api/documentation/image/cce38539-5756-4690-aec2-2beb63c5a3dc?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/cce38539-5756-4690-aec2-2beb63c5a3dc?resizing_type=fit) |  [![Jungle Temple Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/a62b68a1-ffaa-41f1-8eb1-b6d41eb0da27?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a62b68a1-ffaa-41f1-8eb1-b6d41eb0da27?resizing_type=fit) |  [![Tomato Temple Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/f424c329-1bf9-461e-8140-9e933b242761?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f424c329-1bf9-461e-8140-9e933b242761?resizing_type=fit)
-**Jungle Temple Wall Extended Gallery** |  **Jungle Temple Gallery** |  **Jungle Temple Prop Gallery** |  **Tomato Temple Prop Gallery**
-##  Viking Outpost Category
-|
+Stat Name |  Grid Score
+Max Value |  100
+Stat Icon |  Sprint
+  2. Place a **Stat Powerup** device in a place where the player cannot reach it, and customize:
+[![](https://dev.epicgames.com/community/api/documentation/image/b988f1da-157a-4a9d-98bc-221e37de7476?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b988f1da-157a-4a9d-98bc-221e37de7476?resizing_type=fit)
+Option  |  Value
 ---|---
-[![Viking Village Gallery](https://dev.epicgames.com/community/api/documentation/image/235c063c-9b95-48fc-a5a3-e58983882d2f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/235c063c-9b95-48fc-a5a3-e58983882d2f?resizing_type=fit) |  [![Viking Village Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/2379774d-e06b-4633-a6d7-14e30b4c0017?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2379774d-e06b-4633-a6d7-14e30b4c0017?resizing_type=fit)
-**Viking Village Gallery** |  **Viking Village Prop Gallery**
+Start to Apply |  Grind Score
+Magnitude |  10
+Infinite Effect Duration |  Yes
+Time To Respawn |  Instant
+Who Can See This Powerup |  None
+  3. Configure the following functions on the Stat Powerup device so that it starts to increase the player’s **Grind Score** when they begin grinding and stops when they leave the grind rail:
+[![](https://dev.epicgames.com/community/api/documentation/image/96d4c0b4-c154-4887-9484-71066761c2cb?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/96d4c0b4-c154-4887-9484-71066761c2cb?resizing_type=fit)
+Function  |  Select Device  |  Select Event
+---|---|---
+Pickup |  Grind Rail |  On Started Grinding
+Clear |  Grind Rail |  On Ended Grinding
+  4. Place an **Item Granter** device and register a **Jules Glider Gun** to it.
+  5. Configure the following event on the Stat Creator device to grant the Jules Glider Gun when the player reaches the maximum Grind Score value.
+
+You now have the basic functionality for a custom Grind Score stat!
+###  Design Tip
+Infinite Stat Powerups are a very useful way to apply constant changes to a stat value. As you’ll see in the next example, adding a Stat Counter that can override the stat value creates interesting and new stat interactions!
+##  Build a Hacking Minigame
+The Stat Powerup device can also be configured to **decrease** a player’s stats instead of increasing them. In this example, you’ll use the Stat Powerup device with a Stat Counter device to create a constantly decreasing stat that the player must increase!
+###  Devices Used
+  * 1 x Stat Powerup device
+  * 1 x Player Spawner device
+  * 1 x [Lock ](https://dev.epicgames.com/documentation/fortnite/using-lock-devices-in-fortnite-creative)device
+  * 1 x [HUD Message](https://dev.epicgames.com/documentation/fortnite/using-hud-message-devices-in-fortnite-creative) device
+  * 1 x [Stat Creator](https://dev.epicgames.com/documentation/fortnite/using-stat-creator-devices-in-fortnite-creative) device
+  * 1 x [Stat Counter](https://dev.epicgames.com/documentation/fortnite/using-stat-counter-devices-in-fortnite-creative) device
+  * 1 x [Skilled Interaction](https://dev.epicgames.com/documentation/fortnite/using-skilled-interaction-devices-in-fortnite-creative) device
+  * 4 x [Button ](https://dev.epicgames.com/documentation/fortnite/using-button-devices-in-fortnite-creative)devices
+
+###  Set Up the Play Area
+  1. Place the **Command Cavern Tower** prefab.
+  2. Place a **Player Spawner** device in the room at the top of the tower.
+  3. Customize the spawner so that it is not visible in-game:
+[![](https://dev.epicgames.com/community/api/documentation/image/dd290859-5df1-4684-ba29-ca254474da19?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/dd290859-5df1-4684-ba29-ca254474da19?resizing_type=fit)
+  4. Place a **Lock** device on the sliding door leading out of the starting room.
+  5. Place a **HUD Message** device and customize:
+[![](https://dev.epicgames.com/community/api/documentation/image/871855d0-af2c-4ba4-88d3-827c85306d89?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/871855d0-af2c-4ba4-88d3-827c85306d89?resizing_type=fit)
+Option  |  Value
+---|---
+Message |  Hack the Mainframe to unlock
+Show on Round Start |  On
+Time from Round Start |  Instant
+Text Color |  White
+
+###  Configure the Custom Stat
+  1. Place a **Stat Creator** device and customize:
+[![](https://dev.epicgames.com/community/api/documentation/image/4c5d314c-727f-44cf-b284-8a0055c540ab?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4c5d314c-727f-44cf-b284-8a0055c540ab?resizing_type=fit)
+Option  |  Value
+---|---
+Stat Name |  Hacking Completion
+Max Value |  100
+Stat Color |  #0000FF
+Stat Icon |  Hack
+  2. Place a **Stat Powerup** device in a place that the player cannot reach.
+  3. Customize the **Stat Powerup** device:
+[![](https://dev.epicgames.com/community/api/documentation/image/93f1bb1c-a2e5-4c2d-b302-b5659f3e4cf8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/93f1bb1c-a2e5-4c2d-b302-b5659f3e4cf8?resizing_type=fit)
+Option  |  Value
+---|---
+Stat to Apply |  Hacking Completion
+Magnitude |  -1
+Infinite Effect Duration |  Yes
+Ambient Audio |  Off
+Pick Up Audio |  Off
+Who Can See This Powerup |  None
+  4. Configure the following event on the **Player Spawner** device so that the **Stat Powerup** device is active from the beginning of the game:
+[![](https://dev.epicgames.com/community/api/documentation/image/1ba840b4-28f3-4e45-9e97-b015c029f217?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1ba840b4-28f3-4e45-9e97-b015c029f217?resizing_type=fit)
+Event  |  Select Device  |  Select Function
+---|---|---
+  5. Place a **Stat Counter** device and customize:
+[![](https://dev.epicgames.com/community/api/documentation/image/11b5c10a-47ab-4f20-8b21-8e2c6ea29ab3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/11b5c10a-47ab-4f20-8b21-8e2c6ea29ab3?resizing_type=fit)
+Option  |  Value
+---|---
+Tracked Stat |  Hacking Completion
+Comparison Value |  100
+Broadcast Events on Stat Change |  On
+Value Override Type |  Add
+Value Override |  10
+Visible in Game |  No
+  6. Configure the following event on the **Stat Counter** device so that when the player reaches a **Hacking Completion** value of **100** , the stat stops going down and the door leading outside opens:
+[![](https://dev.epicgames.com/community/api/documentation/image/e3d90974-e415-4b5f-9fd0-ef55f6aa0eb8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e3d90974-e415-4b5f-9fd0-ef55f6aa0eb8?resizing_type=fit)
+Event  |  Select Device  |  Select Function
+---|---|---
+On Compare Success |  Lock Device |  Unlock
+On Compare Success |  Stat Powerup |  Clear
+
+###  Set Up the Hacking Interactions
+  1. Place a **Skilled Interaction** device and customize:
+[![](https://dev.epicgames.com/community/api/documentation/image/2f6cea17-8f4f-4245-9c75-7845f99c1aaa?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2f6cea17-8f4f-4245-9c75-7845f99c1aaa?resizing_type=fit)
+Option  |  Value
+---|---
+Header Text |  Hack
+Scrubber Color |  White
+  2. Configure the following event on the Skilled Interaction device to add to the **Hacking Completion** stat if the player successfully completes the skilled interaction. If their input was perfect, it will trigger again, doubling the effect!
+[![](https://dev.epicgames.com/community/api/documentation/image/de5c195f-f501-41b8-85bf-5d59930bf09d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/de5c195f-f501-41b8-85bf-5d59930bf09d?resizing_type=fit)
+[![](https://dev.epicgames.com/community/api/documentation/image/31c533bd-69e8-4911-8cf9-9abf6adb2c92?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/31c533bd-69e8-4911-8cf9-9abf6adb2c92?resizing_type=fit)
+Event  |  Select Device  |  select Function
+---|---|---
+On Success |  Stat Counter |  Override Value
+On Perfect Input |  Stat Counter |  Override Value
+  3. Place a **Button** device inside the orange monitor in the starting room and customize:
+[![](https://dev.epicgames.com/community/api/documentation/image/04bc908c-8eae-4617-a9dc-9873633ec72a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/04bc908c-8eae-4617-a9dc-9873633ec72a?resizing_type=fit)
+Option  |  Value
+---|---
+Reset Delay |  10 Seconds
+Interaction Text |  Hack
+Visible During Game |  No
+Interaction Radius |  1.0 Meters
+  4. Configure the following event on the **Button** device to trigger the **Skilled Interaction** device when it is interacted with.
+[![](https://dev.epicgames.com/community/api/documentation/image/5959297c-323b-4814-bb8b-2cb37e887197?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5959297c-323b-4814-bb8b-2cb37e887197?resizing_type=fit)
+Event  |  Select Device  |  Select Function
+---|---|---
+On Interact |  Skilled Interaction Device |  Begin Interaction for Instigator
+  5. Duplicate the button three more times, placing each one inside a different orange monitor around the area.
+
+You now have a working hacking minigame with the Stat Powerup device!
+###  Design Tip
+When combined with Stat Counter devices, Stat Powerup devices can produce many interesting interactions.
+Explore how Stat Counter devices can compare values: Higher, Lower, Equal To, Not Equal To, and so on. With Stat Powerup devices that change stat values in different ways, there are many different combinations of these devices for different gameplay scenarios!

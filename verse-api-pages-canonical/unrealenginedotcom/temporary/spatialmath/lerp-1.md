@@ -1,28 +1,26 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/lerp-1
 
-# Lerp function
-Learn technical details about the Lerp function.
-Used to linearly interpolate/extrapolate between `From` (when `Parameter = 0.0`) and `To` (when `Parameter = 1.0`). Expects that all arguments are finite. Returns `From*(1 - Parameter) + To*Parameter`.
+# (InitialRotation:rotation).ApplyWorldRotationY extension
+Learn technical details about the (InitialRotation:rotation).ApplyWorldRotationY extension.
+Makes a `rotation` by applying `AngleRadians` of left-handed rotation around the world +Y axis to `InitialRotation`.
 |
 ---|---
 Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }`
-`Lerp<public>(From:vector3, To:vector3, Parameter:float)<reads><computes>:`[`vector3`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/vector3)
+`(InitialRotation:rotation).ApplyWorldRotationY<public><native>(AngleRadians:float)<transacts>:`[`rotation`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/rotation)
 ## Parameters
-`Lerp` takes the following parameters:
+`ApplyWorldRotationY` takes the following parameters:
 Name | Type | Description
 ---|---|---
-`From` | `vector3` |
-`To` | `vector3` |
-`Parameter` | `float` |
+`InitialRotation` | `rotation` |
+`AngleRadians` | `float` |
 ## Attributes, Specifiers, and Effects
+The following attributes, specifiers, and effects determine how you can interact with `ApplyWorldRotationY` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 ### Specifiers
-The following specifiers determine how you can interact with `Lerp` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
+`native` | Indicates that the definition details of the element are implemented in C++. Verse definitions with the `native` specifier auto-generate C++ definitions that a developer can then fill out its implementation. You can use this specifier on classes, interfaces, enums, methods, and data.
 ### Effects
-The following effects determine how `Lerp` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
-`reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.
-`computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect.
+`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.

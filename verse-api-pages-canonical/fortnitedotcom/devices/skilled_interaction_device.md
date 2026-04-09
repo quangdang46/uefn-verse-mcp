@@ -1,11 +1,18 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/skilled_interaction_device
 
-![Epic Games Logo](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/skilled_interaction_device)
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
-  
-
-**Session ID** : 9dfa65b60df1bd83 
-**IP Address** : 14.191.95.176 
-
-
+# spawn_prop_result enumeration
+Learn technical details about the spawn_prop_result enumeration.
+Results for `SpawnProp`.
+|
+---|---
+Verse `using` statement | `using { /Fortnite.com/Devices }`
+## Enumerators
+The `spawn_prop_result` enumeration includes the following enumerators:
+Name | Description
+---|---
+`Ok` |  Success.
+`UnknownError` |  An unknown error occurred. If this happens frequently, contact Epic support.
+`InvalidSpawnPoint` |  The spawn point contains NaN or Inf.
+`SpawnPointOutOfBounds` |  The spawn point is outside the island's boundaries.
+`InvalidAsset` |  The asset is not a valid `creative_prop`.
+`TooManyProps` |  More props have been spawned than are permitted by the island's rules (currently 100 per script device and 200 total per island).

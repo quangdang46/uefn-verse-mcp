@@ -1,27 +1,26 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/assets
 
-# Assets module
-Learn technical details about the Assets module.
-Module import path: /Verse.org/Assets
-  * [`Verse.org`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg)
-  * **`Assets`**
+# ControlInput module
+Learn technical details about the ControlInput module.
+Module import path: /UnrealEngine.com/ControlInput
+  * [`UnrealEngine.com`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom)
+  * **`ControlInput`**
 
 ## Classes and Structs
 Name | Description
 ---|---
-[`animation_sequence`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/assets/animation_sequence) |
-[`material`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/assets/material) |
-[`particle_system`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/assets/particle_system) |
-[`mesh`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/assets/mesh) |
-[`sound_wave`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/assets/sound_wave) |
-[`texture`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/assets/texture) |
-[`input_action(t)`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/assets/input_action/input_action\(t\)) |
-[`input_mapping`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/assets/input_mapping) |
-## Interfaces
-Name | Description
----|---
-[`has_icon`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/assets/has_icon) |  Interface that provides an icon.
+[`input_events(t)`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/controlinput/input_events/input_events\(t\)) |  Input_events is a container for user input events which can be subscribed to.
+  * Use the 'GetPlayerInput' and 'GetInputEvents' functions to retrieve an input_events object for a given player.
+  * Low-level notifications of current user input: DetectionBeginEvent, DetectionOngoingEvent, and DetectionEndEvent.
+  * High-level notifications of triggered events: ActivationTriggeredEvent and ActivationCanceledEvent. /—----------<-------\ DetectionBeginEvent -> DetectionOngoingEvent -> ActivationTriggeredEvent -> DetectionEndEvent /\ /\ / ---------------------> ActivationCanceledEvent ----------------------/
+
+[`player_input`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/controlinput/player_input) |  This is the main manager class for input-related settings and functions for a player.
 ## Functions
 Name | Description
 ---|---
-[`input_action`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/assets/input_action) |
+[`input_events`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/controlinput/input_events) |  Input_events is a container for user input events which can be subscribed to.
+  * Use the 'GetPlayerInput' and 'GetInputEvents' functions to retrieve an input_events object for a given player.
+  * Low-level notifications of current user input: DetectionBeginEvent, DetectionOngoingEvent, and DetectionEndEvent.
+  * High-level notifications of triggered events: ActivationTriggeredEvent and ActivationCanceledEvent. /—----------<-------\ DetectionBeginEvent -> DetectionOngoingEvent -> ActivationTriggeredEvent -> DetectionEndEvent /\ /\ / ---------------------> ActivationCanceledEvent ----------------------/
+
+[`GetPlayerInput`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/controlinput/getplayerinput) |  Access input-related data and settings for a player.

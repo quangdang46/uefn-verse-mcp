@@ -1,26 +1,24 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/applyworldrotationx
 
-# (InitialRotation:rotation).ApplyWorldRotationX extension
-Learn technical details about the (InitialRotation:rotation).ApplyWorldRotationX extension.
-Makes a `rotation` by applying `AngleRadians` of left-handed rotation around the world +X axis to `InitialRotation`.
+# (V:vector3).LengthSquared extension
+Learn technical details about the (V:vector3).LengthSquared extension.
+Returns the squared length of `V`.
 |
 ---|---
 Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }`
-`(InitialRotation:rotation).ApplyWorldRotationX<public><native>(AngleRadians:float)<transacts>:`[`rotation`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/rotation)
+`(V:vector3).LengthSquared<public>()<computes>:float`
 ## Parameters
-`ApplyWorldRotationX` takes the following parameters:
+`LengthSquared` takes the following parameters:
 Name | Type | Description
 ---|---|---
-`InitialRotation` | `rotation` |
-`AngleRadians` | `float` |
+`V` | `vector3` |
 ## Attributes, Specifiers, and Effects
-The following attributes, specifiers, and effects determine how you can interact with `ApplyWorldRotationX` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+The following attributes, specifiers, and effects determine how you can interact with `LengthSquared` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 ### Specifiers
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
-`native` | Indicates that the definition details of the element are implemented in C++. Verse definitions with the `native` specifier auto-generate C++ definitions that a developer can then fill out its implementation. You can use this specifier on classes, interfaces, enums, methods, and data.
 ### Effects
 Effect | Meaning
 ---|---
-`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.
+`computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect.

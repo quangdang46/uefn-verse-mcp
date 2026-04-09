@@ -1,27 +1,26 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/removeelement
 
-# (Input:[]t).RemoveElement extension
-Learn technical details about the (Input:[]t).RemoveElement extension.
-Makes an `array` by removing the element at `IndexToRemove` from `Input`. Succeeds if `0 <= IndexToRemove <= Input.Length-1`.
+# Concatenate function
+Learn technical details about the Concatenate function.
+Makes a flattened `array` by concatenating the elements of `Arrays`.
 |
 ---|---
 Verse `using` statement | `using { /Verse.org/Verse }`
-`(Input:[]t).RemoveElement<public>(IndexToRemove:int where t:any)<computes><decides>:[]t`
+`Concatenate<public>(Arrays:[][]t where t:any)<computes>:[]t`
 ## Parameters
-`RemoveElement` takes the following parameters:
+`Concatenate` takes the following parameters:
 Name | Type | Description
 ---|---|---
-`Input` | `[]t` |
-`IndexToRemove` | `int` |
+`Arrays` | `[][]t` |
 `t` | `any` |
 ## Attributes, Specifiers, and Effects
-The following attributes, specifiers, and effects determine how you can interact with `RemoveElement` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 ### Specifiers
+The following specifiers determine how you can interact with `Concatenate` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
 ### Effects
+The following effects determine how `Concatenate` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
 `computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect.
-`decides` | Indicates that the function can fail, and that calling this function is a [failable expression](https://dev.epicgames.com/documentation/en-us/fortnite/failure-in-verse#failableexpression). Function definitions with the `decides` effect must also have the `transacts` effect, which means the actions performed by this function can be rolled back (as if the actions were never performed), if there’s a failure anywhere in the function.

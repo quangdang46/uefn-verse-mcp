@@ -3,16 +3,16 @@
 # Damage Amplifier Powerup Devices
 Players can boost their damage potential with this potent powerup!
 ![Damage Amplifier Powerup Devices](https://dev.epicgames.com/community/api/documentation/image/6492924d-170e-4ebd-b64a-242cea0dd9ba?resizing_type=fill&width=1920&height=335)
-When a player picks up or [triggers](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) the **Damage Amplifier Powerup** device, their ability to [deal damage](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) to another player or [NPC (non-player character)](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) is instantly amplified. This applies to any weapon the player is using at the time of the powerup.
+When a player picks up or [triggers](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) the **Damage Amplifier Powerup** device, their ability to [deal damage](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) to another player or [NPC (non-player character)](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) is instantly amplified. This applies to any weapon the player is using at the time of the powerup.
 The effect is temporary but you can customize the powerup duration.
-You can also control which players, teams or [classes](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) can use this [powerup](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary), how much the powerup is amplified (multiplied), how long it lasts, and a number of other customizable features. You can use it to give one team an advantage — especially when playing against NPCs — or to level the playing field. It’s also a useful [pickup](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) for players [in-game](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary).
-To find the Damage Powerup device, see [Using Devices](https://dev.epicgames.com/documentation/en-us/fortnite/using-devices-in-fortnite).
-It’s helpful to [customize device names](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) when you use multiple copies of the same device.
+You can also control which players, teams or [classes](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) can use this [powerup](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary), how much the powerup is amplified (multiplied), how long it lasts, and a number of other customizable features. You can use it to give one team an advantage — especially when playing against NPCs — or to level the playing field. It’s also a useful [pickup](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) for players [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary).
+To find the Damage Powerup device, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
+It’s helpful to [customize device names](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) when you use multiple copies of the same device.
 ##  Contextual Filtering
 Some devices are affected by a feature called **contextual filtering**. This feature hides or displays options depending on the values selected for certain related options. This reduces clutter in the Customize panel and makes options easier to manage and navigate. To help identify them, values that trigger contextual filtering are in _italic_.
 All options are listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option's value, there will be a note about it in the Description field for that option.
 ##  Device Options
-In its [default](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) state, this device delivers a 2x amplification of damage dealt with the powerup, and can be used by any player or class. You can configure this device with the following options.
+In its [default](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) state, this device delivers a 2x amplification of damage dealt with the powerup, and can be used by any player or class. You can configure this device with the following options.
 Default values are **bold**. Values that trigger contextual filtering are _italic_.
 Option  |  Value  |  Description
 ---|---|---
@@ -26,7 +26,7 @@ Option  |  Value  |  Description
 **Pickup Radius** |  **On Touch** , Pick a distance |  Sets how close the player needs to be to the device to collect it. Distance is measured in meters.
 **Respawn** |  **No** , _Yes_ |  Determines whether the item will respawn after it is picked up. If you set to **Yes** , another option, **Time to Respawn** , will appear.
 **Time to Respawn** |  **15 Seconds** , Pick a time |  If **Respawn** is set to **Yes** , you can set how long before the item spawns again.
-**Spawn On Minigame Start** |  **Yes** , No |  The device will [spawn](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) at start of minigame unless set to **No** , in which case it will spawn after its respawn time.
+**Spawn On Minigame Start** |  **Yes** , No |  The device will [spawn](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) at start of minigame unless set to **No** , in which case it will spawn after its respawn time.
 **Ambient Audio** |  **On** , Off |  When set to **On** , an ambient audio will play when players are near the item.
 **Pick-up Audio** |  **On** , Off |  When set to **On** , audio will play when a player picks up the item.
 **Selected Class** |  **Any** , Pick a class |  Determines which class can interact with this powerup.
@@ -34,9 +34,9 @@ Option  |  Value  |  Description
 **Apply To** |  **Player** , Player’s Team, Player’s Class, Same Class in Player’s Team, All Players |  Determines who can use the powerup.
 **Who Can See This Powerup** |  **Only Players That Can Pick Up** , All, None |  Determines who can see the powerup.
 ##  Direct Event Binding
-Following are the [direct event binding](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) options for this device.
+Following are the [direct event binding](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) options for this device.
 ###  Functions
-A [function](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) listens for an event on a device then performs an action.
+A [function](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) listens for an event on a device then performs an action.
   1. For any function, click the **option** , then **Select Device** to access and select from the **Device** dropdown menu.
   2. Once you've selected a device, click **Select Event** to bind the device to an event that will trigger the function for the device.
   3. If more than one device or event triggers a function, click the **Add** button to add a line and repeat these steps.

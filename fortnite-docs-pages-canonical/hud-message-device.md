@@ -1,5 +1,7 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/hud-message-device
 
-# HUD Message device
-The device used to create and place a HUD message. The device uses timers and triggers to control when players see messages.
-The device used to create and place a HUD message. The device uses timers and [triggers](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#trigger) to control when players see messages.
+# One more step
+Please complete a security check to continue
+Verification successful. Waiting for dev.epicgames.com to respond
+**Session ID** : 9e9c670b39b98516
+**IP Address** : 14.191.95.176

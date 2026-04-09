@@ -1,26 +1,25 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/operatorslash
 
-# operator'/' function
-Learn technical details about the operator'/' function.
-Makes a `vector2` by dividing the components of `Left` by `Right`.
+# (InitialRotation:rotation).ApplyLocalRotationY extension
+Learn technical details about the (InitialRotation:rotation).ApplyLocalRotationY extension.
+Makes a `rotation` by applying `AngleRadians` of left-handed rotation around the local +Y axis to `InitialRotation`.
 |
 ---|---
 Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }`
-`operator'/'<public>(Left:vector2, Right:float)<computes>:`[`vector2`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/vector2)
+`(InitialRotation:rotation).ApplyLocalRotationY<public>(AngleRadians:float)<transacts>:`[`rotation`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/rotation)
 ## Parameters
-`operator'/'` takes the following parameters:
+`ApplyLocalRotationY` takes the following parameters:
 Name | Type | Description
 ---|---|---
-`Left` | `vector2` |
-`Right` | `float` |
+`InitialRotation` | `rotation` |
+`AngleRadians` | `float` |
 ## Attributes, Specifiers, and Effects
+The following attributes, specifiers, and effects determine how you can interact with `ApplyLocalRotationY` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 ### Specifiers
-The following specifiers determine how you can interact with `operator'/'` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
 ### Effects
-The following effects determine how `operator'/'` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
-`computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect.
+`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.

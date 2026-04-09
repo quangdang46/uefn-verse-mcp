@@ -1,10 +1,7 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/message
 
-# message class
-Learn technical details about the message class.
-A localizable text message.
-|
----|---
-Verse `using` statement | `using { /Verse.org/Verse }`
-## Members
-This class has no members.
+# One more step
+Please complete a security check to continue
+Verification successful. Waiting for dev.epicgames.com to respond
+**Session ID** : 9e9c58e9ebbb8516
+**IP Address** : 14.191.95.176

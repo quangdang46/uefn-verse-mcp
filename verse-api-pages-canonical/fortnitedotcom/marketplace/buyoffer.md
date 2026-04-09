@@ -1,62 +1,34 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/marketplace/buyoffer
 
-
-
-Table of Contents
-  1. ![Epic Games](https://edc-cdn.net/assets/images/logo-epic.svg)[Developer](https://dev.epicgames.com/)
-  2. [Documentation](https://dev.epicgames.com/documentation/ "Documentation")
-  3. Fortnite
-     * [](https://dev.epicgames.com/documentation/en-us/unreal-engine)
-     * [](https://dev.epicgames.com/documentation/en-us/fortnite)
-     * [](https://dev.epicgames.com/documentation/en-us/twinmotion)
-     * [](https://dev.epicgames.com/documentation/en-us/metahuman)
-     * [](https://dev.epicgames.com/documentation/en-us/realityscan)
-     * [](https://dev.epicgames.com/documentation/en-us/realityscan-mobile)
-     * [](https://dev.epicgames.com/documentation/en-us/fab)
-  4. BuyOffer function
-
-
-# BuyOffer function
-Learn technical details about the BuyOffer function. 
-On this page
-Displays the Epic purchase UI to the player to purchase the `Offer`. Returns true if an offer was purchased.
-|   
----|---  
-Verse `using` statement | `using { /Fortnite.com/Marketplace }`  
-`BuyOffer<public><native>(Player:player, Offer:offer)<transacts><suspends><no_rollback>:logic`
-## Parameters
-`BuyOffer` takes the following parameters:
-Name | Type | Description  
----|---|---  
-`Player` | `player` |   
-`Offer` | `offer` |   
-## Attributes, Specifiers, and Effects
-### Specifiers
-The following specifiers determine how you can interact with `BuyOffer` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
-Specifier | Meaning  
----|---  
-`public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.  
-`native` | Indicates that the definition details of the element are implemented in C++. Verse definitions with the `native` specifier auto-generate C++ definitions that a developer can then fill out its implementation. You can use this specifier on classes, interfaces, enums, methods, and data.  
-### Effects
-The following effects determine how `BuyOffer` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
-Effect | Meaning  
----|---  
-`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You'll be notified when you compile your code if the `transacts` effect was added to a function that can't be rolled back. Note that this check is not done for functions with the `native` specifier.  
-`suspends` | Indicates that the function is async. Creates an async context for the body of the function.  
-`no_rollback` | This is the default effect when no exclusive effect is specified. The `no_rollback` effect indicates that any actions performed by the function cannot be undone and so the function cannot be used in a failure context. This effect cannot be manually specified.  
-  * [ api](https://dev.epicgames.com/community/search?query=api)
-  * [ function](https://dev.epicgames.com/community/search?query=function)
-
-
-* * *
-[Developer Forums](https://forums.unrealengine.com/categories?tag=fortnite)
-[Learning Library](https://dev.epicgames.com/community/fortnite/learning)
-On this page
-  * [Parameters](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/marketplace/buyoffer#parameters)
-  * [Attributes, Specifiers, and Effects](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/marketplace/buyoffer#attributes,specifiers,andeffects)
-  * [Specifiers](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/marketplace/buyoffer#specifiers)
-  * [Effects](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/marketplace/buyoffer#effects)
-
-
-
-
+# fort_vehicle interface
+Learn technical details about the fort_vehicle interface.
+Main API implemented by Fortnite vehicles.
+|
+---|---
+Verse `using` statement | `using { /Fortnite.com/Vehicles }`
+## Exposed Interfaces
+This interface exposes the following interfaces:
+Name | Description
+---|---
+[`positional`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/game/positional) |  Implemented by objects to allow reading position information.
+[`healthful`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/game/healthful) |  Implemented by Fortnite objects that have health state and can be eliminated.
+[`damageable`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/game/damageable) |  Implemented by Fortnite objects that can be damaged.
+[`game_action_causer`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/game/game_action_causer) |  Implemented by Fortnite objects that can be passed through game action events, such as damage and heal. For example: player, vehicle, or weapon. Event Listeners often use `game_action_causer` to pass along additional information about what weapon caused the damage. Systems will then use that information for completing quests or processing game specific event logic.
+## Members
+This interface has both data members and functions.
+### Data
+Data Member Name | Type | Description
+---|---|---
+`Speed` | `?float` |  The current speed of the vehicle in m/s.
+`BoostRemaining` | `??float` |  The boost state of the vehicle. If the vehicle uses boost, this value will be between 0.0 and `BoostCapacity`. Otherwise, this value will be false.
+`BoostCapacity` | `??float` |  The maximum boost capacity of the vehicle. If the vehicle uses boost, this value will be between 1.0 and Inf. Otherwise, this value will be false.
+### Functions
+Function Name | Description
+---|---
+[`IsOnGround`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/vehicles/fort_vehicle/isonground) |  Succeeds if this `fort_vehicle` is standing on ground.
+[`IsInAir`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/vehicles/fort_vehicle/isinair) |  Succeeds if this `fort_vehicle` is standing in air.
+[`IsInWater`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/vehicles/fort_vehicle/isinwater) |  Succeeds if this `fort_vehicle` is standing in water.
+[`GetPassengers`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/vehicles/fort_vehicle/getpassengers) |  Returns an array with all the passengers of the vehicle.
+[`GetFuelRemaining`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/vehicles/fort_vehicle/getfuelremaining) |  Returns the fuel state of the vehicle. If the vehicle uses fuel, this value will be between 0.0 and `GetFuelCapacity`. Otherwise, this value will be -1.0.
+[`GetFuelCapacity`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/vehicles/fort_vehicle/getfuelcapacity) |  Returns the maximum fuel capacity of the vehicle. If the vehicle uses fuel, this value will be between 1.0 and Inf. Otherwise, this value will be -1.0.
+[`TeleportTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/vehicles/fort_vehicle/teleportto) |  Teleports the `fort_vehicle` to the specified `Position` and `Rotation`.

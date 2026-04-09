@@ -1,11 +1,7 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/scenegraph/collision_capsule
 
-![Epic Games Logo](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/scenegraph/collision_capsule)
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
-  
-
-**Session ID** : 9dfa48bfaadfe2e8 
-**IP Address** : 14.191.89.252 
-
-
+# One more step
+Please complete a security check to continue
+Verification successful. Waiting for dev.epicgames.com to respond
+**Session ID** : 9e9c5adb598f8516
+**IP Address** : 14.191.95.176

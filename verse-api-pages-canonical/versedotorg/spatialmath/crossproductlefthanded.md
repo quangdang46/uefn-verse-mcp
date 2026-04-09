@@ -1,27 +1,23 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/spatialmath/crossproductlefthanded
 
-# CrossProductLeftHanded function
-Learn technical details about the CrossProductLeftHanded function.
-Returns the left-handed cross product of `V1` and `V2`.
+# Disable function
+Learn technical details about the Disable function.
+Disables this device.
 |
 ---|---
-Verse `using` statement | `using { /Verse.org/SpatialMath }`
-`CrossProductLeftHanded<public>(V1:vector3, V2:vector3)<reads><computes>:`[`vector3`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/spatialmath/vector3)
+Verse `using` statement | `using { /Fortnite.com/Devices }`
+`Disable<public>()<transacts><no_rollback>:void`
 ## Parameters
-`CrossProductLeftHanded` takes the following parameters:
-Name | Type | Description
----|---|---
-`V1` | `vector3` |
-`V2` | `vector3` |
+`Disable` does not take any parameters.
 ## Attributes, Specifiers, and Effects
 ### Specifiers
-The following specifiers determine how you can interact with `CrossProductLeftHanded` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+The following specifiers determine how you can interact with `Disable` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
 ### Effects
-The following effects determine how `CrossProductLeftHanded` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+The following effects determine how `Disable` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
-`reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.
-`computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect.
+`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.
+`no_rollback` | This is the default effect when no exclusive effect is specified. The `no_rollback` effect indicates that any actions performed by the function cannot be undone and so the function cannot be used in a failure context. This effect cannot be manually specified.

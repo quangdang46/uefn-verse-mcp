@@ -1,19 +1,20 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/getaxis
 
-# (Rotation:rotation).GetAxis extension
-Learn technical details about the (Rotation:rotation).GetAxis extension.
-Makes a `vector3` from the axis of `rotation`. If `rotation` is nearly identity, this will return the +X axis. See also `GetAngle`.
+# (InitialRotation:rotation).ApplyYaw extension
+Learn technical details about the (InitialRotation:rotation).ApplyYaw extension.
+Makes a `rotation` by applying `YawRightRadians` of left-handed rotation around the local +Z axis to `InitialRotation`.
 |
 ---|---
 Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }`
-`(Rotation:rotation).GetAxis<public><native>()<reads><computes>:`[`vector3`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/vector3)
+`(InitialRotation:rotation).ApplyYaw<public><native>(YawRightRadians:float)<transacts>:`[`rotation`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/rotation)
 ## Parameters
-`GetAxis` takes the following parameters:
+`ApplyYaw` takes the following parameters:
 Name | Type | Description
 ---|---|---
-`Rotation` | `rotation` |
+`InitialRotation` | `rotation` |
+`YawRightRadians` | `float` |
 ## Attributes, Specifiers, and Effects
-The following attributes, specifiers, and effects determine how you can interact with `GetAxis` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+The following attributes, specifiers, and effects determine how you can interact with `ApplyYaw` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 ### Specifiers
 Specifier | Meaning
 ---|---
@@ -22,5 +23,4 @@ Specifier | Meaning
 ### Effects
 Effect | Meaning
 ---|---
-`reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.
-`computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect.
+`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.

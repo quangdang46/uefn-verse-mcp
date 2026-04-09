@@ -1,71 +1,124 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/parkour-elimination-2-pregame-area-in-unreal-editor-for-fortnite
 
-# 2. Pre-Game Area
-Build the pre-game area.
-![2. Pre-Game Area](https://dev.epicgames.com/community/api/documentation/image/782c8b8a-2ae8-45e2-86f5-819bb9ebed4c?resizing_type=fill&width=1920&height=335)
-**Devices used:**
-  * 4 x [Player Spawner](https://www.fortnite.com/creative/docs/using-player-spawner-devices-in-fortnite-creative)
-  * 4 x [Item Spawner](https://www.fortnite.com/creative/docs/using-item-spawner-devices-in-fortnite-creative)
-  * 4 x [HUD Message](https://www.fortnite.com/creative/docs/using-hud-message-devices-in-fortnite-creative)
-  * 5 x [Teleporter](https://www.fortnite.com/creative/docs/using-teleporter-devices-in-fortnite-creative)
+# Color Switch Challenge
+Use Trick Tiles and other devices to create a challenging trap for players.
+![Color Switch Challenge](https://dev.epicgames.com/community/api/documentation/image/a5c45d7f-10a5-4590-8887-767b105f5b9b?resizing_type=fill&width=1920&height=335)
+Landing on a battlefield with multiple colorful tiles, you have to stay away from the dangerous ones, or else you will fall and be eliminated. Nobody knows which color will be picked! Good luck, and have fun surviving.
+##  Ingredients
+**You will need:**
+  * **1 Teleporter device**
+  * **16 Trick Tile devices**
+  * **1 Random Number Generator device**
+  * **1 Sequencer device**
+  * **1 Trigger device**
+  * **1 Billboard device**
+  * **1 Grind Powerup**
+  * **1 Damage Volume device**
 
-[![start area](https://dev.epicgames.com/community/api/documentation/image/6e800e9a-8b08-408c-a565-3d15e8367afb?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6e800e9a-8b08-408c-a565-3d15e8367afb?resizing_type=fit)
-Begin by giving each player their own starting room. Each of these rooms will have 1 **Player Spawner** , 1**Item Spawner** and 1 **Teleporter**. The player will need to grab a coin, read the HUD message, and understand the importance of the currency — not taking the coin would make the player unable to buy a weapon in the elimination arena! Make it impossible for the player not to take the coin before entering the teleporter.
-[![playerspawn](https://dev.epicgames.com/community/api/documentation/image/edd45dad-0dc1-4962-b061-166c677d9791?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/edd45dad-0dc1-4962-b061-166c677d9791?resizing_type=fit)
-###  Player Spawners #1 to #4
-In the Content Browser, navigate to **Fortnite > Devices** and select **Player Spawner**. Drag the device onto your level and place it at the back of the player room.
-Configure the **User Options** for the first spawner:
-Option  |  Value  |  Explanation
+##  Method
+The color switch challenge is randomly picking a predefined set of tiles and asking players to stay away from them. Otherwise, the tiles will be removed randomly resulting in the players falling to their deaths and losing the match. After a while, the removed tiles will be reset if players have successfully survived.
+This challenge could be built using various different approaches, including destroying all the other tiles except for the picked ones instead. Here the example is showing a straightforward approach but it can be built in other ways.
+You can use Trick Tiles to remove the attached tiles and then bring them back after the player has survived for a while. The Random Number Generator is used to introduce randomness to the game while Triggers are used to communicate with different devices. The Grind Powerup is an optional choice, but it is recommended to have it to create more fun and challenge.
+##  Modified Options
+###  My Island Settings
+Option  |  Value
+---|---
+ALLOW BUILDING |  None
+ENVIRONMENT DAMAGE |  Off
+STRUCTURE DAMAGE |  None
+SHOW WOOD RESOURCE COUNT |  NO
+SHOW STONE RESOURCE COUNT |  NO
+SHOW METAL RESOURCE COUNT |  NO
+In **My Island - > Settings**, it is best if you set **Allow Building** to **None** and **Environment Damage** to **Off** for this gameplay. Otherwise it would interfere with the Trick Tile devices and their attached tiles.
+###  Teleporter Device Options
+Option  |  Value
+---|---
+Teleporter Rift Visible |  NO
+Play Visual Effects |  NO
+Play Sound Effects |  NO
+Conserve Momentum |  NO
+Teleport to When Receiving From |  CHANNEL 90
+When Teleported to Transmit On |  CHANNEL 100
+The **Teleporter** is used to teleport players to the gameplay area, so we don't need **Play Visual Effects** or **Play Sound Effects** enabled. However, we want to make sure that when players are teleported, we are sending a message for initialization on a channel.
+###  Trick Tile Device Options
+Option  |  Value
+---|---
+Activation Delay |  3 SECONDS
+Trigger on Player Contact |  NO
+Trigger when Receiving From |  CHANNEL (1 / 2 / 3)
+Reset when Receiving From |  CHANNEL 100
+We have tiles in three different colors: Red, Yellow, and White. The tiles are manually activated and removed when receiving a signal, so set the **Trigger on Player Contact** option to **No** and set the channels for transmitting. The reset signal is the same as the initialization sent from the Teleporter.
+###  Random Number Generator Device Options
+Option  |  Value
+---|---
+Value Limit 2 |  3
+Roll Time |  5 SECONDS
+Zone |  FORWARD
+Length |  3
+Activate when Receiving From |  CHANNEL 100
+The **Random Number Generator** is used to trigger three different signals randomly, with triggers placed inside the associated zone. It is used to pick a random set of the color tiles.
+Option  |  Value
+---|---
+When Triggered Transmit On |  CHANNEL (1 / 2 / 3 / 80)
+Set triggers to send out on channels for three different colors. For each of the triggers, place a new one to send a message to Channel 80 in order to start the Sequencer for resetting the Trick Tiles.
+###  Sequencer Device Options
+Option  |  Value
+---|---
+Tempo (bmp) |  10
+Length |  3
+Zone Direction |  FORWARD
+Start Sequence When Receiving From |  CHANNEL 80
+The **Sequencer** is used as a delay before resetting the Trick Tiles, and it could be played for different lengths of time depending on the creator's need.
+Option  |  Value
+---|---
+When Triggered Transmit On |  CHANNEL (100)
+Set the **When Triggered Transmit On** option to a channel. This will reset the Trick Tiles and the Random Number Generator after a delay.
+###  Billboard Device Options
+Option  |  Value
+---|---
+Set Text Visible When Receiving From |  CHANNEL (1 / 2 / 3)
+Set Text Hidden When Receiving From |  CHANNEL 100
+Set the above options to toggle text hint visibility when the Billboard device receives a signal on the selected channel.
+###  Grind Powerup Device Options
+Option  |  Value
+---|---
+Effect Duration |  INFINITE
+Time to respawn |  NEVER
+Ambient Audio |  OFF
+Pick Up Audio |  OFF
+Pickup when received from |  CHANNEL 100
+Once initialized, this powerup will apply the grind effect to players so they will be slipping and sliding, which increases the challenge for the players.
+###  Damage Volume Device Options
+Option  |  Value
+---|---
+Zone Width |  8
+Zone Depth |  8
+Sets a **Zone** shape where players receive enough damage to be immediately eliminated once falling down from the missing tiles.
+##  Message Setup
+Message Setup - Channel 1  |  |
 ---|---|---
-**Priority Group** |  "1": primary |  This is an important setting as there are secondary Player Spawners in the elimination arena. When these get disabled, players will spawn there instead. Primary means that they are picked first if that group exists.
-**Visible During Game** |  False |  Hides the base of the Spawner during gameplay.
-###  Item Spawners #1 to #4
-Place the **Item Spawner** in a location that cannot be avoided. All four rooms can use an identical finished Item Spawner — they have no settings that need to be incremented.
-Configure the device's **User Options** as follows:
-Option  |  Value  |  Explanation
+Trigger |  |
+1 |  [Transmit] |  When Triggered Transmit On
+Billboard |  |
+1 |  [On Receive] |  Set Text Visible When Receiving From
+Trick Tile |  |
+1 |  [On Receive] |  Trigger When Receiving From
+The settings for Channel 1 show the Billboard text, and trigger removing the Trick Tile once the Trigger is picked. These settings are also applied to Channels 2 and 3.
+Message Setup - Channel 80  |  |
 ---|---|---
-**Items Respawn** |  False |  The item registered to the item spawner does not respawn.
-**Base Visible During Game** |  False |  The base is not visible during gameplay.
-**Time Before First Spawn** |  0 |  The first spawn happens at the start of the round.
-**Respawn Item on Timer** |  False |  Only 1 coin will ever be spawned.
-**Run Over Pickup** |  On |  There's no need to hit an interact button to get the coin, and more importantly, it prevents the player from skipping it.
-**Item Scale** |  2.0 |  Makes the coin a bit bigger so it's not possible to avoid picking it up.
-Register a single **gold coin** to this spawner: scroll down to **Item List** , then press **+** , expand **Index** , and search for **Gold** to select the coin.
-[![itemspawner](https://dev.epicgames.com/community/api/documentation/image/4b32485d-61ed-48d8-80ef-b41d4c59523a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4b32485d-61ed-48d8-80ef-b41d4c59523a?resizing_type=fit)
-###  Teleporters #1 to #4
-There is a teleporter at the end of each starting room. All four rooms can use an identical finished Teleporter as they do not have any incremental settings.
-Find and place the Teleporter device behind the Item Spawner and configure the device's **User Options** as follows:
-Option  |  Value  |  Explanation
+Trigger (In Random Number Generator) |  |
+80 |  [Transmit] |  When Triggered Transmit On
+Sequencer |  |
+2 |  [On Receive] |  Start Sequence When Receiving From
+The settings for Channel 80 re-trigger the Sequencer after the Random Number Generator has picked a new result.
+Message Setup - Channel 100  |  |
 ---|---|---
-**Teleporter Group** |  Group None |  The group that the teleportation network belongs to. As it only sends to Group D, it doesn't need one of its own.
-**Teleport Target Group** |  Group D |  The teleport network that entering this will send you to. This is set to the single teleporter inside the starting room.
-###  HUD Message #1 to #4
-[![HUD Message](https://dev.epicgames.com/community/api/documentation/image/0b820f4e-b052-4d59-ad3e-e38258bb21f6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0b820f4e-b052-4d59-ad3e-e38258bb21f6?resizing_type=fit)
-Each **HUD Message** device is linked to one of the Player Spawners, and will play a brief instructional message when the player spawns in.
-Find and place the HUD Message device on top of the central starting area, and configure the **User Options** as follows:
-Option  |  Value  |  Explanation
----|---|---
-**Message** |  Grab the Coin, enter the Teleporter, and race to the finish! |  The message played upon spawning in.
-**Message Recipient** |  Triggering Player |  Only the triggering player sees the message.
-**Show on Round Start** |  False |  It will not automatically play when the match starts.
-###  Teleporter #5
-[![Teleport 5](https://dev.epicgames.com/community/api/documentation/image/21606d17-6e5c-41b1-9193-c85028dc6496?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/21606d17-6e5c-41b1-9193-c85028dc6496?resizing_type=fit)
-Here is the decorated starting room for the race. Note the teleporter in the middle square of the 3x3 block. It is set up as follows:
-Option  |  Value  |  Explanation
----|---|---
-**Teleporter Group** |  Group D |  This is the group that the teleporters inside the player start rooms are linked to, so all of them will be sent to the same one.
-**Teleporter Target Group** |  Group None |  This teleporter doesn't go anywhere. It's only meant to drop players into this room.
-**Teleporter Rift Visible** |  False |  The teleporter is invisible.
-**Play Visual Effects** |  False |  There's no visual effect needed for the teleporter.
-**Play Sound Effects** |  False |  No sound effects are needed for the teleporter.
-**Conserve Momentum** |  False |  The player is dropped from a standing start above it, so running and jumping in won't affect the teleportation.
-**Face Player In Teleporter Direction** |  Yes |  They are faced toward the tunnel leading out into the parkour starting area.
-###  Direct Event Binding
-Direct event binding allows devices to talk to one another directly by using **events** and **functions**. Learn more about it [here](https://dev.epicgames.com/documentation/en-us/fortnite/direct-event-binding-in-unreal-editor-for-fortnite).
-Device A  |  Function  |  Device B  |  Event  |  Explanation
----|---|---|---|---
-**HUD Message #1 to #4** [![hud message](https://dev.epicgames.com/community/api/documentation/image/92668056-ee10-496c-b631-ee072914fb65?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/92668056-ee10-496c-b631-ee072914fb65?resizing_type=fit) |  Show |  **Player Spawner #1 to #4** [![spawn pad](https://dev.epicgames.com/community/api/documentation/image/890d9747-36ac-47a3-acd0-9f0c83ae1138?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/890d9747-36ac-47a3-acd0-9f0c83ae1138?resizing_type=fit) |  On Player Spawned |  Players will see the HUD message when they spawn.
-Remember to save your progress!
-[![savegame](https://dev.epicgames.com/community/api/documentation/image/49e9b940-c817-49ca-9332-6671dbc3009f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/49e9b940-c817-49ca-9332-6671dbc3009f?resizing_type=fit)
-##  Next Section
-  * [![3. Race Area](https://dev.epicgames.com/community/api/documentation/image/44a56e91-485a-4098-bb38-bb085c76297b?resizing_type=fit&width=640&height=640) 3. Race Area Build the parkour race section of the game. ](https://dev.epicgames.com/documentation/en-us/fortnite/parkour-elimination-3-race-area-in-unreal-editor-for-fortnite)
+Trigger (In Sequencer) |  |
+100 |  [Transmit] |  When Triggered Transmit On
+Teleporter |  |
+100 |  [Transmit] |  When Teleported Transmit On
+Trick Tile |  |
+100 |  [On Receive] |  Reset When Receiving From
+Billboard |  |
+100 |  [On Receive] |  Set Text Hidden When Receiving From
+The settings for Channel 100 initialize the Trick Tile and Billboard devices once they receive signals from a trigger, or from being teleported to the gameplay area.

@@ -1,26 +1,22 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/min
 
-# Min function
-Learn technical details about the Min function.
-Returns the minimum of `X` and `Y`.
+# operator'>' function
+Learn technical details about the operator'>' function.
 |
 ---|---
 Verse `using` statement | `using { /Verse.org/Verse }`
-`Min<public>(X:int, Y:int)<computes>:int`
+`operator'>'(Lhs:float, Rhs:float)<decides>:float`
 ## Parameters
-`Min` takes the following parameters:
+`operator'>'` takes the following parameters:
 Name | Type | Description
 ---|---|---
-`X` | `int` |
-`Y` | `int` |
+`Lhs` | `float` |
+`Rhs` | `float` |
 ## Attributes, Specifiers, and Effects
 ### Specifiers
-The following specifiers determine how you can interact with `Min` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
-Specifier | Meaning
----|---
-`public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
+The following specifiers determine how you can interact with `operator'>'` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 ### Effects
-The following effects determine how `Min` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+The following effects determine how `operator'>'` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
-`computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect.
+`decides` | Indicates that the function can fail, and that calling this function is a [failable expression](https://dev.epicgames.com/documentation/fortnite/failure-in-verse#failableexpression). Function definitions with the `decides` effect must also have the `transacts` effect, which means the actions performed by this function can be rolled back (as if the actions were never performed), if there’s a failure anywhere in the function.

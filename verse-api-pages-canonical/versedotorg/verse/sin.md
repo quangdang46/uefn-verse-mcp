@@ -1,26 +1,26 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/sin
 
-# Sin function
-Learn technical details about the Sin function.
-Returns the sine of `X` if `IsFinite(X)`. Returns `NaN` if `not IsFinite(X)
+# ArSinh function
+Learn technical details about the ArSinh function.
+Returns the inverse hyperbolic sine of `X` if `IsFinite(X)`.
 |
 ---|---
 Verse `using` statement | `using { /Verse.org/Verse }`
-`Sin<public><native>(X:float)<reads><computes>:float`
+`ArSinh<public><native>(X:float)<reads><computes>:float`
 ## Parameters
-`Sin` takes the following parameters:
+`ArSinh` takes the following parameters:
 Name | Type | Description
 ---|---|---
 `X` | `float` |
 ## Attributes, Specifiers, and Effects
 ### Specifiers
-The following specifiers determine how you can interact with `Sin` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+The following specifiers determine how you can interact with `ArSinh` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
 `native` | Indicates that the definition details of the element are implemented in C++. Verse definitions with the `native` specifier auto-generate C++ definitions that a developer can then fill out its implementation. You can use this specifier on classes, interfaces, enums, methods, and data.
 ### Effects
-The following effects determine how `Sin` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+The following effects determine how `ArSinh` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
 `reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.

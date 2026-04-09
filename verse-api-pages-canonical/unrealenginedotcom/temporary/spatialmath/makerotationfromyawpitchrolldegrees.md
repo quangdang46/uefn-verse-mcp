@@ -1,32 +1,28 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/makerotationfromyawpitchrolldegrees
 
-# MakeRotationFromYawPitchRollDegrees function
-Learn technical details about the MakeRotationFromYawPitchRollDegrees function.
-Makes a `rotation` by applying `YawRightDegrees`, `PitchUpDegrees`, and `RollClockwiseDegrees`, in that order:
-  * first a _yaw_ about the Z axis with a positive angle indicating a clockwise rotation when viewed from above,
-  * then a _pitch_ about the new Y axis with a positive angle indicating 'nose up',
-  * followed by a _roll_ about the new X axis axis with a positive angle indicating a clockwise rotation when viewed along +X. Note that these conventions differ from `MakeRotation` but match `ApplyYaw`, `ApplyPitch`, and `ApplyRoll`.
-
+# IsAlmostEqual function
+Learn technical details about the IsAlmostEqual function.
+Succeeds when each component of `V1` and `V2` are within `AbsoluteTolerance` of each other.
 |
 ---|---
 Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }`
-`MakeRotationFromYawPitchRollDegrees<public><native>(YawRightDegrees:float, PitchUpDegrees:float, RollClockwiseDegrees:float)<reads>:`[`rotation`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/rotation)
+`IsAlmostEqual<public>(V1:vector2, V2:vector2, AbsoluteTolerance:float)<computes><decides>:void`
 ## Parameters
-`MakeRotationFromYawPitchRollDegrees` takes the following parameters:
+`IsAlmostEqual` takes the following parameters:
 Name | Type | Description
 ---|---|---
-`YawRightDegrees` | `float` |
-`PitchUpDegrees` | `float` |
-`RollClockwiseDegrees` | `float` |
+`V1` | `vector2` |
+`V2` | `vector2` |
+`AbsoluteTolerance` | `float` |
 ## Attributes, Specifiers, and Effects
 ### Specifiers
-The following specifiers determine how you can interact with `MakeRotationFromYawPitchRollDegrees` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+The following specifiers determine how you can interact with `IsAlmostEqual` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
-`native` | Indicates that the definition details of the element are implemented in C++. Verse definitions with the `native` specifier auto-generate C++ definitions that a developer can then fill out its implementation. You can use this specifier on classes, interfaces, enums, methods, and data.
 ### Effects
-The following effects determine how `MakeRotationFromYawPitchRollDegrees` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+The following effects determine how `IsAlmostEqual` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
-`reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.
+`computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect.
+`decides` | Indicates that the function can fail, and that calling this function is a [failable expression](https://dev.epicgames.com/documentation/fortnite/failure-in-verse#failableexpression). Function definitions with the `decides` effect must also have the `transacts` effect, which means the actions performed by this function can be rolled back (as if the actions were never performed), if there’s a failure anywhere in the function.

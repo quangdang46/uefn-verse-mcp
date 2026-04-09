@@ -1,8 +1,8 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/ai_patrol_path_device
 
-# ai_patrol_path_device class
-Learn technical details about the ai_patrol_path_device class.
-Used to create patrolling behavior for guards spawned with the `guard_spawner_device`.
+# gameplay_camera_fixed_angle_device class
+Learn technical details about the gameplay_camera_fixed_angle_device class.
+Used to update the camera’s current viewpoint and rotation based on a fixed angle.
 |
 ---|---
 Verse `using` statement | `using { /Fortnite.com/Devices }`
@@ -10,26 +10,26 @@ Verse `using` statement | `using { /Fortnite.com/Devices }`
 This class is derived from the following hierarchy, starting with `creative_object`:
 Name | Description
 ---|---
-[`creative_object`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object) |  Base class for creative devices and props.
-[`creative_device_base`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_device_base) |  Base class for creative_device.
+[`creative_object`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object) |  Base class for creative devices and props.
+[`creative_device_base`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_device_base) |  Base class for creative_device.
+[`gameplay_camera_device`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/gameplay_camera_device) |  Used to update the camera’s current viewpoint and rotation based on current camera mode.
 ## Members
-This class has both data members and functions.
-### Data
-Data Member Name | Type | Description
----|---|---
-`NextNodeUnreachableEvent` | `listenable(payload)` |  Signaled when a guard cannot reach the next `ai_patrol_path_device`.
-`NodeReachedEvent` | `listenable(payload)` |  Signaled when a guard reaches this device.
-`PatrolPathStartedEvent` | `listenable(payload)` |  Signaled when a guard starts moving on the patrol path.
-`PatrolPathStoppedEvent` | `listenable(payload)` |  Signaled when a guard stops moving on the patrol path.
+This class has functions, but no data members.
 ### Functions
 Function Name | Description
 ---|---
-[`Assign`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/ai_patrol_path_device/assign) |  Assign an AI to this patrol path.
-[`Disable`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/ai_patrol_path_device/disable) |  Disables this device.
-[`Enable`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/ai_patrol_path_device/enable) |  Enables this device.
-[`GetTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/gettransform) |  Returns the transform of the `creative_object` with units in cm. You must check `creative_object.IsValid` before calling this if there is a possibility the object has been disposed or destroyed by gameplay. Otherwise a runtime error will result.
-[`GoToNextPatrolGroup`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/ai_patrol_path_device/gotonextpatrolgroup) |  Commands patroller to follow the _Next Patrol Path Group_ instead of the default _Patrol Path Group_.
-[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto) |  Moves the `creative_object` to the specified `Position` and `Rotation` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
-[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-1) |  Moves the `creative_object` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
-[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto) |  Teleports the `creative_object` to the specified `Position` and `Rotation`.
-[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-1) |  Teleports the `creative_object` to the specified location defined by `Transform`, also applies rotation and scale accordingly.
+[`AddTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/gameplay_camera_device/addto) |  Adds the camera to the `Agent`’s camera stack and pushes it to be the active camera.
+[`AddToAll`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/gameplay_camera_device/addtoall) |  Adds the camera to all `Agent`s camera stacks and pushes it to be the active camera.
+[`Disable`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/gameplay_camera_device/disable) |  Disables this device.
+[`Enable`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/gameplay_camera_device/enable) |  Enables this device.
+[`GetGlobalTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/getglobaltransform) |  Gets the global transform of this object.
+[`GetTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/gettransform) |  Returns the transform of the `creative_object` with units in cm. You must check `creative_object.IsValid` before calling this if there is a possibility the object has been disposed or destroyed by gameplay. Otherwise a runtime error will result.
+[`MoveTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto) |  Moves the `creative_object` to the specified `Position` and `Rotation` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
+[`MoveTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-1) |  Moves the `creative_object` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
+[`MoveTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-2) |  Moves the `creative_device` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_device` it will be stopped and put into the `AnimationNotSet` state.
+[`RemoveFrom`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/gameplay_camera_device/removefrom) |  Removes the camera from the `Agent`’s camera stack and pops from being the active camera replacing it with the next one in the stack.
+[`RemoveFromAll`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/gameplay_camera_device/removefromall) |  Removes the camera from all `Agent`s camera stacks and pops from being the active camera replacing it with the next one in the stack.
+[`SetGlobalTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/setglobaltransform) |  Sets the global transform of this object.
+[`TeleportTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto) |  Teleports the `creative_object` to the specified `Position` and `Rotation`.
+[`TeleportTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-1) |  Teleports the `creative_object` to the specified location defined by `Transform`, also applies rotation and scale accordingly.
+[`TeleportTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-2) |  Teleports the `creative_device` to the specified location defined by `Transform`, also applies rotation and scale accordingly.

@@ -1,28 +1,22 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/classifiable_subset
 
-# classifiable_subset function
-Learn technical details about the classifiable_subset function.
-A `classifiable_subset` is a container that holds a set of elements. A classifiable_subset can hold multiple elements of the same type.
+# operator'<=' function
+Learn technical details about the operator'<=' function.
 |
 ---|---
 Verse `using` statement | `using { /Verse.org/Verse }`
-`classifiable_subset<public>(element_type:any):classifiable_subset(element_type)`
-This function is a parametric type, meaning it returns a class or interface rather than a value or object instance.
+`operator'<='(Lhs:float, Rhs:float)<decides>:float`
 ## Parameters
-`classifiable_subset` takes the following parameters:
+`operator'<='` takes the following parameters:
 Name | Type | Description
 ---|---|---
-`element_type` | `any` |
-### Generated Class
-`classifiable_subset` returns the parametric class [`classifiable_subset(element_type)`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/classifiable_subset/classifiable_subset\(element_type\)).
+`Lhs` | `float` |
+`Rhs` | `float` |
 ## Attributes, Specifiers, and Effects
-### Attributes
-The following attributes determine how `classifiable_subset` behaves outside the Verse language. For the complete list of attributes, see the Attributes section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
-Attribute | Arguments | Meaning
----|---|---
-`experimental` |  | This feature is in an experimental state, and you cannot publish projects implmenting it. The API for this feature is subject to change and backward compatibility is not guaranteed.
 ### Specifiers
-The following specifiers determine how you can interact with `classifiable_subset` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
-Specifier | Meaning
+The following specifiers determine how you can interact with `operator'<='` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+### Effects
+The following effects determine how `operator'<='` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+Effect | Meaning
 ---|---
-`public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
+`decides` | Indicates that the function can fail, and that calling this function is a [failable expression](https://dev.epicgames.com/documentation/fortnite/failure-in-verse#failableexpression). Function definitions with the `decides` effect must also have the `transacts` effect, which means the actions performed by this function can be rolled back (as if the actions were never performed), if there’s a failure anywhere in the function.

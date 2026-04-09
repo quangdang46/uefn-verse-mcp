@@ -1,11 +1,21 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ai/npc_actions_component/stopnavigation
 
-![Epic Games Logo](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ai/npc_actions_component/stopnavigation)
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
-  
+# animation_controller_state enumeration
+Learn technical details about the animation_controller_state enumeration.
+`animation_controller` states.
+|
+---|---
+Verse `using` statement | `using { /Fortnite.com/Devices/CreativeAnimation }`
+## Enumerators
+The `animation_controller_state` enumeration includes the following enumerators:
+Name | Description
+---|---
+`InvalidObject` |  The target of the animation is not an animatable prop. This could be because:
+  * It is not a `creative_prop` that can be animated.
+  * It was disposed or otherwise destroyed.
+  * It has the 'Register with Structural Grid' option set in UEFN.
 
-**Session ID** : 9dfa53d84e69e2fe 
-**IP Address** : 14.191.89.252 
-
-
+`AnimationNotSet` |  No animation has been successfully set via `animation_controller.SetAnimation`, or that animation has been cleared by a failed call to `animation_controller.SetAnimation`.
+`Stopped` |  Animation has either never started, finished, or was explicitly stopped.
+`Playing` |  Animation is playing.
+`Paused` |  Animation is paused.

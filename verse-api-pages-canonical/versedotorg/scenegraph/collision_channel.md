@@ -1,10 +1,27 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/scenegraph/collision_channel
 
-# collision_channel class
-Learn technical details about the collision_channel class.
-Every volume has a collision channel as part of its collision_profile. It is used to determine how two volumes interact. See collision_profile.
-|
+# CollisionProfiles module
+Learn technical details about the CollisionProfiles module.
+Module import path: /Verse.org/SceneGraph/CollisionProfiles A set of useful collision profiles. New profiles can be created in Verse code
+  * [`Verse.org`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg)
+  * [`SceneGraph`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph)
+  * **`CollisionProfiles`**
+
+## Data
+Name | Description
 ---|---
-Verse `using` statement | `using { /Verse.org/SceneGraph }`
-## Members
-This class has no members.
+`StationaryIgnoreAll` |
+`StationaryOverlapAll` |
+---|---
+`StationaryBlockAll` |
+---|---
+`DynamicIgnoreAll` |
+---|---
+`DynamicOverlapAll` |
+---|---
+`DynamicBlockAll` |
+---|---
+`StationaryBlockVisible` |
+---|---
+`VisibilityOverlapAll` |
+---|---

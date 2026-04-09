@@ -1,16 +1,7 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/transform
 
-# transform struct
-Learn technical details about the transform struct.
-A combination of scale, rotation, and translation, applied in that order.
-|
----|---
-Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }`
-## Members
-This struct has data members, but no functions.
-### Data
-Data Member Name | Type | Description
----|---|---
-`Scale` | `vector3` |  The scale of this `transform`.
-`Rotation` | `rotation` |  The rotation of this `transform`.
-`Translation` | `vector3` |  The location of this `transform`.
+# One more step
+Please complete a security check to continue
+Verification successful. Waiting for dev.epicgames.com to respond
+**Session ID** : 9e9c481fd9048516
+**IP Address** : 14.191.95.176

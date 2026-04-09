@@ -1,16 +1,7 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/abs-1
 
-# Abs function
-Learn technical details about the Abs function.
-|
----|---
-Verse `using` statement | `using { /Verse.org/Verse }`
-`Abs(Value:float):float`
-## Parameters
-`Abs` takes the following parameters:
-Name | Type | Description
----|---|---
-`Value` | `float` |
-## Attributes, Specifiers, and Effects
-### Specifiers
-The following specifiers determine how you can interact with `Abs` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+# One more step
+Please complete a security check to continue
+Verification successful. Waiting for dev.epicgames.com to respond
+**Session ID** : 9e9c58ec0cb68516
+**IP Address** : 14.191.95.176

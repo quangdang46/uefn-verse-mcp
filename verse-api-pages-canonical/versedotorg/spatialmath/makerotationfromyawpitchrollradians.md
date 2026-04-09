@@ -1,32 +1,25 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/spatialmath/makerotationfromyawpitchrollradians
 
-# MakeRotationFromYawPitchRollRadians function
-Learn technical details about the MakeRotationFromYawPitchRollRadians function.
-Makes a `rotation` by applying a pre-rotation of `YawAngle` followed by `PitchAngle` and then `RollAngle`, in that order:
-  * _yaw_ is right-handed rotation about the Down axis,
-  * _pitch_ is right-handed rotation about the Right axis,
-  * _roll_ is right-handed rotation about the Forward axis.
-
+# (Rotation:rotation).GetAxis extension
+Learn technical details about the (Rotation:rotation).GetAxis extension.
+Makes a `vector3` from the axis of `rotation` for an right-handed angle. If `rotation` is nearly identity, this will return the +Forward axis. See also `GetAngleRadians`.
 |
 ---|---
 Verse `using` statement | `using { /Verse.org/SpatialMath }`
-`MakeRotationFromYawPitchRollRadians<public>(YawAngle:float, PitchAngle:float, RollAngle:float)<reads><computes>:`[`rotation`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/spatialmath/rotation)
+`(Rotation:rotation).GetAxis<public><native>()<reads>:`[`vector3`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/spatialmath/vector3)
 ## Parameters
-`MakeRotationFromYawPitchRollRadians` takes the following parameters:
+`GetAxis` takes the following parameters:
 Name | Type | Description
 ---|---|---
-`YawAngle` | `float` |
-`PitchAngle` | `float` |
-`RollAngle` | `float` |
+`Rotation` | `rotation` |
 ## Attributes, Specifiers, and Effects
+The following attributes, specifiers, and effects determine how you can interact with `GetAxis` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 ### Specifiers
-The following specifiers determine how you can interact with `MakeRotationFromYawPitchRollRadians` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
+`native` | Indicates that the definition details of the element are implemented in C++. Verse definitions with the `native` specifier auto-generate C++ definitions that a developer can then fill out its implementation. You can use this specifier on classes, interfaces, enums, methods, and data.
 ### Effects
-The following effects determine how `MakeRotationFromYawPitchRollRadians` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
 `reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.
-`computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect.

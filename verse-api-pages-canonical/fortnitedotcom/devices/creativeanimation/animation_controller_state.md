@@ -1,21 +1,29 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creativeanimation/animation_controller_state
 
-# animation_controller_state enumeration
-Learn technical details about the animation_controller_state enumeration.
-`animation_controller` states.
+# SetNextItem function
+Learn technical details about the SetNextItem function.
+Sets the next item to be granted.
+  * `Index` should be between `0` and the available item count - 1.
+  * Calling `SetNextItem` with an invalid index will do nothing.
+
 |
 ---|---
-Verse `using` statement | `using { /Fortnite.com/Devices/CreativeAnimation }`
-## Enumerators
-The `animation_controller_state` enumeration includes the following enumerators:
-Name | Description
+Verse `using` statement | `using { /Fortnite.com/Devices }`
+`SetNextItem<public>(Index:int)<transacts><no_rollback>:void`
+## Parameters
+`SetNextItem` takes the following parameters:
+Name | Type | Description
+---|---|---
+`Index` | `int` |
+## Attributes, Specifiers, and Effects
+### Specifiers
+The following specifiers determine how you can interact with `SetNextItem` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+Specifier | Meaning
 ---|---
-`InvalidObject` |  The target of the animation is not an animatable prop. This could be because:
-  * It is not a `creative_prop` that can be animated.
-  * It was disposed or otherwise destroyed.
-  * It has the 'Register with Structural Grid' option set in UEFN.
-
-`AnimationNotSet` |  No animation has been successfully set via `animation_controller.SetAnimation`, or that animation has been cleared by a failed call to `animation_controller.SetAnimation`.
-`Stopped` |  Animation has either never started, finished, or was explicitly stopped.
-`Playing` |  Animation is playing.
-`Paused` |  Animation is paused.
+`public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
+### Effects
+The following effects determine how `SetNextItem` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+Effect | Meaning
+---|---
+`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.
+`no_rollback` | This is the default effect when no exclusive effect is specified. The `no_rollback` effect indicates that any actions performed by the function cannot be undone and so the function cannot be used in a failure context. This effect cannot be manually specified.

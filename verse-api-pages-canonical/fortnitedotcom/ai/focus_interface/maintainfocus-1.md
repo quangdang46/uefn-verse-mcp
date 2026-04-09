@@ -1,11 +1,17 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ai/focus_interface/maintainfocus-1
 
-![Epic Games Logo](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ai/focus_interface/maintainfocus-1)
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
-  
-
-**Session ID** : 9dfa523c2ccd766d 
-**IP Address** : 14.191.95.176 
-
-
+# cubic_bezier_parameters struct
+Learn technical details about the cubic_bezier_parameters struct.
+A structure for defining Bezier interpolation parameters. See https://en.wikipedia.org/wiki/B%C3%A9zier_curve for more info on Bezier curves.
+|
+---|---
+Verse `using` statement | `using { /Fortnite.com/Devices/CreativeAnimation }`
+## Members
+This struct has data members, but no functions.
+### Data
+Data Member Name | Type | Description
+---|---|---
+`X0` | `float` |  X value of the P1 control point. `0.0 <= X0 <= 1.0` or an error will be generated when calling `animation_controller.SetAnimation`.
+`Y0` | `float` |  Y value of the P1 control point.
+`X1` | `float` |  X value of the P2 control point. `0.0 <= X1 <= 1.0 or an error will be generated when calling `animation_controller.SetAnimation`.
+`Y1` | `float` |  Y value of the P2 control point.

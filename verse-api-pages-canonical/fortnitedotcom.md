@@ -1,22 +1,12 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom
 
-# Fortnite.com module
-Learn technical details about the Fortnite.com module.
-  * **`Fortnite.com`**
-    * [`UI`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ui)
-    * [`Input`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/input)
-    * [`Itemization`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/itemization)
-    * [`AI`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ai)
-    * [`Devices`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices)
-      * [`InterpolationTypes`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creativeanimation/interpolationtypes)
-    * [`Marketplace`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/marketplace)
-    * [`Animation`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/animation)
-    * [`Characters`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/characters)
-    * [`FortPlayerUtilities`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/fortplayerutilities)
-    * [`Game`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/game)
-    * [`Playspaces`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/playspaces)
-    * [`Teams`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/teams)
-    * [`Vehicles`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/vehicles)
+# Playspaces module
+Learn technical details about the Playspaces module.
+Module import path: /Fortnite.com/Playspaces
+  * [`Fortnite.com`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom)
+  * **`Playspaces`**
 
-## Module Contents
-This module has no content other than submodules.
+## Interfaces
+Name | Description
+---|---
+[`fort_playspace`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/playspaces/fort_playspace) |  A nested container that scopes objects, style, gameplay rules, visuals, etc. All objects and players in an experience will belong to a fort_playspace. There is typically one `fort_playspace` for an entire experience, though this may change in the future as the platform evolves. To access the `fort_playspace` for a `creative_device` use `creative_device.GetPlayspace`.

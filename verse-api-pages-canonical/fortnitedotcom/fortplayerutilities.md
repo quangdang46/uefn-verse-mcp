@@ -3,7 +3,7 @@
 # FortPlayerUtilities module
 Learn technical details about the FortPlayerUtilities module.
 Module import path: /Fortnite.com/FortPlayerUtilities
-  * [`Fortnite.com`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom)
+  * [`Fortnite.com`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom)
   * **`FortPlayerUtilities`**
 
 ## Module Contents

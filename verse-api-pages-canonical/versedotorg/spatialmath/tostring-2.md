@@ -1,26 +1,24 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/spatialmath/tostring-2
 
-# ToString function
-Learn technical details about the ToString function.
-Makes a `string` representation of `V`.
+# (V:vector3).LengthSquared extension
+Learn technical details about the (V:vector3).LengthSquared extension.
+Returns the squared length of `V`.
 |
 ---|---
 Verse `using` statement | `using { /Verse.org/SpatialMath }`
-`ToString<public>(V:vector3)<reads><computes>:[]char`
+`(V:vector3).LengthSquared<public>()<computes>:float`
 ## Parameters
-`ToString` takes the following parameters:
+`LengthSquared` takes the following parameters:
 Name | Type | Description
 ---|---|---
 `V` | `vector3` |
 ## Attributes, Specifiers, and Effects
+The following attributes, specifiers, and effects determine how you can interact with `LengthSquared` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 ### Specifiers
-The following specifiers determine how you can interact with `ToString` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
 ### Effects
-The following effects determine how `ToString` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
-`reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.
 `computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect.

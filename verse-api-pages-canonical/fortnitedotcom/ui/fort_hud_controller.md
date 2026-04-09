@@ -1,50 +1,29 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ui/fort_hud_controller
 
-
-
-Table of Contents
-  1. ![Epic Games](https://edc-cdn.net/assets/images/logo-epic.svg)[Developer](https://dev.epicgames.com/)
-  2. [Documentation](https://dev.epicgames.com/documentation/ "Documentation")
-  3. Fortnite
-     * [](https://dev.epicgames.com/documentation/en-us/unreal-engine)
-     * [](https://dev.epicgames.com/documentation/en-us/fortnite)
-     * [](https://dev.epicgames.com/documentation/en-us/twinmotion)
-     * [](https://dev.epicgames.com/documentation/en-us/metahuman)
-     * [](https://dev.epicgames.com/documentation/en-us/realityscan)
-     * [](https://dev.epicgames.com/documentation/en-us/realityscan-mobile)
-     * [](https://dev.epicgames.com/documentation/en-us/fab)
-  4. fort_hud_controller interface
-
-
-# fort_hud_controller interface
-Learn technical details about the fort_hud_controller interface. 
-On this page
-A HUD controller that allows for showing and hiding of HUD elements.
-|   
----|---  
-Verse `using` statement | `using { /Fortnite.com/UI }`  
-## Members
-This interface has functions, but no data members.
-### Functions
-Function Name | Description  
----|---  
-[`ShowElements`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ui/fort_hud_controller/showelements) |  Shows a set of HUD elements for every player. Note: This can be overridden by rules set by 'ForPlayer' functions since player specific rules are prioritized over general rules.  
-[`HideElements`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ui/fort_hud_controller/hideelements) |  Hides a set of HUD elements for every player. Note: This can be overridden by rules set by 'ForPlayer' functions since player specific rules are prioritized over general rules.  
-[`ResetElementVisibility`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ui/fort_hud_controller/resetelementvisibility) |  Resets the visibility for a set of HUD elements for every player. Note: This will not clear player specific rules set by the 'ForPlayer' functions which can only be reset by calling 'ResetElementsForPlayer'.  
-[`ShowElementsForPlayer`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ui/fort_hud_controller/showelementsforplayer) |  Shows a set of HUD elements for a single player. Note: This overrides general rules set by non-player functions for the given elements. Call 'ResetElementsForPlayer' in order to return the player to general behavior  
-[`HideElementsForPlayer`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ui/fort_hud_controller/hideelementsforplayer) |  Hides a set of HUD elements for a single player. Note: This overrides general rules set by non-player functions for the given elements. Call 'ResetElementsForPlayer' in order to return the player to general behavior  
-[`ResetElementsForPlayer`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ui/fort_hud_controller/resetelementsforplayer) |  Resets the player-specific visibility rules of a set of HUD elements for a single player. Note: This will not reset rules that have been set by means other than the 'PerPlayer' functions.  
-  * [ api](https://dev.epicgames.com/community/search?query=api)
-  * [ interface](https://dev.epicgames.com/community/search?query=interface)
-
-
-* * *
-[Developer Forums](https://forums.unrealengine.com/categories?tag=fortnite)
-[Learning Library](https://dev.epicgames.com/community/fortnite/learning)
-On this page
-  * [Members](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ui/fort_hud_controller#members)
-  * [Functions](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ui/fort_hud_controller#functions)
-
-
-
-
+# BuyOffer function
+Learn technical details about the BuyOffer function.
+Displays the Epic purchase UI to the player to purchase the `Offer`. Returns true if an offer was purchased.
+|
+---|---
+Verse `using` statement | `using { /Fortnite.com/Marketplace }`
+`BuyOffer<public><native>(Player:player, Offer:offer)<transacts><suspends><no_rollback>:logic`
+## Parameters
+`BuyOffer` takes the following parameters:
+Name | Type | Description
+---|---|---
+`Player` | `player` |
+`Offer` | `offer` |
+## Attributes, Specifiers, and Effects
+### Specifiers
+The following specifiers determine how you can interact with `BuyOffer` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+Specifier | Meaning
+---|---
+`public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
+`native` | Indicates that the definition details of the element are implemented in C++. Verse definitions with the `native` specifier auto-generate C++ definitions that a developer can then fill out its implementation. You can use this specifier on classes, interfaces, enums, methods, and data.
+### Effects
+The following effects determine how `BuyOffer` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+Effect | Meaning
+---|---
+`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.
+`suspends` | Indicates that the function is async. Creates an async context for the body of the function.
+`no_rollback` | This is the default effect when no exclusive effect is specified. The `no_rollback` effect indicates that any actions performed by the function cannot be undone and so the function cannot be used in a failure context. This effect cannot be manually specified.

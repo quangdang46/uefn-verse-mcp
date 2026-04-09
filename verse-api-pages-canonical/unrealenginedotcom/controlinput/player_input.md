@@ -1,11 +1,16 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/controlinput/player_input
 
-![Epic Games Logo](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/controlinput/player_input)
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
-  
-
-**Session ID** : 9dfa41719c5b1fc8 
-**IP Address** : 14.191.95.176 
-
-
+# player_input class
+Learn technical details about the player_input class.
+This is the main manager class for input-related settings and functions for a player.
+|
+---|---
+Verse `using` statement | `using { /UnrealEngine.com/ControlInput }`
+## Members
+This class has functions, but no data members.
+### Functions
+Function Name | Description
+---|---
+[`AddInputMapping`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/controlinput/player_input/addinputmapping) |
+[`RemoveInputMapping`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/controlinput/player_input/removeinputmapping) |
+[`GetInputEvents`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/controlinput/player_input/getinputevents) |

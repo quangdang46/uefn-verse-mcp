@@ -1,16 +1,5 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/spatialmath/vector3
 
-# vector3 struct
-Learn technical details about the vector3 struct.
-3-dimensional vector with `float` components.
-|
----|---
-Verse `using` statement | `using { /Verse.org/SpatialMath }`
-## Members
-This struct has data members, but no functions.
-### Data
-Data Member Name | Type | Description
----|---|---
-`Left` | `float` |  The Left (was -Y) component of this vector.
-`Up` | `float` |  The Up (was Z) component of this vector.
-`Forward` | `float` |  The Forward (was X) component of this vector.
+# 404
+### Page not found
+The page you were looking for was not found. Please verify the link / URL or try starting back at our home page.

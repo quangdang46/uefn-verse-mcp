@@ -1,11 +1,15 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/scenegraph/findancestorentitieswithtag
 
-![Epic Games Logo](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/scenegraph/findancestorentitieswithtag)
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
-  
-
-**Session ID** : 9dfa4aebdd20095d 
-**IP Address** : 14.191.89.252 
-
-
+# float_range struct
+Learn technical details about the float_range struct.
+A range with a minimum and maximum value. For a value to fall inside of this range, the min value must be less than or equal to the max value.
+|
+---|---
+Verse `using` statement | `using { /Verse.org/SceneGraph }`
+## Members
+This struct has data members, but no functions.
+### Data
+Data Member Name | Type | Description
+---|---|---
+`Minimum` | `float` |
+`Maximum` | `float` |
