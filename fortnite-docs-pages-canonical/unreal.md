@@ -1,3 +1,7 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/unreal
 
-**No document** The document you're looking for does not exist in this version. You have been redirected to the closest page.
+# One more step
+Please complete a security check to continue
+Verification successful. Waiting for dev.epicgames.com to respond
+**Session ID** : 9e9c6df37a7202be
+**IP Address** : 14.191.95.176

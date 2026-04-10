@@ -1,160 +1,242 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/making-cinematics-3-camera-movement-and-framing-in-unreal-editor-for-fortnite
 
-# Camera Movement and Framing
-Discover how camera movement and framing creates satisfying and thoughtful cinematics for your game.
-![Camera Movement and Framing](https://dev.epicgames.com/community/api/documentation/image/ed4b57a5-104c-4cd1-851f-52b9a8db840e?resizing_type=fill&width=1920&height=335)
-Camera movement and framing are important for moving the story forward, revealing information, and engaging the player in your world. Deciding the type of game you’re creating early on can help you decide what type of camera angle to use and how you want your cinematic to be shot. UEFN has different [camera device options](https://dev.epicgames.com/documentation/en-us/fortnite/gameplay-camera-and-control-devices-in-unreal-editor-for-fortnite) to capture gameplay or Level Sequences.
-##  Camera Movement
-There are a number of camera movements you can perform in UEFN, most can be accomplished using the [Camera Rig Rails and Rig Crane](https://dev.epicgames.com/documentation/en-us/fortnite/camera-rig-rail-and-rig-crane-in-unreal-editor-for-fortnite):
-  * **Panning**
-  * **Tilt**
-  * **Dolly**
-  * **Truck**
-  * **Boom / Jib**
-  * **Roll**
-  * **Tracking Shot**
+# Team Settings and Inventory Devices
+Use this device to customize the settings and starting inventory for one or more teams.
+![Team Settings and Inventory Devices](https://dev.epicgames.com/community/api/documentation/image/7751fc96-ffe6-4edc-b9db-9b677e6a6dc9?resizing_type=fill&width=1920&height=335)
+The **Team Settings & Inventory** device is important for most team-based games. It provides team and inventory configurations that go beyond the choices the [Island Settings](https://dev.epicgames.com/documentation/fortnite/understanding-island-settings-in-fortnite-creative) give you. You can also use this to customize individual devices, and create variations in team setup.
+There is a hierarchy of setting overrides, described as follows:
+  * **Island Settings** are the baseline.
+  * **Team Settings & Inventory** overrides Island Settings if there is a specific value set in the device.
+  * **Class Designer** overrides both Team Settings & Inventory and Island Settings, if there is a specific value set in the device that differs from the Island Settings or Team Settings & Inventory values.
 
-The video below illustrates the different axes a camera’s movement can take. The X-axis is from side-to-side in the frame, the Y-axis is the foreground and background of the frame, and the Z-axis is from the top and bottom of the frame.
-These movements can be used in conjunction with the [camera shake effect](https://dev.epicgames.com/documentation/en-us/fortnite/camera-shake-effect-in-unreal-editor-for-fortnite) to add urgency or danger to a cinematic.
-Check out the Unreal Engine documentation to learn more about how to use [**Sequencer**](https://docs.unrealengine.com/5.0/en-US/cinematics-and-movie-making-in-unreal-engine/), [**camera actors**](https://docs.unrealengine.com/5.0/en-US/cinematic-cameras-in-unreal-engine/), and the [**rig systems**](https://docs.unrealengine.com/5.0/en-US/camera-jibs-and-dollies-in-unreal-engine/).
-###  Panning
-Panning means the camera remains stationary as it sweeps horizontally either left or right around the X-axis. This can be used with a wide shot for a dramatic effect to show the terrain, a boss level, or the result of a fight.
-In this video, panning is used to show the player the starting area of the race. The camera pans from the stadium over to the motorcycles and circles the bikes to show the player how many racers are in the game.
-**COMMON USES:**
-  * Show upcoming obstacles in an unassuming way.
-  * Reveal terrain to create the player’s readiness for the journey ahead.
-  * Show racetrack terrain to prepare the player for obstacles, turns and more.
-  * Juxtapose the player against the upcoming stages of the level to give an idea of perspective and length of the level.
-  * Keeps players engaged without drawing their attention away from the gameplay.
+To find the Team Settings & Inventory device, go to the Creative inventory and select the Devices tab. From there you can search or browse for the device. For more information on finding devices see [Finding and Placing Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
+If you're using multiple copies of a device on an island, it can be helpful to [rename](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#rename-a-device) them. You can choose names that relate to each device's purpose, so it's easier to remember what each one does.
+##  Device Options
+When this device is placed, the device uses settings inherited from the Island Settings in its default state. Because of this, it has no effect on the game until you customize it.
+This device has some basic functionality, like setting max [health](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#health) and max [shields](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#shield), as well as setting a spawn limit. Additionally, there are some advanced options, like how much [resource](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#resource) or [score](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#score) a player is granted when they eliminate another player.
+Default values are **bold**. Values that trigger contextual filtering are _italic_.
+###  General Options
+You can configure these options for this device under the **General** category.
+Option  |  Value  |  Description
+---|---|---
+**Team Name** |  Enter a name |  Type a name for the team in the text field. The text field has a character limit of 24 characters.
+**Team Description** |  Enter text |  Type a description for the team in the text field. The text field has a character limit of 512 characters.
+**Team** |  **All** , Pick or enter a team  |  Specifies which team the settings on this device apply to.
+**Team Color** |  **Don't Override,** Pick a color  |  Determines whether the game uses the default color for the team, or if it uses the color you pick here.
+**Team Icon** |  **None** , Pick an icon  |  Determines the icon used for the team. Click the icon to open the Icon Library Picker. You can scroll through the icons to find one, or you can type a word into the search bar at the top and click the Search button. Select an icon, then click the checkmark.  [![](https://dev.epicgames.com/community/api/documentation/image/e08b5d0c-db33-4556-9a01-3ba1afee982a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e08b5d0c-db33-4556-9a01-3ba1afee982a?resizing_type=fit)
+**Default Class Identifier** |  **Don't Override,** None, Pick a class number  |  Defines the default class assigned to players at the start of the game, or if a player's chosen class is reset.
+  * **Don't Override:** Classes keep the default [class identifier](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#class-identifier) defined in the [Class Designer](https://dev.epicgames.com/documentation/fortnite/using-class-designer-devices-in-fortnite-creative) device or island settings.
+  * **None:** There is no default class.
+  * **Class Number:** Override the default class identifier defined in the [Class Designer](https://dev.epicgames.com/documentation/fortnite/using-class-designer-devices-in-fortnite-creative) device or island settings, and assign the selected class identifier instead.
 
-**FRAMING A PANNING SHOT:**
-  * Wide shot is best for terrain and landscape shots.
-  * High shots provide a look around while keeping the subject in focus in the shot.
-  * Point of View shots can reveal secrets that the player needs to continue playing.
+**Max Initial Team Size** |  **Don't Override,** Unlimited, Pick a team size |  Determines the maximum team size at the start of the game. During the game, more players can be added to this team using the After Last Spawn Go To option.
+**Initial Team Size Ratio** |  **Don't Override,** Pick an amount |  Determines number of players to be placed in this team at the start of the game, relative to the size of other teams. This is capped by the number set in the Max Initial Team Size option.
+###  Player Options
+You can configure these options for this device under the **Player** category.
+|  |
+---|---|---
+Options |  Value |  Description
+Inventory  |  |
+**Grant Items On Respawn** |  Yes, **No** |  Determines whether the device grants its items when players on this team respawn.
+**Grant Condition** |  **Always** , Only When Empty |  Determines whether the device grants its items to a player when they respawn, or only if the player's inventory is empty. For this to be used, the Grant Items On Respawn option must be set to Yes.
+**On-Grant Behavior** |  **Clear All** , Clear Items, Keep All |  Determines what happens to the player's inventory when the player respawns.
+**Equip Granted Item** |  **Don't Equip** , Pick an item |  If the device grants items to the player, this determines which items (listed in order) should be equipped. If you choose an item slot that is higher than the total number of items in the device, the device grants the last item in the list.
+**Initial Weapon Ammo** |  **Don't Override** , Pick or enter an amount |  Sets the amount of ammunition loaded in the weapon when granted, limited by the weapon's magazine size.
+**Spare Weapon Ammo** |  **Don't Override** , Pick or enter an amount |  Sets how much spare ammunition is added to the player's inventory when a weapon is granted. Default provides ammo based on the ammo type used by the weapon.
+**No Cooldowns After Use** |  **Don't Override** , On, Off |  Determines whether players have no cooldown on weapons and abilities during the game. This does not affect cooldowns prevented by the No Cooldowns After Swap setting.
+**No Cooldowns After Swap** |  **Don't Override** , On, Off |  Determines whether players have no cooldown after swapping weapons or items during the game.
+**Infinite Reserve Ammo** |  **Don't Override** , On, Off |  Determines whether players have infinite reserve ammunition during the game. If you have a Class Designer device, the options for that device can override this.
+**Infinite Magazine Ammo** |  **Don't Override** , On, Off |  Determines whether players have infinite magazine ammunition during the game.
+**Infinite Charges** |  **Don't Override** , On, Off |  Determines whether players have infinite charges for weapons and abilities during the game.
+**Infinite Reserve Energy** |  **Don't Override** , On, Off |  Determines if players have infinite reserve energy for weapons and abilities during the game.
+**Infinite Loaded Energy** |  **Don't Override** , On, Off |  Determines whether players have infinite loaded energy for weapons and abilities during the game.
+**Infinite Durability** |  **Don't Override** , On, Off |  Determines if players have infinite durability for weapons and items during the game.
+**Infinite Consumables** |  **Don't Override,** On, Off |  Determines whether players have infinite consumable items (such as grenades, health items, traps, and so on).
+**Infinite Building Resources** |  **Don't Override** , On, Off |  Determines whether player building resources are infinitely available in-game.
+**Infinite Gold** |  **Don't Override** , On, Off |  Determines whether players have infinite gold during the game.
+**Infinite World Resources** |  **Don't Override** , On, Off |  Determines whether players have infinite world resources during the game.
+**Eliminated Player's Items** |  **Don't Override,** Drop, Keep, Delete |  Determines what happens to the player's items when the player is eliminated. If you have a Class Designer device, the options for that device can override this. Values for this option are:
+  * **Don't Override:** This device does not affect eliminated player items.
+  * Drop: Items are dropped on the ground. Other players can pick them up.
+  * Keep: Player keeps items.
+  * **Delete:** Items are removed from the game.
 
-###  Tilt
-Keep the camera stationary as you tilt the camera up and down the Z-axis. A tilt is effective for showing how high an objective is, or where a player needs to travel to accomplish a goal. You can frame a camera tilt using the point of view of the [character](https://dev.epicgames.com/documentation/en-us/fortnite/unreal-editor-for-fortnite-glossary#character), over the character’s shoulder, or with the character in a medium shot.
-In this video, the tilt of the camera is used to show the point of view of a character looking for the player. The camera uses a long frame to provide more visual stimulation and information about where the character is traveling.
-**COMMON USES:**
-  * Reveal a boss in a boss fight sequence with a slow tilt to increase anticipation of the fight ahead.
-  * Illustrate the height of a drop to increase the player’s sense of dread or show the height of an obstacle amping the player’s excitement for the level.
-  * Reveal a secret that would have gone unnoticed.
-  * Shows the scale of the path ahead.
+**Eliminated Player's Resources** |  **Don't Override,** Drop, Keep, Delete |  Determines what happens to a player's resources when the player is eliminated. If you have a Class Designer device, the options for that device can override this. Values for this option are:
+  * **Don't Override:** This device does not affect eliminated player resources.
+  * **Drop:** Resources are dropped on the ground. Other players can pick them up.
+  * **Keep:** Player keeps resources.
+  * **Delete:** Resources are removed from the game.
 
-**FRAMING A TILT SHOT:**
-  * A low and tight shot is typically used to reveal a foe.
-  * A medium or long shot can be used effectively to examine obstacles in a level.
-  * A point of view shot can mimic a character examining a part of a room or an object in the level.
+**Eliminated Player's Game Resources** |  **Don't Override,** Drop, Keep, Delete |  Determines what happens to a player's game resources when the player is eliminated. If you have a Class Designer device, the options for that device can override this.
+  * **Don't Override:** This device does not affect eliminated player resources.
+  * **Drop:** Resources are dropped on the ground. Other players can pick them up.
+  * **Keep:** Player keeps resources.
+  * **Delete:** Resources are removed from the game.
 
-###  Dolly
-The camera remains stationary as it moves forward and backward on the Y-axis. This can be accompanied by the camera lens zooming in or out depending on what you’re trying to capture in your shot. This type of movement can be used with a number of framing shots, such as a wide shot, extreme close up, or a tight close up.
-This is a great way to show players what’s important in a level or focus on the player in the level as they prepare to start the game. In the video the camera slowly moves toward the box office, with the color palette the scene feels warm and the shot increases the feelings of anticipation.
-**COMMON USES:**
-  * An artistic way to reveal set dressing, characters, obstacles, or terrain.
-  * Following a player as they transition from one level to another can be a satisfying way to mollify the player’s curiosity.
-  * Following the player into action, whether it’s a fight or flight sequence can create a feeling of anticipation.
-  * A beginning sequence that either moves toward or away from the player can meet or exceed a player’s expectations for the start of the game.
-  * A Reverse Dolly can be used to illustrate isolation, and heighten the player’s sense of fear.
-  * A Parallax Dolly shot moves slowly with the player or NPC which can intensify suspense and immersion in a horror game.
+**Allow Item Drop** |  **Don't Override,** Yes, No |  Determines if players can drop items from their inventory during the game. If you have a Class Designer device, the options for that device can override this.
+**Display Empty Ammo Slots** |  **Don't Override,** Yes, No |  Determines whether empty ammo slots are shown in the player's inventory.
+Equipment  |  |
+**Start With Pickaxe** |  **Don't Override,** No, Yes |  Determines whether or not players start the game with a pickaxe.
+**Instant Reload** |  **Don't Override,** On, Off |  Determines whether weapons ignore their normal reload time and reload instantly instead. If you have a Class Designer device, the options for that device can override this.
+**Maximum Equipment Slots** |  **Don't Override,** None, Pick a number |  Set the maximum number of equipment slots a player can have during the game.
+Health  |  |
+**Invincibility** |  **Don't Override,** On, Off |  Determines if players should spawn with invincibility. If this is set to Don't Override or Off, the Starting Health Percentage option is displayed below this one.
+**Starting Health Percentage** |  **Don't Override,** Pick or enter an amount |  This option only displays if the Invincibility option is set to Don't Override or Off. Determines how much health a player has when they spawn.
+**Max Health** |  **Don't Override,** Pick or enter an amount |  Determines the maximum amount of health players can have during the game. If you have a Class Designer device, the options for that device can override this.
+**Allow Heath Recharge** |  **On** , Off |  Determine if health recharge is available or not. Health recharge allows player health to regenerate over time.
+**Health Recharge Period** |  **6.5 seconds** , Pick or enter a number |  When the **Allow Health Recharge** option is set to Yes, this option becomes available. Determines the tick period of the health recharge.
+Shields  |  |
+**Starting Shield Percentage** |  **Don't Override,** Pick or enter an amount |  Determines the player's shield value when they spawn.
+**Max Shields** |  **Don't Override,** Pick or enter a number |  Determines the maximum shield value a player can reach during the game.
+**Allow Shield Recharge** |  On, **Off** |  Determines if shield recharge is available or not. Shield recharge allows player shields to regenerate over time.
+**Shield Recharge Period** |  **1.0 seconds** , Pick or enter a number |  Determines the tick period that shields recharge.
+**Allow Overshield** |  **Don't Override,** On, Off |  Determines whether the Overshield feature is available.
+**Overshield Max** |  **Don't Override,** Pick or enter an amount |  This only displays if you have set the Overshield: More Options option to Show. Determines the maximum amount of Overshield a player can have. If you set an amount here, it will override any amount set in the Island Settings.
+**Overshield Recharge Delay** |  **Don't Override,** Pick or enter an amount |  This only displays if you have set the Overshield: More Options option to Show. The Overshield starts to recharge after this amount of time if the player takes no damage during the delay. If you set the delay here, it will override the delay set in the Island Settings.
+**Overshield Recharge Rate** |  **Don't Override,** Pick or enter an amount |  This only displays if you have set the Overshield: More Options option to Show. Determines how much the Overshield recharges each second, after the recharge delay has ended. If you set the recharge amount here, it will override the recharge amount in the Island Settings.
+**Overshield Recharge Period** |  **Don't Override,** Pick or enter an amount |  This only displays if you have set the Overshield: More Options option to Show. Determines the tick period of time the Overshield recharges at .
+Locomotion  |  |
+**Movement Multiplier** |  **Don't Override,** Pick or enter a multiplier |  Sets a value that is multiplied by the player's base movement speed. This defaults to 1. Numbers lower than 1 will make players move slower, numbers higher than 1 will make the player move faster.
+**Allow Sprinting** |  **Don't Override,** On, Off |  Determines whether the Sprinting feature is available.
+**Sprinting Energy Cost Per Second** |  **Don't Override,** Pick or enter an amount |  This only displays if you have set the Sprinting: More Options option to Show. Determines how fast Sprinting Energy is drained each second while a player is sprinting. If you set the energy cost here, it will override the energy cost set in the Island Settings.
+**Sprinting Jump Multiplier** |  **Don't Override,** Pick or enter a multiplier |  This only displays if you have set the Sprinting: More Options option to Show. Determines how much higher or farther players jump when sprinting, as a multiple of normal jump height or length. If you set the jump multiplier here, it will override the jump multiplier set in the Island Settings.
+**Sprinting Speed Multiplier** |  **Don't Override,** Pick or enter a multiplier |  This only displays if you have set the Sprinting: More Options option to Show. Determines how fast a player moves when sprinting, as a multiple of their speed when not sprinting. If you set the sprint speed here, it will override the sprint speed set in the Island Settings.
+**Energy Max** |  **Don't Override,** Pick or enter an amount |  Determines how much Energy is available to the player. This affects Sprinting, as well as other abilities that use Energy.
+**Energy Recharge Amount** |  **Don't Override,** Pick or enter an amount |  When Energy begins to recharge, this determines the amount of Energy recharged each second.
+**Energy Recharge Delay** |  **Don't Override,** Pick or enter a time |  After a player stops using Energy, this sets the length of delay before the player's Energy begins to recharge.
+**Allow Sliding** |  **Don't Override,** On, Off |  Determines whether the Sliding feature is available.
+**Allow Slide Kick** |  **Don't Override,** On, Off |  Determines whether sliding players can use the Slide Kick to impact and knock away players on an opposing team.
+**Allow Shoulder Bashing** |  **Don't Override** , On, Off |  Determines whether the Shoulder Bashing feature is available.
+**Fall Damage** |  **Don't Override,** On, Off |  Determines whether players are affected by fall damage during the game. If you have a Class Designer device, the options for that device can override this.
+**Gravity** |  **Don't Override,** Very Low, Low, Normal, High, Very High |  Changing the Gravity affects how high players can jump, as well as how much damage players take when they fall. If you have a Class Designer device, the options for that device can override this.
+**Jump Fatigue** |  **Don't Override** , On, Off |  Determines whether continuous jumping applies a penalty to jump height. If you have a Class Designer device, the options for that device can override this.
+**Player Flight** |  **Don't Override** , On, Off |  Determines whether players can fly during the game. If you have a Class Designer device, the options for that device can override this.
+**Allow Mantling** |  **Don't Override,** On, Off |  Determines whether the Mantling feature is available.
+**Mantling Minimum Height** |  **Don't Override,** Very Low, Low, Normal, High |  This only displays if you have set the Show More Options: Mantling option to Show. Determines the lowest height at which a player can use mantling on a ledge. You might want to adjust this value if gravity or other factors affect mantling.
+**Mantling Minimum Height In Water** |  **Don't Override,** Very Low, Low, Normal, High |  This only displays if you have set the Show More Options: Mantling option to Show. Determines the lowest height at which a player can mantle from the water. You might want to adjust this value if gravity or other factors affect mantling.
+**Allow Vaulting** |  **Don't Override** , On, Off |  Determines if players can vault over low obstacles. If you choose On, players will vault over obstacles automatically if they are sprinting toward the obstacle.
+**Glider Redeploy** |  **Don't Override** , On, Off |  Determines whether players can freely deploy gliders without using an item item. If you have a Class Designer device, the options for that device can override this.
+Building  |  |
+Pickups  |  |
+Self Damage  |  |
+**Allow Building** |  **Don't Override** , None, All, Traps Only, No Traps |  Determines whether players can build or place traps. If you have a Class Designer device, the options for that device can override this.Values for this option are:None: The player can neither build nor place traps.All: The player can build or place traps, if they have the required resources.Traps Only: The player cannot build, but can place traps.No Traps: The player can build, but not place traps.
+**Maximum Building Resources** |  **Don't Override** , Pick an amount |  Sets the maximum amount of resources a player can carry during the game. If you have a Class Designer device, the options for that device can override this.
+**Self-Damage On Hit Amount** |  **Don't Override** , Pick an amount |  Sets the amount of damage players deal to themselves when they hit something else.
+**Self-Damage Only On Non-Zero Damage** |  **Don't Override** , Yes, No |  Determines whether or not the player only receives self-damage when the player inflicts non-zero damage to something else.
+**Self-Damage Target Filter** |  **Don't Override** , Non-Players, Players Only, All |  Specifies which targets cause self-damage when hit.
+**Self-Damage Weapon Filter** |  **Don't Override** , Pickaxe Only, Melee Only, Ranged Only, All |  Determines which weapons can inflict self-damage.
+**Allow Item Pick Up** |  **Don't Override** , Yes, No |  Determines whether players can pick up items during the game. If you have a Class Designer device, the options for that device can override this.
+###  In-Game Interface Options
+You can configure these options for this device under the **In-Game Interface** category.
+|  |
+---|---|---
+Options |  Value |  Description
+Nameplate  |  |
+**Always Show Name Plates** |  **Don't Override** , Always Show to Team, Always Show to All, Always Hide, No |  Determines whether players names and locations can be seen by other players.
+**Name Plate Max Distance** |  **Don't Override,** pick a distance. |  If set to a number, player name plates will disappear if that player is further away than that distance from the camera.
+**Name Plate Line of Sight** |  **Don't Override** , Always Show, Hide Behind Obstacles |  If set, the name plates are hidden whenever a player is obstructed by an obstacle. If this is set to Hide Behind Objects, an additional option displays below this one.
+**Focus for Name Plates** |  **No** , Only Hostile, Always show to all |  Defines if you need to be looking at a player for their name plate to appear.
+**Focus Angle** |  **Don't Override** , Pick or enter an angle |  When focusing, this is the maximum angle a player can be from the look direction of another player in order to be valid for focusing.
+**Focus Time** |  **Don't Override** , Pick or enter an amount |  How long you need to focus on a player for their name plate to be visible.
+**Show Voice Indicator** |  **Don't Override** , Don't Override Show Name Plates, Always Show to Team, Always Show to Hostiles, Always Show to All, Disable |  Determines whether the voice indicator can be seen on a player's name plate. Can be used to control the voice indicator and name plate separately.
+**Show Player Health Indicator** |  **Don't Override** , Team Only, Enemies, Anyone, Never |  Determines who can see the health indicators over players' heads. If you have a Class Designer device, the options for that device can override this.
+**Limit Name Plate Max Distance** |  **Don't Override** , Yes, No |  Determines if name plates should disappear based on distance from the camera.
+HUD  |  |
+**Display Health for All Players** |  **Don't Override** , Yes, No |  Determines whether all players get a health bar displayed on the HUD for this team or class. If this is enabled for a team with more than one player, or enabled for multiple teams, this will only display the health of one player at a time. If you have a Class Designer device, the options for that device can override this.
+**Wood Resource Widget Is Visible** |  **Don't Override** , Yes, No |  If this is set to Yes, players can see the wood resource widget.
+**Stone Resource Widget Is Visible** |  **Don't Override** , Yes, No |  If this is set to Yes, players can see the stone resource widget.
+**Metal Resource Widget Is Visible** |  **Don't Override** , Yes, No |  If this is set to Yes, players can see the metal resource widget.
+**Gold Resource Widget Is Visible** |  **Don't Override** , Yes, No |  If this is set to Yes, players can see the gold resource widget.
+###  Mode Options
+You can configure these options for this device under the **Mode** category.
+|  |
+---|---|---
+Options |  Value |  Description
+Eliminations  |  |
+**Down But Not Out** |  **Don't Override** , Default, On, Off |  Determines whether the player can be put into the **Down But Not Out** state. If you choose Default, this will be determined automatically depending on team size. If you have a **Class Designer** device, the options for that device can override this.
+**Drop Reboot Card on Elimination** |  **Don't Override** , On, Off |  Determines if a player drops a Reboot Card when they are eliminated. Reboot Cards only drop if the eliminated player has a teammate eligible to use a Reboot Van.
+**Health Granted On Elimination** |  **Don't Override** , Pick an amount |  Specifies how much health the player gets when they eliminate another player. Any health awarded above the player's **Max Health** value is awarded as shields instead.
+**Wood Granted On Elimination** |  **Don't Override** , Pick an amount |  Specifies how much wood the player gets when they eliminate another player.
+**Stone Granted On Elimination** |  **Don't Override** , Pick an amount |  Specifies how much stone the player gets when they eliminate another player.
+**Metal Granted On Elimination** |  **Don't Override** , Pick an amount |  Specifies how much metal the player gets when they eliminate another player.
+Gold Granted On Elimination |  **Don't Override** , Pick an amount |  Specifies how much gold the player gets when they eliminate another player.
+Spawning  |  |
+**Respawn Time** |  **Don't Override** , Pick or enter an amount of time |  Determines the amount of time (in seconds) the player must wait after being eliminated before they are respawned back into the game. If you have a **Class Designer** device, the options for that device can override this.
+**Only Allow Respawning If Spawn Pads Found** |  **Don't Override** , No, Yes |  If you choose Yes, players can only respawn if there is a spawn pad available.
+**Respawn Type** |  **Don't Override** , Individual, Wave |  Changing the respawn type to Wave causes all eliminated team members during a certain window to respawn together. Set the time in the Respawn Time option.
+**Spawn Limit** |  **Don't Override** , Infinite, Pick a number |  Determines the number of times the player can spawn into the game, including the initial spawn at the start of the game. If you choose 1 it means the player can't respawn after they are eliminated. If you have a **Class Designer** device, the options for that device can override this.
+**After Last Spawn Go To** |  **Don't Override** , Spectator, Pick a team |  Determines which team a player joins after they use all of their permitted spawns.
+**Spawn Location** |  **Don't Override** , Spawn Pads, Sky, Current Location, Do Not Spawn |  Determines where the player will spawn when the game starts. If you have a Class Designer device, the options for that device can override this. Values for this option are:
+  * **Don't Override:** This device does not affect spawn location.
+  * **Spawn Pads:** Players spawn on designated spawn pads.
+  * **Sky:** Up in the air where the player will parachute down.
+  * **Current Location:** Where the player is currently located.
+  * **Do Not Spawn:** The player is not spawned.
 
-**FRAMING A DOLLY SHOT:**
-  * Tightly framed Dolly shots are effective in horror games because they focus more on the player and increase the suspense of the gameplay.
-  * A wide or long shot that moves slowly and uses temperature can enforce hot or cold feelings in a scene.
+**Override Spawn Immunity Time** |  **Don't Override** , Yes, No |  Determines if the invulnerability time granted to a player after respawn should be overridden. If this is set to Yes, an additional option displays below this one.
+**Spawn Immunity Time** |  **Don't Override** , Default, None, Pick or enter an amount of time |  This option only displays if the Override Spawn Immunity Time option is set to Yes. Determines how long invulnerability is granted to a player when they respawn.
+**Spawn Event Activates for AI** |  **On** , Off |  Determines if the On Team Member Spawned event will activate for AI that are on the device's team.
+**Spawn Event Activates for Players** |  **On** , Off |  Determines if the **On Team Member Spawned** event will activate for players that are on the device's team.
+**Respawn Alive Players** |  Yes, No |  Determines if players who are alive also respawn when the Respawn at Player Spawner function is triggered.
+Victory Condition  |  |
+**Win on Time Out** |  **Don't Override** , Yes, No |  Sets the win condition for the team to be when the game ends by running out of time.
+Scoring  |  |
+**Use Team Score** |  **Don't Override** , Yes, No |  Determines whether a team gains score with its players, or whether the team score uses a sum of its players' scores. If you choose Yes, the team retains its score even if a player leaves the team or the game.
+**Elimination Score** |  **Don't Override** , Pick an amount |  Sets the amount of score awarded to a player on this team when they eliminate another player.
+**Assist Score** |  **Don't Override** , Pick an amount |  Sets the amount of score awarded to a player on this team when they assist in eliminating another player.
+Team Settings  |  |
+**Allow Friendly Fire** |  **Don't Override** , Yes, No |  Determines whether or not a player can damage another player on their team.
+**Allow Impulsing Teammates** |  On, Off |  Determines whether teammates can use impulses such as Shockwave Grenades or Shove on each other.
+**Dynamic Team Emotes** |  **Don't Override** , Yes, No |  Determines whether players on a team can use emotes to extend team invites to other players.If this is set to Enabled, a two-person emote will be added to players' collection. Players can press and hold B, then click Manage Teams to select the team invite emote.
+**Dynamic Team Leave** |  **Don't Override** , Yes, No |  This setting is only editable if the **Dynamic Team Emotes** option is set to Enabled. Determines whether players invited to a team can leave it using emotes.  If this is set to Enabled, an emote is added to the player's collection that can be used to leave the player's current team. Players can press and hold B, then click Manage Teams to select the Leave Team emote.
+###  Round Options
+You can configure these options for this device under the **Round** category.
+|  |
+---|---|---
+Options |  Value |  Description
+End Condition  |  |
+**Eliminations To End** |  **Don't Override** , Off, Pick a number |  Causes the round to end when this team has gotten the chosen number of eliminations.
+**Creature Eliminations To End** |  **Don't Override** , Off, Pick a number |  Causes the round to end when this team has destroyed the chosen number of creatures.
+**Objectives To End** |  **Don't Override** , Off, Pick a number |  Causes the round to end when this team has completed the chosen number of objectives.
+**Collect Items To End** |  **Don't Override** , Off, All, Pick a number |  Causes the round to end when this team has collected the chosen number of collectible objects.
+**Collect Item Count to End** |  **1** , Pick a number. |  Requires **Collect Items to End** to be overridden and set to **Specific Count**.  Causes the round to end when the selected team has acquired the specific number of Collectible objects.
+**Score To End** |  **Don't Override** , Off, Pick a number |  Causes the round to end when this team has achieved the chosen score.
+###  World Options
+You can configure these options for this device under the **World** category.
+|  |
+---|---|---
+Options |  Value |  Description
+Harvesting  |  |
+**Harvest Multiplier** |  **Don't Override** , Pick a multiplier |  Determines the rate at which players can harvest resources from world objects. If you have a Class Designer device, the options for that device can override this.
+###  User Options
+You can configure these options for this device under the **User Options** category.
+Option  |  Value  |  Description
+---|---|---
+**item Definition** |  Pick an item definition asset |  Choose and item definition to assign.
+**Item Quantity** |  **1** , pick an amount. |  Assign a quantity to the assigned item definition.
+##  Direct Event Binding
+Direct event binding allows devices to communicate directly, which makes your workflow more intuitive, and gives you more freedom to focus on your design ideas.
+Below are the following direct event binding options for this device.
+###  Functions
+A [function](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) listens for an event on a device then performs an action.
+  1. For any function, click the **option** , then **Select Device** to access and select from the **Device dropdown menu**.
+  2. Once you've selected a device, click **Select Event** to bind the device to an event that will trigger the function for the device.
+  3. If more than one device or event triggers a function, click the **Add** button to add a line and repeat these steps.
 
-###  Truck
-The camera remains stationary as it moves side-to-side on the Y-axis. This can be used to illustrate the juxtaposition between two forces or reveal the path before the player. You can create an effective truck camera movement using a wide shot or a medium shot.
-In the video, the truck shot is used to show how busy the street in front of the cinema is. A truck shot can be used to track where a player needs to traverse, how many enemies are in an area, or the movement of NPC characters.
-**COMMON USES:**
-  * To illustrate movement or action, whether it’s the player’s, an NPC’s, or an object’s.
-  * A truck shot filmed in slow motion can increase the player’s anticipation or suspense.
-
-**FRAMING A TRUCK SHOT:**
-  * Wide framing can show the level around the subject of the cutscene.
-  * A tight shot could be used to express the intensity of a character’s mood before a fight or action sequence.
-
-###  Boom / Jib
-The camera sits stationary while moving up and down the Z-axis. Using a boom in combination with a low camera angle and low framing can impress the size of a character or boss to a player or the height of an obstacle the player has to overcome.
-A Jib is used in this video example to show the large size of the ghost using a close up.
-**COMMON USES:**
-  * Illustrates the scale of terrain or an enemy to manage the expectations for the gameplay ahead.
-  * Demonstrates the scale of a crowd or expansive landscape to immerse the player deeper in the scene.
-  * Can be used to reveal information about gameplay or characters.
-  * Can be used in a closing shot of the game or gameplay sequence.
-
-**FRAMING A BOOM SHOT:**
-  * A close up framing of the subject in the shot can escalate a player’s fear and anticipation.
-  * A wide or long frame can be used for landscape and scale.
-
-###  Roll
-The camera is stationary as it rolls side-to-side on the X-axis. A roll is best used by framing the camera for a point of view, long, or wide shot. Adding a camera shake to this type of movement would be great for filming a car accident, or a battle shot showing a wounded player or NPC.
-This example video used a long shot to frame the Character device in the center of the shot while the camera rolls back and forth.
-A **camera roll** can only be achieved by changing the angle of rotation on the Camera Actor.
-**COMMON USES:**
-  * Create an action sequence where the camera is rolling beside a car or action sequence to follow the path of the subject.
-  * Create feelings of intensity or of being damaged by rolling with a subject that is in the midst of a struggle.
-
-**FRAMING A ROLL SHOT:**
-  * Tight or detailed framing can feel claustrophobic, but also immerse the player in the action.
-
-###  Tracking Shot
-The camera follows the character or subject’s action toward a final shot. This could be used narratively in a cinematic to provide background information, show an action shot before a large-scale fight, follow a vehicle to its destination, or reveal the total terrain of a world to show the player how far they are from the end of the game.
-The tracking shot in this example video follows a car down the street using a tight frame. The camera focuses on the driver’s side and follows the car for a few meters.
-**COMMON USES:**
-  * Move the narrative in the game forward by physically moving through the scene.
-  * Follow an object or character through the world to a secret or important revelation.
-
-**FRAMING A TRACKING SHOT:**
-  * Play around with framing to find a style that works best for your type of game.
-
-##  Framing
-Framing refers to the placement of the camera in relation to the position of the subject. In video games the subject can be the player’s avatar, an NPC character, or the landscape. There are different ways to frame a shot that informs the player about the game and the expectations of the gameplay.
-Below are different framing techniques and ways a subject can be captured in a cinematic.
-###  Wide
-The subject is centered in the frame and the camera slightly angles down toward the subject. This type of framing is usually used to see the game environment behind the player.
-[![](https://dev.epicgames.com/community/api/documentation/image/1466065c-6a9b-4e18-96fc-97315009917f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1466065c-6a9b-4e18-96fc-97315009917f?resizing_type=fit)
-###  Low
-The camera sits low and points upward toward the subject. The subject is usually centered in the frame.
-[![](https://dev.epicgames.com/community/api/documentation/image/412434b2-6e10-4a78-a6d4-6b9ea211f064?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/412434b2-6e10-4a78-a6d4-6b9ea211f064?resizing_type=fit)
-###  Long
-The subject is centered in the frame with the camera capturing them straight on in their entirety. If it’s a character, they are captured from head to toe in this type of framing.
-[![](https://dev.epicgames.com/community/api/documentation/image/228262c0-6abb-4d43-addd-7a9fac6a1074?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/228262c0-6abb-4d43-addd-7a9fac6a1074?resizing_type=fit)
-###  High
-The camera sits higher than a wide shot and points downwards to frame the subject. The subject is usually centered in the frame. This type of framing can be complemented by using the rule of thirds or leading lines.
-[![](https://dev.epicgames.com/community/api/documentation/image/ecab9abb-9c87-4393-82c0-35e59a7c1b63?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ecab9abb-9c87-4393-82c0-35e59a7c1b63?resizing_type=fit)
-###  Medium
-The subject is captured part in, and part out of the frame. A character is framed from the hips up. This type of framing is useful for juxtaposition between the character and the environment. Dialogue shots can use medium framing when players talk with an NPC.
-This type of framing can be used with the rule of thirds or leading lines.
-[![](https://dev.epicgames.com/community/api/documentation/image/50e9ff22-80ea-44e8-b532-806ea5065f14?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/50e9ff22-80ea-44e8-b532-806ea5065f14?resizing_type=fit)
-###  Cowboy
-This type of framing is usually used with players or characters and not objects in the world.
-Typically, the subject is framed from the knees up. Similar to a Medium shot, but includes more of the subject in the shot. This type of framing is more effective when used with the rule of thirds or leading lines.
-The image below uses leading lines to focus your attention to the subject and the theater box office in the background.
-[![](https://dev.epicgames.com/community/api/documentation/image/1a3f2d9f-1949-4443-af8c-20e1bc727a29?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1a3f2d9f-1949-4443-af8c-20e1bc727a29?resizing_type=fit)
-###  Tight Shot / Close-Up
-The subject is in the center of the shot filling the frame and the focus of the camera. Players and NPCs are captured from the shoulders up.
-Close-ups are useful for focusing on important gameplay elements, an NPC or character. A tight shot is also useful for capturing character reactions.
-[![](https://dev.epicgames.com/community/api/documentation/image/9a83cfd0-c1f2-47e9-8d2c-0d28c6053ffa?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9a83cfd0-c1f2-47e9-8d2c-0d28c6053ffa?resizing_type=fit)
-###  Detailed / Extreme
-The camera is zoomed in extremely close on a subject. If the focus is a character, the face is usually captured so the eyes and bridge of the nose fill the frame. This type of frame can be used for internal dialogue to better understand a character’s motivation.
-[![](https://dev.epicgames.com/community/api/documentation/image/0486ba78-f4ba-4c9a-991a-bfbc9e211071?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0486ba78-f4ba-4c9a-991a-bfbc9e211071?resizing_type=fit)
-###  Over the Shoulder
-An over the shoulder frame is exactly as it sounds: the subject is centered in the frame and is captured from over the shoulder of a character. This can be used to capture what’s in the background and not necessarily what’s in the foreground.
-This type of framing can be used as a creative way to capture dialogue between characters.
-[![](https://dev.epicgames.com/community/api/documentation/image/e4199760-f79d-4deb-994e-d48d3e4b7ee8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e4199760-f79d-4deb-994e-d48d3e4b7ee8?resizing_type=fit)
-###  Point of View
-The subject of the frame is centered and the camera faces and focuses on what is being looked at by a player or character. The player or character is out of the frame, but recording the character or player leading up to a point of view shot should make it clear that the subject of the frame is what the player or character is looking at.
-This type of framing is effective for escape rooms, action adventure games, and role playing games.
-[![](https://dev.epicgames.com/community/api/documentation/image/2ac4e442-1f41-4939-b404-03089e5886a2?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2ac4e442-1f41-4939-b404-03089e5886a2?resizing_type=fit)
-##  Character Framing
-Consider the character’s personality and the best way to capture them. Usually, when filming an adversarial character, they are filmed in a low frame using a low camera angle to show how intimidating the bad guy is.
-On the other hand, heroes are filmed using a high frame and high camera angle to separate the neck from the chin and to show how attractive they are. This is the same technique that’s used to capture a selfie!
-|
+Option  |  Description
 ---|---
-[![](https://dev.epicgames.com/community/api/documentation/image/08fe9fe7-415b-40fd-9b45-91ce8047c88e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/08fe9fe7-415b-40fd-9b45-91ce8047c88e?resizing_type=fit) |  [![](https://dev.epicgames.com/community/api/documentation/image/ca92f4c7-b25d-464f-aa0c-bc9382455e7d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ca92f4c7-b25d-464f-aa0c-bc9382455e7d?resizing_type=fit)
-Low Angle |  High Angle
-##  More Topics
-  * [![Composition Techniques](https://dev.epicgames.com/community/api/documentation/image/7d443d0c-08fd-4b45-8cb5-68f8bf733334?resizing_type=fit&width=640&height=640) Composition Techniques Use composition to capture artful cinematics for your gameplay. ](https://dev.epicgames.com/documentation/en-us/fortnite/making-cinematics-1-composition-techniques-in-unreal-editor-for-fortnite)
+**End Round When Receiving From** |  This function ends the round when an event occurs.
+**Respawn at Player Spawner When Receiving From** |  This function respawns the instigating player at the most appropriate player spawner.
+**Force Spectate** |  This function immediately forces the instigator into spectate mode without any elimination penalty. They will not respawn automatically. The instigator must match the device's team.
+###  Events
+An [event](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#event) tells another device when to perform a function.
+  1. For any event option, click the **option** , then **Select Device** to access and select from the **Device dropdown menu**.
+  2. Once you've selected a device, click **Select Function** to bind the timer to a function for that device.
+  3. If more than one device is affected by the function, press the **Add** button and repeat.
 
-  * [![Lighting and Color](https://dev.epicgames.com/community/api/documentation/image/762eee9b-f756-457e-9082-ccb1d2ee760f?resizing_type=fit&width=640&height=640) Lighting and Color Use lighting and color effectively in a cinematic to create emotion and set the scene. ](https://dev.epicgames.com/documentation/en-us/fortnite/making-cinematics-2-lighting-and-color-in-unreal-editor-for-fortnite)
-
-  * [![Integrating Cinematics](https://dev.epicgames.com/community/api/documentation/image/496064bc-9b66-4940-bfdf-84ac6154089a?resizing_type=fit&width=640&height=640) Integrating Cinematics Discover all the elements you need to create satisfying and thoughtful cinematics for your game. ](https://dev.epicgames.com/documentation/en-us/fortnite/making-cinematics-4-integrating-cinematics-in-unreal-editor-for-fortnite)
+Option  |  Description
+---|---
+**On Team Is Out of Respawns Send Event To** |  When a team is out of respawns, an event is sent to the selected device, which triggers the selected function.
+**On Enemy Eliminated by Team Member Send Event To** |  When an enemy is eliminated by a team member, an event is sent to the selected device, which triggers the selected function.
+**On Team Member Eliminated Send Event To** |  When a team memeber is eliminated, an event is sent to the selected device, which triggers the selected function.
+**On Team Member Spawned Send Event To** |  When a team member is spawned, an event is sent to the selected device, which triggers the selected function.

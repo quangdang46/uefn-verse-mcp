@@ -1,62 +1,66 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-health-powerup-devices-in-fortnite-creative
 
-# Health Powerup Devices
-This device regenerates a player's health and shields.
-![Health Powerup Devices](https://dev.epicgames.com/community/api/documentation/image/1082d2ef-6d4f-43a5-a24c-1bea1e9ebb23?resizing_type=fill&width=1920&height=335)
-The **Health Powerup** device regenerates a player's health, their shields, or their health and shields. You can configure this [power-up](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#power-up) to work in a variety of ways by customizing the device options.
-For information on finding the Health Powerup device, see **[Using Devices](https://dev.epicgames.com/documentation/en-us/fortnite/using-devices-in-fortnite)**.
-##  Contextual Filtering
-Some devices are affected by a feature called **contextual filtering**. This feature hides or displays options depending on the values selected for certain related options. This feature will reduce clutter in the Customize panel and make options easier to manage and navigate.
-However, it may not be easy to recognize which options or values trigger contextual filtering. To help you identify them, in our device docs we use _italic_ for any values that trigger contextual filtering. All options will be listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option's value, there will be a note about that in the Description field for that option.
+# UFO Spawner Devices
+Turn your island into Area 51 and race UFOs!
+![UFO Spawner Devices](https://dev.epicgames.com/community/api/documentation/image/95048731-64e5-47a7-851c-de27dae215cd?resizing_type=fill&width=1920&height=335)
+A **UFO Spawner** is a device that [spawns](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#spawning) a UFO vehicle onto your island at the spawner's given location and orientation.
+  * Use UFO Spawner devices in combination with the [Race Checkpoint Device](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#race-checkpoint) to design a racing game for your players.
+  * You can place a player directly inside the UFO using a trigger.
+
+##  Finding and Placing the Device
+[![The UFO Spawner device in the Creative inventory](https://dev.epicgames.com/community/api/documentation/image/9393c5aa-9dfa-487a-8362-5e83595f27ea?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9393c5aa-9dfa-487a-8362-5e83595f27ea?resizing_type=fit)
+_Click image to enlarge._
+  1. From [Create mode](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#create-mode), press the **Tab** key to open the [CREATIVE inventory](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) screen.
+  2. Click the **DEVICES** tab and scroll to select the device. You can also use the **Search** box or the **Categories** panel on the left to find your device.
+  3. Click **PLACE NOW** to [place](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#place) immediately, or put the device in the [QUICK BAR](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#quick-bar) to place later.
+  4. Press **Esc** to return to your island in Create mode. Use your [phone](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#phone) tool to position the device, then left-click to place it. Press **Esc** to detach the device from your phone.
+  5. Point at the base of the device with your phone. If the **CUSTOMIZE** popup doesn’t open immediately, move closer until it does, then press **E** to open the CUSTOMIZE panel.
+
+It’s helpful to [customize device names](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#rename-a-device) when you use multiple copies of the same device.
 ##  Device Options
+This device has some basic functionality, like whether it is visible in game, or whether it supports [wraps](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#wrap). Additionally, there are some advanced options, like which [class](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#class) and team can use the vehicle, and whether [enabling](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#enable) or disabling the device spawns or [despawns](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#despawn) the vehicle.
 You can configure this device with the following options.
-Default values are **bold**. Values that trigger contextual filtering are _italic_.
+Default values are **bold**.
+###  Basic Options
 Option  |  Value  |  Description
 ---|---|---
-**Stat to Modify** |  **Health only** , Shield only, Both |  Choose what statistic to apply the regeneration to. The visual effect of the regeneration will change depending on what is selected here.
-**Effect** |  **Flat Increase** , % Increase, Flat Decrease, % Decrease, Set to |  Determines what effect occurs when a player obtains this powerup. Values for this option are:
-  * **Flat Increase** increases the player's health or shield by a specified amount for each second that the powerup is active.
-  * **% Increase** increases the player's health/shield by the selected percentage of the player's max health/shield for each second that the powerup is active.
-  * **Flat Decrease** decreases the player's health/shield by the exact amount selected for each second that the powerup is active. Note that this causes damage to the player.
-  * **% Decrease** decreases the player's health/shield by the selected percentage of the player's max health or shield for each second that the powerup is active. This causes damage to the player.
-  * **Set to** sets the player's health or shields to whatever number you set, and will continually try to set the player's health or shield to that number as long as the powerup is active. For example, if you set this to **50** , with the **Effect Duration** option set to **Infinite** , then the health or shields will stay at 50 as long as the powerup is active.
+**Visible During Game** |  **On** , Off |  Determines whether the device is visible during the game. This does affect its [collision](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) properties.
+**Reboots** |  **2** , No Reboots, Unlimited, Pick a number |  Determines how many times the UFO will reboot to full health after being reduced to 0 health.
+###  All Options (Additional)
+Option  |  Value  |  Description
+---|---|---
+**Enabled During Phase** |  **All** , None, Pre-Game Only, Gameplay Only |  Determines the game [phases](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#game-phase) during which the device will be enabled. Pre-Game includes all phases prior to the Game starting (the waiting for players lobby on Featured Islands and the Game Start Countdown).
+**Respawn Time** |  **Instant** , Never, Pick a time |  Respawns a vehicle that's been destroyed after a selected delay.
+**Respawn Vehicle when Enabled** |  **Yes** , No, Only if Needed |  If this is set to **Yes** , a vehicle will spawn when the device is enabled. Choosing **Only If Needed** will not reset an existing vehicle.
+**Destroy Vehicle when Disabled** |  **Yes** , No |  Destroys a spawned vehicle when the spawner is disabled.
+**Owning Team** |  **Any** , Pick a team |  Sets the team the device belongs to.
+**Selected Class** |  **None** , Any, No Class, Pick a class |  Determines what class can use this vehicle. Values for this option are:
+  * **None** : All players, including players with no class assigned, can use the vehicle.
+  * **Any** : Any player with a class assigned can use the vehicle.
+  * **No Class** : Only players with no class assigned can use the vehicle.
+  * **Pick a class** : Pick a [class identifier](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#class-identifier); only players assigned that class can use the vehicle.
 
-**Effect Magnitude** |  **20** , Pick or enter a number |  The number you select is used with the Effect option to modify the player's health/shield for each second the power-up is active. For example, if the effect magnitude is set to **5** while the **Effect** option is set to **% Increase** , it increases the player's health or shield by 5% every second for as long as the powerup is active.
-**Infinite Effect Duration** |  **_No_** , Yes |  Determines if the applied effect is active for an unlimited amount of time. If set to **No** , the **Effect Duration** option is displayed.
-**Effect Duration** |  **Instant** , Pick or enter a duration amount |  This option only displays if Determines the amount of time the powerup will stay active when picked up. When you choose **Instant** , the health increase will only happen once. All other choices apply the effect the selected duration while the powerup is active. For example, if this option is set to **3 seconds** , the health or shield is modified three times by the values set in the **Effect** and **Effect Magnitude** options.
-**Show Visual Effect on Player** |  **Yes** , No |  If you select **Yes** , a visual effect will display while the powerup is active.
-**Disables Effect on Pickup** |  Yes, **No** |  If you set this to **Yes** , powerup effects will be cancelled when the powerup is picked up. This can be used to disable a Health Powerup that the player has already picked up.
-**Pickup Radius** |  **On Touch** , Pick or enter a range |  This determines how close the player must be to pick up the Health Powerup.
-**Respawn** |  **_Yes_** , No |  Determines whether the Health Powerup respawns. If set to **Yes** , the **Time to Respawn** option is displayed.
-**Time to Respawn** |  Never, Instant, **15 seconds** , Pick or enter an amount |  This determines the amount of time it takes for the Health Powerup to respawn after a player picks one up.
-**Spawn on Minigame Start** |  **Yes** , No |  If your island has a minigame, this determines when the powerup appears. If this is set to **Yes** , the powerup appears instantly at start of the minigame. If this is set to **No** , the powerup appears based on the value set in the **Time to Respawn** option.
-**Ambient Audio** |  **On** , Off |  If this is set to **On** , and ambient audio effect will play when a player gets close to the powerup.
-**Pick Up Audio** |  **On** , Off |  If this is set to **On** , a sound effect will play when a player picks up the powerup.
-**Selected Class** |  **Any** , Pick or enter a class |  This determines which class can use this powerup. If this is set to **Any** , any class can use the powerup.
-**Selected Team** |  **Any** , Pick or enter a team |  This determines which team can use this powerup. If this is set to **Any** , any team can use the powerup.
-**Apply To** |  **Player** , Player's Team, Player's Class, Same Class in Player's Team, All Players. |  This determines who the powerup effect applies to.
-**Who Can See This Powerup** |  None, All, **Only Players That Can Pick It Up** |  Controls who can see the powerup.
-**Persist on Elimination** |  On, **Off** |  If this is set to **On** , the powerup continues to apply when a player is eliminated, and will still be applied when that player respawns.
-##  Direct Event Binding
-Following are the [direct event binding](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#direct-event-binding) options for this device.
-###  Functions
-A [function](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) listens for an event on a device then performs an action.
-  1. For any function, click the **option** , then **Select Device** to access and select from the **Device dropdown menu**.
-  2. Once you've selected a device, click **Select Event** and select the event that triggers this function.
-  3. If more than one device or event triggers a function, press the **Add** button to add a line and repeat these steps.
-
-Option  |  Description
----|---
-**Spawn When Receiving From** |  This function spawns the powerup when an event occurs.
-**Despawn When Receiving From** |  This function despawns the powerup when an event occurs.
-**Pickup When Receiving From** |  This function applies the effect to the instigating player when an event occurs. This allows application of the effect using event binding.
-**Clear When Receiving From** |  This function clears the effect from the instigating player when an event occurs.
-###  Events
-Direct event binding uses events as transmitters. An event tells another device to perform a function.
-  1. For any event option, click the **option** , then **Select Device** to access and select from the **Device dropdown menu**.
-  2. Once you've selected a device, click **Select Function** to bind the event to a function for that device.
-  3. If more than one function is triggered by the event, press the **Add** button and repeat.
-
-Option  |  Description
----|---
-**On Item Picked Up Send Event To** |  When the Health Powerup is picked up, an event occurs.
+**Vehicle Health** |  **1500** , Indestructible, Pick a number |  Determines how much damage the vehicle can take before it is destroyed.
+**Enable Cannon** |  **Yes** , No |  Determines whether the cannon can be used.
+**Enable Tractor Beam** |  **Yes** , No |  Determines whether the tractor beam can be used.
+##  Channels
+When one device needs to "talk" to another device, it does so by [transmitting](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) a [signal](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) on a specific [channel](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary). The receiving device needs to be set up to [receive](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#receive) the signal on the same channel.
+A channel is identified by a number, and channel numbers are customized for a device under the option that uses the channel. Most devices will also pass the identity of the player who [triggered](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) the device with the signal.
+When the UFO Spawner device receives a signal on a channel, it can be enabled or disabled, can spawn or destroy a vehicle, and assign a driver. It can transmit a signal on a channel when a player enters or exits the vehicle, and when the vehicle is spawned or destroyed.
+###  Receivers
+Receivers listen for a channel and perform an action when they hear any device (including themselves) send a signal on that channel.
+Option  |  Value  |  Description
+---|---|---
+**Assigns Driver When Receiving From** |  **No Channel** , Pick a channel |  Sets the player that [instigated](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#instigator) the signal as the spawned vehicle's pilot
+**Respawn Vehicle When Receiving From** |  **No Channel** , Pick a channel |  Spawns a new vehicle after receiving a signal on the selected [channel](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary). The existing vehicle will be destroyed before a new vehicle spawns.
+**Destroy Vehicle When Receiving From** |  **No Channel** , Pick a channel |  When receiving a signal on the selected channel, the spawned vehicle is destroyed if it exists.
+**Enable When Receiving From** |  **No Channel** , Pick a channel |  When a signal is received on the selected channel, the UFO spawner is enabled.
+**Disable When Receiving From** |  **No Channel** , Pick a channel |  When a signal is received on the selected channel, the UFO spawner is disabled.
+###  Transmitters
+Transmitters send a signal on the selected channel when triggered.
+Option  |  Value  |  Description
+---|---|---
+**When Player Enters Vehicle Transmit On** |  **No Channel** , Pick a channel |  Transmits a signal on the selected channel when a player enters the spawned vehicle.
+**When Player Exits Vehicle Transmit On** |  **No Channel** , Pick a channel |  Transmits a signal on the selected channel when a player exits the spawned vehicle.
+**When Vehicle Spawns Transmit On** |  **No Channel** , Pick a channel |  Transmits a signal on the selected channel when a vehicle is spawned or respawned.
+**When Vehicle is Destroyed Transmit On** |  **No Channel** , Pick a channel |  Transmits a signal on the selected channel when a vehicle is destroyed.

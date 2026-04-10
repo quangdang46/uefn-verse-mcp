@@ -1,24 +1,28 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/futuristic-prefabs-in-fortnite-creative
 
-# Futuristic Prefabs
-Design your own future by using Futuristic prefabs.
-![Futuristic Prefabs](https://dev.epicgames.com/community/api/documentation/image/fb0e5e41-d559-44ce-961e-43668783a284?resizing_type=fill&width=1920&height=335)
-All **Futuristic** [prefabs](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#prefab) share similar modern [themes](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#island-theme) of advanced structures.
-In the **Prefabs** [category](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#category), you can browse for prefabricated building structures and the pieces they are made of.
-This page is a visual guide to help you find prefabs that fit this theme more quickly.
-To learn more about how to place and manipulate prefabs, and even how to use prefabs to build new environments that are uniquely your own, check out [Building Basics](https://dev.epicgames.com/documentation/en-us/fortnite/building-basics-in-fortnite-creative).
-##  Cubed Category
-|  |  |
----|---|---|---
-[![The Convergence Group D](https://dev.epicgames.com/community/api/documentation/image/8eaf3c79-b120-4dcd-8a3f-eaa991a6983a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8eaf3c79-b120-4dcd-8a3f-eaa991a6983a?resizing_type=fit) |  [![The Convergence Group C](https://dev.epicgames.com/community/api/documentation/image/79516256-14f1-4ce1-9908-e4c451987045?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/79516256-14f1-4ce1-9908-e4c451987045?resizing_type=fit) |  [![The Convergence Group B](https://dev.epicgames.com/community/api/documentation/image/82ee5885-74c9-4f52-b586-f4a4e1add72d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/82ee5885-74c9-4f52-b586-f4a4e1add72d?resizing_type=fit) |  [![The Convergence Group A](https://dev.epicgames.com/community/api/documentation/image/d6408310-3a07-44e7-a49f-e775ee02449a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d6408310-3a07-44e7-a49f-e775ee02449a?resizing_type=fit)
-**The Convergence Group D** |  **The Convergence Group C** |  **The Convergence Group B** |  **The Convergence Group A**
-##  Cyber CIty Category
-|  |  |  |  |
----|---|---|---|---|---
-[![Cyber City Building F](https://dev.epicgames.com/community/api/documentation/image/8769d67c-e07c-468d-b499-d3a2b4b49833?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8769d67c-e07c-468d-b499-d3a2b4b49833?resizing_type=fit) |  [![Cyber City Building E](https://dev.epicgames.com/community/api/documentation/image/731629b9-8673-4431-8339-57e702c904c1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/731629b9-8673-4431-8339-57e702c904c1?resizing_type=fit) |  [![Cyber City Building D](https://dev.epicgames.com/community/api/documentation/image/3dfe610e-947f-4e22-b42c-1690fbeea56f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3dfe610e-947f-4e22-b42c-1690fbeea56f?resizing_type=fit) |  [![Cyber City Building C](https://dev.epicgames.com/community/api/documentation/image/2db2c048-efdd-46ca-8afb-21d52d68b6a7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2db2c048-efdd-46ca-8afb-21d52d68b6a7?resizing_type=fit) |  [![Cyber City Building B](https://dev.epicgames.com/community/api/documentation/image/8d3e373e-3f43-4982-8082-eaf18ff95cd6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8d3e373e-3f43-4982-8082-eaf18ff95cd6?resizing_type=fit) |  [![Cyber City Building A](https://dev.epicgames.com/community/api/documentation/image/a5e32764-cd15-4d8e-aae3-4cf7f7bf93d3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a5e32764-cd15-4d8e-aae3-4cf7f7bf93d3?resizing_type=fit)
-**Cyber City Building F** |  **Cyber City Building E** |  **Cyber City Building D** |  **Cyber City Building C** |  **Cyber City Building B** |  **Cyber City Building A**
-##  Paradise Category
-|  |  |
----|---|---|---
-[![Cloudy Condos Shops B](https://dev.epicgames.com/community/api/documentation/image/ef82f06a-6b12-42a6-8376-3719d2befcc3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ef82f06a-6b12-42a6-8376-3719d2befcc3?resizing_type=fit) |  [![Cloudy Condos Shops A](https://dev.epicgames.com/community/api/documentation/image/d8df07cd-4a9d-4d0a-a2c3-62772cbf4d34?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d8df07cd-4a9d-4d0a-a2c3-62772cbf4d34?resizing_type=fit) |  [![Cloudy Condos Knepley's Pawn Shop](https://dev.epicgames.com/community/api/documentation/image/88347f6f-8622-43d6-aa4b-4a72298cb4ce?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/88347f6f-8622-43d6-aa4b-4a72298cb4ce?resizing_type=fit) |  [![Cloudy Condos Classy Condos](https://dev.epicgames.com/community/api/documentation/image/b666a855-9d4b-4da8-ad8a-c01183f36566?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b666a855-9d4b-4da8-ad8a-c01183f36566?resizing_type=fit)
-**Cloudy Condos Shops B** |  **Cloudy Condos Shops A** |  **Cloudy Condos Knepley's Pawn Shop** |  **Cloudy Condos Classy Condos**
+# 31.40 Fortnite Ecosystem Updates and Release Notes
+31.40 Fortnite Ecosystem Updates and Release Notes in Creative, Unreal Editor for Fortnite, and Verse
+![31.40 Fortnite Ecosystem Updates and Release Notes](https://dev.epicgames.com/community/api/documentation/image/deed8d8a-d891-4745-bb40-aca975825367?resizing_type=fill&width=1920&height=335)
+Embrace the spooky season with the Scarecrow hiding prop now available in the v31.40 update. Use this prop from the **Hiding Props Gallery** device to hide with your friends from surrounding terrors. You can also dash to nearby safety with the Battle Royale Ch5S2 **River Styx** and **Red River Styx** water volumes.
+##  New Scarecrow Hiding Prop
+Access the Scarecrow hiding prop within the **Hiding Props Gallery** device. All the standard hiding prop options, events, and functions are available. Uniquely, the first player to enter the individual hiding prop will be able to control its rotation.
+[![](https://dev.epicgames.com/community/api/documentation/image/8b273fc4-4f11-4ba8-9d83-dfeb07dd9bb3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8b273fc4-4f11-4ba8-9d83-dfeb07dd9bb3?resizing_type=fit)
+###  Water Volume Update
+You can now utilize the **River Styx** and **Red River Styx** water types from Battle Royale's Ch5S2 and Fortnitemares island updates. Enable these through the **Water Volume** device **Water Type** option. Whenever players enter the volume, they will gain three dash skulls.
+[![](https://dev.epicgames.com/community/api/documentation/image/6c2afe0c-122a-426d-b7f7-430e51ce9d7e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6c2afe0c-122a-426d-b7f7-430e51ce9d7e?resizing_type=fit)
+##  New Weapon
+  * Chainsaw
+
+##  Creative and UEFN Updates and Fixes
+**Fixes:**
+The **Item Placer** device can now properly deduct an item's cost from a player's inventory on interaction.
+###  Known Issues
+Following is a list of bugs that you submitted on the forums. Thank you for your patience and for reporting these issues!
+  * The 32.00 update fixes a known issue where the Hiding Prop Gallery device removes players from their areas and breaks gameplay mechanics. [Forum Issue Report](https://forums.unrealengine.com/t/hiding-prop-devices-remove-the-player-from-the-area-breaking-games-that-use-player-counters-or-other-zones/2048759)
+
+##  UEFN Updates and Fixes
+**New:**
+Added a mobile preview with signed distance fields.
+**Fixes:**
+  * Fixed water rendering issues in split screen mode.
+  * Bodies of water can now properly affect landscape paint layers.
