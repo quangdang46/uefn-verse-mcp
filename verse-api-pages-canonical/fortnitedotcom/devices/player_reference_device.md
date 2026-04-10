@@ -1,8 +1,8 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_reference_device
 
-# service_station_device class
-Learn technical details about the service_station_device class.
-A one stop automated refueling and repairing station for your vehicles.
+# player_reference_device class
+Learn technical details about the player_reference_device class.
+Used to relay `agent` statistics to other devices and `agent`s. Can transmit statistics such as elimination count, eliminated count, or scores when certain conditions are met. Can also project a hologram of the `agent` and display text that can be altered in various positions and curvatures.
 |
 ---|---
 Verse `using` statement | `using { /Fortnite.com/Devices }`
@@ -10,52 +10,35 @@ Verse `using` statement | `using { /Fortnite.com/Devices }`
 This class is derived from the following hierarchy, starting with `creative_object`:
 Name | Description
 ---|---
-[`creative_object`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object) |  Base class for creative devices and props.
-[`creative_device_base`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_device_base) |  Base class for creative_device.
-## Exposed Interfaces
-This class exposes the following interfaces:
-Name | Description
----|---
-[`healthful`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/game/healthful) |  Implemented by Fortnite objects that have health state and can be eliminated.
-[`damageable`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/game/damageable) |  Implemented by Fortnite objects that can be damaged.
-[`enableable`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/enableable) |  Implemented by classes whose instances can be enabled and disabled.
+[`creative_object`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object) |  Base class for creative devices and props.
+[`creative_device_base`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_device_base) |  Base class for creative_device.
 ## Members
 This class has both data members and functions.
 ### Data
 Data Member Name | Type | Description
 ---|---|---
-`VehicleEnteredEvent` | `listenable(payload)` |  Fires when a vehicle enters the service station, returns the vehicle that entered.
-`VehicleExitedEvent` | `listenable(payload)` |  Fires when a vehicle leaves the service station, returns the vehicle that exited.
-`VehicleFuelingBeginEvent` | `listenable(payload)` |  Fires on the first tick of a vehicle refueling, returns the refueled vehicle.
-`VehicleFuelingEndEvent` | `listenable(payload)` |  Fires when a vehicle is at full fuel, returns the refueled vehicle.
-`VehicleRepairBeginEvent` | `listenable(payload)` |  Fires when a vehicle starts repairing, returns the repaired vehicle.
-`VehicleRepairEndEvent` | `listenable(payload)` |  Fires when a vehicle is at full health, returns the repaired vehicle.
+`ActivatedEvent` | `listenable(payload)` |  Signaled when this device is activated. Sends the `agent` stored in the device.
+`AgentReplacedEvent` | `listenable(payload)` |  Signaled when the `agent` tracked by this device is replaced. Sends the new `agent` stored in the device.
+`AgentUpdatedEvent` | `listenable(payload)` |  Signaled when the `agent` tracked by this device is updated. Sends the new `agent` stored in the device.
+`AgentUpdateFailsEvent` | `listenable(payload)` |  Signaled when the `agent` tracked by this fails to be updated. Sends the `agent` that attempted to be stored in this device.
+`TrackedStatChangedEvent` | `listenable(payload)` |  Signaled when a stat tracked by this device is updated. Sends the `agent` stored in the device.
 ### Functions
 Function Name | Description
 ---|---
-[`Damage`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/service_station_device/damage) |  Damage the `damageable` object anonymously by `Amount`. Setting `Amount` to less than 0 will cause no damage. Use `Damage(:damage_args):void` when damage is being applied from a known instigator and source.
-[`Damage`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/service_station_device/damage-1) |  Damage the `damageable` object by `Args.Amount`. Setting `Amount` to less than 0 will cause no damage.
-[`DamagedEvent`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/service_station_device/damagedevent) |  Signaled when damage is applied to the `damageable` object.
-[`Disable`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/service_station_device/disable) |  Disable this object.
-[`Enable`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/service_station_device/enable) |  Enable this object.
-[`GetGlobalTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/getglobaltransform) |  Gets the global transform of this object.
-[`GetHealth`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/service_station_device/gethealth) |  Returns the health state of the object. This value will between 0.0 and `GetMaxHealth`
-[`GetMaxHealth`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/service_station_device/getmaxhealth) |  Returns the maximum health of the object. This value will be between 1.0 and Inf.
-[`GetTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/gettransform) |  Returns the transform of the `creative_object` with units in cm. You must check `creative_object.IsValid` before calling this if there is a possibility the object has been disposed or destroyed by gameplay. Otherwise a runtime error will result.
-[`IsAnyVehicleInside`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/service_station_device/isanyvehicleinside) |  Check if any vehicle is inside the service station.
-[`IsEnabled`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/service_station_device/isenabled) |  Succeeds if the object is enabled, fails if it's disabled.
-[`MoveTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto) |  Moves the `creative_object` to the specified `Position` and `Rotation` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
-[`MoveTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-1) |  Moves the `creative_object` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
-[`MoveTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-2) |  Moves the `creative_device` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_device` it will be stopped and put into the `AnimationNotSet` state.
-[`SetGlobalTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/setglobaltransform) |  Sets the global transform of this object.
-[`SetHealth`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/service_station_device/sethealth) |  Sets the health state of the object to `Health`.
-  * Health state will be clamped between 1.0 and `GetMaxHealth`.
-  * Health state cannot be directly set to 0.0. To eliminate `healthful` objects use the `damageable.Damage` functions instead.
-
-[`SetMaxHealth`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/service_station_device/setmaxhealth) |  Sets the maximum health state of the object.
-  * MaxHealth will be clamped between 1.0 and Inf.
-  * Current health state will be scaled up or down based on the scale difference between the old and new MaxHealth state.
-
-[`TeleportTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto) |  Teleports the `creative_object` to the specified `Position` and `Rotation`.
-[`TeleportTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-1) |  Teleports the `creative_object` to the specified location defined by `Transform`, also applies rotation and scale accordingly.
-[`TeleportTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-2) |  Teleports the `creative_device` to the specified location defined by `Transform`, also applies rotation and scale accordingly.
+[`Activate`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_reference_device/activate) |  Ends the round/game.
+[`Clear`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_reference_device/clear) |  Clears the state of this device.
+[`Disable`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_reference_device/disable) |  Disables this device.
+[`Enable`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_reference_device/enable) |  Enables this device.
+[`GetAgent`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_reference_device/getagent) |  Returns the `agent` currently referenced by the device.
+[`GetGlobalTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/getglobaltransform) |  Gets the global transform of this object.
+[`GetStatValue`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_reference_device/getstatvalue) |  Returns the stat value that this device is currently tracking
+[`GetTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/gettransform) |  Returns the transform of the `creative_object` with units in cm. You must check `creative_object.IsValid` before calling this if there is a possibility the object has been disposed or destroyed by gameplay. Otherwise a runtime error will result.
+[`IsReferenced`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_reference_device/isreferenced) |  Is true when `Agent` is the player being referenced by the device.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto) |  Moves the `creative_object` to the specified `Position` and `Rotation` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-1) |  Moves the `creative_object` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-2) |  Moves the `creative_device` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_device` it will be stopped and put into the `AnimationNotSet` state.
+[`Register`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_reference_device/register) |  Registers `Agent` as the `agent` being tracked by this device.
+[`SetGlobalTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/setglobaltransform) |  Sets the global transform of this object.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto) |  Teleports the `creative_object` to the specified `Position` and `Rotation`.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-1) |  Teleports the `creative_object` to the specified location defined by `Transform`, also applies rotation and scale accordingly.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-2) |  Teleports the `creative_device` to the specified location defined by `Transform`, also applies rotation and scale accordingly.

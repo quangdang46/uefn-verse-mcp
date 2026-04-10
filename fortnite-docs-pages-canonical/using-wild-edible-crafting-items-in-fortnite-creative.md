@@ -1,32 +1,76 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-wild-edible-crafting-items-in-fortnite-creative
 
-# Build Your First Island in Fortnite
-Build a mini-game in Unreal Editor for Fortnite with this step-by-step tutorial!
-![Build Your First Island in Fortnite](https://dev.epicgames.com/community/api/documentation/image/2e8df9ea-69ab-45bd-8d3e-3544a255e620?resizing_type=fill&width=1920&height=335)
-######  Prerequisite topics
-In order to understand and use the content on this page, make sure you are familiar with the following topics:
-  * [Install and Launch Fortnite](https://dev.epicgames.com/documentation/fortnite/install-and-launch-fortnite-creative-and-unreal-editor-for-fortnite)
+# Wild Edible Crafting Items
+Edible items found in nature to collect and exchange for crafting.
+![Wild Edible Crafting Items](https://dev.epicgames.com/community/api/documentation/image/79d115a3-50a3-424d-ad1b-dab1954e6060?resizing_type=fill&width=1920&height=335)
+Use **Wild Edible** [items](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) as [crafting](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#crafting) materials for items that can use edible mushrooms or honey as an ingredient. These items could be required along with another to unlock requirements for [devices](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#device) like the [**Conditional Button**](https://dev.epicgames.com/documentation/en-us/fortnite/using-conditional-button-devices-in-fortnite-creative).
+Wild Edible items include:
+  * **Honey**
+  * **Blue Mushroom**
+  * **Pink Mushroom**
+  * **Red Mushroom**
+  * **White Mushroom**
+  * **Yellow Mushroom**
 
-Ready for your first foray into **Unreal Editor for Fortnite**? Follow the steps in this tutorial and at the end, you'll have a sweet little one-person shooter mini-game!
-Get the basics of how to build a game in **Unreal Editor for Fortnite (UEFN)** , how to playtest the game in **Fortnite** , and even a taste of how you can use **Verse** to tweak your gameplay.
-Before you know it, you should have a playable shooting gallery mini-game — but even better, you'll have a smooth introduction to UEFN and how it works to help you put a game together!
-#####  You'll learn how to:
-  1. Create and save a **project**.
-  2. Find and place **assets**(also sometimes called **objects**).
-  3. Customize your gameplay with **devices**.
-  4. **Playtest** your game.
-  5. Streamline device interactions with **Verse**.
-  6. Use set dressing to establish a **theme**.
+[![Pairing Wild Edible Consumables](https://dev.epicgames.com/community/api/documentation/image/7434d495-f5d1-4ed7-bb33-13592e14a311?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7434d495-f5d1-4ed7-bb33-13592e14a311?resizing_type=fit)
+_Use the devices like Conditional Button and Item Spawner to create the system of crafting._
+You could pair items like **Honey** and [Adhesive Resin](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-nature-items-in-fortnite-creative) as materials needed to craft weapons or other items like **Duct Tape**.
+To do this, you would need to set the Conditional Button's setting **Key Items Required** to **2** and pair the device with an [**Item Spawner**](https://dev.epicgames.com/documentation/en-us/fortnite/using-item-spawner-devices-in-fortnite-creative) to grant the usable item.
+You can also blend items with [props](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#prop) of similar [themes](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) from the **Galleries** and **Prefabs** tabs.
+[![Blending Wild Edible Consumables](https://dev.epicgames.com/community/api/documentation/image/abe9e1bf-17a3-4266-bee6-d0d83fd44e19?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/abe9e1bf-17a3-4266-bee6-d0d83fd44e19?resizing_type=fit)
+_This Galleries prop can be found in Haunted Hills Nature Gallery._
+For example, you can blend mushrooms with trees and foliage for an immersive gameplay.
+To create the process of crafting, you will need to either [spawn](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#spawning) the item onto your map with the Item Spawner or [grant](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#grant) items to players through the **Item Granter**.
+Players can collect these items to exchange for usable items through devices like Conditional Button, which consumes equipped items. They can also use these items to craft other items that will build up to a larger item.
+Visit our [video tutorials](https://mediaspace.unrealengine.com/playlist/dedicated/208434573/1_gxu6mwv5/1_qfnz9w5c) to learn more about working with items and for tips to enhance gameplay.
+##  Finding and Placing Items
+[![Finding Wild Edible Consumables](https://dev.epicgames.com/community/api/documentation/image/c59714d9-0cd9-4ada-9c32-a7e76abe72e8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c59714d9-0cd9-4ada-9c32-a7e76abe72e8?resizing_type=fit)
+_Click image to enlarge._
+  1. From **Create mode** , press the **Tab** key and click **CREATIVE** to select the [CREATIVE inventory](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) screen.
+  2. Click the **CONSUMABLES** tab.
+  3. On this screen, scroll to find and select the item, use the **Search** box to look up the item by name, or check the list of relevant **Categories** specific to the item you're looking for to filter the view.
+  4. Click the item, then either choose **EQUIP** or **ADD TO CHEST**.
 
-Complete each of the steps below in sequence to create a working single player shooting gallery mini-game!
-###  Ready to Jump In?
-  * [![1. Create and Explore a Project](https://dev.epicgames.com/community/api/documentation/image/a23000b5-fbde-4609-bf22-6b942b8e8b84?resizing_type=fit&width=640&height=640) 1. Create and Explore a Project Set up your project, navigate the viewport and change some island settings from UEFN! ](https://dev.epicgames.com/documentation/fortnite/first-island-01-create-and-explore-a-project-in-fortnite)
-  * [![2. Place and Customize a Device](https://dev.epicgames.com/community/api/documentation/image/8ff5847b-c80c-4bc9-87b2-608dbd346117?resizing_type=fit&width=640&height=640) 2. Place and Customize a Device Add some devices, customize them, and bind them with other devices for gameplay interactions. ](https://dev.epicgames.com/documentation/fortnite/first-island-02-place-and-customize-devices-in-fortnite)
-  * [![3. Build a Shooting Gallery](https://dev.epicgames.com/community/api/documentation/image/126bd430-2bc9-47d2-8208-f8d2d20b33b9?resizing_type=fit&width=640&height=640) 3. Build a Shooting Gallery Add some target devices to build your gallery and a barrier to keep players from getting too close. ](https://dev.epicgames.com/documentation/fortnite/first-island-03-build-a-shooting-gallery-in-fortnite)
-  * [![4. Playtest Your Island](https://dev.epicgames.com/community/api/documentation/image/07ce08f1-02b8-40b5-9f91-e1d881c4d0cc?resizing_type=fit&width=640&height=640) 4. Playtest Your Island See why playtesting is a crucial element of game design and development. ](https://dev.epicgames.com/documentation/fortnite/first-island-04-playtest-your-island-in-fortnite)
-  * [![5. Spice Up the Gameplay with Verse](https://dev.epicgames.com/community/api/documentation/image/1994c984-daed-4338-b66d-8d180cc9d98f?resizing_type=fit&width=640&height=640) 5. Spice Up the Gameplay with Verse Get a painless introduction to Verse that requires no previous programming experience! ](https://dev.epicgames.com/documentation/fortnite/first-island-05-spice-up-the-gameplay-with-verse-in-fortnite)
-  * [![6. Use Props to Set a Theme](https://dev.epicgames.com/community/api/documentation/image/3a929ba4-66c4-48be-bda0-6cacdc690579?resizing_type=fit&width=640&height=640) 6. Use Props to Set a Theme Set the appearance of your game using props and galleries from Fortnite Creative! ](https://dev.epicgames.com/documentation/fortnite/first-island-06-use-props-to-set-a-theme-in-fortnite)
+Clicking **Equip** will add the item to your [Resources bar](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#resources-bar). When you're back in Create mode, you can view items in your Resources bar by pressing the **Tab** key and selecting **Play**.
+You may want to create an item bundle to players through a [chest](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#chest) or [llama](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#llama). Selecting ADD TO CHEST will add the item to the [CHEST tab](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary). Each time you click it, the item count will increase by one, shown in a yellow box on the CHEST tab.
+You can add up to fifteen items to the CHEST tab. When it’s full, the ADD TO CHEST tab will disappear. To add more items, you first have to remove items from the CHEST tab.
+From the CHEST tab, you can select either CREATE CHEST or CREATE LLAMA to store the items in a Chest or a Llama for use [in-game](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#in-game).
+##  Managing Items
+You can manage these items when you are in [Play inventory](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#play-inventory). To access the **Play** inventory screen, press **Tab** and click **Play** in the top navigation bar. In the **Play** inventory screen, you can split item stacks or remove them entirely from the Resources bar.
+[![Wild Edible Resources Bar](https://dev.epicgames.com/community/api/documentation/image/ffb8af79-30df-44d6-bcd3-629fbd6bd089?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ffb8af79-30df-44d6-bcd3-629fbd6bd089?resizing_type=fit)
+Instead of dropping these items on the ground, it's best to grant them to players by using item-granting devices like the Item Spawner.
+You cannot reposition or copy items with the phone tool. To delete an item from your inventory in Create mode, you will have to select either _Respawn_ or _Back To Hub_ from the _Menu_. When you do this, your inventory clears.
+##  Wild Edible Items
+|  Item  |  Usage
+---|---|---
+[![Honey](https://dev.epicgames.com/community/api/documentation/image/af53e91b-f392-4fce-85fe-ff1798f952b8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/af53e91b-f392-4fce-85fe-ff1798f952b8?resizing_type=fit) |  **Honey** |  Themed to be harvested from trees and honeycombs.
+[![Blue Mushroom](https://dev.epicgames.com/community/api/documentation/image/80296f61-f455-4688-8ace-899e14d4a307?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/80296f61-f455-4688-8ace-899e14d4a307?resizing_type=fit) |  **Blue Mushroom** |  Themed to be harvested from foliage, branches, and other places mushrooms may grow.
+[![Pink Mushroom](https://dev.epicgames.com/community/api/documentation/image/c8e564fe-0f3d-4daf-936d-79095d93bd82?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c8e564fe-0f3d-4daf-936d-79095d93bd82?resizing_type=fit) |  **Pink Mushroom** |  Themed to be harvested from foliage, branches, and other places mushrooms may grow.
+[![Red Mushroom](https://dev.epicgames.com/community/api/documentation/image/1a29870c-c72a-4773-92d4-c0a40320db50?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1a29870c-c72a-4773-92d4-c0a40320db50?resizing_type=fit) |  **Red Mushroom** |  Themed to be harvested from foliage, branches, and other places mushrooms may grow.
+[![White Mushroom](https://dev.epicgames.com/community/api/documentation/image/0797052a-738e-4407-9470-5166a1f465d1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0797052a-738e-4407-9470-5166a1f465d1?resizing_type=fit) |  **White Mushroom** |  Themed to be harvested from foliage, branches, and other places mushrooms may grow.
+[![Yellow Mushroom](https://dev.epicgames.com/community/api/documentation/image/12aab2da-3765-46e8-af99-31e7adbb9ecf?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/12aab2da-3765-46e8-af99-31e7adbb9ecf?resizing_type=fit) |  **Yellow Mushroom** |  Themed to be harvested from foliage, branches, and other places mushrooms may grow.
+##  Registering Crafting Items to a Device
+[![Registered Consumables](https://dev.epicgames.com/community/api/documentation/image/2f06020c-a1c4-4b0f-86dd-4f5cfb854c78?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2f06020c-a1c4-4b0f-86dd-4f5cfb854c78?resizing_type=fit)
+You can drop items directly onto devices that can either hold or grant items. Above shows the Conditional Button, which holds two crafting items and an Item Spawner that holds one usable item.
+This pair of devices can be set up for players to exchange Honey and Adhesive Resin for Duct Tape. To do so, these items must first be [registered](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#register) to the devices that will hold the information.
+[![Registering Consumables](https://dev.epicgames.com/community/api/documentation/image/23c3281e-e54a-4ce6-aa97-261b03883f3b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/23c3281e-e54a-4ce6-aa97-261b03883f3b?resizing_type=fit)
+To register items to a device, you must stand directly on or immediately beside the device.
+To register an item for this kind of device, follow these steps.
+  1. In the CREATIVE inventory, find the equipment and items you want to register with a device and equip them.
+  2. In Create mode, stand directly beside the device that will register the item.
+  3. Press the **Tab** key to open the **PLAY** inventory screen.
+  4. Click the item, then press either **Z** or **X** to split or drop the item. You can also drag the item to the side until a [backpack icon](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#backpack-icon) appears.
 
-###  Take Your Project to the Next Level
-Check out the tutorials in the section below to add things like a combo system, a timer system, a weapon leveling system, and much more — using Verse!
-  * [![Your First Island: Level Up with Verse](https://dev.epicgames.com/community/api/documentation/image/888d2f34-aa71-4484-b123-339964b096f0?resizing_type=fit&width=640&height=640) Your First Island: Level Up with Verse You've built your first island. Ready to take it to the next level? ](https://dev.epicgames.com/documentation/fortnite/your-first-island-level-up-with-verse-in-fortnite)
+The compatible device will automatically register the dropped item.
+Compatible devices that can hold items are:
+  * **Vending Machine**
+  * **Team Settings & Inventory**
+  * **Class Designer**
+  * **Capture Item Spawner**
+  * **Item Granter**
+  * **Item Spawner**
+  * **Conditional Button**
+  * **Elimination Manager**
+  * **Item Remover**
+
+Use these devices to set up your own system for granting and spawning items onto your island.

@@ -1,7 +1,16 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ai/sidekick_mood
 
-# One more step
-Please complete a security check to continue
-Verification successful. Waiting for dev.epicgames.com to respond
-**Session ID** : 9e9db9f5987ee2f7
-**IP Address** : 14.191.95.176
+# sidekick_mood enumeration
+Learn technical details about the sidekick_mood enumeration.
+Sidekicks have a mood that modifies their animations to suit that mood. This is the list of currently supported moods.
+|
+---|---
+Verse `using` statement | `using { /Fortnite.com/AI }`
+## Enumerators
+The `sidekick_mood` enumeration includes the following enumerators:
+Name | Description
+---|---
+`Neutral` |
+`Combat` |
+`Worried` |
+`Bored` |

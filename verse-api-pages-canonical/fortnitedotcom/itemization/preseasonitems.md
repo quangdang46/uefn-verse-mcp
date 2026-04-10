@@ -1,5 +1,3 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/itemization/preseasonitems
 
-# 404
-### Page not found
-The page you were looking for was not found. Please verify the link / URL or try starting back at our home page.
+**No document** The document you're looking for does not exist in this version. You have been redirected to the closest page.

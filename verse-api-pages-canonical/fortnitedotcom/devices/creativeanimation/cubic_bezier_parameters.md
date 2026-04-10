@@ -1,26 +1,17 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creativeanimation/cubic_bezier_parameters
 
-# GrantItemIndex function
-Learn technical details about the GrantItemIndex function.
-Grants an item at a specific `ItemIndex` to all players. Only functions when _Receiving Players_ is set to _All_ or _Team Index_. `Index` should be between `0` and the available item count - 1. If Value is out of bounds, which item is granted is determined by _Cycle Behavior_.
+# cubic_bezier_parameters struct
+Learn technical details about the cubic_bezier_parameters struct.
+A structure for defining Bezier interpolation parameters. See https://en.wikipedia.org/wiki/B%C3%A9zier_curve for more info on Bezier curves.
 |
 ---|---
-Verse `using` statement | `using { /Fortnite.com/Devices }`
-`GrantItemIndex<public>(ItemIndex:int)<transacts><no_rollback>:void`
-## Parameters
-`GrantItemIndex` takes the following parameters:
-Name | Type | Description
+Verse `using` statement | `using { /Fortnite.com/Devices/CreativeAnimation }`
+## Members
+This struct has data members, but no functions.
+### Data
+Data Member Name | Type | Description
 ---|---|---
-`ItemIndex` | `int` |
-## Attributes, Specifiers, and Effects
-### Specifiers
-The following specifiers determine how you can interact with `GrantItemIndex` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
-Specifier | Meaning
----|---
-`public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
-### Effects
-The following effects determine how `GrantItemIndex` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
-Effect | Meaning
----|---
-`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.
-`no_rollback` | This is the default effect when no exclusive effect is specified. The `no_rollback` effect indicates that any actions performed by the function cannot be undone and so the function cannot be used in a failure context. This effect cannot be manually specified.
+`X0` | `float` |  X value of the P1 control point. `0.0 <= X0 <= 1.0` or an error will be generated when calling `animation_controller.SetAnimation`.
+`Y0` | `float` |  Y value of the P1 control point.
+`X1` | `float` |  X value of the P2 control point. `0.0 <= X1 <= 1.0 or an error will be generated when calling `animation_controller.SetAnimation`.
+`Y1` | `float` |  Y value of the P2 control point.

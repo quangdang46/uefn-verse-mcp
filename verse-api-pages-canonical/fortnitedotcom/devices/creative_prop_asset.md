@@ -1,7 +1,10 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_prop_asset
 
-# One more step
-Please complete a security check to continue
-Verification successful. Waiting for dev.epicgames.com to respond
-**Session ID** : 9e9c4cca8aca8516
-**IP Address** : 14.191.95.176
+# creative_prop_asset class
+Learn technical details about the creative_prop_asset class.
+Asset used to spawn `creative_prop` instances.
+|
+---|---
+Verse `using` statement | `using { /Fortnite.com/Devices }`
+## Members
+This class has no members.

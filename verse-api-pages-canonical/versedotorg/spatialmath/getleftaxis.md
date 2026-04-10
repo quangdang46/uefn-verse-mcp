@@ -1,26 +1,24 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/spatialmath/getleftaxis
 
-# CrossProduct function
-Learn technical details about the CrossProduct function.
-Returns the right-handed cross product of `V1` and `V2`.
+# (Rotation:rotation).GetLeftAxis extension
+Learn technical details about the (Rotation:rotation).GetLeftAxis extension.
+Makes a unit `vector3` pointing in the _left_ rotated direction. This is equivalent to: `vector3{Forward:=0.0, Left:=1.0, Up:=0.0} * Rotation`.
 |
 ---|---
 Verse `using` statement | `using { /Verse.org/SpatialMath }`
-`CrossProduct<public>(V1:vector3, V2:vector3)<reads><computes>:`[`vector3`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/spatialmath/vector3)
+`(Rotation:rotation).GetLeftAxis<public>()<reads><computes>:`[`vector3`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/spatialmath/vector3)
 ## Parameters
-`CrossProduct` takes the following parameters:
+`GetLeftAxis` takes the following parameters:
 Name | Type | Description
 ---|---|---
-`V1` | `vector3` |
-`V2` | `vector3` |
+`Rotation` | `rotation` |
 ## Attributes, Specifiers, and Effects
+The following attributes, specifiers, and effects determine how you can interact with `GetLeftAxis` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 ### Specifiers
-The following specifiers determine how you can interact with `CrossProduct` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
 ### Effects
-The following effects determine how `CrossProduct` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
 `reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.

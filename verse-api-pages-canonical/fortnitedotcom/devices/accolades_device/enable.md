@@ -1,29 +1,23 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/accolades_device/enable
 
-# (Rotation:rotation).GetEulerRadians extension
-Learn technical details about the (Rotation:rotation).GetEulerRadians extension.
-Makes a `tuple(float, float, float)` with three elements:
-  * _left axis_ `rotation` in radians
-  * _up axis_ of `rotation` in radians
-  * _forward axis_ of `rotation` in radians using the conventions of `MakeRotationEulerRadians`.
-
+# Enable function
+Learn technical details about the Enable function.
+Enables this device.
 |
 ---|---
-Verse `using` statement | `using { /Verse.org/SpatialMath }`
-`(Rotation:rotation).GetEulerRadians<public><native>()<reads>:(float, float, float)`
+Verse `using` statement | `using { /Fortnite.com/Devices }`
+`Enable<public>()<transacts><no_rollback>:void`
 ## Parameters
-`GetEulerRadians` takes the following parameters:
-Name | Type | Description
----|---|---
-`Rotation` | `rotation` |
+`Enable` does not take any parameters.
 ## Attributes, Specifiers, and Effects
-The following attributes, specifiers, and effects determine how you can interact with `GetEulerRadians` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 ### Specifiers
+The following specifiers determine how you can interact with `Enable` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
-`native` | Indicates that the definition details of the element are implemented in C++. Verse definitions with the `native` specifier auto-generate C++ definitions that a developer can then fill out its implementation. You can use this specifier on classes, interfaces, enums, methods, and data.
 ### Effects
+The following effects determine how `Enable` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
-`reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.
+`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.
+`no_rollback` | This is the default effect when no exclusive effect is specified. The `no_rollback` effect indicates that any actions performed by the function cannot be undone and so the function cannot be used in a failure context. This effect cannot be manually specified.

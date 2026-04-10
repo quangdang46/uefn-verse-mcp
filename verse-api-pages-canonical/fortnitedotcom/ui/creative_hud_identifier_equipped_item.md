@@ -1,7 +1,7 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ui/creative_hud_identifier_equipped_item
 
-# creative_hud_identifier_storm_timer class
-Learn technical details about the creative_hud_identifier_storm_timer class.
+# creative_hud_identifier_equipped_item class
+Learn technical details about the creative_hud_identifier_equipped_item class.
 |
 ---|---
 Verse `using` statement | `using { /Fortnite.com/UI }`
@@ -9,6 +9,6 @@ Verse `using` statement | `using { /Fortnite.com/UI }`
 This class is derived from `hud_element_identifier`.
 Name | Description
 ---|---
-[`hud_element_identifier`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/ui/hud_element_identifier) |  Used to identify a HUD element.
+[`hud_element_identifier`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ui/hud_element_identifier) |  Used to identify a HUD element.
 ## Members
 This class has no members.

@@ -1,27 +1,46 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-crash-pad-devices-in-fortnite-creative
 
-# Grid Snapping
-Make clean-looking experiences by using grid snapping.
-![Grid Snapping](https://dev.epicgames.com/community/api/documentation/image/c7fe9ad7-2999-47ab-b75a-c6621d841b19?resizing_type=fill&width=1920&height=335)
-**Grid Snapping** in **Unreal Editor for Fortnite (UEFN)** is a way to precisely place props on **Building Actors** , such as floor or wall pieces.
-When you use grid snapping while placing an object, the object snaps to an exact point on the level [grid](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#grid).
-All items in the **Content Browser** can be used with grid snapping. To learn more about grid snapping, refer to [Transforming Actors](https://docs.unrealengine.com/5.0/en-US/transforming-actors-in-unreal-engine/).
-##  How Grid Snapping Works
-UEFN inherits its grid-snapping values, known as **Unreal Units (UU)** , from Unreal Engine (UE) for all [actors](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#actor). Inside UE, 1 UU is equal to 1 centimeter (CM). This means smaller snap values cause the actor to snap in smaller increments, or alternatively, larger snap values cause actors to snap in larger increments. This is the opposite of how grid snapping works in Fortnite, where the smaller the grid-snapping value, the larger the incremental snap.
-However, Building Actors do use the Fortnite grid snapping values. You can enable and disable Fortnite grid-snapping properties in **World Settings** by toggling **Editor Cell Snap** on and off for Building Actors. You can rotate prefab buildings and Building Actors around the center of the cell they belong to in increments of 90 degrees. Changing your grid snapping levels does not affect non-Building Actors.
-Snapping to one tile in UEFN is the equivalent of a 512 grid snap value. Using a grid snap of 8 units or less is the best way to ensure your prop actors are placed flush with Building Actors.
-Building Actors will snap to the Fortnite grid on mouse release, but while dragging across the viewport, Building Actors still respect the default UE snapping.
-##  Pivot Points
-[![The pivot point of a prop](https://dev.epicgames.com/community/api/documentation/image/958e519f-bf2f-4ef9-bcb0-62c67c0202d8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/958e519f-bf2f-4ef9-bcb0-62c67c0202d8?resizing_type=fit)
-All prop actors and other actors have a pivot point they rotate around, which is calculated using the last-selected actor. Pivot points are usually buried in the center of an actor. Building Actors have a central pivot point in the center of the tile they occupy, and revolve around the edges of the grid tile.
-In Fortnite, there is an attachment system that tells prop actors that when the Building Actor they are placed on is destroyed, they should destroy themselves. To ensure this happens, have the prop pivot point touch or embed into the Building Actor.
-##  Grid Snapping Options
-The **viewport** window offers customizable grid snap options when building in UEFN. Much like in Fortnite, you can select which grid snap level to use and apply it to all actors in the viewport window.
-[![Grid Snapping settings](https://dev.epicgames.com/community/api/documentation/image/fe498495-afaf-4850-bb63-084fe2541dcf?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/fe498495-afaf-4850-bb63-084fe2541dcf?resizing_type=fit)
-To change your grid snap values:
-  1. Click the Grid Snap icon.
-[![](https://dev.epicgames.com/community/api/documentation/image/35420dd9-e810-4878-9163-b02e7b2b2956?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/35420dd9-e810-4878-9163-b02e7b2b2956?resizing_type=fit)
-  2. Select your preferred grid-snap level from 1 to 8192.
-[![Click the Grid Snap icon](https://dev.epicgames.com/community/api/documentation/image/0d2b8b0e-6471-490e-9c73-12c199d9d626?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0d2b8b0e-6471-490e-9c73-12c199d9d626?resizing_type=fit)
+# Crash Pad Devices
+Place a crash pad that can bounce players and save them from fall damage.
+![Crash Pad Devices](https://dev.epicgames.com/community/api/documentation/image/a014d455-178e-4f98-91c1-129892a986d3?resizing_type=fill&width=1920&height=335)
+A **Crash Pad** can bounce players into the air and save them from fall damage. It can also bounce other objects (such as vehicles, balls, or projectiles) up into the air. It is primarily used by placing it in locations where players will be expected to take a long fall without deploying the glider.
+The **Crash Pad** device and the [Crash Pad](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) item resemble each other, and work similarly once placed. However, only the Crash Pad device can be customized using the options described below, and the Crash Pad device doesn't have a time limit the way the item does.
+Any player landing on a crash pad will be bounced a fixed height upward, high enough that they can deploy their glider. The bounce height is modified by any [buffs](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) to the player’s jump height.
+To find the **Crash Pad** device, see [Using Devices](https://dev.epicgames.com/documentation/en-us/fortnite/using-devices-in-fortnite).
+##  Device Options
+The default bounce height of a crash pad cannot be changed. You can configure this device with the following options.
+Default values are **bold**.
+Option  |  Value  |  Description
+---|---|---
+**Device Health** |  **Indestructible** , Pick a number |  Determines how much damage the device can take.
+**Enabled During Phase** |  None, **Always** , Pre-Game Only, Gameplay Only, Create Only |  Enables the device during a specific phase. **Pre-Game Only** includes all phases that occur before the game starts.
+**Visual Style** |  **Default** , Original, Target |  Determines the visual style the Crash Pad uses.
+**Allow Any Launch to Send Event** |  On, **Off** |  Determines whether the Crash Pad sends an event when any object touches it (rather than just players and vehicles containing players).
+###  Physics-Enabled Options
+The following options become available when [Physics](https://dev.epicgames.com/documentation/en-us/fortnite/physics) are enabled in a project:
+Option  |  Value  |  Description
+---|---|---
+**Bounce Launch Value** |  Select a value |  Determines the impulse or velocity applied to bounced players. As long as Apply Low Gravity is set to Off, a velocity of 23 meters/second will launch a player about two floors high, and 30 meters/second will launch a player about four floors high. An impulse of 1KNs will launch a player roughly 3 meters high.
+**Impulse or Velocity** |  **Velocity** , Impulse |  Determines whether to an impulse to or directly set the velocity of an object.
+##  Event Binding
+Direct event binding allows devices to communicate directly, which makes your workflow more intuitive, and gives you more freedom to focus on your design ideas.
+Below are the following direct event binding options for this device.
+###  Functions
+A [function](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) listens for an event on a device then performs an action.
+  1. For any function, click the **option** , then **Select Device** to access and select from the **Device dropdown menu**.
+  2. Once you've selected a device, click **Select Event** and select the event that triggers this function.
+  3. If more than one device or event triggers a function, press the **Add** button to add a line and repeat these steps.
 
-Setting the grid snap to a higher number makes it possible to move your actor and snap it in place in larger increments.
+Option  |  Description
+---|---
+**Enabled When Receiving From** |  This function enables the crash pad when an event occurs.
+**Disable When Receiving From** |  This function disables the crash pad when an event occurs.
+###  Events
+Direct event binding uses events as transmitters. An event tells another device to perform a function.
+  1. For any event option, click the **option** , then **Select Device** to access and select from the **Device dropdown menu**.
+  2. Once you've selected a device, click **Select Function** to bind the event to a function for that device.
+  3. If more than one function is triggered by the event, press the **Add** button and repeat.
+
+Option  |  Description
+---|---
+**On Launch Send Event To** |  When any object is launched, an event is sent to the selected device which triggers the selected function.

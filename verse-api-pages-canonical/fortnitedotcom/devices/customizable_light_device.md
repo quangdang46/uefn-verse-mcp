@@ -1,47 +1,36 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/customizable_light_device
 
-# roly_poly class
-Learn technical details about the roly_poly class.
-Roly Poly spawned from the 'roly_poly_spawner_device'
+# customizable_light_device class
+Learn technical details about the customizable_light_device class.
+Used to create a light which can have its color and brightness manipulated in response to in-game events.
 |
 ---|---
 Verse `using` statement | `using { /Fortnite.com/Devices }`
-## Exposed Interfaces
-This class exposes the following interfaces:
+## Inheritance Hierarchy
+This class is derived from the following hierarchy, starting with `creative_object`:
 Name | Description
 ---|---
-[`positional`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/game/positional) |  Implemented by objects to allow reading position information.
-[`healthful`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/game/healthful) |  Implemented by Fortnite objects that have health state and can be eliminated.
-[`healable`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/game/healable) |  Implemented by Fortnite objects that can be healed.
-[`damageable`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/game/damageable) |  Implemented by Fortnite objects that can be damaged.
+[`creative_object`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object) |  Base class for creative devices and props.
+[`creative_device_base`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_device_base) |  Base class for creative_device.
 ## Members
-This class has both data members and functions.
-### Data
-Data Member Name | Type | Description
----|---|---
-`Energy` | `?float` |  Set/Get the Energy level of the spawned Roly Poly. Energy will be clamped to 0 - 100.
+This class has functions, but no data members.
 ### Functions
 Function Name | Description
 ---|---
-[`GetTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/roly_poly/gettransform) |  Returns the transform of the Roly Poly
-[`GetHealth`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/roly_poly/gethealth) |  Returns the health state of the Roly Poly. This value will be between 0.0 and 'GetMaxHealth'
-[`SetHealth`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/roly_poly/sethealth) |  Sets the health state of the Roly Poly to 'Health'.
-  * Health state will be clamped between 1.0 and 'GetMaxHealth'.
-  * Health state cannot be directly set to 0.0. To eliminate the Roly Poly, use the 'Dismiss' function on the spawner instead.
-
-[`GetMaxHealth`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/roly_poly/getmaxhealth) |  Returns the maximum health of the Roly Poly. This value will be between 1.0 and 9999.0.
-[`SetMaxHealth`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/roly_poly/setmaxhealth) |  Sets the maximum health state of the Roly Poly.
-  * MaxHealth will be clamped between 1.0 and 9999.0.
-  * Current health state will be scaled up or down based on the scale difference between the old and new MaxHealth state.
-
-[`Heal`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/roly_poly/heal) |  Heal the Roly Poly anonymously by 'Amount'. Setting 'Amount' to less than 0 will cause no healing. Use 'Heal(:healing_args):void' when healing is being applied from a known instigator and source.
-[`Heal`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/roly_poly/heal-1) |  Heal the Roly Poly by 'Args.Amount'. Setting 'Amount' to less than 0 will cause no healing.
-[`HealedEvent`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/roly_poly/healedevent) |  Signaled when healing is applied to the Roly Poly.
-[`Damage`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/roly_poly/damage) |  Damage the Roly Poly anonymously by 'Amount'. Setting 'Amount' to less than 0 will cause no damage. Use 'Damage(:damage_args):void' when damage is being applied from a known instigator and source. Damage caused by events will not cause players to be bucked from the Roly Poly.
-[`Damage`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/roly_poly/damage-1) |  Damage the Roly Poly by 'Args.Amount'. Setting 'Amount' to less than 0 will cause no damage. Damage caused by events will not cause players to be bucked from the Roly Poly.
-[`DamagedEvent`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/roly_poly/damagedevent) |  Signaled when damage is applied to the Roly Poly.
-[`SetFrightened`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/roly_poly/setfrightened) |  Set the Frightened status of the Roly Poly.
-  * Setting to true will frighten the Roly Poly.
-  * Setting to false will soothe the Roly Poly.
-  * An 'agent' can be provided and will be passed back as the signaled events 'agent'.
-  * Depending on the state the Roly Poly is in, it may take a few seconds for the FrightenedEvent to be signaled. Ex. When a player is in the Roly Poly, it will buck the player and enter the frightened state when it lands on solid ground.
+[`DimLight`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/customizable_light_device/dimlight) |  Dims the light by _Dimming Amount_.
+[`Disable`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/customizable_light_device/disable) |  Disables this device.
+[`Enable`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/customizable_light_device/enable) |  Enables this device.
+[`GetGlobalTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/getglobaltransform) |  Gets the global transform of this object.
+[`GetTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/gettransform) |  Returns the transform of the `creative_object` with units in cm. You must check `creative_object.IsValid` before calling this if there is a possibility the object has been disposed or destroyed by gameplay. Otherwise a runtime error will result.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto) |  Moves the `creative_object` to the specified `Position` and `Rotation` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-1) |  Moves the `creative_object` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-2) |  Moves the `creative_device` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_device` it will be stopped and put into the `AnimationNotSet` state.
+[`Reset`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/customizable_light_device/reset) |  Resets the light to its initial state.
+[`SetGlobalTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/setglobaltransform) |  Sets the global transform of this object.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto) |  Teleports the `creative_object` to the specified `Position` and `Rotation`.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-1) |  Teleports the `creative_object` to the specified location defined by `Transform`, also applies rotation and scale accordingly.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-2) |  Teleports the `creative_device` to the specified location defined by `Transform`, also applies rotation and scale accordingly.
+[`Toggle`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/customizable_light_device/toggle) |  Toggles between `TurnOn` and `TurnOff`.
+[`TurnOff`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/customizable_light_device/turnoff) |  Turns off the light.
+[`TurnOn`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/customizable_light_device/turnon) |  Turns on the light.
+[`UndimLight`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/customizable_light_device/undimlight) |  Brightens the light by _Dimming Amount_.

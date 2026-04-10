@@ -6,7 +6,7 @@ Makes a `rotation` by applying `AngleRadians` of left-handed rotation around the
 |
 ---|---
 Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }`
-`(InitialRotation:rotation).ApplyWorldRotationY<public><native>(AngleRadians:float)<transacts>:`[`rotation`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/rotation)
+`(InitialRotation:rotation).ApplyWorldRotationY<public><native>(AngleRadians:float)<transacts>:`[`rotation`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/rotation)
 ## Parameters
 `ApplyWorldRotationY` takes the following parameters:
 Name | Type | Description
@@ -14,7 +14,7 @@ Name | Type | Description
 `InitialRotation` | `rotation` |
 `AngleRadians` | `float` |
 ## Attributes, Specifiers, and Effects
-The following attributes, specifiers, and effects determine how you can interact with `ApplyWorldRotationY` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+The following attributes, specifiers, and effects determine how you can interact with `ApplyWorldRotationY` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 ### Specifiers
 Specifier | Meaning
 ---|---

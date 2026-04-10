@@ -1,7 +1,14 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/subscribable/subscribable(t)
 
-# One more step
-Please complete a security check to continue
-Verification successful. Waiting for dev.epicgames.com to respond
-**Session ID** : 9e9dbb9228c0e2f7
-**IP Address** : 14.191.95.176
+# subscribable(t) interface
+Learn technical details about the subscribable(t) interface.
+A parametric interface implemented by events with a `payload` that can be subscribed to. Matched with `signalable.`
+|
+---|---
+Verse `using` statement | `using { /Verse.org/Verse }`
+## Members
+This interface has functions, but no data members.
+### Functions
+Function Name | Description
+---|---
+[`Subscribe`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/subscribable/subscribable\(t\)/subscribe) |  Registers `Callback` to be invoked on matching calls to `signable.Signal`. Returns an unsubscriber object. Call `cancelable.Cancel` on the unsubscriber to unregister `Callback`.

@@ -1,8 +1,8 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device
 
-# item_spawner_device class
-Learn technical details about the item_spawner_device class.
-Used to configuration and spawn items that players can pick up and use.
+# powerup_device class
+Learn technical details about the powerup_device class.
+Base class for various powerup devices offering common events like `ItemPickedUpEvent`.
 |
 ---|---
 Verse `using` statement | `using { /Fortnite.com/Devices }`
@@ -10,32 +10,32 @@ Verse `using` statement | `using { /Fortnite.com/Devices }`
 This class is derived from the following hierarchy, starting with `creative_object`:
 Name | Description
 ---|---
-[`creative_object`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object) |  Base class for creative devices and props.
-[`creative_device_base`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_device_base) |  Base class for creative_device.
-[`base_item_spawner_device`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/base_item_spawner_device) |  Base class for devices that spawn items.
+[`creative_object`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object) |  Base class for creative devices and props.
+[`creative_device_base`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_device_base) |  Base class for creative_device.
 ## Members
 This class has both data members and functions.
 ### Data
 Data Member Name | Type | Description
 ---|---|---
-`ItemPickedUpEvent` | `listenable(payload)` |  Signaled when an `agent` picks up the spawned item. Sends the `agent` that picked up the item.
+`ItemPickedUpEvent` | `listenable(payload)` |  Signaled when the powerup is picked up by an `agent`. Sends the `agent` that picked up the powerup.
 ### Functions
 Function Name | Description
 ---|---
-[`CycleToNextItem`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/item_spawner_device/cycletonextitem) |  Cycles device to next configured item.
-[`Disable`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/base_item_spawner_device/disable) |  Disables this device.
-[`Enable`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/base_item_spawner_device/enable) |  Enables this device.
-[`GetEnableRespawnTimer`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/item_spawner_device/getenablerespawntimer) |  Returns device _Respawn Item on Timer_ option (see `SetTimeBetweenSpawns`)
-[`GetGlobalTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/getglobaltransform) |  Gets the global transform of this object.
-[`GetTimeBetweenSpawns`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/item_spawner_device/gettimebetweenspawns) |  Returns the _Time Between Spawns_ (in seconds) after an item is collected before the next is spawned, if this device has _Respawn Item on Timer_ enabled (see `SetEnableRespawnTimer`)
-[`GetTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/gettransform) |  Returns the transform of the `creative_object` with units in cm. You must check `creative_object.IsValid` before calling this if there is a possibility the object has been disposed or destroyed by gameplay. Otherwise a runtime error will result.
-[`MoveTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto) |  Moves the `creative_object` to the specified `Position` and `Rotation` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
-[`MoveTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-1) |  Moves the `creative_object` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
-[`MoveTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-2) |  Moves the `creative_device` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_device` it will be stopped and put into the `AnimationNotSet` state.
-[`SetEnableRespawnTimer`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/item_spawner_device/setenablerespawntimer) |  Sets device _Respawn Item on Timer_ option (see `SetTimeBetweenSpawns`)
-[`SetGlobalTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/setglobaltransform) |  Sets the global transform of this object.
-[`SetTimeBetweenSpawns`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/item_spawner_device/settimebetweenspawns) |  Sets the _Time Between Spawns_ (in seconds) after an item is collected before the next is spawned, if this device has _Respawn Item on Timer_ enabled (see `SetEnableRespawnTimer`)
-[`SpawnItem`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/item_spawner_device/spawnitem) |  Spawns the current item.
-[`TeleportTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto) |  Teleports the `creative_object` to the specified `Position` and `Rotation`.
-[`TeleportTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-1) |  Teleports the `creative_object` to the specified location defined by `Transform`, also applies rotation and scale accordingly.
-[`TeleportTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-2) |  Teleports the `creative_device` to the specified location defined by `Transform`, also applies rotation and scale accordingly.
+[`Despawn`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device/despawn) |  Despawns this powerup from the experience.
+[`GetDuration`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device/getduration) |  Returns the _Duration_ that this powerup will be active for on any player it is applied to.
+[`GetGlobalTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/getglobaltransform) |  Gets the global transform of this object.
+[`GetRemainingTime`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device/getremainingtime) |  If the `Agent` has the effect applied to them, this will return the remaining time the effect has. Returns -1.0 if the effect has an infinite duration. Returns 0.0 if the `Agent` does not have the effect applied.
+[`GetTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/gettransform) |  Returns the transform of the `creative_object` with units in cm. You must check `creative_object.IsValid` before calling this if there is a possibility the object has been disposed or destroyed by gameplay. Otherwise a runtime error will result.
+[`HasEffect`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device/haseffect) |  Returns the `Agent` has the powerup's effect (or another of the same type) applied to them.
+[`IsSpawned`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device/isspawned) |  Succeeds if the powerup is currently spawned.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto) |  Moves the `creative_object` to the specified `Position` and `Rotation` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-1) |  Moves the `creative_object` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-2) |  Moves the `creative_device` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_device` it will be stopped and put into the `AnimationNotSet` state.
+[`Pickup`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device/pickup) |  Grants this powerup to `Agent`.
+[`Pickup`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device/pickup-1) |  Grants this powerup without an agent reference. Requires _Apply To_ set to _All Players_.
+[`SetDuration`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device/setduration) |  Updates the _Duration_ for this powerup, clamped to the Min and Max defined in the device. Will not apply to any currently applied effects.
+[`SetGlobalTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/setglobaltransform) |  Sets the global transform of this object.
+[`Spawn`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device/spawn) |  Spawns the powerup into the experience so users can interact with it.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto) |  Teleports the `creative_object` to the specified `Position` and `Rotation`.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-1) |  Teleports the `creative_object` to the specified location defined by `Transform`, also applies rotation and scale accordingly.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-2) |  Teleports the `creative_device` to the specified location defined by `Transform`, also applies rotation and scale accordingly.

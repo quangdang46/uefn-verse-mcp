@@ -1,7 +1,16 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/listenable/listenable(payload)
 
-# One more step
-Please complete a security check to continue
-Verification successful. Waiting for dev.epicgames.com to respond
-**Session ID** : 9e9dbb909dc7e2f7
-**IP Address** : 14.191.95.176
+# listenable(payload) interface
+Learn technical details about the listenable(payload) interface.
+A parametric interface combining `awaitable` and `subscribable`.
+|
+---|---
+Verse `using` statement | `using { /Verse.org/Verse }`
+## Exposed Interfaces
+This interface exposes the following interfaces:
+Name | Description
+---|---
+[`awaitable(payload)`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/concurrency/awaitable/awaitable\(payload\)) |  A parametric interface implemented by events with a `payload` that can be waited on. Matched with `signalable.`
+[`subscribable(t)`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/subscribable/subscribable\(t\)) |  A parametric interface implemented by events with a `payload` that can be subscribed to. Matched with `signalable.`
+## Members
+This interface has no members.

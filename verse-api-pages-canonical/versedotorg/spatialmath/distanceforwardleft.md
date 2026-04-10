@@ -1,25 +1,26 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/spatialmath/distanceforwardleft
 
-# ToString function
-Learn technical details about the ToString function.
-Makes a `string` representation of `InTransform` where the result is on the form. `"{Translation = {ToString(`InTransform.Translation`)}, Rotation = {ToString(`InTransform.Rotation`)}, Scale = {ToString(`InTransform.Scale`)}}".
+# DistanceForwardLeft function
+Learn technical details about the DistanceForwardLeft function.
+Returns the 2-D Euclidean distance between `V1` and `V2` by ignoring the difference in `Up`.
 |
 ---|---
 Verse `using` statement | `using { /Verse.org/SpatialMath }`
-`ToString<public>(InTransform:transform)<reads><computes>:[]char`
+`DistanceForwardLeft<public>(V1:vector3, V2:vector3)<reads><computes>:float`
 ## Parameters
-`ToString` takes the following parameters:
+`DistanceForwardLeft` takes the following parameters:
 Name | Type | Description
 ---|---|---
-`InTransform` | `transform` |
+`V1` | `vector3` |
+`V2` | `vector3` |
 ## Attributes, Specifiers, and Effects
 ### Specifiers
-The following specifiers determine how you can interact with `ToString` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+The following specifiers determine how you can interact with `DistanceForwardLeft` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
 ### Effects
-The following effects determine how `ToString` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+The following effects determine how `DistanceForwardLeft` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
 `reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.

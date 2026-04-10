@@ -1,28 +1,5 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/controlinput/input_events/input_events\(t\
 
-# ReflectVector function
-Learn technical details about the ReflectVector function.
-Makes a `vector2` by inverting the `SurfaceNormal` component of `Direction`. Fails if `not SurfaceNormal.MakeUnitVector[]`.
-|
----|---
-Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }`
-`ReflectVector<public>(Direction:vector2, SurfaceNormal:vector2)<reads><computes><decides>:`[`vector2`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/vector2)
-## Parameters
-`ReflectVector` takes the following parameters:
-Name | Type | Description
----|---|---
-`Direction` | `vector2` |
-`SurfaceNormal` | `vector2` |
-## Attributes, Specifiers, and Effects
-### Specifiers
-The following specifiers determine how you can interact with `ReflectVector` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
-Specifier | Meaning
----|---
-`public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
-### Effects
-The following effects determine how `ReflectVector` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
-Effect | Meaning
----|---
-`reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.
-`computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect.
-`decides` | Indicates that the function can fail, and that calling this function is a [failable expression](https://dev.epicgames.com/documentation/fortnite/failure-in-verse#failableexpression). Function definitions with the `decides` effect must also have the `transacts` effect, which means the actions performed by this function can be rolled back (as if the actions were never performed), if there’s a failure anywhere in the function.
+# 404
+### Page not found
+The page you were looking for was not found. Please verify the link / URL or try starting back at our home page.

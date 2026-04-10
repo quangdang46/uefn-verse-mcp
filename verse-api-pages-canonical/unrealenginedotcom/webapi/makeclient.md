@@ -1,18 +1,20 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/webapi/makeclient
 
-# value class
-Learn technical details about the value class.
+# MakeClient function
+Learn technical details about the MakeClient function.
 |
 ---|---
-Verse `using` statement | `using { /UnrealEngine.com/JSON }`
-## Members
-This class has functions, but no data members.
-### Functions
-Function Name | Description
+Verse `using` statement | `using { /UnrealEngine.com/WebAPI }`
+`MakeClient<public><native>(ClientId:client_id):`[`client`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/webapi/client)
+## Parameters
+`MakeClient` takes the following parameters:
+Name | Type | Description
+---|---|---
+`ClientId` | `client_id` |
+## Attributes, Specifiers, and Effects
+### Specifiers
+The following specifiers determine how you can interact with `MakeClient` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+Specifier | Meaning
 ---|---
-[`AsObject`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/json/value/asobject) |  Retrieve an object value or fail if value is not a json object
-[`AsArray`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/json/value/asarray) |  Retrieve an array value or fail if value is not a json array
-[`AsInt`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/json/value/asint) |  Retrieve an integer value or fail if value is not a json number
-[`AsFloat`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/json/value/asfloat) |  Retrieve a float value or fail if value is not a json number
-[`AsString`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/json/value/asstring) |  Retrieve an object value or fail if value is not a string
-[`AsNull`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/json/value/asnull) |  Retrieve an object value or fail if value is not null
+`public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
+`native` | Indicates that the definition details of the element are implemented in C++. Verse definitions with the `native` specifier auto-generate C++ definitions that a developer can then fill out its implementation. You can use this specifier on classes, interfaces, enums, methods, and data.

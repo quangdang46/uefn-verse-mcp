@@ -1,16 +1,15 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/json
 
-# Characters module
-Learn technical details about the Characters module.
-Module import path: /Fortnite.com/Characters
-  * [`Fortnite.com`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom)
-  * **`Characters`**
+# JSON module
+Learn technical details about the JSON module.
+  * [`UnrealEngine.com`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom)
+  * **`JSON`**
 
 ## Classes and Structs
 Name | Description
 ---|---
-[`stasis_args`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/characters/stasis_args) |  Parameters for `fort_character.PutInStasis` function.
-## Interfaces
+[`value`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/json/value) |
+## Functions
 Name | Description
 ---|---
-[`fort_character`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/characters/fort_character) |  Main API implemented by Fortnite characters.
+[`Parse`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/json/parse) |  Parse a JSON string returning a value with its contents

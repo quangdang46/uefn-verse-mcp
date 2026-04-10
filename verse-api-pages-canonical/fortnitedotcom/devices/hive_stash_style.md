@@ -1,5 +1,14 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/hive_stash_style
 
-# 404
-### Page not found
-The page you were looking for was not found. Please verify the link / URL or try starting back at our home page.
+# hive_stash_style enumeration
+Learn technical details about the hive_stash_style enumeration.
+|
+---|---
+Verse `using` statement | `using { /Fortnite.com/Devices }`
+## Enumerators
+The `hive_stash_style` enumeration includes the following enumerators:
+Name | Description
+---|---
+`Empty` |
+`Loot` |
+`Trapped` |

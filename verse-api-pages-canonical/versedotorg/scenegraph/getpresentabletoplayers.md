@@ -1,9 +1,7 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/scenegraph/getpresentabletoplayers
 
-# mesh class
-Learn technical details about the mesh class.
-|
----|---
-Verse `using` statement | `using { /Verse.org/Assets }`
-## Members
-This class has no members.
+# Access denied
+Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+
+**Session ID** : 9dfa4c4d7cb18cae
+**IP Address** : 14.191.95.176

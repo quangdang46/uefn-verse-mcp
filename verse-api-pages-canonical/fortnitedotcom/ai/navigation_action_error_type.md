@@ -1,15 +1,15 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ai/navigation_action_error_type
 
-# fort_leashable interface
-Learn technical details about the fort_leashable interface.
+# navigation_action_error_type enumeration
+Learn technical details about the navigation_action_error_type enumeration.
 |
 ---|---
 Verse `using` statement | `using { /Fortnite.com/AI }`
-## Members
-This interface has functions, but no data members.
-### Functions
-Function Name | Description
+## Enumerators
+The `navigation_action_error_type` enumeration includes the following enumerators:
+Name | Description
 ---|---
-[`SetLeashPosition`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/ai/fort_leashable/setleashposition) |  Set custom leash position. 'InnerRadius' ranges from 0.0 to 20000.0 (in centimeters). 'OuterRadius' ranges from 0.0 to 20000.0 (in centimeters) and no less than 'InnerRadius'.
-[`SetLeashAgent`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/ai/fort_leashable/setleashagent) |  Set the agent to be the new center of the leash. 'InnerRadius' ranges from 0.0 to 20000.0 (in centimeters). 'OuterRadius' ranges from 0.0 to 20000.0 (in centimeters) and no less than 'InnerRadius'.
-[`ClearLeash`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/ai/fort_leashable/clearleash) |  Removes the current leash.
+`Invalid` |  The navigation request is invalid.
+`Interrupted` |  Navigation has been interrupted before completion.
+`Blocked` |  The navigating agent is blocked.
+`Unreachable` |  The destination cannot be reached.

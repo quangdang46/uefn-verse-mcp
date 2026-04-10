@@ -1,26 +1,27 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/spatialmath/distancesquared
 
-# Award function
-Learn technical details about the Award function.
-Awards the XP to `agent`.
+# DistanceSquared function
+Learn technical details about the DistanceSquared function.
+Returns the squared Euclidean distance between `V1` and `V2`.
 |
 ---|---
-Verse `using` statement | `using { /Fortnite.com/Devices }`
-`Award<public>(Agent:agent)<transacts><no_rollback>:void`
+Verse `using` statement | `using { /Verse.org/SpatialMath }`
+`DistanceSquared<public>(V1:vector3, V2:vector3)<reads><computes>:float`
 ## Parameters
-`Award` takes the following parameters:
+`DistanceSquared` takes the following parameters:
 Name | Type | Description
 ---|---|---
-`Agent` | `agent` |
+`V1` | `vector3` |
+`V2` | `vector3` |
 ## Attributes, Specifiers, and Effects
 ### Specifiers
-The following specifiers determine how you can interact with `Award` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+The following specifiers determine how you can interact with `DistanceSquared` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
 ### Effects
-The following effects determine how `Award` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+The following effects determine how `DistanceSquared` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
-`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.
-`no_rollback` | This is the default effect when no exclusive effect is specified. The `no_rollback` effect indicates that any actions performed by the function cannot be undone and so the function cannot be used in a failure context. This effect cannot be manually specified.
+`reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.
+`computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect.

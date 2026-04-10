@@ -1,20 +1,19 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/getangle
 
-# (InitialRotation:rotation).ApplyWorldRotationZ extension
-Learn technical details about the (InitialRotation:rotation).ApplyWorldRotationZ extension.
-Makes a `rotation` by applying `AngleRadians` of left-handed rotation around the world +Z axis to `InitialRotation`.
+# (Rotation:rotation).GetAngle extension
+Learn technical details about the (Rotation:rotation).GetAngle extension.
+Returns the radians of `rotation` around the axis of `rotation`. See also `GetAxis`.
 |
 ---|---
 Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }`
-`(InitialRotation:rotation).ApplyWorldRotationZ<public><native>(AngleRadians:float)<transacts>:`[`rotation`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/rotation)
+`(Rotation:rotation).GetAngle<public><native>()<reads><computes>:float`
 ## Parameters
-`ApplyWorldRotationZ` takes the following parameters:
+`GetAngle` takes the following parameters:
 Name | Type | Description
 ---|---|---
-`InitialRotation` | `rotation` |
-`AngleRadians` | `float` |
+`Rotation` | `rotation` |
 ## Attributes, Specifiers, and Effects
-The following attributes, specifiers, and effects determine how you can interact with `ApplyWorldRotationZ` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+The following attributes, specifiers, and effects determine how you can interact with `GetAngle` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 ### Specifiers
 Specifier | Meaning
 ---|---
@@ -23,4 +22,5 @@ Specifier | Meaning
 ### Effects
 Effect | Meaning
 ---|---
-`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.
+`reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.
+`computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect.

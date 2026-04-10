@@ -1,14 +1,7 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/simulation/editable_number
 
-# editable_slider function
-Learn technical details about the editable_slider function.
-|
----|---
-Verse `using` statement | `using { /Verse.org/Simulation }`
-`editable_slider<public>(t:any):`
-This function is a parametric type, meaning it returns a class or interface rather than a value or object instance.
-## Parameters
-`editable_slider` takes the following parameters:
-Name | Type | Description
----|---|---
-`t` | `any` |
+# Access denied
+Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+
+**Session ID** : 9dfa4f1799e7e2fb
+**IP Address** : 14.191.95.176

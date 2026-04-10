@@ -1,130 +1,74 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/prefabs-and-prefab-instances-in-unreal-editor-for-fortnite
 
-# ATK Spawner Device Design Example
-Make a collecting game where players compete with ATKs!
-![ATK Spawner Device Design Example](https://dev.epicgames.com/community/api/documentation/image/b0da4ad5-2a55-4b0e-9582-8b3d49382391?resizing_type=fill&width=1920&height=335)
-The **ATK Spawner** device spawns an all-terrain kart (ATK) that you can place players into directly at the start of the game, or that they can choose to drive during the game.
-##  The Great ATK Collectibles Race!
-In this design example, you'll use several devices to create a fun multiplayer-team game. The game is constructed around a “hidden” feature of the ATK — players can use the awning on the top of the kart as a bounce pad!
-This team-based mini-game can be used by up to sixteen players, balanced over four teams of four.
-The teams must race to see who can gather the four collectible objects from four corners of the play space first!
-##  Devices Used
-  * 4 x [**ATK Spawner**](https://dev.epicgames.com/documentation/fortnite/using-atk-spawner-devices-in-fortnite-creative) devices
-  * 4 x [Button](https://dev.epicgames.com/documentation/fortnite/using-button-devices-in-fortnite-creative) devices
-  * 16 x [Collectible Object](https://dev.epicgames.com/documentation/fortnite/using-collectibles-object-devices-in-fortnite-creative) devices
-  * 16 x [Player Spawner](https://dev.epicgames.com/documentation/fortnite/using-player-spawn-pad-devices-in-fortnite-creative) devices
+# Prefabs and Prefab Instances
+Reuse and edit game objects and game elements by creating prefabs in Scene Graph.
+![Prefabs and Prefab Instances](https://dev.epicgames.com/community/api/documentation/image/ca5f4e88-c820-4560-b0c8-04011b6582e5?resizing_type=fill&width=1920&height=335)
+Learn to use this **Beta** feature, but use caution when shipping with it.
+Prefabs are stable objects that use a hierarchy of entities and components to hold the base information that all prefab instances share.
+This makes it easier to edit prefabs as a whole, or in parts, as you continue building and designing your level. You can instance and override assets created in Scene Graph to create new game objects and prefabs.
+Prefabs act like a stamp for game objects, so you can place the prefab in the scene as many times as you want. All instances you create are editable either as a group or individually.
+For more information about the power and potential of prefabs, refer to the following documentation:
+  * [Scene Graph Sample Tutorial](https://dev.epicgames.com/documentation/en-us/uefn/scene-graph-sample-tutorial-in-unreal-editor-for-fortnite)
+  * [Create a Platformer with Scene Graph](https://dev.epicgames.com/documentation/en-us/uefn/create-a-platformer-with-scene-graph-in-unreal-editor-for-fortnite)
 
-##  Build Your Own
-Construct the initial play space, then continue to build it out as you place and customize the devices you'll need to create the game mechanics.
-###  Construct the Starting Area
-Teams start in the center of the play area where ATK vehicles for each team will spawn.
-  1. Place a simple platform to establish the starting area. Make sure it's large enough to accommodate four ATV spawners.
-  2. Place a pillar on each corner with different decorations so players can orient to the visual cues. These are where the players will go to spawn their ATKs once the game starts.
-[![](https://dev.epicgames.com/community/api/documentation/image/86030658-6cbf-4490-be85-bf65fbd652bf?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/86030658-6cbf-4490-be85-bf65fbd652bf?resizing_type=fit)
+##  Saving Entities as Prefabs
+Prefabs should be as tightly constructed as possible, your prefab design should not be overly complicated. Prefabs with numerous entities and components become data heavy and can cause issues for your project.
+Only one component type can be used on an entity at a time. This means once you select a component type you cannot reuse that component type on the same entity. To use the same component you need to add another entity, then add the same component to the new entity.
+To create a prefab:
+  1. In the **Outliner** , right-click on the parent entity and select **Save As Prefab…**. The **Create New Prefab** window opens.
+[![Right-click on the parent entity and select Save As Prefab.](https://dev.epicgames.com/community/api/documentation/image/b3c7c3f7-ca8d-4a33-8638-0dd4f560b344?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b3c7c3f7-ca8d-4a33-8638-0dd4f560b344?resizing_type=fit)
+_Click image to enalrge._
+You can nest the entities in the Outliner first, or add new entities to a prefab in the Prefab Editor after.
+  2. Name the prefab, and select **Create entity Class**. The Prefab Editor opens with the prefab you created inside the viewport. The prefab thumbnail appears in the Content Browser.
+[![](https://dev.epicgames.com/community/api/documentation/image/d0c3724a-5704-46da-8592-a58b9f09b596?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d0c3724a-5704-46da-8592-a58b9f09b596?resizing_type=fit)
+Prefabs can be nested and grouped together in the Outliner for easier editing capabilities.
+  3. Select the prefab thumbnail, and drag the prefab out of the Content browser into the viewport. This creates another instance of the prefab.
 
-###  Add ATK Spawners
-  1. Place the first **ATK Spawner** device on the starting area.
-  2. Customize the spawner:
-[![](https://dev.epicgames.com/community/api/documentation/image/2e136d92-3618-4c87-9ee7-121fdaba8b4f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2e136d92-3618-4c87-9ee7-121fdaba8b4f?resizing_type=fit)
-Option  |  Value  |  Description
----|---|---
-**Enabled During Phase** |  Create Only |  You will only be able to interact directly with the ATK when you're in Create mode. Once the game starts, players will only access the ATK through the game mechanics you're setting up.
-**Enable Respawn** |  Off |  Prevents the ATK from respawning.
-**Activating Team** |  Team 1 |  Name the team that can access this ATK. Note that you will change this for each team for the remaining ATKs.
-  3. Name this device to match the team it corresponds to.
-  4. Copy and place the remaining ATK spawners on the starting platform as shown.
-[![](https://dev.epicgames.com/community/api/documentation/image/95701201-784a-42a6-b266-cf78b8e02d48?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/95701201-784a-42a6-b266-cf78b8e02d48?resizing_type=fit)
-  5. Rename each additional ATK spawner to correspond with a team and assign that team to the **Activating Team** option.
-Be consistent in naming your devices so they correspond to the team that can use them.
-[![](https://dev.epicgames.com/community/api/documentation/image/a9f7c509-b3ce-4447-b581-91fb592409ae?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a9f7c509-b3ce-4447-b581-91fb592409ae?resizing_type=fit)
-This will make things much easier later when you start [binding](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) devices together.
+##  Propagating Changes to All Prefab Instances
+A prefab instance is more than a visual copy of an original. Making changes with the [Prefab Editor](https://dev.epicgames.com/documentation/en-us/fortnite/prefab-editor-user-interface-in-unreal-editor-for-fortnite) causes all instances to automatically adopt all saved changes. It’s useful to use hierarchies in Scene Graph to determine how child prefabs and entities interact with the parent. Especially when you’re working with assets whose pivot points may be off-center, or don’t use Unreal Units to align with objects in the world.
+This saves you time because you don’t have to find every prefab instance and recreate the same changes over and over.
+You can also group different prefabs together in a hierarchy to create more complex prefabs.
+###  Overriding Prefab Instances
+You can override components in a prefab instance to make changes unique to that single instance. When you override a component, an **Override** icon appears on the entity in the Outliner, the component card, and next to the overridden component in the Details panel.
+Overrides supersede the parent prefab’s design, at the affected component’s level, with the component’s overridden property changes. You can override components in two ways:
+  * Edit a prefab in the Prefab Editor.
+  * Override an entity or component from the component card.
 
-###  Add Button Devices
-Each team will have its own button. Once the game starts, players must push their team's button to spawn or respawn their ATKs.
-  1. Add a **Button** device to the starting area for the first team. Place it on one of the corner pillars.
-[![](https://dev.epicgames.com/community/api/documentation/image/13aa3cd1-1643-4073-b161-257f9c51cf80?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/13aa3cd1-1643-4073-b161-257f9c51cf80?resizing_type=fit)
-  2. Customize the button:
-[![](https://dev.epicgames.com/community/api/documentation/image/a9a2ddbe-56a9-4e97-88c8-051023dc68a6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a9a2ddbe-56a9-4e97-88c8-051023dc68a6?resizing_type=fit)
-Option  |  Value  |  Description
----|---|---
-**Interact Time** |  2.0 Seconds |  This sets how much time a player has to interact with the button once the game starts.
-**Activating Team** |  Team 1 |  The team that can access this button.
-  3. Copy and place a Button device on the remaining pillars, naming each for the team that will use it, and setting the corresponding **Activating Team**.
+From the **[Prefab Editor](https://dev.epicgames.com/documentation/en-us/uefn/prefab-editor-user-interface-in-unreal-editor-for-fortnite)** , add a new component or create a Verse component to add functionality like movement or intractability to the prefab. Saving these changes in the Prefab Editor ensures the change occurs to every instance of the prefab in the scene.
+Overriding an entity is done by adding a new component or through creating a Verse component to add functionality like movement or intractability.
+Overriding an entity or component from the component card in a prefab instance applies the unique changes to that single instance. In the image below, the two wooden houses are based on the same original prefab design, but the second house has overrides made to component cards at key components to add different meshes or turn parts of the prefab to face different directions to show a new side of the house.
+[![Overriding components creates diversity in the scene.](https://dev.epicgames.com/community/api/documentation/image/3dff96b4-b707-48ac-ae0c-a8b102b8fbd7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3dff96b4-b707-48ac-ae0c-a8b102b8fbd7?resizing_type=fit) Click to enlarge image.
+To override a component:
+  1. From the **Content Browser** , drag an instance of the prefab into the viewport.
+  2. In the **Details panel** select the `sphere_light_component` card of the prefab instance.
+[![In the Outliner, select the entity on the prefab instance.](https://dev.epicgames.com/community/api/documentation/image/19c73531-01de-40ac-bf09-0782ceb17f77?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/19c73531-01de-40ac-bf09-0782ceb17f77?resizing_type=fit) Click image to enlarge.
+  3. Click the **component card menu button** , and select **Override Component**.
+  4. Select a new property for the component. The override of this component, for this instance, is now different from the parent prefab, and it stays the same even if you make changes to the parent prefab.
 
-###  Add Player Spawners
-Your players will spawn outside of the starting area.
-[![](https://dev.epicgames.com/community/api/documentation/image/12dff34f-1756-4fee-971d-5d3a01246bd9?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/12dff34f-1756-4fee-971d-5d3a01246bd9?resizing_type=fit)
-Place four groups of four player spawners each. Each group will be on a different side of the starting area, with each assigned to a different team.
-  1. Add the first **Player Spawner** device and rotate it so the player is facing the starting area on spawn.
-  2. Customize the spawner:
-[![](https://dev.epicgames.com/community/api/documentation/image/d07acd40-e19b-4699-9006-b1e5498896a9?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d07acd40-e19b-4699-9006-b1e5498896a9?resizing_type=fit)
-Option  |  Value  |  Description
----|---|---
-**Player Team** |  Team 1 |  The team the player will be assigned to at the start of game.
-**Visible in Game** |  Off |  The actual spawn pad will not show during the game.
-  3. Copy and place three more times for **Team 1**.
-[![](https://dev.epicgames.com/community/api/documentation/image/caf6845b-b7f4-48b6-b8a3-78623262f230?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/caf6845b-b7f4-48b6-b8a3-78623262f230?resizing_type=fit)
-  4. For **Team 2** , copy and place a spawner on a different side of the starting area, assign it to **Team 2** , then copy and place three more times.
-  5. Repeat Steps 2 through 5 for Teams 3 and 4.
+###  Override Icons
+Override icons are blue circles with a blue arrow pointing down the middle of the circle. The icon indicates that a component in this entity has been overridden. When entities are overridden you can use them multiple times in the scene and the entities still work consistently in a prefab as well.
+New entities added to a prefab have green circles with a plus sign in the middle to signify that they were added after the prefab was established.
+[![Entity icons indicating an overridden entity and added entity.](https://dev.epicgames.com/community/api/documentation/image/0a413952-5fd7-4691-80ea-29b1bcd2d033?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0a413952-5fd7-4691-80ea-29b1bcd2d033?resizing_type=fit) Click to enlarge image.
+##  Prefab Hierarchies
+Prefab hierarchies are created by nesting entities and prefabs under one parent prefab or entity. Parenting makes it possible to:
+  * Scale the component functions of a prefab to specify how the prefab should work in the scene.
+  * Determine how child entities interact with the parent prefab.
 
-###  Finish Constructing the Play Space
-The next part of the gameplay area involves placing floating platforms that are too high for a player to jump to, but that can be reached by using an ATK awning as a bounce pad. Check the height for each floating platform to make sure that players can bounce off the roof of the ATK and reach the top in a single jump.
-These platforms will hold the objects players need to collect.
-You will also place assorted objects to get in the way of players traversing the area.
-  1. In [fly mode](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary), move up and away from the starting area, then use primitive shapes to add four floating platforms. These platforms should be visually distinct from each other so that players can recognize them from a distance. In the design example, large geometric pieces were used to make each platform visually distinct when viewed from below, but you could also use different colored platforms.
-(w:600)
-You may need to adjust the **Drops** setting to suspend items in the air. With the item selected, look at the **Create hotkeys menu** on the left of the screen. If **Drops** is set to **On** , use the hotkey to toggle it to **Off**.
-[![](https://dev.epicgames.com/community/api/documentation/image/20b4dd9e-aac9-4b80-8b01-26f0a8dd3369?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/20b4dd9e-aac9-4b80-8b01-26f0a8dd3369?resizing_type=fit)
-This menu is context-sensitive, meaning that the options change depending on what you're doing at the time.
-  2. Add smaller floating platforms that players can also use to access the platforms where collectible objects are as an alternative to bouncing off the vehicle awnings.
-  3. Add other large obstacles between each floating platform, but on the ground. This will make driving more challenging for the players. You may want to turn **Drops** back on for easier placement.
-
-###  Place Collectible Objects
-This game uses four collectible objects for each team, configured to be picked up by one of the four teams. You will place these objects above each large floating platform.
-You can place objects for a single team all on one platform, or you can put one object per team on each platform, which will force a team to go to each platform.
-Objects for a single team can all be the same, or you can mix and match just to make the game a little more zany.
-[![](https://dev.epicgames.com/community/api/documentation/image/f8d2dc5e-5ab4-4565-a2ae-5c8ccc377cc0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f8d2dc5e-5ab4-4565-a2ae-5c8ccc377cc0?resizing_type=fit)
-A player can collect an object by coming into contact with it.
-  1. Place a **Collectible Object** device above the first large floating platform.
-  2. Configure the object.
-[![](https://dev.epicgames.com/community/api/documentation/image/12029594-8457-4418-b761-76e089d0d742?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/12029594-8457-4418-b761-76e089d0d742?resizing_type=fit)
-Function  |  Select Device  |  Select Event
----|---|---
-**Collectible Object** |  Pick an object |  Pick whatever objects you like. Object selection has no impact on gameplay.
-**Score** |  0 |  Winning this game is based on achieving the objective, not on score.
-**Collecting Team** |  Team 1 |  Each team will have four objects only they can collect. Players cannot collect an object assigned to a different team.
-**Consume if Collected By** |  Team |  Once a team member collects this item, it will no longer be available.
-**Display Score Update on HUD** |  On |  The HUD will display the number of objects collected by each team.
-  3. Copy and place three more objects for this platform. You can use the same object or mix them up.
-  4. Move on to the next large floating platform and repeat these steps, but this time set the **Collecting Team** to **Team 2**.
-  5. Repeat step 4 for Teams 3 and 4.
-
-###  Bind Devices
-[Direct event binding](https://dev.epicgames.com/documentation/fortnite/getting-started-with-direct-event-binding-in-fortnite-creative) is how devices communicate with each other. There are several bindings you'll need to set up for the game mechanics to work correctly. With all of your devices in place, you can now bind them to work together.
-  1. Start with the first ATK spawner by setting the following [functions](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary).
-[![](https://dev.epicgames.com/community/api/documentation/image/53d9f134-03ef-4cf5-a146-45c8e072b8fa?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/53d9f134-03ef-4cf5-a146-45c8e072b8fa?resizing_type=fit)
-Function  |  Select Device  |  Select Event
----|---|---
-**Enable When Receiving From** |  Button 1 |  On Vehicle Is Destroyed
-**Respawn Vehicle When Receiving From** |  Button 1 |  On Interact
-  2. What this does is to spawn a vehicle for the team when the team's button is pushed. Because the ATV spawner and the button are now bound, the events that are called from the functions on the spawner will automatically show on the Button device. How cool is that!
-  3. The ATK spawners use the following events in the game mode. These disable the ATK spawner until it is needed (for example when the previous ATK is destroyed).To disable the ATK spawner until it's needed, set the following [events](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary).
-[![](https://dev.epicgames.com/community/api/documentation/image/8984a451-106a-4a6d-8131-a7a043177330?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8984a451-106a-4a6d-8131-a7a043177330?resizing_type=fit)
-Event  |  Select Device  |  Select Function
----|---|---
-**On Vehicle Spawns Send Event To** |  ATK Spawner 1 |  Disable
-**On Vehicle Is Destroyed Send Event To** |  Button 1 |  Enable
-
-###  Configure the Island Settings
-The final step is to customize the [Island Settings](https://dev.epicgames.com/documentation/fortnite/understanding-island-settings-in-fortnite-creative).
-  1. Go to Island Settings and select the Round category.
-  2. Under **End Condition** , change the **Time Limit** to **None**.
-  3. Change the **Collect Items to End** to **Specific Count** , then change **Collect Item Count** to **4**.
-[![](https://dev.epicgames.com/community/api/documentation/image/ec06610d-aa7e-4401-94a2-4d32af0a0c7f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ec06610d-aa7e-4401-94a2-4d32af0a0c7f?resizing_type=fit)
-  4. Select the **Mode** category.
-  5. Under **Structure** , verify that **Max Players** is set to **16**. This is the default setting, but it's still a good idea to check since this is key to the gameplay.
-[![](https://dev.epicgames.com/community/api/documentation/image/2d255efe-4cae-4264-b4b5-7d1e1efb024c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2d255efe-4cae-4264-b4b5-7d1e1efb024c?resizing_type=fit)
-
-And there you have it! This example is a little more complex than some of the other design examples, but when you get multiple players on the island, racing and bouncing for the collectibles, it can be a riot of fun!
-##  Design Tips
-You now have a unique 16-player game featuring the ATK vehicle! Try adding various weapons or other devices to the game to make it even more interesting.
+[![Village created with prefabs and overrides.](https://dev.epicgames.com/community/api/documentation/image/5ffc0728-fedc-4cd3-88ab-2e9e62d5a5b7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5ffc0728-fedc-4cd3-88ab-2e9e62d5a5b7?resizing_type=fit) Click to enlarge image.
+Hierarchies make it possible to snap assets to a particular vector in the scene through the Pivot Point placement. This is helpful not only for set dressing, but also for gameplay elements that use coordinates.
+###  Pivot Point Placement and Grid Snapping
+[Pivot points](https://dev.epicgames.com/documentation/en-us/fortnite/unreal-editor-for-fortnite-glossary#pivot-point) and [grid snapping](https://dev.epicgames.com/documentation/en-us/fortnite/unreal-editor-for-fortnite-glossary#grid-snap) work with an entity’s **[transform_component](https://dev.epicgames.com/documentation/en-us/fortnite/transforms-in-scene-graph-in-unreal-editor-for-fortnite)** to align game objects and prefabs in the scene.
+The Prefab Editor doesn’t use the grid to scale prefabs. Instead, use the Outliner’s right-click menu to determine the offset for the pivot point of a prefab.
+Grid snapping is relative to the size of your asset. To ensure assets behave as intended, they should be scaled to **512 Unreal Units** , and use the same grid measurement set in UEFN. If you don’t rescale your assets, then reset the pivot points of your assets, and rescale the grid snapping settings.
+Placing the pivot point in the center of a prefab doesn’t work for all asset types, such as stairs. Instead, you can use the **Edit Transform** option in **[Modeling Mode](https://dev.epicgames.com/documentation/en-us/uefn/modeling-mode-in-unreal-editor-for-fortnite)** to offset the pivot point to ensure your assets appear and align where you want in the world.
+Learn more about 3D world space with the [Left-Up-Forward Coordinate System](https://dev.epicgames.com/documentation/en-us/uefn/leftupforward-coordinate-system-in-unreal-editor-for-fortnite) document.
+###  Composition in Scene Graph
+Composition in Scene Graph provides a way to align assets. All child entities and prefabs rotate on an offset relative to the parent object. If you turn a prefab structure **360 degrees** , the object moves around its center on the grid.
+When you rotate an actor in UEFN, the rotation is determined by the placement of the actor in the world. This makes it more difficult to align individual actors to make a complete structure.
+It’s useful to use hierarchies in Scene Graph to determine how child prefabs and entities interact with the parent. Especially when you’re working with assets whose pivot points may be off-center, or don’t use [Unreal Units](https://dev.epicgames.com/documentation/en-us/fortnite/unreal-editor-for-fortnite-glossary#unreal-units) to align with objects in the world.
+It’s also helpful when placing decorative assets in relation to parent prefabs that they’re placed on in the scene.
+[![Child objects snap according to the Parent Entity's pivot point.](https://dev.epicgames.com/community/api/documentation/image/890bba7e-b6d9-48b6-9419-a3f6676eddc1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/890bba7e-b6d9-48b6-9419-a3f6676eddc1?resizing_type=fit) Click to enlarge image
+To learn more about using the Transform component, see the **[Transforms in Scene Graph](https://dev.epicgames.com/documentation/en-us/fortnite/transforms-in-scene-graph-in-unreal-editor-for-fortnite)** document.
+##  Prefab Class in Verse
+Prefabs you create in your project are exposed as a class to Verse in the **Assets.digest.verse** file of your project. You can spawn instances of your prefabs by instantiating the Prefab class and adding them to an entity in the scene using Verse.
+To learn more about working with prefabs, refer to [Creating Your Own Component in Verse](https://dev.epicgames.com/documentation/en-us/fortnite/creating-your-own-component-using-verse-in-unreal-editor-for-fortnite).

@@ -1,7 +1,26 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/operatorplus-6
 
-# One more step
-Please complete a security check to continue
-Verification successful. Waiting for dev.epicgames.com to respond
-**Session ID** : 9e9dbb1cc8dfe2f7
-**IP Address** : 14.191.95.176
+# operator'+' function
+Learn technical details about the operator'+' function.
+Concatenates a normal string with a diagnostic message, yielding a diagnostic message.
+|
+---|---
+Verse `using` statement | `using { /Verse.org/Verse }`
+`operator'+'<public>(Lhs:[]char, Rhs:diagnostic)<computes>:`[`diagnostic`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/diagnostic)
+## Parameters
+`operator'+'` takes the following parameters:
+Name | Type | Description
+---|---|---
+`Lhs` | `[]char` |
+`Rhs` | `diagnostic` |
+## Attributes, Specifiers, and Effects
+### Specifiers
+The following specifiers determine how you can interact with `operator'+'` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+Specifier | Meaning
+---|---
+`public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
+### Effects
+The following effects determine how `operator'+'` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+Effect | Meaning
+---|---
+`computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect.

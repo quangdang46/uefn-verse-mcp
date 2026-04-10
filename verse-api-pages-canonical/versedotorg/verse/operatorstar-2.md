@@ -1,7 +1,17 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/operatorstar-2
 
-# One more step
-Please complete a security check to continue
-Verification successful. Waiting for dev.epicgames.com to respond
-**Session ID** : 9e9dbb49bed8e2f7
-**IP Address** : 14.191.95.176
+# operator'*' function
+Learn technical details about the operator'*' function.
+|
+---|---
+Verse `using` statement | `using { /Verse.org/Verse }`
+`operator'*'(Lhs:int, Rhs:float):float`
+## Parameters
+`operator'*'` takes the following parameters:
+Name | Type | Description
+---|---|---
+`Lhs` | `int` |
+`Rhs` | `float` |
+## Attributes, Specifiers, and Effects
+### Specifiers
+The following specifiers determine how you can interact with `operator'*'` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).

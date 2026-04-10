@@ -1,24 +1,26 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/distance-2
 
-# (V:vector3).LengthSquaredXY extension
-Learn technical details about the (V:vector3).LengthSquaredXY extension.
-Returns the squared length of `V` as if `V.Z = 0.0`.
+# Distance function
+Learn technical details about the Distance function.
+Returns the Euclidean distance between `V1` and `V2`.
 |
 ---|---
 Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }`
-`(V:vector3).LengthSquaredXY<public>()<reads><computes>:float`
+`Distance<public>(V1:vector3, V2:vector3)<reads><computes>:float`
 ## Parameters
-`LengthSquaredXY` takes the following parameters:
+`Distance` takes the following parameters:
 Name | Type | Description
 ---|---|---
-`V` | `vector3` |
+`V1` | `vector3` |
+`V2` | `vector3` |
 ## Attributes, Specifiers, and Effects
-The following attributes, specifiers, and effects determine how you can interact with `LengthSquaredXY` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 ### Specifiers
+The following specifiers determine how you can interact with `Distance` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
 ### Effects
+The following effects determine how `Distance` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
 `reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.

@@ -1,8 +1,8 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/damage_amplifier_powerup_device
 
-# wilds_plant_device class
-Learn technical details about the wilds_plant_device class.
-Used to create plants with explosive pods that players can detonate and launch.
+# damage_amplifier_powerup_device class
+Learn technical details about the damage_amplifier_powerup_device class.
+Used to amplify an `agent`'s damage temporarily. This applies to any weapon the `agent` is using at the time of the powerup.
 |
 ---|---
 Verse `using` statement | `using { /Fortnite.com/Devices }`
@@ -10,40 +10,35 @@ Verse `using` statement | `using { /Fortnite.com/Devices }`
 This class is derived from the following hierarchy, starting with `creative_object`:
 Name | Description
 ---|---
-[`creative_object`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object) |  Base class for creative devices and props.
-[`creative_device_base`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_device_base) |  Base class for creative_device.
+[`creative_object`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object) |  Base class for creative devices and props.
+[`creative_device_base`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_device_base) |  Base class for creative_device.
+[`powerup_device`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device) |  Base class for various powerup devices offering common events like `ItemPickedUpEvent`.
 ## Members
 This class has both data members and functions.
 ### Data
 Data Member Name | Type | Description
 ---|---|---
-`ExplodeEvent` | `listenable(payload)` |  Triggers whenever the plant or launched projectile explodes.
-  * Sends the `agent` that initially launched the projectile or triggered an immediate explosion.
-  * Sends `false` if no `agent` is found.
-
-`GrowEvent` | `listenable(payload)` |  Triggers whenever the plant grows.
-`LaunchEvent` | `listenable(payload)` |  Triggers whenever the plant launches a projectile.
-  * Sends the `agent` that triggered this event.
-  * Sends `false` if no `agent` is found.
-
+`ItemPickedUpEvent` | `listenable(payload)` |  Signaled when the powerup is picked up by an `agent`. Sends the `agent` that picked up the powerup.
 ### Functions
 Function Name | Description
 ---|---
-[`Disable`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/wilds_plant_device/disable) |  Disables the device to prevent interaction and growth.
-[`Enable`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/wilds_plant_device/enable) |  Enables the device to allow interaction and let it grow.
-[`Explode`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/wilds_plant_device/explode) |  Detonates the plant if the device is enabled.
-[`GetGlobalTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/getglobaltransform) |  Gets the global transform of this object.
-[`GetTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/gettransform) |  Returns the transform of the `creative_object` with units in cm. You must check `creative_object.IsValid` before calling this if there is a possibility the object has been disposed or destroyed by gameplay. Otherwise a runtime error will result.
-[`Grow`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/wilds_plant_device/grow) |  Grows the plant if the device is enabled. If _Infinite Regrowths_ is `false`, this is limited by _Maximum Regrowths_.
-[`MoveTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto) |  Moves the `creative_object` to the specified `Position` and `Rotation` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
-[`MoveTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-1) |  Moves the `creative_object` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
-[`MoveTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-2) |  Moves the `creative_device` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_device` it will be stopped and put into the `AnimationNotSet` state.
-[`SetGlobalTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/setglobaltransform) |  Sets the global transform of this object.
-[`SetInfiniteRegrowths`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/wilds_plant_device/setinfiniteregrowths) |  Sets whether the plant can always regrow after launching a projectile or being destroyed.
-[`SetMaximumRegrowths`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/wilds_plant_device/setmaximumregrowths) |  Sets how many times the plant can regrow after launching a projectile or being destroyed.
-  * This applies across the device’s entire lifetime and is unaffected by _Enable_ and _Disable_.
-  * This value is clamped.
-
-[`TeleportTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto) |  Teleports the `creative_object` to the specified `Position` and `Rotation`.
-[`TeleportTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-1) |  Teleports the `creative_object` to the specified location defined by `Transform`, also applies rotation and scale accordingly.
-[`TeleportTo`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-2) |  Teleports the `creative_device` to the specified location defined by `Transform`, also applies rotation and scale accordingly.
+[`Despawn`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device/despawn) |  Despawns this powerup from the experience.
+[`GetDuration`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device/getduration) |  Returns the _Duration_ that this powerup will be active for on any player it is applied to.
+[`GetGlobalTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/getglobaltransform) |  Gets the global transform of this object.
+[`GetMagnitude`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/damage_amplifier_powerup_device/getmagnitude) |  Returns the current _Magnitude_ for the powerup. For the Damage Amplifier Powerup, this is the damage multiplier.
+[`GetRemainingTime`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device/getremainingtime) |  If the `Agent` has the effect applied to them, this will return the remaining time the effect has. Returns -1.0 if the effect has an infinite duration. Returns 0.0 if the `Agent` does not have the effect applied.
+[`GetTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/gettransform) |  Returns the transform of the `creative_object` with units in cm. You must check `creative_object.IsValid` before calling this if there is a possibility the object has been disposed or destroyed by gameplay. Otherwise a runtime error will result.
+[`HasEffect`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device/haseffect) |  Returns the `Agent` has the powerup's effect (or another of the same type) applied to them.
+[`IsSpawned`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device/isspawned) |  Succeeds if the powerup is currently spawned.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto) |  Moves the `creative_object` to the specified `Position` and `Rotation` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-1) |  Moves the `creative_object` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-2) |  Moves the `creative_device` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_device` it will be stopped and put into the `AnimationNotSet` state.
+[`Pickup`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device/pickup) |  Grants this powerup to `Agent`.
+[`Pickup`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device/pickup-1) |  Grants this powerup without an agent reference. Requires _Apply To_ set to _All Players_.
+[`SetDuration`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device/setduration) |  Updates the _Duration_ for this powerup, clamped to the Min and Max defined in the device. Will not apply to any currently applied effects.
+[`SetGlobalTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/setglobaltransform) |  Sets the global transform of this object.
+[`SetMagnitude`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/damage_amplifier_powerup_device/setmagnitude) |  Sets the _Magnitude_ for this powerup, clamped to the Min and Max defined in the device. Will not apply to any currently applied effects. For the Damage Amplifier Powerup, this is the damage multiplier.
+[`Spawn`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/powerup_device/spawn) |  Spawns the powerup into the experience so users can interact with it.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto) |  Teleports the `creative_object` to the specified `Position` and `Rotation`.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-1) |  Teleports the `creative_object` to the specified location defined by `Transform`, also applies rotation and scale accordingly.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-2) |  Teleports the `creative_device` to the specified location defined by `Transform`, also applies rotation and scale accordingly.

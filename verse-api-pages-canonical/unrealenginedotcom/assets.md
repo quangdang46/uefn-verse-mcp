@@ -1,10 +1,13 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/assets
 
-# FortPlayerUtilities module
-Learn technical details about the FortPlayerUtilities module.
-Module import path: /Fortnite.com/FortPlayerUtilities
-  * [`Fortnite.com`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom)
-  * **`FortPlayerUtilities`**
+# Assets module
+Learn technical details about the Assets module.
+Module import path: /UnrealEngine.com/Assets
+  * [`UnrealEngine.com`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom)
+  * **`Assets`**
 
-## Module Contents
-This module is currently empty; it does not have submodules or content of its own.
+## Functions
+Name | Description
+---|---
+[`SpawnParticleSystem`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/assets/spawnparticlesystem) |
+[`SpawnParticleSystem`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/assets/spawnparticlesystem-1) |

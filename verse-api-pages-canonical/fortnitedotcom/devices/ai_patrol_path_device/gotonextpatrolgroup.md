@@ -1,22 +1,25 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/ai_patrol_path_device/gotonextpatrolgroup
 
-# Spawn function
-Learn technical details about the Spawn function.
-Tries to spawn a character.
+# GoToNextPatrolGroup function
+Learn technical details about the GoToNextPatrolGroup function.
+Commands patroller to follow the _Next Patrol Path Group_ instead of the default _Patrol Path Group_.
 |
 ---|---
 Verse `using` statement | `using { /Fortnite.com/Devices }`
-`Spawn<public>()<transacts><no_rollback>:void`
+`GoToNextPatrolGroup<public>(Patroller:agent)<transacts><no_rollback>:void`
 ## Parameters
-`Spawn` does not take any parameters.
+`GoToNextPatrolGroup` takes the following parameters:
+Name | Type | Description
+---|---|---
+`Patroller` | `agent` |
 ## Attributes, Specifiers, and Effects
 ### Specifiers
-The following specifiers determine how you can interact with `Spawn` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+The following specifiers determine how you can interact with `GoToNextPatrolGroup` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
 ### Effects
-The following effects determine how `Spawn` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+The following effects determine how `GoToNextPatrolGroup` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
 `transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.

@@ -1,6 +1,10 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ui/hud_element_identifier
 
-# One more step
-Please complete a security check to continue
-**Session ID** : 9e9c4adc1f7c8516
-**IP Address** : 14.191.95.176
+# hud_element_identifier class
+Learn technical details about the hud_element_identifier class.
+Used to identify a HUD element.
+|
+---|---
+Verse `using` statement | `using { /Fortnite.com/UI }`
+## Members
+This class has no members.

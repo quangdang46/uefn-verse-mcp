@@ -1,18 +1,12 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/playspaces
 
-# WebAPI module
-Learn technical details about the WebAPI module.
-  * [`UnrealEngine.com`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom)
-  * **`WebAPI`**
+# Playspaces module
+Learn technical details about the Playspaces module.
+Module import path: /Fortnite.com/Playspaces
+  * [`Fortnite.com`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom)
+  * **`Playspaces`**
 
-## Classes and Structs
+## Interfaces
 Name | Description
 ---|---
-[`client_id`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/webapi/client_id) |  Usage: Licensed users create a derived version of `client_id` in their module. The Verse class path for your derived `client_id` is then used as the configuration key in your backend service to map to your endpoint. WARNING: do not make your derived `client_id` class public. This object type is your private key to your backend. Example: my_client_id := class(client_id) MyClient := MakeClient(my_client_id)
-[`client`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/webapi/client) |
-[`response`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/webapi/response) |
-[`body_response`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/webapi/body_response) |
-## Functions
-Name | Description
----|---
-[`MakeClient`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/webapi/makeclient) |
+[`fort_playspace`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/playspaces/fort_playspace) |  A nested container that scopes objects, style, gameplay rules, visuals, etc. All objects and players in an experience will belong to a fort_playspace. There is typically one `fort_playspace` for an entire experience, though this may change in the future as the platform evolves. To access the `fort_playspace` for a `creative_device` use `creative_device.GetPlayspace`.

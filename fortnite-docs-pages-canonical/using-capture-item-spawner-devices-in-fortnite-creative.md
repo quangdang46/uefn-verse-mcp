@@ -1,69 +1,55 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-capture-item-spawner-devices-in-fortnite-creative
 
-# Boat Spawner Devices
-Race across the water with a motorboat using this device!
-![Boat Spawner Devices](https://dev.epicgames.com/community/api/documentation/image/bbd6919c-cf82-4f60-8297-7689c2c569ed?resizing_type=fill&width=1920&height=335)
-A **Boat Spawner** is a device you can use to [spawn](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) a motorboat onto an island. You can use Boat Spawner devices in combination with the [Racing Checkpoint Device](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) to design a racing game on the water.
-You can place a player directly inside the boat using a [function](https://dev.epicgames.com/documentation/fortnite/using-boat-spawner-devices-in-fortnite-creative#functions).
-You can only place a Boat Spawner device on water. You won't be able to place it on dry land, and you can't place it in a Water volume either.
-For help on how to find the **Boat Spawner** device, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
-If you're using multiple copies of a device on an island, it can be useful to [rename](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the [Event Browser](https://dev.epicgames.com/documentation/fortnite/event-browser-in-fortnite-creative).
-##  Contextual Filtering
-Some devices are affected by a feature called **contextual filtering**. This feature hides or displays options depending on the values selected for certain related options. This feature will reduce clutter in the Customize panel and make options easier to manage and navigate.
-However, it may not be easy to recognize which options or values trigger contextual filtering. To help you identify them, any values that trigger contextual filtering are in _italic_. All options will be listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option's value, there will be a note about that in the Description field for that option.
+# Capture Item Spawner Devices
+Spawn and track a single capturable item as your game objective.
+![Capture Item Spawner Devices](https://dev.epicgames.com/community/api/documentation/image/0f932e9b-2f4c-4e39-9c85-10c58cdfebf5?resizing_type=fill&width=1920&height=335)
+The **Capture Item Spawner** is a special type of [item spawner](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) that will only [spawn](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) a single [item](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary).
+With this device, you can restrict interaction with that item to a single team, send messages to players based on the state of the item, and transmit signals to other devices based on the state of the item. In this way, you can use an item as an objective.
+The Capture Item Spawner holds only one item. Dropping a new item will replace the one currently in the device.
+The device has a pulse effect when it is captured or interacted with, and shows current capture percentage on the capture area material. When starting to capture an area, an effect will play on the players that are capturing.
+To find the Capture Item Spawner device, go to the Creative inventory and select the Devices tab. From there you can search or browse for the device. For more information on finding devices see [Finding and Placing Devices](https://dev.epicgames.com/documentation/en-us/fortnite/using-devices-in-fortnite).
 ##  Device Options
+In its default state, the Capture Item Spawner has no interaction. You need to [place](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) an item on the device before it can be used.
+Once an item has been placed, it will spawn at the start of the game and relay messages to players when the item is picked up, dropped, or captured by a capture area.
+###  Contextual Filtering
+Some devices are affected by a feature called **contextual filtering**. This feature hides or displays options depending on the values selected for certain related options. This reduces clutter in the Customize panel and makes options easier to manage and navigate. To help identify them, values that trigger contextual filtering are in _italic_.
+All options are listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option's value, there will be a note about it in the Description field for that option.
 Default values are **bold**. Values that trigger contextual filtering are _italic_.
 You can configure this device with the following options.
 Option  |  Value  |  Description
 ---|---|---
-**Enabled During Phase** |  None, **Alwways** , Pre-Game Only, Gameplay Only, Create Only |  Determines the game [phases](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) during which the device is enabled. Pre-Game includes all phases prior to the start of the game. **Create Only** enables the device only when you are editing your island in Create mode.
-**Enable Respawn** |  **On** , _Off_ |  Determines if the vehicle will respawn after being destroyed. If set to **Off** , the **Respawn Time** option becomes hidden.
-**Respawn Time** |  **Instant** , Pick or enter an amount |  Determines how long it takes for a vehicle to respawn after it is destroyed.
-**Respawn Vehicle when Enabled** |  **Yes** , No, Only if Needed |  If this is set to **Yes** , a vehicle will spawn when the device is enabled. Choosing **Only If Needed** will not reset an existing vehicle.
-**Destroy Vehicle when Disabled** |  **On** , Off |  Destroys a spawned vehicle when the spawner is disabled.
-**Activating Team** |  **Any** , Pick a team |  Sets the team the device belongs to.
-**Allowed Class** |  No Class, **All** , Any, Pick a class |  Determines what class can use this vehicle. Values for this option are:
-  * **No Class** : Only players with no class assigned can use the vehicle.
-  * **All** : All players, including players with no class assigned, can use the vehicle.
-  * **Any** : Any player with a class assigned can use the vehicle.
-  * **Pick a class** : Pick a class identifier; only players assigned that class can use the vehicle.
-
-**Vehicle Indestructible** |  **Off** , On |  Determines how much damage the vehicle can take before it is destroyed.
-**Visible During Game** |  **On** , Off |  Determines whether the device is visible during the game. This does affect its collision properties.
-**Supports Wraps** |  **On** , Off |  Determines whether the vehicle supports wraps.
-**Vehicle Health** |  **800** , Pick a value |  Determines how much damage the vehicle can take before it is destroyed.
-**Vehicle Weapon Enabled** |  **Enabled** , Disabled |  Determines whether the spawned boat has weapons enabled.
-**Fuel Consumption** |  **Off** , _On_ |  Determines if the spawned vehicle uses fuel. If set to **On** , the **Fuel Use Multiplier** option will also display.
-**Random Starting Fuel** |  **On** , Off |  If **On** , the vehicle will spawn with a percentage of fuel between 25\% and 80\%.
-**Fuel Use Multiplier** |  **1.0** , Pick a number |  Only displayed when **Fuel Consumption** is set to **On**. Controls how quickly the vehicle will use fuel while driving. The lower the number, the slower the consumption. The higher the number, the faster the consumption.
+**Friendly Team** |  **All** , Pick a team |  The team that owns the area at the start of the game. Can be used to determine who can interact with it (only friendlies, or only enemies), and determines what messages are displayed if capture areas are [enabled](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary).
+**Captured By** |  **Friendly Team** , Hostile Teams |  Determines whether friendly teams need to pick up the item, or whether enemies need to pick it up.
+**Accent Color Type** |  **Team Color** , _Direct Color_ |  Determines how the device should be colored.
+**Accent Color** |  **Aqua** , Pick a color |  Changes the device color to a specific color preset. _This option only appears if the**Accent Color Type** is set to **Direct Color**_.
+**Score Value** |  **0** , Pick a score amount |  When capturing the item, a player gains this much score.
+**Return Dropped Items** |  Instantly, **Never** , Pick an amount of time |  If the item is dropped, it returns to the capture area after this defined amount of time.
+**Play Capture Sounds** |  **On** , Off |  Determines whether the item should play sound when it is captured.
+**Show Capture Messages** |  **On** , Off |  Prints messages to the chat when the item is dropped, captured, picked up, or returned.
+**Enabled At Game Start** |  **Enabled** , Disabled |  Determines whether the spawner is enabled at the start of the game. A disabled spawner is powered down, and will not spawn items.
+**Initial Weapon Ammo** |  **Don't Override** , select a number from 1 to 999 |  Sets the amount of ammunition loaded in the weapon when granted, limited by the weapon's magazine size.
+**Spare Weapon Ammo** |  **Default** , select a number from 1 to 999 |  Sets how much spare ammunition is added to the player's inventory when a weapon is granted. **Default** provides ammo based on the ammo type used by the weapon.
 ##  Direct Event Binding
-Following are the [direct event binding](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) options for this device.
+Following are the [direct event binding](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) options for this device.
 ###  Functions
-A [function](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) listens for an event on a device then performs an action.
-  1. For any function, click the **option** , then **Select Device** to access and select from the **Device** dropdown menu.
-  2. Once you've selected a device, click **Select Event** to bind the device to an event that will trigger the function.
-  3. If more than one device or event triggers a function, click the **Add** button to add a line and repeat these steps.
+A [function](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) listens for an event on a device then performs an action.
+  1. For any function option, click the **option** , then **Select Device** to access and select from the **Device dropdown menu**.
+  2. Once you've selected a device, click **Select Event** to bind the timer to an event that will trigger the function for the device.
+  3. If more than one device should be affected by a function, press the **Add** button and repeat.
 
 Option  |  Description
 ---|---
-**Enable When Receiving From** |  Enables the vehicle spawner when an event occurs, allowing it to spawn vehicles.
-**Disable When Receiving From** |  Disables the vehicle spawner when an event occurs, allowing it to spawn vehicles.
-**Respawn Vehicle When Receiving From** |  When an event occurs, spawns a new vehicle (and destroys the existing vehicle if it still exists.)
-**Destroy Vehicle When Receiving From** |  When an event occurs, if the vehicle that this spawner created still exists, destroy it.
-**Assigns Driver When Receiving From** |  Seats the instigating player as the spawned vehicle's driver when an event occurs.
-**Apply Off Road Tires When Receiving From** |  Does not impact the behavior of this vehicle since boats don't have tires.
-**Remove Tire Modifications When Receiving From** |  Does not impact the behavior of this vehicle.
-**Pop All Tires When Receiving From** |  Does not impact the behavior of this vehicle.
-**Repair Vehicle When Receiving From** |  Restores a respawned vehicle with full health.
+**Enable When Receiving From** |  Enable the spawning of a capture item when an event occurs.
+**Disable When Receveing From** |  Disable the spawning of a capture item when an event occurs.
 ###  Events
-An [event](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) tells another device when to perform a function.
-  1. For any event, click the **option** , then **Select Device** to access and select from the **Device** dropdown menu.
-  2. Once you've selected a device, click **Select Function** to bind this event to a function for that device.
-  3. If more than one function is triggered by the event, click the **Add** button to add a line and repeat these steps.
+An [event](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) tells another device when to perform a function.
+  1. For any event option, click the **option** , then **Select Device** to access and select from the **Device dropdown menu**.
+  2. Once you've selected a device, click **Select Function** to bind the timer to a function for that device.
+  3. If more than one device is affected by the function, press the **Add** button and repeat.
 
 Option  |  Description
 ---|---
-**On Player Enters the Vehicle Send Event To** |  When a player enters the spawned vehicle, this sends an event to the selected device, which triggers the selected function.
-**On Player Exits the Vehicle Send Event To** |  When a player exits the spawned vehicle, this sends an event to the selected device, which triggers the selected function.
-**On Vehicle Spawns Send Event To** |  When a vehicle spawns or respawns, this sends an event to the selected device, which triggers the selected function.
-**On Vehicle Is Destroyed Send Event To** |  When a spawned vehicle is destroyed, this sends an event to the selected device, which triggers the selected function.
+**On Item Picked Up Send Event To** |  When an item is picked up, it sends an event to the selected device, which triggers the selected function.
+**On Item Dropped Send Event To** |  When an item is dropped, it sends an event to the selected device, which triggers the selected function.
+**On Item Is Returned Send Event To** |  Item is returned.
+**On Item Captured** |  When an item is captured, it sends an event to the selected device, which triggers the selected function.

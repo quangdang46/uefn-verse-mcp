@@ -1,61 +1,63 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-rift-point-volume-devices-in-fortnite-creative
 
-# Surfboard Spawner Devices
-Place a Surfboard vehicle in your game for your players to ride.
-![Surfboard Spawner Devices](https://dev.epicgames.com/community/api/documentation/image/ad9a26b3-f271-437a-bd09-58e32f17701a?resizing_type=fill&width=1920&height=335)
-A **Surfboard Spawner** is a device that [spawns](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#spawning) a Surfboard vehicle into the level at the spawner's given location and orientation. Use Surfboard Spawner devices in combination with the [Racing Checkpoint Device](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#race-checkpoint) to design a racing game for your players. You can place a player directly inside the Surfboard using a trigger.
-To access the **E** key to open the CUSTOMIZE panel, you have to point your phone to the tip of the board. If you point it in the center, you'll only get the option to **RIDE** the board.
-For help on how to find the **Surfboard Spawner** device, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
-If you're using multiple copies of a device on an island, it can be useful to rename them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the [Event Browser](https://dev.epicgames.com/documentation/fortnite/event-browser-in-fortnite-creative).
-##  Device Options
-This device has some basic functionality, like whether it is visible in game, or whether it supports [wraps](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#wrap). Additionally, there are some advanced options, like which [class](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#class) and team can use the vehicle, and whether enabling or disabling the device spawns or despawns the vehicle.
+# Rift Point Volume Devices
+Use the Rift Point Volume device to use a bomb similar to the one used in Ballistic.
+![Rift Point Volume Devices](https://dev.epicgames.com/community/api/documentation/image/fa6ad1f9-a05c-4a55-b438-4ddd205185da?resizing_type=fill&width=1920&height=335)
+The Rift Point Volume is a large-detonation bomb that can be planted, defused and detonated in various locations around your island. **You need to use the Rift Point Device item along with this device** , as players need that item to plant the bomb.
+Place the Rift Point Volume at the point where you want players to plant the bomb. Then decide on how you want the players to acquire or receive the Rift Point Device item--through event binding, an Item Granter, or some other way. During the game, the Rift Point Device item will look like the image below when they have it in their player inventory.
+[![Rift Point Device item equipped](https://dev.epicgames.com/community/api/documentation/image/21eb8829-9e55-43a5-86d8-e4d0894f679e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/21eb8829-9e55-43a5-86d8-e4d0894f679e?resizing_type=fit) Rift Point Device item equipped
+When the player approaches the area defined by the Rift Point Volume, they will see the Hotkey menu pop up with the control for planting the Rift Point, as shown in the image below.
+[![Control displayed for planting the Rift Point](https://dev.epicgames.com/community/api/documentation/image/bc378632-1bc4-49e4-8860-1fc47e6e1901?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/bc378632-1bc4-49e4-8860-1fc47e6e1901?resizing_type=fit) Control displayed for planting the Rift Point
+For help on how to find the **Rift Point Volume** device, see [Using Devices](https://dev.epicgames.com/documentation/en-us/fortnite/using-devices-in-fortnite).
+If you're using multiple copies of a device on an island, it can be useful to [rename](https://dev.epicgames.com/documentation/en-us/fortnite/rename-a-device) them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the [Event Browser](https://dev.epicgames.com/documentation/en-us/fortnite/event-browser-in-fortnite-creative).
+##  Contextual Filtering
+Some devices are affected by a feature called **contextual filtering**. This feature hides or displays options depending on the values selected for certain related options. This feature will reduce clutter in the **Customize** panel and make options easier to manage and navigate.
+However, it may not be easy to recognize which options or values trigger contextual filtering. To help you identify them, in our device docs we use  _italic_ for any values that trigger contextual filtering. All options will be listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option’s value, there will be a note about that in the Description field for that option.
+###  Device Options
+Default values are **bold**. Values that trigger contextual filtering are _italic_.
 You can configure this device with the following options.
-Default values are **bold**.
-###  Basic Options
-Option  |  Value  |  Description
+Option  |  Values  |  Description
 ---|---|---
-**Visible During Game** |  **On** , Off |  Determines whether the device is visible during the game. This does affect its collision properties.
-**Supports Wraps** |  **Enabled** , Disabled |  Determines whether the vehicle supports wraps.
-###  All Options (Additional)
-Option  |  Value  |  Description
----|---|---
-**Enabled During Phase** |  **All** , None, Pre-Game Only, Gameplay Only |  Determines the game [phases](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#game-phase) during which the device will be enabled. Pre-Game includes all phases prior to the Game starting (the waiting for players lobby on Featured Islands and the Game Start Countdown).
-**Respawn Time** |  **Instant** , Never, Pick a time |  Respawns a vehicle that's been destroyed after a selected delay.
-**Respawn Vehicle when Enabled** |  **Yes** , No, Only if Needed |  If this is set to **Yes** , a vehicle will spawn when the device is enabled. Choosing **Only If Needed** will not reset an existing vehicle.
-**Destroy Vehicle when Disabled** |  **Yes** , No |  Destroys a spawned vehicle when the spawner is disabled.
-**Owning Team** |  **Any** , Pick a team |  Sets the team the device belongs to.
-**Selected Class** |  **None** , Any, No Class, Pick a class |  Determines what class can use this vehicle. Values for this option are:
-  * **None** : All players, including players with no class assigned, can use the vehicle.
-  * **Any** : Any player with a class assigned can use the vehicle.
-  * **No Class** : Only players with no class assigned can use the vehicle.
-  * **Pick a class** : Pick a [class identifier](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#class-identifier); only players assigned that class can use the vehicle.
-
-**Vehicle Health** |  **800** , Indestructible, Pick a number |  Determines how much damage the vehicle can take before it is destroyed.
-##  Direct Event Binding
+**Plant Time** |  **4.0 Seconds** , Pick an amount |  Determines how long it takes for a player to plant the Rift Point.
+**Defuse Time** |  **7.0 Seconds** , Pick an amount |  Determines how long it takes a player to defuse the Rift Point.
+**Detonation Time** |  **45.0 Seconds** , Pick an amount |  Determines how long it takes for the Rift Point to detonate.
+**Planting Team** |  Any, Pick a team  |  Determines which team can plant the Rift Point.
+**Defusing Team** |  Any, Pick a team  |  Determines which team can defuse the Rift Point.
+**Planting Class** |  No Class, **Any** , Pick a class |  Determines which class can plant the Rift Point. **No Class** means only players with no assigned class can defuse the Rift Point. **Any** means any player can defuse the Rift Point, regardless of class.
+**Defusing Class** |  No Class, Any, Pick a class  |  Determines which class can defuse the Rift Point. No Class means only players with no assigned class can defuse the Rift Point. Any means any player can defuse the Rift Point, regardless of class.
+**Explosion Radius** |  **10.0 M** , Pick a size |  Distance from the Rift Point within which the detonation will do enough damage to eliminate players.
+**Damage** |  **1,000** , Pick an amount |  Determines how much damage the Rift Point detonation does to players who are within the distance set in the **Explosion Radius** option.
+**Volume Height** |  4.0 M, Pick a size  |  Determines the height of the volume.
+**Volume Depth** |  5.0 M, Pick a size  |  This option only displays if you have selected **Box** in the **Volume Shape** option. Determines the depth of the volume.
+**Volume Width** |  **5.0 M** , Pick a size |  This option only displays if you have selected Box in the Volume Shape option. Determines the width of the volume.
+**Volume Radius** |  5.0 M, Pick a size  |  This option only displays if you have selected **Cylinder** or **Sphere** in the **Volume Shape** option. Determines the radius of the volume.
+**Volume Shape** |  **Box** , _Cylinder_ , _Sphere_ |  Determines the shape of the volume containing the explosion. Depending on which shape you pick, the options specifying the dimensions of the volume will change.
+###  Direct Event Binding
 Following are the direct event binding options for this device.
 ###  Functions
-A [function](https://dev.epicgames.com/documentation/en-us/fortnite-creative/function) listens for an event on a device, and then performs an action.
-  1. For any function, click the option, then Select Device to access and select from the Device dropdown menu.
-  2. Once you've selected a device, click Select Event to bind the device to an event that will trigger the function for the device.
-  3. If more than one device or event triggers a function, click the Add button to add a line and repeat these steps.
+A [function](https://dev.epicgames.com/documentation/en-us/fortnite/function) listens for an event on a device then performs an action.
+  1. For any function, click the **option** , then **Select Device** to access and select from the **Device dropdown menu**.
+  2. Once you've selected a device, click **Select Event** to bind the device to an event that will trigger the function for the device.
+  3. If more than one device or event triggers a function, click the **Add** button to add a line and repeat these steps.
 
 Option  |  Description
 ---|---
 **Enable When Receiving From** |  Enables the device when an event occurs.
 **Disable When Receiving From** |  Disables the device when an event occurs.
-**Respawn Vehicle When Receiving From** |  Spawns a new vehicle when an event occurs. The existing vehicle will be destroyed before a new vehicle spawns.
-**Destroy Vehicle When Receiving From** |  When an event occurs, the spawned vehicle is destroyed if it exists.
-**Assigns Driver When Receiving From** |  Sets the player that [instigated](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#instigator) the signal as the spawned vehicle's rider
-**Repair Vehicle When Receiving From** |  When an event occurs, the spawned vehicle is restored to full health.
 ###  Events
-An [event](https://dev.epicgames.com/documentation/en-us/fortnite-creative/event) tells another device when to perform a function.
+An [event](https://dev.epicgames.com/documentation/en-us/fortnite/event) tells another device when to perform a function.
   1. For any function, click the option, then Select Device to access and select from the Device dropdown menu.
   2. Once you've selected a device, click Select Function to bind this event to a function for that device.
   3. If more than one function is triggered by the event, click the Add button to add a line and repeat these steps.
 
 Option  |  Description
 ---|---
-**On Player Enters Vehicle Send Event To** |  When a player enters the vehicle, an event is sent to the selected device.
-**On Player Exits Vehicle** Send Event To |  When a player exits the vehicle, an event is sent to the selected device.
-On **Vehicle Spawns****Send Event To** |  When a vehicle spawns, an event is sent to the selected device.
-**On****Vehicle is Destroyed** Send Event To |  When a vehicle is destroyed, an event is sent to the selected device.
+**On Plant Started Send Event To** |  When the Rift Point starts to be planted, an event is sent to the selected device, passing in the planting player.
+**On Plant Canceled** |  When the planting process is interrupted, an event is sent to the selected device passing in the planting player.
+**On Planted Send Event To** |  When the Rift Point is successfully planted, an event is sent to the selected device passing in the planting player.
+**On Defuse Started Send Event To** |  When the Rift Point starts to be defused, an event is sent to the selected device passing in the defusing player.
+**On Defuse Canceled Send Event To** |  When the defusing process is interrupted, an event is sent to the selected device passing in the defusing player.
+**On Defused Send Event To** |  When the Rift Point is successfully defused, an event is sent to the selected device passing in the defusing player.
+**On Detonated Send Event To** |  When the Rift Point detonates, an event is sent to the selected device passing in the planting player.
+**On Agent Entered** |  Sends a signal when the agent enters the volume.
+**On Agent Exited** |  Sends a signal when the agent exits the volume.

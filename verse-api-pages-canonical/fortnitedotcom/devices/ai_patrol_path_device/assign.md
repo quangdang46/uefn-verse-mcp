@@ -1,22 +1,7 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/ai_patrol_path_device/assign
 
-# GetEnableRespawnTimer function
-Learn technical details about the GetEnableRespawnTimer function.
-Returns device _Respawn Item on Timer_ option (see `SetTimeBetweenSpawns`)
-|
----|---
-Verse `using` statement | `using { /Fortnite.com/Devices }`
-`GetEnableRespawnTimer<public>()<transacts>:logic`
-## Parameters
-`GetEnableRespawnTimer` does not take any parameters.
-## Attributes, Specifiers, and Effects
-### Specifiers
-The following specifiers determine how you can interact with `GetEnableRespawnTimer` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
-Specifier | Meaning
----|---
-`public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
-### Effects
-The following effects determine how `GetEnableRespawnTimer` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
-Effect | Meaning
----|---
-`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.
+# Access denied
+Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+
+**Session ID** : 9dfa55a74d52e34d
+**IP Address** : 14.191.89.252

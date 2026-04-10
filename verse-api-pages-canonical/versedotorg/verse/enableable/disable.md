@@ -1,30 +1,23 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/enableable/disable
 
-# OnEndSimulation function
-Learn technical details about the OnEndSimulation function.
-Called when the component ends simulation within the scene.
-  * Simulation ends on a component when the experience resets, the parent entity is removed from the scene.
-  * Cached TickEvents cancelables should be canceled in `OnEndSimulation`.
-  * `OnSimulate` task will be canceled before `OnEndSimulation` is called.
-  * `OnEndSimulation` is only called on components that have already had `OnBeginSimulation` called.
-
+# Disable function
+Learn technical details about the Disable function.
+Disable this object.
 |
 ---|---
-Verse `using` statement | `using { /Verse.org/SceneGraph }`
-`OnEndSimulation<protected><native><native_callable>()<transacts><no_rollback>:void`
+Verse `using` statement | `using { /Verse.org/Verse }`
+`Disable<public>()<transacts><no_rollback>:void`
 ## Parameters
-`OnEndSimulation` does not take any parameters.
+`Disable` does not take any parameters.
 ## Attributes, Specifiers, and Effects
 ### Specifiers
-The following specifiers determine how you can interact with `OnEndSimulation` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+The following specifiers determine how you can interact with `Disable` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
-`protected` | The identifier is only accessible in the current class and any subtypes. You can use this on classes, interfaces, structs, enums, non-module methods, and data.
-`native` | Indicates that the definition details of the element are implemented in C++. Verse definitions with the `native` specifier auto-generate C++ definitions that a developer can then fill out its implementation. You can use this specifier on classes, interfaces, enums, methods, and data.
-`native_callable` | Indicates that an instance method is both native (implemented in C++) and may be called by other C++ code. You can see this specifier used on an instance method. This specifier doesn’t propagate to subclasses and so you don’t need to add it to a definition when overriding a method that has this specifier.
+`public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
 ### Effects
-The following effects determine how `OnEndSimulation` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+The following effects determine how `Disable` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
-`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.
+`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You'll be notified when you compile your code if the `transacts` effect was added to a function that can't be rolled back. Note that this check is not done for functions with the `native` specifier.
 `no_rollback` | This is the default effect when no exclusive effect is specified. The `no_rollback` effect indicates that any actions performed by the function cannot be undone and so the function cannot be used in a failure context. This effect cannot be manually specified.

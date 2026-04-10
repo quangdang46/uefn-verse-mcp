@@ -1,7 +1,14 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/signalable/signalable(payload)
 
-# One more step
-Please complete a security check to continue
-Verification successful. Waiting for dev.epicgames.com to respond
-**Session ID** : 9e9dbb90fe87e2f7
-**IP Address** : 14.191.95.176
+# signalable(payload) interface
+Learn technical details about the signalable(payload) interface.
+A parametric interface implemented by events with a `payload` that can be signaled. Can be used with `awaitable`, `subscribable`, or both (see: `listenable`).
+|
+---|---
+Verse `using` statement | `using { /Verse.org/Verse }`
+## Members
+This interface has functions, but no data members.
+### Functions
+Function Name | Description
+---|---
+[`Signal`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/signalable/signalable\(payload\)/signal) |  Concurrently resumes the tasks waiting for this event in `awaitable.Await` and synchronously invokes any callbacks added to this event by `subscribable.Subscribe`.

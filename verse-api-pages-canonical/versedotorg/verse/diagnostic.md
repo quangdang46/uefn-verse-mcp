@@ -1,7 +1,10 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/diagnostic
 
-# One more step
-Please complete a security check to continue
-Verification successful. Waiting for dev.epicgames.com to respond
-**Session ID** : 9e9dbb2c5bf8e2f7
-**IP Address** : 14.191.95.176
+# diagnostic class
+Learn technical details about the diagnostic class.
+An opaque diagnostic message that only shows up in diagnostic logs. The format of the diagnostic may change at any time without warning and may not be inspected by Verse code.
+|
+---|---
+Verse `using` statement | `using { /Verse.org/Verse }`
+## Members
+This class has no members.

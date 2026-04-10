@@ -1,66 +1,29 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/tagged-lights-puzzle-in-verse
 
-# Real Time Clock Devices
-Use this to tie in-game events to real time.
-![Real Time Clock Devices](https://dev.epicgames.com/community/api/documentation/image/dc05537c-4fb7-4ddc-b37c-36039a255352?resizing_type=fill&width=1920&height=335)
-The **Real Time Clock** can be used to connect things that happen in the game to time periods in the real world. Here are some things you can use this for in your game:
-  * Events in the game can be linked to time periods in the real world, so those things are only available to players during the day or at night.
-  * You can have the device display as a countdown timer to an event in your game, or it can show the real-world time.
-  * You can have tasks the player must do within a certain time period, such as feed a pet or grow a plant.
-  * You can keep players from entering an event until a certain time, with a countdown displaying how much time is left before the event starts.
+# Tagged Lights Puzzle
+Create a puzzle where the player has to find the right combination of lights on and off to spawn an item, using a device created with Verse.
+![Tagged Lights Puzzle](https://dev.epicgames.com/community/api/documentation/image/cf6afa3f-6af7-432e-afcf-6baa379a51d1?resizing_type=fill&width=1920&height=335)
+Puzzle mechanics can be integrated into many game genres — [adventure](https://www.fortnite.com/en-US/creative/docs/fortnite-creative-glossary#adventure), [RPG](https://www.fortnite.com/en-US/creative/docs/fortnite-creative-glossary#rpg), [platformers](https://www.fortnite.com/en-US/creative/docs/fortnite-creative-glossary#platformer), and [FPS](https://www.fortnite.com/en-US/creative/docs/fortnite-creative-glossary#first-person-shooter) to name a few. They can also stand on their own as a complete game experience if the puzzles are engaging. The same puzzle setup can even be reused multiple times in the same game if you specify different initial conditions and solutions for each puzzle.
+In this puzzle, the player must find the right combination of lights — all on in this case — by interacting with buttons. Each button toggles a set of lights. When the puzzle is solved, an item is spawned as a reward.
+[![Player interacting with buttons to find the right combination of lights to solve the puzzle and spawn an item](https://dev.epicgames.com/community/api/documentation/image/8206d72e-9d9f-4bee-97ca-737e67f6bc82?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8206d72e-9d9f-4bee-97ca-737e67f6bc82?resizing_type=fit)
+By following this tutorial, you'll learn how to create a version of this puzzle where you can customize the start states of the lights, which lights each button toggles, and the puzzle solution, all by using one device created with **Verse** in **Unreal Editor for Fortnite (UEFN)**.
+##  Verse Language Features Used
+  * array: The device you will create extensively uses arrays to perform its [logic](https://dev.epicgames.com/documentation/en-us/fortnite/unreal-editor-for-fortnite-glossary#logic). Buttons, lights, lights state, [event handlers](https://dev.epicgames.com/documentation/en-us/fortnite/unreal-editor-for-fortnite-glossary#event-handler) and more are stored in arrays to allow varying puzzle configurations (more or fewer lights, different start and goal light states), and to prevent code duplication.
+  * for: With the `for` expression, you can iterate over the arrays the device uses.
+  * if: `if` is used to check when the puzzle is solved, filter the devices found via `GetCreativeObjectsWithTag()` and control the lights state.
+  * failure: Failure contexts are used to access arrays, detect when the puzzle is solved, and control the flow of the program.
+  * class: In addition to the `tagged_lights_puzzle` creative device [class](https://dev.epicgames.com/documentation/en-us/fortnite/unreal-editor-for-fortnite-glossary#class), you’ll create the class for the button `InteractedWithEvent` handlers to enable per-event properties.
 
-For help on how to find the **Real Time Clock** device, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
-If you're using multiple copies of a device on an island, it can be useful to rename them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the [Event Browser](https://dev.epicgames.com/documentation/fortnite/event-browser-in-fortnite-creative).
-##  Contextual Filtering
-Some devices are affected by a feature called **contextual filtering**. This feature hides or displays options depending on the values selected for certain related options. This feature will reduce clutter in the Customize panel and make options easier to manage and navigate.
-However, it may not be easy to recognize which options or values trigger contextual filtering. To help you identify them, in our device docs we use _italic_ for any values that trigger contextual filtering. All options will be listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option's value, there will be a note about that in the **Description** field for that option.
-##  Device Options
-This device has some basic functionality, like choosing the style of the clock face, and setting the time, date and year. Additionally, there are some advanced options, like choosing a time zone and setting the display mode.
-You can configure this device with the following options.
-Default values are **bold**. Values affected by contextual filtering are in _italic_.
-###  Basic Options
-Option  |  Value  |  Description
----|---|---
-**Clock Face Style** |  **Default** , Flat |  Determines what the clock face looks like.
-**Minute** |  **0** , Pick an amount |  Determines the minute this device triggers.
-**Hour** |  **0** , Pick an amount |  Determines the hour this device triggers.
-**Day** |  **1** , Pick a day |  Determines the day this device triggers.
-**Month** |  **1** , Pick a month |  Determines the month this device triggers.
-**Year** |  **2021** , Pick a year |  Determines the year this device triggers.
-**Duration Type** |  **Instant** , _Minutes_ , _Hours_ , _Days_ |  This option allows the clock to send a second signal after a period of time has passed. If a unit of time is selected, the **Duration Value** option displays and can be customized.
-**Duration Value** |  **1** , Pick a value |  This option only displays if the **Duration Type** option is set to **Minutes** , **Hours** or **Days**. Determines the number of the selected time units that will pass before the second signal is sent. For example, if the Duration Type is Minutes, and the Duration Value is 2, the second signal will be sent after 2 minutes have passed.
-**Number of Repeats** |  **Don't Repeat** , _Pick a number_ |  Determines how many times the signal will repeat. If a number of repeats is selected, the **Repeat Type** and **Repeat Frequency** options display and can be customized.
-**Repeat Type** |  Hours, **Days** , Weeks, Months |  This option only displays if the **Number of Repeats** option is set to a number. Determines the unit of time used in the cadence of repeated signals.
-**Repeat Frequency** |  **1** , Pick a number |  This option only displays if the **Number of Repeats** option is set to a number. Determines how many times the signal repeats, based on the unit of time chosen in the **Repeat Type** option. For example, if the Repeat Type is set to **Days** and the Repeat Frequency is set to **2** , the signal will repeat every 2 days.
-###  All Options (Additional)
-Option  |  Value  |  Description
----|---|---
-**Enabled At Game Start** |  **Enabled** , Disabled |  Determines whether the device is enabled when the game starts.
-**Display Mode** |  **Countdown** , Date |  Shows a countdown to a date, or just the date.
-**Time Zone** |  **GMT** |  Only Greenwich Mean Time is available.
-**Instigator for Event** |  **No Instigator** , Random Instigator, Send Event for All Players |  Determines who is sent as the instigator for this device's On Time Reached and On Duration Elapsed events.
-##  Direct Event Binding
-Following are the [direct event binding](https://dev.epicgames.com/documentation/fortnite/direct-event-binding) options for this device.
-###  Functions
-A [function](https://dev.epicgames.com/documentation/fortnite/function) listens for an event on a device then performs an action.
-  1. For any function, click the **option** , then **Select Device** to access and select from the **Device** dropdown menu.
-  2. Once you've selected a device, click **Select Event** to bind the device to an event that will trigger the function.
-  3. If more than one device or event triggers a function, click the **Add** button to add a line and repeat these steps.
+##  Verse APIs Used
+  * [Editable Properties](https://dev.epicgames.com/documentation/en-us/fortnite/editable-properties-in-verse): Multiple Verse-authored device properties are exposed to UEFN so you can customize them in the editor. You’ll be able to create new puzzle configurations by changing these properties.
+  * `GetCreativeObjectsWithTag()`: With the `GetCreativeObjectsWithTag()` API, you can find all devices tagged with a customizable Gameplay Tag at runtime without exposing the references in the editor. In this case, the lights are tagged with the `puzzle_light` tag.
+  * [Device Events](https://dev.epicgames.com/documentation/en-us/fortnite/coding-device-interactions-in-verse): The buttons’ InteractedWithEvent are used to control the game state.
 
-|
----|---
-Enable When Receiving From |  Enables the device on receiving a signal.
-Disable When Receiving From |  Disables the device on receiving a signal.
-Respawn Vehicle When Receiving From |  This function spawns the vehicle when an event occurs.
-###  Events
-An [event](https://dev.epicgames.com/documentation/fortnite/event) tells another device when to perform a function.
-  1. For any event, click the **option** , then **Select Device** to access and select from the **Device** dropdown menu.
-  2. Once you've selected a device, click **Select Function** to bind this event to a function for that device.
-  3. If more than one function is triggered by the event, click the **Add** button to add a line and repeat these steps.
-
-Option  |  Description
----|---
-On Time Reached Send Event To |  When the target time is reached, transmit.
-On Enabling After Time Reached Send Event To |  When the device becomes enabled, if the target time has been reached, transmit.
-On Enabling Before Time Reached Send Event To |  When the device becomes enabled, if the target time has not been reached, transmit.
-On Duration Elapsed Send Event To |  Sends a signal when the specified duration has elapsed. Does nothing if Duration Type is set to **INSTANT**.
+##  Steps
+Follow these steps to learn how to create a puzzle where the player needs to find the right combination of lights to spawn an item. The complete script is included in the final step for reference.
+  * [![1. Creating the Algorithm](https://dev.epicgames.com/community/api/documentation/image/df8e2ad6-71db-495a-8eda-1b7f85dedf4a?resizing_type=fit&width=640&height=640) 1. Creating the Algorithm Create a puzzle where the player has to find the right combination of lights on and off to spawn an item, using a device created with Verse. ](https://dev.epicgames.com/documentation/en-us/fortnite/tagged-lights-1-creating-the-algorithm-in-verse)
+  * [![2. Setting Up the Level](https://dev.epicgames.com/community/api/documentation/image/5fca2858-2ac5-40d4-992a-1901f8a872e4?resizing_type=fit&width=640&height=640) 2. Setting Up the Level Create a puzzle where the player has to find the right combination of lights on and off to spawn an item, using a device created with Verse. ](https://dev.epicgames.com/documentation/en-us/fortnite/tagged-lights-2-setting-up-the-level-in-verse)
+  * [![3. Finding the Lights at Runtime with Gameplay Tags](https://dev.epicgames.com/community/api/documentation/image/66faf583-f918-4bd8-8df0-f75709fc8688?resizing_type=fit&width=640&height=640) 3. Finding the Lights at Runtime with Gameplay Tags Create a puzzle where the player has to find the right combination of lights on and off to spawn an item, using a device created with Verse. ](https://dev.epicgames.com/documentation/en-us/fortnite/tagged-lights-3-finding-the-lights-at-runtime-with-gameplay-tags-in-verse)
+  * [![4. Toggling Lights with Buttons](https://dev.epicgames.com/community/api/documentation/image/960b7181-ef00-496d-880a-5604d7cd69cc?resizing_type=fit&width=640&height=640) 4. Toggling Lights with Buttons Create a puzzle where the player has to find the right combination of lights on and off to spawn an item, using a device created with Verse. ](https://dev.epicgames.com/documentation/en-us/fortnite/tagged-lights-4-toggling-lights-with-buttons-in-verse)
+  * [![5. Detecting When the Puzzle Is Solved](https://dev.epicgames.com/community/api/documentation/image/8feafd45-5771-4b3a-b3ba-b8455cc5e652?resizing_type=fit&width=640&height=640) 5. Detecting When the Puzzle Is Solved Create a puzzle where the player has to find the right combination of lights on and off to spawn an item, using a device created with Verse. ](https://dev.epicgames.com/documentation/en-us/fortnite/tagged-lights-5-detecting-when-the-puzzle-is-solved-in-verse)
+  * [![6. Tagged Lights Final Result](https://dev.epicgames.com/community/api/documentation/image/ffa0edf9-104b-4b20-b01a-621b1566f2ca?resizing_type=fit&width=640&height=640) 6. Tagged Lights Final Result Create a puzzle where the player has to find the right combination of lights on and off to spawn an item, using a device created with Verse. ](https://dev.epicgames.com/documentation/en-us/fortnite/tagged-lights-6-final-result-for-tagged-lights-puzzle-in-verse)

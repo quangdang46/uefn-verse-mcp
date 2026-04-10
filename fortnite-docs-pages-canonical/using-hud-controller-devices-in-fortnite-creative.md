@@ -1,319 +1,118 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-hud-controller-devices-in-fortnite-creative
 
-# Creating Items and Offers
-Use Verse to create items, offers, and bundle offers to sell gameplay content on your island with in-island transactions.
-![Creating Items and Offers](https://dev.epicgames.com/community/api/documentation/image/0ec3e624-14da-41a4-b462-e5b1b3a42c2e?resizing_type=fill&width=1920&height=335)
-In-island transactions provide a way for you to market items, offers and bundle offers on your island using Verse.
-In this guide, you’ll learn how to set up your own items, offers, and bundle offers. Using the [Marketplace module](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/marketplace) in the Verse API, you’ll then handle the sale of in-game items.
-##  Items
-Items are defined in Verse as entitlements and fall into two categories: **consumable items** , which are removed from the player inventory on use, and **durable items** , which the player can keep using without the item being removed from inventory.
-Every Verse entitlement has the following properties:
-  * **Name** : The entitlement name of up to 50 characters
-  * **Description** : The long description displayed with the entitlement of up to 500 characters.
-  * **ShortDescription** : A short description that summarizes the entitlement in a smaller dialog box of up to 100 characters.
-  * **Icon** : An image of the entitlement.
+# HUD Controller Devices
+You can use this device to show or hide parts of the player's HUD.
+![HUD Controller Devices](https://dev.epicgames.com/community/api/documentation/image/ab5aff2f-f5d6-4376-b3fa-9914d16441cd?resizing_type=fill&width=1920&height=335)
+You can use the **HUD Controller** device to show or hide parts of the player's **[HUD](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary)** , or turn off the HUD completely. You can also use this with other devices like the **HUD Message** device, the **Map Indicator** device, and the **Message Feed** device to determine exactly how much information players have during your game, as well as how and when they get that information.
+There are several ways you can change what information shows in the HUD: change it in the **User Settings,** use a **Team Settings & Inventory** device, use the **HUD Controller** device, or change it in the [Island Settings](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary). The priority order for changes to the HUD is as follows:
+  * **User Settings** (press **Esc** to open the **Game Menu** , then click **Settings**) take priority over the other settings.
+  * Team Settings & Inventory device takes priority over the HUD Controller and Island Settings.
+  * HUD Controller takes priority over Island Settings.
+  * The [Island Settings](https://dev.epicgames.com/documentation/en-us/fortnite/user-interface-settings-in-fortnite-creative) are lowest in priority. If you want to use the Island ssettings to determine what information is shown in the HUD, make sure that the HUD Controller options are set to **Do Not Override**.
 
-If your entitlement is a **paid random item** , you must include accurate numerical odds of what the player may receive in the description. For more information, see [Paid Random Items](https://dev.epicgames.com/documentation/fortnite/creating-items-and-offers-in-fortnite#paid-random-items-nbsp).
-A Verse entitlement can also have the following optional properties:
-  * **MaxCount** : The maximum number of that entitlement that the player can own at any one time.
-  * **Consumable** : If set to **true** , the entitlement can be consumed which reduces the total number of uses. If **false** , the entitlement is a permanent item and will not be consumed on use
-  * **PaidArea** : If set to **true** , the entitlement provides access to an area behind a paywall.
-  * **PaidRandomItem** : If set to **true** , these entitlements are purchased or redeemed with content to obtain a random reward.
-  * **ConsequentialToGameplay** : If set to **true** , the item provides a meaningful advantage in your island. See [Consequential to Gameplay](https://dev.epicgames.com/documentation/fortnite/creating-items-and-offers-in-fortnite#consequential-to-gameplay) for more details.
+There are two exceptions to the above priority hierarchy:
+  * If the Island Settings or any device options are set to make parts of the HUD hidden, a player cannot turn them on in User Settings. This is so all players have access to the same HUD information in the game.
+  * If the Island Settings or any device options are set to make parts of the HUD visible, a player can choose to turn them off in User Settings. This gives players the option to turn off parts of the HUD they don't need or want without affecting the experience of other players.
 
-If you have active entitlements that are not in use, and you do not confirm in-app purchases on the IARC questionnaire, your island will fail moderation.
-To work around this, you can comment out your entitlements in Verse until you are ready to use them in a live game. With the entitlements commented out, you do not need to claim in-app purchases in the IARC questionnaire.
-###  Creating a Consumable Entitlement in Verse
-Entitlements are defined in Verse, derived from the entitlemen**t[base class](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#base-class)**. The following snippet demonstrates the creation of a consumable item. In this example, you will create corn seeds as your consumable item. An icon of the seeds is included below for you to use.
-Verse
-```
-# The base entitlement you should define for ALL of your entitlements in your experience.
-my_island_entitlement := class<abstract><castable>(entitlement){}
+For help on how to find the **HUD Controller** device, see [Using Devices](https://dev.epicgames.com/documentation/en-us/fortnite/using-devices-in-fortnite).
+If you're using multiple copies of a device on an island, it can be useful to [rename](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the [Event Browser](https://dev.epicgames.com/documentation/en-us/fortnite/event-browser-in-fortnite-creative).
+##  Contextual Filtering
+Some devices are affected by a feature called **contextual filtering**. This feature hides or displays options depending on the values selected for certain related options. This reduces clutter in the Customize panel and makes options easier to manage and navigate. To help identify them, values that trigger contextual filtering are in _italic_.
+All options are listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option's value, there will be a note about it in the Description field for that option.
+##  Device Options
+This device has some basic functionality, like showing or hiding the [minimap](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary), and showing or hiding player resources. Additionally, there are some advanced options, like showing or hiding health, shields, or experience.
+You can configure this device with the following options.
+Default values are **bold**.
+Option  |  Value  |  Description
+---|---|---
+**Show HUD** |  **Do Not Override** , Yes, No |  Selecting **No** hides the HUD completely. If you want a HUD displayed, you can show or hide individual elements by customizing the options below.
+**Show Minimap** |  **Do Not Override** , Yes, No |  Determines whether the minimap is displayed.
+**Show HUD Info Box** |  **Do Not Override** , Yes, No |  Determines whether the HUD Info Box is displayed.
+**Show Storm Timer** |  **Do Not Override** , Yes, No |  Determines whether the storm timer is displayed.
+**Show Player Count** |  **Do Not Override** , Yes, No |  Determines whether the HUD displays the number of players currently in the game.
+**Show Elimination Counter** |  **Do Not Override** , Yes, No |  Determines whether the HUD displays the number of players who have been eliminated.
+**Show Round Timer** |  **Do Not Override** , Yes, No |  Determines whether to display the Round Timer.
+**Show Round Details** |  **Do Not Override** , Yes, No |  Determines whether the Round Details are displayed.
+**Show Build Menu** |  **Do Not Override** , Yes, No |  Determines whether the Build menu is displayed.
+**Show Player Inventory** |  **Do Not Override** , Yes, No |  Determines whether the player's inventory is displayed.
+**Show Team Info** |  **Do Not Override** , Yes, No |  Determines whether the Team Info HUD is displayed.
+**Show Damage Numbers** |  **Do Not Override** , Yes, No |  Determines if Damage Numbers appear.
+**Show Health** |  **Do Not Override** , Yes, No |  Determines whether the player's health bar is displayed.
+**Show Health Numbers** |  **Do Not Override** , Yes, No |  Determines whether the player's health numbers are shown.
+**Show Shields** |  **Do Not Override** , Yes, No |  Determines whether or not the player's shield bar is displayed.
+**Show Shield Numbers** |  **Do Not Override** , Yes, No |  Determines if the player's shield numbers are visible.
+**Show Battle Pass UI** |  **Do Not Override** , Show All, Level Only, Experience Bar Only, Don’t Display |  Determines what degree of the Battle Pass Experience UI is visible.
+**Show Crafting Resources** |  **Do Not Override** , Yes, No |  Determines if crafting resources are visible on the HUD.
+**Show Wood Resource** |  **Do Not Override** , Yes, No |  Determines whether or not the player's stock of wood is displayed.
+**Show Stone Resource** |  **Do Not Override** , Yes, No |  Determines whether or not the player's stock of stone is displayed.
+**Show Metal Resource** |  **Do Not Override** , Yes, No |  Determines whether or not the player's stock of metal is displayed.
+**Show Gold Resource** |  **Do Not Override** , Yes, No |  Determines whether or not the player's stock of gold is displayed.
+**Display Reticle** |  **Do Not Override** , Always Show Reticles, Only Show Pickaxe Reticle, Only Show Weapon Reticles, Never Show Reticles |  Determines what kinds of reticles, if any, are displayed.
+**Show Reticle Status** |  Do Not Override, Yes, No  |  Determines if the reticle status is visible.  When the option is set to Yes, the status for the reticle, such as, No Ammo, appears.
+**Show Pickup Stream** |  **Do Not Override** , Yes, No |  Determines whether or not the item pickup stream is displayed.
+**Show Equipped Item Info** |  **Do Not Override** , Yes, No |  Determines whether or not information about the equipped item is displayed.
+**Show Backpack Key** |  **Do Not Override** , Yes, No |  Determines if the backpack key is visibile.
+**Show Sprint Bar** |  **Do Not Override** , Yes, No |  Determines if the player's sprint bar is visible.
+**Show Player Action Alert** |  **Do Not Override** , Yes, No  |  Determines whether player action alerts are displayed. This includes message for when a player is eliminated, when a player is down, and so on.
+**Show Contextual Controls** |  **Do Not Override** , Yes, No |  Determines if a list of contextual controls are shown onscreen. This usually appears on the left side of the screen, when a particular device, vehicle, etc. has its own set of keybinds for controls.
+**Show Interaction Prompts** |  **Do Not Override** , Yes, No |  Determines if interaction prompts are visible.
+**Show Map Scoreboard Prompt** |  **Do Not Override** , Yes, No |  Determines if the Map/Scoreboard prompt is displayed.
+**Show Storm Notifications** |  **Do Not Override** , Yes, No |  Determines if storm notifications are visible.
+**Show Visual Sound Effect Indicators** |  **Do Not Override** , _Custom_ , No |  If this is set to **No** , all visual-sound effects are disabled. When set to _Custom_ , additional Show Indicator options become available in the options list.
+**Enabled During Phase** |  None, **All** , Pre-Game Only, Gameplay Only |  Determines the game phases during which the device will be enabled. Pre-Game includes all phases prior to the game starting.
+**Affected Team** |  **Any** , Pick a team |  Determines which team is affected by this device's changes to the HUD.
+**Invert Affected Team** |  Yes, **No** |  If this is set to **Yes** , the device affects all teams except the one selected in the **Affected Team** option.
+**Affected Class** |  No Class, **Any** , Pick a class |  Determines which class is affected by this device's changes to the HUD.
+**Invert Affected Class** |  Yes, **No** |  If this is set to **Yes** , the device affects all classes except the one selected in the **Affected Class** option.
+**Priority** |  Lowest, Very Low, Low, **Normal** , High, Very High, Highest |  Establishes a priority for this device. If several devices make different changes to the HUD, devices with a higher priority will override devices with a lower priority. If several devices have the same priority, only the first relevant device from a priority group will be considered.
+**Modify Active Speakers Layout** |  _On_ , **Off** |  If this is set to **On** , you can modify the location for the Active Speakers UI elements using the four additional options that display below this one.
+**Modify Text Chat Layout** |  _On_ , **Off** |  If this is set to On, you can modify the location for the Text Chat UI element using the four additional options that display below this one. Text Chat can only be repositioned within the bounds of the screen.
+**Alignment** |
+  * For Active Speakers Layout: Middle Right, Pick a position
+  * For Text Chat Layout: **Top Left** , Pick a position
 
-CornSeedPacket<public> := module:
-    Name<public><localizes> : message = "Corn seed pack"
-    Description<public><localizes> : message = "A pack of corn seeds. Opening a pack yields 10 corn seeds for planting."
-    ShortDescription<public><localizes> : message = "Contains 10 corn seeds for planting."
+|  This option only displays if the **Modify Active Speakers Layout** or **Modify Text Chat Layout** options are set to **On**. This determines the location on the screen for the Active Speakers UI or Text Chat UI elements. Click the arrow to open the Alignment Picker. Select a location, then click the checkmark to close the Alignment Picker.
+**Anchor** |
+  * For Active Speakers Layout: Top Right, Pick a position
+  * For Text Chat Layout: **Top Left** , Pick a position
 
-cornseedpacket<public> := class<concrete>(my_island_entitlement):
-    var Name<override>:message = CornSeedPacket.Name
+|  This option only displays if the Modify Active Speakers Layout or Modify Text Chat Layout options are set to On. This option determines whether the Active Speakers UI or Text Chat UI is anchored to a position on the screen. Click the arrow to open the Anchor Picker. Select a location, then click the checkmark to close the Anchor Picker.
+**X Offset** |  **0.0** , Pick or enter a number |  This option only displays if the **Modify Active Speakers Layout** or **Modify Text Chat Layout** options are set to **On**. Instead of using the **Alignment** or **Anchor** options, you can use this to precisely position the Active Speakers UI or Text Chat UI at a specific horizontal location.
+**Y Offset** |  **0.0** , Pick or enter a number |  This option only displays if the Modify Active Speakers Layout or Modify Text Chat Layout options are set to On. Instead of using the **Alignment** or **Anchor** options, you can use this to precisely position the Active Speakers UI or Text Chat UI at a specific horizontal location.
+**Show HUD Messages** |  Do Not Override, Yes, No  |  Determines whether HUD Messages display in the HUD or not.
+**Show Vehicle Health** |  Do Not Override, Yes, No  |  Determines whether vehicle health is displayed.
+**Show Vehicle HUD** |  Do Not Override, Yes, No  |  Determines whether to show the vehicle HUD when a player is driving a vehicle.
+You can turn off visual sound effects in **Island Settings** by setting the **Visual Sound Effects** option to **Off**. Additionally you can disable visual-sound efect indicators using Verse. Refer to the [Verse API](https://dev.epicgames.com/documentation/en-us/uefn/verse-api/fortnitedotcom/ui) for more information.
+###  Additional UEFN Options
+There are some UEFN-only settings for this device:
+Option  |  Value  |  Description
+---|---|---
+**Modify Minimap Layout** |  False, _True_ |  This option only displays if you have the **Show Minima****p** option set to **Yes**. If you click the checkbox for this option, the **Alignment** , **Anchor** , **X Offse** t, and **Y Offset** options display. This gives you a way to modify the default Minimap layout.
+**Modify Player Inventory** |  **False** , _True_ |  This option only displays if you have the Show Player Inventory option set to Yes. If you click the checkbox for this option, the Alignment, Anchor, X Offset, and Y Offset options display. This gives you a way to modify the layout of the player inventory.
+**Modify Health Layout** |  **False** , True |  This option only displays if you have the **Show Health** option set to **Yes**. If you click the checkbox for this option, the **Alignment** , **Anchor** , **X Offset** , and **Y Offset** options display. This gives you a way to modify the layout of the Health Widget.
+**Modify Equipped Items** |  Select a widget |  This option only displays if you have the Show Equipped Item Info option set to Yes. If you click the checkbox for this option, the **Alignment** , **Anchor** , **X Offset** , and **Y Offset** options display. This gives you a way to modify the layout of equipped item information.
+**Player Info Widget Override** |  Select a widget |  Provides a way to add a new player info widget to alter the HUD display from the default Fortnite look.
+**Equipped Item Info Widget Override** |  Select a widget |  Provides a way to add a custom widget Blueprint to alter the Fortnite HUD display for equipped item information.
+**Custom Quickbar Slot Widget Override** |  Select a widget |  Provides a way to add a custom widget for Quickbar slots.
+**Custom Quickbar Keybinding Layout** |  **Bottom** , Top, Left, Right |  Adjusts the layout of the keybindings in relation to the Quickbar slots when using a custom Quickbar widget.
+**Custom Quickbar Orientation** |  **Horizontal** , Vertical |  Decides whether to stack the Quickbar slots horizontally or vertically.
+**Modify Custom Quickbar Layout** |  **False** , _True_ |  If you set this to **True** , the **Alignment** , **Anchor** , **X Offset** and **Y Offset** options display. This gives you a way to modify the layout of your custom Quickbar widget.
+****Custom Quickbar Paddin** g** |  **0.0** , Pick an amount |  This determines how much padding space is between the Quickbar slots on your custom Quickbar widget.
+##  Event Binding
+Following are the [direct event binding](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) options for this device.
+###  Functions
+A [function](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) listens for an event on a device then performs an action.
+  1. For any function, click the **option** , then **Select Device** to access and select from the **Device dropdown menu**.
+  2. Once you've selected a device, click **Select Event** to bind the device to an event that will trigger the function.
+  3. If more than one device or event triggers a function, click the **Add** button to add a line and repeat these steps.
 
-```
-
-Copy full snippet(18 lines long)
-[![A packet of corn seeds.](https://dev.epicgames.com/community/api/documentation/image/b1f924f7-3d6c-404a-ad69-3721ac7dd6b7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b1f924f7-3d6c-404a-ad69-3721ac7dd6b7?resizing_type=fit) Corn Seed Packet
-When you create an entitlement, you must include a path to a valid icon texture for your Verse code to successfully compile. Take the corn seed packet and other icons included in this guide as a freebie!
-Make sure that your entitlement icons use a [square power-of-two texture](https://dev.epicgames.com/documentation/fortnite/textures-best-practices-in-fortnite) for the best quality images in your storefront. For information on how to import textures into UEFN to use as icons, see [Importing Assets](https://dev.epicgames.com/documentation/fortnite/importing-assets-in-unreal-editor-for-fortnite). For information on how to expose assets such as textures in Verse, see [Exposing Assets](https://dev.epicgames.com/documentation/fortnite/exposing-assets-with-asset-reflection-to-verse-in-unreal-editor-for-fortnite).
-###  Creating Durable Entitlements in Verse
-Durable entitlements in Verse follow the same format as consumable entitlements, but with a key difference —`Consumable` is set to `false` instead of `true`. Durable entitlements can only be purchased once by players and players can only own one of a given durable entitlement.
-For this example, you will create a shovel as a durable entitlement. An icon for the shovel texture is included after the snippet below.
-Verse
-```
-Shovel<public> := module:
-	Name<public><localizes>: message = "Shovel"
-	Description<public><localizes>: message = "An unbreakable shovel used to dig holes for planting."
-	ShortDescription<public><localizes>: message = "Digs holes."
-
-shovel<public> := class<concrete>(my_island_entitlement):
-	var Name<override>:message = Shovel.Name
-	var Description<override>:message = Shovel.Description
-	var ShortDescription<override>:message = Shovel.ShortDescription
-	var Icon<override>:texture = # path to your texture here
-
-```
-
-Copy full snippet(15 lines long)
-By default, items are not `Consumable` and have a `MaxCount` of `1`. If the item is a Paid Area, a Paid Random Item or provides a meaningful advantage that is consequential to gameplay, the relevant fields must be defined in your code.
-###  Entitlement Validation Rules
-A valid entitlement in Verse must follow the guidelines below. Purchases of an entitlement that doesn’t meet them will fail.
-The rules that define a valid entitlement are:
-  * **Name** has a character limit of **50**.
-  * **Description** has a character limit of **500**.
-  * **ShortDescription** has a character limit of **100**.
-  * **MaxCount** must be **1** when **Consumable=false**.
-  * **MaxCount** has a maximum value of **10,000,000**.
-
-Setting **MaxCount < 1** is not enforced but will fail as you cannot grant less than a single item to a player.
-###  The Entitlement Catalog
-You can use the Entitlement Catalog to view all the entitlements you are offering to players.
-You can view a report listing your entitlements in UEFN by clicking **Tools** > Entitlement**Catalog** , or directly from the catalog in the Creator Portal for your island.
-[![](https://dev.epicgames.com/community/api/documentation/image/bc82a883-10b9-46f5-9821-8ef1b7b2e3f5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/bc82a883-10b9-46f5-9821-8ef1b7b2e3f5?resizing_type=fit)
-##  Offers
-An offer specifies a price in **V-Bucks** for an item or asset. Each offer has its own name, description, and icon, separate from the entitlement specifications. An offer is defined in Verse.
-Every offer has the following properties:
-  * **Name** : The offer name.
-  * **Description** : The long description displayed alongside the offer.
-  * **ShortDescription** : A short description you can use to summarize the offer in smaller dialog boxes.
-  * **Icon** : An image of the offer
-  * **EntitlementType** : A declaration of the entitlement included in the offer.
-  * **Price** : A price in V-Bucks. It must be no less than 50 V-Bucks and no greater than 5000 V-Bucks. The price must be set in multiples of 50.
-
-###  Create a Simple Offer
-This snippet defines a basic offer for a simple offer — the **corn seed pack**. You can reuse the corn seed icon from the entitlement example as the icon for this offer.
-Verse
-```
-CornSeedPacket<public> := module:
-    Name<public><localizes> : message = "Corn seed pack"
-    Description<public><localizes> : message = "A pack of corn seeds. Opening a pack yields 10 corn seeds for planting."
-    ShortDescription<public><localizes> : message = "Contains 10 corn seeds for planting."
-
-corn_seed_pack<public> := class(entitlement_offer):
-    var Name<override> : message                = CornSeedPacket.Name
-    var Description<override> : message         = CornSeedPacket.Description
-    var ShortDescription<override> : message    = CornSeedPacket.ShortDescription
-
-```
-
-Copy full snippet(15 lines long)
-The price in V-Bucks must be a multiple of 50, and between 50 and 5000 V-Bucks.
-You must ensure players can see accurate numerical odds of obtaining each paid random item prior to purchase. Failure to do so will be considered a violation of the Fortnite Developer Rules, and subject you and your island to the appropriate sanctions.
-For more information, see [In-Island Transactions Restrictions](https://dev.epicgames.com/documentation/fortnite/in-island-transactions-restrictions-in-fortnite).
-###  Create and Modify Fixed and Alternate Offers
-You can make alternate offers for the same entitlement to offer special prices for holidays, introductory bonuses and to vary the price per area. You can also use it for entitlement testing by creating an identical offer but using a different icon to see which appeals to players more. Let’s use this icon as an example.
-Verse
-```
-CornSeedPacketAlternate<public> := module:
-    Name<public><localizes> : message = "Corn seed pack"
-    Description<public><localizes> : message = "Special price! Only today!"
-    ShortDescription<public><localizes> : message = "Special offer half price!"
-
-corn_seed_pack_alternate<public> := class(entitlement_offer):
-    var Name<override> : message                = CornSeedPacketAlternate.Name
-    var Description<override> : message         = CornSeedPacketAlternate.Description
-    var ShortDescription<override> : message    = CornSeedPacketAlternate.ShortDescription
-    var Icon<override> : texture                = # Your texture here
-
-```
-
-Copy full snippet(14 lines long)
-[![An alternate to the previous corn seed packet. It is a hessian-style sack container instead.](https://dev.epicgames.com/community/api/documentation/image/c50f0a1c-1580-44a1-822b-31d2008d7bcc?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c50f0a1c-1580-44a1-822b-31d2008d7bcc?resizing_type=fit) Alternate Corn Packet
-##  Bundle Offers
-Bundles are defined in Verse and can contain a combination of different offers, stacks of the same offer, or a mix of the two. Like simple offers, bundle offers specify their own price, name and description, and have an icon that is distinct from the entitlements and offers. You can also nest offers by including bundles within a bundle offer. An example would be a limited-time bundle that includes a shovel and a bundle of corn seed packets. This allows you to use smaller bundles as building blocks for larger, combined bundles.
-The standard bundle types are:
-  * **Stacked bundle** : A bundle containing multiple offers of the same entitlement, usually for a discounted price.
-  * **Multi-offer bundle** : A bundle that combines offers for multiple entitlements, this can also include a mix of stacked offers and regular offers.
-
-The depth of nested offers cannot exceed 5 or the attempted transaction will fail. Try to limit nesting offers where possible.
-###  Creating a Stacked Bundle
-This snippet defines a stacked bundle of corn seeds. A bundle contains a tuple array of offers, which contains the defined offer and an `int` indicating the number of offers. In this case, there would be two `corn_seed_pack` offers in this bundle. An icon is provided for this example.
-Verse
-```
-CornSeedPacketBundle<public> := module:
-    Name<public><localizes> : message = "Corn seed pack bundle"
-    Description<public><localizes> : message = "Two packs of corn seeds. Opening a pack yields 10 corn seeds for planting."
-    ShortDescription<public><localizes> : message = "Two packs of corn seeds containing 10 corn seeds for planting."
-
-corn_seed_pack_bundle<public> := class(bundle_offer):
-    var Name<override> : message                = CornSeedPacketBundle.Name
-    var Description<override> : message         = CornSeedPacketBundle.Description
-    var ShortDescription<override> : message    = CornSeedPacketBundle.ShortDescription
-    var Icon<override> : texture                = # your texture here
-
-```
-
-Copy full snippet(15 lines long)
-[![Two corn seed packets bundled together with rope.](https://dev.epicgames.com/community/api/documentation/image/2261314f-9c34-4981-bad1-b2535e022b36?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2261314f-9c34-4981-bad1-b2535e022b36?resizing_type=fit) Corn Seed Packet Bundle.
-###  Creating Multi-Offer Bundles
-Players might want to avoid multiple transactions, so you can make a bundle that includes multiple offers that include different entitlements. This snippet creates a multi-offer bundle that provides the player with the maximum number of corn packs and a shovel.
-Verse
-```
-StarterBundle<public> := module:
-    Name<public><localizes> : message = "Starter bundle"
-    Description<public><localizes> : message = "Everything a new player needs. Get fully stocked to start quickly! A shovel that digs holes, and ten packs of corn seeds each containing 10 corn seeds for planting."
-    ShortDescription<public><localizes> : message = "A shovel that digs holes, and ten packs of corn seeds each containing 10 corn seeds for planting."
-
-starter_bundle<public> := class(bundle_offer):
-    var Name<override> : message                = StarterBundle.Name
-    var Description<override> : message         = StarterBundle.Description
-    var ShortDescription<override> : message    = StarterBundle.ShortDescription
-    var Icon<override> : texture                = # your texture here
-
-```
-
-Copy full snippet(18 lines long)
-In Verse, bundles do not contain entitlements directly. Instead, they contain offers that themselves have entitlement definitions.
-[![An icon for the multi-offer bundle that contains a shovel and 10 corn seed packets.](https://dev.epicgames.com/community/api/documentation/image/70a42245-4e84-4574-9252-48e1b792d0c4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/70a42245-4e84-4574-9252-48e1b792d0c4?resizing_type=fit) Multi-Offer Bundle
-###  Dynamically Created Offers
-A dynamically created offer is an offer or bundle offer generated at runtime in Verse. Common use cases for dynamic offers could be:
-  * An offer for the maximum amount of wood a player can hold for a crafting game.
-  * A bundle to max out health and mana potions at the entrance of a dungeon for a dungeon crawler.
-
-For simplicity, tie it to something simple like a button or a sign. In Verse code this would follow the flow: On Interaction > call BuyOffer.
-This snippet showcases a way to sell a bundle of corn seed packs up to the maximum a player can have. An error message is printed if the purchase fails.
-Verse
-```
-TryBuyOffer(Player : player)<suspends>:void =
-    Purchases := GetPurchasedEntitlements(Player, Entitlements.corn_seed_pack)
-    var NumPlayerCornSeedPacks : int = 0
-    if (Purchase := Purchases[0]):
-        set NumPlayerCornSeedPacks = Purchase(1)
-
-    # Limit to at least 1 packet.
-    # If the player has the maximum amount, the offer displays with a disabled purchase button.
-    NumCornSeedPacks := Max(1, Entitlements.corn_seed_pack{}.MaxCount - NumPlayerCornSeedPacks)
-
-```
-
-Copy full snippet(18 lines long)
-##  Offer Validation Rules
-A valid offer or bundle offer must follow the guidelines below. Purchases that do not meet them will fail moderation. The rules that define a valid offer are:
-  * The depth of nested offers cannot exceed **5**.
-  * The total number of entitlement identifiers cannot exceed **100 per offer**. This means the total amount of different entitlements sold at one time is **100** at maximum.
-  * The price of the offer must be between **50** and **5000** V-Bucks, and can only be in multiples of **50**.
-  * The default text for an offer `Name` cannot exceed **50** characters.
-  * The default text for an offer `Description` cannot exceed **500** characters.
-  * The default text for an offer `ShortDescription` cannot exceed **100** characters.
-  * An offer must contain at least 1 entitlement.
-  * An offer does not contain a quantity of an entitlement that is greater than the `MaxCount` of the entitlement.
-  * An offer does not contain a durable entitlement with a `MaxCount `> 1.
-
-You may choose to place restrictions on where your offers are surfaced and who can view them. To learn more, see [In-Island Transactions Restrictions](https://dev.epicgames.com/documentation/fortnite/in-island-transactions-restrictions-in-fortnite).
-##  Create a Storefront
-Now that you have your entitlements and their offers and bundles set up, you need a place to sell them!
-###  The Default UI
-[![](https://dev.epicgames.com/community/api/documentation/image/276c88d0-8194-45bc-9b17-af6d8eb2baee?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/276c88d0-8194-45bc-9b17-af6d8eb2baee?resizing_type=fit)
-The default storefront UI opens with a list of all entitlements and offers you have added. The first entitlement in the list is highlighted and features an overview of the entitlement in a window next to the list.
-  * Storefronts can have multiple pages.
-  * Lists longer than five items are scrollable.
-
-A player triggers the purchase flow by calling the `BuyOffer` method or by using the default storefront with the `ShowOffersDialog` method. Below are examples of some devices you can use to tie your storefront purchase flow into your game design:
-  * Volumes device
-  * Scene Graph Timer device
-  * NPCs
-  * Conversation device
-
-It is best practice when designing a storefront to require player choice to open a purchase flow. Bypassing this choice and forcing the purchase flow to open for players removes player agency and risks unhappy players.
-[![](https://dev.epicgames.com/community/api/documentation/image/501c9a74-67d7-4fdf-a693-48ef37f19eef?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/501c9a74-67d7-4fdf-a693-48ef37f19eef?resizing_type=fit)
-All offers have **Purchase** and **Inspect** buttons that open marketplace windows to either purchase an item or inspect what an offer includes. Only bundles have an **Inspect Bundle** button.
-![Corn Seed Pack Bundle Offer Panel](https://dev.epicgames.com/community/api/documentation/image/abd7270a-d4f2-4c28-b024-f178d46fac1a?resizing_type=fit&width=1920&height=1080)
-![Corn Seed Pack Bundle Offer Inspection Panel](https://dev.epicgames.com/community/api/documentation/image/fd837142-c98f-43ea-ac7e-3c5fc38a9d1e?resizing_type=fit&width=1920&height=1080)
-Corn Seed Pack Bundle Offer Panel
-Corn Seed Pack Bundle Offer Inspection Panel
-Selecting the **Close** button closes the marketplace.
-The shopfront experience is fully controlled by the developer:
-  * You decide which items or gameplay properties you want to offer to your players.
-  * You set the price for each offer or bundle offer.
-  * You can present your own storefront or use the premade Fortnite storefront UI.
-
-###  The Storefront UI
-This snippet defines a generic event callback that opens the premade Fortnite storefront UI. The callback can be from a subscription, a button push, a conversation event, and so on.
-Verse
-```
-
-```
-
-OnEvent(Agent:agent):void= if(Player:= player[Agent]): spawn{ShowOffersDialog(Player, array{ ExampleOffers.shovel{}, ExampleOffers.cornseedpacket{} })}
-Copy full snippet(6 lines long)
-##  Handling Purchases
-This snippet contains a generic offer purchase. An error message is printed if the purchase fails.
-To aid in debugging failed purchases, include a way to identify which purchase failed in the error message, for example, by including the name of the offer in the error message above.
-Verse
-```
-# Track which players you're listening for entitlement changes for
-var EntitlementChangeSubscription:[player]?cancelable = map{}
-
-# Track Player Join subscription
-var PlayerJoinSubscription:?cancelable = false
-
-# Track Player Left subscription
-var PlayerLeftSubscription:?cancelable = false
-
-# Runs when the device is started in a running game, register to listen for players joining & leaving the experience
-
-```
-
-Copy full snippet(44 lines long)
-Do not use the success condition of a purchase attempt through `BuyOffer`, `ShowOffersDialog`, `ConsumeEntitlement` or `GrantEntitlement` to drive entitlement related changes. Instead, use the `GetEntitlementChangedEvent`.
-###  Validating Purchases
-It is best practice to validate a player's purchases when they join. This snippet contains a generic offer validation.
-Verse
-```
-
-```
-
-OnPlayerJoin(InPlayer:player):void = # Run the validation check to ensure the Player's data in your experience matches what the Marketplace API says they own. spawn{ ValidatePreviousPurchases(InPlayer) } ValidatePreviousPurchases(Player:player)<suspends>:void= Purchases := GetPurchasedEntitlements(Player, Entitlements.example_entitlement) # Perform any checks to ensure your saved data matches what the Marketplace says the player owns.
-Copy full snippet(8 lines long)
-##  Additional Functions
-###  Paid Random Items
-There are two ways to offer paid random items in your island:
-  * You can directly offer them for purchase with V-Bucks
-  * You can indirectly offer them by allowing players to purchase entitlements with V-Bucks that can then be redeem—or impact the probability of receiving—a random reward.
-
-When creating an item that grants a random reward, you must set `PaidRandomItem` to `true`.
-If you offer content that can be used to redeem a random reward, you must use the `RestrictPaidRandomItems` function to prevent players without access from acquiring the random reward.
-Verse
-```
-
-```
-
-OnEvent(Agent:agent):void= if (Player := player[Agent]): if (RestrictPaidRandomItems[Player]): Print("Player is not allowed to purchase PaidRandomItems.") else: Print("Player is allowed to purchase PaidRandomItems.")
-Copy full snippet(6 lines long)
-###  Direct Prompts to Purchase
-If your island has direct purchase prompts, you must use the `RestrictDirectPromptsToPurchase` function to determine if a player is eligible to receive the prompt.
-Verse
-```
-
-```
-
-OnEvent(Agent:agent):void= if (Player:= player[Agent]): if (RestrictDirectPromptsToPurchase[Player]): Print("Player is not allowed to receive direct purchase prompts.") else: Print("Player is allowed to receive direct purchase prompts.")
-Copy full snippet(6 lines long)
-###  Consequential to Gameplay
-If the item you are selling gives players a meaningful advantage in your island, you must set `ConsequentialToGameplay` to**true**.
-Items that are consequential to gameplay include any time that, if purchased, would provide players a meaningful advantage in the game. This could be direct (such as, an item that increases the player’s gameplay progress rate, power, or capabilities) or indirect (such as, an item that grants access to an item that meaningfully impacts how quickly the player can progress through the game, or their likelihood of winning).
-If there is an alternative to the item you are selling that is freely available to all players at the same time the offer is presented that provides the same advantage, then you do not need to set `ConsequentialToGameplay` to **true**. If a gameplay item has an incidental but inconsequential impact on gameplay, as is the case with different outfit color schemes having slightly different visibilities in different environments, or different emotes making different body motions, it is not considered consequential.
-Verse
-```
-# The base entitlement you should define for ALL of your entitlements in your experience.
-my_island_entitlement := class<abstract><castable>(entitlement){}
-
-CornSeedPacket<public> := module:
-    Name<public><localizes> : message = "Corn seed pack"
-    Description<public><localizes> : message = "A pack of corn seeds. Opening a pack yields 10 corn seeds for planting."
-    ShortDescription<public><localizes> : message = "Contains 10 corn seeds for planting."
-
-cornseedpacket<public> := class<concrete>(my_island_entitlement):
-    var Name<override>:message = CornSeedPacket.Name
-
-```
-
-Copy full snippet(18 lines long)
+Option  |  Description
+---|---
+**Enable When Receiving From** |  This function enables the device when an event occurs.
+**Disable When Receiving From** |  This function disables the device when an event occurs.
+**Update Affected Team When Receiving From** |  When an event occurs, this function changes the team selected in the **Affected Team** option to the instigator's team.
+**Update Affected Class When Receiving From** |  When an event occurs, this function changes the class selected in the **Affected Class** option to the instigator's class.
+**Reset Affected Team When Receiving From** |  When an event occurs, this function changes the **Affected Team** option to its original setting.
+**Reset Affected Class When Receiving From** |  When an event occurs, this function changes the **Affected Class** option to its original setting.
+###  Events
+This device has no events.

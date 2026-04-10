@@ -1,13 +1,19 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/invalidatable
 
-# array.Length extension
-Learn technical details about the array.Length extension.
+# invalidatable interface
+Learn technical details about the invalidatable interface.
+Implemented by classes whose instances can become invalid at runtime.
 |
 ---|---
 Verse `using` statement | `using { /Verse.org/Verse }`
-`array.Length():int`
-## Parameters
-`array.Length` does not take any parameters.
-## Attributes, Specifiers, and Effects
-The following attributes, specifiers, and effects determine how you can interact with `array.Length` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
-### Specifiers
+## Exposed Interfaces
+This interface exposes the following interfaces:
+Name | Description
+---|---
+[`disposable`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/disposable) |  Implemented by classes whose instances have limited lifetimes.
+## Members
+This interface has functions, but no data members.
+### Functions
+Function Name | Description
+---|---
+[`IsValid`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/invalidatable/isvalid) |  Succeeds if this object is still valid.

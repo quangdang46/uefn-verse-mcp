@@ -1,47 +1,22 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/making-a-custom-hud-in-unreal-editor-for-fortnite
 
-# Gold Items
-Use Gold items to set currency requirements that will unlock devices and items.
-![Gold Items](https://dev.epicgames.com/community/api/documentation/image/c0776082-c931-444b-86bf-ab1abe83367e?resizing_type=fill&width=1920&height=335)
-You can [register](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#register) **Gold** items as required [currency](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#currency) for players to use on your island. The set requirements will show on a HUD message near the device.
-You can use this item as required currency for devices like:
-  * **Conditional Button**
-  * **Item Spawner**
-  * **Vending Machine**
+# Making a Custom HUD
+Create your own custom heads-up display by learning more about designing nameplates, as well as health and shield indicators.
+![Making a Custom HUD](https://dev.epicgames.com/community/api/documentation/image/7b00a86a-03be-4077-8df9-d6e97039098f?resizing_type=fill&width=1920&height=335)
+To create your own custom [heads-up display (HUD)](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary#hud), learn how to use Viewmodel in Unreal Motion Graphics (UMG) and follow this tutorial. These teach you how to create your own avatar backplates and make a custom squad view, including health and shield bars. For this tutorial you'll need:
+  * [Custom UI Material Instances](https://dev.epicgames.com/documentation/en-us/fortnite/creating-custom-ui-with-material-instances-in-unreal-editor-for-fortnite).
+  * The UI Material Lab texture pack.
+  * Any textures you want to use as part of your UI materials.
 
-While [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#in-game), you can offer gold throughout the world for players to collect by through devices like the **Item Spawner** or **Item Granter**.
-Through the [My Island - Settings menu](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary), you can adjust multiple settings for gold allocation on your island. You can change settings like **Show Gold Resource Count** to determine if gold will show on the player's HUD.
-[![My Island - Settings](https://dev.epicgames.com/community/api/documentation/image/626c6c49-f09f-4517-b397-e122bc3e4a20?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/626c6c49-f09f-4517-b397-e122bc3e4a20?resizing_type=fit)
-_Click image to enlarge._
-You can also grant players with Gold by using the **Round Settings** device and altering the **Gold Given Per Round** settings.
-[![Round Settings](https://dev.epicgames.com/community/api/documentation/image/df977955-04df-4ffd-8314-55095baf362c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/df977955-04df-4ffd-8314-55095baf362c?resizing_type=fit)
-_Click image to enlarge._
-##  Finding and Placing Items
-[![Finding Gold Consumables](https://dev.epicgames.com/community/api/documentation/image/b73543c3-3fb9-4691-88b6-b11984ef6668?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b73543c3-3fb9-4691-88b6-b11984ef6668?resizing_type=fit)
-_Click image to enlarge._
-  1. From **Create mode** , press the **Tab** key and click **CREATIVE** to select the **Creative inventory screen**.
-  2. Click the **CONSUMABLES** tab.
-  3. On this screen, scroll to find and select the item, use the **Search** box to look up the item by name, or check the list of relevant **Categories** specific to the item you’re looking for to filter the view.
-  4. Click the item, then click either **EQUIP** or **ADD TO CHEST**.
+Creating your own HUD means using Creative devices to control the look of the HUD through the **[HUD Controller](https://dev.epicgames.com/documentation/en-us/fortnite/using-hud-controller-devices-in-fortnite-creative)** device. This provides a way for you to turn off the parts of the default Fortnite HUD you don’t want to use and to add a custom **User Widget** to the device with your own HUD design.
+You can also control the HUD in Verse. See **[Removing and Controlling the Fortnite Default HUD](https://dev.epicgames.com/documentation/en-us/fortnite/removing-and-controlling-the-fortnite-default-hud-in-unreal-editor-for-fortnite)** to learn more.
+To learn more about setting up a **User Widget** for the different UI HUD elements in UMG, refer to the [UI Pop-Ups](https://dev.epicgames.com/documentation/en-us/fortnite/ui-popups-in-unreal-editor-for-fortnite) documentation.
+To familiarize yourself with UMG workflows and tools refer to the following Unreal Engine documentation:
+  * **[UMG UI Designer Quick Start Guide](https://dev.epicgames.com/documentation/en-us/unreal-engine/umg-ui-designer-quick-start-guide-in-unreal-engine?application_version=5.5)**
+  * **[UMG Best Practices](https://dev.epicgames.com/documentation/en-us/unreal-engine/umg-best-practices-in-unreal-engine?application_version=5.5)**
+  * **[UMG Styling](https://dev.epicgames.com/documentation/en-us/unreal-engine/umg-styling-in-unreal-engine?application_version=5.5)**
 
-Clicking **EQUIP** will add the item to your [Resources bar](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#resources-bar). (When you're back in Create mode, you can view items in your Resources bar by pressing the **Tab** key and selecting **Play**)
-You may want to offer an item bundle to players through a [chest](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#chest) or [llama](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#llama). Selecting **ADD TO CHEST** will add the item to the [CHEST tab](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary).
-[![Adding Gold to Chest](https://dev.epicgames.com/community/api/documentation/image/ecb61c56-30ac-4ff4-ab29-476175a1a8b4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ecb61c56-30ac-4ff4-ab29-476175a1a8b4?resizing_type=fit)
-_Click image to enlarge._
-Each time you click **ADD TO CHEST** , the item count will increase by one, shown in a yellow box on the **CHEST** tab.
-You can add up to fifteen items to the **CHEST** tab. When it’s full, the **ADD TO CHEST** tab will disappear. To add more items, you first have to remove items from the **CHEST** tab.
-From the **CHEST** tab, you can select either **CREATE CHEST** or **CREATE LLAMA** to store the items in a Chest or a Llama for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#in-game).
-##  Managing Items
-You can manage these items when you are in [Play inventory](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#play-inventory). To access the **Play** inventory screen, press **Tab** and click **Play** in the top navigation bar. In the Play inventory screen, you can create or split item stacks, or remove them entirely from the Resources bar.
-[![Crafting Items Resources Bar](https://dev.epicgames.com/community/api/documentation/image/0149cdcd-14b9-4d5f-97f8-7d12be277d9f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0149cdcd-14b9-4d5f-97f8-7d12be277d9f?resizing_type=fit)
-_Click image to enlarge._
-Instead of dropping these items on the ground, it's best to grant them to players by using item-granting devices like the Item Spawner.
-You cannot reposition or copy items with the phone tool. To delete an item from your inventory in Create mode, you will have to select either _Respawn_ or _Back To Hub_ from the _Menu_. When you do this, your inventory clears.
-##  Registering Items
-Some devices can hold or grant items. To [register](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#register) an item for this kind of device, follow these steps.
-  1. In CREATIVE inventory, find the equipment and items you want to register with a device and equip them.
-  2. In Create mode, stand directly beside the device that will register the item.
-  3. Press the **Tab** key to open the **PLAY inventory** screen.
-  4. Click the item, then press either **Z** or **X** to split or drop the item. You can also drag the item to the side until a [backpack icon](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#backpack-icon) appears.
-
-The compatible device will automatically register the dropped item.
+To learn more about the UMG Editor in UEFN, refer to the **[UI Widget Editor](https://dev.epicgames.com/documentation/en-us/fortnite/ui-widget-editor-in-unreal-editor-for-fortnite)** document.
+  * [![Making Custom Backplates](https://dev.epicgames.com/community/api/documentation/image/1d0029aa-4c56-4599-b8fd-e687224f4966?resizing_type=fit&width=640&height=640) Making Custom Backplates Create custom avatar backplates for your custom HUD. ](https://dev.epicgames.com/documentation/en-us/fortnite/making-custom-backplates-in-unreal-editor-for-fortnite)
+  * [![Making Custom Health and Shield Bars](https://dev.epicgames.com/community/api/documentation/image/79ff27c4-b164-4df1-9408-373681cb0967?resizing_type=fit&width=640&height=640) Making Custom Health and Shield Bars Create custom Health and Shield Bars for your custom HUD. ](https://dev.epicgames.com/documentation/en-us/fortnite/making-custom-health-and-shield-bars-in-unreal-editor-for-fortnite)
+  * [![Making a Custom Squad View](https://dev.epicgames.com/community/api/documentation/image/ef2ad1eb-1150-45f5-ae98-e4a8b57a1a57?resizing_type=fit&width=640&height=640) Making a Custom Squad View Expand on the custom backplate knowledge to create a custom squad view for your project. ](https://dev.epicgames.com/documentation/en-us/fortnite/making-a-custom-squad-view-in-unreal-editor-for-fortnite)

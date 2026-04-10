@@ -1,15 +1,7 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/item_granter_device/cycletorandomitem
 
-# animation_mode enumeration
-Learn technical details about the animation_mode enumeration.
-Animation play modes.
-|
----|---
-Verse `using` statement | `using { /Fortnite.com/Devices/CreativeAnimation }`
-## Enumerators
-The `animation_mode` enumeration includes the following enumerators:
-Name | Description
----|---
-`OneShot` |  Stop after playing the animation once.
-`PingPong` |  Reverse direction after reaching the final `keyframe_delta`, then play the animation in reverse.
-`Loop` |  Play the animation in a loop. This requires the animation ends exactly where it began.
+# Access denied
+Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+
+**Session ID** : 9dfa56881b31e8d4
+**IP Address** : 14.191.95.176

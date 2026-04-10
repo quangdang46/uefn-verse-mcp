@@ -1,14 +1,27 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/input/character
 
-# hud_identifier_world_resource_ingredient class
-Learn technical details about the hud_identifier_world_resource_ingredient class.
-|
----|---
-Verse `using` statement | `using { /Fortnite.com/UI }`
-## Inheritance Hierarchy
-This class is derived from `hud_element_identifier`.
+# Character module
+Learn technical details about the Character module.
+Module import path: /Fortnite.com/Input/Character
+  * [`Fortnite.com`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom)
+  * [`Input`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/input)
+  * **`Character`**
+
+## Data
 Name | Description
 ---|---
-[`hud_element_identifier`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/ui/hud_element_identifier) |  Used to identify a HUD element.
-## Members
-This class has no members.
+`RangedWeaponMapping` |
+`Reload` |
+---|---
+`WeaponPrimary` |
+---|---
+`WeaponSecondary` |
+---|---
+`TraversalMapping` |
+---|---
+`Crouch` |
+---|---
+`Sprint` |
+---|---
+`Jump` |
+---|---

@@ -1,23 +1,27 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/log
 
-# entity_origin class
-Learn technical details about the entity_origin class.
-class to provide alternative origin to the 'transform_component' as an entity
+# Log function
+Learn technical details about the Log function.
+Returns the base `B` logarithm of `X`.
 |
 ---|---
-Verse `using` statement | `using { /Verse.org/SceneGraph }`
-## Exposed Interfaces
-This class exposes the following interfaces:
-Name | Description
----|---
-[`origin`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/origin) |  Interface to provide alternative origin to an entity which is defaulted to its parent. See `transform_component`
-## Members
-This class has both data members and functions.
-### Data
-Data Member Name | Type | Description
+Verse `using` statement | `using { /Verse.org/Verse }`
+`Log<public>(B:float, X:float)<reads><computes>:float`
+## Parameters
+`Log` takes the following parameters:
+Name | Type | Description
 ---|---|---
-`Entity` | `entity` |
-### Functions
-Function Name | Description
+`B` | `float` |
+`X` | `float` |
+## Attributes, Specifiers, and Effects
+### Specifiers
+The following specifiers determine how you can interact with `Log` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+Specifier | Meaning
 ---|---
-[`GetTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/entity_origin/gettransform) |
+`public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
+### Effects
+The following effects determine how `Log` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+Effect | Meaning
+---|---
+`reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.
+`computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect.

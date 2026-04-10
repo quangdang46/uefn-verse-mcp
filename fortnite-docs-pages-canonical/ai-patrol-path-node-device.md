@@ -1,7 +1,5 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/ai-patrol-path-node-device
 
-# One more step
-Please complete a security check to continue
-Verification successful. Waiting for dev.epicgames.com to respond
-**Session ID** : 9e9c5f0828648516
-**IP Address** : 14.191.95.176
+# AI Patrol Path Node device
+You can use this device to set patrolling behavior for guards spawned with the Guard Spawner device, including establishing patrol paths.
+You can use this device to set patrolling behavior for guards spawned with the [Guard Spawner device](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#guardspawnerdevice), including establishing [patrol paths](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#patrolpath).

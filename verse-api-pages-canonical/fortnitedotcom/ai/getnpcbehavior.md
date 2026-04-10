@@ -1,30 +1,26 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ai/getnpcbehavior
 
-# ShowOffersDialog function
-Learn technical details about the ShowOffersDialog function.
-Shows the Epic provided store front contain the specified `Offers`.
+# (InAgent:agent).GetNPCBehavior extension
+Learn technical details about the (InAgent:agent).GetNPCBehavior extension.
+Returns the `npc_behavior` for `InAgent`.
 |
 ---|---
-Verse `using` statement | `using { /Fortnite.com/Marketplace }`
-`ShowOffersDialog<public><native>(Player:player, Offers:[]offer, Title:message)<transacts><suspends><no_rollback>:void`
+Verse `using` statement | `using { /Fortnite.com/AI }`
+`(InAgent:agent).GetNPCBehavior<public><native>()<transacts><decides>:`[`npc_behavior`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ai/npc_behavior)
 ## Parameters
-`ShowOffersDialog` takes the following parameters:
+`GetNPCBehavior` takes the following parameters:
 Name | Type | Description
 ---|---|---
-`Player` | `player` |
-`Offers` | `[]offer` |
-`Title` | `message` |
+`InAgent` | `agent` |
 ## Attributes, Specifiers, and Effects
+The following attributes, specifiers, and effects determine how you can interact with `GetNPCBehavior` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 ### Specifiers
-The following specifiers determine how you can interact with `ShowOffersDialog` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
 `native` | Indicates that the definition details of the element are implemented in C++. Verse definitions with the `native` specifier auto-generate C++ definitions that a developer can then fill out its implementation. You can use this specifier on classes, interfaces, enums, methods, and data.
 ### Effects
-The following effects determine how `ShowOffersDialog` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
 `transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.
-`suspends` | Indicates that the function is async. Creates an async context for the body of the function.
-`no_rollback` | This is the default effect when no exclusive effect is specified. The `no_rollback` effect indicates that any actions performed by the function cannot be undone and so the function cannot be used in a failure context. This effect cannot be manually specified.
+`decides` | Indicates that the function can fail, and that calling this function is a [failable expression](https://dev.epicgames.com/documentation/en-us/fortnite/failure-in-verse#failableexpression). Function definitions with the `decides` effect must also have the `transacts` effect, which means the actions performed by this function can be rolled back (as if the actions were never performed), if there’s a failure anywhere in the function.

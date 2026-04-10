@@ -1,14 +1,15 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/teams/team_attitude
 
-# hud_identifier_visual_sound_effect_movement class
-Learn technical details about the hud_identifier_visual_sound_effect_movement class.
+# team_attitude enumeration
+Learn technical details about the team_attitude enumeration.
+A generic set of team attitudes. Use this enum to model relationship behavior between your experience's agents/teams.
 |
 ---|---
-Verse `using` statement | `using { /Fortnite.com/UI }`
-## Inheritance Hierarchy
-This class is derived from `hud_element_identifier`.
+Verse `using` statement | `using { /Fortnite.com/Teams }`
+## Enumerators
+The `team_attitude` enumeration includes the following enumerators:
 Name | Description
 ---|---
-[`hud_element_identifier`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/ui/hud_element_identifier) |  Used to identify a HUD element.
-## Members
-This class has no members.
+`Friendly` |  Agents/teams are friends. In Fortnite games two `agent`s on the same `team` are `friendly`.
+`Neutral` |  Agents/teams are neutral. In Fortnite games items and AI not belonging to a `friendly` or `hostile` team are `neutral`.
+`Hostile` |  Agents/teams are hostile. In fortnite games two `agent`s on opposing `team`s are `hostile`.

@@ -1,95 +1,61 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/car-racing-4-add-a-scoring-system-in-unreal-editor-for-fortnite
 
-# Creating Custom Skilled Interactions
-Use Viewbindings to connect your custom UI to the Skilled Interaction device.
-![Creating Custom Skilled Interactions](https://dev.epicgames.com/community/api/documentation/image/49dc0fb5-ab24-497e-af33-8d4001d712e0?resizing_type=fill&width=1920&height=335)
-This walkthrough provides an example of a **UMG** (Unreal Motion Graphics) design and its **View Model** bindings that you can use to create a custom UI for the [Skilled Interaction device](https://dev.epicgames.com/documentation/fortnite/using-skilled-interaction-devices-in-fortnite-creative).
-As you create your custom skilled interaction, make sure to set an event to begin the interaction. You can also set event triggers that grant players items for successfully completing the skilled interaction.
-You can build on these examples by setting [cinematic cutscenes](https://dev.epicgames.com/documentation/fortnite/making-cinematics-and-cutscenes-in-unreal-editor-for-fortnite) once players or objects target certain zones.
-[![Golf Example](https://dev.epicgames.com/community/api/documentation/image/998f476b-2886-4d72-97dd-6a835eb35d23?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/998f476b-2886-4d72-97dd-6a835eb35d23?resizing_type=fit)
-This tutorial covers how to create a quick-press skilled interaction in which players can hold a trigger input to target the correct zones.
-Before you begin customizing your UI, must create and import any assets to use in your designs. Visit [](https://dev.epicgames.com/documentation/fortnite/creating-custom-ui-from-materials-in-unreal-editor-for-fortnite)**[Creating Custom UI with Material Instances](https://dev.epicgames.com/documentation/fortnite/creating-custom-ui-with-material-instances-in-unreal-editor-for-fortnite)** to learn more about using materials in your design.
-##  Set up the Device
-Follow the steps below to create a golf example in which players target a perfect zone to grant success when hit. When designing your UI, feel free to rename the panels as you place them in the **Hierarchy** panel.
-  1. From the **Content Browser** , place a Skilled Interaction device into your project.
-  2. In the **Details** panel for the device, modify the following settings.
-[![Modified Golf Example](https://dev.epicgames.com/community/api/documentation/image/79dd312f-11d5-4c55-a9dd-40e978757eb1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/79dd312f-11d5-4c55-a9dd-40e978757eb1?resizing_type=fit)
-Option  |  Value  |  Description
+# 4. Add a Scoring System
+Add a scoring system to your game.
+![4. Add a Scoring System](https://dev.epicgames.com/community/api/documentation/image/da3891f0-e52c-429a-8b47-1c471afa2d4f?resizing_type=fill&width=1920&height=335)
+**Devices used:**
+  * 2+ x [Race Checkpoint](https://www.fortnite.com/en-US/creative/docs/using-race-checkpoint-devices-in-fortnite-creative)
+  * 1 x [Score Manager](https://www.fortnite.com/en-US/creative/docs/using-score-manager-devices-in-fortnite-creative)
+  * 1 x [Race Manager](https://www.fortnite.com/en-US/creative/docs/using-race-manager-devices-in-fortnite-creative)
+
+[![checkpoints](https://dev.epicgames.com/community/api/documentation/image/0c2c39a4-9566-4bcf-848e-895ca26ee6f6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0c2c39a4-9566-4bcf-848e-895ca26ee6f6?resizing_type=fit)
+Now that most gameplay elements are in place, you need to add the devices which will allow the game to determine the winner of the race.
+##  Set Up Checkpoints
+Place the **Race Checkpoint** where you would like your race to start and configure the **User Settings** as follows:
+Option  |  Value  |  Explanation
 ---|---|---
-**UI Type** |  Bar |  Determines the type of user interface to display.
-**Custom Widget** |  Add your custom **User Widget** |  Select a custom widget to use for the interaction.
-**Interaction Type** |  Charge and release |  Charge and Release animates while holding the trigger button and activates upon release.
-**Meter Color** |  Pick a color |  This example uses the color red.
-**Good Zone Size** |  80.0 |  Sets the good zone size as a percent of the total meter.
-**Good Zone Position** |  0.0 |  Sets the good zone's position.
-**Perfect Zone Size** |  15.0 |  Sets the size of the perfect zone as a percent of the good zone.
-**Perfect Zone Position** |  100.0 |  Sets the position of the perfect zone.
-**Good Zone Color** |  Pick a color |  This example uses the color dark green.
-**Perfect Zone Color** |  Pick a color |  This example uses the color lime green.
+**Checkpoint Number** |  1 |  For each checkpoint you add, increment the number by 1.
+**Allow Players to Pass without Vehicle** |  False |  This prevents a player from abandoning a vehicle and finishing the race on foot.
+**Visible Prior To Race Start** |  No |  Not making the checkpoints visible prior to race start is used by lots of designers, but you can set this to a different value if you want.
+**Enabled During Phase** |  Gameplay Only |  Players must wait until the race starts to pass a checkpoint.
+When copying the checkpoints to the next locations, you will need to increment the checkpoint numbers by 1 for each additional checkpoint. You will only need to use **Direct Event Binding** on the last checkpoint you place.
+##  Add the Score Manager
+[![score manager](https://dev.epicgames.com/community/api/documentation/image/0790110b-f89c-410d-a9ef-694962fb77ba?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0790110b-f89c-410d-a9ef-694962fb77ba?resizing_type=fit)
+Set up a **Score Manager** device to count the points needed to win the round. Since the winner will need to complete three laps to finish the race, place the device and set the following option:
+Option  |  Value  |  Explanation
+---|---|---
+**Score Value** |  1 |  Each checkpoint awards 1 point.
+Only the last checkpoint you placed should be bound to this score manager.
+##  Add the Race Manager Device
+You'll use the **Race Manager** to set how many laps it takes to finish a race, and set the channel for the **Timed Objective** device. By default, this device will also add waypoints and show arrows that point to the next checkpoint unless disabled.
+Option  |  Value  |  Explanation
+---|---|---
+**Number of Laps** |  3 |  One lap is the default. If you change this to more than one, you will need to modify the score in the **IslandSettings** to match the new score required to win. For example, if you want the race to go for two laps, this would require 2 points to win.
+**Start Race on Game Start** |  False |  The race will start when a signal is received.
+##  Putting it All Together
+With all the devices in place, it's time to set up how they interact. Direct event binding allows devices to talk to one another directly by using **events** and **functions**. Learn more about it [here](https://dev.epicgames.com/documentation/en-us/fortnite/direct-event-binding-in-unreal-editor-for-fortnite).
+Device A  |  Function  |  Device B  |  Event  |  Explanation
+---|---|---|---|---
+**Pickup Truck Spawners #1 and #2** [![Bear Spawners](https://dev.epicgames.com/community/api/documentation/image/7b9191a6-f07f-4244-b7a2-53a4301013a5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7b9191a6-f07f-4244-b7a2-53a4301013a5?resizing_type=fit) |  Assign Driver |  **Player Spawn Pads #1 and #2** [![spawn pad](https://dev.epicgames.com/community/api/documentation/image/d8fd866d-13dd-48b9-8de6-ce715816706d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d8fd866d-13dd-48b9-8de6-ce715816706d?resizing_type=fit) |  On Player Spawned |  When each player spawns, they will be assigned to their respective vehicle.
+**Triggers #1 and #2** [![Trigger](https://dev.epicgames.com/community/api/documentation/image/43fe75d5-1088-47ee-abfa-594eb204a27d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/43fe75d5-1088-47ee-abfa-594eb204a27d?resizing_type=fit) |  Trigger |  **Pickup Truck Spawners #1 and #2** [![Bear Spawners](https://dev.epicgames.com/community/api/documentation/image/aae68798-87c0-4033-a4a6-58cc49da5815?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/aae68798-87c0-4033-a4a6-58cc49da5815?resizing_type=fit) |  On Player Exits Vehicle |  The trigger will activate when a player exits their vehicle. Normally you would want to prevent the player from leaving the vehicle, but you want to let the player exit the vehicle if it flips over to give them a few seconds to flip the vehicle back, then force them back into the driver's seat.
+**Pickup Truck Spawners #1 and #2** [![Bear Spawners](https://dev.epicgames.com/community/api/documentation/image/eed4f92c-622a-4500-aafd-aac9876f84f1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/eed4f92c-622a-4500-aafd-aac9876f84f1?resizing_type=fit) |  Assigns Driver |  **Triggers #1 and #2** [![Trigger](https://dev.epicgames.com/community/api/documentation/image/51727a9b-80af-4b2a-ba8b-8cfba661c465?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/51727a9b-80af-4b2a-ba8b-8cfba661c465?resizing_type=fit) |  On Triggered |  When a player exits their vehicle, the trigger forces the player back to their vehicle after 3 seconds.
+**Vehicle Barriers #1 and #2** [![barrier](https://dev.epicgames.com/community/api/documentation/image/60a69d7c-ff3b-41ba-9962-efe820e0805d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/60a69d7c-ff3b-41ba-9962-efe820e0805d?resizing_type=fit) |  Disable |  **Timed Objective** [![timed objective](https://dev.epicgames.com/community/api/documentation/image/bb26b60e-2129-48a3-91aa-28e9fd5dd93b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/bb26b60e-2129-48a3-91aa-28e9fd5dd93b?resizing_type=fit) |  On Completed |  When the timer runs out, the barriers will be deactivated.
+**Race Manager** [![Race Manager](https://dev.epicgames.com/community/api/documentation/image/7ffda0c8-4bc6-4d7d-a6cb-e001010550dd?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7ffda0c8-4bc6-4d7d-a6cb-e001010550dd?resizing_type=fit) |  Start Race |  **Timed Objective** [![timed objective](https://dev.epicgames.com/community/api/documentation/image/de0bc1bb-67d3-4bde-8509-00c2aed6cfae?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/de0bc1bb-67d3-4bde-8509-00c2aed6cfae?resizing_type=fit) |  On Completed |  When the timer runs out, the race will begin.
+**Score Manager** [![Score Manager](https://dev.epicgames.com/community/api/documentation/image/4df3e867-5f11-428d-b3a0-b3d3679bb05e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4df3e867-5f11-428d-b3a0-b3d3679bb05e?resizing_type=fit) |  Activate |  **Checkpoint** [![Checkpoint](https://dev.epicgames.com/community/api/documentation/image/34d9a08b-7192-4914-ab46-28ee8c7fc544?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/34d9a08b-7192-4914-ab46-28ee8c7fc544?resizing_type=fit) |  On Checkpoint Completed |  When the checkpoint is reached, it will automatically turn off for that vehicle, and the next checkpoint in the sequence will turn on, as determined by the checkpoint number.
+##  (Optional) Add a Custom Applause Sound Cue
+**Device used** :
+  * 1 x Audio Player
 
-##  Add the Background Image
-[![Golf Example](https://dev.epicgames.com/community/api/documentation/image/b430c439-7292-4d95-b3c7-2c6c4f1f032c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b430c439-7292-4d95-b3c7-2c6c4f1f032c?resizing_type=fit)
-Follow the steps below to create the background image for the vertical meter bar in this example. The background in this walkthrough is a rounded, black bar in which the zones will sit on top of.
-[![](https://dev.epicgames.com/community/api/documentation/image/9fe424a6-e767-4914-a605-fde4cae1a5c4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9fe424a6-e767-4914-a605-fde4cae1a5c4?resizing_type=fit)
-Use the image above as a reference when recreating the steps in this tutorial.
-  1. Create a **User Widget** for your interaction.
-  2. Locate and double-click the **User Widget** attached to the device to access its **User Widget Editor**.
-  3. In the **Hierarchy** panel, drag and nest an **Overlay** to serve as the overall canvas. In this example, it is named Overlay. Then, drag another **Overlay** to contain the background. In this example, it is named SID.
-  4. Drag and nest an **Image** , named Bar in the example, into the child **Overlay**.
-  5. In the **Details** panel of the **Image** , set the material or texture for your background.
+Personalize your experience even further by adding some custom sounds to your game! Follow these steps to add a an applause sound cue to the beginning of your race:
+  1. Import a custom applause sound into your project by right-clicking inside the **Content Browser** and selecting **Import to...**. See the [Import Custom Audio](https://dev.epicgames.com/documentation/en-us/fortnite/importing-custom-audio-in-unreal-editor-for-fortnite) for more information.
+  2. Add an **Audio Player** device to your level.
+  3. Drag your imported audio clip from the Content Browser into the device's **Audio** field.
+  4. Set the **Fade In Duration** to **0.5** and the **Fade Out Duration** to **1.0**
+  5. Connect the device to the **Timed Objective** device.
+    1. Under **User Options - Functions** , add an array element to **Play** by clicking the **+** sign.
+    2. Choose **Timed Objective** and **On Completed**.
 
-##  Set up the Zones
-You can create a bad zone for your example that will grant an automatic failure when targeted. However, this example only uses a perfect zone, which consists of three containers:
-  * An initial empty area, called **PerfectZoneStart**.
-  * The good or perfect zone, called **SizeBox**.
-  * The empty area after, called **PerfectZoneEnd**.
-
-Follow the steps below to recreate this example's perfect zone.
-[![Golf Example](https://dev.epicgames.com/community/api/documentation/image/08bd3fb1-2035-48dd-b829-56a43a78a0c8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/08bd3fb1-2035-48dd-b829-56a43a78a0c8?resizing_type=fit)
-  1. From the **Palette** panel, drag and nest a **Stack Box** inside the child **Overlay** , named SID in the example.
-  2. Then, drag and nest the following children inside the **Stack Box** : **Scale Box** > **Size Box**.
-    1. In the **Details** panel for the **Scale Box** panel, set the **Stretch** option to **User Specified**. Then, set the **User Specified Scale** to indicate how much space you want above the perfect zone. For the purpose of this example, set the scale to **0.27**.
-    2. In the **Size Box** , set the **Height Override** setting to the height of the top meter.
-  3. Inside the same **Stack Box** , also drag a **Size Box** > **Scale Box** > **Overlay** > **Image**.
-    1. In the **Details** panel for the **Size Box** , set the **Height Override** to the size of the perfect zone.
-    2. In the **Details** panel for the **Scale Box** , set the **Stretch** setting to **User Specified**. Then, set the **User Specified Scale** setting to **1**.
-    3. The **Overlay** PerfectZone will contain the material or texture for the perfect zone.
-  4. Inside the same **Stack Box** , also drag an **Overlay** > **Size Box**.
-    1. In the **Details** panel for the **Overlay** PerfectZoneEnd, set the **Stretch** setting to **User Specified**. Then, set the **User Specified Scale** to indicate how much space you want above the perfect zone. For the purpose of this example, set the scale to **0.49**.
-[![](https://dev.epicgames.com/community/api/documentation/image/639d58b3-032e-4d42-a390-18d402e91c9c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/639d58b3-032e-4d42-a390-18d402e91c9c?resizing_type=fit)
-    1. In the **Details** panel for the **Size Box** , set the **Height Override** setting to the height of the bottom meter.
-[![](https://dev.epicgames.com/community/api/documentation/image/9d3be976-ae1d-447e-ac3a-c8ab5f2f261f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9d3be976-ae1d-447e-ac3a-c8ab5f2f261f?resizing_type=fit)
-  5. To add extra detail, you can include notches for the background zones by adding an **Image** , named Notches in the example, underneath the **Stack Box**.
-
-##  Set up the Scrubber
-For this example, the scrubber needs to be inside a moving container. To do this, you must create a **Stack Box** with two items.
-The first item holds a **Size Box** set to **User Scale** , which you are later going to bind to the **Skilled Interaction Meter Scale** in the **ViewModel**. The second item will hold a container with the scrubber.
-[![Scrubbers](https://dev.epicgames.com/community/api/documentation/image/0e76316b-ea41-4bbd-970e-ea78e39d93ac?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0e76316b-ea41-4bbd-970e-ea78e39d93ac?resizing_type=fit)
-  1. Underneath the **Overlay** SID drag and nest a **Stack Box** , named ScrubberStackBox in the example, to contain two child setups of: **Overlay** > **Size Box** and **Size Box** > **Scale Box** > **Image** named Scrubber.
-    1. In the **Details** panel for the **Overlay** ScrubberMovingZone, set the **Stretch** setting to **User Specified**. Then, set the **User Specified Scale** setting to **0**.
-[![](https://dev.epicgames.com/community/api/documentation/image/ef6db1ac-2c5d-4c1f-83cf-967b87f28aa0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ef6db1ac-2c5d-4c1f-83cf-967b87f28aa0?resizing_type=fit)
-    1. In the **Details** panel for the **Size Box** , set the **Height Override** setting to the height of the top meter.
-[![](https://dev.epicgames.com/community/api/documentation/image/8610cdad-8ba0-49ad-9bbd-b9c6d65ac86d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8610cdad-8ba0-49ad-9bbd-b9c6d65ac86d?resizing_type=fit)
-    1. Set the **Height Override** setting for **Size Box** ScrubberContainer to **0**.
-[![](https://dev.epicgames.com/community/api/documentation/image/1fbe900e-466c-4837-9aa2-4ab20d387d38?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1fbe900e-466c-4837-9aa2-4ab20d387d38?resizing_type=fit)
-    1. Change the **Stretch** setting for the **Overlay** Scale Box to **User Specified**. Set the **User Specified Scale** setting to **1**.
-[![](https://dev.epicgames.com/community/api/documentation/image/93d6f514-eff2-4cf8-9c92-b658c16402e8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/93d6f514-eff2-4cf8-9c92-b658c16402e8?resizing_type=fit)
-    1. In the **Image** setting for the **Image** Scrubber, set the material or texture of your scrubber.
-[![](https://dev.epicgames.com/community/api/documentation/image/8e80a3c3-c695-4eb2-b44c-3c8533637c12?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8e80a3c3-c695-4eb2-b44c-3c8533637c12?resizing_type=fit)
-
-##  Set up the ViewModel
-To connect your custom UI to the Skilled Interaction device, follow these steps.
-  1. In the **User Widget** , navigate to **Window** > **Viewmodels** to open the **Viewmodels** window.
-  2. Click **+Viewmodel**. Then, select **Device - Skilled Interaction View Model** and click **Select**.
-  3. Either from the bottom toolbar or the **Window** tab, select **View Bindings**.
-  4. Set up your **View Bindings** to match the image below.
-[![Viewbindings](https://dev.epicgames.com/community/api/documentation/image/f63067cd-dd3b-4818-acc5-a83bdbb46605?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f63067cd-dd3b-4818-acc5-a83bdbb46605?resizing_type=fit)
-    1. Click **+ Add Widget** to add the **ScrubberMovingZone**.
-    2. Set the **ScubberMovingZone** to **User Specified Scale** and **UEFN_SkilledInteraction_ViewModel** to **Current Meter Value**.
-    3. Click **+ Add Widget** to add the **PerfectZoneStart**.
-    4. Set the **PerfectZoneStart** to **User Specified Scale** and **UEFN_SkilledInteraction_ViewModel** to **Perfect Zone Min**.
-    5. Click **+ Add Widget** to add the **PerfectZoneEnd**.
-    6. Set the **PerfectZoneStart** to **User Specified Scale** and add a conversion function for **Add Int Double**.
-    7. Set **A** to **1**.
-    8. Set **B** to **UEFN_SkilledInteraction_Viewmodel/Perfect Zone Max**.
-    9. Set **Negate B** to **True**.
+##  Playtesting Your Island
+**(Cue applause)** You did it!
+Once everything is set up and ready to go, [playtest your island](https://dev.epicgames.com/documentation/en-us/fortnite/playtesting-your-island-unreal-editor-for-fortnite) to make sure that it runs as expected in Fortnite.
+To **Publish** your project, see the [Publishing Projects](https://dev.epicgames.com/documentation/en-us/fortnite/publishing-projects-in-unreal-editor-for-fortnite) page.

@@ -3,7 +3,7 @@
 # Native module
 Learn technical details about the Native module.
 Module import path: /Verse.org/Native
-  * [`Verse.org`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg)
+  * [`Verse.org`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg)
   * **`Native`**
 
 ## Module Contents

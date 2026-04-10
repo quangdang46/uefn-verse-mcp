@@ -1,6 +1,6 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/node
 
-# One more step
-Please complete a security check to continue
-**Session ID** : 9e9c66381e208516
-**IP Address** : 14.191.95.176
+# node
+See linked list node.
+In **UEFN** , a node is a fundamental unit within a graph-based system that represents a specific function, operation, or data point. In the context of node graphs, a node is an individual component that processes or routes audio signals, such as a sound source, effect (like reverb or delay), mixer, or output.
+For **Verse** , see [linked list node](https://dev.epicgames.com/documentation/en-us/uefn/verse-glossary#linkedlistnode).

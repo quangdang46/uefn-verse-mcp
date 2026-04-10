@@ -1,22 +1,23 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/verse/cancelable/cancel
 
-# input_action function
-Learn technical details about the input_action function.
+# Cancel function
+Learn technical details about the Cancel function.
+Prevents any current or future work from completing.
 |
 ---|---
-Verse `using` statement | `using { /Verse.org/Assets }`
-`input_action<public>(t:any):input_action(t)`
-This function is a parametric type, meaning it returns a class or interface rather than a value or object instance.
+Verse `using` statement | `using { /Verse.org/Verse }`
+`Cancel<public><native_callable>()<transacts>:void`
 ## Parameters
-`input_action` takes the following parameters:
-Name | Type | Description
----|---|---
-`t` | `any` |
-### Generated Class
-`input_action` returns the parametric class [`input_action(t)`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/assets/input_action/input_action\(t\)).
+`Cancel` does not take any parameters.
 ## Attributes, Specifiers, and Effects
 ### Specifiers
-The following specifiers determine how you can interact with `input_action` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+The following specifiers determine how you can interact with `Cancel` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
+`native_callable` | Indicates that an instance method is both native (implemented in C++) and may be called by other C++ code. You can see this specifier used on an instance method. This specifier doesn’t propagate to subclasses and so you don’t need to add it to a definition when overriding a method that has this specifier.
+### Effects
+The following effects determine how `Cancel` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+Effect | Meaning
+---|---
+`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.

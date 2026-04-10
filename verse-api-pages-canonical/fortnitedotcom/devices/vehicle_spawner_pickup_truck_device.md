@@ -1,25 +1,43 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/vehicle_spawner_pickup_truck_device
 
-# (CreativeObject:creative_object_interface).GetTags extension
-Learn technical details about the (CreativeObject:creative_object_interface).GetTags extension.
-Returns a queryable `tag_view` which can be used to query the tags on `CreativeObject`.
+# vehicle_spawner_pickup_truck_device class
+Learn technical details about the vehicle_spawner_pickup_truck_device class.
+Specialized `vehicle_spawner_device` that allows a pickup truck to be configured and spawned.
 |
 ---|---
 Verse `using` statement | `using { /Fortnite.com/Devices }`
-`(CreativeObject:creative_object_interface).GetTags<public><native>()<transacts>:`[`tag_view`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/simulation/tags/tag_view)
-## Parameters
-`GetTags` takes the following parameters:
-Name | Type | Description
+## Inheritance Hierarchy
+This class is derived from the following hierarchy, starting with `creative_object`:
+Name | Description
+---|---
+[`creative_object`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object) |  Base class for creative devices and props.
+[`creative_device_base`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_device_base) |  Base class for creative_device.
+[`vehicle_spawner_device`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/vehicle_spawner_device) |  Base class for various specialized vehicle spawners which allow specific vehicle types to be spawned and configured with specialized options.
+## Members
+This class has both data members and functions.
+### Data
+Data Member Name | Type | Description
 ---|---|---
-`CreativeObject` | `creative_object_interface` |
-## Attributes, Specifiers, and Effects
-The following attributes, specifiers, and effects determine how you can interact with `GetTags` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
-### Specifiers
-Specifier | Meaning
+`AgentEntersVehicleEvent` | `listenable(payload)` |  Signaled when an `agent` enters the vehicle. Sends the `agent` that entered the vehicle.
+`AgentExitsVehicleEvent` | `listenable(payload)` |  Signaled when an `agent` exits the vehicle. Sends the `agent` that exited the vehicle.
+`DestroyedEvent` | `listenable(payload)` |  Signaled when a vehicle is destroyed.
+`SpawnedEvent` | `listenable(payload)` |  Signaled when a vehicle is spawned or respawned by this device. Sends the fort_vehicle who was spawned.
+`VehicleDestroyedEvent` | `listenable(payload)` |  Signaled when a vehicle is destroyed. Deprecated, use DestroyedEvent instead.
+`VehicleSpawnedEvent` | `listenable(payload)` |  Signaled when a vehicle is spawned or respawned by this device. Deprecated, use SpawnedEvent instead.
+### Functions
+Function Name | Description
 ---|---
-`public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
-`native` | Indicates that the definition details of the element are implemented in C++. Verse definitions with the `native` specifier auto-generate C++ definitions that a developer can then fill out its implementation. You can use this specifier on classes, interfaces, enums, methods, and data.
-### Effects
-Effect | Meaning
----|---
-`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.
+[`AssignDriver`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/vehicle_spawner_device/assigndriver) |  Sets `agent` as the vehicle's driver.
+[`DestroyVehicle`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/vehicle_spawner_device/destroyvehicle) |  Destroys the vehicle if it exists.
+[`Disable`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/vehicle_spawner_device/disable) |  Disables this device.
+[`Enable`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/vehicle_spawner_device/enable) |  Enables this device.
+[`GetGlobalTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/getglobaltransform) |  Gets the global transform of this object.
+[`GetTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/gettransform) |  Returns the transform of the `creative_object` with units in cm. You must check `creative_object.IsValid` before calling this if there is a possibility the object has been disposed or destroyed by gameplay. Otherwise a runtime error will result.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto) |  Moves the `creative_object` to the specified `Position` and `Rotation` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-1) |  Moves the `creative_object` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-2) |  Moves the `creative_device` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_device` it will be stopped and put into the `AnimationNotSet` state.
+[`RespawnVehicle`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/vehicle_spawner_device/respawnvehicle) |  Spawns a new vehicle. The previous vehicle will be destroyed before a new vehicle spawns.
+[`SetGlobalTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/setglobaltransform) |  Sets the global transform of this object.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto) |  Teleports the `creative_object` to the specified `Position` and `Rotation`.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-1) |  Teleports the `creative_object` to the specified location defined by `Transform`, also applies rotation and scale accordingly.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-2) |  Teleports the `creative_device` to the specified location defined by `Transform`, also applies rotation and scale accordingly.

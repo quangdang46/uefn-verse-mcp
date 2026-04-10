@@ -1,14 +1,54 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device
 
-# move_to_result enumeration
-Learn technical details about the move_to_result enumeration.
-Results for `MoveTo`.
+# player_counter_device class
+Learn technical details about the player_counter_device class.
+Used to track and react to how many players are in a particular area, and optionally display that information in game.
 |
 ---|---
 Verse `using` statement | `using { /Fortnite.com/Devices }`
-## Enumerators
-The `move_to_result` enumeration includes the following enumerators:
+## Inheritance Hierarchy
+This class is derived from the following hierarchy, starting with `creative_object`:
 Name | Description
 ---|---
-`DestinationReached` |  The destination has been reached.
-`WillNotReachDestination` |  The destination will not be reached. See debug log in UEFN for more info.
+[`creative_object`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object) |  Base class for creative devices and props.
+[`creative_device_base`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_device_base) |  Base class for creative_device.
+## Members
+This class has both data members and functions.
+### Data
+Data Member Name | Type | Description
+---|---|---
+`CountedEvent` | `listenable(payload)` |  Signaled when a valid player enters the zone and is counted. The frequency of evaluation against the _Target Player Count_ can be controlled through the device settings. Sends the `agent` that is now being counted.
+`CountFailsEvent` | `listenable(payload)` |  Signaled when the player count does not match _Target Player Count_. The frequency of evaluation against _Target Player Count_ can be controlled through the device settings.
+`CountSucceedsEvent` | `listenable(payload)` |  Signaled when the player count matches _Target Player Count_. The frequency of evaluation against _Target Player Count_ can be controlled through the device settings.
+`RemovedEvent` | `listenable(payload)` |  Signaled when a player is no longer counted by this device, such as when they leave the zone, leave the game, or are assigned to a different `team` or class. Sends the `agent` that is no longer being counted.
+### Functions
+Function Name | Description
+---|---
+[`CompareToTarget`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/comparetotarget) |  Triggers an evaluation of the current count vs _Target Player Count_ , signaling `CountSucceedsEvent` or `CountFailsEvent` based on the evaluation result.
+[`DecrementTargetCount`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/decrementtargetcount) |  Decrements _Target Player Count_ by `1`. Immediately triggers a new comparison.
+[`Disable`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/disable) |  Disables this device.
+[`Enable`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/enable) |  Enables this device.
+[`GetCount`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/getcount) |  Returns the number of players currently counted by this device
+[`GetCountedAgents`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/getcountedagents) |  Returns an array of agents that are currently counted by the device.
+[`GetGlobalTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/getglobaltransform) |  Gets the global transform of this object.
+[`GetTargetCount`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/gettargetcount) |  Returns the number of players required for this counter to succeed.
+[`GetTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/gettransform) |  Returns the transform of the `creative_object` with units in cm. You must check `creative_object.IsValid` before calling this if there is a possibility the object has been disposed or destroyed by gameplay. Otherwise a runtime error will result.
+[`HideInfoPanel`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/hideinfopanel) |  Hide this device info panel from the world.
+[`IncrementTargetCount`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/incrementtargetcount) |  Increments _Target Player Count_ by `1`. Immediately triggers a new comparison.
+[`IsCounted`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/iscounted) |  Is true if `Agent` is currently counted by this device.
+[`IsPassingTest`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/ispassingtest) |  Is true if the device is currently succeeding in its comparison.
+[`IsShowingInfoPanel`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/isshowinginfopanel) |  Returns whether this device is represented in the world as an info panel showing Current + Required player counts.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto) |  Moves the `creative_object` to the specified `Position` and `Rotation` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-1) |  Moves the `creative_object` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-2) |  Moves the `creative_device` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_device` it will be stopped and put into the `AnimationNotSet` state.
+[`Register`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/register) |  Adds the player to the registered player list. _Track Registered Players_ determines how registered players are counted.
+[`Reset`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/reset) |  Resets _Target Player Count_ to the default value defined in the device settings. If _Target Player Count_ was previously incremented or decremented, this reset immediately triggers a new comparison.
+[`SetGlobalTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/setglobaltransform) |  Sets the global transform of this object.
+[`SetTargetCount`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/settargetcount) |  Sets the number of players required for this counter to succeed. Immediately triggers a new comparison.
+[`ShowInfoPanel`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/showinfopanel) |  Show this device in the world as an info panel showing Current + Required player counts.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto) |  Teleports the `creative_object` to the specified `Position` and `Rotation`.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-1) |  Teleports the `creative_object` to the specified location defined by `Transform`, also applies rotation and scale accordingly.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-2) |  Teleports the `creative_device` to the specified location defined by `Transform`, also applies rotation and scale accordingly.
+[`TransmitForAllCounted`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/transmitforallcounted) |  Triggers `CountedEvent` for all `agent`s currently being counted.
+[`Unregister`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/unregister) |  Removes the player from the registered player list. _Track Registered Players_ determines how registered players are counted.
+[`UnregisterAll`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/player_counter_device/unregisterall) |  Clears all players from the list of registered players. _Track Registered Players_ determines how registered players are counted.

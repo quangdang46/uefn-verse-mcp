@@ -1,16 +1,16 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/basicshapes
 
-# Teams module
-Learn technical details about the Teams module.
-Module import path: /Fortnite.com/Teams
-  * [`Fortnite.com`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom)
-  * **`Teams`**
+# BasicShapes module
+Learn technical details about the BasicShapes module.
+Module import path: /UnrealEngine.com/BasicShapes
+  * [`UnrealEngine.com`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom)
+  * **`BasicShapes`**
 
-## Interfaces
+## Classes and Structs
 Name | Description
 ---|---
-[`fort_team_collection`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/teams/fort_team_collection) |  Collection used to manage `team`s and `agent`s on those teams. Use `fort_playspace.GetTeamCollection()` to get the `team_collection` for the active experience.
-## Enumerations
-Name | Description
----|---
-[`team_attitude`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/teams/team_attitude) |  A generic set of team attitudes. Use this enum to model relationship behavior between your experience's agents/teams.
+[`cube`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/basicshapes/cube) |
+[`sphere`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/basicshapes/sphere) |
+[`plane`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/basicshapes/plane) |
+[`cone`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/basicshapes/cone) |
+[`cylinder`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/basicshapes/cylinder) |

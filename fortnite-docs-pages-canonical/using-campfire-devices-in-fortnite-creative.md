@@ -1,74 +1,80 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-campfire-devices-in-fortnite-creative
 
-# Produce Items
-Refuel your player's energy by using these food-themed items.
-![Produce Items](https://dev.epicgames.com/community/api/documentation/image/d8c54ad3-1dc9-44e1-b6da-8088ea281b95?resizing_type=fill&width=1920&height=335)
-Offer **Produce** [items](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) to replenish your player’s damaged [health](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#health). These items can refill up to 15 health points, either instantly or incrementally.
-Produce items include:
-  * **Pepper**
-  * **Corn**
-  * **Coconut**
-  * **Cabbage**
-  * **Banana**
-  * **Apple**
-  * **Meat**
+# Campfire Devices
+Place campfires players can use to heal themselves.
+![Campfire Devices](https://dev.epicgames.com/community/api/documentation/image/008b7b9d-a9ba-4c41-aeb5-0364358f21f5?resizing_type=fill&width=1920&height=335)
+You can use the **Campfire** device in several ways. The campfire can be used for:
+  * A decoration
+  * A healing zone in the world
+  * A healing zone that requires fuel
 
-##  Finding and Placing Items
-[![Finding Produce Consumables](https://dev.epicgames.com/community/api/documentation/image/60135c9b-b4c1-4257-b4cf-2a5104399279?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/60135c9b-b4c1-4257-b4cf-2a5104399279?resizing_type=fit)
-_Click image to enlarge._
-  1. From [Build mode](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#create-mode), press the **Tab** key, then click **CREATIVE** on the [top navigation bar](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) to select the [CREATIVE inventory](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) screen if not already displayed.
-  2. Click the **CONSUMABLES** tab.
-  3. Scroll to find and select the item, use the **Search** box to look up the item by name, or check the list of relevant **Categories** specific to the item you're looking for to filter the view.
-  4. Click the item, then click either **Equip** or **Add To Chest**.
-
-Clicking **Equip** will add the item to your [Equipment bar](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary). When you're back in [Create mode](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#create-mode), you can view any items you've [equipped](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) by pressing the **F** key. You can select equipped items by either scrolling your middle mouse button or by pressing its corresponding number on your keyboard.
-From the [Chest](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) tab, you can select either **Create Chest** or **Create Llama** to store the items in a [chest](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#chest) or a [llama](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#llama) for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#in-game).
-[![Objective Chest](https://dev.epicgames.com/community/api/documentation/image/9d7e9fa1-c38f-4cdd-ba1c-153146b3f7d5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9d7e9fa1-c38f-4cdd-ba1c-153146b3f7d5?resizing_type=fit)
-_Click image to enlarge._
-Chests and llamas are a great way to offer item bundles to players. Selecting **Add To Chest** will add the item to the [Chest tab](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary). Each time you click **Add To Chest** , the item count will increase by one, shown as a yellow box on the Chest tab.
-You can add up to fifteen items to the **Chest** tab. When it’s full, the **Add To Chest** button will disappear. To add more items, you first have to remove items from the **Chest** tab.
-There are many ways for you to offer these items to players. Use any of the devices under the [Registering Items](https://dev.epicgames.com/documentation/fortnite/using-produce-items-in-fortnite-creative#registering-items) section to either offer or require these items during gameplay.
-##  Managing Items
-[![Produce Loadout Bar](https://dev.epicgames.com/community/api/documentation/image/a85b4c1d-e27e-4bd9-9df3-b20f60b714dc?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a85b4c1d-e27e-4bd9-9df3-b20f60b714dc?resizing_type=fit)
-You can manage these items when you are in [Play inventory](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#play-inventory). To access the **Play** inventory screen, press **Tab** and click **Play** in the top navigation bar. Here, you can swap item positions or drop them from your Equipment bar.
-You cannot reposition or copy items with the phone tool. To delete an item from your inventory in Create mode, you will have to select either _Respawn_ or _Back To Hub_ from the _Menu_. When you do this, your inventory clears.
-##  Using Produce Items
-Use these items to replenish damaged health. It takes half a second to consume these items.
-|  Item  |  Usage
+Looking for more inspiration? See [Campfire Device Design Examples](https://dev.epicgames.com/documentation/en-us/fortnite/campfire-device-design-example-in-fortnite-creative) to boost your imagination!
+For help on how to find the the **Campfire** device, see [Using Devices](https://dev.epicgames.com/documentation/en-us/fortnite/using-devices-in-fortnite).
+If you're using multiple copies of a device on an island, it can be useful to [rename](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the [Event Browser](https://dev.epicgames.com/documentation/en-us/fortnite/event-browser-in-fortnite-creative).
+##  Contextual Filtering
+Some devices are affected by a feature called **contextual filtering**. This feature hides or displays options depending on the values selected for certain related options. This feature will reduce clutter in the Customize panel and make options easier to manage and navigate. However, it may not be easy to recognize which options or values trigger contextual filtering.
+To help you identify them, our device docs use italic for any values that trigger contextual filtering. All options will be listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option's value, there will be a note about that in the Description field for that option.
+##  Device Options
+You can configure this device with the following options.
+Default values are **bold**. Values that trigger contextual filtering are _italic_.
+Option  |  Value  |  Description
 ---|---|---
-[![Pepper](https://dev.epicgames.com/community/api/documentation/image/514bf4e8-0a6b-4a4f-8665-6a32a1688e96?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/514bf4e8-0a6b-4a4f-8665-6a32a1688e96?resizing_type=fit) |  **Pepper** |  Instantly increases damaged health by five points upon consumption. This item also gives a speed boost, noted by steam from the consuming player’s ears. Players can carry up to 15 of this item in a stack. [![Pepper Speed Boost](https://dev.epicgames.com/community/api/documentation/image/93148728-789e-40d7-b6b5-869d64c2db01?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/93148728-789e-40d7-b6b5-869d64c2db01?resizing_type=fit)
-[![Corn](https://dev.epicgames.com/community/api/documentation/image/d3e3e5cf-8eb7-4f77-bd9d-8b06385e00f0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d3e3e5cf-8eb7-4f77-bd9d-8b06385e00f0?resizing_type=fit) |  **Corn** |  Incrementally increases damaged health by 10 points upon consumption. Players can carry up to 15 of this item in a stack.
-[![Coconut](https://dev.epicgames.com/community/api/documentation/image/96628cc2-333f-4c5a-9184-ef327ef904d3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/96628cc2-333f-4c5a-9184-ef327ef904d3?resizing_type=fit) |  **Coconut** |  Incrementally increases danaged health by five points upon consumption. Players can carry up to 15 of this item in a stack.
-[![Cabbage](https://dev.epicgames.com/community/api/documentation/image/0a4ce8d2-335f-45fb-be58-edb68399b9d6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0a4ce8d2-335f-45fb-be58-edb68399b9d6?resizing_type=fit) |  **Cabbage** |  Incrementally increases damaged health by five points upon consumption. Players can carry up to 15 of this item in a stack.
-[![Banana](https://dev.epicgames.com/community/api/documentation/image/2a4a8676-ef4f-440c-8733-f9af14c4712f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2a4a8676-ef4f-440c-8733-f9af14c4712f?resizing_type=fit) |  **Banana** |  Instantly increases damaged health by five points upon consumption. Players can carry up to 15 of this item in a stack.
-[![Apple](https://dev.epicgames.com/community/api/documentation/image/732954ae-6231-4037-a7c0-de37ff45951f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/732954ae-6231-4037-a7c0-de37ff45951f?resizing_type=fit) |  **Apple** |  Instantly increases damaged health by five points upon consumption. Players can carry up to 15 of this item in a stack.
-[![Meat](https://dev.epicgames.com/community/api/documentation/image/2c76209a-0cdf-4df3-8104-0f3f6e198451?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2c76209a-0cdf-4df3-8104-0f3f6e198451?resizing_type=fit) |  **Meat** |  Instantly increases damaged health by 15 points upon consumption. Players can carry up to four of this item in a stack.
-##  Registering Items
-[![Registered Consumables](https://dev.epicgames.com/community/api/documentation/image/686f8b62-0f2f-4938-854b-fbc8363b0afe?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/686f8b62-0f2f-4938-854b-fbc8363b0afe?resizing_type=fit)
-You can drop items directly onto devices that can either hold or [grant](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#grant) items. You must [register](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#register) these items to save in the device's memory.
-[![Registering Consumables](https://dev.epicgames.com/community/api/documentation/image/694f73d3-a302-471c-b315-93db5c6fdb8f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/694f73d3-a302-471c-b315-93db5c6fdb8f?resizing_type=fit)
-_To register items to a device, stand directly on or immediately beside the device._
-To register an item for this kind of device, follow these steps. You can also watch a [video tutorial](https://mediaspace.unrealengine.com/media/RegisteringCraftingConsumablesinFortniteCreative/1_zpmj3v0g) that shows you how to register items, both crafting and usable.
-  1. In the CREATIVE inventory, find the equipment and items you want to register with a device and equip them.
-  2. In Create mode, stand directly beside the device that will register the item.
-  3. Press the **Tab** key to open the **PLAY** inventory screen.
-  4. Click the item, then press either **Z** or **X** to split or drop the item. You can also drag the item to the side until a [backpack icon](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#backpack-icon) appears.
+**Start Lit** |  Yes, **No** |  Determines whether the fire is lit at the start of the round.
+**Can Be Lit** |  **Yes** , No |  Determines whether a player can light the campfire by interacting with it.
+**Time to Light** |  Instant, **1.0 Second** , Pick a number of seconds |  Sets the amount of time it takes to light the campfire. Use the arrows to choose an amount, or click in the field to type in a number.
+**Can Be Extinguished** |  **Yes** , No |  Determines whether a player can put out the campfire by interacting with it.
+**Time to Extinguish** |  Instant, **1.0 Second** , Pick a number of seconds |  Sets the amount of time it takes to put out the campfire. Use the arrows to choose an amount, or click in the field to type in a number.
+**Can Be Stoked** |  **No** , Yes |  Determines if players can add more fuel to the campfire while it is lit.
+**Campfire Zone Size** |  **7.68 Meters** , Pick a size |  Determines the size of the zone that that affects Players and Hostile AI. Use the arrows to choose a size, or click in the field to type in a distance.
+**Pulse Interval** |  **1.0 Second** , Pick a number of seconds |  Determines the amount of time between campfire pulses. Use the arrows to choose an amount, or click in the field to type in a number.
+**Health Per Pulse** |  **2** , Pick an amount |  Determines the amount of [health](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) gained per second by each player within range. Use the arrows to choose an amount, or click in the field to type in a number.
+**Uses Wood** |  Yes, **No** |  Determines whether the campfire requires wood to be used.
+**Wood Consumption Per Pulse** |  **1.0** , Pick an amount |  Determines the amount of wood the campfire uses per second to keep itself lit. Use the arrows to choose an amount, or click in the field to type in a number.
+**Max Wood Capacity** |  **30** , Pick an amount |  Sets the maximum wood capacity that the campfire can take. Use the arrows to choose an amount, or click in the field to type in a number.
+**Starting Wood** |  **30** , Pick an amount |  Sets the amount of wood the campfire starts with, up to the value selected for **Max Wood Capacity**. Use the arrows to choose an amount, or click in the field to type in a number. This option is only used if the **Uses Wood** option is set to **Yes**.
+**Wood To Add On Trigger** |  **10** , Pick an amount, Maximum |  Sets the amount of wood to add to the campfire when the **Add Wood When Receiving On** channel option is triggered. Use the arrows to choose an amount, or click in the field to type in a number.
+**Can Affect Vehicles** |  **Yes** , No |  Allows vehicles to trigger campfire events and be affected by the pulse.
+**Interacting Team** |  None, **All** , Pick a team |  Determines which team is allowed to interact with the campfire. Use the arrows to choose a team, or click in the field to type in a team number.
+**Invert Interacting Team Selection** |  On, **Off** |  If set, the selected Interacting Team is the only one that cannot interact with the device.
+**Affected Team** |  None, **All** , Pick a team |  Determines the team that will be affected by the campfire pulse. Use the arrows to choose a team, or click in the field to type in a team number.
+**Invert Affected Team Selection** |  On, **Off** |  If set, the selected Affected Team is the only one that cannot be affected by the device.
+**Interacting Class** |  No Class, **Any** , Pick a class |  Determines the class that is allowed to interact with the campfire. Use the arrows to choose a class, or click in the field to type in a class number. If you choose **No Class** , only players without an assigned class can interact with the campfire.
+**Affected Class** |  No Class, **Any** , Pick a class |  Determines the class that will be affected by the campfire's pulse. Use the arrows to choose a class, or click in the field to type in a class number. If you choose **No Class** , only players without an assigned class are affected by the campfire pulse.
+**Affects AI** |  **No Effect** , Repel, _Damage_ , _Repel & Damage_ |  Determines what a Campfire does to creatures and wildlife that enter the zone.
+**Affects Creatures Option** |  **Do Not Override** , No Effect, Repel, Damage, Repel & Damage |  Determines how the Campfire should affect Creatures that enter the area. This setting will override **Affects AI** if set.
+**Affects Predator Option** |  **Do Not Override** , No Effect, Repel, Damage, Repel & Damage |  Determines how the Campfire should affect Wildlife Predators that enter the area. This setting will override **Affects AI** if set.
+**AI Damage Per Pulse** |  **2** , Pick an amount |  This option only displays if you choose **Damage** or **Repel & Damage** for the **Affects AI** option. Determines how much damage the Campfire pulse does to creatures and wildlife that enter the zone. Use the arrows to choose an amount, or click in the field to type in a number.
+**Use Advanced Lighting** |  **Yes** , No |  Enables advanced lighting on the campfire.
+**Enabled During Phase** |  None, **Always** , Pre-Game Only, Gameplay Only, Create Only |  Determines in which phases the device is enabled. If this is set to **Pre-Game Only** , the campfire will not provide healing to players or damage creatures and wildlife during the game.
+##  Direct Event Binding
+Direct event binding allows devices to communicate directly, which makes your workflow more intuitive, and gives you more freedom to focus on your design ideas.
+Below are the following direct event binding options for this device.
+###  Functions
+A [function](https://dev.epicgames.com/documentation/en-us/fortnite/fortnite-creative-glossary) listens for an event on a device then performs an action.
+  1. For any function, click the **option** , then **Select Device** to access and select from the **Device** dropdown menu.
+  2. Once you've selected a device, click **Select Event** and select the event that triggers this function.
+  3. If more than one device or event triggers a function, press the **Add** button to add a line and repeat these steps.
 
-The compatible device will automatically register the dropped item. Compatible devices that can hold items include:
-  * **Vending Machine**
-  * **Team Settings & Inventory**
-  * **Class Designer**
-  * **Capture Item Spawner**
-  * **Capture Area**
-  * **Item Granter**
-  * **Item Spawner**
-  * **Conditional Button**
-  * **Elimination Manager**
-  * **Item Remover**
+Option  |  Description
+---|---
+**Light When Receiving On** |  This function lights the campfire when an event occurs.
+**Extinguish When Receiving On** |  This function puts out the campfire when an event occurs.
+**Add Wood When Receiving On** |  This function adds wood to the campfire when an event occurs. This function is only used if the **Uses Wood** option is set to **Yes**.
+**Enable When Receiving On** |  This function enables the device when an event occurs.
+**Disable When Receiving On** |  This function disables the device when an event occurs.
+###  Events
+Direct event binding uses events as transmitters. An event tells another device to perform a function.
+  1. For any event option, click the **option** , then **Select Device** to access and select from the **Device** dropdown menu.
+  2. Once you've selected a device, click **Select Function** to bind the event to a function for that device.
+  3. If more than one function is triggered by the event, press the **Add** button and repeat.
 
-Use these devices to set up your own system for granting and spawning items onto your island.
-##  Using Items for Crafting
-You can pair items with each other and with weapons to create the process of [crafting](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#crafting), where players exchange items for another.
-To do so, you can choose from the list of compatible devices above like the [**Conditional Button**](https://dev.epicgames.com/documentation/fortnite/using-conditional-button-devices-in-fortnite-creative) and [**Item Spawner**](https://dev.epicgames.com/documentation/fortnite/using-item-spawner-devices-in-fortnite-creative) to set up the crafting process.
-For example, you can require **Pepper** and [](https://dev.epicgames.com/documentation/fortnite/using-crafting-items-in-fortnite-creative)**[Animal Bones](https://dev.epicgames.com/documentation/fortnite/using-crafting-items-in-fortnite-creative)** as items needed to craft **Meat**.
-Visit our [video tutorials](https://mediaspace.unrealengine.com/playlist/dedicated/208434573/1_gxu6mwv5/1_qfnz9w5c) to learn more about working with items and for tips to enhance gameplay.
+Option  |  Description
+---|---
+**On Lit Send Event To** |  When the campfire is lit, an event is sent to the selected device.
+**On Extinguished Transmit On** |  When the campfire is put out, an event is sent to the selected device.
+**On Entering Area Transmit On** |  When a player enters the campfire area, an event is sent to the selected device.it transmits a signal on the selected channel.
+**On Leaving Area Transmit On** |  When a player leaves the campfire area, an event is sent to the selected device.
+**On Campfire Pulse Transmit On** |  When the lit campfire pulses, an event is sent to the selected device.
+**On Player Pulsed Transmit On** |  For each player affected by a lit campfire pulse, an event is sent to the selected device.
+**On Enabled Transmit On** |  When the device is enabled, an event is sent to the selected device.
+**On Disabled Transmit On** |  When the device is disabled, an event is sent to the selected device.

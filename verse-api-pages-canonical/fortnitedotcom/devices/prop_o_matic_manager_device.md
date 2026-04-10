@@ -1,26 +1,43 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/prop_o_matic_manager_device
 
-# (InEntity:entity).GetPlayspaceForEntity extension
-Learn technical details about the (InEntity:entity).GetPlayspaceForEntity extension.
-Returns an associated `fort_playspace` for this entity. * Fails if this entity is not in the scene, and therefore not associated with a playspace.
+# prop_o_matic_manager_device class
+Learn technical details about the prop_o_matic_manager_device class.
+Allows customization of the Prop-o-Matic weapon functions and how the game reacts to players using it.
 |
 ---|---
-Verse `using` statement | `using { /Fortnite.com/Playspaces }`
-`(InEntity:entity).GetPlayspaceForEntity<public><native>()<transacts><decides>:`[`fort_playspace`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/playspaces/fort_playspace)
-## Parameters
-`GetPlayspaceForEntity` takes the following parameters:
-Name | Type | Description
+Verse `using` statement | `using { /Fortnite.com/Devices }`
+## Inheritance Hierarchy
+This class is derived from the following hierarchy, starting with `creative_object`:
+Name | Description
+---|---
+[`creative_object`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object) |  Base class for creative devices and props.
+[`creative_device_base`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_device_base) |  Base class for creative_device.
+## Members
+This class has both data members and functions.
+### Data
+Data Member Name | Type | Description
 ---|---|---
-`InEntity` | `entity` |
-## Attributes, Specifiers, and Effects
-The following attributes, specifiers, and effects determine how you can interact with `GetPlayspaceForEntity` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
-### Specifiers
-Specifier | Meaning
+`BeginEnteringDisguiseEvent` | `listenable(payload)` |  Signaled when an `agent` begins entering a disguise. Sends the `agent` that began entering the disguise.
+`ExitingDisguiseEvent` | `listenable(payload)` |  Signaled when an `agent` exits a disguise. Sends the `agent` that exited the disguise.
+`FinishEnteringDisguiseEvent` | `listenable(payload)` |  Signaled when an `agent` finishes entering a disguise. Sends the `agent` that finished entering the disguise.
+`PingAllPlayerPropsEvent` | `listenable(payload)` |  Signaled when all player props have been pinged.
+`PingPlayerPropEvent` | `listenable(payload)` |  Signaled when a player prop has been pinged. Sends the `agent` that was pinged.
+### Functions
+Function Name | Description
 ---|---
-`public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
-`native` | Indicates that the definition details of the element are implemented in C++. Verse definitions with the `native` specifier auto-generate C++ definitions that a developer can then fill out its implementation. You can use this specifier on classes, interfaces, enums, methods, and data.
-### Effects
-Effect | Meaning
----|---
-`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.
-`decides` | Indicates that the function can fail, and that calling this function is a [failable expression](https://dev.epicgames.com/documentation/fortnite/failure-in-verse#failableexpression). Function definitions with the `decides` effect must also have the `transacts` effect, which means the actions performed by this function can be rolled back (as if the actions were never performed), if there’s a failure anywhere in the function.
+[`GetGlobalTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/getglobaltransform) |  Gets the global transform of this object.
+[`GetTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/gettransform) |  Returns the transform of the `creative_object` with units in cm. You must check `creative_object.IsValid` before calling this if there is a possibility the object has been disposed or destroyed by gameplay. Otherwise a runtime error will result.
+[`IsPlayerProp`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/prop_o_matic_manager_device/isplayerprop) |  Returns whether a player is currently hiding or not.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto) |  Moves the `creative_object` to the specified `Position` and `Rotation` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-1) |  Moves the `creative_object` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_object` it will be stopped and put into the `AnimationNotSet` state.
+[`MoveTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/moveto-2) |  Moves the `creative_device` to the specified `Transform` over the specified time, in seconds. If an animation is currently playing on the `creative_device` it will be stopped and put into the `AnimationNotSet` state.
+[`PingPlayerProp`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/prop_o_matic_manager_device/pingplayerprop) |  Manually ping a specific player if they are currently a prop.
+[`PingPlayerProps`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/prop_o_matic_manager_device/pingplayerprops) |  Manually ping all players that are currently hiding as props.
+[`SetGlobalTransform`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/setglobaltransform) |  Sets the global transform of this object.
+[`SetPingFrequency`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/prop_o_matic_manager_device/setpingfrequency) |  Adjust the ping time.
+[`SetPingProps`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/prop_o_matic_manager_device/setpingprops) |  Toggle Pinging props on/off.
+[`SetShowPropPingCooldown`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/prop_o_matic_manager_device/setshowproppingcooldown) |  Toggle showing the prop ping cooldown.
+[`SetShowPropsRemaining`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/prop_o_matic_manager_device/setshowpropsremaining) |  Toggle showing the props remaining on the UI.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto) |  Teleports the `creative_object` to the specified `Position` and `Rotation`.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-1) |  Teleports the `creative_object` to the specified location defined by `Transform`, also applies rotation and scale accordingly.
+[`TeleportTo`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_object/teleportto-2) |  Teleports the `creative_device` to the specified location defined by `Transform`, also applies rotation and scale accordingly.

@@ -1,91 +1,325 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/debugging-and-troubleshooting-in-verse
 
-# Button Device Design Examples
-See how to use Button devices to trigger other devices based on user interaction.
-![Button Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/3fe9b635-c8b4-4dcd-9e49-d81158662ed8?resizing_type=fill&width=1920&height=335)
-A **button** is a device you can use to trigger other devices when a player pushes the button.
-Here are a couple of examples of how to use Button devices to build gameplay.
-  * [Door Hack](https://dev.epicgames.com/documentation/fortnite/using-button-device-design-examples-in-fortnite-creative)
-  * [Team Buttons](https://dev.epicgames.com/documentation/fortnite/using-button-device-design-examples-in-fortnite-creative)
+# Debugging and Troubleshooting
+Learn how to debug and troubleshoot your Verse code.
+![Debugging and Troubleshooting](https://dev.epicgames.com/community/api/documentation/image/3cdd089b-6307-4041-913d-1059103e4f2f?resizing_type=fill&width=1920&height=335)
+When things don’t work as you expect in your Verse code, sometimes it's hard to understand what went wrong. For example, you can encounter:
+  * Runtime errors.
+  * Code executing in the wrong order.
+  * Processes taking longer than they should.
 
-##  Door Hack
-Use a button to provide player interaction with a prop by increasing the radius of the prop and adding text for player instruction.
-###  Devices Used
-  * 1 x **Button**
-  * 1 x [Lock](https://dev.epicgames.com/documentation/fortnite/using-lock-devices-in-fortnite-creative)
+Any of these can cause your code to behave in unexpected ways and create problems in your experience. The act of diagnosing problems in your code is called [debugging](https://dev.epicgames.com/documentation/en-us/fortnite/verse-glossary#debugging), and there are several different solutions you can use to fix and optimize your code.
+##  Verse Runtime Errors
+Your Verse code is analyzed both as you write it in the language server and when you compile it from the editor or Visual Studio Code. However, this semantic analysis alone can't catch all the possible problems you can encounter. When your code executes at runtime, you may trigger **runtime errors**. These will cause all further Verse code to stop executing, which may make your experience unplayable.
+As an example, suppose you had some Verse code that did the following:
+Verse
+```
+# Has the suspends specifier, so can be called in a loop expression.
+SuspendsFunction()<suspends>:void={}
 
-###  Build It Yourself
-  1. Place a Button device over the prop you want to use. In this example, it is a computer on a desk but you can use it with any prop.
-  2. Customize the button to the following settings:
-[![Door Hack Computer Button](https://dev.epicgames.com/community/api/documentation/image/cb39df26-031b-4a6f-a810-0abfb426d4b5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/cb39df26-031b-4a6f-a810-0abfb426d4b5?resizing_type=fit)
-Option  |  Value  |  Description
----|---|---
-Interact Time |  5.0 Seconds |  Time needed to interact with the button before it activates.
-Trigger Sound |  Disabled |  No sound effects are played when the button is activated.
-Interaction Text |  Hack Door... |  The UI text displayed when the player looks at and interacts with the button. In this case, the text implies the computer is being used to hack.
-Visible During Game |  No |  The button is not visible during gameplay.
-Interaction Radius |  1.0 Meters |  The distance from the button the player can be while still bringing up the interaction prompt.
-  3. Place a door in another spot in the room, then place a **Lock** device adjacent to the door, making sure the light turns blue to indicate it is paired with the door.
-  4. Customize it to the following settings:
-[![Door Hack Lock](https://dev.epicgames.com/community/api/documentation/image/5a4cbbaf-73e4-4d81-a5ac-26f887a5927e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5a4cbbaf-73e4-4d81-a5ac-26f887a5927e?resizing_type=fit)
-Option  |  Value  |  Description
----|---|---
-Visible During Game |  Off |  The lock is not visible during gameplay.
-  5. Set the button's direct event bindings to the following:
-[![Door Hack Computer Events](https://dev.epicgames.com/community/api/documentation/image/36f0ad89-41a6-4272-b13c-8faed4f2e856?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/36f0ad89-41a6-4272-b13c-8faed4f2e856?resizing_type=fit)
-Function  |  Device  |  Event  |  Description
----|---|---|---
-On Interact Send Event To |  LockDevice |  Open |  When the player interacts with the button, the door that the lock is attached to will open.
+# Calls SuspendFunction forever without breaking or returning,
+# causing a runtime error due to an infinite loop.
+CausesInfiniteLoop()<suspends>:void=
+    loop:
+        SuspendsFunction()
+```
 
-Here's an overview of how devices communicate in this Design Example:
-Device A  |  Function  |  Device B  |  Event  |  Explanation
----|---|---|---|---
-**LockDevice** |  Open |  **Button** |  On Interact Send Event To |  When the player interacts with the button, the door that the lock is attached to will open.
-You now have the basic functionality for players interacting with props using the button.
-There are many ways to set up interactive props using the Button device. This device, when invisible, has a highly customizable area to expand interaction coverage, and can be used both narratively and for immersion, or for basic gameplay. [HUD Messages](https://dev.epicgames.com/documentation/fortnite/using-hud-message-devices-in-fortnite-creative) can play in response to player interaction, [Teleporters](https://dev.epicgames.com/documentation/fortnite/using-teleporter-devices-in-fortnite-creative) can be activated, or [**Billboards**](https://dev.epicgames.com/documentation/fortnite/using-billboard-devices-in-fortnite-creative) rendered visible, providing a lot of flexibility for your game design.
-##  Team Buttons
-You can also place buttons that can only be activated by specific teams.
-###  Devices Used
-  * 2 x **Buttons**
-  * 2 x [Class Selectors](https://dev.epicgames.com/documentation/fortnite/using-class-selector-devices-in-fortnite-creative)
-  * 2 x [HUD Messages](https://dev.epicgames.com/documentation/fortnite/using-hud-message-devices-in-fortnite-creative)
+# Has the suspends specifier, so can be called in a loop expression. SuspendsFunction()<suspends>:void={} # Calls SuspendFunction forever without breaking or returning, # causing a runtime error due to an infinite loop. CausesInfiniteLoop()<suspends>:void= loop: SuspendsFunction()
+Copy full snippet(8 lines long)
+The `CausesInfiniteLoop()` function wouldn't cause any errors in the Verse compiler, and your program would compile successfully. However, if you call `CausesInfiniteLoop()` at runtime, it will run an infinite loop, and thus trigger a runtime error.
+To inspect runtime errors that have occurred in your experience, navigate to the [Content Service Portal](https://content-service.bfda.live.use1a.on.epicgames.com). There, you can see a list of all your projects, both published and unpublished. For each project, you have access to a **Verse** tab that lists the categories of runtime errors that have occurred in a project. You can also check the Verse call stack where that error was reported, which provides more details about what might have gone wrong. Error reports are stored for up to 30 days.
+[![Content Portal Runtime Error](https://dev.epicgames.com/community/api/documentation/image/16bd9e04-ba10-4b4c-8fa4-83652d63d555?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/16bd9e04-ba10-4b4c-8fa4-83652d63d555?resizing_type=fit)
+Please note that this is a new feature that is early in development, and how this works may change in future versions of UEFN and Verse.
+##  Profiling Slow Code
+If your code is running slower than you expect, you can test it using the profile expression. The profile expression tells you how long a particular piece of code takes to run and can help you identify slow blocks of code and optimize them. For example, suppose you want to find whether an array contains a particular number and return the index where it appears. You could do this by iterating through the array and checking if the number matched the one you were searching for.
+Verse
+```
+# An array of test numbers.
+TestNumbers:[]int = array{1,2,3,4,5}
 
-###  Build It Yourself
-  1. Place a **Button** device for Team 1. Customize it to the following settings:
-[![Team Button 1](https://dev.epicgames.com/community/api/documentation/image/6276eefb-d29a-49e2-91dd-a8950059e97d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6276eefb-d29a-49e2-91dd-a8950059e97d?resizing_type=fit)
-Option  |  Value  |  Description
----|---|---
-Interact Time |  3.0 Seconds |  Time needed to interact with the button before it activates.
-Activating Team |  Team 1 |  Only members of Team 1 can interact with this button.
-Trigger Sound |  Disabled |  No sound effects play when the button is activated.
-  2. Duplicate the button and place a second one adjacent. Change the **Activating Team** setting on the second button to **Team 2**.
-  3. Near the button, place a **Class Selector**. Customize it to the following settings:
-[![Class Selector 1](https://dev.epicgames.com/community/api/documentation/image/269abc09-f424-401e-807c-17cc3465b39d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/269abc09-f424-401e-807c-17cc3465b39d?resizing_type=fit)
-Option  |  Value  |  Description
----|---|---
-Team To Switch To |  Team 1 |  When activated, it will switch the player to this team.
-Time To Switch |  Instant |  Delay between entering the Class Selector and switching.
-  4. Copy the Class Selector, and place it near the second button. Change the **Team to Switch To** setting on the second Class Selector to **Team 2**.
-  5. Anywhere on the level, place a **HUD Message**. Customize it to the following settings:
-[![HUD Device 1](https://dev.epicgames.com/community/api/documentation/image/872e5e0f-50e3-4cda-9c8a-5faadde85ba3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/872e5e0f-50e3-4cda-9c8a-5faadde85ba3?resizing_type=fit)
-Option  |  Value  |  Description
----|---|---
-Message |  Team 1 Button activated! |  The message displayed when the Team 1 Button is activated successfully.
-Time From Round Start |  Off |  The message is not automatically played after the start of the round.
-Message Priority |  Critical |  The message will overwrite any other HUD Message that is already up.
-Placement |  Top Center |  The location on the HUD where the message shows up when the device is activated.
-  6. Copy the HUD Message device, then place a second device adjacent to the first. Change the **Message** setting on the second HUD Device to **Team 2 Button Activated!**
-  7. Set the Team 1 Button direct event bindings to the following:
-[![Button Events](https://dev.epicgames.com/community/api/documentation/image/bbf03e60-4deb-4d1d-baab-777d7c068daf?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/bbf03e60-4deb-4d1d-baab-777d7c068daf?resizing_type=fit)
-Function  |  Device  |  Event  |  Description
----|---|---|---
-On Interact Send Event To |  Team1HUDMessage |  Show |  When the player interacts with the button, the corresponding HUD Message will appear.
-  8. Repeat step 7 with the Team 2 Button and corresponding HUD device.
+# Runs when the device is started in a running game
+OnBegin<override>()<suspends>:void=
 
-Here's an overview of how devices communicate in this design example:
-Device A  |  Function  |  Device B  |  Event  |  Explanation
----|---|---|---|---
-**Team1 HUD Message** |  Show |  **Team1 Button** |  On Interact Send Event To |  When the player interacts with the button, the corresponding HUD Message will appear.
-**Team2 HUD Message** |  Show |  **Team2 Button** |  On Interact Send Event To |  When the player interacts with the button, the corresponding HUD Message will appear.
-You now have the basic structure for using team-restricted buttons to communicate.
-Restricting buttons to specific classes or teams is a way to create avenues that are gated behind specific individuals or teams. Doors can be locked except when a button is pressed by a team member, certain classes can cause active defenses to appear, such as hostile sentries, or cause temporary walls and other shifted geometry to change the dynamics of the map in response to gameplay. They can also be used for teleporting to new areas, or equipping new, location-optimized loadouts.
+    # Find if the number exists in the TestNumbers array by iterating
+    # through each element and checking if it matches.
+    for:
+        Index -> Number:TestNumbers
+
+```
+
+Copy full snippet(13 lines long)
+However, this code is inefficient since it needs to check each number of the array for a match. This results in an inefficient [time complexity](https://dev.epicgames.com/documentation/en-us/fortnite/sorting-algorithms-in-verse), since even if it finds the element, it will continue checking the rest of the list. Instead, you can use the `Find[]` function to check if the array contains the number you’re looking for and return it. Since `Find[]` returns immediately when it finds the element, it will execute faster the earlier that the element is in the list. If you use a `profile` expression to test both pieces of code, you’ll see that in this case the code using the `Find[]` function results in lower execution time.
+Verse
+```
+# Runs when the device is started in a running game
+OnBegin<override>()<suspends>:void=
+
+    # Find if the number exists in the TestNumbers array by iterating
+    # through each element and checking if it matches.
+    profile("Finding a number by checking each array element"):
+        for:
+            Index -> Number:TestNumbers
+            Number = 4
+        do:
+
+```
+
+Copy full snippet(20 lines long)
+[![Profiling code with the Find expression](https://dev.epicgames.com/community/api/documentation/image/6e60d25e-949a-4052-94fd-309c3dc3e2df?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6e60d25e-949a-4052-94fd-309c3dc3e2df?resizing_type=fit)
+These small differences in execution time are magnified the more elements you have to iterate through. Each expression you execute while iterating through a large list adds to the time complexity, especially as your arrays grow to hundreds or even thousands of elements. As you scale your experiences to more and more players, use the `profile` expression to find and tackle key areas of slowdown.
+##  Loggers and Logging Output
+By default, when you call `Print()` in Verse code to print a message, that message writes to a dedicated `Print` log. Printed messages appear on the screen in-game, in the in-game log, and in the [**Output Log**](https://dev.epicgames.com/documentation/en-us/fortnite/user-interface-reference-for-unreal-editor-for-fortnite#outputlog) in UEFN.
+[![Logging output using print statements](https://dev.epicgames.com/community/api/documentation/image/c927e0a9-ef5d-43dd-b848-fca7c29689ff?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c927e0a9-ef5d-43dd-b848-fca7c29689ff?resizing_type=fit)
+_When you print a message using the Print() function, that message writes to the Output Log, in-game Log tab, and the screen in-game._
+However, there are many times when you may not want messages to show up on the screen in-game. You may want to use messages for tracking when things happen, like when an event fires or a certain amount of time has passed, or for signaling when something goes wrong in your code. Multiple messages during gameplay can be distracting, especially if they don’t provide relevant information to the player.
+To solve this, you can use a [logger](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/diagnostics/log). A logger is a special class that lets you print messages directly to the **Output Log** and **Log** tab without displaying them on the screen.
+###  Loggers
+To build a logger, you first need to create a [log channel](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/diagnostics/log_channel). Every logger prints messages to the output log, but it can be hard to discern which message comes from which logger. Log channels add the name of the log channel to the start of the message, making it easy to see which logger sent the message. **Log channels** are declared at module scope, while loggers are declared inside classes or functions. The following is an example of declaring a log channel at module scope, then declaring and calling a logger inside a Verse device.
+Verse
+```
+using { /Fortnite.com/Devices }
+using { /Verse.org/Simulation }
+using { /UnrealEngine.com/Temporary/Diagnostics }
+
+# A log channel for the debugging_tester class.
+# Log channels declared at module scope can be used by any class.
+debugging_tester_log := class(log_channel){}
+
+# A Verse-authored creative device that can be placed in a level
+debugging_tester := class(creative_device):
+
+```
+
+Copy full snippet(18 lines long)
+[![Logging output using log channels](https://dev.epicgames.com/community/api/documentation/image/9347d6ba-63c2-4d42-bdfe-f19e9ee8f091?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9347d6ba-63c2-4d42-bdfe-f19e9ee8f091?resizing_type=fit)
+_When you print a message using a logger’s Print() function, that message gets written to the Output Log and the in-game Log tab._
+###  Log Levels
+In addition to channels, you can also specify a default **log level** that the logger prints to. There are five levels, each with their own properties:
+Log Level  |  Prints To  |  Special Properties
+---|---|---
+Debug |  In-game log |  N/A
+Verbose |  In-game log |  N/A
+Normal |  In-game log, **Output Log** |  N/A
+Warning |  In-game log, **Output Log** |  Text color is yellow
+Error |  In-game log, **Output Log** |  Text color is red
+When you create a logger, it defaults to the `Normal` log level. You can change the level of a logger when you create the logger, or specify a log level to print to when calling `Print()`.
+Verse
+```
+# A logger local to the debugging_tester class. By default, this prints
+# to log_level.Normal.
+Logger:log = log{Channel := debugging_tester_log}
+
+# A logger with log_level.Debug as the default log channel.
+DebugLogger:log = log{Channel := debugging_tester_log, DefaultLevel := log_level.Debug}
+
+# Runs when the device is started in a running game
+OnBegin<override>()<suspends>:void=
+
+```
+
+Copy full snippet(16 lines long)
+In the above example, `Logger` defaults to the `Normal` log channel, while `DebugLogger` defaults to the `Debug` log channel. Any logger can print to any log level by specifying the `log_level` when calling `Print()`.
+[![Outputs at different log levels](https://dev.epicgames.com/community/api/documentation/image/2bd64b16-a52a-4736-9279-5ce15a823788?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2bd64b16-a52a-4736-9279-5ce15a823788?resizing_type=fit)
+_Results of using a logger to print to different log levels. Note that log_level.Debug and log_level.Verbose do not print to the in-game log, only the UEFN Output Log._
+###  Printing the Call Stack
+The [call stack](https://dev.epicgames.com/documentation/en-us/fortnite/verse-glossary#call-stack) tracks the list of function [calls](https://dev.epicgames.com/documentation/en-us/fortnite/unreal-editor-for-fortnite-glossary#call) that have led to the current scope. It’s like a stacked set of instructions that your code uses to know where it should return to once the current routine finishes executing. You can print the call stack from any logger using the `PrintCallStack()` function. For example, take the following code:
+Verse
+```
+# A logger local to the debugging_tester class. By default, this prints
+# to log_level.Normal.
+Logger:log = log{Channel := debugging_tester_log}
+
+# Runs when the device is started in a running game
+OnBegin<override>()<suspends>:void=
+
+    # Move into the first function, and print the call stack after a few levels.
+    LevelOne()
+
+```
+
+Copy full snippet(22 lines long)
+The code in `OnBegin()` above calls `LevelOne()` to move into the first function. Then `LevelOne()` calls `LevelTwo()`, which calls `LevelThree()`, which calls `Logger.PrintCallStack()` to print the current call stack. The most recent call will be at the top of the stack, so `LevelThree()` will be printed first. Then `LevelTwo()`, `LevelOne()`, and `OnBegin()`, in that order.
+[![Printing the call stack](https://dev.epicgames.com/community/api/documentation/image/452899e4-0af9-486d-a3be-df841edb90e3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/452899e4-0af9-486d-a3be-df841edb90e3?resizing_type=fit)
+When something goes wrong in your code, printing the call stack is useful to know exactly what calls led to that point. This makes it easier to see the structure of your code as it runs and provides a way to isolate individual stack traces in code-dense projects.
+##  Visualizing Game Data with Debug Draw
+Another way to debug different features of your experiences is by using the [Debug Draw API](https://dev.epicgames.com/documentation/en-us/fortnite/debug-your-game-with-debug-draw-in-verse). This API can build debug shapes to visualize game data. Some examples include::
+  * The line of sight of a guard.
+  * The distance a prop mover will move an object.
+  * The attenuation distance of an audio player.
+
+You can use these debug shapes to fine-tune your experience without exposing this data in a published experience. For more information, check out [Debug Draw in Verse](https://dev.epicgames.com/documentation/en-us/fortnite/debug-your-game-with-debug-draw-in-verse).
+[![Debug Draw visualization](https://dev.epicgames.com/community/api/documentation/image/8818406c-3c3b-423f-b396-d03e3042801e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8818406c-3c3b-423f-b396-d03e3042801e?resizing_type=fit)
+##  Optimization and Timing with Concurrency
+Concurrency is at the heart of the Verse programming language and is a powerful tool to enhance your experiences. With concurrency, you can have one Verse device run multiple operations at once. This makes it possible to write more flexible, compact code, and save on the number of devices used in your level. Concurrency is a great tool for optimization, and finding ways to use asynchronous code to handle multiple tasks at once is a great way to speed up execution in your programs and tackle issues related to timing.
+###  Creating Async Contexts with Spawn
+The [`spawn`](https://dev.epicgames.com/documentation/en-us/fortnite/spawn-in-verse) expression starts an asynchronous expression from any context while allowing the following expressions to immediately execute. This provides a way to run multiple tasks at the same time, from the same device, without needing to create new Verse files for each. For example, consider a scenario where you have some code that monitors each player’s health every second. If a player’s health drops below a certain number, you want to heal them by a small amount. You then want to run some code after it that handles another task. A device that implements this code might look something like this:
+Verse
+```
+# A Verse-authored creative device that can be placed in a level
+healing_device := class(creative_device):
+
+    # Runs when the device is started in a running game
+    OnBegin<override>()<suspends>:void=
+
+        AllPlayers:[]agent = GetPlayspace().GetPlayers()
+
+        # Every second, check each player. If the player has less than half health,
+        # heal them by a small amount.
+
+```
+
+Copy full snippet(20 lines long)
+However, because this loop runs forever and never breaks, any code that follows it will never run. This is a limiting design since this device is stuck only running the loop expression. To allow the device to do multiple things at once and run code concurrently, you can move the `loop` code into an asynchronous function and spawn it during `OnBegin()`.
+Verse
+```
+# Runs when the device is started in a running game
+OnBegin<override>()<suspends>:void=
+
+    # Use the spawn expression to run HealMonitor() asynchronously.
+    spawn{HealMonitor()}
+
+    # The code after this executes immediately.
+    Print("This code keeps going while the spawned expression executes")
+
+HealMonitor(Players:[]agent)<suspends>:void=
+
+```
+
+Copy full snippet(21 lines long)
+This is an improvement, as the device can now run other code while the `HealMonitor()` function runs. However, the function still has to loop through each player, and possible timing issues could occur the more players in the experience. For instance, what if you wanted to award each player score based on their HP, or check if they’re holding an item? Adding extra per-player logic in the `for` expression adds to the time complexity of this function, and with a sufficient number of players, one player might not get healed in time if they take damage due to timing issues.
+Instead of looping through each player and checking them individually, you can further optimize this code by spawning an instance of the function per player. This means a single function can monitor a single player, ensuring your code doesn’t have to check each and every player before looping back to the one who needs healing. Using concurrency expressions like `spawn` to your advantage can make your code more efficient and flexible, and frees up the rest of your code base to handle other tasks.
+Verse
+```
+# Runs when the device is started in a running game
+OnBegin<override>()<suspends>:void=
+
+    AllPlayers := GetPlayspace().GetPlayers()
+
+    # Spawn an instance of the HealMonitor() function for each player.
+    for:
+        Player:AllPlayers
+    do:
+        # Use the spawn expression to run HealMonitorPerPlayer() asynchronously.
+
+```
+
+Copy full snippet(28 lines long)
+Using the `spawn` expression within a `loop` expression can cause undesired behavior if handled improperly. For example, because `HealMonitorPerPlayer()` never terminates, this code will continue to spawn an infinite amount of asynchronous functions until a runtime error occurs.
+Verse
+```
+# Spawn an instance of the HealMonitor() function for each player, looping forever.
+# This will cause a runtime error as the number of asynchronous functions infinitely increases.
+loop:
+    for:
+        Player:AllPlayers
+    do:
+        spawn{HealMonitorPerPlayer(Player)}
+    Sleep(0.0)
+```
+
+# Spawn an instance of the HealMonitor() function for each player, looping forever. # This will cause a runtime error as the number of asynchronous functions infinitely increases. loop: for: Player:AllPlayers do: spawn{HealMonitorPerPlayer(Player)} Sleep(0.0)
+Copy full snippet(8 lines long)
+###  Controlling Timing with Events
+Getting every part of your code to sync up correctly can be difficult, especially in large multiplayer experiences with many scripts running at once. Different parts of your code may rely on other functions or scripts executing in a set order, and this can create timing issues between them without strict controls. For example, consider the following function which counts down for some amount of time, then awards the player passed to it some score if their HP is greater than the threshold.
+Verse
+```
+CountdownScore(Player:agent)<suspends>:void=
+    # Wait for some amount of time, then award each player whose HP is above the threshold some score.
+    Sleep(CountdownTime)
+    if:
+        Character := Player.GetFortCharacter[]
+        PlayerHP := Character.GetHealth()
+        PlayerHP >= HPThreshold
+    then:
+        ScoreManager.Activate(Player)
+```
+
+CountdownScore(Player:agent)<suspends>:void= # Wait for some amount of time, then award each player whose HP is above the threshold some score. Sleep(CountdownTime) if: Character := Player.GetFortCharacter[] PlayerHP := Character.GetHealth() PlayerHP >= HPThreshold then: ScoreManager.Activate(Player)
+Copy full snippet(9 lines long)
+Because this function has the `<suspends>` modifier, you can run an instance of it asynchronously per player using `spawn()`. However, you have to guarantee that any other code that relies on this function will always run after it completes. What if you want to print each player who scored after `CountdownScore()` finishes? You could do this in `OnBegin()` by calling `Sleep()` to wait the same amount of time as `CountdownScore()` takes to execute, but this could create timing issues when your game is running and introduces a new variable you have to constantly update if you ever want to make changes to your code. Instead, you can create custom events and call `Await()` on them to strictly control the order of events in your code.
+Verse
+```
+# Custom event to signal when the countdown finishes.
+CountdownCompleteEvent:event() = event(){}
+
+# Runs when the device is started in a running game
+OnBegin<override>()<suspends>:void=
+
+    AllPlayers := GetPlayspace().GetPlayers()
+
+    # Spawn a CountdownScore function for each player
+    for:
+
+```
+
+Copy full snippet(37 lines long)
+Because this code now waits for the `CountdownCompletedEvent()` to be signaled, it is guaranteed to check each player’s score only after `CountdownScore()` finishes executing. Many devices have built-in events you can call `Await()` on to control the timing of your code, and by leveraging these with your own custom events you can create complex game loops with several moving parts. As an example, the [Verse Starter Template](https://dev.epicgames.com/documentation/en-us/fortnite/verse-starter-template-in-unreal-editor-for-fortnite) uses several custom events to control character movement, update the UI, and manage the overall game loop from board to board.
+###  Handling Multiple Expressions with Sync, Race, and Rush
+The [sync](https://dev.epicgames.com/documentation/en-us/fortnite/sync-in-verse), [race](https://dev.epicgames.com/documentation/en-us/fortnite/race-in-verse), and [rush](https://dev.epicgames.com/documentation/en-us/fortnite/rush-in-verse) all allow you to run multiple async expressions at once while performing different functions when those expressions finish executing. By leveraging each of these you can strictly control the lifetime of each of your async expressions, resulting in more dynamic code that can handle multiple different situations.
+For example, take the `rush` expression. This expression runs multiple async expressions concurrently but only returns the value of the expression that finishes first. Suppose you have a minigame where teams have to complete some task, with the team who finishes first getting a powerup that lets them interfere with the other players while they finish. You could write complicated timing logic to track when each team completes the task, or you could use the `rush` expression. Since the expression returns the value of the first async expression to finish, it will return the winning team, while allowing the code that handles the other teams to continue running.
+Verse
+```
+WinningTeam := rush:
+
+    # All three async functions start at the same time.
+    RushToFinish(TeamOne)
+    RushToFinish(TeamTwo)
+    RushToFinish(TeamThree)
+
+# The next expression is called immediately when any of the async functions complete.
+GrantPowerup(WinnerTeam)
+```
+
+WinningTeam := rush: # All three async functions start at the same time. RushToFinish(TeamOne) RushToFinish(TeamTwo) RushToFinish(TeamThree) # The next expression is called immediately when any of the async functions complete. GrantPowerup(WinnerTeam)
+Copy full snippet(9 lines long)
+The `race` expression follows the same rules, except that when an async expression completes, the other expressions are canceled. This lets you strictly control the lifetime of multiple async expressions at once, and you can even combine this with the `sleep()` expression to limit the amount of time you want the expression to run. Consider the `rush` example, except this time you want the minigame to end immediately when a team wins. You also want to add a timer so that the minigame doesn’t go on forever. The `race` expression allows you to do both of these, without needing to use events or other concurrency tools to know when to cancel the expressions that lose the race.
+Verse
+```
+WinningTeam := race:
+
+    # All four async functions start at the same time.
+    RaceToFinish(TeamOne)
+    RaceToFinish(TeamTwo)
+    RaceToFinish(TeamThree)
+    Sleep(TimeLimit)
+
+# The next expression is called immediately when any of the async functions complete. Any other async functions are canceled.
+GrantPowerup(WinnerTeam)
+```
+
+WinningTeam := race: # All four async functions start at the same time. RaceToFinish(TeamOne) RaceToFinish(TeamTwo) RaceToFinish(TeamThree) Sleep(TimeLimit) # The next expression is called immediately when any of the async functions complete. Any other async functions are canceled. GrantPowerup(WinnerTeam)
+Copy full snippet(10 lines long)
+Finally, the `sync` expression allows you to wait till multiple expressions finish executing, guaranteeing that each of them completes before proceeding. Since the `sync` expression returns a [tuple](https://dev.epicgames.com/documentation/en-us/fortnite/tuple-in-verse) containing the results from each of the async expressions, you can finish running all of your expressions and evaluate the data from each of them individually. Back to the minigame example, let’s say instead you wanted to grant powerups to each team based on how they did in the minigame. This is where the `sync` expression comes in.
+Verse
+```
+TeamResults := sync:
+
+    # All three async functions start at the same time.
+    WaitForFinish(TeamOne)
+    WaitForFinish(TeamTwo)
+    WaitForFinish(TeamThree)
+
+# The next expression is called only when all of the async expressions complete.
+GrantPowerups(TeamResults)
+```
+
+TeamResults := sync: # All three async functions start at the same time. WaitForFinish(TeamOne) WaitForFinish(TeamTwo) WaitForFinish(TeamThree) # The next expression is called only when all of the async expressions complete. GrantPowerups(TeamResults)
+Copy full snippet(9 lines long)
+If you want to run an async expression on multiple array elements you can use the handy [`ArraySync()`](https://dev.epicgames.com/community/snippets/oYRX/fortnite-generic-sync-and-race-across-elements-in-an-array) function to guarantee they all sync up.
+Each of these concurrency expressions is a powerful tool by itself, and by learning how to combine and use them together you can write code to handle any situation. Consider this example from the [Speedway Race with Verse Persistence Template](https://dev.epicgames.com/documentation/en-us/fortnite/speedway-race-with-verse-persistence-in-unreal-editor-for-fortnite#startinglinecinematicwithplayerstats), which combines multiple concurrency expressions to not only play an intro for each player before the race but also cancel it if the player leaves during the intro. This example highlights how you can use concurrency in multiple ways, and build resilient code that reacts dynamically to different events.
+Verse
+```
+# Wait for the player's intro start and display their info.
+# Cancel the wait if they leave.
+WaitForPlayerIntro(Player:agent, StartOrder:int)<suspends>:void=
+
+    var IntroCounter:int = 0
+
+    race:
+        # Waiting for this player to finish the race and then record the finish.
+        loop:
+            sync:
+
+```
+
+Copy full snippet(25 lines long)
