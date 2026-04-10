@@ -6,7 +6,7 @@ Returns the cross product of `V1` and `V2`.
 |
 ---|---
 Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }`
-`CrossProduct<public>(V1:vector3, V2:vector3)<reads><computes>:`[`vector3`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/vector3)
+`CrossProduct<public>(V1:vector3, V2:vector3)<reads><computes>:`[`vector3`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/vector3)
 ## Parameters
 `CrossProduct` takes the following parameters:
 Name | Type | Description
@@ -15,12 +15,12 @@ Name | Type | Description
 `V2` | `vector3` |
 ## Attributes, Specifiers, and Effects
 ### Specifiers
-The following specifiers determine how you can interact with `CrossProduct` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+The following specifiers determine how you can interact with `CrossProduct` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
 ### Effects
-The following effects determine how `CrossProduct` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+The following effects determine how `CrossProduct` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
 `reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.

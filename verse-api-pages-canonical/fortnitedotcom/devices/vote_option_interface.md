@@ -1,23 +1,7 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/vote_option_interface
 
-# vote_option_interface interface
-Learn technical details about the vote_option_interface interface.
-Represents an individual choice in a poll. For example, in a poll “What to have for lunch?” an option might be “Tacos” Tracks how many times each agent has voted for this option. An option is associated with only one group device (or “poll”) via an internal ID.
-|
----|---
-Verse `using` statement | `using { /Fortnite.com/Devices }`
-## Members
-This interface has both data members and functions.
-### Data
-Data Member Name | Type | Description
----|---|---
-`CastVoteEvent` | `listenable(payload)` |  Triggered when a vote is cast by ‘agent’
-`WinVoteEvent` | `listenable(payload)` |  Triggered if this option wins the vote.
-### Functions
-Function Name | Description
----|---
-[`CastVote`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/vote_option_interface/castvote) |  Attempts to cast a vote for ‘Agent’ If the voting agent has votes remaining and the voting group has started a vote, the vote will be cast successfully. Fails if Agent does not have votes remaining or voting group has not started.
-[`GetVoteCount`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/vote_option_interface/getvotecount) |  Returns the total votes cast for this option.
-[`GetVoteGroup`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/vote_option_interface/getvotegroup) |  Returns the group device this option corresponds to, if any. Fails if the option is not in a group, or there is no corresponding group device with the same ID.
-[`HasAgentVoted`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/vote_option_interface/hasagentvoted) |  Succeeds if `Agent` has voted for this option, fails if not.
-[`GetOptionDescription`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/vote_option_interface/getoptiondescription) |  The string to display to the user when choosing which option to select.
+# One more step
+Please complete a security check to continue
+Verification successful. Waiting for dev.epicgames.com to respond
+**Session ID** : 9e9dba8d7efbe2f7
+**IP Address** : 14.191.95.176

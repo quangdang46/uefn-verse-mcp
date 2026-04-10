@@ -1,23 +1,7 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/itemization/fortniteitemcategories
 
-# FortniteItemCategories module
-Learn technical details about the FortniteItemCategories module.
-Module import path: /Fortnite.com/Itemization/FortniteItemCategories
-  * [`Fortnite.com`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom)
-  * [`Itemization`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/itemization)
-  * **`FortniteItemCategories`**
-
-## Data
-Name | Description
----|---
-`WorldItem` |
-`Currency` |
----|---
-`Collectible` |
----|---
-`Trap` |
----|---
-`Ammo` |
----|---
-`Resource` |
----|---
+# One more step
+Please complete a security check to continue
+Verification successful. Waiting for dev.epicgames.com to respond
+**Session ID** : 9e9dbac98fd4e2f7
+**IP Address** : 14.191.95.176

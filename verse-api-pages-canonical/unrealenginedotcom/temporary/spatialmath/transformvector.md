@@ -6,7 +6,7 @@ Makes a `vector3` by applying `InTransform` to `InVector`.
 |
 ---|---
 Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }`
-`TransformVector<public>(InTransform:transform, InVector:vector3)<reads><computes>:`[`vector3`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/vector3)
+`TransformVector<public>(InTransform:transform, InVector:vector3)<reads><computes>:`[`vector3`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/vector3)
 ## Parameters
 `TransformVector` takes the following parameters:
 Name | Type | Description
@@ -15,12 +15,12 @@ Name | Type | Description
 `InVector` | `vector3` |
 ## Attributes, Specifiers, and Effects
 ### Specifiers
-The following specifiers determine how you can interact with `TransformVector` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+The following specifiers determine how you can interact with `TransformVector` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
 ### Effects
-The following effects determine how `TransformVector` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+The following effects determine how `TransformVector` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
 `reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.

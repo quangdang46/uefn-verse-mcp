@@ -6,7 +6,7 @@ Makes a `vector3` by applying `Rotation` to `Vector`.
 |
 ---|---
 Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }`
-`(Rotation:rotation).RotateVector<public><native>(Vector:vector3)<reads><computes>:`[`vector3`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/vector3)
+`(Rotation:rotation).RotateVector<public><native>(Vector:vector3)<reads><computes>:`[`vector3`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/vector3)
 ## Parameters
 `RotateVector` takes the following parameters:
 Name | Type | Description
@@ -14,7 +14,7 @@ Name | Type | Description
 `Rotation` | `rotation` |
 `Vector` | `vector3` |
 ## Attributes, Specifiers, and Effects
-The following attributes, specifiers, and effects determine how you can interact with `RotateVector` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+The following attributes, specifiers, and effects determine how you can interact with `RotateVector` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 ### Specifiers
 Specifier | Meaning
 ---|---

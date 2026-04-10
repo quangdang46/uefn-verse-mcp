@@ -6,14 +6,14 @@ Returns a `game_action_instigator` interface for `InAgent`.
 |
 ---|---
 Verse `using` statement | `using { /Fortnite.com/Characters }`
-`(InAgent:agent).GetInstigator<public><native>()<transacts>:`[`game_action_instigator`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/game/game_action_instigator)
+`(InAgent:agent).GetInstigator<public><native>()<transacts>:`[`game_action_instigator`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/game/game_action_instigator)
 ## Parameters
 `GetInstigator` takes the following parameters:
 Name | Type | Description
 ---|---|---
 `InAgent` | `agent` |
 ## Attributes, Specifiers, and Effects
-The following attributes, specifiers, and effects determine how you can interact with `GetInstigator` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+The following attributes, specifiers, and effects determine how you can interact with `GetInstigator` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 ### Specifiers
 Specifier | Meaning
 ---|---

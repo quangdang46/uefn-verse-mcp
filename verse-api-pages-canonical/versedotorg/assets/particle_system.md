@@ -1,9 +1,7 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/assets/particle_system
 
-# particle_system class
-Learn technical details about the particle_system class.
-|
----|---
-Verse `using` statement | `using { /Verse.org/Assets }`
-## Members
-This class has no members.
+# One more step
+Please complete a security check to continue
+Verification successful. Waiting for dev.epicgames.com to respond
+**Session ID** : 9e9dbb7788f4e2f7
+**IP Address** : 14.191.95.176

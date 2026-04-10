@@ -9,6 +9,6 @@ Verse `using` statement | `using { /Fortnite.com/Marketplace }`
 This class is derived from `price_dimension`.
 Name | Description
 ---|---
-[`price_dimension`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/marketplace/price_dimension) |
+[`price_dimension`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/marketplace/price_dimension) |
 ## Members
 This class has no members.

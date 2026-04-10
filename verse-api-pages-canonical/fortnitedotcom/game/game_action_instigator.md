@@ -1,10 +1,7 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/game/game_action_instigator
 
-# game_action_instigator interface
-Learn technical details about the game_action_instigator interface.
-Implemented by Fortnite objects that initiate game actions, such as damage and heal. For example, player or agents. Event listeners often use `game_action_instigators` to calculate player damage scores.
-|
----|---
-Verse `using` statement | `using { /Fortnite.com/Game }`
-## Members
-This interface has no members.
+# One more step
+Please complete a security check to continue
+Verification successful. Waiting for dev.epicgames.com to respond
+**Session ID** : 9e9dba8d7f0ce2f7
+**IP Address** : 14.191.95.176

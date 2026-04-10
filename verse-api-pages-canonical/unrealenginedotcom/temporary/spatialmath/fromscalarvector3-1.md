@@ -6,7 +6,7 @@ Util function for converting a scalar `vector3` from /Verse.org/SpatialMath to a
 |
 ---|---
 Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }`
-`FromScalarVector3<public>(InVector3:vector3)<reads><computes>:`[`vector3`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/vector3)
+`FromScalarVector3<public>(InVector3:vector3)<reads><computes>:`[`vector3`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/vector3)
 ## Parameters
 `FromScalarVector3` takes the following parameters:
 Name | Type | Description
@@ -14,12 +14,12 @@ Name | Type | Description
 `InVector3` | `vector3` |
 ## Attributes, Specifiers, and Effects
 ### Specifiers
-The following specifiers determine how you can interact with `FromScalarVector3` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+The following specifiers determine how you can interact with `FromScalarVector3` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Specifier | Meaning
 ---|---
 `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
 ### Effects
-The following effects determine how `FromScalarVector3` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+The following effects determine how `FromScalarVector3` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
 Effect | Meaning
 ---|---
 `reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.
