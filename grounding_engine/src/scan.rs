@@ -182,7 +182,6 @@ impl GroundingEngine {
         }
     }
 
-
     fn try_cached_response(
         &self,
         cache_key: &Path,

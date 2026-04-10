@@ -328,7 +328,9 @@ impl ServerHandler for VerseMcpHandler {
                     .and_then(|args| args.get("project_path"))
                     .and_then(|v| v.as_str())
                     .map(PathBuf::from)
-                    .ok_or_else(|| rmcp::ErrorData::invalid_params("project_path is required", None))?;
+                    .ok_or_else(|| {
+                        rmcp::ErrorData::invalid_params("project_path is required", None)
+                    })?;
 
                 tracing::info!("Scanning project at: {}", scan_path.display());
 
@@ -377,7 +379,9 @@ impl ServerHandler for VerseMcpHandler {
                     .and_then(|args| args.get("project_path"))
                     .and_then(|v| v.as_str())
                     .map(PathBuf::from)
-                    .ok_or_else(|| rmcp::ErrorData::invalid_params("project_path is required", None))?;
+                    .ok_or_else(|| {
+                        rmcp::ErrorData::invalid_params("project_path is required", None)
+                    })?;
 
                 let response = self
                     .grounding
