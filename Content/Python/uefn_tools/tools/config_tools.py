@@ -169,6 +169,10 @@ def run_config_reset(key: str = "", **kwargs) -> dict:
 
 
 # ── Theme tools ────────────────────────────────────────────────────────────────
+# IDs must match stylesheets / dashboard; extend when new themes ship.
+
+_KNOWN_UI_THEMES: frozenset[str] = frozenset({"toolbelt_dark"})
+
 
 @register_tool(
     name="theme_list",
@@ -176,10 +180,14 @@ def run_config_reset(key: str = "", **kwargs) -> dict:
     description="List all available uefn_tools UI themes.",
     tags=["theme", "appearance", "ui"],
 )
+def theme_list(**kwargs) -> dict:
     """
     Returns:
         dict: {"status", "themes": [str], "current": str}
     """
+    cfg = get_config()
+    current = str(cfg.get("ui.theme", DEFAULTS.get("ui.theme", "toolbelt_dark")))
+    themes = sorted(_KNOWN_UI_THEMES)
     log_info(f"  Available themes: {themes}  |  Active: {current}")
     return {"status": "ok", "themes": themes, "current": current}
 
@@ -190,6 +198,7 @@ def run_config_reset(key: str = "", **kwargs) -> dict:
     description="Switch the uefn_tools UI theme. Applies live to all open windows and persists across restarts.",
     tags=["theme", "appearance", "ui", "set"],
 )
+def theme_set(name: str = "", **kwargs) -> dict:
     """
     Args:
         name: Theme name. Run theme_list to see available options.
@@ -197,14 +206,17 @@ def run_config_reset(key: str = "", **kwargs) -> dict:
     Returns:
         dict: {"status", "theme", "previous"}
     """
+    available = _KNOWN_UI_THEMES
     if not name:
         return {"status": "error", "message": "Provide a theme name. Run theme_list to see options."}
 
     if name not in available:
-        log_warning(f"theme_set: '{name}' is not a known theme. Available: {available}")
-        return {"status": "error", "message": f"Unknown theme '{name}'. Available: {available}"}
+        log_warning(f"theme_set: '{name}' is not a known theme. Available: {sorted(available)}")
+        return {"status": "error", "message": f"Unknown theme '{name}'. Available: {sorted(available)}"}
 
-    get_config().set("ui.theme", name)
+    cfg = get_config()
+    previous = str(cfg.get("ui.theme", DEFAULTS.get("ui.theme", "toolbelt_dark")))
+    cfg.set("ui.theme", name)
     log_info(f"  Theme changed: {previous} → {name}")
     return {"status": "ok", "theme": name, "previous": previous}
 
@@ -215,8 +227,12 @@ def run_config_reset(key: str = "", **kwargs) -> dict:
     description="Get the name of the currently active uefn_tools UI theme.",
     tags=["theme", "appearance", "ui", "get"],
 )
+def theme_get(**kwargs) -> dict:
     """
     Returns:
         dict: {"status", "theme": str, "palette": dict}
     """
+    cfg = get_config()
+    current = str(cfg.get("ui.theme", DEFAULTS.get("ui.theme", "toolbelt_dark")))
     log_info(f"  Active theme: {current}")
+    return {"status": "ok", "theme": current, "palette": {}}

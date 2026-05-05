@@ -1002,5 +1002,5 @@ def mcp_status(**kwargs) -> None:
         unreal.log(
             "[MCP] Listener is NOT running.\n"
             "  Start with: tb.run('mcp_start')\n"
-            "  Or: uefn_tools.run("mcp_start") → Start Listener"
+            '  Or: uefn_tools.run("mcp_start") → Start Listener'
         )
