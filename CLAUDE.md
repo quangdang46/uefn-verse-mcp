@@ -4,8 +4,8 @@
 
 Two-process MCP server for UEFN:
 
-1. **server/main.py** — External FastMCP server (runs on host, connects to Claude Code via stdio)
-2. **uefn_listener.py** — HTTP listener (runs inside UEFN, dispatches `unreal.*` calls on main thread)
+1. **server/main.py** — External FastMCP server (host, stdio to the IDE)
+2. **uefn_tools/tools/mcp_bridge.py** — HTTP listener inside UEFN (queue + Slate tick → `unreal.*`)
 
 Communication: HTTP POST `127.0.0.1:8765` (auto-detect 8765-8770)
 
@@ -14,9 +14,9 @@ Communication: HTTP POST `127.0.0.1:8765` (auto-detect 8765-8770)
 | File | Purpose |
 |---|---|
 | `server/main.py` | FastMCP entry — ~40 @mcp.tool() + escape hatch |
-| `server/bridge.py` | HTTP client → uefn_listener |
-| `server/port_discovery.py` | Auto-detect listener port |
-| `uefn_listener.py` | In-UEFN HTTP server (queue + Slate tick) |
+| `server/bridge.py` | HTTP client → UEFN mcp_bridge |
+| `server/port_discovery.py` | Find mcp_bridge port (8765–8770) |
+| `Content/Python/uefn_tools/tools/mcp_bridge.py` | In-UEFN HTTP server |
 | `Content/Python/uefn_tools/` | 358 registered tools |
 | `deploy.py` | Deploy to UEFN project |
 | `init_unreal.py` | UEFN auto-loader |

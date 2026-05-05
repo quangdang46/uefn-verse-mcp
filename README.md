@@ -7,7 +7,7 @@ Claude Code ←── stdio ──→ server/main.py (FastMCP)
                                │
                           HTTP 127.0.0.1:8765
                                │
-                          uefn_listener.py (in UEFN)
+                          uefn_tools/tools/mcp_bridge.py (in UEFN)
                                │
                           uefn_tools/ (358 tools)
 ```
@@ -109,8 +109,7 @@ uefn-mcp/
 │   ├── main.py       # FastMCP entry point
 │   ├── bridge.py     # HTTP client
 │   └── tools/        # Tool definitions
-├── uefn_listener.py  # HTTP listener (runs in UEFN)
-├── uefn_tools/       # Tool package (deployed into UEFN)
+├── Content/Python/uefn_tools/  # Tool package + MCP HTTP bridge (deployed)
 ├── init_unreal.py    # UEFN startup hook
 ├── deploy.py         # Deploy script
 ├── requirements.txt  # Host MCP server (pip install -r)

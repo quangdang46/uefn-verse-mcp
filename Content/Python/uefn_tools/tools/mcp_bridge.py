@@ -221,8 +221,24 @@ def _c_ping() -> dict:
 
 
 @_cmd("get_log")
-def _c_get_log(last_n: int = 50) -> dict:
-    return {"lines": _log_ring[-last_n:]}
+def _c_get_log(
+    lines: int | None = None,
+    last_n: int | None = None,
+    **kwargs: Any,
+) -> dict:
+    """Last N MCP bridge log lines (ring buffer). Accepts `lines` (MCP client) or legacy `last_n`."""
+    raw = lines if lines is not None else (last_n if last_n is not None else 50)
+    try:
+        n = int(raw)
+    except (TypeError, ValueError):
+        n = 50
+    if n < 1:
+        n = 1
+    # deque does not support slicing in Python 3.11 (UEFN); copy then tail.
+    ring_list = list(_log_ring)
+    tail = ring_list[-n:] if len(ring_list) > n else ring_list[:]
+    text = "\n".join(tail)
+    return {"text": text, "count": len(tail), "entries": tail}
 
 
 @_cmd("execute_python")
@@ -376,7 +392,7 @@ def _c_redo() -> dict:
 
 
 @_cmd("history")
-def _c_history(tail: int = 30) -> dict:
+def _c_history(tail: int = 30, **kwargs) -> dict:
     """Return recent command history with per-command timing."""
     return {"entries": _history[-tail:], "total": len(_history)}
 

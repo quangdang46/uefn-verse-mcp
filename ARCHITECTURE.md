@@ -7,7 +7,7 @@ Claude Code ←── stdio ──→ server/main.py (FastMCP)
                                │
                           HTTP POST 127.0.0.1:8765
                                │
-                          uefn_listener.py (inside UEFN)
+                          uefn_tools mcp_bridge (inside UEFN)
                                │
                           uefn_tools/ (358 tools → unreal.* API)
 ```
@@ -21,21 +21,18 @@ Claude Code ←── stdio ──→ server/main.py (FastMCP)
 - Exposes `run_tool()` escape hatch for 358 tools
 - Uses `bridge.py` to send HTTP commands to UEFN
 
-### 2. uefn_listener.py — In-UEFN HTTP Listener
+### 2. uefn_tools/tools/mcp_bridge.py — In-UEFN HTTP listener
 
-- HTTPServer running on daemon thread inside UEFN
-- Receives JSON commands via HTTP POST
-- Queues commands for main thread execution
-- Dispatches via `register_slate_post_tick_callback`
-- 28+ command handlers (actors, assets, level, viewport)
+- HTTPServer on a daemon thread; JSON POST API
+- Queue + `register_slate_post_tick_callback` for main-thread `unreal.*` calls
+- System / actors / assets / level / viewport commands + `run_tool` escape hatch
 
-### 3. uefn_tools/ — Tool Package
+### 3. uefn_tools/ — Tool package
 
-- 358 @register_tool decorated functions
-- Organized into categories (Actors, Materials, Verse, etc.)
-- Accessed via `run_tool()` escape hatch in uefn_listener
+- 358 `@register_tool` functions (categories: Actors, Materials, Verse, …)
+- Invoked from MCP via `run_tool` on the bridge
 
-### 4. init_unreal.py — UEFN Auto-Loader
+### 4. init_unreal.py — UEFN auto-loader
 
 - Generic loader: discovers all packages in Content/Python/
 - Calls `register()` on each package
@@ -59,13 +56,9 @@ HTTP Thread          Main Editor Thread
      │ HTTP Response        │
 ```
 
-## Port Discovery
+## Port discovery
 
-Auto-detects free port in range 8765-8770:
-1. Try cached port
-2. Scan range sequentially
-3. Cache successful discovery
-4. Retry on connection failure
+Host `server/port_discovery.py` scans 8765–8770 and picks a port whose GET response identifies the uefn_tools MCP bridge (`app` contains `UEFN uefn_tools MCP Bridge`).
 
 ## Deployment
 
@@ -73,6 +66,5 @@ Auto-detects free port in range 8765-8770:
 python deploy.py
 # Copies:
 #   - uefn_tools/ → {project}/Content/Python/uefn_tools/
-#   - uefn_listener.py → {project}/Content/Python/
 #   - init_unreal.py → {project}/Content/Python/
 ```

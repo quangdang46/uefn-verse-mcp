@@ -1,8 +1,11 @@
 """
-Port discovery for uefn_listener.
-Auto-detects listener port in range 8765-8770.
+Port discovery for the in-editor HTTP MCP listener (8765–8770).
+
+Scans in order and returns the first port whose GET `/` returns JSON with
+``status == "ok"``. That matches both ``uefn_tools`` ``mcp_bridge`` and any
+other listener that copied the same ping shape — if multiple are running,
+the lowest port wins.
 """
-import socket
 from typing import Optional
 
 DEFAULT_PORT = 8765
@@ -26,7 +29,7 @@ def discover_port() -> int:
 
     raise ConnectionError(
         f"UEFN listener not found on ports {DEFAULT_PORT}-{MAX_PORT}. "
-        "Start it in the UEFN console: import uefn_tools as ut; ut.run('mcp_start')"
+        "Start it in the UEFN console: import uefn_tools as ut; ut.register(); ut.run('mcp_start')"
     )
 
 

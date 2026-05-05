@@ -34,7 +34,7 @@ from mcp.server.fastmcp import FastMCP
 # Absolute imports so `python server/main.py` works (MCP stdio); relative imports
 # require `python -m server.main` from repo root only.
 from server import bridge
-from server.tools import actors, assets, escape_hatch, system
+from server.tools import actors, assets, escape_hatch
 
 # Initialize FastMCP
 mcp = FastMCP("uefn-mcp")

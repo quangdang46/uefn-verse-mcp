@@ -1,13 +1,10 @@
-"""
-HTTP bridge to uefn_listener.
-Sends commands to UEFN and returns results.
-"""
+"""HTTP client for the uefn_tools MCP bridge (mcp_start in UEFN)."""
 import json
 import urllib.error
 import urllib.request
 from typing import Any, Optional
 
-from server.port_discovery import discover_port, _ping_port
+from server.port_discovery import discover_port
 
 REQUEST_TIMEOUT = 30.0
 
@@ -36,7 +33,7 @@ def send_command(command: str, params: Optional[dict] = None) -> dict:
             return send_command(command, params)
         raise ConnectionError(
             "UEFN listener is not running. "
-            "Start it in the UEFN console: import uefn_tools as ut; ut.run('mcp_start')"
+            "Start it in the UEFN console: import uefn_tools as ut; ut.register(); ut.run('mcp_start')"
         ) from e
     except Exception as e:
         if "timed out" in str(e).lower():
