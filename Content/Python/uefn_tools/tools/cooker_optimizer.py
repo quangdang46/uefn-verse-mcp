@@ -11,7 +11,7 @@ Workflow:
   1. tb.run("cooker_scan")                             # audit level actors
   2. tb.run("cooker_mark_batch", percent=50, dry_run=True)  # preview
   3. tb.run("cooker_mark_batch", percent=50, dry_run=False) # apply
-  4. Launch session in UEFN -- report success/fail in the window
+  4. Launch session in UEFN — note cook success/fail (Output Log or your own notes)
   5. Iterate percent up or down until cook succeeds
   6. tb.run("cooker_unmark_all")                       # ALWAYS restore before publishing
 
@@ -27,7 +27,7 @@ import unreal
 from ..registry import register_tool
 from ..core import log_info, log_warning, log_error
 
-# ── Module-level scan cache (shared between headless tools and the window) ─────
+# ── Module-level scan cache (shared between cooker_* headless tools) ────────────
 _scan_cache: dict = {
     "rows":    [],    # [{label, class_name, actor_type, is_editor_only, actor}]
     "scanned": False,
@@ -455,33 +455,33 @@ def cooker_mark_selection(mark: bool = True, **kwargs) -> dict:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-#  PySide6 window
+#  cooker_open — MCP guidance (no PySide window)
 # ─────────────────────────────────────────────────────────────────────────────
 
 @register_tool(
     name="cooker_open",
     category="Optimization",
     description=(
-        "Open the Cooker Optimizer window — scan actors, mark/unmark editor-only batches "
-        "to reduce cook load, and track cook success history with confidence estimates. "
-        "Based on CookerOptimizer by BiomeForge."
+        "MCP / headless only: no editor window. Use cooker_scan on the current level, then "
+        "cooker_mark_batch / cooker_mark_selection / cooker_unmark_all to tune editor-only "
+        "flags and reduce cook load. Based on CookerOptimizer by BiomeForge."
     ),
-    tags=["cooker", "cook", "editor-only", "optimization", "window", "ui"],
-    example='tb.run("cooker_open")',
+    tags=["cooker", "cook", "editor-only", "optimization", "mcp", "headless"],
+    example='tb.run("cooker_scan") then tb.run("cooker_mark_batch", ...) ',
 )
 def cooker_open(**kwargs) -> dict:
-    """Open the Cooker Optimizer PySide6 window."""
-    try:
-        from PySide6.QtWidgets import QApplication
-        QApplication.instance() or QApplication([])
-        win = _build_cooker_window()
-        win.show()
-        win.raise_()
-        win.activateWindow()
-        log_info("cooker_open: window opened")
-        return {"status": "ok"}
-    except Exception as e:
-        log_error(f"cooker_open failed: {e}")
-        return {"status": "error", "error": str(e)}
+    log_info(
+        "cooker_open: no UI — use cooker_scan, cooker_mark_batch, cooker_mark_selection, cooker_unmark_all."
+    )
+    return {
+        "status": "ok",
+        "message": "Cooker Optimizer has no PySide window; use headless cooker_* tools.",
+        "headless_tools": [
+            "cooker_scan",
+            "cooker_mark_batch",
+            "cooker_mark_selection",
+            "cooker_unmark_all",
+        ],
+    }
 
 

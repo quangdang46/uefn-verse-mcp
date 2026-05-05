@@ -1,5 +1,5 @@
 """Escape hatch for all 358 uefn_tools."""
-from .. import bridge
+from server import bridge
 
 def run_tool(tool_name: str, **kwargs) -> str:
     """Execute any registered uefn_tools tool by name."""

@@ -4,8 +4,8 @@ uefn_mcp — FastMCP Server
 External MCP server that connects Claude Code to the UEFN editor.
 
 Usage:
-    python -m server.main
-    python server/main.py
+    python server/main.py          # MCP stdio (repo root on sys.path via __file__)
+    python -m server.main         # same, from repo root
 
 Requirements:
     pip install mcp
@@ -31,8 +31,10 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from mcp.server.fastmcp import FastMCP
 
-from . import bridge
-from .tools import system, actors, assets, escape_hatch
+# Absolute imports so `python server/main.py` works (MCP stdio); relative imports
+# require `python -m server.main` from repo root only.
+from server import bridge
+from server.tools import actors, assets, escape_hatch, system
 
 # Initialize FastMCP
 mcp = FastMCP("uefn-mcp")

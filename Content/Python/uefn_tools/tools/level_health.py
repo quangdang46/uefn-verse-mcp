@@ -5,10 +5,10 @@ Unified level health report that aggregates results from the uefn_tools's
 19 individual audit tools into a single scored report.
 
 TOOLS:
-  • level_health_report  — Headless: run all audits, compute health score 0–100,
+  • level_health_report  — Run all audits, compute health score 0–100,
                            return structured dict. MCP / AI agent friendly.
-  • level_health_open    — Windowed UI: same report with colour-coded category
-                           cards, per-issue drilldown, and a one-click fix queue.
+  • level_health_open    — Same audit + return dict; also prints a formatted
+                           summary to the Output Log (no separate UI window).
 
 HEALTH SCORE FORMULA:
   Each category contributes up to its weight (see _CATEGORIES).
@@ -22,7 +22,7 @@ USAGE:
     result = tb.run("level_health_report")
     # → {"status": "ok", "score": 87, "grade": "B", "categories": {...}}
 
-    # Windowed UI
+    # Log + dict (same data as level_health_report, with Output Log banner)
     tb.run("level_health_open")
 """
 
@@ -242,7 +242,7 @@ def _grade_color(grade: str) -> str:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-#  Core runner — shared by headless and windowed tools
+#  Core runner — shared by level_health_report and level_health_open
 # ─────────────────────────────────────────────────────────────────────────────
 
 def _run_health_report(on_progress=None) -> dict:
@@ -329,15 +329,15 @@ def run_level_health_report(**kwargs) -> dict:
     name="level_health_open",
     category="Utilities",
     description=(
-        "Open the Level Health Dashboard — a visual report showing your level's health "
-        "score (0–100) with colour-coded category cards and per-issue drilldown."
+        "MCP / headless: runs the full level health audit, prints a formatted summary to the "
+        "Output Log, and returns the same structured dict as level_health_report (no separate UI window)."
     ),
-    tags=["audit", "health", "dashboard", "ui", "report", "score"],
+    tags=["audit", "health", "report", "score", "mcp", "headless"],
 )
 def run_level_health_open(**kwargs) -> dict:
     """
     Runs the full level health audit and prints a formatted summary to the
-    Output Log. Use level_health_report for the structured dict return.
+    Output Log. Same return payload as level_health_report.
     """
     report = _run_health_report()
     score  = report["score"]

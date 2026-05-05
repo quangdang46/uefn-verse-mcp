@@ -34,9 +34,20 @@ import uefn_tools as ut; ut.run("mcp_start")
 
 Output Log shows: `Listener started on http://127.0.0.1:8765`
 
-### 3. Connect Claude Code
+### 3. Install MCP server dependencies
 
-Add to `.mcp.json` in your project root:
+The stdio server imports `mcp` (FastMCP). Install it into the **same** Python that runs `server/main.py` (the one in your MCP `command`, often `python` on PATH):
+
+```bash
+cd uefn-mcp
+python -m pip install -r requirements.txt
+```
+
+If Cursor still reports `No module named 'mcp'`, your IDE may be using a different Python than the terminal. Point MCP at that interpreter explicitly, e.g. `"command": "C:\\Path\\To\\python.exe"`.
+
+### 4. Connect Cursor / Claude Code
+
+Add to `.mcp.json` (project or user config):
 
 ```json
 {
@@ -86,8 +97,8 @@ run_tool("verse_write_file", filename="MyGame.verse", content="...")
 
 ## Requirements
 
-- Python 3.10+ on host machine
-- `pip install mcp`
+- Python 3.10+ on host machine (same interpreter as MCP `command`)
+- `python -m pip install -r requirements.txt` (installs `mcp` for `server/main.py`)
 - UEFN with Python Editor Script Plugin enabled
 
 ## Structure
@@ -102,6 +113,7 @@ uefn-mcp/
 ├── uefn_tools/       # Tool package (deployed into UEFN)
 ├── init_unreal.py    # UEFN startup hook
 ├── deploy.py         # Deploy script
+├── requirements.txt  # Host MCP server (pip install -r)
 └── docs/             # Documentation
 ```
 

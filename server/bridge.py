@@ -7,7 +7,7 @@ import urllib.error
 import urllib.request
 from typing import Any, Optional
 
-from .port_discovery import discover_port, _ping_port
+from server.port_discovery import discover_port, _ping_port
 
 REQUEST_TIMEOUT = 30.0
 
@@ -29,9 +29,9 @@ def send_command(command: str, params: Optional[dict] = None) -> dict:
             body = json.loads(resp.read().decode())
     except urllib.error.URLError as e:
         # Port may have changed — retry once
-        from .port_discovery import _discovered_port as _dp
+        from server.port_discovery import _discovered_port as _dp
         if _dp is not None:
-            from .port_discovery import discover_port as _disc
+            from server.port_discovery import discover_port as _disc
             _disc()
             return send_command(command, params)
         raise ConnectionError(
