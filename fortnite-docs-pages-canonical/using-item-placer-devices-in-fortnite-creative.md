@@ -1,6 +1,0 @@
-## https://dev.epicgames.com/documentation/en-us/fortnite/using-item-placer-devices-in-fortnite-creative
-
-# Class Selector
-This device creates a zone that, when triggered, will switch a player to a different class. Used with the Class Designer, the Class Selector is used for a single class.
-This device creates a zone that, when triggered, will switch a player to a different class. Used with the Class Designer, the Class Selector is used for a single class. You can add multiple devices if you want to make zones for different classes. This device is activated when a player passes through the zone.
-For more on how to use these, see [Class Selector Devices](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-class-selector-devices-in-fortnite-creative).
