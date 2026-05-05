@@ -1,27 +1,14 @@
 """
-uefn_tools — UI Icon Importer
-========================================
-Clipboard-first image importer for UEFN UI/icon textures.
+uefn_tools — UI Icon Importer (headless / MCP)
+===============================================
+Imports images as Texture2D assets and applies UI-friendly compression / mips /
+LOD group presets. No editor window — use from MCP or REPL.
 
-Copy any image (from a browser, Figma, Photoshop, Paint) and paste it
-directly into the window — it imports with the correct Mip/compression
-settings for UI work in one click. No Photoshop export step, no manual
-texture settings panel.
+Tools:
+  • ui_icon_import_open     Import from Windows clipboard (same as before, no UI).
+  • ui_icon_import_file     Import from a filesystem image path.
 
-Three ways to feed an image:
-  1. Ctrl+V  — paste from clipboard
-  2. Click   — open file browser
-  3. Drag    — drop an image file onto the zone
-
-Presets cover the most common UEFN UI needs:
-  • UI Icon (default)  — TC_UserInterface2D · NoMipmaps · sRGB · TextureGroup_UI
-  • Sprite / 2D        — TC_BC7 · NoMipmaps · sRGB · TextureGroup_UI
-  • Thumbnail          — TC_BC7 · NoMipmaps · sRGB · TextureGroup_UI
-  • Normal Map         — TC_Normalmap · NoMipmaps · no sRGB · TextureGroup_World
-  • Default / Mipmapped — TC_BC7 · standard mip chain · TextureGroup_World
-
-Registered tools:
-  ui_icon_import_open   Open the import window
+For URL downloads use: import_image_from_url (asset_importer).
 """
 
 from __future__ import annotations
@@ -31,25 +18,13 @@ import tempfile
 
 import unreal
 
-from ..core import log_info, log_warning, log_error, detect_project_mount
+from ..core import log_error, log_info, get_config, detect_project_mount
+from ..core.safety_gate import SafetyGate
 from ..registry import register_tool
 
-# ── PySide6 guard ─────────────────────────────────────────────────────────────
-_PYSIDE6 = False
-try:
-    from PySide6.QtWidgets import (
-        QApplication, QVBoxLayout, QHBoxLayout,
-        QLabel, QLineEdit, QComboBox, QFrame,
-        QFileDialog, QSizePolicy, QTextEdit,
-    )
-    from PySide6.QtGui import QPixmap, QImage, QDragEnterEvent, QDropEvent
-    from PySide6.QtCore import Qt
-    _PYSIDE6 = True
-except ImportError:
-    pass
+from . import asset_importer as _ai
 
-
-# ── Texture presets ───────────────────────────────────────────────────────────
+# ── Texture presets (applied after engine import) ─────────────────────────────
 _PRESETS: dict[str, dict] = {
     "UI Icon  (TC_UserInterface2D · no mips · sRGB)": {
         "compression": "TC_USER_INTERFACE2D",
@@ -83,11 +58,25 @@ _PRESETS: dict[str, dict] = {
     },
 }
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
+
+def _default_asset_dir() -> str:
+    cfg = get_config().get("import.default_dir")
+    if cfg:
+        return str(cfg)
+    mount = detect_project_mount()
+    return f"/{mount}/UI/Icons" if mount else "/Game/UI/Icons"
+
+
+def _pick_preset(preset: str = "") -> dict:
+    q = (preset or "").strip().lower()
+    if q:
+        for label, cfg in _PRESETS.items():
+            if q in label.lower():
+                return cfg
+    return next(iter(_PRESETS.values()))
 
 
 def _apply_texture_settings(pkg_path: str, preset: dict) -> None:
-    """Apply Mip/compression/LOD settings to an already-imported texture."""
     try:
         tex = unreal.EditorAssetLibrary.load_asset(pkg_path)
         if not tex:
@@ -118,209 +107,85 @@ def _apply_texture_settings(pkg_path: str, preset: dict) -> None:
 
         tex.post_edit_change()
         unreal.EditorAssetLibrary.save_asset(pkg_path)
-    except Exception as e:
-        log_warning(f"[UI ICON] Could not apply texture settings to {pkg_path}: {e}")
+    except Exception as exc:
+        log_error(f"[UI ICON] Could not apply texture settings to {pkg_path}: {exc}")
 
 
-# ── PySide6 classes ───────────────────────────────────────────────────────────
+def _import_with_preset(
+    source_file: str,
+    asset_dir: str,
+    asset_name: str,
+    preset: str,
+) -> dict:
+    if not os.path.isfile(source_file):
+        return {"status": "error", "message": f"Source file not found: {source_file}"}
 
-if _PYSIDE6:
+    if not asset_dir:
+        asset_dir = _default_asset_dir()
 
-    # ── Help dialog ───────────────────────────────────────────────────────────
+    SafetyGate.enforce_safety(asset_dir)
 
-UI ICON IMPORTER — Quick Reference
-══════════════════════════════════════════════════════════════════════
+    clean = _ai._sanitize_asset_name(asset_name) or _ai._next_sequential_name(asset_dir)
+    result_path = _ai._import_file_task(source_file, asset_dir, clean)
+    if not result_path:
+        return {"status": "error", "message": "Engine import failed."}
 
-WHAT IT DOES
-  Imports any image into your UEFN project with the correct Mip and
-  compression settings for UI textures — in one step.
-  No Photoshop export. No texture settings panel. Just paste and import.
+    _apply_texture_settings(result_path, _pick_preset(preset))
+    log_info(f"[UI ICON] Imported with preset: {result_path}")
+    return {"status": "ok", "asset_path": result_path, "preset": preset or "default"}
 
-THREE WAYS TO LOAD AN IMAGE
-  1. Ctrl+V  — copy an image in your browser, Figma, Photoshop, or
-               Paint, then press Ctrl+V inside this window.
-  2. Click   — click the drop zone to open a file browser (.png, .jpg,
-               .tga, .bmp).
-  3. Drag    — drag any image file directly onto the drop zone.
-
-PRESETS
-  UI Icon (default)
-    → TC_UserInterface2D · NoMipmaps · sRGB · TextureGroup UI
-    → Best for HUD icons, button art, inventory images, crosshairs.
-
-  Sprite / 2D
-    → TC_BC7 · NoMipmaps · sRGB · TextureGroup UI
-    → Best for 2D game sprites or flat cutout textures.
-
-  Thumbnail
-    → TC_BC7 · NoMipmaps · sRGB · TextureGroup UI
-    → Best for preview images, map art, loading screens.
-
-  Normal Map
-    → TC_Normalmap · NoMipmaps · linear (no sRGB) · TextureGroup World
-    → Best for tangent-space normal maps.
-
-  Default / Mipmapped
-    → TC_BC7 · standard mip chain · TextureGroup World
-    → Best for in-world textures that need LOD mipmapping.
-
-DESTINATION
-  Defaults to /[ProjectMount]/UI/Icons/ where [ProjectMount] is
-  auto-detected from your Content Browser on open.
-  You can type any valid Content Browser path.
-  The folder is created automatically if it does not exist.
-
-FILENAME
-  Auto-filled from the source file name, or T_Paste_001 for clipboard
-  pastes. The T_ prefix follows Epic naming conventions.
-  Edit this field before importing to rename the asset.
-
-WHY NO MIPMAPS FOR UI?
-  UI textures are always displayed at a fixed pixel size — mipmaps waste
-  memory and can cause blurry renders at certain resolutions.
-  TC_UserInterface2D also preserves the full alpha channel correctly,
-  which BC7/DXT5 may not in all cases.
-
-TIPS
-  • Transparent PNGs keep their alpha — use UI Icon preset.
-  • For web images: right-click → Copy Image → Ctrl+V in this window.
-  • The imported asset is auto-selected in the Content Browser so you
-    can drag it onto a Widget Blueprint immediately.
-  • Supports PNG, JPG, TGA, BMP.
-"""
-
-        def __init__(self, parent=None):
-            super().__init__(title="UEFN uefn_tools — UI Icon Importer Help", width=580, height=580, parent=parent)
-            self._build_ui()
-
-        def _build_ui(self):
-            central = QFrame()
-            self.setCentralWidget(central)
-            vl = QVBoxLayout(central)
-            vl.setContentsMargins(14, 14, 14, 14)
-            vl.setSpacing(8)
-
-            editor = QTextEdit()
-            editor.setReadOnly(True)
-            editor.setLineWrapMode(QTextEdit.NoWrap)
-            editor.setPlainText(self._HELP)
-            editor.setStyleSheet(
-                f"background:{self.hex('panel')}; color:{self.hex('text')}; "
-                f"font-family:Consolas; font-size:9pt; "
-                f"border:1px solid {self.hex('border')}; padding:8px;"
-            )
-            vl.addWidget(editor)
-
-            close_row = QHBoxLayout()
-            close_row.addStretch()
-            close_row.addWidget(self.make_btn("Close", cb=self.close))
-            vl.addLayout(close_row)
-
-    # ── Drop Zone ─────────────────────────────────────────────────────────────
-
-    class _DropZone(QLabel):
-        """Paste / drag-and-drop target that accepts images and image files."""
-
-        def __init__(self, palette: dict, parent=None):
-            super().__init__(parent)
-            self._P = palette
-            self._has_image = False
-            self.setAcceptDrops(True)
-            self.setAlignment(Qt.AlignCenter)
-            self.setMinimumHeight(180)
-            self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-            self.setScaledContents(False)
-            self._show_empty()
-
-        def _show_empty(self):
-            self._has_image = False
-            self.clear()
-            self.setText("Click to browse  ·  Ctrl+V to paste  ·  or drop an image here")
-            self.setStyleSheet(
-                f"background:{self._P['panel']}; color:{self._P['muted']}; "
-                f"border:2px dashed {self._P['border2']}; border-radius:6px; "
-                f"font-size:11pt; padding:24px;"
-            )
-
-        def _show_image(self, img: QImage):
-            self._has_image = True
-            pm = QPixmap.fromImage(img)
-            # Scale to fit, leaving a margin
-            maxw = max(self.width() - 32, 200)
-            maxh = max(self.height() - 32, 160)
-            pm = pm.scaled(maxw, maxh, Qt.KeepAspectRatio, Qt.SmoothTransformation)
-            self.setPixmap(pm)
-            self.setStyleSheet(
-                f"background:{self._P['bg']}; "
-                f"border:2px solid {self._P['accent']}; "
-                f"border-radius:6px; padding:8px;"
-            )
-
-        def load_image(self, img: QImage):
-            if not img.isNull():
-                self._show_image(img)
-
-        def clear_zone(self):
-            self._show_empty()
-
-        # Drag-and-drop
-        def dragEnterEvent(self, event: QDragEnterEvent):
-            md = event.mimeData()
-            if md.hasUrls() or md.hasImage():
-                event.acceptProposedAction()
-                self.setStyleSheet(
-                    f"background:{self._P['panel']}; color:{self._P['text']}; "
-                    f"border:2px dashed {self._P['accent']}; border-radius:6px; "
-                    f"font-size:11pt; padding:24px;"
-                )
-            else:
-                event.ignore()
-
-        def dragLeaveEvent(self, event):
-            if not self._has_image:
-                self._show_empty()
-
-        def dropEvent(self, event: QDropEvent) -> tuple[QImage | None, str]:
-            """Emits via _on_drop callback set by parent."""
-            md = event.mimeData()
-            if md.hasUrls():
-                for url in md.urls():
-                    local = url.toLocalFile()
-                    if local and os.path.isfile(local):
-                        img = QImage(local)
-                        if not img.isNull():
-                            self._on_drop(img, local)
-                            return
-            if md.hasImage():
-                img = QImage(md.imageData())
-                if not img.isNull():
-                    self._on_drop(img, "")
-
-        def set_drop_handler(self, fn):
-            self._on_drop = fn
-
-    # ── Main window ───────────────────────────────────────────────────────────
-
-# ── Registered tool ───────────────────────────────────────────────────────────
 
 @register_tool(
     name="ui_icon_import_open",
     category="Asset Management",
     description=(
-        "Open the UI Icon Importer — paste any image from the clipboard "
-        "(browser, Figma, Photoshop) and import it as a UEFN texture with "
-        "correct Mip/compression settings. Supports file browse and drag-drop. "
-        "No Photoshop export step required."
+        "Import the current Windows clipboard image as a Texture2D under asset_dir "
+        "(default: project mount /UI/Icons), then apply a UI preset. "
+        "Optional preset substring matches _PRESETS keys (e.g. 'UI Icon', 'Normal Map'). "
+        "No PySide window — MCP/REPL only."
     ),
-    tags=["ui", "icon", "texture", "import", "clipboard", "paste", "image", "mip", "sprite"],
+    tags=["ui", "icon", "texture", "import", "clipboard", "paste", "image", "mcp"],
 )
-def ui_icon_import_open(**kwargs) -> dict:
-    """
-    Open the clipboard-first UI icon importer.
-    Paste from browser, Figma, or Photoshop → imports with correct UEFN UI texture settings.
-    """
-    if not _PYSIDE6:
-        return {"status": "error", "message": "PySide6 is not installed."}
-    win = _UIIconImportWindow()
-    win.show_in_uefn()
-    return {"status": "ok", "message": "UI Icon Importer opened."}
+def ui_icon_import_open(
+    asset_dir: str = "",
+    asset_name: str = "",
+    preset: str = "",
+    **kwargs,
+) -> dict:
+    if not asset_dir:
+        asset_dir = _default_asset_dir()
+
+    SafetyGate.enforce_safety(asset_dir)
+
+    clean = _ai._sanitize_asset_name(asset_name) or _ai._next_sequential_name(asset_dir)
+    tmp_path = os.path.join(tempfile.gettempdir(), f"uefntoolbelt_ui_clip_{clean}.png")
+
+    if not _ai._extract_clipboard_png(tmp_path):
+        return {"status": "error", "message": "Clipboard extraction failed (no image or unsupported)."}
+
+    return _import_with_preset(tmp_path, asset_dir, clean, preset)
+
+
+@register_tool(
+    name="ui_icon_import_file",
+    category="Asset Management",
+    description=(
+        "Import a local image file (.png, .jpg, etc.) as Texture2D and apply a UI preset. "
+        "Same preset matching rules as ui_icon_import_open."
+    ),
+    tags=["ui", "icon", "texture", "import", "file", "mcp"],
+)
+def ui_icon_import_file(
+    file_path: str = "",
+    asset_dir: str = "",
+    asset_name: str = "",
+    preset: str = "",
+    **kwargs,
+) -> dict:
+    if not file_path.strip():
+        return {"status": "error", "message": "Provide file_path."}
+    base = os.path.basename(file_path)
+    stem = os.path.splitext(base)[0]
+    if not asset_name:
+        asset_name = stem
+    return _import_with_preset(os.path.abspath(file_path), asset_dir, asset_name, preset)

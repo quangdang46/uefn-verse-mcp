@@ -129,7 +129,7 @@ def _rotate_offset(x: float, y: float, yaw_deg: float):
         "Records relative transforms and mesh asset paths. "
         "Saved to Saved/uefn_tools/stamps/{name}.json. "
         "Use stamp_place to re-spawn it anywhere. "
-        "Not the same as prefab_migrate_open (which moves .uasset files between projects)."
+        "Not the same as prefab_export_* tools (cross-project / same-project .uasset migration)."
     ),
     tags=["stamp", "save", "group", "reuse", "layout"],
 )

@@ -32,8 +32,9 @@ Why the queue + tick pattern:
 What's new vs Kirch's original:
     • run_tool command — call any registered UEFN uefn_tools tool by name,
       passing kwargs as JSON. Exposes all 355 toolbelt tools to any MCP client.
-    • All 32 commands: Kirch's originals (system, actors, assets, level,
-      viewport) + set_actor_property, import_asset, run_tool, describe_tool, and more.
+    • HTTP command surface: Kirch-style originals (system, actors, assets, level,
+      viewport) + set_actor_property, set_actor_properties, import_asset, run_tool,
+      describe_tool, mcp_status, get_project_info, select_actors, focus_selected, shutdown, and more.
     • uefn_tools-aware: pre-populated globals in execute_python include `tb`.
     • start / stop / restart / status exposed as @register_tool entries
       so the dashboard can control the bridge without touching the REPL.
@@ -220,9 +221,31 @@ def _c_ping() -> dict:
     }
 
 
+@_cmd("mcp_status")
+def _c_mcp_status(**kwargs: Any) -> dict:
+    """Return MCP listener status for external MCP clients (same fields `get_status()` uses)."""
+    return get_status()
+
+
 @_cmd("get_log")
-def _c_get_log(last_n: int = 50) -> dict:
-    return {"lines": _log_ring[-last_n:]}
+def _c_get_log(
+    lines: int | None = None,
+    last_n: int | None = None,
+    **kwargs: Any,
+) -> dict:
+    """Last N MCP bridge log lines (ring buffer). Accepts `lines` (MCP client) or legacy `last_n`."""
+    raw = lines if lines is not None else (last_n if last_n is not None else 50)
+    try:
+        n = int(raw)
+    except (TypeError, ValueError):
+        n = 50
+    if n < 1:
+        n = 1
+    # deque does not support slicing in Python 3.11 (UEFN); copy then tail.
+    ring_list = list(_log_ring)
+    tail = ring_list[-n:] if len(ring_list) > n else ring_list[:]
+    text = "\n".join(tail)
+    return {"text": text, "count": len(tail), "entries": tail}
 
 
 @_cmd("execute_python")
@@ -376,7 +399,7 @@ def _c_redo() -> dict:
 
 
 @_cmd("history")
-def _c_history(tail: int = 30) -> dict:
+def _c_history(tail: int = 30, **kwargs) -> dict:
     """Return recent command history with per-command timing."""
     return {"entries": _history[-tail:], "total": len(_history)}
 
@@ -399,10 +422,60 @@ def _c_get_selected_actors() -> dict:
     return {"actors": [_serialize_actor(a) for a in actors], "count": len(actors)}
 
 
+def _find_level_actor(sub: Any, key: str) -> Any:
+    if not key:
+        return None
+    return next(
+        (a for a in sub.get_all_level_actors()
+         if a.get_path_name() == key or a.get_actor_label() == key),
+        None,
+    )
+
+
+@_cmd("select_actors")
+def _c_select_actors(
+    actor_labels: Optional[List[str]] = None,
+    actor_paths: Optional[List[str]] = None,
+    labels: Optional[List[str]] = None,
+    **kwargs: Any,
+) -> dict:
+    """Select level actors by outliner label or full path (MCP may send `actor_labels`)."""
+    tokens = list(actor_labels or actor_paths or labels or [])
+    sub = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
+    found: List[Any] = []
+    for tok in tokens:
+        a = _find_level_actor(sub, tok)
+        if a is not None:
+            found.append(a)
+    if not found:
+        return {"selected": [], "count": 0, "matched": 0, "requested": len(tokens)}
+    sub.set_selected_level_actors(found)
+    return {
+        "selected": [_serialize_actor(a) for a in found],
+        "count":    len(found),
+        "matched":  len(found),
+        "requested": len(tokens),
+    }
+
+
+@_cmd("focus_selected")
+def _c_focus_selected(**kwargs: Any) -> dict:
+    """Run the editor 'Move Camera to Object' on the current viewport selection."""
+    sub = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
+    actors = sub.get_selected_level_actors()
+    if not actors:
+        return {"focused": False, "reason": "no_selection", "count": 0}
+    world = unreal.EditorLevelLibrary.get_editor_world()
+    if world:
+        unreal.SystemLibrary.execute_console_command(world, "CAMERA ALIGN")
+    return {"focused": True, "count": len(actors)}
+
+
 @_cmd("spawn_actor")
 def _c_spawn_actor(
     asset_path: str = "",
     actor_class: str = "",
+    class_path: str = "",
     location: Optional[List[float]] = None,
     rotation: Optional[List[float]] = None,
     label: str = "",
@@ -411,18 +484,25 @@ def _c_spawn_actor(
     rot = unreal.Rotator(*rotation) if rotation else unreal.Rotator(0, 0, 0)
 
     sub = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
+    actor = None
     if asset_path:
         asset = unreal.EditorAssetLibrary.load_asset(asset_path)
         if asset is None:
             raise ValueError(f"Asset not found: {asset_path}")
         actor = sub.spawn_actor_from_object(asset, loc, rot)
+    elif class_path:
+        cp = class_path.strip()
+        cls = unreal.load_class(None, cp)
+        if cls is None:
+            raise ValueError(f"Could not load class from class_path: {cp!r}")
+        actor = sub.spawn_actor_from_class(cls, loc, rot)
     elif actor_class:
         cls = getattr(unreal, actor_class, None)
         if cls is None:
             raise ValueError(f"Class not found: {actor_class}")
         actor = sub.spawn_actor_from_class(cls, loc, rot)
     else:
-        raise ValueError("Provide either asset_path or actor_class")
+        raise ValueError("Provide asset_path, class_path (e.g. /Script/Engine.StaticMeshActor), or actor_class")
 
     if actor is None:
         raise RuntimeError("Failed to spawn actor")
@@ -432,11 +512,17 @@ def _c_spawn_actor(
 
 
 @_cmd("delete_actors")
-def _c_delete_actors(actor_paths: List[str]) -> dict:
+def _c_delete_actors(
+    actor_paths: Optional[List[str]] = None,
+    actor_labels: Optional[List[str]] = None,
+    labels: Optional[List[str]] = None,
+    **kwargs: Any,
+) -> dict:
+    tokens = list(actor_paths or actor_labels or labels or [])
     sub = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
     all_actors = sub.get_all_level_actors()
     deleted = []
-    for path in actor_paths:
+    for path in tokens:
         for actor in all_actors:
             if actor.get_path_name() == path or actor.get_actor_label() == path:
                 sub.destroy_actor(actor)
@@ -447,19 +533,20 @@ def _c_delete_actors(actor_paths: List[str]) -> dict:
 
 @_cmd("set_actor_transform")
 def _c_set_actor_transform(
-    actor_path: str,
+    actor_path: str = "",
+    actor_label: str = "",
+    label: str = "",
     location: Optional[List[float]] = None,
     rotation: Optional[List[float]] = None,
     scale: Optional[List[float]] = None,
 ) -> dict:
+    key = actor_path or actor_label or label
+    if not key:
+        raise ValueError("Provide actor_path, actor_label, or label")
     sub = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
-    target = next(
-        (a for a in sub.get_all_level_actors()
-         if a.get_path_name() == actor_path or a.get_actor_label() == actor_path),
-        None,
-    )
+    target = _find_level_actor(sub, key)
     if target is None:
-        raise ValueError(f"Actor not found: {actor_path}")
+        raise ValueError(f"Actor not found: {key}")
     if location is not None:
         target.set_actor_location(unreal.Vector(*location), False, False)
     if rotation is not None:
@@ -470,38 +557,76 @@ def _c_set_actor_transform(
 
 
 @_cmd("set_actor_property")
-def _c_set_actor_property(actor_path: str, property_name: str, value: Any) -> dict:
+def _c_set_actor_property(
+    actor_path: str = "",
+    actor_label: str = "",
+    label: str = "",
+    property_name: str = "",
+    value: Any = None,
+    **kwargs: Any,
+) -> dict:
     """Set a single editor property on an actor by path or label."""
+    key = actor_path or actor_label or label
+    if not key:
+        raise ValueError("Provide actor_path, actor_label, or label")
+    pname = property_name or kwargs.get("property") or kwargs.get("name")
+    if not pname:
+        raise ValueError("property_name (or property) is required")
     sub = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
-    target = next(
-        (a for a in sub.get_all_level_actors()
-         if a.get_path_name() == actor_path or a.get_actor_label() == actor_path),
-        None,
-    )
+    target = _find_level_actor(sub, key)
     if target is None:
-        raise ValueError(f"Actor not found: {actor_path}")
-    target.set_editor_property(property_name, value)
-    return {"actor_path": actor_path, "property": property_name,
-            "value": _serialize(value)}
+        raise ValueError(f"Actor not found: {key}")
+    target.set_editor_property(str(pname), value)
+    return {"actor_path": key, "property": str(pname), "value": _serialize(value)}
 
 
 @_cmd("get_actor_properties")
-def _c_get_actor_properties(actor_path: str, properties: List[str]) -> dict:
+def _c_get_actor_properties(
+    actor_path: str = "",
+    actor_label: str = "",
+    label: str = "",
+    properties: Optional[List[str]] = None,
+    **kwargs: Any,
+) -> dict:
+    key = actor_path or actor_label or label
+    if not key:
+        raise ValueError("Provide actor_path, actor_label, or label")
+    props = properties if properties is not None else ["bHidden", "bIsEditorOnlyActor"]
     sub = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
-    target = next(
-        (a for a in sub.get_all_level_actors()
-         if a.get_path_name() == actor_path or a.get_actor_label() == actor_path),
-        None,
-    )
+    target = _find_level_actor(sub, key)
     if target is None:
-        raise ValueError(f"Actor not found: {actor_path}")
-    result = {}
-    for prop in properties:
+        raise ValueError(f"Actor not found: {key}")
+    result: Dict[str, Any] = {}
+    for prop in props:
         try:
             result[prop] = _serialize(target.get_editor_property(prop))
         except Exception as e:
             result[prop] = f"<error: {e}>"
-    return {"actor_path": actor_path, "properties": result}
+    return {"actor_path": key, "properties": result}
+
+
+@_cmd("set_actor_properties")
+def _c_set_actor_properties(
+    actor_path: str = "",
+    actor_label: str = "",
+    label: str = "",
+    properties: Optional[Dict[str, Any]] = None,
+    **kwargs: Any,
+) -> dict:
+    """Set multiple editor properties on one actor (MCP-friendly alias for repeated set_actor_property)."""
+    key = actor_path or actor_label or label
+    if not key:
+        raise ValueError("Provide actor_path, actor_label, or label")
+    props = properties or {}
+    sub = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
+    target = _find_level_actor(sub, key)
+    if target is None:
+        raise ValueError(f"Actor not found: {key}")
+    applied: Dict[str, Any] = {}
+    for prop_name, value in props.items():
+        target.set_editor_property(prop_name, value)
+        applied[prop_name] = _serialize(value)
+    return {"actor_path": key, "applied": applied, "count": len(applied)}
 
 
 # ─── Asset commands ───────────────────────────────────────────────────────────
@@ -595,17 +720,29 @@ def _c_import_asset(
 @_cmd("search_assets")
 def _c_search_assets(class_name: str = "", directory: str = "/Game/",
                       recursive: bool = True) -> dict:
-    reg    = unreal.AssetRegistryHelpers.get_asset_registry()
-    filt   = unreal.ARFilter()
-    if directory:
-        filt.package_paths = [directory]
-    filt.recursive_paths = recursive
-    if class_name:
-        try:
-            filt.class_names = [class_name]
-        except Exception:
-            pass
-    results = reg.get_assets(filt)
+    """
+    List assets under a content path with optional class filter.
+
+    Uses EditorAssetLibrary.list_assets + per-path AssetData instead of mutating
+    ARFilter.package_paths (some UEFN/UE builds reject in-place ARFilter edits from Python).
+    """
+    dir_norm = (directory or "").strip() or "/Game/"
+    if dir_norm == "/":
+        dir_norm = "/Game/"
+    raw = unreal.EditorAssetLibrary.list_assets(dir_norm, recursive=recursive)
+    results: List[unreal.AssetData] = []
+    for path in raw:
+        data = unreal.EditorAssetLibrary.find_asset_data(path)
+        if not data:
+            continue
+        if class_name:
+            try:
+                cls_name = str(data.asset_class_path.asset_name)
+            except Exception:
+                cls_name = ""
+            if class_name != cls_name and class_name not in cls_name:
+                continue
+        results.append(data)
     return {"assets": [_serialize(a) for a in results], "count": len(results)}
 
 
@@ -689,6 +826,42 @@ def _c_get_level_info() -> dict:
         "world_name":  world.get_name() if world else "None",
         "actor_count": len(actors),
     }
+
+
+@_cmd("get_project_info")
+def _c_get_project_info() -> dict:
+    """Editor project paths and identifiers for MCP clients."""
+    info: Dict[str, Any] = {}
+    try:
+        info["project_directory"] = str(unreal.Paths.project_dir())
+    except Exception as e:
+        info["project_directory_error"] = str(e)
+    try:
+        info["project_content_directory"] = str(unreal.Paths.project_content_dir())
+    except Exception as e:
+        info["project_content_directory_error"] = str(e)
+    try:
+        info["game_name"] = str(unreal.SystemLibrary.get_game_name())
+    except Exception:
+        pass
+    try:
+        info["project_file_path"] = str(unreal.Paths.get_project_file_path())
+    except Exception as e:
+        info["project_file_path_error"] = str(e)
+    try:
+        w = unreal.EditorLevelLibrary.get_editor_world()
+        if w:
+            info["editor_world"] = w.get_path_name()
+    except Exception:
+        pass
+    return info
+
+
+@_cmd("shutdown")
+def _c_shutdown(**kwargs: Any) -> dict:
+    """Stop the MCP HTTP listener (external MCP `shutdown` tool)."""
+    stop_listener()
+    return {"success": True, "stopped": True}
 
 
 # ─── Viewport commands ────────────────────────────────────────────────────────
@@ -1002,5 +1175,5 @@ def mcp_status(**kwargs) -> None:
         unreal.log(
             "[MCP] Listener is NOT running.\n"
             "  Start with: tb.run('mcp_start')\n"
-            "  Or: uefn_tools.run("mcp_start") → Start Listener"
+            '  Or: uefn_tools.run("mcp_start") → Start Listener'
         )

@@ -4,8 +4,8 @@ uefn_mcp — FastMCP Server
 External MCP server that connects Claude Code to the UEFN editor.
 
 Usage:
-    python -m server.main
-    python server/main.py
+    python server/main.py          # MCP stdio (repo root on sys.path via __file__)
+    python -m server.main         # same, from repo root
 
 Requirements:
     pip install mcp
@@ -23,16 +23,21 @@ Configuration (.mcp.json):
 Then in UEFN console:
     import uefn_tools as ut; ut.run("mcp_start")
 """
+import json
 import os
 import sys
+from typing import Annotated
 
 # Add parent directory to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from mcp.server.fastmcp import FastMCP
+from pydantic import Field
 
-from . import bridge
-from .tools import system, actors, assets, escape_hatch
+# Absolute imports so `python server/main.py` works (MCP stdio); relative imports
+# require `python -m server.main` from repo root only.
+from server import bridge
+from server.tools import actors, assets, escape_hatch
 
 # Initialize FastMCP
 mcp = FastMCP("uefn-mcp")
@@ -50,12 +55,16 @@ def get_status() -> str:
     return str(bridge.get_status())
 
 @mcp.tool()
-def execute_python(code: str) -> str:
+def execute_python(
+    code: Annotated[str, Field(description="Python source executed in the UEFN editor Python environment.")],
+) -> str:
     """Execute arbitrary Python code in UEFN editor."""
     return str(bridge.send_command("execute_python", {"code": code}))
 
 @mcp.tool()
-def get_log(lines: int = 50) -> str:
+def get_log(
+    lines: Annotated[int, Field(description="Maximum number of recent log lines to return.")] = 50,
+) -> str:
     """Get MCP listener log entries."""
     return str(bridge.send_command("get_log", {"lines": lines}))
 
@@ -77,7 +86,11 @@ def get_selected_actors() -> str:
     return str(bridge.send_command("get_selected_actors"))
 
 @mcp.tool()
-def spawn_actor(class_path: str, location: list = None, rotation: list = None) -> str:
+def spawn_actor(
+    class_path: Annotated[str, Field(description="Unreal class or object path to spawn (e.g. blueprint or actor class).")],
+    location: Annotated[list | None, Field(description="Optional world location [x, y, z]; omit to use default spawn point.")] = None,
+    rotation: Annotated[list | None, Field(description="Optional rotation [pitch, yaw, roll] in degrees.")] = None,
+) -> str:
     """Spawn an actor from a class or object path."""
     params = {"class_path": class_path}
     if location:
@@ -87,12 +100,19 @@ def spawn_actor(class_path: str, location: list = None, rotation: list = None) -
     return str(bridge.send_command("spawn_actor", params))
 
 @mcp.tool()
-def delete_actors(actor_labels: list) -> str:
+def delete_actors(
+    actor_labels: Annotated[list, Field(description="Actor labels (identifiers) to remove from the level.")],
+) -> str:
     """Delete actors by their labels."""
     return str(bridge.send_command("delete_actors", {"actor_labels": actor_labels}))
 
 @mcp.tool()
-def set_actor_transform(actor_label: str, location: list = None, rotation: list = None, scale: list = None) -> str:
+def set_actor_transform(
+    actor_label: Annotated[str, Field(description="Label of the actor to modify.")],
+    location: Annotated[list | None, Field(description="Optional new world location [x, y, z].")] = None,
+    rotation: Annotated[list | None, Field(description="Optional new rotation [pitch, yaw, roll] in degrees.")] = None,
+    scale: Annotated[list | None, Field(description="Optional new scale [x, y, z].")] = None,
+) -> str:
     """Set actor transform (location, rotation, scale)."""
     params = {"actor_label": actor_label}
     if location:
@@ -104,17 +124,24 @@ def set_actor_transform(actor_label: str, location: list = None, rotation: list 
     return str(bridge.send_command("set_actor_transform", params))
 
 @mcp.tool()
-def get_actor_properties(actor_label: str) -> str:
+def get_actor_properties(
+    actor_label: Annotated[str, Field(description="Label of the actor to inspect.")],
+) -> str:
     """Get properties of an actor."""
     return str(bridge.send_command("get_actor_properties", {"actor_label": actor_label}))
 
 @mcp.tool()
-def set_actor_properties(actor_label: str, properties: dict) -> str:
+def set_actor_properties(
+    actor_label: Annotated[str, Field(description="Label of the actor to update.")],
+    properties: Annotated[dict, Field(description="Property names and values to set on the actor (engine-specific keys).")],
+) -> str:
     """Set properties of an actor."""
     return str(bridge.send_command("set_actor_properties", {"actor_label": actor_label, "properties": properties}))
 
 @mcp.tool()
-def select_actors(actor_labels: list) -> str:
+def select_actors(
+    actor_labels: Annotated[list, Field(description="Actor labels to select in the editor viewport.")],
+) -> str:
     """Select actors in the viewport."""
     return str(bridge.send_command("select_actors", {"actor_labels": actor_labels}))
 
@@ -126,7 +153,11 @@ def focus_selected() -> str:
 # ─── Asset Commands ───────────────────────────────────────────────────────────
 
 @mcp.tool()
-def list_assets(directory: str = "/", recursive: bool = True, class_filter: str = "") -> str:
+def list_assets(
+    directory: Annotated[str, Field(description="Content path root (e.g. '/Game' or '/').")] = "/",
+    recursive: Annotated[bool, Field(description="If true, list assets under subfolders.")] = True,
+    class_filter: Annotated[str, Field(description="Optional Unreal class name filter; empty returns all classes.")] = "",
+) -> str:
     """List assets in a directory."""
     params = {"directory": directory, "recursive": recursive}
     if class_filter:
@@ -134,7 +165,9 @@ def list_assets(directory: str = "/", recursive: bool = True, class_filter: str 
     return str(bridge.send_command("list_assets", params))
 
 @mcp.tool()
-def get_asset_info(asset_path: str) -> str:
+def get_asset_info(
+    asset_path: Annotated[str, Field(description="Full content path of the asset (e.g. '/Game/MyFolder/MyAsset').")],
+) -> str:
     """Get detailed info about an asset."""
     return str(bridge.send_command("get_asset_info", {"asset_path": asset_path}))
 
@@ -144,32 +177,48 @@ def get_selected_assets() -> str:
     return str(bridge.send_command("get_selected_assets"))
 
 @mcp.tool()
-def rename_asset(old_path: str, new_path: str) -> str:
+def rename_asset(
+    old_path: Annotated[str, Field(description="Current asset content path.")],
+    new_path: Annotated[str, Field(description="Destination content path (rename or move).")],
+) -> str:
     """Rename or move an asset."""
     return str(bridge.send_command("rename_asset", {"old_path": old_path, "new_path": new_path}))
 
 @mcp.tool()
-def delete_asset(asset_path: str) -> str:
+def delete_asset(
+    asset_path: Annotated[str, Field(description="Content path of the asset to delete.")],
+) -> str:
     """Delete an asset."""
     return str(bridge.send_command("delete_asset", {"asset_path": asset_path}))
 
 @mcp.tool()
-def duplicate_asset(source_path: str, dest_path: str) -> str:
+def duplicate_asset(
+    source_path: Annotated[str, Field(description="Content path of the asset to copy.")],
+    dest_path: Annotated[str, Field(description="Content path for the duplicated asset.")],
+) -> str:
     """Duplicate an asset to a new path."""
     return str(bridge.send_command("duplicate_asset", {"source_path": source_path, "dest_path": dest_path}))
 
 @mcp.tool()
-def does_asset_exist(asset_path: str) -> str:
+def does_asset_exist(
+    asset_path: Annotated[str, Field(description="Content path to test for existence.")],
+) -> str:
     """Check if an asset exists."""
     return str(bridge.send_command("does_asset_exist", {"asset_path": asset_path}))
 
 @mcp.tool()
-def save_asset(asset_path: str) -> str:
+def save_asset(
+    asset_path: Annotated[str, Field(description="Content path of the dirty asset to save.")],
+) -> str:
     """Save a modified asset."""
     return str(bridge.send_command("save_asset", {"asset_path": asset_path}))
 
 @mcp.tool()
-def search_assets(class_name: str = "", directory: str = "/", recursive: bool = True) -> str:
+def search_assets(
+    class_name: Annotated[str, Field(description="Filter by asset class name; empty string searches all classes.")] = "",
+    directory: Annotated[str, Field(description="Content Browser root path to search under (e.g. '/Game').")] = "/",
+    recursive: Annotated[bool, Field(description="If true, include assets in subfolders.")] = True,
+) -> str:
     """Search assets using the Asset Registry."""
     return str(bridge.send_command("search_assets", {"class_name": class_name, "directory": directory, "recursive": recursive}))
 
@@ -198,7 +247,10 @@ def get_viewport_camera() -> str:
     return str(bridge.send_command("get_viewport_camera"))
 
 @mcp.tool()
-def set_viewport_camera(location: list = None, rotation: list = None) -> str:
+def set_viewport_camera(
+    location: Annotated[list | None, Field(description="Optional camera world location [x, y, z].")] = None,
+    rotation: Annotated[list | None, Field(description="Optional camera rotation [pitch, yaw, roll] in degrees.")] = None,
+) -> str:
     """Set viewport camera position and rotation."""
     params = {}
     if location:
@@ -210,14 +262,32 @@ def set_viewport_camera(location: list = None, rotation: list = None) -> str:
 # ─── Tool Escape Hatch ────────────────────────────────────────────────────────
 
 @mcp.tool()
-def run_tool(tool_name: str, **kwargs) -> str:
-    """Execute any registered uefn_tools tool by name. Use this to access the full 358 tools."""
-    params = {"tool_name": tool_name}
-    params.update(kwargs)
-    return str(bridge.send_command("run_tool", params))
+def run_tool(
+    tool_name: Annotated[str, Field(description="Registered uefn_tools name (e.g. from list_tools).")],
+    kwargs: Annotated[
+        str | dict | None,
+        Field(description="Tool arguments as a dict or JSON string; forwarded to the bridge as the tool's kwargs object."),
+    ] = None,
+) -> str:
+    """Execute any registered uefn_tools tool by name. Use this to access the full 358 tools.
+
+    Pass tool arguments as JSON in `kwargs` (string or dict); they are forwarded to the bridge
+    as the single `kwargs` object expected by `_c_run_tool`.
+    """
+    if kwargs is None:
+        kw: dict = {}
+    elif isinstance(kwargs, dict):
+        kw = dict(kwargs)
+    elif isinstance(kwargs, str):
+        kw = json.loads(kwargs) if kwargs.strip() else {}
+    else:
+        kw = {}
+    return str(bridge.send_command("run_tool", {"tool_name": tool_name, "kwargs": kw}))
 
 @mcp.tool()
-def list_tools(category: str = "") -> str:
+def list_tools(
+    category: Annotated[str, Field(description="If non-empty, only list tools in this category name.")] = "",
+) -> str:
     """List all registered uefn_tools tools."""
     params = {}
     if category:
@@ -225,7 +295,9 @@ def list_tools(category: str = "") -> str:
     return str(bridge.send_command("list_tools", params))
 
 @mcp.tool()
-def describe_tool(tool_name: str) -> str:
+def describe_tool(
+    tool_name: Annotated[str, Field(description="Registered tool name to look up in the manifest.")],
+) -> str:
     """Get details about a specific tool (parameters, description, category)."""
     return str(bridge.send_command("describe_tool", {"tool_name": tool_name}))
 

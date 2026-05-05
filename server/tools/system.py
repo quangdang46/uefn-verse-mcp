@@ -1,5 +1,5 @@
 """System commands."""
-from .. import bridge
+from server import bridge
 
 def ping() -> str:
     """Health check."""

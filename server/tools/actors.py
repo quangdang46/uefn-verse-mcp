@@ -1,5 +1,5 @@
 """Actor commands."""
-from .. import bridge
+from server import bridge
 
 def get_all_actors() -> str:
     """Get all actors in the current level."""

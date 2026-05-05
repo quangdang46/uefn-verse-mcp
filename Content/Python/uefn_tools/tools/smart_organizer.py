@@ -11,7 +11,7 @@ FEATURES:
   • Safe dry-run preview mode
   • Filter options to include unused assets or keep only referenced items
 
-USAGE (REPL):
+USAGE (REPL / MCP):
     import uefn_tools as tb
 
     # Preview what would happen
@@ -19,6 +19,8 @@ USAGE (REPL):
 
     # Actually execute
     tb.run("organize_smart_categorize", scan_path="/Game/Imported", organized_root="/Game/MyLevel", dry_run=False)
+
+    # organize_open is an alias: same args, or omit scan_path for a short MCP hint dict
 """
 
 from __future__ import annotations
@@ -304,79 +306,40 @@ def run_smart_categorize(
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-#  Interactive Window
+#  organize_open — MCP alias (no PySide window)
 # ─────────────────────────────────────────────────────────────────────────────
-
-_organizer_window = None  # singleton
-
-# Prefix → type mapping used by the window scan.
-# Zero per-asset API calls — pure string matching on the asset name.
-# Covers Epic naming conventions used in UEFN projects.
-_PREFIX_TO_TYPE: Dict[str, str] = {
-    "T_":    "Textures",
-    "TX_":   "Textures",
-    "SM_":   "Meshes",
-    "SKM_":  "Meshes",
-    "SK_":   "Meshes",
-    "M_":    "Materials",
-    "MI_":   "MaterialInstances",
-    "MIC_":  "MaterialInstances",
-    "MF_":   "MaterialFunctions",
-    "MPC_":  "MaterialParameterCollections",
-    "BP_":   "Blueprints",
-    "ABP_":  "Blueprints",
-    "WBP_":  "WidgetBlueprints",
-    "NS_":   "Niagara",
-    "NE_":   "Niagara",
-    "FX_":   "Niagara",
-    "AM_":   "Animations",
-    "AS_":   "Animations",
-    "A_":    "Sounds",
-    "SFX_":  "Sounds",
-    "SC_":   "Sounds",
-    "DA_":   "Data",
-    "DT_":   "Data",
-    "LS_":   "LevelSequences",
-}
-
-def _type_from_prefix(asset_name: str) -> str:
-    """Detect asset type from Epic naming prefix. O(1), no API calls."""
-    for prefix, atype in _PREFIX_TO_TYPE.items():
-        if asset_name.startswith(prefix):
-            return atype
-    return "Other"
-
-_ALL_TYPES = [
-    "Textures", "Sounds", "Meshes", "Materials", "MaterialInstances",
-    "MaterialFunctions", "MaterialParameterCollections", "Blueprints",
-    "WidgetBlueprints", "Niagara", "Animations", "Data", "LevelSequences",
-    "WorldPartition",
-]
 
 
 @register_tool(
     name="organize_open",
     category="Project",
     description=(
-        "Open the Auto Organizer window — scan a Content Browser path, preview planned moves "
-        "in a table (asset name / class / type / category / destination), toggle per-type "
-        "checkboxes, then organize in one click. Uses the same smart keyword-categorization "
-        "as organize_smart_categorize."
+        "MCP / headless only: no editor window. If scan_path is set, runs the same logic as "
+        "organize_smart_categorize. If omitted, returns guidance to call that tool with "
+        "scan_path, organized_root, dry_run, include_unused."
     ),
-    tags=["organize", "smart", "category", "folder", "window", "ui"],
+    tags=["organize", "smart", "category", "folder", "mcp", "headless"],
 )
-def run_organize_open(**kwargs) -> dict:
-    global _organizer_window
-    try:
-        from PySide6.QtWidgets import QApplication
-        QApplication.instance() or QApplication([])
-        if _organizer_window is None or not _organizer_window.isVisible():
-            _organizer_window = _build_organizer_window()
-            _organizer_window.show_in_uefn()
-        else:
-            _organizer_window.raise_()
-            _organizer_window.activateWindow()
-        return {"status": "ok", "message": "Auto Organizer window opened."}
-    except Exception as exc:
-        log_error(f"organize_open: {exc}")
-        return {"status": "error", "error": str(exc)}
+def run_organize_open(
+    scan_path: str = "",
+    organized_root: str = "/Game/Organized",
+    dry_run: bool = True,
+    include_unused: bool = True,
+    **kwargs,
+) -> dict:
+    if not (scan_path or "").strip():
+        return {
+            "status": "ok",
+            "message": (
+                "No PySide UI. Call organize_smart_categorize (or organize_open) with "
+                "scan_path and organized_root; use dry_run=True first."
+            ),
+            "delegate": "organize_smart_categorize",
+        }
+    return run_smart_categorize(
+        scan_path=scan_path,
+        organized_root=organized_root,
+        dry_run=dry_run,
+        include_unused=include_unused,
+        **kwargs,
+    )

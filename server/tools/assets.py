@@ -1,5 +1,5 @@
 """Asset commands."""
-from .. import bridge
+from server import bridge
 
 def list_assets(directory: str = "/", recursive: bool = True, class_filter: str = "") -> str:
     """List assets in a directory."""
