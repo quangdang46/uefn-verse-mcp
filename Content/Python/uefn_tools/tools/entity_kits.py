@@ -20,8 +20,8 @@ KITS = {
         {"class": "/Script/FortniteGame.FortVendingMachineCreative", "loc": (-200, 0, 0), "label": "Lobby_Vending"},
     ],
     "Teleport Link": [
-        {"class": "/Script/FortniteGame.FortTeleporterCreative", "loc": (0, 0, 0), "label": "Teleport_A"},
-        {"class": "/Script/FortniteGame.FortTeleporterCreative", "loc": (1000, 0, 0), "label": "Teleport_B"},
+        {"class": "/Script/FortniteGame.FortCreativeTeleporter", "loc": (0, 0, 0), "label": "Teleport_A"},
+        {"class": "/Script/FortniteGame.FortCreativeTeleporter", "loc": (1000, 0, 0), "label": "Teleport_B"},
     ],
     "Objective Hub": [
         {"class": "/Script/FortniteGame.FortCaptureAreaCreative", "loc": (0, 0, 0), "label": "Objective_Point"},
