@@ -12,6 +12,10 @@ Claude Code ←── stdio ──→ server/main.py (FastMCP)
                           uefn_tools/ (358 tools)
 ```
 
+## Origins and credits
+This repo is a **fork and continuation** of **[UEFN-TOOLBELT](https://github.com/undergroundrap/UEFN-TOOLBELT)** — the large `uefn_tools` Python package for UEFN (hundreds of editor helpers, Verse workflows, arena tools, and related utilities). The in-editor side of this project is still that toolkit, deployed into your island project via `deploy.py`.
+The **host MCP server ↔ in-editor HTTP listener** split (stdio MCP outside UEFN, JSON over HTTP on `127.0.0.1`, commands drained on the editor main thread) follows the same idea as **[uefn-mcp-server](https://github.com/KirChuvakov/uefn-mcp-server)** by Kir Chuvakov: external `mcp` SDK process plus a listener inside UEFN. This fork uses **FastMCP** (`server/main.py`), extends the bridge for the full toolbelt (including the escape-hatch `run_tool` surface), and documents the lineage in `Content/Python/uefn_tools/tools/mcp_bridge.py`. If you want a minimal reference implementation or Kir’s original tool set, start from that upstream repo.
+
 ## Setup
 
 ### 1. Deploy to UEFN
