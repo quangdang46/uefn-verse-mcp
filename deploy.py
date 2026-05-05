@@ -14,6 +14,9 @@ Usage:
 This copies:
     - uefn_tools/     -> {project}/Content/Python/uefn_tools/   (includes mcp_bridge HTTP listener)
     - init_unreal.py  -> {project}/Content/Python/init_unreal.py
+
+Also ensures {project}/.urcignore contains Content/Python/* so URC does not try to sync
+editor-only Python tooling to the cloud.
 """
 
 from __future__ import annotations
@@ -22,6 +25,30 @@ import os
 import shutil
 import sys
 from pathlib import Path
+
+URCIGNORE_PYTHON_GLOB = "Content/Python/*"
+
+
+def _ensure_urcignore_python(project_root: Path, dry_run: bool) -> None:
+    """Append Content/Python/* to .urcignore at project root if missing."""
+    urc = project_root / ".urcignore"
+    if urc.exists():
+        text = urc.read_text(encoding="utf-8", errors="replace")
+        for line in text.splitlines():
+            if line.strip() == URCIGNORE_PYTHON_GLOB:
+                return
+        if dry_run:
+            print(f"[DRY RUN] Would append {URCIGNORE_PYTHON_GLOB!r} to {urc}")
+            return
+        ending = "" if text.endswith("\n") or not text else "\n"
+        urc.write_text(text + ending + URCIGNORE_PYTHON_GLOB + "\n", encoding="utf-8")
+        print(f"[OK] Appended {URCIGNORE_PYTHON_GLOB!r} to {urc}")
+    else:
+        if dry_run:
+            print(f"[DRY RUN] Would create {urc} with {URCIGNORE_PYTHON_GLOB!r}")
+            return
+        urc.write_text(URCIGNORE_PYTHON_GLOB + "\n", encoding="utf-8")
+        print(f"[OK] Created {urc} with {URCIGNORE_PYTHON_GLOB!r}")
 
 
 def find_fortnite_projects() -> list[tuple[str, str]]:
@@ -58,6 +85,7 @@ def deploy(project_path: str, dry_run: bool = False) -> None:
         print(f"[DRY RUN] Would deploy to: {dest_base}")
         print(f"  uefn_tools/     -> {dest_base}/uefn_tools/")
         print(f"  init_unreal.py  -> {dest_base}/init_unreal.py")
+        _ensure_urcignore_python(Path(project_path), dry_run=True)
         return
     
     dest_base.mkdir(parents=True, exist_ok=True)
@@ -73,7 +101,9 @@ def deploy(project_path: str, dry_run: bool = False) -> None:
     init_dest = dest_base / "init_unreal.py"
     shutil.copy2(init_src, init_dest)
     print(f"[OK] init_unreal.py -> {init_dest}")
-    
+
+    _ensure_urcignore_python(Path(project_path), dry_run=False)
+
     print()
     print("Deploy complete!")
     print()

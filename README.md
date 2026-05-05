@@ -29,7 +29,7 @@ python deploy.py
 Open UEFN → Python Console → type:
 
 ```python
-import uefn_tools as ut; ut.run("mcp_start")
+import uefn_tools as ut; ut.register(); ut.run('mcp_start')
 ```
 
 Output Log shows: `Listener started on http://127.0.0.1:8765`
