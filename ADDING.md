@@ -1,2 +1,0 @@
-__ExternalObjects__
-__ExternalActors__
