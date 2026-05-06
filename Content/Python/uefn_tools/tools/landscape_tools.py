@@ -246,3 +246,91 @@ def run_landscape_set_material(
     except Exception as e:
         log_error(f"[landscape_set_material] {e}")
         return {"status": "error", "message": str(e)}
+
+
+# ── Material Instance (Landscape-ready parent chain) ───────────────────────────
+#
+# How to run (UEFN editor, Python enabled):
+#   1. Copy/sync `Content/Python/uefn_tools/` into your island project (e.g. `python deploy.py`
+#      from this repo). Restart UEFN if the editor was already open so Python picks up changes.
+#   2. Optional MCP listener refresh: `import uefn_tools as ut; ut.run("mcp_start")`
+#   3. Via registry (after reload/restart):
+#        import uefn_tools as tb
+#        print(tb.run("landscape_material_create_project_mic",
+#                     asset_name="MI_MyTerrain"))
+#      kwargs: template_mic_path, package_folder="/Game/Materials", asset_name=...
+#   4. Bypass registry (always works once this file is on disk):
+#        from uefn_tools.tools.landscape_tools import run_landscape_material_create_project_mic
+#        print(run_landscape_material_create_project_mic(asset_name="MI_MyTerrain"))
+
+DEFAULT_LANDSCAPE_TEMPLATE_MIC = (
+    "/Game/Athena/Environments/Landscape/Creative/"
+    "M_Athena_Terrain_TropicalBiome_Inst_Basic.M_Athena_Terrain_TropicalBiome_Inst_Basic"
+)
+
+
+@register_tool(
+    name="landscape_material_create_project_mic",
+    category="Landscape",
+    description=(
+        "Create a project MaterialInstanceConstant suitable for Landscape assignment by "
+        "parenting it to an Athena terrain MIC template (full Landscape blend graph). "
+        "Edit the new MIC in the Material Instance Editor — duplicate Epic templates "
+        "via AssetTools can timeout on heavy master Materials; MIC parenting is reliable."
+    ),
+    tags=["landscape", "material", "mic", "terrain", "create"],
+    example=(
+        'tb.run("landscape_material_create_project_mic", '
+        'asset_name="MI_MyIslandTerrain")'
+    ),
+)
+def run_landscape_material_create_project_mic(
+    template_mic_path: str = DEFAULT_LANDSCAPE_TEMPLATE_MIC,
+    package_folder: str = "/Game/Materials",
+    asset_name: str = "MI_CustomLandscape",
+    **kwargs,
+) -> dict:
+    """
+    Args:
+        template_mic_path: Existing MIC asset path (Athena terrain instance recommended).
+        package_folder:    Content folder for the new MIC (created if missing).
+        asset_name:        Asset name without path (e.g. MI_CustomLandscape).
+
+    Returns:
+        {"status": "ok", "path": str} or {"status": "error", "message": str}
+    """
+    full_path = f"{package_folder}/{asset_name}"
+    try:
+        if not unreal.EditorAssetLibrary.does_directory_exist(package_folder):
+            unreal.EditorAssetLibrary.make_directory(package_folder)
+
+        parent = unreal.EditorAssetLibrary.load_asset(template_mic_path)
+        if parent is None:
+            msg = f"Could not load template MIC: {template_mic_path}"
+            log_error(f"[landscape_material_create_project_mic] {msg}")
+            return {"status": "error", "message": msg}
+
+        if unreal.EditorAssetLibrary.does_asset_exist(full_path):
+            unreal.EditorAssetLibrary.delete_asset(full_path)
+
+        factory = unreal.MaterialInstanceConstantFactoryNew()
+        at = unreal.AssetToolsHelpers.get_asset_tools()
+        mi = at.create_asset(
+            asset_name, package_folder,
+            unreal.MaterialInstanceConstant, factory,
+        )
+        if mi is None:
+            msg = f"create_asset failed for {full_path}"
+            log_error(f"[landscape_material_create_project_mic] {msg}")
+            return {"status": "error", "message": msg}
+
+        unreal.MaterialEditingLibrary.set_material_instance_parent(mi, parent)
+        unreal.MaterialEditingLibrary.update_material_instance(mi)
+        unreal.EditorAssetLibrary.save_asset(mi.get_path_name())
+
+        path_str = mi.get_path_name()
+        log_info(f"[landscape_material_create_project_mic] Created → {path_str}")
+        return {"status": "ok", "path": path_str, "template": template_mic_path}
+    except Exception as e:
+        log_error(f"[landscape_material_create_project_mic] {e}")
+        return {"status": "error", "message": str(e)}
