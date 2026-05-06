@@ -25,8 +25,8 @@ UEFN editor main thread -> unreal.* -> 354 registered uefn_tools actions
 **Quick setup**
 
 ```bash
-git clone https://github.com/quangdang46/verse-mcp.git
-cd verse-mcp
+git clone https://github.com/quangdang46/uefn-verse-mcp.git
+cd uefn-verse-mcp
 python -m pip install -r requirements.txt
 python deploy.py --project "MyIsland"
 ```
@@ -84,8 +84,8 @@ This repo sits on top of two earlier ideas:
 The fastest end-to-end workflow is:
 
 ```bash
-git clone https://github.com/quangdang46/verse-mcp.git
-cd verse-mcp
+git clone https://github.com/quangdang46/uefn-verse-mcp.git
+cd uefn-verse-mcp
 python -m pip install -r requirements.txt
 python deploy.py --project "MyIsland"
 ```
@@ -101,7 +101,7 @@ import uefn_tools as ut; ut.register(); ut.run("mcp_start")
   "mcpServers": {
     "uefn": {
       "command": "python",
-      "args": ["C:\\path\\to\\verse-mcp\\server\\main.py"]
+      "args": ["C:\\path\\to\\uefn-verse-mcp\\server\\main.py"]
     }
   }
 }
@@ -225,8 +225,8 @@ Content/Python/*
 1. Clone the repo.
 
 ```bash
-git clone https://github.com/quangdang46/verse-mcp.git
-cd verse-mcp
+git clone https://github.com/quangdang46/uefn-verse-mcp.git
+cd uefn-verse-mcp
 ```
 
 1. Install the host dependency into the same Python interpreter your MCP client will use.
@@ -256,7 +256,7 @@ ut.run("mcp_start")
   "mcpServers": {
     "uefn": {
       "command": "python",
-      "args": ["C:\\path\\to\\verse-mcp\\server\\main.py"]
+      "args": ["C:\\path\\to\\uefn-verse-mcp\\server\\main.py"]
     }
   }
 }
@@ -377,7 +377,7 @@ Use the same Python interpreter here that you used for `python -m pip install -r
   "mcpServers": {
     "uefn": {
       "command": "python",
-      "args": ["C:\\dev\\verse-mcp\\server\\main.py"]
+      "args": ["C:\\dev\\uefn-verse-mcp\\server\\main.py"]
     }
   }
 }
