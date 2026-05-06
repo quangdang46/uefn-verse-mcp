@@ -24,18 +24,46 @@ KITS = {
         {"class": "/Script/FortniteGame.FortItemSpawnerCreative", "loc": (200, 0, 0), "label": "Lobby_Weapon_Spawner"},
         {"class": "/Script/FortniteGame.FortVendingMachineCreative", "loc": (-200, 0, 0), "label": "Lobby_Vending"},
     ],
+    # Paired pads — same blueprint as in-editor Creative Teleporter device (Verse `teleporter_device`).
     "Teleport Link": [
-        {"class": "/Script/FortniteGame.FortCreativeTeleporter", "loc": (0, 0, 0), "label": "Teleport_A"},
-        {"class": "/Script/FortniteGame.FortCreativeTeleporter", "loc": (1000, 0, 0), "label": "Teleport_B"},
+        {
+            "class": "/Game/Creative/Devices/Teleporter/BP_Creative_Device_Teleporter.BP_Creative_Device_Teleporter_C",
+            "loc": (0, 0, 0),
+            "label": "Teleport_A",
+        },
+        {
+            "class": "/Game/Creative/Devices/Teleporter/BP_Creative_Device_Teleporter.BP_Creative_Device_Teleporter_C",
+            "loc": (1000, 0, 0),
+            "label": "Teleport_B",
+        },
     ],
     "Objective Hub": [
         {"class": "/Script/FortniteGame.FortCaptureAreaCreative", "loc": (0, 0, 0), "label": "Objective_Point"},
         {"class": "/Script/FortniteGame.FortCreativeTimerDevice", "loc": (0, 200, 500), "label": "Objective_Timer"},
     ],
+    # Creative Button — Verse `button_device`; blueprint shipped with UEFN (see device_catalog hint Creative).
+    "Button": [
+        {
+            "class": "/Game/Creative/Devices/Button/BP_Creative_Button.BP_Creative_Button_C",
+            "loc": (0, 0, 0),
+            "label": "Button_Device",
+        },
+    ],
+    # Single Creative Teleporter — Verse `teleporter_device`; wire A/B targets in Details or use kit "Teleport Link".
+    "Teleport": [
+        {
+            "class": "/Game/Creative/Devices/Teleporter/BP_Creative_Device_Teleporter.BP_Creative_Device_Teleporter_C",
+            "loc": (0, 0, 0),
+            "label": "Teleport_Device",
+        },
+    ],
 }
 
 # Primary kit path -> alternate paths (tried in order) when load_class fails.
 CLASS_FALLBACKS: dict[str, list[str]] = {
+    "/Game/Creative/Devices/Teleporter/BP_Creative_Device_Teleporter.BP_Creative_Device_Teleporter_C": [
+        "/Script/FortniteGame.FortCreativeTeleporter",
+    ],
     "/Script/FortniteGame.FortTeleporterCreative": [
         "/Script/FortniteGame.FortCreativeTeleporter",
     ],
