@@ -1,8 +1,8 @@
 # uefn-mcp
 
-![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)
-![UEFN](https://img.shields.io/badge/UEFN-Fortnite%20Editor-FF7A00)
-![MCP](https://img.shields.io/badge/MCP-FastMCP%20bridge-2EA44F)
+Python 3.10+
+UEFN
+MCP
 
 > A two-process MCP bridge for Unreal Editor for Fortnite that lets Claude Code, Cursor, and other MCP clients drive a live UEFN editor safely.
 
@@ -53,14 +53,16 @@ UEFN's Python layer is powerful, but it is a bad place to host a modern MCP serv
 
 ### Why Use `uefn-mcp`?
 
-| Capability | What it gives you |
-| --- | --- |
-| 31 direct MCP tools | A curated surface for actors, assets, project info, viewport, logs, and status |
-| 354 `run_tool` entries | An escape hatch into the full `uefn_tools` registry without re-wrapping every action as first-class MCP |
-| Main-thread-safe dispatch | `unreal.*` work is queued and executed on editor ticks instead of from the HTTP thread |
-| Auto port discovery | The host scans ports `8765-8770` and reconnects automatically if the listener moved |
-| Generic UEFN loader | `init_unreal.py` auto-loads any package under `Content/Python/` that exposes `register()` |
-| Deployment helper | `deploy.py` copies the package and keeps `.urcignore` aligned for editor-only Python files |
+
+| Capability                | What it gives you                                                                                       |
+| ------------------------- | ------------------------------------------------------------------------------------------------------- |
+| 31 direct MCP tools       | A curated surface for actors, assets, project info, viewport, logs, and status                          |
+| 354 `run_tool` entries    | An escape hatch into the full `uefn_tools` registry without re-wrapping every action as first-class MCP |
+| Main-thread-safe dispatch | `unreal.*` work is queued and executed on editor ticks instead of from the HTTP thread                  |
+| Auto port discovery       | The host scans ports `8765-8770` and reconnects automatically if the listener moved                     |
+| Generic UEFN loader       | `init_unreal.py` auto-loads any package under `Content/Python/` that exposes `register()`               |
+| Deployment helper         | `deploy.py` copies the package and keeps `.urcignore` aligned for editor-only Python files              |
+
 
 The live inventory is tracked in [FEATURES.md](FEATURES.md), and deeper engine constraints are documented in [docs/UEFN_QUIRKS.md](docs/UEFN_QUIRKS.md).
 
@@ -90,9 +92,7 @@ python deploy.py --project "MyIsland"
 
 ```python
 # In the UEFN Python console
-import uefn_tools as ut
-ut.register()
-ut.run("mcp_start")
+import uefn_tools as ut; ut.register(); ut.run("mcp_start")
 ```
 
 ```jsonc
@@ -149,11 +149,13 @@ No editor-side package installation and no IDE-specific glue should be required 
 
 ## Comparison
 
-| Approach | MCP-native | Full registry access | Main-thread safety model | Best for |
-| --- | --- | --- | --- | --- |
-| Ad hoc UEFN Python scripts | No | No | You own every threading mistake | One-off local editor tasks |
-| Minimal custom HTTP bridge | Partial | Usually narrow | Depends on your implementation | Small, fixed editor automations |
-| `uefn-mcp` | Yes | Yes, via `run_tool` | Queue + Slate tick dispatch | AI-agent-driven UEFN editing and experimentation |
+
+| Approach                   | MCP-native | Full registry access | Main-thread safety model        | Best for                                         |
+| -------------------------- | ---------- | -------------------- | ------------------------------- | ------------------------------------------------ |
+| Ad hoc UEFN Python scripts | No         | No                   | You own every threading mistake | One-off local editor tasks                       |
+| Minimal custom HTTP bridge | Partial    | Usually narrow       | Depends on your implementation  | Small, fixed editor automations                  |
+| `uefn-mcp`                 | Yes        | Yes, via `run_tool`  | Queue + Slate tick dispatch     | AI-agent-driven UEFN editing and experimentation |
+
 
 ## Prerequisites
 
@@ -208,7 +210,7 @@ If you need full control:
 python -m pip install -r requirements.txt
 ```
 
-4. Ensure the project root `.urcignore` includes:
+1. Ensure the project root `.urcignore` includes:
 
 ```text
 Content/Python/*
@@ -227,19 +229,19 @@ git clone https://github.com/quangdang46/verse-mcp.git
 cd verse-mcp
 ```
 
-2. Install the host dependency into the same Python interpreter your MCP client will use.
+1. Install the host dependency into the same Python interpreter your MCP client will use.
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-3. Deploy the UEFN-side package.
+1. Deploy the UEFN-side package.
 
 ```bash
 python deploy.py --project "MyIsland"
 ```
 
-4. Start the listener inside UEFN.
+1. Start the listener inside UEFN.
 
 ```python
 import uefn_tools as ut
@@ -247,7 +249,7 @@ ut.register()
 ut.run("mcp_start")
 ```
 
-5. Add the server to your MCP client config.
+1. Add the server to your MCP client config.
 
 ```jsonc
 {
@@ -260,7 +262,7 @@ ut.run("mcp_start")
 }
 ```
 
-6. Verify the connection.
+1. Verify the connection.
 
 ```python
 ping()
@@ -268,7 +270,7 @@ get_status()
 run_tool("smoke_test")
 ```
 
-7. Start editing the level from your MCP client.
+1. Start editing the level from your MCP client.
 
 ```python
 get_all_actors()
@@ -280,64 +282,76 @@ spawn_actor(class_path="/Game/Blueprints/BP_Cube.BP_Cube_C", location=[0, 0, 100
 
 ### System
 
-| Tool | What it does | Example |
-| --- | --- | --- |
-| `ping` | Confirms the host can reach the in-editor bridge | `ping()` |
-| `get_status` | Returns listener status and bridge metadata | `get_status()` |
+
+| Tool             | What it does                                             | Example                                            |
+| ---------------- | -------------------------------------------------------- | -------------------------------------------------- |
+| `ping`           | Confirms the host can reach the in-editor bridge         | `ping()`                                           |
+| `get_status`     | Returns listener status and bridge metadata              | `get_status()`                                     |
 | `execute_python` | Executes arbitrary Python inside the UEFN editor runtime | `execute_python(code="result = {'status': 'ok'}")` |
-| `get_log` | Returns recent bridge log lines | `get_log(lines=100)` |
-| `shutdown` | Stops the in-editor listener | `shutdown()` |
+| `get_log`        | Returns recent bridge log lines                          | `get_log(lines=100)`                               |
+| `shutdown`       | Stops the in-editor listener                             | `shutdown()`                                       |
+
 
 ### Actors
 
-| Tool | What it does | Example |
-| --- | --- | --- |
-| `get_all_actors` | Lists actors in the current level | `get_all_actors()` |
-| `get_selected_actors` | Reads the current editor selection | `get_selected_actors()` |
-| `spawn_actor` | Spawns an actor from a class or object path | `spawn_actor(class_path="/Game/Blueprints/BP_Cube.BP_Cube_C", location=[0, 0, 100])` |
-| `delete_actors` | Deletes actors by label | `delete_actors(actor_labels=["Cube_1", "Cube_2"])` |
-| `set_actor_transform` | Updates actor location, rotation, and/or scale | `set_actor_transform(actor_label="Cube_1", location=[200, 0, 100])` |
-| `get_actor_properties` | Reads properties for a named actor | `get_actor_properties(actor_label="Cube_1")` |
-| `set_actor_properties` | Writes multiple actor properties | `set_actor_properties(actor_label="Cube_1", properties={"mobility": "Static"})` |
-| `select_actors` | Selects actors in the editor | `select_actors(actor_labels=["Cube_1"])` |
-| `focus_selected` | Moves the viewport to the active selection | `focus_selected()` |
+
+| Tool                   | What it does                                   | Example                                                                              |
+| ---------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `get_all_actors`       | Lists actors in the current level              | `get_all_actors()`                                                                   |
+| `get_selected_actors`  | Reads the current editor selection             | `get_selected_actors()`                                                              |
+| `spawn_actor`          | Spawns an actor from a class or object path    | `spawn_actor(class_path="/Game/Blueprints/BP_Cube.BP_Cube_C", location=[0, 0, 100])` |
+| `delete_actors`        | Deletes actors by label                        | `delete_actors(actor_labels=["Cube_1", "Cube_2"])`                                   |
+| `set_actor_transform`  | Updates actor location, rotation, and/or scale | `set_actor_transform(actor_label="Cube_1", location=[200, 0, 100])`                  |
+| `get_actor_properties` | Reads properties for a named actor             | `get_actor_properties(actor_label="Cube_1")`                                         |
+| `set_actor_properties` | Writes multiple actor properties               | `set_actor_properties(actor_label="Cube_1", properties={"mobility": "Static"})`      |
+| `select_actors`        | Selects actors in the editor                   | `select_actors(actor_labels=["Cube_1"])`                                             |
+| `focus_selected`       | Moves the viewport to the active selection     | `focus_selected()`                                                                   |
+
 
 ### Assets
 
-| Tool | What it does | Example |
-| --- | --- | --- |
-| `list_assets` | Lists assets in a directory | `list_assets(directory="/Game", recursive=True)` |
-| `get_asset_info` | Reads details for a specific asset path | `get_asset_info(asset_path="/Game/MyFolder/MyAsset")` |
-| `get_selected_assets` | Returns selected Content Browser assets | `get_selected_assets()` |
-| `rename_asset` | Renames or moves an asset | `rename_asset(old_path="/Game/Old", new_path="/Game/New")` |
-| `delete_asset` | Deletes an asset | `delete_asset(asset_path="/Game/Trash/TempAsset")` |
-| `duplicate_asset` | Copies an asset to a new path | `duplicate_asset(source_path="/Game/A", dest_path="/Game/B")` |
-| `does_asset_exist` | Checks if an asset exists | `does_asset_exist(asset_path="/Game/Props/SM_Crate")` |
-| `save_asset` | Saves a dirty asset | `save_asset(asset_path="/Game/Props/SM_Crate")` |
-| `search_assets` | Searches the Asset Registry with directory and class filters | `search_assets(class_name="Material", directory="/Game", recursive=True)` |
+
+| Tool                  | What it does                                                 | Example                                                                   |
+| --------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------- |
+| `list_assets`         | Lists assets in a directory                                  | `list_assets(directory="/Game", recursive=True)`                          |
+| `get_asset_info`      | Reads details for a specific asset path                      | `get_asset_info(asset_path="/Game/MyFolder/MyAsset")`                     |
+| `get_selected_assets` | Returns selected Content Browser assets                      | `get_selected_assets()`                                                   |
+| `rename_asset`        | Renames or moves an asset                                    | `rename_asset(old_path="/Game/Old", new_path="/Game/New")`                |
+| `delete_asset`        | Deletes an asset                                             | `delete_asset(asset_path="/Game/Trash/TempAsset")`                        |
+| `duplicate_asset`     | Copies an asset to a new path                                | `duplicate_asset(source_path="/Game/A", dest_path="/Game/B")`             |
+| `does_asset_exist`    | Checks if an asset exists                                    | `does_asset_exist(asset_path="/Game/Props/SM_Crate")`                     |
+| `save_asset`          | Saves a dirty asset                                          | `save_asset(asset_path="/Game/Props/SM_Crate")`                           |
+| `search_assets`       | Searches the Asset Registry with directory and class filters | `search_assets(class_name="Material", directory="/Game", recursive=True)` |
+
 
 ### Project / Level
 
-| Tool | What it does | Example |
-| --- | --- | --- |
-| `get_project_info` | Returns project metadata | `get_project_info()` |
-| `save_current_level` | Saves the current level | `save_current_level()` |
-| `get_level_info` | Returns summary info about the active level | `get_level_info()` |
+
+| Tool                 | What it does                                | Example                |
+| -------------------- | ------------------------------------------- | ---------------------- |
+| `get_project_info`   | Returns project metadata                    | `get_project_info()`   |
+| `save_current_level` | Saves the current level                     | `save_current_level()` |
+| `get_level_info`     | Returns summary info about the active level | `get_level_info()`     |
+
 
 ### Viewport
 
-| Tool | What it does | Example |
-| --- | --- | --- |
-| `get_viewport_camera` | Reads the editor camera position and rotation | `get_viewport_camera()` |
-| `set_viewport_camera` | Moves the editor camera | `set_viewport_camera(location=[-800, 0, 400], rotation=[-15, 0, 0])` |
+
+| Tool                  | What it does                                  | Example                                                              |
+| --------------------- | --------------------------------------------- | -------------------------------------------------------------------- |
+| `get_viewport_camera` | Reads the editor camera position and rotation | `get_viewport_camera()`                                              |
+| `set_viewport_camera` | Moves the editor camera                       | `set_viewport_camera(location=[-800, 0, 400], rotation=[-15, 0, 0])` |
+
 
 ### Escape Hatch
 
-| Tool | What it does | Example |
-| --- | --- | --- |
-| `run_tool` | Executes any registered `uefn_tools` action by name | `run_tool("arena_generate", kwargs={"size": "large"})` |
-| `list_tools` | Lists all registered tools, optionally by category | `list_tools(category="Materials")` |
-| `describe_tool` | Returns description and parameters for one tool | `describe_tool("material_gradient_painter")` |
+
+| Tool            | What it does                                        | Example                                                |
+| --------------- | --------------------------------------------------- | ------------------------------------------------------ |
+| `run_tool`      | Executes any registered `uefn_tools` action by name | `run_tool("arena_generate", kwargs={"size": "large"})` |
+| `list_tools`    | Lists all registered tools, optionally by category  | `list_tools(category="Materials")`                     |
+| `describe_tool` | Returns description and parameters for one tool     | `describe_tool("material_gradient_painter")`           |
+
 
 ### Working With the Full Registry
 
@@ -371,10 +385,12 @@ Use the same Python interpreter here that you used for `python -m pip install -r
 
 ### Environment Variables
 
-| Variable | Default | Purpose |
-| --- | --- | --- |
-| `UEFN_MCP_REQUEST_TIMEOUT` | `30` | Default timeout in seconds for bridge requests |
-| `UEFN_MCP_LONG_TOOL_TIMEOUT` | `900` | Timeout for long-running `run_tool` calls that opt into the extended budget |
+
+| Variable                     | Default | Purpose                                                                     |
+| ---------------------------- | ------- | --------------------------------------------------------------------------- |
+| `UEFN_MCP_REQUEST_TIMEOUT`   | `30`    | Default timeout in seconds for bridge requests                              |
+| `UEFN_MCP_LONG_TOOL_TIMEOUT` | `900`   | Timeout for long-running `run_tool` calls that opt into the extended budget |
+
 
 ### Port Behavior
 
@@ -430,28 +446,32 @@ That means `uefn_tools` is only one possible package. The loader is reusable for
 
 Important files:
 
-| File | Responsibility |
-| --- | --- |
-| `server/main.py` | External FastMCP entrypoint |
-| `server/bridge.py` | Host-side HTTP client for the in-editor listener |
-| `server/port_discovery.py` | Port probing across `8765-8770` |
-| `Content/Python/uefn_tools/tools/mcp_bridge.py` | In-editor HTTP server and queue dispatcher |
-| `Content/Python/uefn_tools/__init__.py` | Package root, registry setup, plugin loading |
-| `deploy.py` | Project deployment and `.urcignore` maintenance |
-| `init_unreal.py` | Generic UEFN Python package loader |
+
+| File                                            | Responsibility                                   |
+| ----------------------------------------------- | ------------------------------------------------ |
+| `server/main.py`                                | External FastMCP entrypoint                      |
+| `server/bridge.py`                              | Host-side HTTP client for the in-editor listener |
+| `server/port_discovery.py`                      | Port probing across `8765-8770`                  |
+| `Content/Python/uefn_tools/tools/mcp_bridge.py` | In-editor HTTP server and queue dispatcher       |
+| `Content/Python/uefn_tools/__init__.py`         | Package root, registry setup, plugin loading     |
+| `deploy.py`                                     | Project deployment and `.urcignore` maintenance  |
+| `init_unreal.py`                                | Generic UEFN Python package loader               |
+
 
 For a shorter architecture note, see [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## Troubleshooting
 
-| Symptom | Likely cause | Fix |
-| --- | --- | --- |
-| `No module named 'mcp'` | Your MCP client is running a different Python than the one you installed into | Install `requirements.txt` into the exact interpreter used by the MCP `command` |
-| `UEFN listener not found on ports 8765-8770` | The in-editor bridge is not running | In the UEFN console, run `import uefn_tools as ut; ut.register(); ut.run("mcp_start")` |
-| Commands fail right after deploy | The package was copied into the project, but the editor has not loaded it yet | Re-run `ut.register()` manually, or restart UEFN if you changed `init_unreal.py` |
-| The editor freezes during custom automation | Blocking code is running on the main thread | Avoid `time.sleep()` and long synchronous loops in editor-side code; keep work queued and tick-driven |
-| Asset or project paths resolve strangely in `init_unreal.py` | UEFN path helpers do not always point where you expect during startup | Use the file-system path of `init_unreal.py` itself rather than `unreal.Paths.project_content_dir()` |
-| `run_tool` works locally but returns unusable data to the client | A tool is returning `None`, a primitive, or a live Unreal object instead of a JSON-friendly result | Make the tool return a structured `dict`, preferably with a `"status"` field |
+
+| Symptom                                                          | Likely cause                                                                                       | Fix                                                                                                   |
+| ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `No module named 'mcp'`                                          | Your MCP client is running a different Python than the one you installed into                      | Install `requirements.txt` into the exact interpreter used by the MCP `command`                       |
+| `UEFN listener not found on ports 8765-8770`                     | The in-editor bridge is not running                                                                | In the UEFN console, run `import uefn_tools as ut; ut.register(); ut.run("mcp_start")`                |
+| Commands fail right after deploy                                 | The package was copied into the project, but the editor has not loaded it yet                      | Re-run `ut.register()` manually, or restart UEFN if you changed `init_unreal.py`                      |
+| The editor freezes during custom automation                      | Blocking code is running on the main thread                                                        | Avoid `time.sleep()` and long synchronous loops in editor-side code; keep work queued and tick-driven |
+| Asset or project paths resolve strangely in `init_unreal.py`     | UEFN path helpers do not always point where you expect during startup                              | Use the file-system path of `init_unreal.py` itself rather than `unreal.Paths.project_content_dir()`  |
+| `run_tool` works locally but returns unusable data to the client | A tool is returning `None`, a primitive, or a live Unreal object instead of a JSON-friendly result | Make the tool return a structured `dict`, preferably with a `"status"` field                          |
+
 
 ## Limitations
 
