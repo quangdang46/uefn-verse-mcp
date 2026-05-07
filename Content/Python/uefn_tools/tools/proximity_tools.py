@@ -493,3 +493,77 @@ def actor_copy_to_positions(
         "spawned": spawned,
         "folder": folder,
     }
+
+
+@register_tool(
+    name="proximity_find",
+    category="Proximity Tools",
+    description=(
+        "Find all actors within a radius of a named reference actor. "
+        "Optionally filter by class name. Returns labels, classes, and distances."
+    ),
+    tags=["proximity", "find", "radius", "nearby", "search", "distance"],
+)
+def proximity_find(
+    actor_label: str = "",
+    radius: float = 1000.0,
+    class_filter: str = "",
+    **kwargs,
+) -> dict:
+    """
+    Find all actors within a given radius of a reference actor.
+
+    Args:
+        actor_label:  Label (or partial) of the reference actor.
+        radius:       Search radius in cm (default 1000).
+        class_filter: Optional class name substring to narrow results.
+
+    Returns:
+        dict: {"status", "reference", "found": int, "actors": [...]}
+    """
+    if not actor_label.strip():
+        return {"status": "error", "message": "actor_label is required."}
+
+    all_actors = _get_all_level_actors()
+    needle = actor_label.strip().lower()
+    ref_matches = [a for a in all_actors if needle in a.get_actor_label().lower()]
+
+    if not ref_matches:
+        return {"status": "error", "message": f"No actor found matching '{actor_label}'."}
+
+    ref = ref_matches[0]
+    ref_loc = ref.get_actor_location()
+    ref_label = ref.get_actor_label()
+    class_needle = class_filter.strip().lower() if class_filter else ""
+
+    nearby = []
+    for actor in all_actors:
+        if actor == ref:
+            continue
+        if class_needle:
+            cls_name = actor.get_class().get_name().lower()
+            if class_needle not in cls_name:
+                continue
+        loc = actor.get_actor_location()
+        dist = math.sqrt(
+            (loc.x - ref_loc.x) ** 2
+            + (loc.y - ref_loc.y) ** 2
+            + (loc.z - ref_loc.z) ** 2
+        )
+        if dist <= radius:
+            nearby.append({
+                "label": actor.get_actor_label(),
+                "class": actor.get_class().get_name(),
+                "distance": round(dist, 1),
+            })
+
+    nearby.sort(key=lambda a: a["distance"])
+
+    log_info(f"[PROXIMITY] Found {len(nearby)} actors within {radius} cm of '{ref_label}'")
+    return {
+        "status": "ok",
+        "reference": ref_label,
+        "radius": radius,
+        "found": len(nearby),
+        "actors": nearby,
+    }

@@ -548,3 +548,44 @@ def actor_match_transform(
         f"(loc={copy_location}, rot={copy_rotation}, scale={copy_scale})."
     )
     return {"status": "ok", "applied": applied}
+
+
+@register_tool(
+    name="actor_set_label",
+    category="Actor Organization",
+    description="Rename an actor's label in the World Outliner by current label.",
+    tags=["rename", "label", "outliner"],
+)
+def actor_set_label(actor_label: str = "", new_label: str = "", **kwargs) -> dict:
+    """
+    Find an actor by its current label and assign a new label.
+
+    Args:
+        actor_label: Current label of the actor to rename.
+        new_label:   New label to assign.
+
+    Returns:
+        dict: {"status", "old_label": str, "new_label": str}
+    """
+    if not actor_label.strip():
+        return {"status": "error", "message": "actor_label is required."}
+    if not new_label.strip():
+        return {"status": "error", "message": "new_label is required."}
+
+    all_actors = _get_all_level_actors()
+    needle = actor_label.strip()
+    matches = [a for a in all_actors if a.get_actor_label() == needle]
+
+    if not matches:
+        matches = [a for a in all_actors if needle.lower() in a.get_actor_label().lower()]
+
+    if not matches:
+        return {"status": "error", "message": f"No actor found with label '{actor_label}'."}
+
+    target = matches[0]
+    old = target.get_actor_label()
+    with unreal.ScopedEditorTransaction("uefn_tools: Set Actor Label") as _t:
+        target.set_actor_label(new_label.strip())
+
+    log_info(f"actor_set_label: '{old}' → '{new_label.strip()}'")
+    return {"status": "ok", "old_label": old, "new_label": new_label.strip()}

@@ -24,7 +24,7 @@ def register(mcp):
     ) -> str:
         """Set text content on a sign or text actor."""
         return str(bridge.send_command("run_tool", {
-            "tool_name": "sign_set_text",
+            "tool_name": "sign_batch_set_text",
             "kwargs": {"actor_label": actor_label, "text": text},
         }))
 
