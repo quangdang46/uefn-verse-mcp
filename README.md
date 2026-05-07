@@ -199,6 +199,25 @@ python deploy.py --path "D:\\Projects\\MyIsland"
 
 If you omit both flags, `deploy.py` will prompt you interactively.
 
+#### Link mode (opt-in, local dev only)
+
+For fast local iteration you can link `uefn_tools/` instead of copying it.
+Edits in the repo checkout are then immediately visible to UEFN without redeploying.
+
+```bash
+python deploy.py --project "MyIsland" --link-kind junction
+python deploy.py --path "D:\\Projects\\MyIsland" --link-kind symlink
+```
+
+| `--link-kind` | Behavior | Privileges |
+| ------------- | -------- | ---------- |
+| `junction`    | Windows directory junction (recommended on Windows) | No special privileges required |
+| `symlink`     | OS-native symbolic link | May need Developer Mode or admin on Windows |
+
+`init_unreal.py` is always copied as a real file regardless of link mode.
+
+> **Note:** Link mode is a local development convenience. Do not use it for shared or team projects — use the default copy mode instead.
+
 What it installs:
 
 - `Content/Python/uefn_tools/`

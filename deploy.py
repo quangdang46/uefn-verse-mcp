@@ -7,13 +7,19 @@ Usage:
     python deploy.py --project "MyIsland"
     python deploy.py --path "D:\\Projects\\MyIsland"
     python deploy.py --path=D:\\Projects\\MyIsland
+    python deploy.py --project "MyIsland" --link-kind junction
+    python deploy.py --path "D:\\Projects\\MyIsland" --link-kind symlink
 
 --project matches a folder name under Documents/Fortnite Projects.
 --path is the full path to the UEFN project root (any drive or parent folder).
+--link-kind creates a junction or symlink instead of copying (opt-in, local dev only).
 
-This copies:
+By default this copies:
     - uefn_tools/     -> {project}/Content/Python/uefn_tools/   (includes mcp_bridge HTTP listener)
     - init_unreal.py  -> {project}/Content/Python/init_unreal.py
+
+With --link-kind, uefn_tools/ is linked (junction or symlink) instead of copied.
+init_unreal.py is always copied as a real file.
 
 Also ensures {project}/.urcignore contains Content/Python/* so URC does not try to sync
 editor-only Python tooling to the cloud.
@@ -22,9 +28,13 @@ editor-only Python tooling to the cloud.
 from __future__ import annotations
 
 import os
+import platform
 import shutil
+import subprocess
 import sys
 from pathlib import Path
+
+LINK_KINDS = ("junction", "symlink")
 
 URCIGNORE_PYTHON_GLOB = "Content/Python/*"
 
@@ -73,31 +83,83 @@ def resolve_existing_dir(raw: str) -> Path | None:
     return None
 
 
-def deploy(project_path: str, dry_run: bool = False) -> None:
+def _is_junction(path: Path) -> bool:
+    """Return True if *path* is a Windows junction (reparse point)."""
+    if platform.system() != "Windows":
+        return False
+    try:
+        import ctypes
+        attrs = ctypes.windll.kernel32.GetFileAttributesW(str(path))  # type: ignore[union-attr]
+        return attrs != -1 and bool(attrs & 0x400)  # FILE_ATTRIBUTE_REPARSE_POINT
+    except Exception:
+        return False
+
+
+def _remove_existing(dest: Path) -> None:
+    """Remove *dest* whether it is a real dir, junction, or symlink."""
+    if dest.is_symlink() or _is_junction(dest):
+        if platform.system() == "Windows":
+            try:
+                dest.rmdir()
+            except OSError:
+                subprocess.check_call(["cmd", "/c", "rmdir", str(dest)])
+        else:
+            dest.unlink()
+        print(f"[OK] Removed existing link: {dest}")
+    elif dest.exists():
+        shutil.rmtree(dest)
+        print(f"[OK] Removed existing directory: {dest}")
+
+
+def _create_link(src: Path, dest: Path, kind: str) -> None:
+    """Create a junction or symlink from *dest* -> *src*."""
+    if kind == "junction":
+        if platform.system() == "Windows":
+            subprocess.check_call(["cmd", "/c", "mklink", "/J", str(dest), str(src)])
+        else:
+            dest.symlink_to(src, target_is_directory=True)
+            print("  (junctions are Windows-only; created symlink as equivalent)")
+    elif kind == "symlink":
+        dest.symlink_to(src, target_is_directory=True)
+    else:
+        raise ValueError(f"Unknown link kind: {kind!r}")
+
+
+def deploy(
+    project_path: str,
+    dry_run: bool = False,
+    link_kind: str | None = None,
+) -> None:
     repo_root = Path(__file__).parent.resolve()
-    
+
     uefn_tools_src = repo_root / "Content" / "Python" / "uefn_tools"
     init_src = repo_root / "init_unreal.py"
-    
+
     dest_base = Path(project_path) / "Content" / "Python"
-    
+
+    mode_label = f"link ({link_kind})" if link_kind else "copy"
+
     if dry_run:
-        print(f"[DRY RUN] Would deploy to: {dest_base}")
+        print(f"[DRY RUN] Would deploy to: {dest_base}  (mode: {mode_label})")
         print(f"  uefn_tools/     -> {dest_base}/uefn_tools/")
         print(f"  init_unreal.py  -> {dest_base}/init_unreal.py")
         _ensure_urcignore_python(Path(project_path), dry_run=True)
         return
-    
+
     dest_base.mkdir(parents=True, exist_ok=True)
-    
+
     # Deploy uefn_tools
     uefn_tools_dest = dest_base / "uefn_tools"
-    if uefn_tools_dest.exists():
-        shutil.rmtree(uefn_tools_dest)
-    shutil.copytree(uefn_tools_src, uefn_tools_dest)
-    print(f"[OK] uefn_tools/ -> {uefn_tools_dest}")
+    _remove_existing(uefn_tools_dest)
 
-    # Deploy init_unreal.py
+    if link_kind:
+        _create_link(uefn_tools_src, uefn_tools_dest, link_kind)
+        print(f"[OK] uefn_tools/ -> {uefn_tools_dest}  ({link_kind} -> {uefn_tools_src})")
+    else:
+        shutil.copytree(uefn_tools_src, uefn_tools_dest)
+        print(f"[OK] uefn_tools/ -> {uefn_tools_dest}  (copy)")
+
+    # Deploy init_unreal.py (always a real file copy)
     init_dest = dest_base / "init_unreal.py"
     shutil.copy2(init_src, init_dest)
     print(f"[OK] init_unreal.py -> {init_dest}")
@@ -105,7 +167,13 @@ def deploy(project_path: str, dry_run: bool = False) -> None:
     _ensure_urcignore_python(Path(project_path), dry_run=False)
 
     print()
-    print("Deploy complete!")
+    print(f"Deploy complete!  (mode: {mode_label})")
+    if link_kind:
+        print()
+        print(f"  Link target: {uefn_tools_src}")
+        print("  Edits in the repo checkout are immediately visible to UEFN.")
+        print("  This mode is for local iteration only — do not use for")
+        print("  shared or team projects.")
     print()
     print("Next steps:")
     print("  1. Open UEFN")
@@ -114,18 +182,21 @@ def deploy(project_path: str, dry_run: bool = False) -> None:
     print()
 
 
-def _cli_path_and_project() -> tuple[str | None, str | None]:
+def _cli_parse_args() -> tuple[str | None, str | None, str | None]:
     """
-    Parse --path and --project from argv.
+    Parse --path, --project, and --link-kind from argv.
 
     Supports both forms:
       --path=C:\\foo\\bar
       --path C:\\foo\\bar
-    (same for --project).
+    (same for --project and --link-kind).
+
+    Returns (path_arg, project_arg, link_kind).
     """
     argv = sys.argv[1:]
     path_arg: str | None = None
     project_arg: str | None = None
+    link_kind: str | None = None
     i = 0
     while i < len(argv):
         a = argv[i]
@@ -147,15 +218,29 @@ def _cli_path_and_project() -> tuple[str | None, str | None]:
                 sys.exit(1)
             project_arg = argv[i + 1]
             i += 2
+        elif a.startswith("--link-kind="):
+            link_kind = a.split("=", 1)[1]
+            i += 1
+        elif a == "--link-kind":
+            if i + 1 >= len(argv):
+                print("ERROR: --link-kind requires 'junction' or 'symlink'.")
+                sys.exit(1)
+            link_kind = argv[i + 1]
+            i += 2
         else:
             i += 1
-    return path_arg, project_arg
+
+    if link_kind and link_kind not in LINK_KINDS:
+        print(f"ERROR: --link-kind must be one of {LINK_KINDS}, got {link_kind!r}.")
+        sys.exit(1)
+
+    return path_arg, project_arg, link_kind
 
 
 def main():
     projects = find_fortnite_projects()
 
-    path_arg, project_arg = _cli_path_and_project()
+    path_arg, project_arg, link_kind = _cli_parse_args()
 
     project_path: str | None = None
 
@@ -217,8 +302,9 @@ def main():
             project_path = str(resolved)
 
     print()
-    print(f"Deploying to: {project_path}")
-    deploy(project_path)
+    mode_label = f"link ({link_kind})" if link_kind else "copy"
+    print(f"Deploying to: {project_path}  (mode: {mode_label})")
+    deploy(project_path, link_kind=link_kind)
 
 
 if __name__ == "__main__":
