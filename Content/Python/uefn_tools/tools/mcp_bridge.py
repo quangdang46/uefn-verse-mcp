@@ -542,6 +542,12 @@ def _c_list_device_aliases() -> dict:
     return _smart_spawn.list_aliases()
 
 
+@_cmd("refresh_device_catalog")
+def _c_refresh_device_catalog() -> dict:
+    """Force rescan Content Browser and rebuild the dynamic device catalog."""
+    return _smart_spawn.refresh_catalog()
+
+
 @_cmd("delete_actors")
 def _c_delete_actors(
     actor_paths: Optional[List[str]] = None,

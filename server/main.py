@@ -129,10 +129,10 @@ def smart_spawn(
 ) -> str:
     """Spawn a device/actor by natural name — no hardcoded paths needed.
 
-    Accepts names like 'button', 'timer', 'teleporter', 'spawn pad' and resolves
-    them automatically. Also accepts exact Content Browser paths.
+    Dynamically scans the Content Browser at runtime to discover all available
+    devices. Also accepts exact Content Browser paths.
 
-    Resolution: device aliases → exact path → class prefix search → Content Browser fuzzy search.
+    Resolution: dynamic catalog scan → static fallbacks → exact path → class prefix → fuzzy search.
     """
     params = {"name": name}
     if location:
@@ -144,6 +144,31 @@ def smart_spawn(
     if dry_run:
         params["dry_run"] = dry_run
     return str(bridge.send_command("smart_spawn", params))
+
+@mcp.tool()
+def search_content_browser(
+    query: Annotated[str, Field(description="Search term (e.g. 'button', 'tree', 'wall'). Case-insensitive fuzzy match.")],
+    limit: Annotated[int, Field(description="Maximum number of results to return.")] = 20,
+) -> str:
+    """Fuzzy search the Content Browser for assets matching a query.
+
+    Use this to discover available assets before spawning.
+    """
+    return str(bridge.send_command("search_content_browser", {"query": query, "limit": limit}))
+
+@mcp.tool()
+def list_device_aliases() -> str:
+    """List all device names the system knows about (dynamic catalog + static fallbacks)."""
+    return str(bridge.send_command("list_device_aliases"))
+
+@mcp.tool()
+def refresh_device_catalog() -> str:
+    """Force rescan the Content Browser and rebuild the dynamic device catalog.
+
+    Call this after importing new assets or if smart_spawn can't find a device
+    you know exists.
+    """
+    return str(bridge.send_command("refresh_device_catalog"))
 
 @mcp.tool()
 def delete_actors(
