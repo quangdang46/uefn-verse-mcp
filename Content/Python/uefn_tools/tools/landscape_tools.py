@@ -482,11 +482,25 @@ def run_terrain_noise_selected(
     frequency: float = 0.002,
     seed: int = 1337,
     world_axis_bias: tuple[float, float] = (1.0, 1.0),
+    folder: str = "",
+    label_contains: str = "",
     **kwargs,
 ) -> dict:
     selected = get_selected_actors()
+    if not selected and (folder or label_contains):
+        all_actors = _actor_sub().get_all_level_actors() or []
+        f = folder.lower().strip()
+        l = label_contains.lower().strip()
+        selected = [
+            a for a in all_actors
+            if (not f or f in str(a.get_folder_path() or "").lower())
+            and (not l or l in str(a.get_actor_label() or "").lower())
+        ]
     if not selected:
-        return {"status": "error", "message": "Select actors first."}
+        return {
+            "status": "error",
+            "message": "No target actors found. Select actors or pass folder/label_contains.",
+        }
     if amplitude_cm == 0:
         return {"status": "error", "message": "amplitude_cm must be non-zero."}
     if frequency <= 0:
@@ -510,7 +524,12 @@ def run_terrain_noise_selected(
                 continue
 
     log_info(f"[terrain_noise_selected] Modified {modified} actor(s)")
-    return {"status": "ok", "modified": modified, "amplitude_cm": amplitude_cm}
+    return {
+        "status": "ok",
+        "modified": modified,
+        "amplitude_cm": amplitude_cm,
+        "target_mode": "selection" if not (folder or label_contains) else "query",
+    }
 
 
 @register_tool(
@@ -545,3 +564,254 @@ def run_terrain_blockout_clear(
 
     log_info(f"[terrain_blockout_clear] Deleted {len(targets)} actor(s) from /{folder}")
     return {"status": "ok", "deleted": len(targets), "folder": folder}
+
+
+def _resolve_terrain_targets(folder: str = "", label_contains: str = ""):
+    """
+    Resolve target actors from selection, or from folder/label filters.
+    """
+    targets = get_selected_actors()
+    if targets:
+        return targets, "selection"
+
+    all_actors = _actor_sub().get_all_level_actors() or []
+    f = folder.lower().strip()
+    l = label_contains.lower().strip()
+    targets = [
+        a for a in all_actors
+        if (not f or f in str(a.get_folder_path() or "").lower())
+        and (not l or l in str(a.get_actor_label() or "").lower())
+    ]
+    return targets, "query"
+
+
+def _distance_point_to_segment_2d(
+    px: float, py: float, ax: float, ay: float, bx: float, by: float
+) -> float:
+    """
+    Shortest 2D distance from point P to line segment AB.
+    """
+    abx = bx - ax
+    aby = by - ay
+    apx = px - ax
+    apy = py - ay
+    ab2 = abx * abx + aby * aby
+    if ab2 <= 1e-6:
+        return math.sqrt((px - ax) ** 2 + (py - ay) ** 2)
+    t = max(0.0, min(1.0, (apx * abx + apy * aby) / ab2))
+    qx = ax + abx * t
+    qy = ay + aby * t
+    return math.sqrt((px - qx) ** 2 + (py - qy) ** 2)
+
+
+def _coerce_path_points(points: list) -> list[tuple[float, float, float]]:
+    coerced = []
+    for p in points or []:
+        if not isinstance(p, (list, tuple)) or len(p) < 2:
+            continue
+        x = float(p[0])
+        y = float(p[1])
+        z = float(p[2]) if len(p) > 2 else 0.0
+        coerced.append((x, y, z))
+    return coerced
+
+
+@register_tool(
+    name="terrain_flatten",
+    category="Landscape",
+    description=(
+        "Flatten terrain actors toward a target Z height with optional radial falloff. "
+        "Uses selected actors, or folder/label query if nothing is selected."
+    ),
+    tags=["terrain", "flatten", "height", "sculpt", "blockout"],
+    example='tb.run("terrain_flatten", target_z_cm=100, strength=0.5, folder="Terrain_Blockout")',
+)
+def run_terrain_flatten(
+    target_z_cm: float = 0.0,
+    strength: float = 1.0,
+    center: tuple[float, float, float] = (0.0, 0.0, 0.0),
+    radius_cm: float = 0.0,
+    folder: str = "",
+    label_contains: str = "",
+    **kwargs,
+) -> dict:
+    """
+    Pull actor Z toward a target elevation.
+    """
+    targets, mode = _resolve_terrain_targets(folder=folder, label_contains=label_contains)
+    if not targets:
+        return {"status": "error", "message": "No target actors found."}
+    if not (0.0 <= strength <= 1.0):
+        return {"status": "error", "message": "strength must be between 0 and 1."}
+
+    cx, cy, _ = center
+    modified = 0
+    moved_avg = 0.0
+
+    with undo_transaction("Terrain Flatten"):
+        for actor in targets:
+            try:
+                loc = actor.get_actor_location()
+                influence = 1.0
+                if radius_cm > 0.0:
+                    d = math.sqrt((loc.x - cx) ** 2 + (loc.y - cy) ** 2)
+                    if d > radius_cm:
+                        continue
+                    influence = max(0.0, 1.0 - (d / radius_cm))
+
+                alpha = strength * influence
+                old_z = loc.z
+                loc.z = old_z + (target_z_cm - old_z) * alpha
+                actor.set_actor_location(loc, False, False)
+                modified += 1
+                moved_avg += abs(loc.z - old_z)
+            except Exception:
+                continue
+
+    avg = moved_avg / modified if modified else 0.0
+    log_info(f"[terrain_flatten] Modified {modified} actor(s), avg shift {avg:.1f}cm")
+    return {
+        "status": "ok",
+        "modified": modified,
+        "avg_shift_cm": round(avg, 2),
+        "target_z_cm": target_z_cm,
+        "target_mode": mode,
+    }
+
+
+@register_tool(
+    name="terrain_ridge_line",
+    category="Landscape",
+    description=(
+        "Raise terrain along a polyline to form ridges/hills. "
+        "Uses selected actors, or folder/label query if nothing is selected."
+    ),
+    tags=["terrain", "ridge", "mountain", "line", "height", "sculpt"],
+    example='tb.run("terrain_ridge_line", points=[[0,0,0],[4000,0,0]], height_cm=600, width_cm=900)',
+)
+def run_terrain_ridge_line(
+    points: list | None = None,
+    height_cm: float = 400.0,
+    width_cm: float = 800.0,
+    falloff_power: float = 1.5,
+    folder: str = "",
+    label_contains: str = "",
+    **kwargs,
+) -> dict:
+    path = _coerce_path_points(points or [])
+    if len(path) < 2:
+        return {"status": "error", "message": "points must contain at least two [x,y,z] entries."}
+    if width_cm <= 0.0:
+        return {"status": "error", "message": "width_cm must be > 0."}
+
+    targets, mode = _resolve_terrain_targets(folder=folder, label_contains=label_contains)
+    if not targets:
+        return {"status": "error", "message": "No target actors found."}
+
+    modified = 0
+    moved_avg = 0.0
+
+    with undo_transaction("Terrain Ridge Line"):
+        for actor in targets:
+            try:
+                loc = actor.get_actor_location()
+                dmin = 10e9
+                for i in range(len(path) - 1):
+                    ax, ay, _ = path[i]
+                    bx, by, _ = path[i + 1]
+                    d = _distance_point_to_segment_2d(loc.x, loc.y, ax, ay, bx, by)
+                    if d < dmin:
+                        dmin = d
+                if dmin > width_cm:
+                    continue
+                influence = max(0.0, 1.0 - (dmin / width_cm)) ** max(0.1, falloff_power)
+                dz = height_cm * influence
+                loc.z += dz
+                actor.set_actor_location(loc, False, False)
+                modified += 1
+                moved_avg += abs(dz)
+            except Exception:
+                continue
+
+    avg = moved_avg / modified if modified else 0.0
+    log_info(f"[terrain_ridge_line] Modified {modified} actor(s), avg raise {avg:.1f}cm")
+    return {
+        "status": "ok",
+        "modified": modified,
+        "avg_raise_cm": round(avg, 2),
+        "target_mode": mode,
+    }
+
+
+@register_tool(
+    name="terrain_path_cut",
+    category="Landscape",
+    description=(
+        "Cut a lowered path/trench along a polyline. "
+        "Great for roads, rivers, and gameplay lanes."
+    ),
+    tags=["terrain", "path", "cut", "road", "river", "trench", "sculpt"],
+    example='tb.run("terrain_path_cut", points=[[0,0,0],[4000,0,0]], depth_cm=300, width_cm=900)',
+)
+def run_terrain_path_cut(
+    points: list | None = None,
+    depth_cm: float = 300.0,
+    width_cm: float = 900.0,
+    shoulder_cm: float = 200.0,
+    folder: str = "",
+    label_contains: str = "",
+    **kwargs,
+) -> dict:
+    path = _coerce_path_points(points or [])
+    if len(path) < 2:
+        return {"status": "error", "message": "points must contain at least two [x,y,z] entries."}
+    if width_cm <= 0.0:
+        return {"status": "error", "message": "width_cm must be > 0."}
+    if depth_cm <= 0.0:
+        return {"status": "error", "message": "depth_cm must be > 0."}
+
+    targets, mode = _resolve_terrain_targets(folder=folder, label_contains=label_contains)
+    if not targets:
+        return {"status": "error", "message": "No target actors found."}
+
+    inner = width_cm
+    outer = width_cm + max(0.0, shoulder_cm)
+    modified = 0
+    moved_avg = 0.0
+
+    with undo_transaction("Terrain Path Cut"):
+        for actor in targets:
+            try:
+                loc = actor.get_actor_location()
+                dmin = 10e9
+                for i in range(len(path) - 1):
+                    ax, ay, _ = path[i]
+                    bx, by, _ = path[i + 1]
+                    d = _distance_point_to_segment_2d(loc.x, loc.y, ax, ay, bx, by)
+                    if d < dmin:
+                        dmin = d
+                if dmin > outer:
+                    continue
+
+                if dmin <= inner:
+                    influence = 1.0
+                else:
+                    edge_t = (dmin - inner) / max(1.0, (outer - inner))
+                    influence = max(0.0, 1.0 - edge_t)
+
+                dz = depth_cm * influence
+                loc.z -= dz
+                actor.set_actor_location(loc, False, False)
+                modified += 1
+                moved_avg += abs(dz)
+            except Exception:
+                continue
+
+    avg = moved_avg / modified if modified else 0.0
+    log_info(f"[terrain_path_cut] Modified {modified} actor(s), avg lower {avg:.1f}cm")
+    return {
+        "status": "ok",
+        "modified": modified,
+        "avg_lower_cm": round(avg, 2),
+        "target_mode": mode,
+    }
