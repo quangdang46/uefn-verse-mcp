@@ -696,7 +696,6 @@ def _c_smart_spawn(
         for prefix in [
             "/Script/FortniteGame.Fort",
             "/Script/FortniteGame.FortCreative",
-            "/Script/FortniteGame.Fort{}Creative",
             "/Script/Engine.",
         ]:
             for suffix in [pascal, f"{pascal}Device", f"{pascal}Creative",
