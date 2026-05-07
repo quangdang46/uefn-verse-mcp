@@ -120,18 +120,55 @@ def get_selected_actors() -> str:
     return str(bridge.send_command("get_selected_actors"))
 
 @mcp.tool()
-def spawn_actor(
-    class_path: Annotated[str, Field(description="Unreal class or object path to spawn (e.g. blueprint or actor class).")],
-    location: Annotated[list | None, Field(description="Optional world location [x, y, z]; omit to use default spawn point.")] = None,
-    rotation: Annotated[list | None, Field(description="Optional rotation [pitch, yaw, roll] in degrees.")] = None,
+def smart_spawn(
+    name: Annotated[str, Field(description="Natural device name (e.g. 'button', 'timer', 'spawn pad') OR an exact Content Browser path.")],
+    location: Annotated[list | None, Field(description="World location [x, y, z]. Defaults to origin.")] = None,
+    rotation: Annotated[list | None, Field(description="Rotation [pitch, yaw, roll] in degrees.")] = None,
+    label: Annotated[str, Field(description="Optional outliner label for the spawned actor.")] = "",
+    dry_run: Annotated[bool, Field(description="If True, only resolve the path without spawning.")] = False,
 ) -> str:
-    """Spawn an actor from a class or object path."""
-    params = {"class_path": class_path}
+    """Spawn a device/actor by natural name — no hardcoded paths needed.
+
+    Dynamically scans the Content Browser at runtime to discover all available
+    devices. Also accepts exact Content Browser paths.
+
+    Resolution: dynamic catalog scan → static fallbacks → exact path → class prefix → fuzzy search.
+    """
+    params = {"name": name}
     if location:
         params["location"] = location
     if rotation:
         params["rotation"] = rotation
-    return str(bridge.send_command("spawn_actor", params))
+    if label:
+        params["label"] = label
+    if dry_run:
+        params["dry_run"] = dry_run
+    return str(bridge.send_command("smart_spawn", params))
+
+@mcp.tool()
+def search_content_browser(
+    query: Annotated[str, Field(description="Search term (e.g. 'button', 'tree', 'wall'). Case-insensitive fuzzy match.")],
+    limit: Annotated[int, Field(description="Maximum number of results to return.")] = 20,
+) -> str:
+    """Fuzzy search the Content Browser for assets matching a query.
+
+    Use this to discover available assets before spawning.
+    """
+    return str(bridge.send_command("search_content_browser", {"query": query, "limit": limit}))
+
+@mcp.tool()
+def list_device_aliases() -> str:
+    """List all device names the system knows about (dynamic catalog + static fallbacks)."""
+    return str(bridge.send_command("list_device_aliases"))
+
+@mcp.tool()
+def refresh_device_catalog() -> str:
+    """Force rescan the Content Browser and rebuild the dynamic device catalog.
+
+    Call this after importing new assets or if smart_spawn can't find a device
+    you know exists.
+    """
+    return str(bridge.send_command("refresh_device_catalog"))
 
 @mcp.tool()
 def delete_actors(

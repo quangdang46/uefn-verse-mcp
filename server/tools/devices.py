@@ -1,4 +1,4 @@
-"""Fortnite Creative device tools — list, configure, call methods (UEFN-specific)."""
+"""Fortnite Creative device tools — list, configure, call methods, smart spawn (UEFN-specific)."""
 from typing import Annotated, Optional
 
 from pydantic import Field
@@ -8,6 +8,9 @@ from server import bridge
 
 def register(mcp):
     """Register Fortnite device tools on the MCP server."""
+
+    # smart_spawn, search_content_browser, list_device_aliases are registered
+    # as top-level tools in server/main.py — no duplication needed here.
 
     @mcp.tool()
     def device_list(

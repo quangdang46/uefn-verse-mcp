@@ -511,6 +511,43 @@ def _c_spawn_actor(
     return {"actor": _serialize_actor(actor)}
 
 
+# ─── Smart Spawn (delegates to smart_spawn module) ──────────────────────────
+from uefn_tools.tools import smart_spawn as _smart_spawn
+
+
+@_cmd("smart_spawn")
+def _c_smart_spawn(
+    name: str = "",
+    location: Optional[List[float]] = None,
+    rotation: Optional[List[float]] = None,
+    label: str = "",
+    dry_run: bool = False,
+) -> dict:
+    """Spawn an actor by natural name — delegates to smart_spawn module."""
+    return _smart_spawn.spawn(
+        name=name, location=location, rotation=rotation,
+        label=label, dry_run=dry_run, serializer=_serialize_actor,
+    )
+
+
+@_cmd("search_content_browser")
+def _c_search_content_browser(query: str = "", limit: int = 20) -> dict:
+    """Fuzzy search the Content Browser for assets matching a query."""
+    return _smart_spawn.search_content_browser(query, limit=limit)
+
+
+@_cmd("list_device_aliases")
+def _c_list_device_aliases() -> dict:
+    """List all known device aliases for smart_spawn."""
+    return _smart_spawn.list_aliases()
+
+
+@_cmd("refresh_device_catalog")
+def _c_refresh_device_catalog() -> dict:
+    """Force rescan Content Browser and rebuild the dynamic device catalog."""
+    return _smart_spawn.refresh_catalog()
+
+
 @_cmd("delete_actors")
 def _c_delete_actors(
     actor_paths: Optional[List[str]] = None,
