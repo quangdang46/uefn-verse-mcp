@@ -120,12 +120,38 @@ def get_selected_actors() -> str:
     return str(bridge.send_command("get_selected_actors"))
 
 @mcp.tool()
+def smart_spawn(
+    name: Annotated[str, Field(description="Natural device name (e.g. 'button', 'timer', 'spawn pad') OR an exact Content Browser path.")],
+    location: Annotated[list | None, Field(description="World location [x, y, z]. Defaults to origin.")] = None,
+    rotation: Annotated[list | None, Field(description="Rotation [pitch, yaw, roll] in degrees.")] = None,
+    label: Annotated[str, Field(description="Optional outliner label for the spawned actor.")] = "",
+    dry_run: Annotated[bool, Field(description="If True, only resolve the path without spawning.")] = False,
+) -> str:
+    """Spawn a device/actor by natural name — no hardcoded paths needed.
+
+    Accepts names like 'button', 'timer', 'teleporter', 'spawn pad' and resolves
+    them automatically. Also accepts exact Content Browser paths.
+
+    Resolution: device aliases → exact path → class prefix search → Content Browser fuzzy search.
+    """
+    params = {"name": name}
+    if location:
+        params["location"] = location
+    if rotation:
+        params["rotation"] = rotation
+    if label:
+        params["label"] = label
+    if dry_run:
+        params["dry_run"] = dry_run
+    return str(bridge.send_command("smart_spawn", params))
+
+@mcp.tool()
 def spawn_actor(
     class_path: Annotated[str, Field(description="Unreal class or object path to spawn (e.g. blueprint or actor class).")],
     location: Annotated[list | None, Field(description="Optional world location [x, y, z]; omit to use default spawn point.")] = None,
     rotation: Annotated[list | None, Field(description="Optional rotation [pitch, yaw, roll] in degrees.")] = None,
 ) -> str:
-    """Spawn an actor from a class or object path."""
+    """Spawn an actor from an exact class or object path. Prefer smart_spawn for natural name resolution."""
     params = {"class_path": class_path}
     if location:
         params["location"] = location

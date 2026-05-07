@@ -511,6 +511,302 @@ def _c_spawn_actor(
     return {"actor": _serialize_actor(actor)}
 
 
+# ─── Well-known Creative device aliases ─────────────────────────────────────
+# Maps natural names → (primary_class_path, [fallback_paths...])
+# These cover the most commonly requested Fortnite Creative devices.
+_DEVICE_ALIASES: Dict[str, tuple] = {
+    "button":       ("/Game/Creative/Devices/Button/BP_Creative_Button.BP_Creative_Button_C",
+                     ["/Script/FortniteGame.FortCreativeButtonDevice"]),
+    "timer":        ("/Script/FortniteGame.FortCreativeTimerDevice",
+                     ["/Game/Creative/Devices/Timer/BP_Creative_Device_Timer.BP_Creative_Device_Timer_C"]),
+    "trigger":      ("/Game/Creative/Devices/Trigger/BP_Creative_Device_Trigger.BP_Creative_Device_Trigger_C",
+                     ["/Script/FortniteGame.FortCreativeTriggerDevice"]),
+    "teleporter":   ("/Game/Creative/Devices/Teleporter/BP_Creative_Device_Teleporter.BP_Creative_Device_Teleporter_C",
+                     ["/Script/FortniteGame.FortCreativeTeleporter"]),
+    "spawn pad":    ("/Script/FortniteGame.FortPlayerStartCreative",
+                     ["/Script/FortniteGame.FortPlayerStart"]),
+    "spawnpad":     ("/Script/FortniteGame.FortPlayerStartCreative",
+                     ["/Script/FortniteGame.FortPlayerStart"]),
+    "player spawn": ("/Script/FortniteGame.FortPlayerStartCreative",
+                     ["/Script/FortniteGame.FortPlayerStart"]),
+    "item spawner": ("/Script/FortniteGame.FortItemSpawnerCreative",
+                     ["/Game/Creative/Devices/ItemSpawner/BP_Creative_Device_ItemSpawner.BP_Creative_Device_ItemSpawner_C"]),
+    "vending machine": ("/Script/FortniteGame.FortVendingMachineCreative",
+                        []),
+    "capture area": ("/Script/FortniteGame.FortCaptureAreaCreative",
+                     []),
+    "billboard":    ("/Game/Creative/Devices/Billboard/BP_Creative_Billboard.BP_Creative_Billboard_C",
+                     ["/Script/FortniteGame.FortCreativeBillboard"]),
+    "hud message":  ("/Game/Creative/Devices/HUDMessage/BP_Creative_HudMessageDevice.BP_Creative_HudMessageDevice_C",
+                     []),
+    "scoreboard":   ("/Game/Creative/Devices/Scoreboard/BP_Creative_Scoreboard.BP_Creative_Scoreboard_C",
+                     []),
+    "damage volume": ("/Game/Creative/Devices/DamageVolume/BP_Creative_DamageVolume.BP_Creative_DamageVolume_C",
+                      []),
+    "explosive":    ("/Game/Creative/Devices/Explosive/BP_Creative_Explosive_Device.BP_Creative_Explosive_Device_C",
+                     []),
+    "guard spawner": ("/Game/Creative/Devices/GuardSpawner/BP_Creative_GuardSpawner.BP_Creative_GuardSpawner_C",
+                      []),
+    "vehicle spawner": ("/Game/Creative/Devices/VehicleSpawner/BP_Creative_VehicleSpawner.BP_Creative_VehicleSpawner_C",
+                        ["/Script/FortniteGame.FortVehicleSpawnerCreative"]),
+    "music player": ("/Game/Creative/Devices/MusicPlayer/BP_Creative_MusicPlayer.BP_Creative_MusicPlayer_C",
+                     []),
+    "point light":  ("/Script/Engine.PointLight", []),
+    "spot light":   ("/Script/Engine.SpotLight", []),
+    "directional light": ("/Script/Engine.DirectionalLight", []),
+    "rect light":   ("/Script/Engine.RectLight", []),
+    "cube":         ("/Script/Engine.StaticMeshActor", []),
+    "static mesh":  ("/Script/Engine.StaticMeshActor", []),
+    "camera":       ("/Script/Engine.CameraActor", []),
+    "note":         ("/Script/Engine.Note", []),
+}
+
+
+def _try_load_class(path: str):
+    """Try to load a class from a path, return None on failure."""
+    try:
+        return unreal.load_class(None, path)
+    except Exception:
+        return None
+
+
+def _try_load_asset(path: str):
+    """Try to load an asset from a path, return None on failure."""
+    try:
+        return unreal.EditorAssetLibrary.load_asset(path)
+    except Exception:
+        return None
+
+
+def _fuzzy_search_assets(query: str, limit: int = 10) -> list:
+    """Search the Asset Registry for assets whose name contains the query (case-insensitive)."""
+    query_lower = query.lower().replace(" ", "").replace("_", "")
+    results = []
+
+    # Search common device paths
+    search_dirs = ["/Game/Creative/Devices", "/Fortnite", "/Game"]
+    for search_dir in search_dirs:
+        try:
+            paths = unreal.EditorAssetLibrary.list_assets(search_dir, recursive=True)
+        except Exception:
+            continue
+        for path in paths:
+            asset_name = path.rsplit("/", 1)[-1].rsplit(".", 1)[0].lower().replace("_", "")
+            if query_lower in asset_name or asset_name in query_lower:
+                try:
+                    data = unreal.EditorAssetLibrary.find_asset_data(path)
+                    if data:
+                        results.append({
+                            "path": str(path),
+                            "name": str(data.asset_name),
+                            "class": str(getattr(data, "asset_class_path", "")),
+                        })
+                except Exception:
+                    results.append({"path": str(path), "name": path.rsplit("/", 1)[-1], "class": ""})
+            if len(results) >= limit:
+                break
+        if len(results) >= limit:
+            break
+
+    return results
+
+
+@_cmd("smart_spawn")
+def _c_smart_spawn(
+    name: str = "",
+    location: Optional[List[float]] = None,
+    rotation: Optional[List[float]] = None,
+    label: str = "",
+    dry_run: bool = False,
+) -> dict:
+    """
+    Spawn an actor by natural name with intelligent path resolution.
+
+    Resolution order:
+      1. Built-in device alias map (e.g. 'button' → Creative Button BP)
+      2. Exact asset path (if name looks like a content path)
+      3. Class path with common prefixes (/Script/FortniteGame., /Script/Engine.)
+      4. Fuzzy search in Asset Registry (Content Browser)
+
+    Args:
+        name:     Natural name ('button', 'timer', 'spawn pad') OR exact path.
+        location: World location [x, y, z].
+        rotation: Rotation [pitch, yaw, roll] in degrees.
+        label:    Optional outliner label for the spawned actor.
+        dry_run:  If True, only resolve the path — don't actually spawn.
+
+    Examples:
+        {"command": "smart_spawn", "params": {"name": "button"}}
+        {"command": "smart_spawn", "params": {"name": "timer", "location": [100, 0, 0]}}
+        {"command": "smart_spawn", "params": {"name": "spawn pad", "label": "SpawnPad_01"}}
+    """
+    if not name:
+        raise ValueError("name is required — e.g. 'button', 'timer', 'spawn pad', or an asset path")
+
+    loc = unreal.Vector(*location) if location else unreal.Vector(0, 0, 0)
+    rot = unreal.Rotator(*rotation) if rotation else unreal.Rotator(0, 0, 0)
+    sub = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
+
+    name_lower = name.strip().lower()
+    resolved_via = ""
+    actor = None
+    resolved_path = ""
+
+    # ── Step 1: Check built-in device alias map ──────────────────────────────
+    if name_lower in _DEVICE_ALIASES:
+        primary, fallbacks = _DEVICE_ALIASES[name_lower]
+        for path in [primary] + fallbacks:
+            # Try as class first
+            cls = _try_load_class(path)
+            if cls:
+                resolved_path = path
+                resolved_via = "device_alias (class)"
+                if not dry_run:
+                    actor = sub.spawn_actor_from_class(cls, loc, rot)
+                break
+            # Try as asset (Blueprint)
+            asset = _try_load_asset(path)
+            if asset:
+                resolved_path = path
+                resolved_via = "device_alias (asset)"
+                if not dry_run:
+                    actor = sub.spawn_actor_from_object(asset, loc, rot)
+                break
+
+    # ── Step 2: Try as exact asset/class path ────────────────────────────────
+    if not resolved_path and ("/" in name or "." in name):
+        asset = _try_load_asset(name)
+        if asset:
+            resolved_path = name
+            resolved_via = "exact_asset_path"
+            if not dry_run:
+                actor = sub.spawn_actor_from_object(asset, loc, rot)
+        else:
+            cls = _try_load_class(name)
+            if cls:
+                resolved_path = name
+                resolved_via = "exact_class_path"
+                if not dry_run:
+                    actor = sub.spawn_actor_from_class(cls, loc, rot)
+
+    # ── Step 3: Try common class prefixes ────────────────────────────────────
+    if not resolved_path:
+        # Normalize: "button device" → "ButtonDevice", "spawn pad" → "SpawnPad"
+        pascal = "".join(w.capitalize() for w in name.split())
+        for prefix in [
+            "/Script/FortniteGame.Fort",
+            "/Script/FortniteGame.FortCreative",
+            "/Script/FortniteGame.Fort{}Creative",
+            "/Script/Engine.",
+        ]:
+            for suffix in [pascal, f"{pascal}Device", f"{pascal}Creative",
+                           f"Creative{pascal}", f"Creative{pascal}Device"]:
+                path = f"{prefix}{suffix}"
+                cls = _try_load_class(path)
+                if cls:
+                    resolved_path = path
+                    resolved_via = "class_prefix_search"
+                    if not dry_run:
+                        actor = sub.spawn_actor_from_class(cls, loc, rot)
+                    break
+            if resolved_path:
+                break
+
+    # ── Step 4: Fuzzy search in Content Browser ──────────────────────────────
+    if not resolved_path:
+        candidates = _fuzzy_search_assets(name)
+        if candidates:
+            # Try to spawn the first match
+            best = candidates[0]
+            asset = _try_load_asset(best["path"])
+            if asset:
+                resolved_path = best["path"]
+                resolved_via = "content_browser_search"
+                if not dry_run:
+                    actor = sub.spawn_actor_from_object(asset, loc, rot)
+            else:
+                # Return the candidates so the caller can choose
+                return {
+                    "status": "not_spawned",
+                    "reason": "Found candidates but could not load them. Pick one and use spawn_actor with exact asset_path.",
+                    "query": name,
+                    "candidates": candidates,
+                }
+
+    # ── Result ───────────────────────────────────────────────────────────────
+    if not resolved_path:
+        # Nothing found — return helpful suggestions
+        all_aliases = sorted(_DEVICE_ALIASES.keys())
+        return {
+            "status": "error",
+            "error": f"Could not resolve '{name}' to any asset or class.",
+            "suggestions": [
+                "Try a more specific name (e.g. 'button', 'timer', 'teleporter')",
+                "Use spawn_actor with an exact asset_path from Content Browser",
+                "Use search_assets to find available assets first",
+                "Run device_catalog_scan to build a full device catalog",
+            ],
+            "known_aliases": all_aliases,
+        }
+
+    if dry_run:
+        return {
+            "status": "dry_run",
+            "resolved_path": resolved_path,
+            "resolved_via": resolved_via,
+            "query": name,
+        }
+
+    if actor is None:
+        return {
+            "status": "error",
+            "error": f"Resolved path '{resolved_path}' but failed to spawn.",
+            "resolved_path": resolved_path,
+            "resolved_via": resolved_via,
+        }
+
+    if label:
+        actor.set_actor_label(label)
+
+    return {
+        "status": "ok",
+        "actor": _serialize_actor(actor),
+        "resolved_path": resolved_path,
+        "resolved_via": resolved_via,
+        "query": name,
+    }
+
+
+@_cmd("search_content_browser")
+def _c_search_content_browser(
+    query: str = "",
+    limit: int = 20,
+) -> dict:
+    """
+    Fuzzy search the Content Browser for assets matching a query.
+    Returns a list of matching asset paths with metadata.
+    Useful for discovering the correct path before spawning.
+    """
+    if not query:
+        raise ValueError("query is required — e.g. 'button', 'timer', 'tree'")
+    results = _fuzzy_search_assets(query, limit=limit)
+    return {
+        "query": query,
+        "results": results,
+        "count": len(results),
+        "tip": "Use the 'path' from results with spawn_actor(asset_path=...) or smart_spawn(name=...)",
+    }
+
+
+@_cmd("list_device_aliases")
+def _c_list_device_aliases() -> dict:
+    """List all known device aliases for smart_spawn."""
+    aliases = {}
+    for alias, (primary, fallbacks) in sorted(_DEVICE_ALIASES.items()):
+        aliases[alias] = {"primary_path": primary, "fallbacks": fallbacks}
+    return {"aliases": aliases, "count": len(aliases)}
+
+
 @_cmd("delete_actors")
 def _c_delete_actors(
     actor_paths: Optional[List[str]] = None,

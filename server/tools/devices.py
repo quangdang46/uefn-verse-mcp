@@ -1,4 +1,4 @@
-"""Fortnite Creative device tools — list, configure, call methods (UEFN-specific)."""
+"""Fortnite Creative device tools — list, configure, call methods, smart spawn (UEFN-specific)."""
 from typing import Annotated, Optional
 
 from pydantic import Field
@@ -8,6 +8,62 @@ from server import bridge
 
 def register(mcp):
     """Register Fortnite device tools on the MCP server."""
+
+    @mcp.tool()
+    def smart_spawn(
+        name: Annotated[str, Field(description="Natural device name (e.g. 'button', 'timer', 'spawn pad', 'teleporter') OR an exact Content Browser path.")],
+        location: Annotated[list | None, Field(description="World location [x, y, z]. Defaults to origin.")] = None,
+        rotation: Annotated[list | None, Field(description="Rotation [pitch, yaw, roll] in degrees.")] = None,
+        label: Annotated[str, Field(description="Optional outliner label for the spawned actor.")] = "",
+        dry_run: Annotated[bool, Field(description="If True, only resolve the path without spawning.")] = False,
+    ) -> str:
+        """Spawn a device or actor by natural name with intelligent path resolution.
+
+        Accepts natural names like 'button', 'timer', 'teleporter', 'spawn pad' and
+        automatically resolves them to the correct Content Browser path. No need to
+        know exact hardcoded paths.
+
+        Resolution order:
+          1. Built-in device alias map (30+ common Creative devices)
+          2. Exact asset/class path (if name contains '/')
+          3. Class prefix search (/Script/FortniteGame, /Script/Engine)
+          4. Fuzzy search in Content Browser
+        """
+        params = {"name": name}
+        if location:
+            params["location"] = location
+        if rotation:
+            params["rotation"] = rotation
+        if label:
+            params["label"] = label
+        if dry_run:
+            params["dry_run"] = dry_run
+        return str(bridge.send_command("smart_spawn", params))
+
+    @mcp.tool()
+    def search_content_browser(
+        query: Annotated[str, Field(description="Search term (e.g. 'button', 'tree', 'wall'). Case-insensitive fuzzy match.")],
+        limit: Annotated[int, Field(description="Maximum number of results to return.")] = 20,
+    ) -> str:
+        """Fuzzy search the Content Browser for assets matching a query.
+
+        Use this to discover available assets before spawning. Returns paths that
+        can be used directly with spawn_actor or smart_spawn.
+        """
+        return str(bridge.send_command("search_content_browser", {
+            "query": query,
+            "limit": limit,
+        }))
+
+    @mcp.tool()
+    def list_device_aliases() -> str:
+        """List all known device name aliases for smart_spawn.
+
+        Shows the mapping of natural names (e.g. 'button', 'timer') to their
+        actual Content Browser paths. Use these names with smart_spawn for
+        instant device placement.
+        """
+        return str(bridge.send_command("list_device_aliases"))
 
     @mcp.tool()
     def device_list(
