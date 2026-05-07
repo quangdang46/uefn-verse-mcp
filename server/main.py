@@ -37,10 +37,44 @@ from pydantic import Field
 # Absolute imports so `python server/main.py` works (MCP stdio); relative imports
 # require `python -m server.main` from repo root only.
 from server import bridge
-from server.tools import actors, assets, escape_hatch
+from server.tools import (
+    actors,
+    assets,
+    audio,
+    blueprints,
+    bulk_ops,
+    capture,
+    devices,
+    editor_control,
+    escape_hatch,
+    landscape,
+    lighting,
+    materials,
+    optimization,
+    organization,
+    postprocess,
+    procedural,
+    sequencer,
+    text,
+    utility,
+    verse,
+    vfx,
+    world,
+)
 
 # Initialize FastMCP
 mcp = FastMCP("uefn-mcp")
+
+# Register all expanded tool modules
+_tool_modules = [
+    actors, assets, audio, blueprints, bulk_ops, capture, devices,
+    editor_control, escape_hatch, landscape, lighting, materials,
+    optimization, organization, postprocess, procedural, sequencer,
+    text, utility, verse, vfx, world,
+]
+for _mod in _tool_modules:
+    if hasattr(_mod, "register"):
+        _mod.register(mcp)
 
 # ─── System Commands ──────────────────────────────────────────────────────────
 
