@@ -29,18 +29,23 @@ def register(mcp):
     def audio_set(
         actor_label: Annotated[str, Field(description="Label of the audio actor to modify.")],
         volume: Annotated[Optional[float], Field(description="Volume multiplier (0.0-1.0).")] = None,
-        pitch: Annotated[Optional[float], Field(description="Pitch multiplier.")] = None,
+        radius: Annotated[Optional[float], Field(description="Attenuation radius in cm.")] = None,
     ) -> str:
-        """Set audio properties on an ambient sound actor."""
-        kwargs = {"actor_label": actor_label}
+        """Set audio properties on an ambient sound actor (volume and/or radius)."""
+        results = []
         if volume is not None:
-            kwargs["volume"] = volume
-        if pitch is not None:
-            kwargs["pitch"] = pitch
-        return str(bridge.send_command("run_tool", {
-            "tool_name": "audio_set",
-            "kwargs": kwargs,
-        }))
+            results.append(bridge.send_command("run_tool", {
+                "tool_name": "audio_set_volume",
+                "kwargs": {"actor_label": actor_label, "volume": volume},
+            }))
+        if radius is not None:
+            results.append(bridge.send_command("run_tool", {
+                "tool_name": "audio_set_radius",
+                "kwargs": {"actor_label": actor_label, "radius": radius},
+            }))
+        if not results:
+            return "No properties specified to set."
+        return str(results)
 
     @mcp.tool()
     def audio_list() -> str:

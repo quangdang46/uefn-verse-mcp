@@ -35,6 +35,6 @@ def register(mcp):
     ) -> str:
         """Compile a Blueprint asset and return compilation status."""
         return str(bridge.send_command("run_tool", {
-            "tool_name": "blueprint_compile",
+            "tool_name": "blueprint_compile_folder",
             "kwargs": {"asset_path": asset_path},
         }))

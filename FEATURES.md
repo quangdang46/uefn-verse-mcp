@@ -10,9 +10,11 @@ Auto-generated inventory of MCP surfaces for **verse-mcp** (FastMCP server + UEF
 | Working | Verified OK |
 | BUG | Broken or incorrect behavior (note in issue tracker) |
 
-## Native MCP tools (31)
+## Native MCP tools (~137)
 
-Exposed directly on the MCP server (`server/main.py`). Default status is **Untested**.
+Exposed directly on the MCP server (`server/main.py` + `server/tools/*.py`). Default status is **Untested**.
+
+### Core tools (server/main.py)
 
 | Tool | Category | Status |
 | --- | --- | --- |
@@ -23,13 +25,16 @@ Exposed directly on the MCP server (`server/main.py`). Default status is **Untes
 | `shutdown` | System | Untested |
 | `get_all_actors` | Actors | Untested |
 | `get_selected_actors` | Actors | Untested |
-| `spawn_actor` | Actors | Untested |
+| `smart_spawn` | Actors | Untested |
 | `delete_actors` | Actors | Untested |
 | `set_actor_transform` | Actors | Untested |
 | `get_actor_properties` | Actors | Untested |
 | `set_actor_properties` | Actors | Untested |
 | `select_actors` | Actors | Untested |
 | `focus_selected` | Actors | Untested |
+| `search_content_browser` | Assets | Untested |
+| `list_device_aliases` | Devices | Untested |
+| `refresh_device_catalog` | Devices | Untested |
 | `list_assets` | Assets | Untested |
 | `get_asset_info` | Assets | Untested |
 | `get_selected_assets` | Assets | Untested |
@@ -48,7 +53,31 @@ Exposed directly on the MCP server (`server/main.py`). Default status is **Untes
 | `list_tools` | Escape hatch | Untested |
 | `describe_tool` | Escape hatch | Untested |
 
-## `run_tool` registry (354)
+### Extended tools (server/tools/*.py)
+
+| Module | Tool count | Delegate via |
+| --- | --- | --- |
+| `editor_control` | 4 | `run_tool` |
+| `materials` | 6 | `run_tool` |
+| `verse` | 18 | `run_tool` |
+| `devices` | 10 | `run_tool` |
+| `lighting` | 4 | `run_tool` |
+| `audio` | 3 | `run_tool` |
+| `organization` | 9 | `run_tool` |
+| `blueprints` | 3 | `run_tool` |
+| `landscape` | 3 | `run_tool` |
+| `vfx` | 3 | `run_tool` |
+| `capture` | 6 | `run_tool` |
+| `optimization` | 6 | `run_tool` |
+| `sequencer` | 2 | `run_tool` |
+| `procedural` | 5 | `run_tool` |
+| `bulk_ops` | 5 | `run_tool` |
+| `postprocess` | 2 | `run_tool` |
+| `world` | 5 | `run_tool` |
+| `text` | 3 | `run_tool` |
+| `utility` | 10 | `run_tool` |
+
+## `run_tool` registry (357)
 
 Registered `uefn_tools` entries (invoke via MCP `run_tool` or `list_tools` / `describe_tool`). `registry.py` is excluded from discovery (documentation-only decorator examples).
 
@@ -58,6 +87,7 @@ Registered `uefn_tools` entries (invoke via MCP `run_tool` or `list_tools` / `de
 | `actor_chain_place` | Proximity Tools | Untested |
 | `actor_cluster_to_folder` | Proximity Tools | Untested |
 | `actor_copy_to_positions` | Proximity Tools | Untested |
+| `proximity_find` | Proximity Tools | Untested |
 | `actor_detach` | Actor Organization | Untested |
 | `actor_duplicate_offset` | Proximity Tools | Untested |
 | `actor_folder_list` | Actor Organization | Untested |
@@ -65,6 +95,7 @@ Registered `uefn_tools` entries (invoke via MCP `run_tool` or `list_tools` / `de
 | `actor_isolate` | Visibility | Untested |
 | `actor_lock` | Visibility | Untested |
 | `actor_match_transform` | Actor Organization | Untested |
+| `actor_set_label` | Actor Organization | Untested |
 | `actor_move_to_folder` | Actor Organization | Untested |
 | `actor_move_to_root` | Actor Organization | Untested |
 | `actor_place_next_to` | Proximity Tools | Untested |
@@ -398,6 +429,7 @@ Registered `uefn_tools` entries (invoke via MCP `run_tool` or `list_tools` / `de
 | `viewport_goto` | Viewport | Untested |
 | `viewport_move_to_camera` | Viewport | Untested |
 | `viewport_showflag` | Viewport | Untested |
+| `viewport_orbit` | Viewport | Untested |
 | `world_partition_status` | World Partition | Untested |
 | `world_settings_set` | Post-Process | Untested |
 | `world_state_export` | API Explorer | Untested |

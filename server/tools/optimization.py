@@ -47,7 +47,7 @@ def register(mcp):
     def level_health_check() -> str:
         """Run a comprehensive health check on the level (overlaps, errors, warnings)."""
         return str(bridge.send_command("run_tool", {
-            "tool_name": "level_health_check",
+            "tool_name": "level_health_report",
             "kwargs": {},
         }))
 
@@ -57,6 +57,6 @@ def register(mcp):
     ) -> str:
         """Audit asset references — find unused assets or circular dependencies."""
         return str(bridge.send_command("run_tool", {
-            "tool_name": "reference_audit",
+            "tool_name": "ref_full_report",
             "kwargs": {"asset_path": asset_path},
         }))

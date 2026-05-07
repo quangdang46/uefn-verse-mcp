@@ -372,3 +372,71 @@ def run_viewport_bookmark_list(**kwargs) -> dict:
     except Exception as e:
         log_error(f"viewport_bookmark_list failed: {e}")
         return {"status": "error", "error": str(e)}
+
+
+@register_tool(
+    name="viewport_orbit",
+    category="Viewport",
+    description=(
+        "Orbit the viewport camera around a named actor at a given distance and angle. "
+        "Useful for inspecting an object from different sides without manually navigating."
+    ),
+    tags=["viewport", "camera", "orbit", "inspect", "rotate"],
+)
+def run_viewport_orbit(
+    actor_label: str = "",
+    distance: float = 500.0,
+    angle: float = 0.0,
+    pitch: float = -20.0,
+    **kwargs,
+) -> dict:
+    """
+    Position the viewport camera to orbit around a named actor.
+
+    Args:
+        actor_label: Label (or partial label) of the actor to orbit around.
+        distance:    Distance from the actor in cm (default 500).
+        angle:       Horizontal orbit angle in degrees (0 = +X, 90 = +Y, etc.).
+        pitch:       Camera pitch in degrees (default -20, looking slightly down).
+    """
+    import math as _math
+
+    if not actor_label:
+        return {"status": "error", "error": "actor_label is required."}
+
+    try:
+        actor_sub = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
+        all_actors = actor_sub.get_all_level_actors()
+        matches = [a for a in all_actors if actor_label.lower() in a.get_actor_label().lower()]
+
+        if not matches:
+            return {"status": "error", "error": f"No actor found matching '{actor_label}'."}
+
+        target = matches[0]
+        center = target.get_actor_location()
+
+        rad = _math.radians(angle)
+        cam_x = center.x + distance * _math.cos(rad)
+        cam_y = center.y + distance * _math.sin(rad)
+        cam_z = center.z + distance * _math.sin(_math.radians(-pitch))
+
+        yaw = angle + 180.0
+
+        loc = unreal.Vector(cam_x, cam_y, cam_z)
+        rot = unreal.Rotator(pitch, yaw, 0)
+        _set_camera(loc, rot)
+
+        log_info(
+            f"viewport_orbit: orbiting '{target.get_actor_label()}' at "
+            f"distance={distance} angle={angle} pitch={pitch}"
+        )
+        return {
+            "status": "ok",
+            "actor": target.get_actor_label(),
+            "camera_location": [round(cam_x, 1), round(cam_y, 1), round(cam_z, 1)],
+            "angle": angle,
+            "distance": distance,
+        }
+    except Exception as e:
+        log_error(f"viewport_orbit failed: {e}")
+        return {"status": "error", "error": str(e)}

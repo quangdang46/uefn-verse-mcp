@@ -99,7 +99,7 @@ def register(mcp):
     ) -> str:
         """Scatter props along a spline path."""
         return str(bridge.send_command("run_tool", {
-            "tool_name": "scatter_along_spline",
+            "tool_name": "spline_place_props",
             "kwargs": {
                 "asset_path": asset_path,
                 "spline_actor_label": spline_actor_label,

@@ -66,7 +66,7 @@ def register(mcp):
     ) -> str:
         """Select all actors of a given class in the current level."""
         return str(bridge.send_command("run_tool", {
-            "tool_name": "select_by_class",
+            "tool_name": "actor_select_by_class",
             "kwargs": {"class_name": class_name},
         }))
 
@@ -96,6 +96,6 @@ def register(mcp):
     def smart_organize() -> str:
         """Auto-organize level actors into outliner folders by class type."""
         return str(bridge.send_command("run_tool", {
-            "tool_name": "smart_organize",
+            "tool_name": "organize_smart_categorize",
             "kwargs": {},
         }))
