@@ -68,16 +68,33 @@ The live inventory is tracked in [FEATURES.md](FEATURES.md), and deeper engine c
 
 ## Origins and Credits
 
-This repo sits on top of two earlier ideas:
+This repo sits on top of two upstream lines:
 
-- the broad in-editor `uefn_tools` registry lineage from [UEFN-TOOLBELT](https://github.com/undergroundrap/UEFN-TOOLBELT)
-- the external-MCP-to-in-editor-listener pattern popularized by [uefn-mcp-server](https://github.com/KirChuvakov/uefn-mcp-server)
+- **UEFN Toolbelt** — broad in-editor `uefn_tools` registry and tooling: [UEFN-TOOLBELT](https://github.com/undergroundrap/UEFN-TOOLBELT) (Ocean Bennett).
+- **External MCP + in-editor listener** — architecture and code lineage from KirChuvakov’s MIT-licensed projects (commonly referenced as [uefn-mcp-server](https://github.com/KirChuvakov/uefn-mcp-server) or **uefn-verse-server**).
 
-`uefn-mcp` keeps both ideas, but reshapes them into an MCP-first repo:
+This fork keeps both ideas, but reshapes them into an MCP-first repo:
 
 - external FastMCP host process in `server/`
 - in-editor HTTP bridge in `Content/Python/uefn_tools/tools/mcp_bridge.py`
 - curated direct MCP surface plus a registry escape hatch
+
+### License
+
+Licensing is documented in [LICENSE](LICENSE). In short:
+
+- **Combined distribution:** This repository is offered under **GNU AGPL v3.0** with UEFN Toolbelt’s **additional visible-attribution term** (copyleft; network use triggers source-sharing obligations — see the license file and the [AGPL-3.0 text](https://www.gnu.org/licenses/agpl-3.0.en.html)).
+- **Upstream MIT components:** Portions derived from KirChuvakov’s work were originally under the **MIT License**; their copyright and permission notice must stay intact in copies of this project (also reproduced in `LICENSE`).
+- **Forks and derivatives:** If you ship something built on this codebase or its architecture, include the **visible Toolbelt credit** required in `LICENSE` (for example in README, docs, store page, or an in-editor credits panel):
+
+  ```text
+  Built on UEFN Toolbelt by Ocean Bennett
+  (https://github.com/undergroundrap/UEFN-TOOLBELT)
+  ```
+
+  …or an equivalent that names Ocean Bennett and links to that repository.
+
+This is not legal advice; read `LICENSE` for full terms.
 
 ## Quick Example
 
