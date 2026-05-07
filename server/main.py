@@ -146,20 +146,6 @@ def smart_spawn(
     return str(bridge.send_command("smart_spawn", params))
 
 @mcp.tool()
-def spawn_actor(
-    class_path: Annotated[str, Field(description="Unreal class or object path to spawn (e.g. blueprint or actor class).")],
-    location: Annotated[list | None, Field(description="Optional world location [x, y, z]; omit to use default spawn point.")] = None,
-    rotation: Annotated[list | None, Field(description="Optional rotation [pitch, yaw, roll] in degrees.")] = None,
-) -> str:
-    """Spawn an actor from an exact class or object path. Prefer smart_spawn for natural name resolution."""
-    params = {"class_path": class_path}
-    if location:
-        params["location"] = location
-    if rotation:
-        params["rotation"] = rotation
-    return str(bridge.send_command("spawn_actor", params))
-
-@mcp.tool()
 def delete_actors(
     actor_labels: Annotated[list, Field(description="Actor labels (identifiers) to remove from the level.")],
 ) -> str:
