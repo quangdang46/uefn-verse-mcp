@@ -20,9 +20,18 @@ API: EditorActorSubsystem, Landscape, LandscapeProxy, LandscapeComponent
 
 from __future__ import annotations
 
+import math
+import random
 import unreal
 from ..registry import register_tool
-from ..core import log_info, log_error, log_warning
+from ..core import (
+    log_info,
+    log_error,
+    log_warning,
+    undo_transaction,
+    spawn_static_mesh_actor,
+    get_selected_actors,
+)
 
 
 def _actor_sub():
@@ -334,3 +343,205 @@ def run_landscape_material_create_project_mic(
     except Exception as e:
         log_error(f"[landscape_material_create_project_mic] {e}")
         return {"status": "error", "message": str(e)}
+
+
+def _height_value(
+    gx: int,
+    gy: int,
+    grid_size: int,
+    max_height_cm: float,
+    noise_scale: float,
+    seed: int,
+    falloff: float,
+) -> float:
+    """
+    Generate a terrain-like height value with radial falloff + light noise.
+    """
+    cx = (grid_size - 1) * 0.5
+    cy = (grid_size - 1) * 0.5
+    dx = gx - cx
+    dy = gy - cy
+    dist = math.sqrt(dx * dx + dy * dy)
+    max_dist = max(1.0, math.sqrt(cx * cx + cy * cy))
+    radial = max(0.0, 1.0 - (dist / max_dist))
+    radial = radial ** max(0.1, falloff)
+
+    phase = float(seed) * 0.173
+    n1 = math.sin((gx + phase) * noise_scale)
+    n2 = math.cos((gy - phase) * noise_scale * 1.23)
+    n3 = math.sin((gx + gy + phase) * noise_scale * 0.7)
+    noise = (n1 + n2 + n3) / 3.0  # -1..1
+    noise01 = 0.5 + 0.5 * noise
+
+    return max_height_cm * (0.65 * radial + 0.35 * noise01)
+
+
+@register_tool(
+    name="terrain_blockout_generate",
+    category="Landscape",
+    description=(
+        "Generate a fast terrain blockout from stacked StaticMesh columns "
+        "(radial island + noise). Useful when Landscape sculpting tools are unavailable."
+    ),
+    tags=["terrain", "blockout", "procedural", "landscape", "island", "height"],
+    example='tb.run("terrain_blockout_generate", grid_size=20, tile_size_cm=400)',
+)
+def run_terrain_blockout_generate(
+    grid_size: int = 20,
+    tile_size_cm: float = 400.0,
+    max_height_cm: float = 2000.0,
+    base_z: float = 0.0,
+    center: tuple[float, float, float] = (0.0, 0.0, 0.0),
+    noise_scale: float = 0.35,
+    falloff: float = 1.35,
+    min_column_height_cm: float = 80.0,
+    mesh_path: str = "/Engine/BasicShapes/Cube",
+    folder: str = "Terrain_Blockout",
+    label_prefix: str = "TerrainTile",
+    seed: int = 1337,
+    focus: bool = True,
+    **kwargs,
+) -> dict:
+    """
+    Create a quick terrain massing using static mesh columns.
+    """
+    if grid_size < 2:
+        return {"status": "error", "message": "grid_size must be >= 2"}
+    if tile_size_cm <= 0 or max_height_cm <= 0:
+        return {"status": "error", "message": "tile_size_cm and max_height_cm must be > 0"}
+
+    rng = random.Random(seed)
+    cx, cy, cz = center
+    half = (grid_size - 1) * 0.5
+    placed = []
+
+    with undo_transaction(f"Terrain Blockout Generate ({grid_size}x{grid_size})"):
+        for gx in range(grid_size):
+            for gy in range(grid_size):
+                h = _height_value(
+                    gx=gx,
+                    gy=gy,
+                    grid_size=grid_size,
+                    max_height_cm=max_height_cm,
+                    noise_scale=noise_scale,
+                    seed=seed,
+                    falloff=falloff,
+                )
+                h = max(min_column_height_cm, h + rng.uniform(-40.0, 40.0))
+
+                world_x = cx + (gx - half) * tile_size_cm
+                world_y = cy + (gy - half) * tile_size_cm
+                world_z = cz + base_z + h * 0.5
+
+                actor = spawn_static_mesh_actor(
+                    mesh_path,
+                    unreal.Vector(world_x, world_y, world_z),
+                    scale=unreal.Vector(
+                        tile_size_cm / 100.0,
+                        tile_size_cm / 100.0,
+                        h / 100.0,
+                    ),
+                )
+                if actor:
+                    actor.set_folder_path(f"/{folder}")
+                    actor.set_actor_label(f"{label_prefix}_{gx:02d}_{gy:02d}")
+                    placed.append(actor)
+
+    if focus and placed:
+        try:
+            _actor_sub().set_selected_level_actors(placed)
+            unreal.SystemLibrary.execute_console_command(
+                unreal.EditorLevelLibrary.get_editor_world(), "CAMERA ALIGN"
+            )
+        except Exception:
+            pass
+
+    log_info(f"[terrain_blockout_generate] Placed {len(placed)} actors in /{folder}")
+    return {
+        "status": "ok",
+        "placed": len(placed),
+        "grid_size": grid_size,
+        "tile_size_cm": tile_size_cm,
+        "folder": folder,
+        "seed": seed,
+    }
+
+
+@register_tool(
+    name="terrain_noise_selected",
+    category="Landscape",
+    description=(
+        "Apply noise-based vertical sculpting to selected actors "
+        "(great for roughing cliffs/hills after blockout generation)."
+    ),
+    tags=["terrain", "noise", "sculpt", "selected", "height", "blockout"],
+    example='tb.run("terrain_noise_selected", amplitude_cm=250, frequency=0.002)',
+)
+def run_terrain_noise_selected(
+    amplitude_cm: float = 250.0,
+    frequency: float = 0.002,
+    seed: int = 1337,
+    world_axis_bias: tuple[float, float] = (1.0, 1.0),
+    **kwargs,
+) -> dict:
+    selected = get_selected_actors()
+    if not selected:
+        return {"status": "error", "message": "Select actors first."}
+    if amplitude_cm == 0:
+        return {"status": "error", "message": "amplitude_cm must be non-zero."}
+    if frequency <= 0:
+        return {"status": "error", "message": "frequency must be > 0."}
+
+    ax, ay = world_axis_bias
+    modified = 0
+
+    with undo_transaction("Terrain Noise Sculpt Selected"):
+        for actor in selected:
+            try:
+                loc = actor.get_actor_location()
+                n = (
+                    math.sin((loc.x * ax + seed * 17.0) * frequency)
+                    + math.cos((loc.y * ay - seed * 23.0) * frequency * 1.3)
+                ) * 0.5
+                loc.z += n * amplitude_cm
+                actor.set_actor_location(loc, False, False)
+                modified += 1
+            except Exception:
+                continue
+
+    log_info(f"[terrain_noise_selected] Modified {modified} actor(s)")
+    return {"status": "ok", "modified": modified, "amplitude_cm": amplitude_cm}
+
+
+@register_tool(
+    name="terrain_blockout_clear",
+    category="Landscape",
+    description="Delete all generated terrain blockout actors in a folder (undoable).",
+    tags=["terrain", "blockout", "clear", "cleanup", "delete"],
+    example='tb.run("terrain_blockout_clear", folder="Terrain_Blockout")',
+)
+def run_terrain_blockout_clear(
+    folder: str = "Terrain_Blockout",
+    **kwargs,
+) -> dict:
+    all_actors = _actor_sub().get_all_level_actors() or []
+    targets = [
+        a for a in all_actors
+        if folder.lower() in str(a.get_folder_path() or "").lower()
+    ]
+
+    if not targets:
+        return {"status": "ok", "deleted": 0, "folder": folder}
+
+    with undo_transaction(f"Terrain Blockout Clear ({folder})"):
+        try:
+            _actor_sub().destroy_actors(targets)
+        except Exception:
+            for actor in targets:
+                try:
+                    _actor_sub().destroy_actor(actor)
+                except Exception:
+                    pass
+
+    log_info(f"[terrain_blockout_clear] Deleted {len(targets)} actor(s) from /{folder}")
+    return {"status": "ok", "deleted": len(targets), "folder": folder}
