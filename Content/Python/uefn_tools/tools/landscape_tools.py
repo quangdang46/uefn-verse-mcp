@@ -257,6 +257,127 @@ def run_landscape_set_material(
         return {"status": "error", "message": str(e)}
 
 
+@register_tool(
+    name="landscape_create",
+    category="Landscape",
+    description=(
+        "Attempt to create a new Landscape actor at a location. "
+        "In UEFN, creation may be blocked and return LandscapePlaceholder instead; "
+        "this tool detects that case and reports a clear actionable error."
+    ),
+    tags=["landscape", "create", "terrain", "spawn", "uefn"],
+    example='tb.run("landscape_create", label="mountain", location=[0,0,-250])',
+)
+def run_landscape_create(
+    label: str = "mountain",
+    location: list | tuple | None = None,
+    rotation: list | tuple | None = None,
+    material_path: str = "",
+    keep_placeholder: bool = False,
+    **kwargs,
+) -> dict:
+    """
+    Best-effort landscape creation helper.
+
+    Returns:
+      - status=ok when a real Landscape actor is created
+      - status=blocked when UEFN returns LandscapePlaceholder
+      - status=error for other failures
+    """
+    loc_vals = location if location is not None else [0.0, 0.0, 0.0]
+    rot_vals = rotation if rotation is not None else [0.0, 0.0, 0.0]
+    try:
+        loc = unreal.Vector(float(loc_vals[0]), float(loc_vals[1]), float(loc_vals[2]))
+        rot = unreal.Rotator(
+            pitch=float(rot_vals[0]),
+            yaw=float(rot_vals[1]),
+            roll=float(rot_vals[2]),
+        )
+    except Exception as e:
+        return {"status": "error", "message": f"Invalid location/rotation: {e}"}
+
+    sub = _actor_sub()
+    actor = None
+    attempts = []
+
+    # Path 1: EditorActorSubsystem
+    try:
+        actor = sub.spawn_actor_from_class(unreal.Landscape, loc, rot)
+        attempts.append("EditorActorSubsystem.spawn_actor_from_class(unreal.Landscape)")
+    except Exception as e:
+        attempts.append(f"EditorActorSubsystem failed: {e}")
+
+    # Path 2: EditorLevelLibrary fallback
+    if actor is None:
+        try:
+            actor = unreal.EditorLevelLibrary.spawn_actor_from_class(unreal.Landscape, loc, rot)
+            attempts.append("EditorLevelLibrary.spawn_actor_from_class(unreal.Landscape)")
+        except Exception as e:
+            attempts.append(f"EditorLevelLibrary failed: {e}")
+
+    if actor is None:
+        log_error("[landscape_create] Could not spawn Landscape actor.")
+        return {
+            "status": "error",
+            "message": "Could not spawn Landscape actor.",
+            "attempts": attempts,
+        }
+
+    cls_name = type(actor).__name__
+    actor_path = str(actor.get_path_name())
+    actor_label = str(actor.get_actor_label())
+
+    if cls_name == "LandscapePlaceholder":
+        # UEFN currently blocks programmatic real Landscape creation in many builds.
+        if not keep_placeholder:
+            try:
+                sub.destroy_actor(actor)
+            except Exception:
+                pass
+        msg = (
+            "UEFN returned LandscapePlaceholder instead of a real Landscape actor. "
+            "Create Landscape manually in Landscape mode, then use landscape_set_material."
+        )
+        log_warning(f"[landscape_create] {msg}")
+        return {
+            "status": "blocked",
+            "message": msg,
+            "created_class": cls_name,
+            "actor_path": actor_path,
+            "attempts": attempts,
+            "manual_next_step": "Landscape mode -> Create, then run landscape_set_material",
+        }
+
+    # Real Landscape / LandscapeProxy created.
+    if label:
+        try:
+            actor.set_actor_label(label)
+            actor_label = label
+        except Exception:
+            pass
+
+    applied_material = ""
+    if material_path:
+        try:
+            mat = unreal.EditorAssetLibrary.load_asset(material_path)
+            if mat:
+                actor.set_editor_property("landscape_material", mat)
+                applied_material = material_path
+        except Exception as e:
+            log_warning(f"[landscape_create] Failed to apply material: {e}")
+
+    log_info(f"[landscape_create] Created {cls_name}: {actor_label}")
+    return {
+        "status": "ok",
+        "label": actor_label,
+        "class": cls_name,
+        "actor_path": actor_path,
+        "location": [round(loc.x), round(loc.y), round(loc.z)],
+        "material_applied": applied_material,
+        "attempts": attempts,
+    }
+
+
 # ── Material Instance (Landscape-ready parent chain) ───────────────────────────
 #
 # How to run (UEFN editor, Python enabled):
