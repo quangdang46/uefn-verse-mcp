@@ -223,6 +223,16 @@ def _serialize_actor(actor: unreal.Actor) -> dict:
     }
 
 
+def _to_rotator(values: Optional[List[float]], fallback: Optional[Any] = None) -> Any:
+    """Build Rotator from [pitch, yaw, roll] reliably."""
+    if values is None:
+        return fallback if fallback is not None else unreal.Rotator(0.0, 0.0, 0.0)
+    if len(values) != 3:
+        raise ValueError("rotation must be [pitch, yaw, roll]")
+    pitch, yaw, roll = float(values[0]), float(values[1]), float(values[2])
+    return unreal.Rotator(pitch=pitch, yaw=yaw, roll=roll)
+
+
 # ─── Command registry ─────────────────────────────────────────────────────────
 
 _HANDLERS: Dict[str, Callable] = {}
@@ -520,7 +530,7 @@ def _c_spawn_actor(
     label: str = "",
 ) -> dict:
     loc = unreal.Vector(*location) if location else unreal.Vector(0, 0, 0)
-    rot = unreal.Rotator(*rotation) if rotation else unreal.Rotator(0, 0, 0)
+    rot = _to_rotator(rotation)
 
     sub = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
     actor = None
@@ -626,7 +636,7 @@ def _c_set_actor_transform(
     if location is not None:
         target.set_actor_location(unreal.Vector(*location), False, False)
     if rotation is not None:
-        target.set_actor_rotation(unreal.Rotator(*rotation), False)
+        target.set_actor_rotation(_to_rotator(rotation), False)
     if scale is not None:
         target.set_actor_scale3d(unreal.Vector(*scale))
     return {"actor": _serialize_actor(target)}
@@ -955,7 +965,7 @@ def _c_set_viewport_camera(
 ) -> dict:
     cur_loc, cur_rot = unreal.EditorLevelLibrary.get_level_viewport_camera_info()
     loc = unreal.Vector(*location) if location else cur_loc
-    rot = unreal.Rotator(*rotation) if rotation else cur_rot
+    rot = _to_rotator(rotation, fallback=cur_rot)
     unreal.EditorLevelLibrary.set_level_viewport_camera_info(loc, rot)
     return {"location": _serialize(loc), "rotation": _serialize(rot)}
 

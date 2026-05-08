@@ -35,9 +35,15 @@ _catalog_scan_time: float = 0.0
 # Directories the scanner walks (most-specific first for speed)
 _SCAN_DIRS: List[str] = [
     "/Game/Creative/Devices",
-    "/FortniteGame",
+    "/Fortnite",
     "/Game",
 ]
+
+# Legacy/misconfigured roots that appear in some UEFN APIs or older configs.
+# Canonicalize them before calling EditorAssetLibrary.list_assets().
+_SCAN_DIR_ALIASES = {
+    "/FortniteGame": "/Fortnite",
+}
 
 # Patterns that identify a "device" blueprint asset
 _DEVICE_PATTERNS: List[re.Pattern] = [
@@ -94,6 +100,29 @@ def _derive_friendly_names(asset_name: str) -> List[str]:
     return [n for n in names if n]
 
 
+def _iter_scan_dirs() -> List[str]:
+    """Return deduplicated, canonical Content Browser roots for scanning."""
+    dirs: List[str] = []
+    seen = set()
+    for raw_dir in _SCAN_DIRS:
+        scan_dir = _SCAN_DIR_ALIASES.get(raw_dir, raw_dir)
+        if scan_dir in seen:
+            continue
+        seen.add(scan_dir)
+        dirs.append(scan_dir)
+    return dirs
+
+
+def _to_rotator(values: Optional[List[float]]) -> unreal.Rotator:
+    """Build Rotator from [pitch, yaw, roll] reliably."""
+    if values is None:
+        return unreal.Rotator(0.0, 0.0, 0.0)
+    if len(values) != 3:
+        raise ValueError("rotation must be [pitch, yaw, roll]")
+    pitch, yaw, roll = float(values[0]), float(values[1]), float(values[2])
+    return unreal.Rotator(pitch=pitch, yaw=yaw, roll=roll)
+
+
 # ---------------------------------------------------------------------------
 # Catalog scanner
 # ---------------------------------------------------------------------------
@@ -114,7 +143,7 @@ def scan_device_catalog(force: bool = False) -> Dict[str, dict]:
     catalog: Dict[str, dict] = {}
     seen_paths: set = set()
 
-    for scan_dir in _SCAN_DIRS:
+    for scan_dir in _iter_scan_dirs():
         try:
             paths = unreal.EditorAssetLibrary.list_assets(scan_dir, recursive=True)
         except Exception:
@@ -225,6 +254,10 @@ def try_load_class(path: str):
 
 def try_load_asset(path: str):
     """Try to load an asset from a path, return None on failure."""
+    # `/Script/...` is a class namespace, not a Content Browser asset path.
+    # Avoid calling EditorAssetLibrary.load_asset on it to prevent noisy errors.
+    if not path or str(path).startswith("/Script/"):
+        return None
     try:
         return unreal.EditorAssetLibrary.load_asset(path)
     except Exception:
@@ -240,7 +273,7 @@ def fuzzy_search_assets(query: str, limit: int = 10) -> List[Dict[str, str]]:
     query_lower = query.lower().replace(" ", "").replace("_", "")
     results: List[Dict[str, str]] = []
 
-    for search_dir in _SCAN_DIRS:
+    for search_dir in _iter_scan_dirs():
         try:
             paths = unreal.EditorAssetLibrary.list_assets(search_dir, recursive=True)
         except Exception:
@@ -312,6 +345,13 @@ def _resolve_static_fallback(name_lower: str) -> tuple:
 def _resolve_exact(name: str) -> tuple:
     """Step 3: Try as exact asset/class path."""
     if "/" not in name and "." not in name:
+        return ("", "", None)
+
+    # Class paths should resolve via load_class first.
+    if name.startswith("/Script/"):
+        cls = try_load_class(name)
+        if cls:
+            return (name, "exact_class_path", cls)
         return ("", "", None)
 
     asset = try_load_asset(name)
@@ -407,7 +447,7 @@ def spawn(
         raise ValueError("name is required -- e.g. 'button', 'timer', 'spawn pad', or an asset path")
 
     loc = unreal.Vector(*location) if location else unreal.Vector(0, 0, 0)
-    rot = unreal.Rotator(*rotation) if rotation else unreal.Rotator(0, 0, 0)
+    rot = _to_rotator(rotation)
     sub = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
 
     result = resolve(name)

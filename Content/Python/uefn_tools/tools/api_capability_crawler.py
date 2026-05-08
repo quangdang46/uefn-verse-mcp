@@ -509,7 +509,23 @@ _DEVICE_CLASS_HINTS = [
 # Top-level package paths to search in the Asset Registry.
 # /Fortnite covers the live Creative device Blueprints.
 # /Game covers any project-specific or imported device BPs.
-_SEARCH_PATHS = ["/Fortnite", "/Game", "/FortniteGame"]
+_SEARCH_PATHS = ["/Fortnite", "/Game"]
+_SEARCH_PATH_ALIASES = {
+    "/FortniteGame": "/Fortnite",
+}
+
+
+def _normalise_search_paths(paths: List[str]) -> List[str]:
+    """Canonicalize known legacy mount names and de-duplicate."""
+    out: List[str] = []
+    seen = set()
+    for raw in paths:
+        p = _SEARCH_PATH_ALIASES.get(str(raw), str(raw))
+        if p in seen:
+            continue
+        seen.add(p)
+        out.append(p)
+    return out
 
 
 @register_tool(
@@ -570,10 +586,7 @@ def device_catalog_scan(
     search_paths = list(_SEARCH_PATHS)
     if extra_paths:
         search_paths.extend(extra_paths)
-
-    # Deduplicate while preserving order
-    seen = set()
-    search_paths = [p for p in search_paths if not (p in seen or seen.add(p))]
+    search_paths = _normalise_search_paths(search_paths)
 
     unreal.log(f"[device_catalog_scan] Searching {len(search_paths)} package paths...")
 
