@@ -340,7 +340,7 @@ def run_tool(
         Field(description="Tool arguments as a dict or JSON string; forwarded to the bridge as the tool's kwargs object."),
     ] = None,
 ) -> str:
-    """Execute any registered uefn_tools tool by name. Use this to access the full 358 tools.
+    """Execute any registered uefn_tools tool by name (full registry via list_tools).
 
     Pass tool arguments as JSON in `kwargs` (string or dict); they are forwarded to the bridge
     as the single `kwargs` object expected by `_c_run_tool`.

@@ -17,14 +17,14 @@ Communication: HTTP POST `127.0.0.1:8765` (auto-detect 8765-8770)
 | `server/bridge.py` | HTTP client → UEFN mcp_bridge |
 | `server/port_discovery.py` | Find mcp_bridge port (8765–8770) |
 | `Content/Python/uefn_tools/tools/mcp_bridge.py` | In-UEFN HTTP server |
-| `Content/Python/uefn_tools/` | 358 registered tools |
+| `Content/Python/uefn_tools/` | Registered tools (`uefn_tools.__tool_count__`) |
 | `deploy.py` | Deploy to UEFN project |
 | `init_unreal.py` | UEFN auto-loader |
 
 ## Tool Surface
 
 - **Direct:** ~40 curated @mcp.tool() commands (actors, assets, level, viewport)
-- **Escape hatch:** `run_tool(name, **kwargs)` → any of 358 tools
+- **Escape hatch:** `run_tool(name, **kwargs)` → any registered tool
 
 ## Rules
 

@@ -66,7 +66,7 @@ class SafetyGate:
         return root + "/Content"
 
 @register_tool(name="core_safety_audit", category="System")
-def core_safety_audit():
+def core_safety_audit(**kwargs):
     """
     Checks the current UEFN viewport selection against Safety Gate rules.
     Identifies which assets are safe for AI/Automation to modify.

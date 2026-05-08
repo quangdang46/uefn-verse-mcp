@@ -1,4 +1,4 @@
-"""Escape hatch for all 358 uefn_tools."""
+"""Escape hatch for all registered uefn_tools (see uefn_tools.__tool_count__)."""
 import json
 import os
 from typing import Any

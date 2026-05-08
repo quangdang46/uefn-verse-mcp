@@ -9,7 +9,7 @@ Claude Code ←── stdio ──→ server/main.py (FastMCP)
                                │
                           uefn_tools mcp_bridge (inside UEFN)
                                │
-                          uefn_tools/ (358 tools → unreal.* API)
+                          uefn_tools/ (registered tools → unreal.* API)
 ```
 
 ## Components
@@ -18,7 +18,7 @@ Claude Code ←── stdio ──→ server/main.py (FastMCP)
 
 - FastMCP server running on host machine
 - Exposes ~40 direct @mcp.tool() commands
-- Exposes `run_tool()` escape hatch for 358 tools
+- Exposes `run_tool()` escape hatch for the full tool registry
 - Uses `bridge.py` to send HTTP commands to UEFN
 
 ### 2. uefn_tools/tools/mcp_bridge.py — In-UEFN HTTP listener
@@ -29,7 +29,7 @@ Claude Code ←── stdio ──→ server/main.py (FastMCP)
 
 ### 3. uefn_tools/ — Tool package
 
-- 358 `@register_tool` functions (categories: Actors, Materials, Verse, …)
+- Many `@register_tool` functions across modules (categories: Landscape, Materials, Verse, …)
 - Invoked from MCP via `run_tool` on the bridge
 
 ### 4. init_unreal.py — UEFN auto-loader
