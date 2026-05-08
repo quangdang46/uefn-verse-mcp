@@ -28,6 +28,8 @@ Why the queue + tick pattern:
     The HTTP server runs on a daemon thread. Commands are queued and
     dispatched to the main thread on every editor tick — the same approach
     pioneered by Kirch's uefn_listener.py (March 2026).
+    By default only **one** queued command runs per Slate tick (see
+    UEFN_MCP_TICK_BATCH_LIMIT) so parallel MCP clients cannot overload a frame.
 
 What's new vs Kirch's original:
     • run_tool command — call any registered UEFN uefn_tools tool by name,
@@ -64,6 +66,7 @@ from __future__ import annotations
 
 import io
 import json
+import os
 import queue
 import socket
 import sys
@@ -80,14 +83,50 @@ from uefn_tools.registry import register_tool
 
 # ─── Configuration ────────────────────────────────────────────────────────────
 
-DEFAULT_PORT       = 8765
-MAX_PORT           = 8770
-TICK_BATCH_LIMIT   = 5
-HTTP_TIMEOUT_SEC   = 30.0
-POLL_INTERVAL_SEC  = 0.02
-STALE_CLEANUP_SEC  = 60.0
-LOG_RING_SIZE      = 200
-HISTORY_CAP        = 500
+
+def _env_int(key: str, default: int, *, minimum: int = 1) -> int:
+    """Read int from environment; invalid/missing → default (clamped)."""
+    try:
+        raw = os.environ.get(key)
+        if raw is None or str(raw).strip() == "":
+            return max(minimum, default)
+        return max(minimum, int(raw))
+    except (TypeError, ValueError):
+        return max(minimum, default)
+
+
+def _env_float(key: str, default: float) -> float:
+    try:
+        raw = os.environ.get(key)
+        if raw is None or str(raw).strip() == "":
+            return default
+        v = float(raw)
+        return max(0.0, v)
+    except (TypeError, ValueError):
+        return default
+
+
+DEFAULT_PORT = 8765
+MAX_PORT = 8770
+# Max MCP commands drained per Slate post-tick callback. Default **1** so the editor
+# never runs multiple heavy unreal.* batches in a single frame (prevents stalls/crash
+# when clients fire parallel HTTP requests). Increase via UEFN_MCP_TICK_BATCH_LIMIT only
+# if you accept higher risk.
+TICK_BATCH_LIMIT = _env_int("UEFN_MCP_TICK_BATCH_LIMIT", 1, minimum=1)
+# HTTP POST back-pressure: refuse when too many commands are waiting for ticks.
+MAX_QUEUE_DEPTH = max(TICK_BATCH_LIMIT, _env_int("UEFN_MCP_MAX_QUEUE_DEPTH", 32, minimum=1))
+
+# Max seconds an HTTP worker thread waits for the game thread to finish one command.
+# With TICK_BATCH_LIMIT=1, queue drains slowly — keep this generous or raise via env.
+HTTP_TIMEOUT_SEC = max(30.0, float(os.environ.get("UEFN_MCP_HTTP_WAIT_SEC", "180") or "180"))
+
+POLL_INTERVAL_SEC = _env_float("UEFN_MCP_POLL_INTERVAL_SEC", 0.02)
+if POLL_INTERVAL_SEC < 0.001:
+    POLL_INTERVAL_SEC = 0.001
+
+STALE_CLEANUP_SEC = 60.0
+LOG_RING_SIZE = 200
+HISTORY_CAP = 500
 
 # ─── State ────────────────────────────────────────────────────────────────────
 
@@ -957,6 +996,20 @@ class _Handler(BaseHTTPRequestHandler):
             self._respond(200, json.dumps(result).encode())
             return
 
+        qs = _command_queue.qsize()
+        if qs >= MAX_QUEUE_DEPTH:
+            body = json.dumps({
+                "success": False,
+                "error": (
+                    f"MCP queue saturated ({qs}/{MAX_QUEUE_DEPTH}). "
+                    "Too many parallel requests — retry after earlier commands finish."
+                ),
+                "queue_depth": qs,
+                "max_queue_depth": MAX_QUEUE_DEPTH,
+            }).encode()
+            self._respond(503, body)
+            return
+
         _request_counter += 1
         req_id = f"req_{_request_counter}_{time.time_ns()}"
         _command_queue.put((req_id, command, params))
@@ -1021,6 +1074,9 @@ def _tick(delta_time: float) -> None:
     """Drain the command queue on the main thread — unreal.* calls are safe here."""
     global _tick_health
     _tick_health += 1
+    qs = _command_queue.qsize()
+    if qs > MAX_QUEUE_DEPTH // 2:
+        _log(f"Queue backlog {qs}/{MAX_QUEUE_DEPTH} — clients should serialize requests", "warning")
     processed = 0
     while not _command_queue.empty() and processed < TICK_BATCH_LIMIT:
         try:
@@ -1091,6 +1147,11 @@ def start_listener(port: int = 0) -> int:
 
     _log(f"Listener started on http://127.0.0.1:{port}")
     _log(f"{len(_HANDLERS)} commands registered")
+    _log(
+        f"Throttle: TICK_BATCH_LIMIT={TICK_BATCH_LIMIT} MAX_QUEUE_DEPTH={MAX_QUEUE_DEPTH} "
+        f"HTTP_WAIT={HTTP_TIMEOUT_SEC}s (env: UEFN_MCP_TICK_BATCH_LIMIT, "
+        f"UEFN_MCP_MAX_QUEUE_DEPTH, UEFN_MCP_HTTP_WAIT_SEC)"
+    )
     return port
 
 
@@ -1131,6 +1192,11 @@ def get_status() -> dict:
         "port":    _bound_port,
         "url":     f"http://127.0.0.1:{_bound_port}" if _bound_port else None,
         "commands": len(_HANDLERS),
+        "dispatch_mode": _dispatch_mode,
+        "queue_depth": _command_queue.qsize(),
+        "tick_batch_limit": TICK_BATCH_LIMIT,
+        "max_queue_depth": MAX_QUEUE_DEPTH,
+        "http_wait_sec": HTTP_TIMEOUT_SEC,
     }
 
 
@@ -1204,6 +1270,10 @@ def mcp_status(**kwargs) -> None:
             f"  Running:   YES\n"
             f"  URL:       {s['url']}\n"
             f"  Commands:  {s['commands']}\n"
+            f"  Dispatch:  {s.get('dispatch_mode', '?')}\n"
+            f"  Queue:     {s.get('queue_depth', '?')} / max {s.get('max_queue_depth', '?')}\n"
+            f"  Tick batch:{s.get('tick_batch_limit', '?')} (commands per Slate tick)\n"
+            f"  HTTP wait: {s.get('http_wait_sec', '?')} s\n"
             f"\n  Claude Code .mcp.json config:\n"
             f'  {{"mcpServers": {{"uefn-toolbelt": {{'
             f'"command": "python", "args": ["<path>/mcp_server.py"]}}}}}}\n'

@@ -2,6 +2,7 @@
 
 ## 2026-05-08
 
+- **MCP anti-crash throttle:** **`mcp_bridge.py`** — default **`TICK_BATCH_LIMIT=1`** (was 5 commands/frame → stall/crash). **`MAX_QUEUE_DEPTH`** + HTTP **503** when saturated; **`get_status`** exposes queue/tick/http wait; env **`UEFN_MCP_TICK_BATCH_LIMIT`**, **`UEFN_MCP_MAX_QUEUE_DEPTH`**, **`UEFN_MCP_HTTP_WAIT_SEC`**. **`server/bridge.py`** — **`RLock`** serializes outbound HTTP + optional **`UEFN_MCP_CLIENT_COOLDOWN_SEC`**; **`HTTPError`** parsing for editor errors.
 - **Toolbelt audit:** Added **`scripts/audit_uefn_tools.py`** — `py_compile` all tool modules, require **`**kwargs`** on every **`@register_tool`** handler, detect duplicate tool names. Fixed **`core_safety_audit`** in **`core/safety_gate.py`** (missing **`**kwargs`**). Synced **`uefn_tools.__tool_count__`** → **363**, **`__category_count__`** → **54**; docs/MCP strings no longer hardcode **358**.
 - **Terrain MCP tools:** Repo **`landscape_tools.py`** includes **`terrain_blockout_*`**, **`terrain_noise_selected`** (folder query), **`terrain_flatten`**, **`terrain_ridge_line`**, **`terrain_path_cut`**. After deploy, **`importlib.reload(landscape_tools)`** may be needed before **`describe_tool`** sees new registrations; **`list_tools`** category **Landscape** lists **8** tools when synced.
 

@@ -25,7 +25,7 @@ config = get_config()
 
 # ── Version ───────────────────────────────────────────────────────────────────
 __version__ = "2.2.1"
-__tool_count__ = 363
+__tool_count__ = 364
 __category_count__ = 54
 TOOLBELT_API_VERSION = __version__  # backwards compat alias
 
