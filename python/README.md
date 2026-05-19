@@ -97,6 +97,46 @@ uv pip install -e ".[dev]"
 verse-docs-mcp query "creative_device events"
 ```
 
+## Refreshing the bundled docs
+
+The Markdown corpus under `python/docs/` is periodically refetched from
+`dev.epicgames.com` so the bundled SQLite index stays current. The script
+lives at `python/scripts/refresh_docs.py`.
+
+Run it locally with:
+
+```bash
+pip install httpx beautifulsoup4 markdownify
+# Dry run against 50 files
+python python/scripts/refresh_docs.py --dry-run --limit 50
+
+# Real refresh, conservative concurrency to avoid Cloudflare WAF
+python python/scripts/refresh_docs.py --concurrency 4 --delay-ms 250
+```
+
+`dev.epicgames.com` is fronted by Cloudflare and will rate-limit a single
+IP aggressively (HTTP 403) once it sees bursty traffic. The defaults are
+intentionally polite. Pages that are pure JS shells or have been removed
+are skipped and the existing on-disk content is kept.
+
+### Automate via GitHub Actions
+
+A drop-in workflow is provided at
+`python/scripts/github-workflow-refresh-docs.yml.example`. Copy it into
+`.github/workflows/refresh-docs.yml` to enable a weekly cron + manual
+`workflow_dispatch` trigger that runs the refresh on GitHub-hosted
+runners (different egress IP per run, so the WAF does not accumulate
+per-IP bans). When the workflow finds diffs it opens a PR against your
+default branch.
+
+```bash
+mkdir -p .github/workflows
+cp python/scripts/github-workflow-refresh-docs.yml.example \
+   .github/workflows/refresh-docs.yml
+git add .github/workflows/refresh-docs.yml
+git commit -m "chore: enable weekly docs refresh cron"
+```
+
 ## License
 
 MIT
