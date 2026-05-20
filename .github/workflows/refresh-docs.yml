@@ -1,0 +1,102 @@
+name: Refresh bundled docs
+
+# Periodically refetches `python/docs/**/*.md` from dev.epicgames.com and
+# opens a PR with any changes. Runs on GitHub-hosted runners, which get a
+# fresh egress IP each run so Cloudflare WAF does not accumulate per-IP
+# bans the way a developer's box does.
+
+on:
+  schedule:
+    # Mondays at 03:17 UTC. Off-hour to avoid bot-hour spike on Epic side.
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Max files to refresh (0 = all)"
+        required: false
+        default: "0"
+      concurrency:
+        description: "Parallel HTTP requests"
+        required: false
+        default: "4"
+      delay_ms:
+        description: "Per-request delay in ms"
+        required: false
+        default: "250"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install refresh dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install httpx beautifulsoup4 markdownify
+
+      - name: Run refresh script
+        id: refresh
+        run: |
+          python python/scripts/refresh_docs.py \
+            --limit "${{ inputs.limit || 0 }}" \
+            --concurrency "${{ inputs.concurrency || 4 }}" \
+            --delay-ms "${{ inputs.delay_ms || 250 }}" \
+            --log refresh-docs.log.jsonl
+        continue-on-error: true
+
+      - name: Summarise refresh results
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from pathlib import Path
+
+          log = Path("refresh-docs.log.jsonl")
+          if not log.exists():
+              print("no log file; refresh likely failed before any fetch")
+              raise SystemExit(0)
+          counts = Counter()
+          for line in log.read_text().splitlines():
+              counts[json.loads(line)["status"]] += 1
+          print("## Refresh summary")
+          for k, v in counts.most_common():
+              print(f"- {k}: {v}")
+          PY
+
+      - name: Rebuild SQLite index
+        if: steps.refresh.outcome == 'success'
+        run: |
+          python -m pip install -e ./python
+          verse-docs-mcp index --output /tmp/verse-docs.rebuilt.db
+          ls -la /tmp/verse-docs.rebuilt.db
+
+      - name: Create pull request
+        if: steps.refresh.outcome == 'success'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: chore/refresh-docs
+          commit-message: "chore(docs): refresh bundled Epic documentation"
+          title: "chore(docs): refresh bundled Epic documentation"
+          body: |
+            Automated weekly refresh of `python/docs/**` from
+            `dev.epicgames.com`. Source: `python/scripts/refresh_docs.py`.
+
+            Status counts (see workflow logs for the JSONL audit trail):
+            inspect "Summarise refresh results" step output.
+
+            Pages that fail to fetch (404, JS-only render, Cloudflare 403)
+            keep their existing on-disk content.
+          delete-branch: true
+          add-paths: |
+            python/docs/**
