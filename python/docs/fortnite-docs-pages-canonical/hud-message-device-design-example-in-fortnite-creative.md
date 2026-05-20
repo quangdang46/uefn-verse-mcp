@@ -1,107 +1,161 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/hud-message-device-design-example-in-fortnite-creative
 
-# Hiding Prop Gallery Devices
-Add these props to your island to give players a place to hide, and use them to create new Hide-and-Seek games.
-![Hiding Prop Gallery Devices](https://dev.epicgames.com/community/api/documentation/image/0d919984-a1b5-41fb-b36b-2b8e4eb52954?resizing_type=fill&width=1920&height=335)
-The **Hiding Prop Gallery** provides you with several different [props](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#prop) that players can hide in and teleport through:
-  * **Port-a-Potty**
-  * **Haystack**
-  * **Garbage Dumpster**
-  * **Scarecrow**
+# HUD Message Device Design Example
 
-You can use these to create a [hide-and-seek](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#hide-and-seek) game that is different from a [prop hunt](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#prop-hunt). You can customize the props so that more than one player can hide in one, and determine whether the prop has sound effects and a wobbling animation when it is occupied.
-For help on how to find the **Hiding Prop Gallery** , see **[Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite)**.
-If you're using multiple copies of a device on an island, it can be useful to [rename](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#rename-a-device) them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the **[Event Browser](https://dev.epicgames.com/documentation/fortnite/event-browser-in-fortnite-creative)**.
-##  Device Options
-This device has some basic functionality, like choosing which teams and classes can use the hiding prop. Additionally, there are some advanced options, like how many players can hide in a hiding prop and whether they are ejected after a period of time.
-You can configure this device with the following options.
-Default values are **bold**.
-Option  |  Value  |  Description
----|---|---
-**Enabled at Game Start** |  **Enabled** , Disabled |  Determines whether the Hiding Prop is enabled when the game starts.
-**Usable by Team** |  **Any** , Pick a team |  Determines which team is able to use this prop to hide. Players on other teams will not see the **Hide** prompt.
-**Usable by Class** |  **Any** , Pick a class |  Determines which class is able to use this prop to hide. If you choose **Any** , any player with an assigned class can use the prop to hide. If you choose **No Class** , only players without an assigned class can use the prop to hide.
-**Invert Team Selection** |  **Off** , On |  If you choose **On** , all teams except the one selected in the **Usable by Team** option can use the prop to hide.
-**Invert Class Selection** |  **Off** , On |  If you choose **On** , all classes except the one selected in the **Usable by Class** option can use the prop to hide.
-**Invulnerable** |  **Off** , On |  Determines whether the prop can be damaged, or if it is immune to damage.
-**Eject When Failing Requirements** |  **Off** , On |  If you choose **On** , a player is ejected from their hiding place if their team or class changes to one that is different from the requirement set in the **Usable by Team** or **Usable by Class** options.
-**Interact Time** |  **Instant** , Pick or enter a number of seconds |  Determines the amount of time the player must hold down the Interact control before they are hidden or stop hiding.
-**Hide Text** |  Enter text |  Use this to customize the text displayed for the **Hide** prompt. If this is left blank, the default text is used.
-**Stop Hiding Text** |  Enter text |  Use this to customize the text displayed for the **Stop Hiding** prompt. If this is left blank, the default text is used.
-**Occupied Text** |  Enter text |  You can customize text that will be displayed when the prop has someone hiding in it. If this is left blank, the interaction prompt will not display when someone is hiding in the prop.
-**Max Number of Occupants** |  **1** , Pick or enter a number |  Determines how many players can hide in this prop at one time.
-**Should Wobble While Hiding** |  **On** , Off |  By default, the prop alerts other players with sound and animation that a player is hiding in the prop. Set this to **Off** to disable these effects.
-**Max Hiding Time** |  **Don't Override** , Pick a number |  Sets a maximum amount of time a player can hide in the prop before being ejected.
-**Block Hide Time** |  **No Delay** , Pick or enter a number |  When a player leaves the prop, this determines the amount of time another player must wait before they can hide in the prop.
-**Hidden Travel Group** |  **Don't Override** , Pick or enter a group number |  To make use of the hiddent travel feature, you must assign this hiding prop to a Hidden Travel Group.
-**Hidden Travel Target Group** |  **Don't Override** , Pick or enter a group number |  Determines which group of hiding props can be targeted as a hidden travel destination. You can set this to the same value as the **Hidden Travel Group** option, or if you have multiple groups of hiding props you can target a different group.
-**Attempt No Repeats** |  **On** , Off |  If this is set to **On** , the prop will avoid sending a player to the previous hiding prop twice in a row, unless there is no other hiding prop available.
-###  Scarecrow-only Options
-The scarecrow hiding prop has two options the other hiding props don't have, listed below.
-Option  |  Value  |  Description
----|---|---
-**Has Pumpkin Head** |  On, **Off** |  Determines whether the scarecrow has a pumpkin for a head or not.
-**Clothes Color** |  **Default** , Purple, Yellow |  Determines the color of the clothing on the scarecrow.
-##  Direct Event Binding
-Following are the [direct event binding](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#direct-event-binding) options for this device.
-###  Functions
-A [function](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) listens for an event on a device then performs an action.
-  1. For any function, click the **option** , then **Select Device** to access and select from the **Device** dropdown menu.
-  2. click **Select Event** to bind the device to an event that will trigger the function.
-  3. If more than one device or event triggers a function, click the **Add** button to add a line and repeat these steps.
+Warm, warmer, hot! Learn how to build a hot-and-cold game that features HUD Message devices!
 
-Option  |  Description
----|---
-**Enable When Receiving From** |  This function enables the device when an event occurs.
-**Disable When Receiving From** |  This function disables the device when an event occurs.
-**Toggle Invulnerability When Receiving From** |  This function toggles invulnerability on and off for this device when an event occurs.
-**Eject All Hiding Players When Receiving From** |  This function ejects all hiding players when an event occurs.
-**Eject Hiding Player When Receiving From** |  This function ejects the player hiding in this prop when an event occurs.
-**Hide Nearby Players When Receiving From** |  This function pulls any player within 10 meters into this hiding prop when an event occurs.
-**Enable Hidden Travel When Receiving From** |  This function enables hidden travel when an event occurs.
-**Disable Hidden Travel When Receiving From** |  This function disables hidden travel when an event occurs.
-**Destroy** |  This function destroys vulnerable hiding props.
-###  Events
-An [event](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#event) tells another device when to perform a function.
-  1. For any event, click the **option** , then **Select Device** to access and select from the **Device** dropdown menu.
-  2. Once you've selected a device, click **Select Function** to bind this event to a function for that device.
-  3. If more than one function is triggered by the event, click the **Add** button to add a line and repeat these steps.
+![HUD Message Device Design Example](https://dev.epicgames.com/community/api/documentation/image/fffd79bf-f0cf-40e6-b31e-7ec41b810fce?resizing_type=fill&width=1920&height=335)
 
-Option  |  Description
----|---
-**On Hide Send Event To** |  When a player hides in this hiding prop, it sends an event to the selected device, which triggers the selected function.
-**On Stop Hiding Send Event To** |  When a player leaves or is ejected from this hiding prop, it send an event to the selected device, which triggers the selected function.
-**On Prop Destroyed Send Event To** |  When this hiding prop is destroyed, it sends an event to the selected device, which triggers the selected function.
-**On Hidden Travel Complete** |  Sends an event when a player unhides.
-##  Using Hiding Prop Gallery in Verse
-You can use the code below to control a Hiding Props Gallery device in Verse. This code uses features of the [hiding_prop_device class](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/hiding_prop_device) API to enable travel between hiding props, hide players at a set distance, and eject hiding players. You can modify it to fit the needs of your experience.
-Verse
-```
-using { /Fortnite.com/Devices }
-using { /Verse.org/Simulation }
-using { /UnrealEngine.com/Temporary/Diagnostics }
+Remember the kids' game **Hot and Cold**? Want to see how you can make a digital version?
 
-# See https://dev.epicgames.com/documentation/en-us/uefn/create-your-own-device-in-verse for how to create a verse device.
+In this design example, learn how to build an a-mazing one-player mini-game using HUD Message devices along with some of the other resources available in Fortnite Creative.
 
-# A Verse-authored creative device that can be placed in a level
-hiding_prop_example_device := class(creative_device):
+The objective is for the player to enter on either side of the maze, then find the right end point by following the HUD message clues. You will also set the winning end point to change each time, making the game fun to play over and over!
 
-    # References to the hiding prop devices in the level
+You will learn how to:
 
-```
+- Use the HUD Message device.
+- Set Color Changing Tiles to trigger messages based on game events and player locations.
+- Use the Random Number Generator device to implement randomized gameplay objectives.
+- See how to bind devices with other devices to trigger specific actions.
 
-Copy full snippet(135 lines long)
-To use this code in your island, follow these steps:
-  1. In your UEFN project, drag a **Hiding Props Gallery** device onto your island.
-  2. Choose four hiding props to use.
-You can duplicate a prop using **Alt + Drag** with the translate tool active.
-  3. Create a new Verse device named `hiding_prop_example_device`. To learn how to create a new device in Verse, see [Create Your Own Device Using Verse](https://dev.epicgames.com/documentation/fortnite/create-your-own-device-using-verse-in-unreal-editor-for-fortnite).
-  4. In the Verse Explorer, double-click `hiding_prop_example_device.verse` to open the script in Visual Studio Code.
-  5. Copy and paste in the code above, compile, and drag the device onto your island.
-  6. In the **Content Drawer** , search and add 5 Button devices to your island. You can rename the devices to align with the editable property names.
-  7. Select your Verse device in the **Outliner**.
-  8. In the Verse device's **Details** panel, assign the object references for the hiding props and buttons on your island. You can use the eyedropper to pick the device in the viewport, or use the dropdown and search for the device.
-  9. Save your project, and click **Launch Session**.
+## Devices Used
 
-This example uses print statements to test the functionality of the gameplay setup. This workflow can help ensure your island functions as intended.
-  * [ ](https://dev.epicgames.com/community/search)
+- 1 x [Player Spawner](https://dev.epicgames.com/documentation/fortnite/using-player-spawn-pad-devices-in-fortnite-creative) device
+- 1 x [Random Number Generator](https://dev.epicgames.com/documentation/fortnite/using-random-number-generator-devices-in-fortnite-creative) device
+- 2 x [Trigger](https://dev.epicgames.com/documentation/fortnite/using-trigger-devices-in-fortnite-creative) devices
+- 5 x [**HUD Message**](using-hud-message-devices-in-fortnite-creative) devices
+- 5 x [**Billboard**](using-billboard-devices-in-fortnite-creative) devices (optional)
+- 2 x [**Capture Area**](using-capture-area-devices-in-fortnite-creative) devices
+- Multiple **[Color Changing Tile](https://dev.epicgames.com/documentation/fortnite/using-color-changing-tile-devices-in-fortnite-creative)** devices
+- 4 x [Volume](https://dev.epicgames.com/documentation/fortnite/using-volume-devices-in-fortnite-creative) devices
+- 1 x **[End Game](https://dev.epicgames.com/documentation/fortnite/using-end-game-devices-in-fortnite-creative)** device
+
+## Build Your Maze
+
+Start by building a maze that the player will have to maneuver through. You can find block shapes like the ones below in the **Primitive Shapes Gallery**, but any shapes will do as long as you can build a maze with enough space between the walls for a player to maneuver.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/b64e727b-0b60-4be8-8f84-4a4e268b12c5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b64e727b-0b60-4be8-8f84-4a4e268b12c5?resizing_type=fit)
+
+The maze above has two entrances/exits, and multiple possible dead-end points inside of the maze.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/7803f3e5-1c19-486c-bf1d-413af3bd3912?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7803f3e5-1c19-486c-bf1d-413af3bd3912?resizing_type=fit)
+
+If you follow this basic design, you'll be able to build in some randomized gameplay later where the end points change each round or game to encourage players to come back for a varied experience each time!
+
+### Add a Player Spawner
+
+Place a Player Spawner device on a side that does not have an entrance to the maze. This way, the player can select either entrance.
+
+## Set Up the Random Number Generator Device
+
+The **Random Number Generator** device is a powerful device that you can use to trigger other devices based on random input.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/51e36d63-3b5c-4fd8-b2b8-d66f0b872cac?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/51e36d63-3b5c-4fd8-b2b8-d66f0b872cac?resizing_type=fit)
+
+The device can be configured to generate a random number that falls inside a range you set.
+You can also customize it to generate a volume that extends off the device base. Any devices you place inside a segment of this volume will trigger when the number of that segment is rolled by the number generator.
+
+Place the Random Number Generator device on your island, then customize it with the following settings.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/b225d4a8-95c0-43a2-b7b4-9e0bcce3956b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b225d4a8-95c0-43a2-b7b4-9e0bcce3956b?resizing_type=fit)
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Value Limit 2** | 2 | The maximum number the device can roll. The minimum value defaults to 1, so with this set to 2, only a 1 or a 2 can be selected. |
+| **Winning Value** | 0 | Since this isn't used to establish a win condition, you can set it to 0. |
+| **Roll Time** | Instant | The result of the roll is instantly calculated. This value is set by entering 0.0. |
+| **Zone Direction** | Left | Setting this to any value other than None will open a zone where devices can be placed that will be triggered. |
+| **Length** | 2 | How long the zone is. The zone will be split into equal sections. |
+| **Enabled During Phase** | Gameplay Only | You will only want the zone active during gameplay. |
+| **Active on Phase** | Game Start | The device should become active at the start of the game. |
+
+## Set Up Trigger Devices
+
+You will add two **Trigger** devices, placing each one inside of a Random Number Generator device zone. The triggers will activate the color changing tile **clues** and the capture zones inside the maze.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/40ea2e3e-19bc-40f2-92f7-3b7546ba5f7d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/40ea2e3e-19bc-40f2-92f7-3b7546ba5f7d?resizing_type=fit)
+
+Place the Trigger device fully inside the zone to ensure correct activation!
+
+You will circle back in a later step to find out how to connect the Random Number Generator and Trigger devices with other devices used in the game.
+
+You will set up one side of the maze fully, then copy and place the elements from one side to the other in a later step.
+
+## Set Up the HUD Message Devices
+
+You will use one HUD message to set the objective for the player at the start of the game, and four more to direct the player through the maze.
+
+Setting up all of the messages ahead of time makes adding them to the maze much easier later.
+
+You can also use **Billboard** devices to identify which HUD messages are tied to which devices. This step isn't necessary for gameplay, but it can help you to remember what the various devices are used for.
+
+## Set Up the Capture Area Devices
+
+You will use the Capture Area devices to set up the **end points** — one for each side of the maze.
+
+Only one capture area is active at a time.
+
+You will copy and place the second device in a later step.
+
+## Set Up the Color Changing Tiles
+
+In this example, you're placing sneaky triggers into the environment using Color Changing Tile devices to activate HUD messages as the player moves through the maze.
+
+Using the tiles instead of standard triggers gives you an opportunity to color-code your messages as you're building your experience. As you lay out the tiles, the colors you choose can remind you where you should place your clues inside the maze.
+
+This color-coding is for your benefit as you're building your mini-game. The tiles will not show during gameplay.
+
+You will create two sets of these tiles. The first set will connect with **Capture Area_A** and the second with **Capture Area_B**.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/f7f945e7-e986-4b9b-9584-97e472808829?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f7f945e7-e986-4b9b-9584-97e472808829?resizing_type=fit)
+
+- Set **Tile A1_COLD** to **light blue**.
+- Set **Tile A1_WARMER** to **orange**.
+- Set **Tile A1_HOT!** to **red**.
+
+## Bind Devices for Capture Area_A
+
+[Direct event binding](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#direct-event-binding) is how you set devices to communicate directly with other devices. Binding lets a device send a message to another device that can trigger another action or reaction. This involves setting [functions](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#function) and [events](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#event) for the devices involved.
+
+For more on how direct event binding works, see **[Getting Started with Direct Event Binding](https://dev.epicgames.com/documentation/fortnite/getting-started-with-direct-event-binding-in-fortnite-creative)**.
+
+All of the bindings you set here will be triggered by **Capture Area_A**.
+
+## Place the Color Changing Tiles Inside the Maze
+
+In the example below, Color Changing Tile devices have been placed in a sequence that follows the possible paths that a player might follow while exploring the maze.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/37165880-39c0-461b-a490-73e93f33efc4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/37165880-39c0-461b-a490-73e93f33efc4?resizing_type=fit)
+
+The maze is in two sections that do not connect. Each has its own entry point and end point. You will set up the first section with the gameplay devices. In a later step, you will duplicate these devices and place the duplicates on the other side of the maze.
+
+The **Cold** HUD message will display at the furthest point away from Capture Zone A. As the player gets closer to the capture point, more tiles are added that are configured to display additional clues such as **Warmer** and eventually **Hot!** closest to a capture zone.
+
+Some of the tiles in the image above are red herrings — false leads intended to lure the player into exploring in the wrong direction! Players will have to pay attention to the HUD messages to get back on track toward the prize!
+
+## Connect the First Area to the Random Number Generator
+
+Next step is to set up the events that will activate the first Capture Zone device and its associated Color Changing Tile devices when this segment of the Random Number Generator device is selected.
+
+## Set Up the B Side of the Maze
+
+Starting with [Set Up the HUD Messages](https://dev.epicgames.com/documentation/fortnite/hud-message-device-design-example-in-fortnite-creative) section above, you will repeat the steps for the second side of the maze but name the devices with a **B** instead of an **A**.
+
+## Finishing Touches
+
+You're almost done!
+
+And that's it!
+
+You have successfully built a maze with two win-condition endpoints, one of which will be selected randomly when a player spawns into the island.
+
+Pop-up HUD messages will appear on screen to let the player know if they are getting warmer or colder as they try to find the goal!
+
+## Design Tip
+
+To make the experience more intense, you could:
+
+- Add a Timer device to the island. This puts pressure on the player to find the winning endpoint before time runs out.
+- Set up team spawners, then add weapons in the maze. Teams would have an extra layer of gameplay as they hunt for the endpoint while eliminating other players!
+- Add more endpoints to the Random Number Generator device for even more ways to win the game.

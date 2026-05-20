@@ -1,7 +1,15 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/creative_device_asset
 
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+# creative_device_asset class
 
-**Session ID** : 9dfa643a5ed11fc7
-**IP Address** : 14.191.95.176
+Learn technical details about the creative_device_asset class.
+
+Internal asset for representing creative devices.
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /Fortnite.com/Devices }` |
+
+## Members
+
+This class has no members.

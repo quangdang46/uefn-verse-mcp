@@ -1,7 +1,13 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/simulation/team
 
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+# team class
 
-**Session ID** : 9dfa509b5a9c1c41
-**IP Address** : 14.191.95.176
+Learn technical details about the team class.
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /Verse.org/Simulation }` |
+
+## Members
+
+This class has no members.

@@ -1,36 +1,178 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-audio-mixer-devices-in-unreal-editor-for-fortnite
 
-# Sports Galleries
-Go for the gold by using the sports galleries!
-![Sports Galleries](https://dev.epicgames.com/community/api/documentation/image/047d1dd8-ae1c-4062-b250-d19109733392?resizing_type=fill&width=1920&height=335)
-**Sports** [galleries](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#gallery) share [themes](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#island-theme) of competitive activities and recreational structures.
-In the **Galleries** [category](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#category), you can browse for building pieces to make your own unique structures. The Galleries tab also offers environmental and prop items as well.
-This page is a visual guide to help you find galleries that fit a theme more quickly.
-To learn more about how to place gallery pieces to create an island that’s uniquely your own, check out [Building Basics](https://dev.epicgames.com/documentation/fortnite/building-basics-in-fortnite-creative).
-##  Chonker’s Speedway Category
-|  |  |
----|---|---|---
-[![Chonker’s Speedway Wall and Roof Gallery](https://dev.epicgames.com/community/api/documentation/image/d67030eb-9f01-4128-9e9d-ef5b5be6ce0d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d67030eb-9f01-4128-9e9d-ef5b5be6ce0d?resizing_type=fit) |  [![Chonker’s Speedway Floor and Stair Gallery](https://dev.epicgames.com/community/api/documentation/image/4d41daa8-a39c-4c21-b36a-b4cb8f01f870?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4d41daa8-a39c-4c21-b36a-b4cb8f01f870?resizing_type=fit) |  [![Chonker’s Speedway Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/d49383f9-54c7-4fe0-9774-65ca54f9cf1c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d49383f9-54c7-4fe0-9774-65ca54f9cf1c?resizing_type=fit) |  [![Chonker’s Speedway Nature Gallery](https://dev.epicgames.com/community/api/documentation/image/c6bf55ac-f59c-4ed7-a4a9-4b1d5ab3a14b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c6bf55ac-f59c-4ed7-a4a9-4b1d5ab3a14b?resizing_type=fit)
-**Chonker’s Speedway Wall and Roof Gallery** |  **Chonker’s Speedway Floor and Stair Gallery** |  **Chonker’s Speedway Prop Gallery** |  **Chonker’s Speedway Nature Gallery**
-##  Parkour Category
-|  |  |  |  |
----|---|---|---|---|---
-[![Obstacle Course Parts Gallery](https://dev.epicgames.com/community/api/documentation/image/a98467ed-cd2a-4f80-9462-a510f015276a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a98467ed-cd2a-4f80-9462-a510f015276a?resizing_type=fit) |  [![Obstacle Course Wall Gallery](https://dev.epicgames.com/community/api/documentation/image/41125193-0ab4-4dcd-bea2-64d9297e95ab?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/41125193-0ab4-4dcd-bea2-64d9297e95ab?resizing_type=fit) |  [![Obstacle Course Roofs and Stairs Gallery](https://dev.epicgames.com/community/api/documentation/image/82cbf691-57c9-4b08-a6e0-5c779de96e5e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/82cbf691-57c9-4b08-a6e0-5c779de96e5e?resizing_type=fit) |  [![Obstacle Course Floor Gallery](https://dev.epicgames.com/community/api/documentation/image/7e327f8b-5984-4c10-852e-7e75b95c1ef5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7e327f8b-5984-4c10-852e-7e75b95c1ef5?resizing_type=fit) |  [![Parkour Gallery](https://dev.epicgames.com/community/api/documentation/image/6acbc84c-b5da-4e50-99fe-706bdaec71a3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6acbc84c-b5da-4e50-99fe-706bdaec71a3?resizing_type=fit) |  [![Obstacle Course Gallery White](https://dev.epicgames.com/community/api/documentation/image/0292c320-4f5f-46f5-a184-dcaa7c58aa2b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0292c320-4f5f-46f5-a184-dcaa7c58aa2b?resizing_type=fit)
-**Obstacle Course Parts Gallery** |  **Obstacle Course Wall Gallery** |  **Obstacle Course Roofs and Stairs Gallery** |  **Obstacle Course Floor Gallery** |  **Parkour Gallery** |  **Obstacle Course Gallery White**
-|  |  |  |  |
----|---|---|---|---|---
-[![Obstacle Course Gallery Stairs](https://dev.epicgames.com/community/api/documentation/image/47e2656c-fa0b-4f6b-a261-275a69cd3a58?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/47e2656c-fa0b-4f6b-a261-275a69cd3a58?resizing_type=fit) |  [![Obstacle Course Gallery Red](https://dev.epicgames.com/community/api/documentation/image/6780c59e-b6b8-4947-8f29-4da52fed322c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6780c59e-b6b8-4947-8f29-4da52fed322c?resizing_type=fit) |  [![Obstacle Course Gallery Purple](https://dev.epicgames.com/community/api/documentation/image/81e2555f-eef5-4962-9f1b-7cbe674b880a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/81e2555f-eef5-4962-9f1b-7cbe674b880a?resizing_type=fit) |  [![Obstacle Course Gallery Orange](https://dev.epicgames.com/community/api/documentation/image/f62245de-99dd-498f-b103-b95aaa65efd4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f62245de-99dd-498f-b103-b95aaa65efd4?resizing_type=fit) |  [![Obstacle Course Gallery Grip Tape](https://dev.epicgames.com/community/api/documentation/image/20357348-7a04-493c-be3a-e093951fdade?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/20357348-7a04-493c-be3a-e093951fdade?resizing_type=fit) |  [![Obstacle Course Gallery Green](https://dev.epicgames.com/community/api/documentation/image/c4f05024-df18-4e10-81e1-c6dea9e1e312?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c4f05024-df18-4e10-81e1-c6dea9e1e312?resizing_type=fit)
-**Obstacle Course Gallery Stairs** |  **Obstacle Course Gallery Red** |  **Obstacle Course Gallery Purple** |  **Obstacle Course Gallery Orange** |  **Obstacle Course Gallery Grip Tape** |  **Obstacle Course Gallery Green**
-|
----|---
-[![Obstacle Course Gallery Blue](https://dev.epicgames.com/community/api/documentation/image/f4d0f50c-aaa4-4342-b32a-004b02e77260?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f4d0f50c-aaa4-4342-b32a-004b02e77260?resizing_type=fit) |  [![Obstacle Course Gallery Black](https://dev.epicgames.com/community/api/documentation/image/d3a2408d-69ea-421b-aa4e-ce8296677bc2?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d3a2408d-69ea-421b-aa4e-ce8296677bc2?resizing_type=fit)
-**Obstacle Course Gallery Blue** |  **Obstacle Course Gallery Black**
-##  Racetrack Category
-|  |  |  |  |
----|---|---|---|---|---
-[![Racetrack Gallery](https://dev.epicgames.com/community/api/documentation/image/7e524dea-894e-41e7-8ce9-c539791ff9b8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7e524dea-894e-41e7-8ce9-c539791ff9b8?resizing_type=fit) |  [![Racetrack Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/836e5470-ab6a-4658-93e3-32db32a55742?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/836e5470-ab6a-4658-93e3-32db32a55742?resizing_type=fit) |  [![Racetrack Gallery I](https://dev.epicgames.com/community/api/documentation/image/14a76561-2da4-48dd-8b93-4c99d2af5807?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/14a76561-2da4-48dd-8b93-4c99d2af5807?resizing_type=fit) |  [![Racetrack Gallery H](https://dev.epicgames.com/community/api/documentation/image/4448e717-1531-47e9-a844-b689f60de5f3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4448e717-1531-47e9-a844-b689f60de5f3?resizing_type=fit) |  [![Racetrack Gallery G](https://dev.epicgames.com/community/api/documentation/image/cddba372-b32b-43e6-92d8-ca079ddaf138?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/cddba372-b32b-43e6-92d8-ca079ddaf138?resizing_type=fit) |  [![Racetrack Gallery F](https://dev.epicgames.com/community/api/documentation/image/7d5c2de9-aa5b-4063-9c1a-a08761358fbd?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7d5c2de9-aa5b-4063-9c1a-a08761358fbd?resizing_type=fit)
-**Racetrack Gallery** |  **Racetrack Prop Gallery** |  **Racetrack Gallery I** |  **Racetrack Gallery H** |  **Racetrack Gallery G** |  **Racetrack Gallery F**
-|  |  |  |
----|---|---|---|---
-[![Racetrack Gallery E](https://dev.epicgames.com/community/api/documentation/image/eca46fa7-8437-4f88-b0b5-5726c7465d4e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/eca46fa7-8437-4f88-b0b5-5726c7465d4e?resizing_type=fit) |  [![Racetrack Gallery D](https://dev.epicgames.com/community/api/documentation/image/d886f35d-44fc-4938-a866-c8d2c021d5b0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d886f35d-44fc-4938-a866-c8d2c021d5b0?resizing_type=fit) |  [![Racetrack Gallery C](https://dev.epicgames.com/community/api/documentation/image/d66b1997-3356-4833-89a6-7ffc46702fce?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d66b1997-3356-4833-89a6-7ffc46702fce?resizing_type=fit) |  [![Racetrack Gallery B](https://dev.epicgames.com/community/api/documentation/image/f13ea1fc-017b-4d7c-9124-e6b77e3191ec?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f13ea1fc-017b-4d7c-9124-e6b77e3191ec?resizing_type=fit) |  [![Racetrack Gallery A](https://dev.epicgames.com/community/api/documentation/image/1dedda0a-f190-42c7-914f-6e18a6b659f4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1dedda0a-f190-42c7-914f-6e18a6b659f4?resizing_type=fit)
-**Racetrack Gallery E** |  **Racetrack Gallery D** |  **Racetrack Gallery C** |  **Racetrack Gallery B** |  **Racetrack Gallery A**
+# The Audio Mixer Device
+
+Adjust volumes of sound groups using the Audio Mixer device.
+
+![The Audio Mixer Device](https://dev.epicgames.com/community/api/documentation/image/ffc1f2c1-272e-4e78-8a1a-f649f0328aca?resizing_type=fill&width=1920&height=335)
+
+Use the **Audio Mixer** device to adjust the volume for groups of sounds with dynamic and automatic control of a game’s volume mix, much like a professional mixing console would.
+
+With the Audio Mixer, you can adjust the level of sounds that are already in Fortnite (such as weapons, character footsteps, and vehicles) as well as custom [sound waves](unreal-editor-for-fortnite-glossary#sound-wave) and [sound cues](unreal-editor-for-fortnite-glossary#sound-cue) by using [**control buses**](unreal-editor-for-fortnite-glossary#control-bus) and [**control bus mixes**](unreal-editor-for-fortnite-glossary#control-bus-mix).
+
+The Audio Mixer is also available directly in Fortnite Creative. Check out the [Audio Mixer Device](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-audio-mixer-devices-in-fortnite-creative) for more info.
+
+Jump to [Activate Mix for a Duration](https://dev.epicgames.com/documentation/fortnite/using-audio-mixer-devices-in-unreal-editor-for-fortnite) for a step-by-step guide on activating a mix for a short duration on your island.
+
+## Control Buses
+
+When a sound is set to use a **control bus**, all the sounds on that bus can be modulated together in a **Control Bus Mix**.
+
+The following control buses are available to control the volume of the sounds that occur in Fortnite by default:
+
+| Control Bus Name | Description |
+| --- | --- |
+| CB FortAmbient | Used to set the volume of FN ambient sounds. |
+| CB FortExplosions | Used to set the volume of FN explosion sounds. |
+| CB FortFootstep | Used to set the volume of character footsteps. |
+| CB FortGadgets | Used to set the volume of sounds associated with FN Creative gadgets and devices. |
+| CB FortGlobal | Used to set the volume of all FN sounds. |
+| CB FortHitNotify | Used to set the volume of sounds associated with the Player getting impacted. |
+| CB FortImpacts | Used to set the volume of impact sounds. |
+| CB FortJam Volume | Used to control the volume of Jam tracks. |
+| CB FortMusic | Used to set the volume of music (includes emote music). |
+| CB FortPatchwork Volume | Used to set the volume of Patchwork devices. |
+| CB FortVehicles | Used to set the volume of vehicle sounds (not including engine sounds). |
+| CB FortVehicles Engine | Used to set the volume of vehicle engines. |
+| CB FortWeapon | Used to set the volume of weapons. |
+
+You can also create your own control buses. To create a control bus:
+
+To use a control bus on custom audio assets, the control bus must be set on the sound wave asset. The sound wave can still be used on a sound cue and the effect will be applied.
+
+To add a control bus to your sound wave:
+
+## Control Bus Mixes
+
+**Control bus mixes** take a group of control buses and allow you to define the volume level for each control bus.
+
+To create a control bus mix:
+
+Control bus mixes can also be created directly from the Mixer device.
+
+Control bus mixes take an array of **mix stages**. Each mix stage has the following parameters:
+
+| Parameter | Description |
+| --- | --- |
+| Bus | A control bus. Can be a Fortnite-defined bus or a user-created one. |
+| Value | The volume of the sounds routed to this control bus should be scaled when a mix is activated. |
+| Attack Time (sec) | [Attack](unreal-editor-for-fortnite-glossary#attack) is the time in sections for the mix to be applied when the mix is activated. |
+| Release Time (sec) | [Release](unreal-editor-for-fortnite-glossary#release) is the time in sections for the mix to be applied when the mix is deactivated. |
+
+## Finding and Placing the Device
+
+## User Options
+
+This device applies a control bus mix when activated, and you can configure this device to set the value:
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Mix** | **None,** Select a Control Bus Mix | The control bus mix to apply when the device is activated. |
+
+## Direct Event Binding
+
+Devices in UEFN use **Event Binding** to communicate. To set [direct event binding](unreal-editor-for-fortnite-glossary#direct-event-binding) for your device in UEFN:
+
+### Functions
+
+A [**function**](unreal-editor-for-fortnite-glossary#function) tells the selected device what it needs to do when the triggering device performs an action.
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Activate Mix** | Click the **Add** icon to select a device, then select an [event](unreal-editor-for-fortnite-glossary#event). | Activates the control bus Mix when the selected device and event triggers the Audio Mixer device. |
+| **Deactivate Mix** | Click the **Add** icon to select a device, then select an event. | Deactivates the control bus Mix when the selected device and event triggers the Audio Mixer device. |
+| **Register Player When Receiving From** | Click the **Add** icon to select a device, then select an event. | When an event occurs, this function registers the triggering player to this device. |
+| **Unregister Player When Receiving From** | Click the **Add** icon to select a device, then select an event. | When an event occurs, this function unregisters the triggering player to this device. |
+| **Unregister All Players When Receiving From** | Click the **Add** icon to select a device, then select an event. | When an event occurs, this function unregisters all players from this device. |
+
+## Using the Audio Mixer Device in Verse
+
+All Audio Mixer functions are exposed in Verse. You can now activate mixes, deactivate mixes and register/unregister players to a mix or bus using Verse.
+
+Verse
+
+```
+# Copyright Epic Games, Inc. All Rights Reserved.
+
+using { /Fortnite.com/Devices }
+using { /Verse.org/Simulation }
+using { /UnrealEngine.com/Temporary/Diagnostics }
+
+# A creative device that allows an audio mixer to be toggled on and off via a button device
+on_off_audio_mixer_device := class(creative_device):
+
+    @editable
+```
+
+To use this code in your UEFN experience, follow these steps.
+
+1. Drag an Audio Mixer device onto your island.
+2. Create a new Verse device named **audio_mixer_device_example**. To learn how to create a new device in Verse, see [Create Your Own Device Using Verse](https://dev.epicgames.com/documentation/en-us/uefn/create-your-own-device-in-verse).
+3. Open Verse Explorer and double-click **audio_mixer_device_example.verse** to open the script in Visual Studio Code.
+4. Paste in the code above, compile, and drag the Verse-authored device onto your island.
+5. Select your Verse device in the **Outliner**.
+6. In the device’s **Details** panel, assign the object reference for the AudioMixerDevice to the Audio Mixer device on your island. You can use the eyedropper to pick the device in the viewport, or use the dropdown and search for the device.
+7. Save your project and click **Launch Session**.
+
+### Audio Mixer API
+
+See the `audio_mixer_device` API Reference for more information on using the Audio Mixer device in Verse.
+
+## Activate a Mix for a Duration
+
+For this example, let's prototype a Hide and Seek game. Footsteps are muted while players look for a hiding spot, and once the timer runs out, everything is fair game! These four devices are required to test this example:
+
+- Player Spawner
+- Audio Mixer
+- Timer
+- Round Settings
+
+[![Timer Example](https://dev.epicgames.com/community/api/documentation/image/10c7e169-951b-4c38-8c6a-b3b2a5a222bc?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/10c7e169-951b-4c38-8c6a-b3b2a5a222bc?resizing_type=fit)
+
+1. Select and drag the **Audio Mixer** device into the viewport.
+2. In the **Details** panel, assign **CBFortFootstep** in the Bus field.
+3. Set **Fader Value** to **0.0**.
+4. Check **Activate on Game Start**.
+
+   [![CBFortFootstep](https://dev.epicgames.com/community/api/documentation/image/5ddfd174-a233-4894-b826-a248fb21663e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5ddfd174-a233-4894-b826-a248fb21663e?resizing_type=fit)
+5. Select a **Timer** device and drag it into your scene.
+6. Customize the device settings as you see fit for your island. In this example, **Duration** is set to **30.0**.
+
+   [![Timer options](https://dev.epicgames.com/community/api/documentation/image/328df765-041b-4886-a61e-009332359423?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/328df765-041b-4886-a61e-009332359423?resizing_type=fit)
+7. Select and drag the **Round Settings** device into the viewport. This example uses the default options.
+8. Select the **Audio Mixer** device again and go to the **User Options - Functions** section.
+9. Click **+** to add an Array element to **Activate Mix**
+10. Select the **Round Settings** device and choose the **On Round Start** option.
+11. Click **+** to add an Array element to **Deactivate Mix**
+12. Select the **Timer** device and choose the **On Success** option.
+
+    [![Mixer functions](https://dev.epicgames.com/community/api/documentation/image/5353689e-eabe-4540-8d83-5e2f4ebfd550?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5353689e-eabe-4540-8d83-5e2f4ebfd550?resizing_type=fit)
+13. Press on **Launch Session** and test your game! When a round starts, you should not be able to hear footsteps until the 30-second timer has run out.
+
+    [![Launch Session](https://dev.epicgames.com/community/api/documentation/image/a01c8cc3-6089-47e9-a123-9718fd9ea52c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a01c8cc3-6089-47e9-a123-9718fd9ea52c?resizing_type=fit)
+
+## More Topics
+
+- [![Adding Audio to Your Project](https://dev.epicgames.com/community/api/documentation/image/4120c4ca-d9f0-4179-95fe-10297986b79e?resizing_type=fit&width=640&height=640)
+
+  Adding Audio to Your Project
+
+  Add audio to a project.](https://dev.epicgames.com/documentation/fortnite/adding-audio-to-your-project-in-unreal-editor-for-fortnite)
+
+- [![Audio Player Device](https://dev.epicgames.com/community/api/documentation/image/b75bc25e-8809-400a-b3bf-fbc937a8cec8?resizing_type=fit&width=640&height=640)
+
+  Audio Player Device
+
+  Import, play and customize sound waves and sound cues.](https://dev.epicgames.com/documentation/fortnite/using-audio-player-devices-in-unreal-editor-for-fortnite)
+
+- [![Importing Custom Audio](https://dev.epicgames.com/community/api/documentation/image/54adc69d-66fe-4b57-8b03-df9597f7f562?resizing_type=fit&width=640&height=640)
+
+  Importing Custom Audio
+
+  Import custom audio into your island and immerse players in the world of your creation.](https://dev.epicgames.com/documentation/fortnite/importing-custom-audio-in-unreal-editor-for-fortnite)
+
+- [![Audio Troubleshooting](https://dev.epicgames.com/community/api/documentation/image/b3caded9-a92a-4682-91dd-ee1acc7fdfa4?resizing_type=fit&width=640&height=640)
+
+  Audio Troubleshooting
+
+  Answers to common audio issues in Unreal Editor for Fortnite.](https://dev.epicgames.com/documentation/fortnite/audio-troubleshooting-in-unreal-editor-for-fortnite)

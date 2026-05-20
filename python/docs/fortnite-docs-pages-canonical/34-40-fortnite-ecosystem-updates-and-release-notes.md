@@ -1,62 +1,121 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/34-40-fortnite-ecosystem-updates-and-release-notes
 
-# Race Checkpoint Devices
-The Race Checkpoint device enables designers to make racing games.
-![Race Checkpoint Devices](https://dev.epicgames.com/community/api/documentation/image/28cdb783-1148-4de8-9e4e-66b896b903fc?resizing_type=fill&width=1920&height=335)
-You can use the **Race Checkpoint** to place a series of [checkpoints](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#checkpoint) on a map for ground, air, and even foot-race games.
-For help on how to find the **Race Checkpoint** device, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
-If you're using multiple copies of a device on an island, it can be useful to [rename](https://dev.epicgames.com/documentation/en-us/fortnite-creative/rename-a-device) them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the [Event Browser](https://dev.epicgames.com/documentation/fortnite/event-browser-in-fortnite-creative).
-##  Contextual Filtering
-Some devices are affected by a feature called contextual filtering. This feature hides or displays options depending on the values selected for certain related options. This feature will reduce clutter in the Customize panel and make options easier to manage and navigate.
-However, it may not be easy to recognize which options or values trigger contextual filtering. To help you identify them, in our device docs we use  _italic_ for any values that trigger contextual filtering. All options will be listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option's value, there will be a note about that in the Description field for that option.
-##  Device Options
-This device has some basic functionality, like allowing players to pass through the checkpoint without a vehicle, or allowing specific vehicles to pass.
-You will find ways to customize things like checkpoint color and visibility under advanced functionality.
-You can configure this device with the following options.
-Default values are **bold**. Values that trigger contextual filtering are _italic_.
-###  Basic
-Option  |  Value  |  Description
----|---|---
-**Allow Players to Pass without Vehicle** |  **Yes** , No |  If [enabled](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary), allows players not in vehicles to pass through this checkpoint.
-**Allowed Vehicles** |  **All** , None, Ground Vehicles, Air Vehicles, Water Vehicles |  If enabled, allows either all vehicles or certain vehicle types to pass through this checkpoint.
-###  Advanced
-Option  |  Value  |  Description
----|---|---
-**Set Checkpoint to Highest Value** |  **No** , _Yes_ |  If **YES** , makes the checkpoint the last in the race when the device is saved.
-**Checkpoint Number** |  Select a Checkpoint Number |  Passing this checkpoint unlocks the next one, which has a higher sequence number.
-**Inactive Checkpoint Color Type** |  Direct Color, _Team Color_ , _Team Relationship Color_ |  Determines a checkpoint's color when it's not the current target and not yet passed. If set to **TEAM RELATIONSHIP** , the color a player sees will be based on whether their Team can pass this.
-**Inactive Checkpoint Color** |  **White** , Pick a Color |  The checkpoint's color when it isn't the current target and not yet passed.
-**Current Checkpoint Color Type** |  **Direct Color** , _Team Color_ , _Team Relationship Color_ |  Determines a checkpoint's color when it's the current target. If set to **TEAM RELATIONSHIP** , the color a player sees will be based on whether their Team can pass this.
-**Current Checkpoint Color** |  **Apple Green** , Pick a color |  Sets the color value while the checkpoint is the player's current target.
-**Completed Checkpoint Color Type** |  **Direct Color** , _Team Color_ , _Team Relationship Color_ |  Determines a checkpoint's color once it's been passed. If set to **TEAM RELATIONSHIP** , the color a player sees will be based on whether their Team could have passed this.
-**Completed Checkpoint Color** |  **Sky Blue** , Pick a color |  Determines the Direct Color used for a completed checkpoint.
-**Visible Prior to Race Start** |  **First Only** , No, Yes |  Determines if the checkpoint is visible prior to the start of the race.
-**Checkpoint Visible when Passed** |  **No** , Yes |  After a player passes the checkpoint, determine if the checkpoint should remain visible.
-**Activating Team** |  **Any** , Pick a Number |  The team that can activate the checkpoint.
-**Allowed Class** |  No Class, **Any** , Pick a number |  Determines which [class](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#class-identifier) can activate the device.
-**Play Audio** |  **Yes** , No |  When a checkpoint changes state (like pass or fail), play an audio cue.
-**Enabled During Phase** |  **Always** , None, Pre-Game Only, Gameplay Only, Create Only |  Enable the device during a specific [phase](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#game-phase). The Pre-Game phase includes all phases before the Game starts, including _Waiting for players in the lobby for Featured Islands_ and _The Game Start countdown_
-##  Direct Event Binding
-Following are the [direct event binding ](https://dev.epicgames.com/documentation/fortnite/direct-event-binding)options for this device
-###  Functions
-A [function](https://dev.epicgames.com/documentation/fortnite/function) listens for an event on a device then performs an action.
-  1. For any function, click the **option** , then **Select Device** to access and select from the **Device** dropdown menu.
-  2. Once you've selected a device, click **Select Event** to bind the device to an event that will trigger the function.
-  3. If more than one device or event triggers a function, click the **Add** button to add a line and repeat these steps.
+# 34.40 Fortnite Ecosystem Updates and Release Notes
 
-Option  |  Description
----|---
-**Set as Current Checkpoint When Receiving From** |  Sets this checkpoint as the current target for the player. Will start the race if it's not currently active. This ignores checks for Vehicles. Will only function if the players is not already past this point in the race.
-**Disable When Receiving From** |  Disables the device.
-**Enable When Receiving From** |  Enables the device.
-###  Events
-An [event](https://dev.epicgames.com/documentation/fortnite/event) tells another device when to perform a function.
-  1. For any event, click the **option** , then **Select Device** to access and select from the **Device** dropdown menu.
-  2. Once you've selected a device, click Select Function to bind this event to a function for that device.
-  3. If more than one function is triggered by the event, click the Add button to add a line and repeat these steps.
+Find out what's new with the 34.40 release of Fortnite on April 22, 2025!
 
-Option  |  Description
----|---
-**On Checkpoint Becomes Current For The First Time Send Event To** |  Sends an Event to linked devices when this checkpoint becomes the next checkpoint players need to pass for the first time.
-**On Checkpoint Becomes Current Send Event To** |  Sends an Event to linked devices when this checkpoint becomes the next checkpoint players need to pass.
-On Checkpoint Completed Send Event To |  Sends an Event to linked devices when a player passes this checkpoint.
+![34.40 Fortnite Ecosystem Updates and Release Notes](https://dev.epicgames.com/community/api/documentation/image/53c7e0a9-f174-4d35-96ed-d72599be2d1c?resizing_type=fill&width=1920&height=335)
+
+The v34.40 update introduces the Armored Transport spawner from Fortnite Battle Royale,  Rebel’s Roost prefabs and galleries, and new characters and tools for those creating Teenage Mutant Ninja Turtles islands. Plus, don't forget to update your islands to the Chapter 5 Time of Day Manager before the legacy lighting system is retired on May 2!
+
+## Skydome and Legacy Time of Day Manager Will Be Deprecated at 35.00
+
+This is your final reminder to update your UEFN and Fortnite Creative islands to the Chapter 5 Time of Day Manager (TODM) lighting system. The legacy Time of Day Manager and Skydome device will be retired with the v35.00 update on May 2, 2025.
+
+This change affects islands currently using the Skydome device to create custom lighting. After the device is deprecated, all islands using the Skydome device will retain their gameplay, volume data, and positional data, but lighting will default to the Chapter 5 TODM lighting and ignore any settings used with the Skydome device.
+
+If you have not done so already, upgrade your islands to use the Chapter 5 TODM system with the [Day Sequence device](https://dev.epicgames.com/documentation/fortnite/using-day-sequence-devices-in-unreal-editor-for-fortnite). You can learn more about how to use the device effectively with the [Day Sequence Starter Island Template](https://dev.epicgames.com/documentation/fortnite/day-sequence-starter-island-template-in-unreal-editor-for-fortnite).
+
+After the Chapter 5 TODM goes into effect, you will no longer be able to publish new islands or republish existing ones that use the Skydome device.
+
+Converting your island to the new TODM is a **one-way conversion**, so back up your island before upgrading your islands.
+
+## Teenage Mutant Ninja Turtles Refresh!
+
+With this release, there are some rad updates to TMNT islands! First, four new characters have joined the TMNT pizza party: Casey Jones, Bebop, Rocksteady, and Krang. Check them out in the Character, Guard, and NPC Spawner devices!
+
+[![](https://dev.epicgames.com/community/api/documentation/image/ce8cf47e-5812-438a-b36a-33c99f13bf6f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ce8cf47e-5812-438a-b36a-33c99f13bf6f?resizing_type=fit)
+
+It’s not just these new foes who are available–now you can get all the TMNT character outfits in the Character, Guard, and NPC Spawner devices!
+
+We’re also introducing the Dimension X Starter island template, which provides an out-of-this world landscape that is the perfect starting point for building multi-dimensional TMNT UEFN adventures. Sculpt the barren landscape and place pools of ooze beneath the swirling skies of outer space!
+
+Lastly, want to add some TMNT flair to existing Fortnite prefabs? You can now use textures from the Graffiti Wall gallery with the [Decal device](https://dev.epicgames.com/documentation/fortnite/decal-device-in-unreal-editor-for-fortnite) in UEFN.
+
+Check out [Working with TMNT Islands](https://dev.epicgames.com/documentation/fortnite/working-with-tmnt-islands-in-fortnite) for more information!
+
+[![](https://dev.epicgames.com/community/api/documentation/image/f4c00d80-c031-44fe-a553-2b33404f2993?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f4c00d80-c031-44fe-a553-2b33404f2993?resizing_type=fit)
+
+## Guard NPCs Can Now Wield Lucille!
+
+You can now assign the hero weapon Lucille to Guards in the NPC Spawner and Guard Spawner devices on The Walking Dead Universe islands! To get your guards fending off Walkers, you can:
+
+To learn more, see [Working with TWDU Islands](https://dev.epicgames.com/documentation/fortnite/working-with-twdu-islands-in-unreal-editor-for-fortnite).
+
+## New Device: Armored Transport Spawner
+
+The [Armored Transport](https://dev.epicgames.com/documentation/fortnite/using-armored-transport-spawner-devices-in-fortnite-creative) from Battle Royale is now available for creators to utilize in their island.  Beyond being driven, the vehicle carries a bank vault that players can crack to collect loot. You can use one of the set loot pools or customize it by dropping items on the spawner.
+
+Similar to the Bank Vault, you can control the number of weak points and how they are damaged. You can also control which players can drive the truck and which players can initiate the break-in on the vault.
+
+## Content Browser and Inventory Updates
+
+### Device Updates and Fixes
+
+**Fixes:**
+
+- Removed the on-screen callout for Deploy Rift Point Device after planting the device or dropping the device while in the Rift Point Volume device volume.
+
+### New Weapons and Updates
+
+- Typhoon Blade as a melee weapon is now supported for guards in the NPC Spawner.
+
+### New Prefabs and Galleries and Updates
+
+**New:**
+
+- 1 new **Rebel’s Roost** prefab:
+
+  - Rebel’s Roost
+- 4 new **Rebel’s Roost** galleries:
+
+  - Rebel’s Roost Wall
+  - Rebel’s Roost Floor & Stair
+  - Rebel’s Roost Roof
+  - Rebel’s Roost Prop
+
+**Fixes:**
+
+- Fixed an issue where the Level Instance device deleted the first front left floor during placement.
+- Fixed some individual icons from the Flooded Frogs Temple prefab.
+- Fixed an issue with the Bushido Base Dojo prefab where some floors were self-destructing.
+- Fixed the ornament trim from Bushido Base Roof Gallery to appear within its preview boundary box.
+- Updated the icons, names and search tags for the Basketball Court Gallery B and Clock Tower Gallery B, to be just Basketball Court Gallery and Clock Tower Gallery.
+- Fixed the LODs to display the correct textures for Obstacle Course Window C.
+- Fixed some ramps from Nitrodrome Prop Gallery B to show the materials underneath.
+- Fixed the blue curtains from Weeping Woods Prop Gallery to be destructible.
+
+## New or Updated Documentation
+
+New and updated docs include:
+
+- Updates to [Vehicle Mod Box](https://dev.epicgames.com/documentation/fortnite/using-vehicle-mod-box-spawner-devices-in-fortnite-creative) for Armored Transport
+
+## Community Bug Fixes
+
+The following fixes are from issues that you submitted to us on the forums. Thank you for your patience and for reporting these issues!
+
+## Fortnite Ecosystem Updates and Fixes
+
+**New:**
+
+- All players can now favorite Creator Profiles in-game.
+
+- Post Processing device volumes are updated for the Ch5 TODM system to now use negative values, so any creator-authored Post Processing device with priority 0 or above will work as expected.
+- Added alphabetical sorting to template sections in the Project Browser.
+
+**Fixes:**
+
+- The pickaxe will no longer incorrectly bounce off of the Assembly device volume.
+- Fixed a bug on Team/Class Requirement settings that were not respected by the Movement Modulator device.
+- Fixed an issue so when you open a project you now only see errors relevant to your project.
+- Fixed a UEFN Validation Error related to the Patchwork Music Manager when opened in older projects.
+
+## The Walking Dead Universe Updates and Fixes
+
+**Fixes:**
+
+- Fixed the impact pellet display not appearing on the Shiva Shotgun.
+- Fixed an issue where the Walker's bite would sometimes not do impact damage.
+- Fixed an issue where players could get stuck above a horde of Walkers.
+- Fixed an issue where NPC character modifiers would not always apply correctly to the prisoner variant of the Walker.

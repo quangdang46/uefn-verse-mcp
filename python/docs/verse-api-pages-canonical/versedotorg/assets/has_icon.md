@@ -1,14 +1,21 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/assets/has_icon
 
 # has_icon interface
+
 Learn technical details about the has_icon interface.
+
 Interface that provides an icon.
-|
----|---
-Verse `using` statement | `using { /Verse.org/Assets }`
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /Verse.org/Assets }` |
+
 ## Members
+
 This interface has data members, but no functions.
+
 ### Data
-Data Member Name | Type | Description
----|---|---
-`Icon` | `?texture` |
+
+| Data Member Name | Type | Description |
+| --- | --- | --- |
+| `Icon` | `?texture` | A texture used as the 2D visual representation of this entity (e.g. an icon or portrait). |

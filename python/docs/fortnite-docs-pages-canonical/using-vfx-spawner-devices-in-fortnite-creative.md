@@ -1,58 +1,216 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-vfx-spawner-devices-in-fortnite-creative
 
-# Castle Galleries
-Become the ruler of your world by using castle galleries.
-![Castle Galleries](https://dev.epicgames.com/community/api/documentation/image/d794e76e-b7a1-4387-a922-8459dee88130?resizing_type=fill&width=1920&height=335)
-**Castle** [galleries](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#gallery) share [themes](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#island-theme) of fortress and mansion structures and props.
-In the **Galleries** [category](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#category), you can browse for building pieces to make unique structures. The Galleries tab also offers environmental and prop items.
-This page is a visual guide to help you find galleries that fit this theme more quickly.
-To learn more about how to place gallery pieces to create an island that's uniquely your own, check out [Building Basics](https://dev.epicgames.com/documentation/fortnite/building-basics-in-fortnite-creative).
-##  Castle Category
-|  |  |  |  |
----|---|---|---|---|---
-[![Castle Gallery D](https://dev.epicgames.com/community/api/documentation/image/524fd858-29a6-4c67-b95d-5bbae9c1fe86?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/524fd858-29a6-4c67-b95d-5bbae9c1fe86?resizing_type=fit) |  [![Castle Gallery C](https://dev.epicgames.com/community/api/documentation/image/ba734609-d71b-4fd5-bbea-c4ea81532ea3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ba734609-d71b-4fd5-bbea-c4ea81532ea3?resizing_type=fit) |  [![Castle Gallery B](https://dev.epicgames.com/community/api/documentation/image/8c315a53-3eed-41a0-ab2a-da32e0de42cf?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8c315a53-3eed-41a0-ab2a-da32e0de42cf?resizing_type=fit) |  [![Castle Gallery A](https://dev.epicgames.com/community/api/documentation/image/571f4076-78a2-4225-9e3d-81bd23605e8f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/571f4076-78a2-4225-9e3d-81bd23605e8f?resizing_type=fit) |  [![Castle Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/422563f7-987e-4693-96a6-00824c28039b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/422563f7-987e-4693-96a6-00824c28039b?resizing_type=fit) |  [![Cobblestone Floor Gallery](https://dev.epicgames.com/community/api/documentation/image/86217f8d-7b72-4828-bc36-d3220dc2e6f0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/86217f8d-7b72-4828-bc36-d3220dc2e6f0?resizing_type=fit)
-**Castle Gallery D** |  **Castle Gallery C** |  **Castle Gallery B** |  **Castle Gallery A** |  **Castle Prop Gallery** |  **Cobblestone Floor Gallery**
----
-[![Catacombs Floor Gallery](https://dev.epicgames.com/community/api/documentation/image/6e20e67e-5ab5-4ff5-8d9a-b41efb5de1e7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6e20e67e-5ab5-4ff5-8d9a-b41efb5de1e7?resizing_type=fit)
-**Catacombs Floor Gallery**
-##  The Citadel Category
-|  |
----|---|---
-[![The Citadel Wall Gallery](https://dev.epicgames.com/community/api/documentation/image/5ada9327-24d0-4c20-a8b7-e15477d1cbcf?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5ada9327-24d0-4c20-a8b7-e15477d1cbcf?resizing_type=fit) |  [![The Citadel Floor and Stair Gallery](https://dev.epicgames.com/community/api/documentation/image/729ea140-0850-4b5d-9d93-74a821be9925?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/729ea140-0850-4b5d-9d93-74a821be9925?resizing_type=fit) |  [![The Citadel Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/ce62cd39-871f-4974-b280-c60b69f85128?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ce62cd39-871f-4974-b280-c60b69f85128?resizing_type=fit)
-**The Citadel Wall Gallery** |  **The Citadel Floor and Stair Gallery** |  **The Citadel Prop Gallery**
-##  Deserted Fortress Category
-|  |
----|---|---
-[![Deserted Fortress Wall Gallery](https://dev.epicgames.com/community/api/documentation/image/419f7ec5-ec48-40b9-aac9-037b6b91d44a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/419f7ec5-ec48-40b9-aac9-037b6b91d44a?resizing_type=fit) |  [![Deserted Fortress Floor and Stair Gallery](https://dev.epicgames.com/community/api/documentation/image/20e4af3c-3639-43f2-9998-e965b4b9845a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/20e4af3c-3639-43f2-9998-e965b4b9845a?resizing_type=fit) |  [![Deserted Fortress Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/82818dbe-43ac-4735-92bd-9ace692d4b2b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/82818dbe-43ac-4735-92bd-9ace692d4b2b?resizing_type=fit)
-**Deserted Fortress Wall Gallery** |  **Deserted Fortress Floor and Stair Gallery** |  **Deserted Fortress Prop Gallery**
-##  Haunted Category
-|  |  |  |  |
----|---|---|---|---|---
-[![Haunted Wall Gallery](https://dev.epicgames.com/community/api/documentation/image/2201802c-dfd8-48c0-ab0e-bfac39241f14?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2201802c-dfd8-48c0-ab0e-bfac39241f14?resizing_type=fit) |  [![Haunted Roof Gallery](https://dev.epicgames.com/community/api/documentation/image/20250493-630e-4f80-b407-0a602b41a5f0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/20250493-630e-4f80-b407-0a602b41a5f0?resizing_type=fit) |  [![Haunted Hills Gallery](https://dev.epicgames.com/community/api/documentation/image/382ad786-adbc-4b06-9175-d180247ae70b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/382ad786-adbc-4b06-9175-d180247ae70b?resizing_type=fit) |  [![Haunted Floor and Stair Gallery](https://dev.epicgames.com/community/api/documentation/image/e94d449c-6c72-4054-8474-443193af2d8e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e94d449c-6c72-4054-8474-443193af2d8e?resizing_type=fit) |  [![Haunted Castle Roof Gallery](https://dev.epicgames.com/community/api/documentation/image/16f091cf-be9a-49a3-87dd-d879c04ec9af?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/16f091cf-be9a-49a3-87dd-d879c04ec9af?resizing_type=fit) |  [![Haunted Castle Interior Wall Gallery](https://dev.epicgames.com/community/api/documentation/image/52f53519-0612-4633-8307-3129604d64a0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/52f53519-0612-4633-8307-3129604d64a0?resizing_type=fit)
-**Haunted Wall Gallery** |  **Haunted Roof Gallery** |  **Haunted Hills Gallery** |  **Haunted Floor and Stair Gallery** |  **Haunted Castle Roof Gallery** |  **Haunted Castle Interior Wall Gallery**
-|  |  |  |  |
----|---|---|---|---|---
-[![Haunted Castle Floor and Stair Gallery](https://dev.epicgames.com/community/api/documentation/image/56d44931-18fc-4e04-aade-df4f0cd435ee?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/56d44931-18fc-4e04-aade-df4f0cd435ee?resizing_type=fit) |  [![Haunted Castle Exterior Wall Gallery B](https://dev.epicgames.com/community/api/documentation/image/88605a51-761b-4393-991b-7cb0b47e8c15?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/88605a51-761b-4393-991b-7cb0b47e8c15?resizing_type=fit) |  [![Haunted Castle Exterior Wall Gallery A](https://dev.epicgames.com/community/api/documentation/image/80023012-ba22-45c1-a3b7-e9d0b6cb6e09?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/80023012-ba22-45c1-a3b7-e9d0b6cb6e09?resizing_type=fit) |  [![Haunted Castle Ceiling Gallery](https://dev.epicgames.com/community/api/documentation/image/acf0962c-7761-40a1-ae6b-82724e4e8df1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/acf0962c-7761-40a1-ae6b-82724e4e8df1?resizing_type=fit) |  [![Haunted Castle Broken Floor Gallery](https://dev.epicgames.com/community/api/documentation/image/a9014bec-b473-4386-bb8f-0af591108bac?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a9014bec-b473-4386-bb8f-0af591108bac?resizing_type=fit) |  [![Haunted  Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/7df17d81-bdf1-4d8b-9552-a5b29e83d0ec?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7df17d81-bdf1-4d8b-9552-a5b29e83d0ec?resizing_type=fit)
-**Haunted Castle Floor and Stair Gallery** |  **Haunted Castle Exterior Wall Gallery B** |  **Haunted Castle Exterior Wall Gallery A** |  **Haunted Castle Ceiling Gallery** |  **Haunted Castle Broken Floor Gallery** |  **Haunted Castle Prop Gallery**
----
-[![Haunted Hills Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/6b02bc9e-1c66-4610-8527-1d95e4cf27a7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6b02bc9e-1c66-4610-8527-1d95e4cf27a7?resizing_type=fit)
-**Haunted Hills Prop Gallery**
-##  Hero and Villain Lair Category
-|  |  |  |
----|---|---|---|---
-[![Villain Lair Gallery](https://dev.epicgames.com/community/api/documentation/image/7057ec29-e4c6-4de3-97d5-7c08da381378?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7057ec29-e4c6-4de3-97d5-7c08da381378?resizing_type=fit) |  [![Hero Mansion Gallery](https://dev.epicgames.com/community/api/documentation/image/efc75957-82de-4d4a-8c88-77d2bea136be?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/efc75957-82de-4d4a-8c88-77d2bea136be?resizing_type=fit) |  [![Decayed Villain Lair Gallery](https://dev.epicgames.com/community/api/documentation/image/62a0e3c4-f195-4656-bcc3-37a1b04179ae?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/62a0e3c4-f195-4656-bcc3-37a1b04179ae?resizing_type=fit) |  [![Decayed Hero Mansion Gallery](https://dev.epicgames.com/community/api/documentation/image/3c5ba398-98a2-4cae-a5e7-c1cf648ecb6a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3c5ba398-98a2-4cae-a5e7-c1cf648ecb6a?resizing_type=fit) |  [![Hero/Villain Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/d4243bf6-7510-48a3-9b8f-e8bb34063f0c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d4243bf6-7510-48a3-9b8f-e8bb34063f0c?resizing_type=fit)
-**Villain Lair Gallery** |  **Villain Mansion Gallery** |  **Decayed Villain Lair Gallery** |  **Decayed Hero Mansion Gallery** |  **Hero/Villain Prop Gallery**
-##  Princess Castle Category
-|  |  |  |  |
----|---|---|---|---|---
-[![Princess Castle Wall Gallery White](https://dev.epicgames.com/community/api/documentation/image/94752643-4402-4090-8a0f-070593d5b33d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/94752643-4402-4090-8a0f-070593d5b33d?resizing_type=fit) |  [![Princess Castle Wall Gallery Teal](https://dev.epicgames.com/community/api/documentation/image/58dd7eaf-33ab-4ac0-a28a-0938876fefc0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/58dd7eaf-33ab-4ac0-a28a-0938876fefc0?resizing_type=fit) |  [![Princess Castle Wall Gallery Stone](https://dev.epicgames.com/community/api/documentation/image/fd26f472-9f5e-4e36-898c-4855a0592d8d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/fd26f472-9f5e-4e36-898c-4855a0592d8d?resizing_type=fit) |  [![Princess Castle Wall Gallery Purple](https://dev.epicgames.com/community/api/documentation/image/60da291b-f66e-4468-98a1-ba72f43ce702?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/60da291b-f66e-4468-98a1-ba72f43ce702?resizing_type=fit) |  [![Princess Castle Wall Gallery Pink](https://dev.epicgames.com/community/api/documentation/image/de31a3ba-c45e-4c53-a92e-140b07b7fe51?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/de31a3ba-c45e-4c53-a92e-140b07b7fe51?resizing_type=fit) |  [![Princess Castle Roof Gallery Red](https://dev.epicgames.com/community/api/documentation/image/bbb96574-ba1f-409e-8a92-faab456284d5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/bbb96574-ba1f-409e-8a92-faab456284d5?resizing_type=fit)
-**Princess Castle Wall Gallery White** |  **Princess Castle Wall Gallery Teal** |  **Princess Castle Wall Gallery Stone** |  **Princess Castle Wall Gallery Purple** |  **Princess Castle Wall Gallery Pink** |  **Princess Castle Roof Gallery Red**
-|  |  |  |
----|---|---|---|---
-[![Princess Castle Roof Gallery Purple](https://dev.epicgames.com/community/api/documentation/image/ac56f567-fa74-4801-90b6-4e4e6b38ecd4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ac56f567-fa74-4801-90b6-4e4e6b38ecd4?resizing_type=fit) |  [![Princess Castle Roof Gallery Black](https://dev.epicgames.com/community/api/documentation/image/988d3e03-eef0-4c37-934b-cd9e062d9362?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/988d3e03-eef0-4c37-934b-cd9e062d9362?resizing_type=fit) |  [![Princess Castle Floor and Stair Galler](https://dev.epicgames.com/community/api/documentation/image/57bc9761-c01a-40ac-ac4e-691a5d9d6a33?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/57bc9761-c01a-40ac-ac4e-691a5d9d6a33?resizing_type=fit) |  [![Princess Castle Foliage Gallery](https://dev.epicgames.com/community/api/documentation/image/6ce25feb-338c-4e93-b5e2-bc83730cb906?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6ce25feb-338c-4e93-b5e2-bc83730cb906?resizing_type=fit) |  [![Princess Castle Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/a7106acd-d336-422b-95e8-4caaffb35b89?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a7106acd-d336-422b-95e8-4caaffb35b89?resizing_type=fit)
-**Princess Castle Roof Gallery Purple** |  **Princess Castle Roof Gallery Black** |  **Princess Castle Floor and Stair Gallery** |  **Princess Castle Foliage Gallery** |  **Princess Castle Prop Gallery**
-##  Ruined Category
-|  |  |
----|---|---|---
-[![Ruined Wall Gallery](https://dev.epicgames.com/community/api/documentation/image/bb3e23af-e81b-481d-a49a-0177233814c8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/bb3e23af-e81b-481d-a49a-0177233814c8?resizing_type=fit) |  [![Ruined Floor Gallery](https://dev.epicgames.com/community/api/documentation/image/6ec16192-ca8e-4b79-9697-8d6e5669784b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6ec16192-ca8e-4b79-9697-8d6e5669784b?resizing_type=fit) |  [![Ruined Fort Gallery](https://dev.epicgames.com/community/api/documentation/image/b54b62b3-56ac-4a96-99e4-8699f8a676ef?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b54b62b3-56ac-4a96-99e4-8699f8a676ef?resizing_type=fit) |  [![Ruined Fort Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/16627556-9af3-4408-9e60-ce19e4abe5a5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/16627556-9af3-4408-9e60-ce19e4abe5a5?resizing_type=fit)
-**Ruined Wall Gallery** |  **Ruined Floor Gallery** |  **Ruined Fort Gallery** |  **Ruined Fort Prop Gallery**
+# VFX Spawner Devices
+
+Integrate custom visual effects into your gameplay.
+
+![VFX Spawner Devices](https://dev.epicgames.com/community/api/documentation/image/b19bcc29-d84c-4a72-b3e8-db3a9c762419?resizing_type=fill&width=1920&height=335)
+
+With **VFX Spawner** devices, you can place different [visual effects](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#vfx) around your island.
+
+These effects fall into one of two types:
+
+- **Continuous**: Once activated, the effect will continue to loop until it is deactivated.
+- **Burst**: A quick effect that occurs once, then stops.
+
+Things you can do with the VFX Spawner device include:
+
+- Use a burst effect, such as a poof of dust or a small explosion, to mask the spawning of a prop.
+- Use any of the musical note effects to visually show the source of music.
+- Simulate weather with effects like rain or snow, or even a tornado!
+
+These effects are also useful for ambience. Integrating an effect with your environment can create subtle, effective moods.
+
+**Looking for more inspiration?** See [**D-Launcher Device Design Examples**](d-launcher-device-design-examples-in-fortnite-creative.INT.udn) to kick off your imagination!
+
+To find the VFX Spawner device, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
+
+If you're using multiple copies of a device on an island, it can be helpful to [rename](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#rename-a-device) them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the [Event Browser](event-browser-in-fortnite-creative).
+
+## Contextual Filtering
+
+Some devices are affected by a feature called **contextual filtering**. This feature hides or displays options depending on the values selected for certain related options. This reduces clutter in the Customize panel and makes options easier to manage and navigate. To help identify them, values that trigger contextual filtering are in *italic*.
+
+All options are listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option's value, there will be a note about it in the Description field for that option.
+
+## Device Options
+
+This device has some basic functionality, like setting the type of effect and the speed of the effect's looped animation. Additionally, there are some advanced options, like the phases when the effect is enabled.
+
+Default values are **bold**. Values that trigger contextual filtering are *italic*.
+
+You can configure this device with the following options.
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Effect Type** | ***Continuous***, *Burst* | Determines whether the effect will play in a continuous loop, or in a short burst, then stop. The next option changes based on what you select here. |
+| **Visual Effect** | **Fireworks**, Pick an effect | This sets the type of visual effect the device produces when the **Effect Type** is set to **Continuous**. See [Continuous Effects](https://dev.epicgames.com/documentation/fortnite/using-vfx-spawner-devices-in-fortnite-creative#continuous-effects) for a list of available effects. |
+| **Burst Visual Effect** | **Explosion Small**, Pick an effect | This sets the type of visual effect the device produces when the **Effect Type** to **Burst**. See [Burst Effects](https://dev.epicgames.com/documentation/fortnite/using-vfx-spawner-devices-in-fortnite-creative#burst-effects) for a list of available effects. |
+| **Sound Effect** | **Default**, None, Pick a sound | Determines what sound plays when the visual effect is spawned. **Default** plays whatever sound is attached to a visual effect (such as **Lightning**), but you can override the default by picking a different option. Some of the sounds are a short burst, while others are continuous. See the **Sound Effects** section for a list of available sounds. |
+| **Enabled on Phase** | None, **Always**, Pre-Game Only, Gameplay Only, Create Only | Determines the phases in which the device is enabled. |
+| **Colorize VFX** | *On*, **Off** | Sets whether the spawned effects use the color selected in the **Custom Color** option. This is useful if you want to assign colors to your effects based on teams. If set to **On**, this makes the next option, **Custom Color**, available |
+| **Custom Color** | **Cerulean**, Pick a color | Choose a custom color for the VFX. Click the color swatch to open the Color Picker. Select a color, then click the checkmark. Note that this option only displays when the **Colorize VFX** option is set to **On**.  [Color Picker](https://dev.epicgames.com/community/api/documentation/image/8f029a0a-1690-4397-9df4-1617a13466ab?resizing_type=fit) |
+| **Visible to Team** | **Any**, Pick or enter a team | Determines which team can see the VFX. |
+| **Invert Team Selection** | On, **Off** | If this is set to **On**, all teams can see the VFX except the team selected in the **Visible to Team** option. |
+| **Visible to Class** | No Class, All, **Any**, Pick or enter a class | Determines which classes can see the VFX.  Values for this option are:   - **No Class**: Only players without an assigned class can see this effect. - **All**: All players with an assigned class can see this effect. - **Any**: All players, with or without an assigned class, can see the effect. - **Pick or enter a class**: Only players on the selected class can see the effect. |
+| **Invert Class Selection** | On, **Off** | If this is set to **On**, all classes can see the VFX except the class selected in the **Visible to Class** option. |
+| **Spawn Rate** | **1.0**, Pick or enter a number | Determines the rate at which the effects are spawned. |
+| **Enable on Reset** | **On**, Off | If this is set to **On**, the disabled device will automatically be enabled when the **Reset When Receiving From** function is triggered. |
+| **Enabled Time** | **Infinite**, Pick an amount | The length of time the visual effect is enabled. |
+| **Clear Particles on Disable** | **On**, Off | If this is set to **On**, spawned effects will be cleared when the device is disabled. If it is set to **Off**, spawned particles will be cleared at the end of their animation. |
+
+## Direct Event Binding
+
+Direct event binding allows devices to communicate directly, which makes your workflow more intuitive, and gives you more freedom to focus on your design ideas.
+
+Below are the following direct event binding options for this device.
+
+### Functions
+
+A [function](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#function) listens for an event on a device then performs an action.
+
+| Option | Description |
+| --- | --- |
+| **Enable When Receiving From** | This function enables the device when an event occurs. |
+| **Disable When Receiving From** | This function disables the device when an event occurs. |
+| **Restart When Receiving From** | This function resets the device when an event occurs. |
+
+### Events
+
+Direct event binding uses events as transmitters. An event tells another device to perform a function.
+
+| Option | Description |
+| --- | --- |
+| **On Effect Enabled Send Event To** | When an effect is enabled, an event occurs. |
+| **On Effect Disabled Send Event To** | When an effect is disabled, an event occurs. |
+
+## Continuous Effects
+
+Here is a list of the currently available continuous visual effects.
+
+- **Fireworks**: Fireworks that go off randomly near the device, with sound effects.
+- **Large Fireworks**: Fireworks that go off randomly but high in the sky, with sound effects.
+- **Leaves**: Leaves that drift through the air, giving a sense of autumn.
+- **Eyes**: A collection of creepy eyes, that might be peering out of the darkness.
+- **Bats**: Bats flying through the air evoke Halloween.
+- **Lightning**: Lightning striking the ground, with sound effects.
+- **Lightning_2**: Lightning bolts going away from the device, with sound effects.
+- **Lightning_3**: Lightning striking the ground with an explosion on impact, including sound effects.
+- **Embers**: Small embers floating up, as though from an open fire.
+- **Fog**: A drifting pattern of fog.
+- **Sparkles**: Sparkly bits of light that move around.
+- **Disco Balls**: An assortment of mirrored balls of varying sizes.
+- **Laser Beams**: Focused, moving beams of light that shoot out of the top of the device.
+- **ConcertRain**: Falling lights that suggest a mix of meteorites and distant strikes of lightning.
+- **SparkRain**: Colorful rainfall that includes sound effects.
+- **Area of Fog**: Ground-level clouds of fog that move continually.
+- **Spooky Ghosts**: Ghostly figures that move in and out of the player's vision in a spooky fashion.
+- **Balloons**: Colorful balloons that float up into the sky until they cheerfully disappear.
+- **Snow**: A gentle sprinkle of snow.
+- **Floating Space Rocks**: Space rocks (meteorites) that float mysteriously in the air.
+- **Bubbles**: Iridescent bubbles that look like they're fresh from a bubble machine.
+- **Falling Sparkles**: Similar to sparkles, but instead of moving around, they're slowing falling to the ground.
+- **Confetti**: Falling bits of paper — perfect for a parade!
+- **Flying Space Rocks**: Space rocks (meteorites) falling from the sky.
+- **Dust Clouds**: Imagine moving across a dune on a dirt bike. These are the clouds your bike might kick up.
+- **Rain**: A steady drizzle of rain.
+- **Small Tornado**: A tornado that spins upward.
+- **Light Fog**: A fog light enough to see through easily.
+- **Sky Lanterns**: Colorful paper lanterns you might see rising over a pond or lake for a festival.
+- **SkyLanterns_A**: Like the previous lanterns, but these are all red.
+- **SkyLanterns_B**: Like the previous lanterns, but all blue.
+- **SkyLanterns_C**: Like the previous lanterns, but all green.
+- **Waterfall Crash**: Roiling water like what appears at the bottom of a high waterfall.
+- **Waterfall Splash**: Splashing water like what you might see at the foot of a smaller waterfall.
+- **Waterfall Mist**: A light mist like you'd find at the edge of a gentle waterfall.
+- **Musical Notes Bubbles**: Musical notes that act like bubbles and pop.
+- **Musical Notes Chrome**: Notes with a metallic sheen.
+- **Musical Notes Goo**: Notes that are dripping a black goo.
+- **Musical Notes Retro**: Notes that look three-dimensional.
+- **Musical Notes Glitch**: Notes that look like the colors are out of register, and that have odd, glitchy behavior.
+- **Musical Notes Wood**: Notes that look like they're carved from wood.
+- **Small Fire**: A small fire effect, like you might use with a torch or brazier.
+- **Trash Can Flies**: A cloud of flies that would typically be seen around a garbage pile or container.
+- **Ambient Dust**: Flecks of material floating in a random way, such as dust particles that hang in the air in an old abandoned building.
+
+## Burst Effects
+
+Here is a list of the currently available burst effects.
+
+- **Explosion Small**: A small explosion with sound effects.
+- **Explosion Medium**: A slightly larger explosion with sound effects.
+- **Explosion Large**: An even larger explosion with sound effects.
+- **Explosion Electrical**: A large explosion with sound effects that mimics a transformer blowing or a similar electrical explosion.
+- **Dust Poof**: A light poof of dust, enough to partially hide the spawning of a new effect.
+- **Small Splash**: A limited, small splash such as that made by dropping or throwing a small object into water.
+
+## Sound Effects
+
+Here is a list of the currently available sound effects you can use with your visual effect.
+
+- **Default**: Uses any sound effects that are attached to a visual effect. If none are attached, then the effect is silent.
+- **None**: Turns off any default sound effects.
+- **Alpine**: Suggests wind moving briskly through an snowy forest.
+- **Alpine_Evening**: Similar to Alpine, but with a hollower and more resonant tone.
+- **Alpine_Morning**: Similar to Alpine, but with a softer and higher pitched whistling sound.
+- **Bats**: The sound of bats soaring through the air. Works well with the Bats effect.
+- **Beam**: A continuous rumble and whine that rises and falls in pitch. Could be used with the Laser Beam effect, or used for a rocket ignition.
+- **Beam_Attack**: Similar to the Beam, but this sound is a short burst.
+- **Beam_Impact**: This sound is also a short burst. Either Beam Attack or Beam Impact could be used for a laser weapon hitting a target.
+- **Breeze**: Unlike Alpine, which is a brisk winter or snowy wind, this is gentler and slower, suggesting a warm breeze swaying the treetops.
+- **Fireworks**: A short boom, trailing off into crackling.
+- **Charge**: A large rumbling, leading into higher pitched whizzing.
+- **Charged_Attack**: A larger, more intense rumble followed by crackling instead of whizzing.
+- **Charge_Loop**: A slowly building, rising whine looped to stretch out the rising tone.
+- **Ghost**: A ghost moaning.
+- **Halloween_Laugh**: An eerie laugh.
+- **Halloween_Singing**: A voice singing wordlessly in a minor key, in a large echoing space. This is randomized, slightly different each time it plays.
+- **Halloween_Whispers**: Unintelligible murmuring that may be human or machine, with distant laughter.
+- **Lightning_Strike**: The sound of lightning striking.
+- **Lightning_Strike_02**: A variation of the lightning strike, with slightly different impact sound.
+- **Lightning_Strike_03**: A variation of the lightning strike, with slightly different impact sound from the two other lightning strike effects.
+- **Lightning_Strike_04**: A variation of the lightning strike, with slightly different impact sound from the two other lightning strike effects.
+- **Electricity**: A crackling and buzzing sound, like a Tesla coil.
+- **Electricity_02**: A longer and quieter crackling, buzzing sound. Similar to the sound of laser swords swinging and connecting.
+- **Electricity_03**: Like Electricity 2, but with interrupting staccato zaps or shots.
+- **Electricity_04**: A solid ka-chunk with quiet buzzing in the background, as if you are throwing a large switch or breaker.
+- **Electricity_05**: Similar to Electricity 4, but louder. Could be an explosion or shot as much as it could be a switch thrown.
+- **Electricity_06**: Similar to Electricity, but smoother and with less crackling.
+- **Explosion**: A small detonation, or a gun going off.
+- **Explosion_02**: A large detonation, or a large gun or cannon firing.
+- **Explosion_03**: A quieter large detonation, like a cannon firing from a distance.
+- **Impact**: The sound of an small or medium sized object hitting a floor or wall.
+- **Impact_02**: An impact with some rattling, like a full bag hitting a floor or wall.
+- **Impact_03**: An impact with sounds of breaking or destruction.
+- **Impact_04**: A short muffled thud.
+- **Impact_05**: Another cannon shot, at medium distance.
+- **Impact_06**: A sharper gun shot sound.
+- **Impact_Junk**: The sound of junk (metal and glass) being tossed around and broken, or of something landing on a junk pile.
+- **Impact_Squish**: A thud ending in squelching sounds, like a thrown object landing on something wet.
+- **Electric_Blast**: Like Electricity combined with Explosion 2 or 3. Impact or blasting sound, but accompanied by buzzing and crackling.
+- **Jolt**: A very short zap, like an energy weapon blast.
+- **Whistling_Projectiles**: A sound like a rocket or missile passing by, but with no impact sound at the end.
+- **Ominous_Loop**: An eery, resonant instrumental chord. Dies out, then comes back.
+- **Projectile**: Like Whistling Projectiles, but with a larger number of missles or rockets, at varying distances.
+- **Night_Wind**: A high wind on a moor or a plain, with soft squeals and moans mixed in.
+- **Steamy_Vent**: The sound of liquid boiling, with a whistling sound like steam escaping through a small hole.
+- **Storm**: A loud rumbling mixed with electric buzzing and crackling.
+- **Spooky_Laugh**: High pitched, echoing laughter.
+- **Vent_Launch**: A burst of air, sound of a vent releasing.
+- **Weak_Point**: The creaking sound of metal breaking.
+- **Wind**: Similar to Alpine or Breeze, but with a louder burst like a gust of wind.
+- **Woosh**: A wooshing sound, like something passing by very fast.
+- **Woosh_02**: The sound of an object being swung past you very fast, such as a sword.
+- **Splash**: An impact sound and light splash, as if something had been thrown into a liquid.
+- **Impact_Soft**: A very quiet impact, like a small object landing on a soft surface.
+- **Pickup**: Something being picked up.
+- **Pickup_02**: Like Pickup, but even quieter.
+- **Pickup_03**: Like Pickup, but with quiet rustling like cloth.
+- **Fuse**: A crackling or fizzling sound, like a long fuse on a bomb.
+- **Heal**: A quiet high pitched ringing with a deeper hum underneath it, on a loop.
+- **Health_Field**: A background sound similar to the Heal sound, but with crackling sounds of impacts on top of it.
+- **Healing_Grenade_Underwater**: A plop into water followed by air bubbles moving up to the surface.
+- **Health_Zone**: Similar to Heal, but barely audible and with a more resonant background hum.
+- **Heal_Serene**: Similar to Health Zone, but instead of ringing there is high pitched chimes or voices on top.
+- **Heal_Tranquil**: Very faint ringing, with a higher pitched resonant hum similar to running your finger around the rim of a glass.
+- **Burn**: The sound of a crackling fire.

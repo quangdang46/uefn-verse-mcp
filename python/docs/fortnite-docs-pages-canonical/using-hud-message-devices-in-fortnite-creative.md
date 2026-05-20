@@ -1,60 +1,77 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-hud-message-devices-in-fortnite-creative
 
-# Configuring Collision for a Static Mesh
-Players can interact with their environment when you add collision to your props.
-![Configuring Collision for a Static Mesh](https://dev.epicgames.com/community/api/documentation/image/c0ed26c8-95ed-4e73-87a8-5601bd0d2c0a?resizing_type=fill&width=1920&height=335)
-[](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#collision)[Collision](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#collision) is what prevents objects in your world from intersecting. Without collision, the player would be able to walk through the mesh. The collision box is also the first step to creating a [hitbox](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#hitbox) around an asset you want to enable players to gather resources from.
-##  Existing Collision
-Double-click your mesh in the **Content Browser** to open the **Edit** window.
-If your mesh already has collision, you can view it by toggling **Simple Collision** in the **Show** menu of the static mesh editor.
-[![show collision](https://dev.epicgames.com/community/api/documentation/image/1b127ee1-a3d4-46dc-8112-8fe053f00200?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1b127ee1-a3d4-46dc-8112-8fe053f00200?resizing_type=fit)
-If you want to delete the current collision, you can do this by going to **Collision** > **Remove Collision**.
-[![remove collision](https://dev.epicgames.com/community/api/documentation/image/3a1b35cb-b385-45a5-a4f9-a4b3c66494c6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3a1b35cb-b385-45a5-a4f9-a4b3c66494c6?resizing_type=fit)
-##  Static Mesh Set Up
-Some meshes you import might have collision already set, using the [Static Mesh Editor](https://dev.epicgames.com/documentation/unreal-engine/static-mesh-editor-ui-in-unreal-engine?application_version=5.5) you can tailor the existing collision settings or create a new collision box on a static mesh. This ensures players can interact with the mesh in the ways you intend, otherwise players could get caught on pieces of geometry as they move around.
-You can add collision to static meshes you import whether you created the mesh in external modeling software or you purchased the mesh. To add customized collision to static meshes you purchased from Fab, select the **Add as modifiable Unreal Engine asset**. Without this setting you’ll have to use the default collision that comes with the asset.
-Setting collision can also reduce the memory impact of the mesh by reducing the number of polygons the collision box covers. There are two basic types of collision you can set in Unreal Editor for Fortnite (UEFN), simple and complex.
-**Simple collision** is used for player movement, convex pieces, and simple 3D shapes. Simple collision reduces the number of polygons affected by the collision box. It’s best to use simple collision on objects you don’t intend players to interact with.
-In the image below, the simplified collision is visualized with a green collision box around the sphere. Inside the sphere is a series of purple polygons that make up the shape.
-[![](https://dev.epicgames.com/community/api/documentation/image/8804f134-6468-4606-9f76-ccb20956dd25?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8804f134-6468-4606-9f76-ccb20956dd25?resizing_type=fit) Click image to enlarge.
-**Complex collision** is used on weapons and assets that require player interaction. Without complex collision a player wouldn’t be able to sit in a chair, pick up an object, or easily climb on or travel through an asset.
-In the image below the tree trunk is using complex collision, notice the yellow polygons that make up the complex collision box. The complex collision box allows a player to run up to the trunk and step on the roots. If the trunk was in a simplified collision box, the player wouldn't get near the tree trunk.
-[![](https://dev.epicgames.com/community/api/documentation/image/9bb6bb22-8c49-4125-99d4-6891ce637db0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9bb6bb22-8c49-4125-99d4-6891ce637db0?resizing_type=fit) Click image to enlarge.
-###  Reduce Memory Impact
-There are a few ways to reduce the memory impact of a mesh when using complex collision:
-  * Turn off complex collision **per section** on a static mesh. This is useful for assets such as trees. Players don't interact with the trunk, but can move around in the leaves at the top.
-  * Set **per mesh** basis to use the polygons of a mesh for collision. This setting is best used with complicated meshes.
-  * Set **Use Simple as Complex** to save memory for tiny objects.
-  * Use the **Nanite Fallback** setting to reduce the number of triangles that count toward memory. This setting doesn’t count the Nanite triangles towards the total memory count.
-  * Set collision by using **LOD for Collision** to tailor the collision box size to the LOD of the object. This saves memory for lower performing consoles and mobile.
-You can only use LOD for Collision when you turn on the **Nanite Fallback** setting. This option can only be used with complex collision.
+# HUD Message Devices
 
-##  Adding Simplified Collision
-If your mesh does not have collision configured, you can easily add a simple shape around it.
-  1. Double-click the **static mesh thumbnail** in the **Content Browser** to open the editor.
-  2. In the **Static Mesh Editor** , expand the **Collision** dropdown menu and choose one of the top three options.
-[![simplified collision](https://dev.epicgames.com/community/api/documentation/image/275463a1-40ba-4fc6-b744-737d8f6afdcc?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/275463a1-40ba-4fc6-b744-737d8f6afdcc?resizing_type=fit)
-  3. The newly-created collision has a widget that you can use to translate, rotate, and scale your collision shape.
+Create custom HUD messages for players based on time or activities.
 
-If you already have a collision on a mesh and you add another collision, the new one will not replace the previous collision, but add to it. Make sure to **Remove Collision** if you want to replace the previous collision.
-##  Adding More Complex Collision
-If you want your mesh to have more accurate collision, you can use the other options in the **Collision** dropdown menu.
-###  K-DOP
-These options are called the **K-DOP** simple collision generators. K-DOP is a type of bounding volume where **K** is the number of axis-aligned planes and **DOP** stands for **discrete oriented polytope**. It takes K axis-aligned planes and pushes them as close to the mesh as it can.
-In the Static Mesh Editor K can be:
-  * 10 - Box with 4 edges beveled - you can choose X- Y- or Z-aligned edges.
-  * 18 - Box with all edges beveled.
-  * 26 - Box with all edges and corners beveled.
+![HUD Message Devices](https://dev.epicgames.com/community/api/documentation/image/9d5f0a2e-276f-4361-9804-320f6244c62f?resizing_type=fill&width=1920&height=335)
 
-Here is what the mesh looks like with 10-DOP, 18-DOP, and 26-DOP respectively.
-[![Kitty DOP](https://dev.epicgames.com/community/api/documentation/image/bb1b4ca3-2142-4ba4-829f-796ad8cc2e82?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/bb1b4ca3-2142-4ba4-829f-796ad8cc2e82?resizing_type=fit)
-###  Auto Convex Collision
-When you select **Auto Convex Collision** from the **Collision** dropdown menu, you will see a **Convex Decomposition** panel appear on the bottom right corner of the editor.
-[![CDP](https://dev.epicgames.com/community/api/documentation/image/4eb201ed-12bc-4783-9366-8b0e13c77414?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4eb201ed-12bc-4783-9366-8b0e13c77414?resizing_type=fit)
-**Hull Count** will generate as few primitives as possible to represent the collision mesh. **Max Hull Verts** increases or decreases the number of vertices your collision mesh has. The higher these values, the more precise your collision will be, but also the more complex and memory-hungry. Click **Apply** to apply changes.
-Below is the result of having applied the values shown in the previous image.
-[![Kitty CDP](https://dev.epicgames.com/community/api/documentation/image/f4d68c32-bdd3-458b-9381-2e54e1b84d5b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f4d68c32-bdd3-458b-9381-2e54e1b84d5b?resizing_type=fit)
-###  Combining Simple Shapes
-Another simple way to set up complex collisions is by using multiple simple shape collision meshes to create the collision for your mesh.
-Add various **Simplified Collision** meshes and use the widget to **translate** ,**rotate** ,**scale** the simple shapes into place.
-[Toon Cat FREE](https://sketchfab.com/3d-models/toon-cat-free-b2bd1ee7858444bda366110a2d960386) by [Omabuarts Studio](https://sketchfab.com/omabuarts) licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+The **HUD Message** device displays messages to all players or specific ones, either through a trigger from another device or through a timer from the start of a [round](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary).
+
+If you're using multiple copies of a device on an island, it can be helpful to [rename](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the [Event Browser](https://dev.epicgames.com/documentation/fortnite/event-browser-in-fortnite-creative).
+
+## Contextual Filtering
+
+Some devices are affected by a feature called contextual filtering. This feature hides or displays options depending on the values selected for certain related options. This feature will reduce clutter in the Customize panel and make options easier to manage and navigate.
+
+However, it may not be easy to recognize which options or values trigger contextual filtering. To help you identify them, in our device docs we use *italic* for any values that trigger contextual filtering. All options will be listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option's value, there will be a note about that in the **Description** field for that option.
+
+## Device Options
+
+You can configure this device with the following options.
+
+Default values are **bold**. Values that trigger contextual filtering are *italic*.
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Message** | Enter text and format text | Click the **Format Styles** tab to choose a style for your text. A list of styles available is on the right. Each individual word must be clicked to select, then clicked again to de-select it. When you want to apply a style, click every word you want to have that style. If you want some words to have one style, and other words to have a different style, make sure you de-select previously selected words before selecting new words for the next style.  [Format Styles Tab](https://dev.epicgames.com/community/api/documentation/image/8a4bd14f-812d-4a06-88d9-e65ce054e633?resizing_type=fit) |
+| **Show on Round Start** | **Off**, *On* | Determines if the message automatically appears at the start of a round. If you set this to **On**, another option displays below this one. |
+| **Time From Round Start** | Off, **10 seconds**, Pick an amount of time | This only displays if the **Show on Round Start** option is set to **On**. Displays the message based on the length of time after the round starts. |
+| **Background Opacity** | **0%**, Pick or enter a percentage | Determines the opacity of the message's background. By default, the background is transparent. |
+| **Background Color** | **2600CEFF**, Pick a color swatch | If you have set a background opacity in the **Background Opacity** option, this determines the color of the background. Click the color swatch to open the Color Picker. Each color swatch has its Hex Code next to the swatch. You can also type a Hex Code into the Search bar to find a specific color. Select a color, then click the checkmark.  [Color Picker](https://dev.epicgames.com/community/api/documentation/image/b914cb2b-8d64-477c-a5f7-f4be63c3a92c?resizing_type=fit) |
+| **Message Recipient** | All, [Friendlies](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary), [Enemies](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary), Triggering Player, Pick or enter a team number | Determines which players receive the HUD message. |
+| **Show for Duration** | *Timed*, Permanent | Determines whether the device shows the message for a specific period of time. If you choose Timed, the Display Time option displays below this one. |
+| **Display Time** | 5 seconds, Permanent, Pick an amount of time | This option only displays if the Show for Duration option is set to Timed. Determines how long the message id displayed. |
+| **Play Sound** | Message - Important, Pick a sound | Determines which sound should accompany the message when it is displayed. |
+| **Placement** | Bottom Center, Top Center, Center Right, *Custom* | Choose where in the HUD the message displays. If you choose Custom, several additional options are displayed below this one. |
+| **Screen Anchor** | Top Left, Top Center, Top Right, Center Left, Center, Center Right, Bottom Left, Bottom Center, Bottom Right | This option is only displayed if you have the Placement option is set to Custom. Determines where on the screen the message is anchored, as well as the alignment of the message itself. |
+| **Placement Horizontal** | **0**, Pick a positive or negative number | This option is only displayed if you have the Placement option is set to Custom. Determines how far away, in pixels, the message is from the anchor point set in the Screen Anchor option. Positive numbers move it to the right, negative numbers move it to the left. |
+| **Placement Vertical** | **0**, Pick a positive or negative number | This option is only displayed if you have the Placement option is set to Custom. Determines how far away, in pixels, the message is from the anchor point set in the Screen Anchor option. Positive numbers move it upward, negative numbers move it downward. |
+| **HUD Widget** | Basic, Critical | Determines the visuals of the HUD message. |
+| **Layer** | **0**, Pick a layer number | Determines what layer the message displays on. Only one message at a time will display on a layer, and any other messages set to that layer will be queued. Setting messages to different layers causes multiple messages to be displayed simultaneously. |
+| **Priority** | **5**, Display Immediately, Pick or enter a priority number | Determines the priority for this message. Messages with a lower number (such as 1) are a higher priority, and will move any displayed message on the same layer to a queue. If you choose Display Immediately the message will display immediately and ignore any other messages. |
+| **Allow Multiple in Queue** | **Off**, On | By default, a message will only be queued if the device doesn't already have a message in the queue, or a message already displayed. If you choose On, you can have multiple messages queued on this device. |
+| **Show Behavior If Showing** | **Reset Display Time**, Replay, Ignore | Determines what happens if the device is directed to display a message when that message is already displayed. |
+| **Queue Timeout** | **Don't Queue**, Pick an amount of time | If a message is queued because a higher priority message is being displayed, this determines how long the message remains in the queue. |
+| **Queue Message for Join In Progress Players** | **On**, Off | Determines if this message is queued and then displayed to players that join the game while it is in-progress. This takes into account the value set for the Queue Timeout option. |
+| **Re-Evaluate Messages On Show** | **Off**, On | When a message is ready to be displayed, this determines if it is checked to make sure it is still relevant. This is useful if players can change class or team during the game, or otherwise become ineligible to see a message. |
+| **Intro Animation** | **None**, Zoom, Fade and Zoom, Fade, Reverse Zoom, Bounce, Slow Zoom, Slow Fade and Zoom, Slow Fade, Slow Reverse Zoom, Slide From Top, Slide From Bottom, Slide From Left, Slide From Right | Determines how the HUD Message is animated as it displays. |
+| **Outro Animation** | **None**, Zoom, Fade and Zoom, Fade, Reverse Zoom, Bounce, Slow Zoom, Slow Fade and Zoom, Slow Fade, Slow Reverse Zoom, Slide From Top, Slide From Bottom, Slide From Left, Slide From Right | Determines how the HUD Message is animated as it is removed. |
+| Text Style Set | Off, On | Determines the style set for the text. Select a text style from the dropdown menu. |
+| **Override Default Text Style** | **On**, Off | Provides a way to expose options to manually override the text when no styling is added. You will need to save your changes before any changes you make are applied to the preview. |
+| **Text Color** | **White**, Pick a color swatch | This option is only displayed if Override Default Text Style is set to On. Determines the color of the text in the HUD Message. Click the swatch to open the Color Picker. This is similar to the Color Picker for Background Color, but has names for colors rather than Hex Codes. Select a color, then click the checkmark to close the Color Picker. |
+| **Text Justification** | Left, Center, Right, Invariant Left, Invariant Right | Determines which side the text is aligned to. If you choose **Invariant Left** or **Invariant Righ**t, the text aligns to that side no matter what language the text is displayed in. |
+| **Verse Text Style** | **Off**, On | Any message that originates from Verse script automatically applies the selected style to its entire message. |
+| **Shadow Offset** | **1**, Pick or enter a number | This option is only displayed if Override Default Text Style is set to On. Determines the drop-shadow offset amount. |
+| **Outline Strength** | 1, Pick or enter a number | This option is only displayed if Override Default Text Style is set to On. Determines the outline strength on the text. |
+| **Size** | **18**, Pick or enter a size | This option is only displayed if Override Default Text Style is set to On. Determines the font size of the text. |
+
+## Direct Event Binding
+
+**Direct event binding** allows devices to communicate directly, which makes your workflow more intuitive, and gives you more freedom to focus on your design ideas.
+
+Below are the functions and events for this device.
+
+### Functions
+
+A function listens for an event on a device then performs an action.
+
+| Option | Description |
+| --- | --- |
+| **Show When Receiving From** | This function displays the HUD message when an event occurs. If more than one device or event can display message, you can click the **Add** button for this option, which adds another line. |
+| **Hide When Receiving From** | This function hides the message. If more than one device or event can hide the message,you can click the **Add** button for this option, which adds another line. |
+| **Clear Layer When Receiving From** | This function clears all text layers when an event occurs. If more than one device or event can clear all layers, click the **Add** button to add another line. |
+
+### Events
+
+This device has no events.

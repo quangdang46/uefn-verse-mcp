@@ -1,78 +1,83 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-sportbike-spawner-devices-in-fortnite-creative
 
-# Storm Wars
-Design your own storm experience and see who can survive it!
-![Storm Wars](https://dev.epicgames.com/community/api/documentation/image/a5175f70-c97f-4499-b84c-eb95b5c87457?resizing_type=fill&width=1920&height=335)
-[![Storm Wars gameplay example](https://dev.epicgames.com/community/api/documentation/image/da93843f-3a81-4b06-aadf-893a123cab53?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/da93843f-3a81-4b06-aadf-893a123cab53?resizing_type=fit)
-_Click image to enlarge._
-At the start of each [round](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#round) players run from the storm trying to reduce the storm damage they take while completing the game’s objectives. The creator’s goal in Storm Wars is to build a map with randomly generated storms for each round they play. After creating this example, the player will know how to use the [Basic Storm Controller device](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#basic-storm-controller), the [Random Number Generator device](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#random-number-generator), and the [Trigger device](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary).
-##  Devices Used
-  * 4 x [Basic Storm Controller devices](https://dev.epicgames.com/documentation/fortnite/using-basic-storm-controller-devices-in-fortnite-creative)
-  * 1 x [Random Number Generator device](https://dev.epicgames.com/documentation/fortnite/uusing-random-number-generator-devices-in-fortnite-creative)
-  * 4 x [Trigger devices](https://dev.epicgames.com/documentation/fortnite/using-trigger-devices-in-fortnite-creative)
+# Sportbike Spawner Devices
 
-##  Instructions
-Each of the devices you need for this gameplay example is described below.
-###  Placing the Basic Storm Controller Devices
-  1. Press **Tab** to open the [Creative Inventory](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary).
-  2. Click **Devices > Basic Storm Controller >** [Equip](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#equip) to add the Basic Storm Controller device to your [Quick Bar](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary).
-  3. Continue to add the following devices from the device menu:
-    1. Random Number Generator device
-    2. Trigger device 1. Place one Basic Storm Controller device.
-  4. Press **E** to open the Basic Storm Controller’s option settings.
-[![Placing 4 Basic Strom Controller](https://dev.epicgames.com/community/api/documentation/image/49f89b39-182b-408f-8dae-1097a5c9ca8f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/49f89b39-182b-408f-8dae-1097a5c9ca8f?resizing_type=fit)
-  5. Edit the **Basic Storm Controller device** options.
-[![Basic Storm Controller device options](https://dev.epicgames.com/community/api/documentation/image/776b6deb-5122-4edf-aac5-193402f802ae?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/776b6deb-5122-4edf-aac5-193402f802ae?resizing_type=fit)
-_Click image to enlarge._
-Option  |  Value  |  Explanation
----|---|---
-**Generate Storm on Game Start** |  No |  Each Basic Storm Controller device should be enabled on a signal rather than on Game Start.
-**Generate Storm When receiving From** |  Channel 1 / 2 / 3 / 4 |  This sets what channel will trigger the Basic Storm Controller device.
-  6. Copy the first Basic Storm Controller then place 3 more in separate locations around the island. This will [spawn](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#spawning) a new storm in a new location at the start of each round.
-  7. Edit the second Basic Storm Controller’s **Generate Storm When Receiving From** option to **Channel 2**. Similarly, for the next 2 Basic Storm Controller devices, set one to **Channel 3** , the other to **Channel 4**.
+Place nimble racing bikes with a Neo-Tokyo theme around your island to give players a speedy, two-person motorcycle they can ride while engaging in combat.
 
-###  Placing the Random Number Generator Device
-  1. Select the **Random Number Generator (RNG)** device from the Quick Bar.
-  2. Place the RNG, then press **E** to open the option settings.
-[![Placing the Random Number Generator](https://dev.epicgames.com/community/api/documentation/image/a93eb8a4-e291-406e-89f5-242de7b30d45?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a93eb8a4-e291-406e-89f5-242de7b30d45?resizing_type=fit)
-  3. Edit the RNG device options.
-[![The Random Number Generator’s option settings](https://dev.epicgames.com/community/api/documentation/image/f0c5b088-7590-41cf-85b0-645b29cf0170?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f0c5b088-7590-41cf-85b0-645b29cf0170?resizing_type=fit)
-_Click image to enlarge._
-Option  |  Value  |  Explanation
----|---|---
-***Value Limit** |  4 |  Sets the maximum number the Random Number Generator device will be able to generate.
-**Pick Each Number Once** |  Yes (Reset on Game Start) |  Ensures that no number is ever chosen more than once in a game.
-**Zone** |  Forward |  Sets the direction a zone will be created in by the Random Number Generator device to activate triggers.
-**Activate on Game Phase** |  Game Start |  Ensures that the Random Number Generator starts at the game start.
-Consider adding the silent option for the device if you place it near the arena, or you can ensure that the device is far enough away from the arena not to be heard during gameplay.
-  4. Walk around the RNG. Notice that there are 4 boxes now extending from the device, these are called [volumes](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#volume). This device counts as a sequencer, any device placed within its volumes will activate all devices set to accept sequencers when triggered by the RNG.
+![Sportbike Spawner Devices](https://dev.epicgames.com/community/api/documentation/image/9b2d5b80-46b9-4db2-9e56-a05c334f0535?resizing_type=fill&width=1920&height=335)
 
-###  Placing the Trigger Devices
-  1. Select the **Trigger** device from the Quick bar.
-  2. Place one Trigger device in each of these volume boxes.
-[![One Trigger device is placed in each box extending from the Random Number Generator](https://dev.epicgames.com/community/api/documentation/image/d382a65c-7eef-4cbe-b818-b3e4308c4ab6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d382a65c-7eef-4cbe-b818-b3e4308c4ab6?resizing_type=fit)
-_One Trigger device is placed in each box extending from the Random Number Generator._
-  3. Edit the first **Trigger** device option.
-[![Editing the first Trigger device option](https://dev.epicgames.com/community/api/documentation/image/6af13b31-6126-4a92-b309-2a45a1289299?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6af13b31-6126-4a92-b309-2a45a1289299?resizing_type=fit)
-_Click image to enlarge._
-Option  |  Value  |  Explanation
----|---|---
-***When Triggered Transmit On** |  Channel 1 |  The RNG randomly triggers one of the Trigger devices to transmit a signal to the Basic Storm Controller on the selected frequency.
-  4. Edit the **When Triggered Transmit On** option setting for the remaining 3 Trigger devices, making sure to set one to **Channel 2** , one to **Channel 3** , and one to **Channel 4**.
+The **Sportbike Spawner** device spawns a Neo-Tokyo themed racing motorcycle. Speedy and stylish, players riding on this two-person motorcycle can engage in both [melee](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#melee) and ranged combat. Because it seats two, it can enhance social play by encouraging players to ride with friends.
 
-##  My Island Options
-After placing all the devices and editing their settings, next you will determine the number of rounds for the game. Start with four rounds so each Basic Storm Controller device has the chance to create a storm at least once during one of the rounds.
-  1. Click **Tab** to open the **My Island > Game** settings panel.
-  2. Edit the **Game** options.
-[![My Island Game options](https://dev.epicgames.com/community/api/documentation/image/485876fd-7666-4227-8f9d-5ca23aacc6be?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/485876fd-7666-4227-8f9d-5ca23aacc6be?resizing_type=fit)
-_Click image to enlarge._
-Option  |  Value  |  Explanation
----|---|---
-**Total Rounds** |  4 |  Each round allows the RNG to randomly cycle through the 4 Trigger devices and Basic Storm Controllers.
-**Time Limit** |  1 Minute |  Shorten the time limit so you don’t have to wait too long to experience a new storm during each round.
+For help on how to find the Sportbike Spawner device, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
 
-##  Playing Your Game
-After creating your own Storm Wars Gameplay Example you’ll have a basic understanding of how storms are generated in Fortnite Battle Royale and Save the World.
-Storm Wars can be combined with game modes such as [Lobby Loadout](https://www.epicgames.com/fortnite/en-US/creative/docs/loadout-lobby-in-fortnite-creative) to make even more interesting game modes. You can also use other devices such as the [Advanced Storm Beacon](https://dev.epicgames.com/documentation/fortnite/using-advanced-storm-beacon-devices-in-fortnite-creative) and [Advanced Storm Controller](https://dev.epicgames.com/documentation/fortnite/using-advanced-storm-controller-devices-in-fortnite-creative) devices to increase the complexity of the game.
-You can use additional option settings for the Basic Storm Controller that move the storm, control the storm radius and damage dealt by the storm. Combine the Random Number Generator and Triggers with other devices and traps to create a fun and complex game experience by randomly generating animals, enemies, and more.
-_Storm Wars Video_
+If you're using multiple copies of a device on an island, it can be useful to [rename](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#rename-a-device) them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the [Event Browser](https://dev.epicgames.com/documentation/fortnite/event-browser-in-fortnite-creative).
+
+## Contextual Filtering
+
+Some devices are affected by a feature called **contextual filtering**. This feature hides or displays options depending on the values selected for certain related options. This feature will reduce clutter in the Customize panel and make options easier to manage and navigate.
+
+However, it may not be easy to recognize which options or values trigger contextual filtering. To help you identify them, in our device docs we use *italic* for any values that trigger contextual filtering. All options will be listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option’s value, there will be a note about that in the Description field for that option.
+
+## Device Options
+
+Default values are **bold**. Values that trigger contextual filtering are *italic*.
+
+You can configure this device with the following options.
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Enabled During Phase** | None, **Always**, Pre-Game Only, Gameplay Only, Create Only | Determines which phases the device is enabled in. **Pre-Game Only** includes all phases that occur before the game starts. **Create Only** means it is only enabled while you are editing your island. |
+| **Enable Respawn** | **On**, Off | Determines whether the vehicle will respawn after it is destroyed. |
+| **Respawn Time** | **Instant**, Pick or enter an amount of time | Determines how long it takes for a vehicle to be respawned after it is destroyed. |
+| **Respawn Vehicle When Enabled** | **Yes**, Only If Needed, No | Determines if a new vehicle is spawned when the device is enabled. Values for this option include:   - **Yes**: When the device is enabled, a new vehicle is spawned. - **Only When Needed**: When the device is enabled, it will spawn a new vehicle only if there is no existing vehicle. - **No**: When the device is enabled, no vehicle is spawned. |
+| **Destroy Vehicle When Disabled** | **On**, Off | By default, the active vehicle spawned from this device is destroyed when the device is disabled. If you choose **Off**, any spawned vehicle is still usable. |
+| **Activating Team** | **Any**, Pick or enter team number | Determines which team owns this device and can use its vehicles. |
+| **Allowed Class** | No Class, **All**, Any, Pick a class | Determines which classes are able to use vehicles spawned by this device. Values for this option include:   - **No Class**: Only players without an assigned class can use the vehicle. - **All**: All players, with an assigned class or with no class, can use the vehicle. - **Any**: Players with any assigned class can use the vehicle, but players without an assigned class cannot. |
+| **Visible During Game** | **On**, Off | Determines whether the spawner is visible during the game. |
+| **Vehicle Indestructible** | ***Off***, On | Determines whether the vehicle can be damaged. By default, this option is set to **Off** and the **Vehicle Health** option is displayed below it. If you choose **On**, the vehicle cannot be destroyed or take damage and the **Vehicle Health** option does not display. |
+| **Vehicle Health** | **550**, Pick or enter an amount | This option only displays if the **Vehicle Indestructible** option is set to **Off**. This option sets the amount of Health the vehicle has when spawned. |
+| **Destroy When Stuck Underwater** | ***On***, Off | Determines if the vehicle will destroy itself if it gets stuck underwater. By default, it is set to **On**, and the **Water Destruction Timer** option is displayed below it. If you choose **Off**, the **Water Destruction Timer** option does not display. |
+| **Water Destruction Timer** | **5.0 seconds**, Pick or enter a number | This option only displays if the **Destroy When Stuck Underwater** option is set to **Off**. If the vehicle becomes stuck underwater, this determines how long it lasts before it destroys itself. |
+| **Fuel Consumption** | *On*, **Off** | Determines whether the vehicle requires fuel. If this is set to **On**, additional options display. |
+| **Fuel Use Multiplier** | **1.0**, Pick or enter a number | This option only displays if the **Fuel Consumption** option is set to **On**. Determines how fast the vehicle uses fuel, as expressed by a multiple of the default rate. Lower numbers mean the vehicle uses fuel more slowly; higher numbers mean the vehicle uses fuel more quickly. |
+| **Random Starting Fuel** | **On**, *Off* | Determines whether the vehicle spawns with a random amount of fuel, between 85%-95% of its maximum fuel. |
+| **Min Random Starting Fuel** | **0**, Pick or enter an amount | This option only displays if the **Random Starting Fuel** is set to **On**. Determines the minimum random percentage of starting fuel the spawned vehicle can have. |
+| **Max Random Starting Fuel** | **0**, Pick or enter an amount | This option only displays if the **Random Starting Fuel** is set to **On**. Determines the maximum random percentage of starting fuel the spawned vehicle can have. |
+| **Starting Fuel** | **100**, Pick or enter a percentage | This option only displays if the **Random Starting Fuel** option is set to **Off**. Determines how much fuel the vehicle spawns with. |
+| **Boost Enabled** | ***On***, Off | Determines if boost is enabled on the spawned vehicle. If this is set to **On**, more options display. |
+| **Unlimited Boost** | *On*, **Off** | This option only displays if the **Boost Enabled** option is set to **On**. Determines if using boost consumes fuel. |
+| **Boost Fuel Use** | **0.5**, Pick or enter a number | This option only displays if the **Boost Enabled** option is set to **On**. Determines how much fuel the vehicle uses when boosting. |
+| **Boost Regen Multiplier** | **10.0**, Pick or enter a number | This option only displays if both the **Boost Enabled** option is set to **On** and the **Unlimited Boost** option is set to **Off**. Determines how quickly the boost meter fills. |
+| **Visual Variant** | **Random**, Red, Blue, Gray, White | Determines which visual variant is applied to the spawned vehicle. |
+
+## Direct Event Binding
+
+Following are the [direct event binding](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#direct-event-binding) options for this device.
+
+### Functions
+
+A [function](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#function) listens for an event on a device then performs an action.
+
+| Option | Description |
+| --- | --- |
+| **Enable When Receiving On** | This function enables the device when an event occurs. |
+| **Disable When Receiving On** | This function disables the device when an event occurs. |
+| **Respawn Vehicle When Receiving On** | This function respawns the vehicle when an event occurs. |
+| **Destroy Vehicle When Receiving On** | This function destroys the vehicle when an event occurs. |
+| **Assigns Driver When Receiving On** | This function assigns a driver to the vehicle when an event occurs. |
+| **Apply Off Road Tires When Receiving From** | If the vehicle is set up for off road tires, they will be applied when an event occurs. |
+| **Remove Tire Modification When Receiving From** | When an event occurs, this will revert the vehicle to road tires. |
+| **Pop All Tires When Receiving From** | If vehicle still has tires, this will pop all of them when an event occurs. |
+| **Repair All Tires When Receiving From** | If the vehicle has damaged tires, they will be repaired when an event occurs. |
+| **Repair Vehicle When Receiving From** | Restore full health for the vehicle when an event occurs. |
+
+### Events
+
+An [event](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#event) tells another device when to perform a function.
+
+| Option | Description |
+| --- | --- |
+| **On Player Enters Vehicle Send Event To** | When a player enters the spawned vehicle, it sends an event to the selected device, which triggers the selected function. |
+| **On Player Exits Vehicle Send Event To** | When a player exits the spawned vehicle, it sends an event to the selected device, which triggers the selected function. |
+| **On Vehicle Spawns Send Event To** | When the vehicle spawns, it sends an event to the selected device, which triggers the selected function. |
+| **On Vehicle Destroyed Send Event To** | When the spawned vehicle is destroyed, it sends an event to the selected device, which triggers the selected function. |

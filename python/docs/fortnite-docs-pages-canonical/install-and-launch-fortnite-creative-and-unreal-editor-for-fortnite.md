@@ -1,51 +1,121 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/install-and-launch-fortnite-creative-and-unreal-editor-for-fortnite
 
-# Editing Components
-Optimize your project by using the Property Matrix to edit the components of a Blueprint or multiple Blueprints.
-![Editing Components](https://dev.epicgames.com/community/api/documentation/image/346c22d3-f023-4198-b360-5c926c4f7fe0?resizing_type=fill&width=1920&height=335)
-Components in Unreal Editor for Fortnite (UEFN) are properties of an [asset](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#asset) that determine how the asset looks and performs in-game. These editable component properties are part of all assets, including devices, [props](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#prop), and gallery items–if it’s in the [Content Browser](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#content-browser), you can edit the asset’s component properties. The same goes for assets you import or create.
-##  Editing Components
-Components can be edited one at a time, or in bulk if there are common properties that need editing across multiple assets. To edit components, highlight more than one asset in the [Outliner](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#outliner-panel) and use the right-click menu to choose between **Edit Selection in Property Matrix** and **Edit Components in the Property Matrix**.
-[![Highlight more than one asset in the Outliner and use the right-click menu to choose between Edit Selection in Property Matrix and Edit Components in the Property Matrix.](https://dev.epicgames.com/community/api/documentation/image/a0ec6269-8f65-4c53-855d-2d6fdc6f9c89?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a0ec6269-8f65-4c53-855d-2d6fdc6f9c89?resizing_type=fit)
-**Edit Selection in Property Matrix** allows you to edit one component of one asset at a time in the Property Matrix.
-**Edit Components in the Property Matrix** allows you to bulk edit components of multiple assets at once. Only the properties that all selected Actors have in common will display in the Property Matrix.
-###  Property Matrix
-Components are edited inside the **Property Matrix** , which is a type of asset editor. The left panel contains the Root assets, which is short for Root Component. A Root Component is the base of a Blueprint Instance.
-Blueprints can only be authored for data, not game scripting in UEFN.
-By editing the Root Component you can optimize your assets for better performance in-game and reduce the size of your overall project. With the Property Matrix you can edit the following types of properties in the [Details panel](https://dev.epicgames.com/documentation/fortnite/user-interface-reference-for-unreal-editor-for-fortnite#detailssettingspartition):
-  * User Options
-  * LOD
-  * Static Mesh properties
-  * Rendering
-  * Light properties
-  * Collision
-  * HLOD
-  * Navigation
-  * Mobility
+# Install and Launch Fortnite
 
-There are more component properties you can edit, the ones listed above are the most important for project optimization.
-The Pinned tab contains all the common properties for all the assets you highlighted in the [Outliner](https://dev.epicgames.com/documentation/fortnite/user-interface-reference-for-unreal-editor-for-fortnite#outliner). Editing the components in the Pinned tab edits the same component for all assets in the Root panel (the selected assets) at once.
-[![The Property Matrix](https://dev.epicgames.com/community/api/documentation/image/d3cf721e-b966-4885-9077-aa6b9549d5a8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d3cf721e-b966-4885-9077-aa6b9549d5a8?resizing_type=fit)
-Number  |  Name  |  Description
----|---|---
-1 |  **Menu Bar and Tab Bar** |  Provides access to basic tasks, component objects, and saving capabilities.
-2 |  **Root Components** |  A list of the Blueprint Actors Root Components.
-3 |  **Pinned Tab** |  A list of the common components in each of the Root Components.
-4 |  **Details Panel** |  The Details panel contains information on location, scalability, shadows, lighting, meshes, instance, structural support, weak spots, and more.
-5 |  **Bottom Toolbar** |  Contains the Content Drawer, Output Log, and Revision Control.
-##  Using the Property Matrix
-To edit the components of a Blueprint Actor or group of Blueprint Actors:
-  1. Select all the Blueprint Actors whose components you want to bulk edit in the viewport or the Outliner.
-  2. Right-click and select **Edit Components in the Property Matrix** > **Component Type**. The Property Matrix opens in a new window.
-[![Select the Actors in the Outliner then edit their components with the Property Matrix.](https://dev.epicgames.com/community/api/documentation/image/a5189a8e-b034-4727-8b27-215850b13a60?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a5189a8e-b034-4727-8b27-215850b13a60?resizing_type=fit)
-  3. Edit the component properties from the **Pinned Columns** panel. An asterisk appears beside the components. Any changes you make from this window can be seen immediately in the viewport.
-[![The Property Matrix window.](https://dev.epicgames.com/community/api/documentation/image/00e50a4d-4d73-46ab-8134-a42de7ffc562?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/00e50a4d-4d73-46ab-8134-a42de7ffc562?resizing_type=fit)
-_Click image to enlarge._
-  4. **Save** your changes, and **Check-In Changes** to Unreal Revision Control, then exit from the Property Matrix.
+Get your Fortnite tools locked and loaded by learning how to download, install, and launch Fortnite!
 
-Within the Property Matrix window, you can select individual Blueprint Actors from the Root list and edit their components using the Pinned Column, or you can edit their individual components by selecting the Details Panel if you don’t want to make a universal change to all Blueprint Actors in the list.
-##  Example Use Case
-One reason you might want to edit a Blueprint Actor’s components is to adjust properties that are not exposed at the blueprint level.
-Blueprint Actors in an underground cave have their Cast Shadow properties on by default. To optimize your project, do a bulk edit on all Blueprint Actors to turn off the Cast Shadow properties on their Static Mesh components since there’s no need for them to cast shadows.
-Shadows are heavy to calculate, so turning them off optimizes your project when players enter the cave.
-Sometimes knowing what component properties to edit will not happen until the end of game and world building. At other times, and when you get more comfortable with the UEFN toolset, you’ll know right away which Blueprint Actors need to be edited and how.
+![Install and Launch Fortnite](https://dev.epicgames.com/community/api/documentation/image/ac3c47d6-8237-4414-99e9-3fa4a504972c?resizing_type=fill&width=1920&height=335)
+
+Ready to explore the toolsets available for Fortnite? Find out how to set up your Epic Games account and download everything you need, for free! Yep, for free!
+
+- **Fortnite Creative** is a sandbox game where you can create and save your island experience using the Creative toolset.
+- **Unreal Editor for Fortnite (UEFN)** is a game engine system composed of a collection of editors that let you build your terrain, and add props and game mechanics with more control that you have in Fortnite, and where you can also add other features, like controlled lighting and sculpt your landscapes to make your games even more uniquely yours.
+- **Verse** is a programming language designed to work both within and outside of game design. UEFN includes an interface that you can use to customize devices even further using Verse.
+
+Together, these apps make up Fortnite.
+
+To use any of these tools, you will need to:
+
+- Create an Epic Games account if you don't already have one.
+- Download the Epic Games Launcher.
+- From the launcher, download Fortnite.
+- From the launcher, download Unreal Editor for Fortnite (UEFN). Verse downloads with UEFN.
+
+## System Requirements
+
+Make sure your device meets the minimum hardware and software requirements.
+
+### Fortnite Creative
+
+Fortnite Creative runs on a number of gaming platforms, listed below.
+
+- Nintendo Switch
+- Xbox One
+- Xbox Series X
+- Playstation 4 and 5
+- Android
+- iOS
+- PC
+
+You can create Fortnite islands on these platforms.
+
+The table below shows the minimum recommended requirements for running Fortnite Creative on a PC.
+
+|  | Minimum | Recommended |
+| --- | --- | --- |
+| Operating System (OS) | Windows 10 64-bit version 1703 | Windows 10/11 64-bit |
+| Processor (CPU) | Core i3-3225 3.3 GHz | Core i5-7300U 3.5 GHz, AMD Ryzen 3 3300U, or equivalent |
+| Memory | 8 GB RAM | 16 GB RAM or higher |
+| Video Card (GPU) | Intel HD 4000 on PC; AMD Radeon Vega 8 | Nvidia GTX 960, AMD R9 280, or equivalent DX11 GPU |
+| Video Memory (VRAM) | 2 GB | 8 GB VRAM or higher |
+| Additional |  | NVMe Solid State Drive |
+
+### UEFN
+
+To use UEFN, you will need a PC. Note that UEFN runs on PCs only.
+
+The table below shows minimum and recommended requirements for UEFN on a PC.
+
+|  | Minimum | Recommended |
+| --- | --- | --- |
+| Operating System (OS) | Windows 10, 64-bit version 1909, revision .1350 or higher | Windows 10, 64-bit version 1909Revision .1350 or higher, with DirectX 12 support |
+| CPU | Quad-core Intel or AMD, with 2.5 GHz or faster CPU | Quad-core Intel or AMD, with 2.5 GHz or faster CPU |
+| Memory | 16 GB RAM | 32 GB RAM or higher |
+| Video Card (GPU) | Nvidia GTX 960, AMD R9 280, or equivalent DX11 GPU | DirectX 12-compatible graphics card with the latest drivers |
+| Video Memory (VRAM) | 4 GB | 8 GB or higher |
+| Drivers |  | NVIDIA Driver 516.25 or higher for Nvidia Video Cards AMD Driver 22.2.2 or higher for AMD Video Cards |
+| Additional |  | NVMe Solid State Drive |
+
+You can verify that you have the latest graphics card driver for your card at these links.
+
+- [NVIDIA](https://www.nvidia.com/en-us/drivers/)
+- [AMD](https://www.amd.com/en/support/download/drivers.html)
+
+## Set Up Your Epic Games Account
+
+If you don’t already have an Epic Games account, you’ll need one.
+
+## Install the Launcher
+
+With your Epic Games account in place, it's time to install the Epic Games Launcher.
+
+## Download and Launch Fortnite
+
+With the launcher open, install Fortnite.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/225d8907-f3ca-4e90-ad44-8c192a4a8b99?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/225d8907-f3ca-4e90-ad44-8c192a4a8b99?resizing_type=fit)
+
+1. Click the Fortnite tile, then click **Download**.
+2. Click **Place Order**. You will not be charged for this order.
+3. Click **Owned**.
+4. Go to your **Library** and select **Fortnite**.
+5. If prompted, read and accept the **Epic Games Terms of Service**.
+6. Choose your install location (or accept the default location) and click **Install**.
+7. Navigate back to your **Library** and select **Fortnite** to launch it.
+8. Fortnite offers parental controls to help parents control what a player can see and do inside of Fortnite. Depending on the platform, there may be additional controls available. To learn more, read about [Fortnite Parental Controls](https://safety.epicgames.com/en-US/parental-controls?sessionInvalidated=true).
+
+Once you've installed Fortnite:
+
+Once you've launched it the first time, you will be able to launch it from the **Quick Launch** menu.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/4221c8ac-6d8a-4552-a285-57fa51604b1e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4221c8ac-6d8a-4552-a285-57fa51604b1e?resizing_type=fit)
+
+## Access Fortnite Creative
+
+When you launch Fortnite, it opens on the Discover page.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/e6620eca-bbfa-4ae2-a35b-c13540980c9e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e6620eca-bbfa-4ae2-a35b-c13540980c9e?resizing_type=fit)
+
+[![](https://dev.epicgames.com/community/api/documentation/image/f7536571-d599-4424-98f8-db97481b8456?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f7536571-d599-4424-98f8-db97481b8456?resizing_type=fit)
+
+## Download and Launch UEFN
+
+You don't have to download Fortnite and UEFN in this order, but you will need Fortnite installed when you use UEFN because UEFN uses Fortnite for playtesting.
+
+When you download UEFN, it also installs **Visual Studio (VS)**. VS is an application used for writing, compiling, and debugging software. You will need it when working with Verse.
+
+With the launcher open, install UEFN.
+
+Launching UEFN for the first time may take a few minutes, based on your Internet speed and hardware configurations.
+
+Once launched the first time, you can use the **Quick Launch** menu to launch.

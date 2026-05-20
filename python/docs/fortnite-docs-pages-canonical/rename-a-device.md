@@ -1,7 +1,11 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/rename-a-device
 
-# One more step
-Please complete a security check to continue
-Verification successful. Waiting for dev.epicgames.com to respond
-**Session ID** : 9e9c64e0b8d58516
-**IP Address** : 14.191.95.176
+# rename a device
+
+If you're using multiple devices on an island, it can be helpful to give each one a unique, context-specific name.
+
+If you're using multiple devices on an island, it can be helpful to give each one a unique, context-specific name. For example, if you have multiple Creature Placers on your island, you might want to name each one based on the creature type, or if you have multiple copies of the same vehicle, you could rename each vehicle spawner based on the vehicle color or associated channel, or use some other way that distinguishes one vehicle from another.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/3532152c-9fbd-4c76-83c1-1a5ed50ac61c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3532152c-9fbd-4c76-83c1-1a5ed50ac61c?resizing_type=fit)
+
+Once you've saved, the new name will appear at the top of the Customize panel. It will also show up when you point at the device with your phone while in Create mode.

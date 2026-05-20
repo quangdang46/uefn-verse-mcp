@@ -1,84 +1,200 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/starting-and-organizing-a-project-in-fortnite
 
-# Taxi Spawner Devices
-Place a Taxi vehicle in your game for your players to drive.
-![Taxi Spawner Devices](https://dev.epicgames.com/community/api/documentation/image/7572293b-ec1a-45ea-a4ea-0f81f7304b60?resizing_type=fill&width=1920&height=335)
-A **Taxi Spawner** is a device that [spawns](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#spawning) a Taxi vehicle onto your island at the spawner's given location and orientation. Use Taxi Spawner devices in combination with the [Race Checkpoint Device](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#race-checkpoint) to design a racing game for your players. You can place a player directly inside the Taxi using a trigger.
-For help on how to find the **Taxi Spawner** device, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
-If you're using multiple copies of a device on an island, it can be useful to rename them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the [Event Browser](https://dev.epicgames.com/documentation/fortnite/event-browser-in-fortnite-creative).
-##  Contextual Filtering
-Some devices are affected by a feature called contextual filtering. This feature hides or displays options depending on the values selected for certain related options. This feature will reduce clutter in the Customize panel and make options easier to manage and navigate.
-However, it may not be easy to recognize which options or values trigger contextual filtering. To help you identify them, in our device docs we use italic for any values that trigger contextual filtering. All options will be listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option’s value, there will be a note about that in the Description field for that option.
-##  Device Options
-This device has some basic functionality, like boost [regen](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#regen) and whether the radio is enabled. Additionally, there are some advanced options, like whether the Taxi vehicle takes damage from [collisions](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary), how much damage it can take before being destroyed, and how much damage it deals when it explodes.
-You can configure this device with the following options.
-Default values are **bold**. Values that trigger contextual filtering are _italic_.
-###  Basic Options
-Option  |  Value  |  Description
----|---|---
-**Visible During Game** |  **On** , Off |  Determines whether the device is visible during the game. This does affect its collision properties.
-**Boost Regen** |  **No Boost** , Slow, Default, Fast, Unlimited |  Only displayed when **Fuel Consumption** is set to **Has Infinite Fuel**. Determines if the vehicle is able to boost, and how quickly the [boost](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#boost) meter fills.
-**Radio** |  **Enabled** , Disabled |  Determines whether the spawned vehicle is able to use the [radio](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#radio).
-###  All Options (Additional)
-Option  |  Value  |  Description
----|---|---
-**Enabled During Phase** |  **All** , None, Pre-Game Only, Gameplay Only |  Determines the game [phases](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#game-phase) during which the device will be enabled. Pre-Game includes all phases prior to the Game starting (the waiting for players lobby on Featured Islands and the Game Start Countdown).
-**Respawn Time** |  **Instant** , Never, Pick a time |  Respawns a vehicle that's been destroyed after a selected delay.
-**Respawn Vehicle when Enabled** |  **Yes** , No, Only if Needed |  If this is set to **Yes** , a vehicle will spawn when the device is enabled. Choosing **Only If Needed** will not reset an existing vehicle.
-**Destroy Vehicle when Disabled** |  **Yes** , No |  Destroys a spawned vehicle when the spawner is disabled.
-**Owning Team** |  **Any** , Pick a team |  Sets the team the device belongs to.
-**Selected Class** |  **None** , Any, No Class, Pick a class |  Determines what class can use this vehicle. Values for this option are:
-  * **None** : All players, including players with no class assigned, can use the vehicle.
-  * **Any** : Any player with a class assigned can use the vehicle.
-  * **No Class** : Only players with no class assigned can use the vehicle.
-  * **Pick a class** : Pick a class identifier; only players assigned that class can use the vehicle.
+# Starting and Organizing a Project
 
-**Fuel Consumption** |  **Has Infinite Fuel** , _Uses Fuel_ |  Determines if the spawned vehicle uses fuel.
-**Starting Fuel** |  **Random** , Pick a percentage |  Only displayed when **Fuel Consumption** is set to **Uses Fuel**. The percentage of fuel in the vehicle's fuel tank at spawn. **Random** will spawn the vehicle with a percentage of fuel between 25% and 80%.
-**Fuel Use** |  Slow, **Normal** , Fast |  Only displayed when **Fuel Consumption** is set to **Uses Fuel**. Controls how quickly the vehicle will use fuel while driving.
-**Boost Fuel Use** |  **No Boost** , Slow, Default, Fast, None |  Only displayed when **Fuel Consumption** is set to **Uses Fuel**. Controls how quickly the vehicle will use fuel while boosting. **No Boost** will disable boosting. **None** will make boosting have no effect on fuel usage.
-**Tire Selection** |  **Road Tires** , Off-Road Tires |  Determines the type of tires for the spawned vehicle.
-**Spawn With Cow Catcher** |  Yes, **No** |  Determines whether the vehicle has the Cow Catcher equipped when spawned.
-**Vehicle Health** |  **800** , Indestructible, Pick a number |  Determines how much damage the vehicle can take before it is destroyed.
-**Damage Friendly Fire** |  **Yes** , No |  Determines whether friendly driven vehicles will damage each other on collision.
-**Damage Other Vehicles** |  Yes, **No** |  Determines whether vehicles will damage each other on collision.
-**Allow Damage From Other Vehicles** |  Yes, **No** |  **Yes** will allow other vehicles to damage this vehicle by colliding with it.
-**Damage Own Vehicle** |  Yes, **No** |  Determines whether a collision will damage the player’s own vehicle.
-**Max Explosion Delay** |  **1 second** , Instant, Pick a delay time |  The maximum time the vehicle can have zero health, after which it will explode.
-**Lifetime After Explosion** |  **1 second** , Instant, Pick a duration |  The duration in seconds that the destroyed vehicle will remain in the world, after which it is removed entirely.
-**Explosion Damage to Environment** |  **800** , None, Pick an amount of damage |  The amount of damage dealt to environment objects when the vehicle explodes.
-**Explosion Damage to Players** |  **800** , None, Pick an amount of damage |  The amount of damage dealt to players when the vehicle explodes.
-**Explosion Damage to Vehicles** |  **800** , None, Pick an amount of damage |  The amount of damage dealt to other vehicles when the vehicle explodes.
-**Water Destruction Delay** |  Never, Instant, **5 seconds** , Pick a time |  When the vehicle is too deep in water to drive, destroy it after this delay.
-##  Direct Event Binding
-Below are the direct event binding options for this device.
-###  Functions
-A [function](https://dev.epicgames.com/documentation/en-us/fortnite-creative/function) listens for an event on a device, and then performs an action.
-  1. For any function, click the option, then Select Device to access and select from the Device dropdown menu.
-  2. Once you've selected a device, click Select Event to bind the device to an event that will trigger the function for the device.
-  3. If more than one device or event triggers a function, click the Add button to add a line and repeat these steps.
+Learn how to create a project and set yourself up for success!
 
-Option  |  Description
----|---
-**Enable When Receiving From** |  When an event occurs, the Taxi spawner is enabled.
-**Disable When Receiving From** |  When an event occurs, the Taxi spawner is disabled.
-**Assigns Driver When Receiving From** |  Sets the player that [instigated](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#instigator) the signal as the spawned vehicle's driver when an event occurs.
-**Respawn Vehicle When Receiving From** |  Spawns a new vehicle when an event occurs. The existing vehicle will be destroyed before a new vehicle spawns.
-**Destroy Vehicle When Receiving From** |  When an event occurs, the spawned vehicle is destroyed if it exists.
-**Apply Off Road Tires** When Receiving From |  Applies off road tires to the spawned vehicle when an event occurs.
-**Remove Tire Modification** When Receiving From |  Removes tire modifications from the spawned vehicle when an event occurs.
-**Pop All Tires** When Receiving From |  Pops all tires on the vehicle when an event occurs.
-**Repair All Tires** When Receiving From |  Repairs all tires on the vehicle when an event occurs.
-**Repair Vehicle** When Receiving From |  Repairs the spawned vehicle when an event occurs, restoring it to full health.
-###  Events
-An [event](https://dev.epicgames.com/documentation/en-us/fortnite-creative/event) tells another device when to perform a function.
-  1. For any function, click the option, then Select Device to access and select from the Device dropdown menu.
-  2. Once you've selected a device, click Select Function to bind this event to a function for that device.
-  3. If more than one function is triggered by the event, click the Add button to add a line and repeat these steps.
+![Starting and Organizing a Project](https://dev.epicgames.com/community/api/documentation/image/6461bed7-21c1-4a62-8412-d38353c5b005?resizing_type=fill&width=1920&height=335)
 
-Option  |  Description
----|---
-**On Player Enters Vehicle Send Event To** |  When a player enters the spawned vehicle, an event is sent to the selected device.
-On **Player Exits Vehicle** Send Event To |  When a player exits the spawned vehicle, an event is sent to the selected device
-On **Vehicle Spawns** Send Event To |  When a vehicle is spawned or respawned, an event is sent to the selected device.
-On **Vehicle is Destroyed** Send Event To |  When a vehicle is destroyed, an event is sent to the selected device.
+In this guide, you’ll learn how to create and launch a project in **Unreal Editor for Fortnite (UEFN)**.
+
+**You'll also get some** organizational tips and tricks to set yourself up for success. Whether you work as part of a team or on your own, these tips are industry standards that can help you build and develop your island more efficiently.
+
+## Create a Project
+
+To create a project, you’ll launch the editor and create a project by selecting an island to start with. As you add content to the project, it is saved within your project.
+
+Best approaches for starting a new project include:
+
+- Sketching out your ideas on paper or digitally.
+- Creating wireframes for [assets](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#asset) you intend to import.
+- Working out your game logic, or how project assets should look and interact with other assets.
+
+Launching UEFN opens the **Project Browser** directly unless you check **Open last project** on start up to automatically open the project you’re currently working on.
+
+1. Launch **UEFN**. (If the **News** window opens, close it by clicking **Let's get started!**) The **Project Browser** opens.
+
+   If you have previously created islands in Fortnite, these will appear under your **My Projects** tab. If this is your first time in Fortnite, this tab will be empty.
+2. Click the **Island Templates** tab, then click **Blank** to open an empty island.
+
+   [![](https://dev.epicgames.com/community/api/documentation/image/8ffc4663-9e88-456e-ae6f-671a1401879a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8ffc4663-9e88-456e-ae6f-671a1401879a?resizing_type=fit)
+3. At the bottom of the window, you can **name** and **save** your project. The name defaults to **MyProject**, but you can name it whatever you want.
+
+   Three things to know about naming projects:
+4. Name your project.
+5. Click **Create**.
+
+   [![](https://dev.epicgames.com/community/api/documentation/image/7661f79f-24c8-41b8-8d52-5b80a8a30f15?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7661f79f-24c8-41b8-8d52-5b80a8a30f15?resizing_type=fit)
+
+You can also create a new project from an open project:
+
+- From the **File** menu, select **New / Open Project**.
+
+  [![](https://dev.epicgames.com/community/api/documentation/image/0266c880-ee6d-474b-b7a2-0943a4bd6543?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0266c880-ee6d-474b-b7a2-0943a4bd6543?resizing_type=fit)
+
+  Click to enlarge image.
+- From the **Project** menu select **New / Open Project**.
+
+  [![](https://dev.epicgames.com/community/api/documentation/image/7662f1d2-7c8c-4ed4-b2df-4d5cb0b4cf47?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7662f1d2-7c8c-4ed4-b2df-4d5cb0b4cf47?resizing_type=fit)
+
+  Click to enlarge image.
+
+### Duplicate a Project
+
+Duplicating a published project is a great way to accelerate island development and manage risk as part of planned project expansion or improvements.
+
+You can only duplicate a synced project.
+
+ To duplicate a project from the **Project Browser**:
+
+The duplication process runs a validation check on the project and scans the source project for out of date assets.
+
+[![An example of a validation check that has revealed a duplicated Verse path.](https://dev.epicgames.com/community/api/documentation/image/08fed9b3-8660-4a09-b3ae-ce54eccb7621?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/08fed9b3-8660-4a09-b3ae-ce54eccb7621?resizing_type=fit)
+
+Validation Check
+
+[![An example of a validation pass that has revealed out of date assets](https://dev.epicgames.com/community/api/documentation/image/56ab0e7f-436a-405e-a903-44ac1047e1f3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/56ab0e7f-436a-405e-a903-44ac1047e1f3?resizing_type=fit)
+
+Out of Date Assets
+
+### Templates
+
+Templates make creating a [project](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#project) straightforward, whether you start from an empty island [level](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#level) or fully populated tutorial.
+
+Templates are made to be customizable. You can edit the terrain, delete objects and assets you don’t want, and add content and assets the template doesn’t contain natively. All templates contain these common elements:
+
+- Fortnite player spawn(s)
+- Level boundaries that mark the edges of the level
+- Time-of-day settings
+- Island Settings device
+
+Choose from the following template groups:
+
+[![](https://dev.epicgames.com/community/api/documentation/image/5538bf5d-d16a-4c0e-b6a2-680610493d58?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5538bf5d-d16a-4c0e-b6a2-680610493d58?resizing_type=fit)
+
+Click to enlarge image.
+
+- **Island Templates** - A series of templates that include:
+
+  - A blank template where you'll build everything.
+  - Islands based on Fortnite Battle Royale map destinations. These include [prefabs](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#prefab) or assets that you can add, move, delete, or modify.
+  - Terrain-specific islands with no prefabs or assets.
+- **Brand Templates** - A series of [branded templates](https://dev.epicgames.com/documentation/fortnite/game-collections-in-fortnite) that includes:
+
+  - Fortnite blank template islands.
+  - Brand-specific assets, like LEGO® or other IP that you can only use with a specific template.
+- **Feature Examples** - Templates that help you learn how to use different UEFN features and systems, and the [Verse](https://dev.epicgames.com/documentation/fortnite/verse-glossary#verse) programming language.
+
+## Project Organization
+
+You can save time and aggravation later by setting up your project correctly from the start.
+
+The organization process starts as soon as you create your project and open it in the editor.
+
+Knowing how to set up a project in UEFN project helps you better understand how to use the default features of the editor and how it can benefit your project.
+
+The best approach for organizing a new project includes:
+
+- Establishing and using consistent naming conventions for [levels](https://dev.epicgames.com/documentation/fortnite/levels-in-fortnite), [props](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#prop), [devices](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#device), and so on.
+- Deciding how to version asset names when iterating on an asset.
+- Using nested folders to store and share files inside UEFN.
+- Grouping devices and actors together according to where on the island they’re located and what their function is.
+- Color coding folders to keep your organization efforts consistent.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/66d256cd-800e-46b5-96a3-bd25d1cdcebb?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/66d256cd-800e-46b5-96a3-bd25d1cdcebb?resizing_type=fit)
+
+To put these practices in place, get to know each section of the editor and how it can be used. See the **[User Interface Reference](https://dev.epicgames.com/documentation/fortnite/user-interface-reference-for-unreal-editor-for-fortnite)** document to learn more about UEFN.
+
+### Use Standard Naming Conventions
+
+Working in game development means working with large numbers of assets in your projects. Following game industry naming conventions is a best practice that’s important to implement early on. This helps you locate assets quickly, which is essential for team collaboration.
+
+The important thing with naming conventions is to be consistent. [Naming conventions](https://dev.epicgames.com/documentation/metahuman/recommended-asset-naming-conventions?application_version=5.6) typically follow these setups:
+
+- **Asset Type Prefix** - Identifies the type of asset, for example MI_ for material instance.
+- **Asset Name** - The name given to the asset.
+- **Descriptor** - Provides context for the asset. For example, if you have a texture that is a normal map, the name would be **T_WoodenBox_N**.
+- **Optional Variant Number or Letter** - This is used when there is more than one version of an asset. For example, **MI_Cube_2**.
+
+Naming conventions improve development efficiency by:
+
+- Categorizing all project assets.
+- Tracking different versions of an asset.
+- Setting a standard within a project and the project's team.
+
+When naming your assets, do not use spaces between words. You’ll need to decide on the style of naming convention to use. Common naming conventions for files and assets include **snake case** and **camel case**.
+
+#### Snake Case
+
+With snake case, the first letter of each name or part of a name starts with a lower case letter, and the words are separated with underscores to join all of the words in the name. For example: **mi_userinterface_background**.
+
+Snake case improves the readability and maintains consistency when creating multi-word identifiers for assets.
+
+#### Camel Case
+
+Camel case combines multiple words by capitalizing the first letter of each word and separates the words using an underscore.
+
+Camel case is another way to improve readability and maintain consistency when creating multi-word identifiers for assets.
+
+In UEFN, camel case is used to name assets. For example: **MI_UserInterface_Background**.
+
+### Use Folder Structures
+
+Folder structures also help to organize your project assets.
+
+When you use a consistent folder hierarchy with similar assets grouped together, it's fast and easy to find an asset when you need to select or edit it.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/2eeb030f-05db-4fd9-819f-fe377aa7e6ab?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2eeb030f-05db-4fd9-819f-fe377aa7e6ab?resizing_type=fit)
+
+Click to enlarge image.
+
+It’s best to organize and name your folder structure by:
+
+## Content Browser Setup
+
+The **[Content Browser](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#content-browser)** is a useful feature of the editor. All of your project assets accumulate in the browser, whether or not they’ve been added to the viewport.
+
+Following are more tips for the content browser.
+
+- **Create parent folders** - Parent folders provide a way to organize all your assets. This means grouping assets by their basic structure. For instance; User Interfaces, Materials, Verse Devices, Meshes, and so on.
+- **Project setup** - Make sure the content is properly configured to recognize asset paths. This ensures that the content browser can locate your assets.
+- **Using multiple content browsers** - This is most helpful when you’re set-dressing your island. You can have up to five browsers open at one time.
+- **Using the Content Drawer** - Placing the folders you use the most in the [Content Drawer](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#content-drawer) puts them at the top of the [Sources panel](https://dev.epicgames.com/documentation/unreal-engine/content-browser-interface-in-unreal-engine?application_version=5.5) and saves you from having to search for a folder.
+- **Create asset libraries** - Organize and share assets within a project or across multiple projects.
+- **Local vs shared folders** - Decide whether to share assets in a team workspace or keep a local file for your project's assets. Shared workspaces are useful for teams, while local workspaces are suitable for individual projects and edits.
+- **Use content browser filters** - Quickly locate an asset or types of assets by using the search bar for quick filtering.
+- **Add asset folders to Favorites** - Favoriting folders in the Source Panel and adding commonly used folders to your favorites list eliminates the need to search for them in the content browser.
+
+## Outliner Setup and Organization
+
+All of the assets you place in the viewport are listed in the **[Outliner](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#outliner-panel)** under their filenames. Like the Content Browser, you can create folders in the Outliner as well. Using a nested folder system in the Outliner helps to declutter the Outliner list, and provides a way to quickly find assets you want to edit.
+
+- **Parent and child folders** - Name a parent folder after a section of your island, then create child folders for the different assets in that island section, such as prefabs, props, and devices.
+
+  This is an industry organization method that helps developers find and edit their assets more efficiently.
+
+- **Close folders** - Close any folders you are not currently working on so you can focus on the files you are using.
+
+- **Rename assets** - If you have multiple assets of the same type, you can rename them using the Outliner’s right-click menu.
+
+  The editor automatically assigns duplicated assets a number when you duplicate them or pull multiples into the viewport.
+
+- **Hide or reveal assets** - This helps with visualization and concentration. Hide assets when you don’t need set dressing, or hide devices in the viewport as you work. Afterward, reveal the hidden assets again.
+
+  If you forget to reveal your assets, once you save and log out of the project, they’ll automatically be revealed the next time you log into that project.
+
+- **Group like assets together** - Grouping assets, whether in a folder or by category, is more efficient for editing in the Details panel.
+
+  Grouping assets can also be done from the main menu bar, under **Select**. For more information, see the **[User Interface Reference](https://dev.epicgames.com/documentation/fortnite/user-interface-reference-for-unreal-editor-for-fortnite)** document.
+
+For more information on working in the Outliner, see **[Outliner Tips and Tricks](https://dev.epicgames.com/documentation/fortnite/outliner-tips-and-tricks-in-unreal-editor-for-fortnite)**.

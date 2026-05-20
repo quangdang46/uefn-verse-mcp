@@ -1,56 +1,60 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-item-remover-devices-in-fortnite-creative
 
-# Icon Component
-The Icon Component provides a way to add a custom icon to items that you create.
-![Icon Component](https://dev.epicgames.com/community/api/documentation/image/9b6df552-2936-4f9c-8943-3ccba4d47002?resizing_type=fill&width=1920&height=335)
-Learn to use this **Experimental** feature, but use caution when shipping with it.
-This feature is in an Experimental state so you can try it out, provide feedback, and see what we are planning. You cannot publish a project that uses Itemization at this time.
-Please keep in mind that we do not guarantee backward compatibility for assets created at the experimental stage, the APIs for these features are subject to change, and we may remove entire Experimental features or specific functionality at our discretion. Check out the list of [known issues](https://dev.epicgames.com/documentation/fortnite/scene-graph-known-issues-in-fortnite) before you start working with the feature.
-The `icon_component` is a Scene Graph [component](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#component) used to assign an icon to an [entity](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#entity). Refer to **[Working with Entities and Components](https://dev.epicgames.com/documentation/fortnite/working-with-entities-and-components-in-unreal-editor-for-fortnite)** for how to add a component to your entity.
-##  Class Description
-The `icon_component` uses a **[Texture](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#texture)** [asset](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#asset) as a visual reference for the entity [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game). It could be an item icon inside a backpack, a character portrait or an ability icon for a [hotbar](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#hotbar). The component holds a single field, Icon, which can be set in the [Prefab Editor](https://dev.epicgames.com/documentation/fortnite/prefab-editor-user-interface-in-unreal-editor-for-fortnite) or through [Verse](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#verse) script.
-##  Example
-In the example below, the `icon_component` is added to an item prefab (for example an entity with an `item_component`) and a Texture icon representing the entity.
-[![An example of the icon_component on an entity in the Prefab Editor.](https://dev.epicgames.com/community/api/documentation/image/fa351591-1000-457b-92bd-4ac225ade630?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/fa351591-1000-457b-92bd-4ac225ade630?resizing_type=fit) Icon Component
-Now when the item is picked up by a player, the Icon is used in the hotbar and Backpack UI elements.
-Once the [Custom Items and Inventory system](https://dev.epicgames.com/documentation/fortnite/custom-items-and-inventory-overview-in-fortnite) is enabled the `icon_component` is listed in the component dropdown list. For more information check out the [icon_component API reference](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/scenegraph) from the [Verse API](https://dev.epicgames.com/documentation/fortnite/verse-api).
-##  Verse: Icon
-With Verse, the Icon field can be set on demand. Below is a script of an `icon_component` subclass that swaps the texture in the Icon field on a loop:
-Verse
-```
-# Copyright Epic Games, Inc. All Rights Reserved.
+# Item Remover Devices
 
-using { /Verse.org/Assets }
-using { /Verse.org/SceneGraph }
-using { /Verse.org/Simulation }
+Make players drop or lose items when they are downed.
 
-# This is a subclass of the icon_component.
-# You can add this component to an entity and it will cycle between icons from an editable list.
+![Item Remover Devices](https://dev.epicgames.com/community/api/documentation/image/fe66bda3-bc33-42f2-afc9-1385e16e8fe0?resizing_type=fill&width=1920&height=335)
 
-```
+The **Item Remover** gives gives you the ability to designate events in your games that will cause players to [drop](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#drop) or lose items from their [inventory](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#inventory). For example, if a player is [Down But Not Out](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#down-but-not-out), they could drop items from their inventory, and other players could then pick up those items.
 
-Copy full snippet(42 lines long)
-Below is a [function](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#function) you can call on an entity. Targeting an entity that has an `icon_component` displays the icon on the screen, providing the entity has a [player](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#player) for an ancestor:
-Verse
-```
-# Copyright Epic Games, Inc. All Rights Reserved.
+To find the Item Remover device, see **[Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite)**.
 
-using { /UnrealEngine.com/Temporary/UI }
-using { /Verse.org/SceneGraph }
-using { /Verse.org/Simulation }
+**Looking for more inspiration?** See the [Item Remover Device Design Example](https://dev.epicgames.com/documentation/fortnite/item-remover-device-design-example-in-fortnite-creative) to kick off your imagination!
 
-# Calling this function will display a texture block widget to the player screen.
-# It sources the texture from the icon_component from the provided entity.
+If you're using multiple copies of a device on an island, it can be helpful to [rename](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#rename-a-device) them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the [Event Browser](https://dev.epicgames.com/documentation/fortnite/event-browser-in-fortnite-creative).
 
-```
+## Contextual Filtering
 
-Copy full snippet(24 lines long)
-The `cycling_icon_component` is added to an entity prefab definition.
-  * The `cycling_icon_component` is added to an entity prefab definition.
-[![The cycling_icon_component is added to a prefab definition. These icons are added to an array in the Details panel and can be called by the Verse script to display in the HUD.](https://dev.epicgames.com/community/api/documentation/image/5dca0a8b-30c1-418b-a5fa-ffc13a7ca77d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5dca0a8b-30c1-418b-a5fa-ffc13a7ca77d?resizing_type=fit) cycling_icon_component
-  * The Verse device, and an instance of the prefab, are placed in the scene.
-[![The Verse device and and instance of the prefab, are placed in the scene.](https://dev.epicgames.com/community/api/documentation/image/fd861df5-9777-43ef-8c05-48344d9d5733?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/fd861df5-9777-43ef-8c05-48344d9d5733?resizing_type=fit) Verse Device and Prefab
-  * Starting a session illustrates how the icon displays on all players screens and is updated when the icon changes.
-cycling_icon_component in the HUD
+Some devices are affected by a feature called **contextual filtering**. This feature hides or displays options depending on the values selected for certain related options. This reduces clutter in the Customize panel and makes options easier to manage and navigate. To help identify them, values that trigger contextual filtering are in *italic*.
 
-To learn more about using Verse to create [user interfaces (UI)](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ui), see **[Creating UI with Verse](https://dev.epicgames.com/documentation/fortnite/creating-ui-with-verse-in-unreal-editor-for-fortnite)**.
+All options are listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option's value, there will be a note about it in the Description field for that option.
+
+## Device Options
+
+You can configure this device with the following options.
+
+Default values are **bold**. Values that trigger contextual filtering are *italic*.
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Enabled During Phase** | None, **All**, Pre-Game Only, Gameplay Only | Determines the [phases](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#game-phase) in which the device is enabled. **Pre-Game** includes all phases that occur before the game starts. |
+| **Affected Objects** | All Objects, Building Materials, World Resources, **Objects in Device**, Weapons and Items, Weapons, Items | Determines what items in the player's inventory are considered for removal. |
+| **Amount to Remove** | **Amount in Device**, *Percentage* | Determines the amount of affected items that are removed from the player. If you choose **Percentage**, an additional option displays. |
+| **Percentage to Remove** | **100%**, Pick a percentage | This option only displays if the **Amount to Remove** option is set to **Percentage**. Determines the percentage of a player's affected items that are removed. |
+| **Removal Method** | **Remove Items**, Drop Items, Drop Items On Previous Ground Location | Determines how items are removed. If you choose **Remove Items**, the items are removed from the player's inventory. If you choose **Drop Items**, the player's items drop and other players can pick them up. |
+| **Remove All Variations of the Selected Item** | **Off**, On | When turned on, all variations and rarities of the selected item will be removed from the player. |
+| **Allowed Team** | **Any**, Pick a team | Determines which team can activate the device. |
+| **Allowed Class** | No Class, **Any**, Pick a class | Determines which [class](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#class) can activate the device. If you choose **No Class** only players without an assigned class can activate the device. If you choose **Any**, all players can activate it. |
+| **Apply To** | **Player**, Players of Team, Players of Class, All Players | Determines which players have items removed from their inventory. |
+| **Play Audio** | **On**, Off | Determines whether the device plays a sound when items are removed. |
+
+## Direct Event Binding
+
+Direct event binding allows devices to communicate directly, which makes your workflow more intuitive, and gives you more freedom to focus on your design ideas.
+
+Below are the following direct event binding options for this device.
+
+### Functions
+
+A [function](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#function) listens for an event on a device then performs an action.
+
+| Option | Description |
+| --- | --- |
+| **Enable When Receiving From** | This function enables the device when an event occurs. |
+| **Disable When Receiving From** | This function disables the device when an event occurs. |
+| **Remove When Receiving From** | This function removes items from a player when an event occurs. |
+
+### Events
+
+This device has no events.

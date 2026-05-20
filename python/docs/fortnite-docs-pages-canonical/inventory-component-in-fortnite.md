@@ -1,87 +1,154 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/inventory-component-in-fortnite
 
-# 37.30 Fortnite Ecosystem Updates and Release Notes
-Find out what's new with the 37.30 release of Fortnite on September 18, 2025!
-![37.30 Fortnite Ecosystem Updates and Release Notes](https://dev.epicgames.com/community/api/documentation/image/79f0f22d-8fb0-4784-a4a1-617ac6e259d6?resizing_type=fill&width=1920&height=335)
-Fortnite v37.30 introduces the Lonewolf Lair prefabs and galleries, the 2025 Birthday Cake prop, and updates to the User Interfaces Feature template. We’ve also added a new multi-island Monetization dashboard in Creator Portal — be sure to check it out!
-##  General Physics Beta Is Coming Soon (v37.40)
-With the Beta release of General Physics coming in v37.40, you’ll be able to publish your physics-enabled islands. Physics provides mechanics for your players to push, topple, hit, and move objects, unlocking emergent physics-driven gameplay. Create experiences that feel more realistic, engaging, and predictably unpredictable. Don't wait! Get your island physics-ready!
-To learn more about using the feature in your islands, see the [Physics](https://dev.epicgames.com/documentation/fortnite/physics) documentation.
-##  Epic MegaGrants 2025 — Cycle 2
-Only a few days left to submit your UEFN island ideas! Get your application in before September 22. More information in [our blog](https://www.fortnite.com/news/epic-megagrants-2025-cycle-2-apply-now-for-uefn-project-support).
-##  New Multi-Island Monetization Dashboard in Creator Portal
-When you click the **Monetization tab** in your main navigation, you’ll now find a brand-new multi-island Monetization dashboard. We’ll continue to expand it with multi-island analytics over time.
-[![Fortnite Monetization Dashboard](https://dev.epicgames.com/community/api/documentation/image/df18e495-2b0c-44c6-a82d-189daa2ddb28?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/df18e495-2b0c-44c6-a82d-189daa2ddb28?resizing_type=fit) Monetization Dashboard
-Please note that the [legacy analytics site](https://www.epicgames.com/affiliate/en-US/fortnite-games/insights) will sunset on November 3, 2025, and all monetization metrics will be accessible directly from your Creator Portal account navigation.
-##  Fab in Launcher UEFN Update
-The [Import from Fab](https://dev.epicgames.com/documentation/fortnite/import-from-fab-in-unreal-editor-for-fortnite) page highlights new workflows for using the in-editor application to search and import assets to help build your islands. The workflow includes the new application through the Epic Games Launcher, called **Fab in Launcher**.
-##  User Interfaces Feature Template
-The [User Interfaces Feature Template](https://dev.epicgames.com/documentation/fortnite/user-interfaces-feature-template-in-unreal-editor-for-fortnite) now includes an example of adjusting the experimental player input to create custom keybinds and UI for your island.
-The template utilizes the Keybind User Widget and the Verse file `hud_keybind_demo_device.verse` to create the custom keybinds. To learn more about creating and binding these features for reloading, shooting, crouching, and standing, see [User Interface Devices](https://dev.epicgames.com/documentation/fortnite/user-interface-devices-in-unreal-editor-for-fortnite).
-The template is accessible from the UEFN project browser, under the **Feature Examples** tab.
-##  Content Browser and Inventory Updates
-Check out all the new items available this release!
-###  New 2025 Birthday Cake Prop
-Add the new 8th anniversary prop, 2025 Birthday Cake, to your islands. This indestructible prop is available in the **Indoor Residential Prop Gallery**. You can place, resize, and copy-paste it.
-[![](https://dev.epicgames.com/community/api/documentation/image/2a7c85d3-b9d9-487b-ad12-bbcb20258115?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2a7c85d3-b9d9-487b-ad12-bbcb20258115?resizing_type=fit)
-###  New Prefabs & Galleries
-  * Lonewolf Lair Prefab
-  * Lonewolf Lair Floor and Stairs Gallery
-  * Lonewolf Lair Wall Gallery
-  * Lonewolf Lair Roof Gallery
-  * Lonewolf Lair Prop Gallery
+# Inventory Component
 
-##  Community Bug Fixes
-The following fixes are from issues that you submitted to us on the forums. Thank you for your patience and for reporting these issues!
-  * Fixed an issue where UEFN would need to be restarted after losing connection to Unreal Revision Control.
-    * [Forum Report](https://forums.unrealengine.com/t/critical-revision-control-connection-issues/2653715)
-  * Fixed an issue where the Pop-Up device, “Do Not Close on Button Press,” did not work as intended.
-    * [Forum Report](https://forums.unrealengine.com/t/pop-up-dialog-device-option-breaks-all-buttons-instead-of-stopping-the-popup-from-disappearing/2635826)
-  * Fixed an issue where Weapon Canting was not working on published islands.
-    * [Forum Report](https://forums.unrealengine.com/t/weapon-canting-not-working-in-published-islands/2645783)
-  * Fixed an issue with the Item Spawner where the base visibility was disabled, but the spawned item would remain stuck in place.
-    * [Forum Report](https://forums.unrealengine.com/t/spawned-pickups-stuck-in-air-and-not-obeying-gravity-after-uefn-37-00-item-spawner-bug/2642081)
+The Inventory Component provides a way to create custom inventories.
 
-##  Device Updates and Fixes
-New:
-  * Added ViewModels for the Voting Group device and Voting Option device. These are still under development and not yet functioning with the device.
-  * Added a configurable user option for when the Skilled Interaction device should hide its UI — either when the player's own interaction completes (existing default behavior) or when all queued interactions complete (new behavior).
-  * Fixed an issue where players couldn't enter the top half of Skydive Volumes.
-  * Added a user option to hide the beacon for the Changing Booth device.
+![Inventory Component](https://dev.epicgames.com/community/api/documentation/image/0cf13c25-0b9e-4c19-bf8e-0b24b3f33a21?resizing_type=fill&width=1920&height=335)
 
-Fixes:
-  * Fixed an issue where the Launch Pad wouldn't account for device rotation when launching the player.
-  * Fixed issue with the Voting Option device where trying to vote for an option more than once did not produce an error.
+Learn to use this **Beta** feature, but use caution when shipping with it.
 
-##  UEFN Updates and Fixes
-New:
-  * Added support to drag assets into the outliner to create entities.
-  * Added support to drag assets into the entity prefab editor viewport to create entities.
-  * Added symmetry support to the Paint Vertex tool.
-  * Added an experimental setting for entity prefab in place editor mode.
+The `inventory_component` is a [Scene Graph](https://dev.epicgames.com/documentation/fortnite/scene-graph-in-unreal-editor-for-fortnite) component used as a container for Items. For how to add a [component](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#component) to your [entity](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#entity), see **[Working with Entities and Components](https://dev.epicgames.com/documentation/fortnite/working-with-entities-and-components-in-unreal-editor-for-fortnite)**.
 
-Fixes:
-  * Fixed a potential infinite loop in the serialization of packed integers when loading malformed values.
-  * Fixed the Gameplay Events for Sequencer not showing the Gameplay Event Function property for Trigger, Enable, Disable, and Reset Times Triggered.
-  * Resolved playback errors and crashes for Mesh Plate actors configured as spawnable in Sequencer after saving or reloading the level or level sequence.
-  * Fixed a crash that occurred when force-deleting an entity prefab.
-  * Fixed an editor crash when saving a map while the landscape material was invalid.
-  * Fixed landscape weight blending that sometimes left ghost layer masks.
-  * Fixed a variation of the issue where swapping teams would cause random disguises to revert to a different player’s random disguise. This issue is fully fixed in v37.40.
-  * Fixed template hyperlinks in the Project Browser that were linked to deprecated documentation sites.
+Entities are only considered [items](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#item) if they have an `item_component`. Without one, entities are not added to inventories properly and [Custom Items and Inventory](https://dev.epicgames.com/documentation/fortnite/custom-items-and-inventory-overview-in-fortnite) functionality may break.
 
-##  Scene Graph
-Fixes:
-  * Fixed child entities that were derived from a prefab so they cannot be reparented anymore.
-  * Fixed the introduction of CanParent utility functions for entities.
+- References to an “item” are referring to an entity with an `item_component`.
+- References to “inventories” are referring to an entity with an `inventory_component`.
 
-##  Verse Updates and fixes
-Fixes:
-  * Updated variables declared in default initializers to be local to the initializer expression.
+## Class Description
 
-Depreciations:
-  * Deprecated operations like `var` declarations and reads in initializers. Verse class member default initializers currently must be `<reads><converges>`, aside from instantiating other objects.
+An `inventory_component` turns an entity into a container for items. 
+The entity could be a player, a treasure chest, or anything that can hold items.
 
-##  Unreal Revision Control (URC)
-Fixes:
-  * Fixed an issue causing frequent reports of the error message `Request put failed: Server returned error 3…// Failed to store fragments, remote error…`.
+By default an inventory can hold an infinite number of any kind of item. Through Verse you can write logic inside the component to create restrictions and custom behaviors so an inventory can be tailored to your experience.
+
+The component is listed as `inventory_component` in the component dropdown list. For more information, check out the [inventory_component API](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/itemization/inventory_component) reference from the [Verse API](https://dev.epicgames.com/documentation/fortnite/verse-api).
+
+[![The chest prefab has been given an inventory_component, allowing it to store items.](https://dev.epicgames.com/community/api/documentation/image/f19aff97-61af-4915-93d5-b797bed2c996?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f19aff97-61af-4915-93d5-b797bed2c996?resizing_type=fit)
+
+An example of the inventory_component.
+
+While a prefab may have an `inventory_component` (which makes it capable of storing items), it may not have the necessary components for player interaction, user interface, and other requirements for the exchange of items. Multiple components may be necessary to mediate between the treasure chest and an entity created to retrieve or store items inside it.
+
+## Verse: Inventories
+
+Items added to the inventory become children of the `inventory_component`'s entity. Along with the normal scene graph hierarchy functionality, Inventories can manage themselves and their owned items with specific properties and [methods](https://dev.epicgames.com/documentation/fortnite/method):
+
+- **`AddItem()`** - Adds items (including subinventories).
+- `RemoveItem()` - Removes items (includes subinventories).
+- `AddItemDistribute()` - Add items to the targeted inventory, or any subinventories if the target cannot accept the item.
+- `GetItems()` - Retrieve items or return immediate children.
+- `FindItems()` - Find functions return all descendents.
+- `GetInventories()` - Returns immediate child subinventories of this inventory.
+- `FindInventories()` - Returns all descendant subinventories of this inventory.
+
+  `AddItemEvent` and `RemoveItemEvent` - Subscribable events that trigger when an item enters or exits this inventory.
+- `GetEquippedItems()` - Can be used for equipping items.
+- `EquipItemEvent` - Track equipping items with events.
+- `UnequipItemEvent` - Track unequipping items with events.
+
+## Inventory Root
+
+Players have an inventory by default called the**Inventory Root**. The following explanation does not affect entities that have an `inventory_component` added through Verse or the prefab editor.
+
+Unlike other inventories, the player’s Inventory Root cannot accept items. Instead, it acts as the parent for subinventories beneath it. This provides a way to target the Inventory Root using **AddItemDistribute()** which finds an eligible inventory for an item, even if the initial target inventory cannot receive it.
+
+Players must have one or more subinventories beneath the Inventory Root to receive items.
+
+When a player has a single, top-level inventory, other systems can use it as an entry point, even without knowing internal inventory details. Whenever traversing the Scene Graph downwards the Inventory Root is always the first inventory found when searching an entity tree for an entity with an `inventory_component`. This makes the inventory root a sensible target to attach new inventories to.
+
+Verse
+
+```
+# This helper function gets the first inventory component from a child entity of an agent.
+# This will be the inventory root.
+(Agent:agent).GetInventoryRoot()<transacts><decides>:inventory_component =
+    for (Child : Agent.GetEntities(), InventoryComponent := Child.GetComponent[inventory_component]){InventoryComponent}[0]
+```
+
+# This helper function gets the first inventory component from a child entity of an agent.
+# This will be the inventory root.
+(Agent:agent).GetInventoryRoot()<transacts><decides>:inventory_component =
+for (Child : Agent.GetEntities(), InventoryComponent := Child.GetComponent[inventory_component]){InventoryComponent}[0]
+
+The root inventory is only automatically added to players. New entities created with an `inventory_component` do not have the same restriction.
+
+## Inventories Configuration
+
+Every player has an inventory configuration when they are added to a scene. This configuration determines which subinventories they begin with. All players start with an inventory root, but the configuration determines whether they start with any subinventories. The configuration can be set inside the Island settings, under **Custom Inventory Configuration**.
+
+[![An example of using the Custom Inventory Configuration to determine which inventory players begin the game with.](https://dev.epicgames.com/community/api/documentation/image/e99ff95d-4389-487e-8b45-b93af6a0641f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e99ff95d-4389-487e-8b45-b93af6a0641f?resizing_type=fit)
+
+Custom Inventory Configuration
+
+Below you can see the difference between the two initial configurations provided with the feature. In both cases, new subinventories need to be added as descendants of the Inventory Root. The BR Style configuration comes with a number of Fortnite subinventories. Refer to **[Fort Inventory Component](https://dev.epicgames.com/documentation/fortnite/fort-inventory-component-in-fortnite)** for more information on Fort Inventories.
+
+[![Examples of configuring inventories in Scene Graph.](https://dev.epicgames.com/community/api/documentation/image/b89668d8-faf6-47ff-bda3-312f31b46c82?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b89668d8-faf6-47ff-bda3-312f31b46c82?resizing_type=fit)
+
+Inventory Configuration
+
+## Verse Example
+
+Below is a script for a device that uses the helper function `GetInventoryRoot[]` defined in [Verse: Inventories](https://dev.epicgames.com/documentation/fortnite/inventory-component-in-fortnite#verse-inventories) above. The device has an `editable` field that can be modified in the scene. It adds the selection of items to each player when the player is added to the simulation, functioning like an item granter. Calling `AddItemDistribute()` ensures that all subinventories are checked to see if they can receive the item:
+
+Verse
+
+```
+# Copyright Epic Games, Inc. All Rights Reserved.
+
+using { /Fortnite.com/Devices }
+using { /Fortnite.com/Itemization }
+using { /Verse.org/SceneGraph }
+using { /Verse.org/Simulation }
+using { /UnrealEngine.com/Itemization }
+```
+
+## Filtering Inventories with Scene Events
+
+When an inventory is targeted to receive or remove an item, it receives a [Scene Event](https://dev.epicgames.com/documentation/fortnite/scene-events-in-unreal-editor-for-fortnite). An `add_item_query_event` when adding, and a `remove_item_query_event` when removing (the item entity added or removed from the inventory also receives the scene event). The responses to these events are what cause the `AddItem()` and `RemoveItem()` functions to succeed or fail.
+
+By overriding how these events are received, the entry or exit of items from an inventory can be controlled. This provides a way to create inventory rules, such as checking the item type before adding, only allowing a certain number of items in the inventory, and more.
+
+The `OnReceive()` function is implemented in the base component class and is available to all Scene Graph components, including the `inventory_component`. It is triggered when an entity receives any Scene Event.  By overriding `OnReceive()` you can modify the received Scene Event and add an error to it that causes the add or remove to fail for the inventory. You can write a unique error class to be used in these instances. See the code snippet below for an error class example.
+
+A common requirement of inventories is to apply rules to what items may exist inside. Below is a script for a custom `inventory_component` which overrides the component method `OnReceive()`. Here it has been used to make a maximum Inventory size rule:
+
+Verse
+
+```
+# Copyright Epic Games, Inc. All Rights Reserved.
+
+using { /Verse.org/SceneGraph }
+using { /Verse.org/Simulation }
+using { /UnrealEngine.com/Itemization }
+
+# This error can be created if the inventory is at capacity.
+no_slots_add_item_error := class(add_item_error):
+```
+
+The video above illustrates how the `custom_inventory_component` adds three items to the inventory and rejects additional items.
+
+The above behavior only works on the player because the `custom_inventory_component` has been added to an entity which has then been attached to the player root inventory as a child. Below is a device example code snippet illustrating this behavior:
+
+Verse
+
+```
+# Copyright Epic Games, Inc. All Rights Reserved.
+
+using { /Fortnite.com/Devices }
+using { /Verse.org/SceneGraph }
+using { /Verse.org/Simulation }
+using { /UnrealEngine.com/Itemization }
+
+# This device will add a sub inventory using the custom_inventory_component.
+```
+
+`AddItemDistribute()` used in the `custom_loadout_device` defined above places items in any eligible subinventory. If the player has other subinventories, the item may end up in them. To control this, remove subinventories or write rules inside the `OnReceive()` function.
+
+[![A comparison of the way Fortnite Battle Royale uses Inventory configuration versus an empty inventory configuration.](https://dev.epicgames.com/community/api/documentation/image/1331235b-a13f-49c8-8b4f-38c87ca8d99e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1331235b-a13f-49c8-8b4f-38c87ca8d99e?resizing_type=fit)
+
+Inventory Configuration Examples
+
+See the above diagram for how the `custom_inventory_component` would be added as a subinventory via the `inventory_giver_device`.
+
+For more gameplay examples of inventories and how to use the `inventory_component`, see the tutorials in [Custom Items and Inventories with Scene Graph](https://dev.epicgames.com/documentation/fortnite/custom-items-and-inventories-with-scene-graph-in-uefn).

@@ -1,233 +1,138 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/disappearing-platform-on-loop-using-verse-in-unreal-editor-for-fortnite
 
-# Tracker Device Design Examples
-Explore ideas from shooting objectives to farm games using the tracker device!
-![Tracker Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/b26617e6-15e6-4ad1-ac41-d76ffb4119f9?resizing_type=fill&width=1920&height=335)
-The **[Tracker](https://dev.epicgames.com/documentation/fortnite/using-tracker-devices-in-fortnite-creative)** device is intended to track custom [objectives](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#objective) that a player can complete.
-You can track objectives for individual players, a team, or multiple teams, and send a signal to another device when the player completes a tracked objective.
-##  Target Practice Tracker
-A basic use of the tracker is to track events sent to the device. In this example, you’ll use **target dummies** to send events to a tracker.
-###  Devices Used
-  * 1 x Tracker device
-  * 1 x [Player Spawner](https://dev.epicgames.com/documentation/fortnite/using-player-spawn-pad-devices-in-fortnite-creative) device
-  * 1 x [Item Granter](https://dev.epicgames.com/documentation/fortnite/using-item-granter-devices-in-fortnite-creative) device
-  * 3 x [Target Dummy](https://dev.epicgames.com/documentation/fortnite/using-target-dummy-devices-in-fortnite-creative) devices
+# Disappearing Platform on Loop
 
-###  Set Up the Devices
-  1. Place a **Player Spawner** device outside the door.
-  2. Place an **Item Granter** device and register a **Legendary Tactical Assault Rifle** to the device.
-  3. Customize the item granter.
-[![](https://dev.epicgames.com/community/api/documentation/image/a780c5c0-88ce-4336-9379-cfca35ce350c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a780c5c0-88ce-4336-9379-cfca35ce350c?resizing_type=fit)
-|
----|---
-Option |  Value
-Receiving Players |  All
-Grant on Game Start |  On
-  4. Place a **Tracker** device.
-  5. Customize the tracker.
-[![](https://dev.epicgames.com/community/api/documentation/image/742a50b4-4d60-4d5a-914c-656ac97b2e5d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/742a50b4-4d60-4d5a-914c-656ac97b2e5d?resizing_type=fit)
-|
----|---
-Option |  Value
-Target Value |  5
-When Target Is Reached |  End Round
-Tracker Title |  Hit Targets
-Description Text |  Hit the targets 5 times to end the round.
-  6. Place three **Target Dummy** devices.
+Use Verse to create a platform that appears and disappears periodically.
 
-###  Bind Functions and Events
-[Direct event binding](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#directeventbinding) is how you set devices to communicate directly with other devices. This involves setting [functions](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#function) and [events](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#event) for the devices involved.
-Configure the following events on the Target Dummy device.
-[![](https://dev.epicgames.com/community/api/documentation/image/7cc34367-fa47-417d-a274-d64ff5656d0d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7cc34367-fa47-417d-a274-d64ff5656d0d?resizing_type=fit)
-|  |
----|---|---
-Event |  Select Device |  Select Function
-On Hit |  Tracker |  Increment Progress
-You know have the basic functionality for target practice using the Tracker device!
-###  Design Tip
-The Tracker device can be connected to any device that can send events — which is pretty much all of them!
-Think of all of the different possible quests that you can give the player with all of the Fortnite Creative devices at your disposal.
-##  Build a Timed Escape Room
-You can configure the Tracker device to track many different events by default, including the number of chests the player has opened. In this example, you’ll combine this functionality of the tracker with a timer to create a Timed Escape Room experience!
-###  Devices Used
-  * 1 x Tracker device
-  * 1 x Player Spawner device
-  * 1 x [Timer ](https://dev.epicgames.com/documentation/fortnite/using-timer-devices-in-fortnite-creative)device
-  * 2 x [Lock ](https://dev.epicgames.com/documentation/fortnite/using-lock-devices-in-fortnite-creative)devices
+![Disappearing Platform on Loop](https://dev.epicgames.com/community/api/documentation/image/cd2b7ca9-a992-4c8a-898e-f4f95a299660?resizing_type=fill&width=1920&height=335)
 
-###  Set Up the Escape Room Play Area
-  1. Place the **Haunted Homestead** prefab.
-  2. Place three **Chests** around the building with whatever items you would like inside.
-  3. Place a **Player Spawner** device near the door.
-  4. Customize the device so the player spawner is not visible in-game.
-[![](https://dev.epicgames.com/community/api/documentation/image/b319c162-e56a-446b-8ac9-5b04fad3c2fb?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b319c162-e56a-446b-8ac9-5b04fad3c2fb?resizing_type=fit)
-  5. Place **Lock** devices on the front and back doors of the building.
+Platforms that appear and disappear periodically are a staple of platforming game modes like obstacle courses. They require players to time their jumps to navigate to the next platform, and if they miss, they'll fall and have to start over.
 
-###  Configure the Escape Room Gameplay
-  1. Place a **Tracker** device.
-  2. Customize the tracker.
-[![](https://dev.epicgames.com/community/api/documentation/image/7db237b2-5184-4421-8824-2f91145546a4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7db237b2-5184-4421-8824-2f91145546a4?resizing_type=fit)
-|
----|---
-Option |  Value
-Stat to Track |  Chest Opened
-Target Value |  3
-Tracker TItle |  Find Chests
-Description Text |  Find and open all 3 chests before the time runs out!
-Quest Icon |  Chest
-  3. Place a **Timer** device.
-  4. Customize the timer.
-[![](https://dev.epicgames.com/community/api/documentation/image/090aa6ac-fa6c-40df-a7a4-22f721820757?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/090aa6ac-fa6c-40df-a7a4-22f721820757?resizing_type=fit)
-|
----|---
-Option |  Value
-Duration |  30.0 Second
-Start at Game Start |  On
-Can Interact |  No
-Success on Timer End |  False
-Visible During Game |  Hidden
-Timer Color |  White
-Display Time In |  Seconds Only
----
-Remove
+By following this tutorial, you'll learn how to use **Verse** in **Unreal Editor for Fortnite** (**UEFN**) to create a platform that appears and disappears on a loop. The [complete script](https://dev.epicgames.com/documentation/fortnite/disappearing-platform-on-loop-using-verse-in-unreal-editor-for-fortnite) is included at the end of this tutorial for reference.
 
-###  Bind Functions and Events
-  1. Configure the following event on the timer, stopping the objective if the player runs out of time.
-[![](https://dev.epicgames.com/community/api/documentation/image/0aff42be-27bc-41d1-9ab9-6641549de686?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0aff42be-27bc-41d1-9ab9-6641549de686?resizing_type=fit)
-|  |
----|---|---
-Event |  Select Device |  Select Function
-On Failure |  Tracker |  Remove
-  2. Configure the following events on the tracker to unlock the doors and end the timer if the player completes the objective.
-[![](https://dev.epicgames.com/community/api/documentation/image/d4866923-9dc8-403b-8d01-cfc51882396b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d4866923-9dc8-403b-8d01-cfc51882396b?resizing_type=fit)
-|  |
----|---|---
-Event |  Select Device |  Select Function
-When Complete |  Timer Device |  Disable
-When Complete |  Lock Device 1 - 2 |  Unlock
+## Verse Language Features Used
 
-You now have the basic functionality for a system that uses Tracker and Timer devices to create a simple timed objective.
-###  Design Tip
-Connecting the tracker to a timer is a good way to create a simple and effective game loop. With this combination, you have a goal to complete (an objective with the tracker) and a challenge making it difficult (time limit with the timer). With these building blocks, you can create the foundation of tons of fun games!
-##  Build a Farming Mode with the Tracker
-The Tracker device is great for setting up quests in role-playing games.
-In this example, you’ll use the tracker to track a quest in a farming game. You'll configure the device to work for both single and multiplayer sessions and will save the player’s quest progress in between play sessions.
-###  Devices Used
-  * 1 x Player Spawner device
-  * 1 x [Barrier ](https://dev.epicgames.com/documentation/fortnite/using-barrier-devices-in-fortnite-creative)device
-  * 9 x [Prop Manipulator](https://dev.epicgames.com/documentation/fortnite/using-prop-manipulator-devices-in-fortnite-creative) devices
-  * 9 x Conditional Button devices
-  * 9 x Timer devices
-  * 1 x Tracker device
+- loop: The platform alternates between being visible and invisible until the game ends. This example uses the Verse `loop` expression to continuously run this behavior.
 
-###  Set Up the Farm Mode Play Area
-  1. Place the **FarmHouse** prefab in an empty meadow to set the scene.
-  2. Place a player spawner on the porch.
-  3. Customize the spawner to hide it in-game.
-  4. Place a **Chest** with **Wheat** inside of it on the porch to give the player some resource to start with.
-  5. Create two 9 x 9 farming plots using ground tiles from the Indestructible Gallery and fences from the Frenzy Farm Prop Gallery.
-  6. Place 9 small wheat props from the **Farm Parts Gallery** on one of the plots.
-[![](https://dev.epicgames.com/community/api/documentation/image/7590b2cb-6eb6-4e95-88da-7ef954c8aef3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7590b2cb-6eb6-4e95-88da-7ef954c8aef3?resizing_type=fit)
-  7. Place a Barrier device at the entrance of the empty plot and customize it.
-[![](https://dev.epicgames.com/community/api/documentation/image/e93d8943-f637-4799-99a7-a00a71a17203?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e93d8943-f637-4799-99a7-a00a71a17203?resizing_type=fit)
-|
----|---
-Option |  Value
-Barrier Material |  Translucent (Only Visible When Close)
-Barrier Depth |  Minimal
-Barrier Height |  0.7 Tiles
+## Verse APIs Used
 
-###  Set Up the Tracker
-  1. Place a Tracker device.
-  2. Customize the tracker.
-[![](https://dev.epicgames.com/community/api/documentation/image/7f469bd5-29b3-4c08-89a8-ea173ee40c8c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7f469bd5-29b3-4c08-89a8-ea173ee40c8c?resizing_type=fit)
-[![](https://dev.epicgames.com/community/api/documentation/image/de063c7c-ea1a-4bba-a40b-49683d2ea068?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/de063c7c-ea1a-4bba-a40b-49683d2ea068?resizing_type=fit)
-|
----|---
-Option |  Value
-Stat to Track |  Events
-Target Value |  25
-Sharing |  All
-Tracker Title |  Harvest Wheat
-Description text |  Harvest 25 Wheat to unlock a new plot of land!
-Quest Icon |  Grass
-Use Persistence |  On
-Auto-Save |  Yes
-Auto-Load |  Initial Spawn
-  3. Configure the following event on the tracker to unblock the second plot of land when the objective is completed.
-[![](https://dev.epicgames.com/community/api/documentation/image/597e2910-ee80-4c9d-87a7-1094a168f352?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/597e2910-ee80-4c9d-87a7-1094a168f352?resizing_type=fit)
+- [`Sleep()`](https://dev.epicgames.com/documentation/en-us/uefn/verse-api/versedotorg/simulation/sleep): With the `Sleep()` function, you can choose how long the platform will be in its invisible and visible states.
+- [Editable Properties](https://dev.epicgames.com/documentation/fortnite/editable-properties-in-verse): Two device properties are exposed to UEFN so you can customize them in the editor — a `creative_prop` reference for the platform and a `ToggleDelay` for the `Sleep()` function call.
 
-###  Configure the Farming Mechanic
-  1. Place a **Prop Manipulator** device and drop a **Wheat** resource near it to register it to the device.
-  2. Customize the device.
-[![](https://dev.epicgames.com/community/api/documentation/image/3f34d69e-fd55-48c6-afae-9446ba5499c5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3f34d69e-fd55-48c6-afae-9446ba5499c5?resizing_type=fit)
-[![](https://dev.epicgames.com/community/api/documentation/image/7270d1de-edfd-425d-8bdc-c435ab9e4844?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7270d1de-edfd-425d-8bdc-c435ab9e4844?resizing_type=fit)
-|  |
----|---|---
-Option |  Value |  Description
-Start Hidden |  On |
-Override Resources |  On |  This makes it so that hitting the wheat prop will drop Wheat.
-Resource Node Available |  5 |
-Resource Node Type |  Item |
-Resource Node Depletion Mode |  Stay Empty |  You will configure what happens when there is no Wheat left in the prop manually.
-Modify Prop Health |  Yes |
-Is Prop Invulnerable |  Yes |
-  3. Place a **Conditional Button** device in the wheat prop. Drop a Wheat resource near it to register it to the device, then customize it.
-[![](https://dev.epicgames.com/community/api/documentation/image/4641cf63-ec54-4849-a967-96b6f3d8303b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4641cf63-ec54-4849-a967-96b6f3d8303b?resizing_type=fit)
-|
----|---
-Option |  Value
-Interact Time |  1.0 Second
-Interact Text |  Plant Wheat
-Missing Items Text |  Need Wheat to Plant Crops
-Key Items Required |  1
-Visible During Game |  Hologram Only
-  4. Place a timer near the ground in the wheat prop, and customize it.
-[![](https://dev.epicgames.com/community/api/documentation/image/d4a1b2c6-b298-4a29-a91f-8645b8ea12d0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d4a1b2c6-b298-4a29-a91f-8645b8ea12d0?resizing_type=fit)
-|
----|---
-Option |  Value
-Duration |  10.0 Seconds
-Can Interact |  No
-Timer Color |  White
-Show on HUD |  No
-  5. Configure the following event on the Prop Manipulator device to notify the tracker every time a Wheat resource is harvested from the prop.
-[![](https://dev.epicgames.com/community/api/documentation/image/1e616297-5bb1-4643-855c-1dcd8b386258?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1e616297-5bb1-4643-855c-1dcd8b386258?resizing_type=fit)
-|  |
----|---|---
-Function |  Select Device |  Select Event
-On Harvesting |  Tracker |  Increment Progress
-  6. Configure the following event on the Prop Manipulator device to notify the tracker every time a Wheat resource is harvested from the prop.
-[![](https://dev.epicgames.com/community/api/documentation/image/aa470b28-2e69-4742-9ade-dd39672ce8c3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/aa470b28-2e69-4742-9ade-dd39672ce8c3?resizing_type=fit)
-|  |
----|---|---
-Function |  Select Device |  Select Event
-On Harvesting |  Tracker |  Increment Progress
-  7. Configure the following functions on the **Conditional Button** device to enable it when there is no more Wheat in the prop and disable it when it is activated.
-[![](https://dev.epicgames.com/community/api/documentation/image/7eac8777-0b94-48f7-af71-238391a276f2?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7eac8777-0b94-48f7-af71-238391a276f2?resizing_type=fit)
-|  |
----|---|---
-Function |  Select Device |  Select Event
-Enable |  Crop Prop Manipulator |  On Resource Depletion
-Disable |  Crop Conditional Button |  On Activated
-  8. Configure the following functions on the Timer device to start the countdown when the Conditional Button is activated and reset to its original state when the prop runs out of Wheat.
-[![](https://dev.epicgames.com/community/api/documentation/image/57d989c6-f99c-45d1-b4e1-afbff6351ee6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/57d989c6-f99c-45d1-b4e1-afbff6351ee6?resizing_type=fit)
-|  |
----|---|---
-Function |  Select Device |  Select Event
-Start |  Crop Conditional Button |  On Activated
-Reset |  Crop Prop Manipulator |  On Resource Depletion
+### Setting Up the Level
 
-###  Modify Island Settings
-Make the following modifications to the island settings.
-  1. Go to **Island Settings > Player**.
-  2. Under **Build Mode** , change **Allow Building** to **None**.
-[![](https://dev.epicgames.com/community/api/documentation/image/fb20fd82-1697-43d3-819a-4747de9f379a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/fb20fd82-1697-43d3-819a-4747de9f379a?resizing_type=fit)
-  3. Under **Inventory** , change **Infinite Building Materials** to **Off**.
-  4. Under **Equipment** , change **Environment Damage** to **Off**.
+This tutorial uses the [Verse Starter Template](verse-starter-template-in-unreal-editor-for-fortnite) as its starting point. To get started, initialize a new project from the **Verse Device** feature example.
 
-You now have the basic functionality for a farming simulator!
-###  Design Tip
-Consider how these mechanics could be extended into a full game. Different plots of land could contain different crops, or the player could even be given a choice of what to plant where.
-You could also set up a shop where the player could sell their crops for money to buy new upgrades. Completing an objective with the tracker could start a new, more difficult objective, creating an entire questline.
-The possibilities are endless!
+[![Initialize Starter Template](https://dev.epicgames.com/community/api/documentation/image/c97f9f48-218d-404a-92cb-7d729c266ee0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c97f9f48-218d-404a-92cb-7d729c266ee0?resizing_type=fit)
+
+This example uses the following props and devices:
+
+- 1 x [**Player Spawn Pad device**](https://www.fortnite.com/creative/docs/using-player-spawner-devices-in-fortnite-creative): This device defines where the player spawns at the start of the game.
+- 3 x **Creative Prop**: Creative props have several behaviors you can call with Verse, such as `Hide()` and `Show()` to toggle the platform's visibility and collision. This tutorial uses the **Airborne Hoverplatform A** as the player-interactable platform, but feel free to change this to suit the needs of your experience.
+
+Follow these steps to set up your level:
+
+### Creating the Verse Device
+
+This example uses a [Verse-authored device](https://dev.epicgames.com/documentation/fortnite/verse-glossary#verse-authored-device) to define the behavior that toggles platform visibility. Follow these steps to create your Verse device and place it in the level.
+
+### Editing the Device Properties in UEFN
+
+This section shows how to expose two device properties to UEFN so you can customize them in the editor:
+
+- A `creative_prop` reference to the Creative Prop that you placed in the level.
+- A [float](https://dev.epicgames.com/documentation/fortnite/verse-glossary) [constant](https://dev.epicgames.com/documentation/fortnite/verse-glossary#constant) to store how long the platform should be invisible/visible, named `ToggleDelay`.
+
+Follow these steps to expose these properties to the editor from the **looping_disappearing_platform** device you created in the previous section.
+
+1. Open [Verse Explorer](https://dev.epicgames.com/documentation/fortnite/verse-explorer-user-interface-reference-in-unreal-editor-for-fortnite) and double-click **looping_disappearing_platform.verse** to open the script in [Visual Studio Code](https://dev.epicgames.com/documentation/fortnite/verse-glossary#visual-studio-code).
+2. To the `looping_disappearing_platform` class definition, add the following fields:
+
+   - An editable `float` named `ToggleDelay`. This represents the time between toggling between visible and invisible. [Initialize](https://dev.epicgames.com/documentation/fortnite/verse-glossary#initialize) this [value](https://dev.epicgames.com/documentation/fortnite/verse-glossary#value) to `2.0`, or two seconds.
+
+     Verse
+
+     ```
+       # The amount of time to wait before toggling visiblity of the platform.
+       @editable
+       ToggleDelay:float = 2.0
+     ```
+
+      # The amount of time to wait before toggling visiblity of the platform.
+     @editable
+     ToggleDelay:float = 2.0
+   - An editable `creative_prop` named `DisappearingPlatform`. This is the in-level platform that will disappear and appear periodically. Because your code doesn't yet have a reference to this object in the level, you'll instantiate this with an empty [archetype](https://dev.epicgames.com/documentation/fortnite/verse-glossary#archetype) `creative_prop{}`. You'll assign this reference to your floating platform later.
+
+     Verse
+
+     ```
+       # Reference to the platform in the level.
+       @editable
+       DisappearingPlatform:creative_prop = creative_prop{}
+     ```
+
+      # Reference to the platform in the level.
+     @editable
+     DisappearingPlatform:creative_prop = creative_prop{}
+3. Your `looping_disappearing_platform` class fields should now look like this:
+
+   Verse
+
+   ```
+        using { /Fortnite.com/Devices }
+        using { /Verse.org/Simulation }
+        using { /UnrealEngine.com/Temporary/Diagnostics }
+   		
+        # See https://dev.epicgames.com/documentation/en-us/uefn/create-your-own-device-in-verse for how to create a verse device.
+   		
+        # A Verse-authored creative device that can be placed in a level
+        looping_disappearing_platform := class(creative_device):
+   		
+            # The amount of time to wait before toggling visiblity of the platform.
+   ```
+
+   It's helpful to use the `@editable` attribute to expose values like `ToggleDelay` to the editor from your scripts. This lets you customize their values in UEFN without having to rebuild Verse code each time, so you can iterate quickly and find values that fit your gameplay experience.
+4. Save the script in Visual Studio Code and compile your code to update the **looping_disappearing_platform** device in the level.
+
+   [![Click Build Verse Code to compile your code](https://dev.epicgames.com/community/api/documentation/image/a1dcaf07-4702-48c7-a6b2-fbb47e1e9da1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a1dcaf07-4702-48c7-a6b2-fbb47e1e9da1?resizing_type=fit)
+5. In the **Outliner** panel in UEFN, select the **looping_disappearing_platform** device to open its **Details** panel.
+
+   [![Select looping_disappearing_platform in the Outliner to open its Details panel](https://dev.epicgames.com/community/api/documentation/image/07955732-3483-4cb6-aefa-1e613cc5cf7a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/07955732-3483-4cb6-aefa-1e613cc5cf7a?resizing_type=fit)
+6. In the **Details** panel under **Looping Disappearing Platform**:
+
+   - Set **DisappearingPlatform** to **LoopingDisappearingPlatform** (the Creative Prop you added to the level) by clicking on the **object picker** and selecting the Creative Prop in the viewport, or searching for the **LoopingDisappearingPlatform** in the search bar.
+   - Set **ToggleDelay** to the number of seconds you want the platform to be visible/invisible. This value defaults to **2.0** since this is the value you defined earlier.
+
+### Hiding and Showing the Platform
+
+Now that you've set up the level and devices, you can add logic to show and hide the platform. Follow these steps to add this behavior to the **looping_disappearing_platform** device:
+
+When you playtest your level, your platform should appear and disappear every two seconds for as long as the game is running.
+
+## Complete Script
+
+The following code is the complete script for making a platform disappear and appear on a loop.
+
+Verse
+
+```
+using { /Fortnite.com/Devices }
+using { /Verse.org/Simulation }
+using { /UnrealEngine.com/Temporary/Diagnostics }
+
+# See https://dev.epicgames.com/documentation/en-us/uefn/create-your-own-device-in-verse for how to create a verse device.
+
+# A Verse-authored creative device that can be placed in a level
+looping_disappearing_platform := class(creative_device):
+
+    # The amount of time to wait before toggling visiblity of the platform.
+```
+
+## On Your Own
+
+By completing this tutorial, you've learned how to create a device using Verse that toggles the visibility of a platform for as long as the game runs.
+
+Using what you've learned, try the following:
+
+- Duplicate the setup with the **looping_disappearing_platform** device and Prop, and try different `ToggleDelay` timings to create a longer series of platforms.
+- Apply the same concepts to periodically call functions on other objects, such as the [Prop Mover device](https://www.fortnite.com/en-US/creative/docs/using-prop-mover-devices-in-fortnite-creative).

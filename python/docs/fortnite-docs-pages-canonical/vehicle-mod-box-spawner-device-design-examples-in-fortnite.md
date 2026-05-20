@@ -1,115 +1,158 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/vehicle-mod-box-spawner-device-design-examples-in-fortnite
 
-# Animating UI
-Use sequencer to animate UI widgets.
-![Animating UI](https://dev.epicgames.com/community/api/documentation/image/a23a8241-f7b1-4bf7-8d1a-677e53805dc8?resizing_type=fill&width=1920&height=335)
-Currently, there is a bug where you will not see a UI Animation Condition field in View Bindings when there are no regular view bindings created. You must first create a regular view binding to be able to see the Condition binding fields. This bug is fixed in 33.00.
-Use [Sequencer](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#sequencer) in UMG to animate widgets. Widgets animate based on values entered into a [material parameter](https://dev.epicgames.com/documentation/fortnite/conversion-function-setting-material-parameters-in-umg-in-unreal-editor-for-fortnite).
-Currently, animating UI only works with [float](https://dev.epicgames.com/documentation/fortnite/verse-glossary) and [int](https://dev.epicgames.com/documentation/fortnite/verse-glossary) type [variables](https://dev.epicgames.com/documentation/fortnite/verse-glossary). More functionality will be added to animating UI in the future.
-##  Setting Up the Widget
-The widget is using the **Tracker widget** from the example in [Setting Material Parameters in UMG](https://dev.epicgames.com/documentation/fortnite/conversion-function-setting-material-parameters-in-umg-in-unreal-editor-for-fortnite).
-Create a Tracker widget if you don’t have one ready to use. Then do the following:
-  1. Add a **Text Block** that shows a **+1** on top of the existing **Tracker widget**. This indicates that the elimination tracker is incrementing based on the number of eliminated zombies.
-[![](https://dev.epicgames.com/community/api/documentation/image/d84c7d00-c891-4b26-9ff7-1972989071d6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d84c7d00-c891-4b26-9ff7-1972989071d6?resizing_type=fit)
-  2. Under **Rendering** > **Render Opacity** , set the **Render Opacity** to **0.0** for this Text Block.
-[![](https://dev.epicgames.com/community/api/documentation/image/b4e7f1e2-6c58-47e6-bc11-7ba679c2b839?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b4e7f1e2-6c58-47e6-bc11-7ba679c2b839?resizing_type=fit)
-  3. The widget is ready to be animated.
+# Vehicle Mod Box Spawner Device Design Examples
 
-##  Setting Up the Animation
-To add animation to your UI, you’ll open **Sequencer** under the **Event Graph** to animate the icon and "+1". Then you’ll set up the animation in Sequencer.
-For this example, the icon pops and the "+1" text appears when the player’s Tracker progresses like in the gif below.
-[![For this example, the icon pops and the "+1" text appears when the player’s Tracker progresses.](https://dev.epicgames.com/community/api/documentation/image/426338bd-aada-44da-ab2f-e16c9465674f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/426338bd-aada-44da-ab2f-e16c9465674f?resizing_type=fit)
-For information on how to use the Sequencer refer to the [**Sequencer and Control Rig**](https://dev.epicgames.com/documentation/fortnite/sequencer-and-control-rig-in-unreal-editor-for-fortnite) document.
-  1. Open the Animation window in **Window** > **Animations**.
-[![Open the Animation window in Window > Animations.](https://dev.epicgames.com/community/api/documentation/image/6bad72c9-c225-4a6d-9a65-d2972822c864?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6bad72c9-c225-4a6d-9a65-d2972822c864?resizing_type=fit)
-  2. Click **+Animation** , and name the animation **OnIncrement**.
-[![Click +Animation, and name the animation OnIncrement.](https://dev.epicgames.com/community/api/documentation/image/0e4bf27a-bdd1-4211-8a5e-8953fca6c618?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0e4bf27a-bdd1-4211-8a5e-8953fca6c618?resizing_type=fit)
+When a vehicle crashes into this device in Fortnite, it gets better! Wait, what?
 
-##  Animating a Widget’s Visibility
-To animate the UI, you’ll identify the widget to animate, then animate the material or texture associated with that widget in Sequencer in the Animation Window. Start the animation by selecting the **IncrementText (+1)**.
-  1. Select **OnIncrement** , then select the **+1 Text** , then select **+Add** > **Increment Text**.
-[![Select OnIncrement, then select the +1 Text, then select +Add > Increment Text.](https://dev.epicgames.com/community/api/documentation/image/af77fb7f-aea2-43a3-bf22-28cf9dcdcafa?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/af77fb7f-aea2-43a3-bf22-28cf9dcdcafa?resizing_type=fit)
-  2. Select the **+plus icon** in the **IncrementText track** and select **Render Opacity**. This allows you to track the Opacity on the animation timeline.
-[![Select the +plus icon in the IncrementText track and select Render Opacity.](https://dev.epicgames.com/community/api/documentation/image/7edce8d1-d5f0-4559-8c85-b74024cbed29?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7edce8d1-d5f0-4559-8c85-b74024cbed29?resizing_type=fit)
-  3. Set a **key** for the beginning of the animation. This determines where the Text begins to fade in and out.
-[![Set a key for the beginning of the animation.](https://dev.epicgames.com/community/api/documentation/image/2a08097e-1a7e-436b-aa6e-f1e0a5d44b6a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2a08097e-1a7e-436b-aa6e-f1e0a5d44b6a?resizing_type=fit)
-  4. Set the **Render Opacity** to:
-    1. **1.0** at **0.25** seconds
-    2. **0.0** at **0.50** seconds
-[![Set the Render Opacity levels into seconds the animation should last.](https://dev.epicgames.com/community/api/documentation/image/55efb8ed-f8ad-4193-951a-413003c84e00?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/55efb8ed-f8ad-4193-951a-413003c84e00?resizing_type=fit)
-  5. Now you have an animation that fades the text in and out everytime the player gets an elimination.
-[![Now you have an animation that fades the text in and out everytime the player gets an elimination.](https://dev.epicgames.com/community/api/documentation/image/f9b22f4a-f37a-4d15-a700-fbf32e90cd1d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f9b22f4a-f37a-4d15-a700-fbf32e90cd1d?resizing_type=fit)
+![Vehicle Mod Box Spawner Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/2a3ac4de-48c6-46bf-b843-5b4818800005?resizing_type=fill&width=1920&height=335)
 
-##  Animating a Widget’s Position
-Add an animation to the text widget’s position so that the text moves up when it’s visible before it fades away.
-  1. Click the **+plus icon** on **IncrementText** and select **Transform**.
-[![Click the +plus icon on IncrementText and select Transform.](https://dev.epicgames.com/community/api/documentation/image/6e02b8aa-e476-48fa-ad6c-97bbcda11750?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6e02b8aa-e476-48fa-ad6c-97bbcda11750?resizing_type=fit)
-  2. Expand **Transform** > **Translation** and set the **Y** to the amount you want the **+1 text** to move up while it's visible. In this example, the Y Translation keyframes on the text is set to:
-    1. **0.0** at **0.0s**
-    2. **-20.0** at **0.25s**
-    3. **-20.0** at **0.50s**
-[![Expand Transform > Translation and set the Y to the amount you want the +1 text to move up while it's visible.](https://dev.epicgames.com/community/api/documentation/image/55820448-1492-4fa7-9342-47f576638152?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/55820448-1492-4fa7-9342-47f576638152?resizing_type=fit)
-Remember to set [keyframes ](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#keyframe)for each movement of the text.
+The **Vehicle Mod Box Spawner** device creates crazy vehicle powerups. When a player crashes a vehicle into this device, they drive away with mods that can help them navigate terrain, deal damage, and repair their own vehicle.
 
-Now the text moves upwards when it appears.
-[![Now the text moves upwards when it appears.](https://dev.epicgames.com/community/api/documentation/image/d195dfb6-2500-4601-aee0-f45b6b8fa29a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d195dfb6-2500-4601-aee0-f45b6b8fa29a?resizing_type=fit)
-##  Animating a Widget’s Scale
-Increase the size of the animated +1 text as it moves to draw attention to the eliminations by animating the widget’s scale settings. This animation gives the illusion of the text "popping" on the screen.
-  1. Expand **IncrementText** > **Transform** > **Scale**. The **X** and **Y** values appear under **Scale**.
-[![Expand IncrementText > Transform > Scale.](https://dev.epicgames.com/community/api/documentation/image/cd84aaa8-45a3-40f1-86e7-c348d8f40ad2?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/cd84aaa8-45a3-40f1-86e7-c348d8f40ad2?resizing_type=fit)
-  2. Set the **Scale X** and **Y** as **keyframes** on your **OnIncrement timeline**. In this example the Scale keyframes were set to:
-    1. **0.0** at **0.0s**
-    2. **2.0** at **0.10s**
-    3. **0.0** at **0.50s**
+[![](https://dev.epicgames.com/community/api/documentation/image/6d7e7619-9e33-443e-953b-36ca2a3d7aa0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6d7e7619-9e33-443e-953b-36ca2a3d7aa0?resizing_type=fit)
 
-Now the +1 text pops in a dramatic effect when the animation plays.
-[![Set the Scale X and Y as keyframes on your OnIncrement timeline.](https://dev.epicgames.com/community/api/documentation/image/0fc4782c-9868-4467-a21e-268bf84e1d3a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0fc4782c-9868-4467-a21e-268bf84e1d3a?resizing_type=fit)
-##  Animating an Image Brush’s Material Parameter
-To make the Icon in the material expand with the Tracker progress, access the Material through Sequencer.
-  1. Select the **TrackerMaterial** in the **Hierarchy** panel, then click **+Add** > **TrackerMaterial** in the **OnIncrement** animation.
-[![Select the TrackerMaterial Image, then click +Add > TrackerMaterial in the OnIncrement animation.](https://dev.epicgames.com/community/api/documentation/image/9a8c40e0-701c-4455-8f8b-7182cacb58d6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9a8c40e0-701c-4455-8f8b-7182cacb58d6?resizing_type=fit)
-  2. Click the **+plus icon** in your **TrackerMaterial** track and select **Transform**. This adds a material track to the TrackerMaterial.
-[![Click the +plus icon in your TrackerMaterial track and select Transform.](https://dev.epicgames.com/community/api/documentation/image/4416b04b-9161-4ce7-8e64-2ed9690e4e98?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4416b04b-9161-4ce7-8e64-2ed9690e4e98?resizing_type=fit)
-  3. Expand the **Transform** and **Scale** tracks. Scale provides a way to increase and decrease the material's **X** and **Y** axes.
-[![Expand the Transform and Scale options.](https://dev.epicgames.com/community/api/documentation/image/32efa5d6-1214-484c-b4f1-20d538855530?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/32efa5d6-1214-484c-b4f1-20d538855530?resizing_type=fit)
-You can easily manipulate these parameters in Sequencer when the OnIncrement animation plays. By using Transform you can animate the material scaling the X and Y axes up and back down.
-  4. Set both X and Y to:
-    1. **0.7** at **0.00**
-    2. **1.0** at **0.50**
-    3. **0.7** at **1.00**
-[![Set the scale parameter's increments and set keys to each incremental increase and decrease.](https://dev.epicgames.com/community/api/documentation/image/e2d42b83-d2ed-4786-b4f9-d6e9550a3959?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e2d42b83-d2ed-4786-b4f9-d6e9550a3959?resizing_type=fit)
+The default appearance of the spawner device is the glowing blue cube on the left, but when these powerups appear in-game they look like the powerup crate on the right.
 
-Now the animation uses the material parameters from TrackerMaterial to animate the icon like in the gif below.
-[![Now the animation uses the material parameters from TrackerMaterial.](https://dev.epicgames.com/community/api/documentation/image/7ec1a606-590c-4255-8321-5ac7dacbb8bf?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7ec1a606-590c-4255-8321-5ac7dacbb8bf?resizing_type=fit)
-##  Adding an Animation Condition
-Now that your animation is ready to go, tie it to a gameplay value so that it plays an animation when a gameplay value changes.
-  1. Open the **View Bindings** window by selecting **Window** > **View Bindings**.
-[![Open the View Bindings window by selecting Window > View Bindings.](https://dev.epicgames.com/community/api/documentation/image/dd14fec1-f07e-4a11-8759-56d1dadac1cd?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/dd14fec1-f07e-4a11-8759-56d1dadac1cd?resizing_type=fit)
-  2. In the **View Bindings** window, select **+Add Condition**.
-[![In the View Bindings window, select +Add Condition.](https://dev.epicgames.com/community/api/documentation/image/82792f55-0dd5-4532-8ffa-7fd9b3ed35d9?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/82792f55-0dd5-4532-8ffa-7fd9b3ed35d9?resizing_type=fit)
-The left box is for the gameplay value that you want tracked for changes so that it will play the animation on the right. Right now, +Add Condition only accepts [Float](https://dev.epicgames.com/documentation/fortnite/verse-glossary) or [Int](https://dev.epicgames.com/documentation/fortnite/verse-glossary) values.
-[![Right now, +Add Condition only accepts Float or Int values.](https://dev.epicgames.com/community/api/documentation/image/98b4eb54-b09a-43cd-b89e-13386a74113f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/98b4eb54-b09a-43cd-b89e-13386a74113f?resizing_type=fit)
-  3. Select the left box, then select **MVVM_UEFN_Tracker** > **Value**. This tracks the **Tracker progress** by playing an animation whenever the Tracker value increments.
-[![Select the left box, then select MVVM_UEFN_Tracker > Value.](https://dev.epicgames.com/community/api/documentation/image/664f1cff-e551-4c0f-9bdd-4b950ad6f00f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/664f1cff-e551-4c0f-9bdd-4b950ad6f00f?resizing_type=fit)
-  4. Click the **middle dropdown** and select **More Than ( >)**.
-The 2 boxes in the middle are the conditions that you want fulfilled to play the animation. Whenever the value changes, it checks if it’s within that condition and if it is, it will play the animation.
-By setting it to More Than **( >) 0.0**, the UI will play the animation whenever this value changes.
-[![Click the middle dropdown and select More Than \(>\).](https://dev.epicgames.com/community/api/documentation/image/5fbd0eae-c2c3-4fe1-bac6-4294aab94adf?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5fbd0eae-c2c3-4fe1-bac6-4294aab94adf?resizing_type=fit)
-  5. Select the right box, then select **WBP_{YourWidgetName}** > **Queue Play Animation**. The right box is the action to take when this value fulfills the condition. In this case, to play the **OnIncrement animation** created above.
-[![Select the right box, then select WBP_{YourWidgetName} > Queue Play Animation.](https://dev.epicgames.com/community/api/documentation/image/881c74d6-2d76-437b-a091-ae061bbf30ab?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/881c74d6-2d76-437b-a091-ae061bbf30ab?resizing_type=fit)
-A list of options pertaining to the animation you want to play appear in View Bindings.
-     * **In Animation** = Play
-     * **Start at Time** = Select a time
-     * **Num Loops to Play** = Number of times the animation loops
-     * **Play Mode** = **Forward** , Reverse, or Ping Pong
-     * **Playback Speed** = Speed up or slow the animation down
-     * **Restore State** = Restores the animation to its default state
-[![A list of options pertaining to the animation you want to play appear in View Bindings.](https://dev.epicgames.com/community/api/documentation/image/3736b040-5b05-4f5c-85b1-db166aab1caa?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3736b040-5b05-4f5c-85b1-db166aab1caa?resizing_type=fit)
-  6. Click the **link icon** next to **InAnimation** , then select **WBP_{YourWidgetName}** > **OnIncrement** > **Select**.
-[![Click the link icon next to InAnimation, then select WBP_{YourWidgetName} > OnIncrement > Select.](https://dev.epicgames.com/community/api/documentation/image/22c97e50-af64-4fa2-a7ef-c4238bea5406?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/22c97e50-af64-4fa2-a7ef-c4238bea5406?resizing_type=fit)
+## Basic Setup
 
-Now your animation is set up to play whenever the Tracker progresses.
-[![Now your animation is set up to play whenever the Tracker progresses.](https://dev.epicgames.com/community/api/documentation/image/c000cb7d-cc50-4d09-841b-c379036c368c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c000cb7d-cc50-4d09-841b-c379036c368c?resizing_type=fit)
-##  Final Result
-As the players eliminate enemies or NPCs, the UI shows the elimination progress with the icon popping and the +1 appearing, popping, and disappearing.
-[![As the players eliminate enemies or NPCs, the UI shows the elimination progress with the icon popping and the +1 appearing, popping, and disappearing.](https://dev.epicgames.com/community/api/documentation/image/4932d335-7e50-4b98-b902-abbfd844d787?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4932d335-7e50-4b98-b902-abbfd844d787?resizing_type=fit)
+Vehicle Mod Box powerup crates offer options for adding dynamic powerups to specific vehicles on your island. (For a list of vehicles that can interact with this device, see [Vehicle Mode Box Spawner Devices).](https://dev.epicgames.com/documentation/fortnite/using-vehicle-mod-box-spawner-devices-in-fortnite-creative)
+
+### Device Used
+
+- 1 x [Vehicle Mod Box Spawner](https://dev.epicgames.com/documentation/fortnite/using-vehicle-mod-box-spawner-devices-in-fortnite-creative) device
+
+### Place the Vehicle Mod Box Spawner Device
+
+This device is a spawner, and the item that it spawns is a **Vehicle Mod Box** — a [powerup](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#powerup) that adds modifications to a vehicle that runs over it.
+
+### Set Up the Device
+
+Use the settings below to customize the look of the vehicle mod powerups when they appear during play, and modify the settings that control the powerups that drop.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/6c8fe781-4f37-40b1-9537-8991e0b196f1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6c8fe781-4f37-40b1-9537-8991e0b196f1?resizing_type=fit)
+
+Using the Roof Weapons setting gives a powerup that will randomly attach either the grenade launcher weapon or the machine gun turret to the cab of the vehicle.
+
+You can create similar powerups that randomly assign one of the choices available to upgrade the vehicle in the same way. For example, below are four Vehicle Mod Box powerups customized to randomly grant bumper upgrades, tire upgrades, roof weapons, or repairs.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/e0d3bcc8-cea5-4217-acff-514db225db11?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e0d3bcc8-cea5-4217-acff-514db225db11?resizing_type=fit)
+
+### Design Tip
+
+Try adjusting the respawn timer to control how often your powerups will respawn on your island. More or fewer powerups can really change the feel of the game!
+
+## Expand the Powerups Available
+
+Continuing from [Basic Setup](https://dev.epicgames.com/documentation/fortnite/vehicle-mod-box-spawner-device-design-examples-in-fortnite#basic-setup), in this example, you'll create more Vehicle Mod Box powerups, adjusting the settings to grant specific modifications for each one when a player picks it up.
+
+### Devices Used
+
+- 11 x Vehicle Mod Box Spawner devices
+
+### Copy the Initial Spawners Devices and Customize the Settings
+
+[![](https://dev.epicgames.com/community/api/documentation/image/8af26bfb-568f-4364-b50f-3d2ce0c3ad62?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8af26bfb-568f-4364-b50f-3d2ce0c3ad62?resizing_type=fit)
+
+### Design Tip
+
+And just like that, you now have 11 different powerups to populate your islands with exciting gameplay options!
+
+Try adjusting the respawn timers on each powerup to change the gameplay on your island. Longer respawn timers make more desirable upgrades.
+
+## Build a Vehicle Battle Game!
+
+Ready to build a game using the Vehicle Mod Box Spawner device? Follow the instructions in this example to create a team vehicle battle game mode for up to 10 players!
+
+[![](https://dev.epicgames.com/community/api/documentation/image/074c3dd9-78bf-4aca-8422-c6ca8d223c0d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/074c3dd9-78bf-4aca-8422-c6ca8d223c0d?resizing_type=fit)
+
+### Devices Used
+
+- 1 x [SUV Spawner](https://dev.epicgames.com/documentation/fortnite/using-suv-spawner-devices-in-fortnite-creative) device
+- 1 x [Fang Spawner](https://dev.epicgames.com/documentation/fortnite/using-fang-spawner-devices-in-fortnite-creative) device
+- 1 x [Pickup Truck Spawner](https://dev.epicgames.com/documentation/fortnite/using-pickup-truck-spawner-devices-in-fortnite-creative) device
+- 1 x [Sports Car Spawner](https://dev.epicgames.com/documentation/fortnite/using-sports-car-spawner-devices-in-fortnite-creative) device
+- 2 x [Quadcrasher Spawner](https://dev.epicgames.com/documentation/fortnite/using-quadcrasher-spawner-devices-in-fortnite-creative) devices
+- 4 x [Fuel Pump](https://dev.epicgames.com/documentation/fortnite/using-fuel-pump-devices-in-fortnite-creative) devices
+- 5 x Team Settings & Inventory devices
+- 5 x [Item Granter](https://dev.epicgames.com/documentation/fortnite/using-item-granter-devices-in-fortnite-creative) devices
+- 10 x [Player Spawner](https://dev.epicgames.com/documentation/fortnite/using-player-spawn-pad-devices-in-fortnite-creative) devices (5 teams of 2)
+- 11 x [Vehicle Mod Box Spawner](https://dev.epicgames.com/documentation/fortnite/using-vehicle-mod-box-spawner-devices-in-fortnite-creative) devices
+
+### Overview
+
+1. Make a vehicle battle arena.
+2. Place the vehicle spawners for each team.
+3. Customize the Team Settings & Inventory device for Team 1.
+4. Customize the Item Granter for the Team 1.
+5. Place and customize the Player Spawners for Team 1.
+6. Copy the team devices to the other team start locations.
+7. Place the Vehicle Mod Box powerup spawners.
+8. Configure the Island Settings.
+
+### Make a Vehicle Battle Arena
+
+[![](https://dev.epicgames.com/community/api/documentation/image/bafa751d-88c1-419f-b624-2bf56b06a622?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/bafa751d-88c1-419f-b624-2bf56b06a622?resizing_type=fit)
+
+1. Use pieces from the following galleries to create an enclosed arena for vehicles.
+
+   - Modular Rock Gallery Arid A
+   - Modular Rock Gallery Arid B
+   - Desert Nature Gallery
+2. Use buildings from the following prefabs:
+
+   - Gas Station
+   - Roadside Garage
+3. Build a circular wall of large rocks. First, outline your arena, then add smaller rocks to break up the interior of the arena.
+
+   [![](https://dev.epicgames.com/community/api/documentation/image/a58aecb7-0c64-4149-abe2-8f901345b208?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a58aecb7-0c64-4149-abe2-8f901345b208?resizing_type=fit)
+
+   [![](https://dev.epicgames.com/community/api/documentation/image/40c264f0-41ac-4ec8-9934-453b0dc58eb2?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/40c264f0-41ac-4ec8-9934-453b0dc58eb2?resizing_type=fit)
+
+### Place the Vehicle Spawners for Each Team
+
+Pick interesting locations for the teams to start in your battle arena. **Space each team's starting location an even distance from the other team areas.**
+
+Place the following vehicle spawners on each team area:
+
+- 1 x SUV Spawner
+- 1 x Fang Spawner
+- 1 x Pickup Truck Spawner
+- 1 x Sports Car Spawner
+- 2 x Quadcrasher Spawners
+
+[![](https://dev.epicgames.com/community/api/documentation/image/1de1d5e9-ac58-4247-bfa0-2eaeeab93cf1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1de1d5e9-ac58-4247-bfa0-2eaeeab93cf1?resizing_type=fit)
+
+Place each vehicle in a team spawn area.
+
+Give one team two **Quadcrasher ATV Spawners** instead of a single vehicle.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/6a537dc8-0872-444a-a9bd-e86c13ec682e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6a537dc8-0872-444a-a9bd-e86c13ec682e?resizing_type=fit)
+
+### Customize the Settings & Inventory Device
+
+Use the **Team Settings** device to set up each two-player team, starting with **Team 1.** The easiest way to do this is to set up the first device, then copy it for each team, changing the team device options as you go.
+
+ Use the settings below for Team 1:
+
+[![](https://dev.epicgames.com/community/api/documentation/image/43f7dad1-fb8e-4501-ac2b-2e8a4a331d15?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/43f7dad1-fb8e-4501-ac2b-2e8a4a331d15?resizing_type=fit)
+
+### Place the Item Granter Device for Team 1
+
+[![](https://dev.epicgames.com/community/api/documentation/image/a8431880-297f-49a2-8331-90859dfe5475?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a8431880-297f-49a2-8331-90859dfe5475?resizing_type=fit)
+
+### Copy the Remaining Devices to Each Team's Starting Location
+
+Make sure to update the team settings in the Team Inventory & Settings device and the Player Spawner devices.
+
+### Place the Vehicle Mod Box Spawners
+
+In this example, you will use the eleven Vehicle Mod Box powerup spawners that you created in examples [Basic Setup](https://dev.epicgames.com/documentation/fortnite/vehicle-mod-box-spawner-device-design-examples-in-fortnite#basic-setup) and [Expand the Powerups](https://dev.epicgames.com/documentation/fortnite/vehicle-mod-box-spawner-device-design-examples-in-fortnite#expand-the-powerups-available) above. Follow those directions as needed to customize the devices for this game mode.
+
+Pick interesting locations and place all eleven powerup spawners in your battle arena!
+
+### Configure the Game Settings
+
+### Design Tip
+
+And it is complete — a brutal vehicle-based team battle for up to ten players!
+
+You can adjust the placements and respawn timers for the Vehicle Mod Box powerup spawners to radically change how your matches play out!

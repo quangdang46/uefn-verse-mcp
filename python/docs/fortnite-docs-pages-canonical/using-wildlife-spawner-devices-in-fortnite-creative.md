@@ -1,58 +1,153 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-wildlife-spawner-devices-in-fortnite-creative
 
-# Creator Portal Overview
-Familiarize yourself with the UI and features of the Creator Portal.
-![Creator Portal Overview](https://dev.epicgames.com/community/api/documentation/image/9cf78cd7-6bda-4d7e-b894-38c50bef9e76?resizing_type=fill&width=1920&height=335)
-The Creator Portal is the only way you can publish islands and control your Profile Page and presence in the Fortnite ecosystem.
-To get your own Creator Portal, first join the **[Fortnite Developer Program](https://www.fortnite.com/enroll)** , then get creative! Through the Fortnite Developer Program, you’ll receive metrics on island performance and players, as well as payment for player engagement on published islands.
-New features are added periodically to help developers like you create premium experiences, reach millions of potential players, and collaborate with other developers and teammates.
-[![The Creator Portal is where creators publish their islands, manage their presence in the Fortnite ecosystem, and much more.](https://dev.epicgames.com/community/api/documentation/image/22c05eba-68f3-4977-9e2f-0a397ae6e5b5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/22c05eba-68f3-4977-9e2f-0a397ae6e5b5?resizing_type=fit) Overview of the Creator Portal
-  1. [Content Area](https://dev.epicgames.com/documentation/fortnite/creator-portal-overview-in-fortnite-creative#projects-page)
-  2. [Toolbar](https://dev.epicgames.com/documentation/fortnite/creator-portal-overview-in-fortnite-creative#toolbar)
-  3. [Team, Projects, and Campaigns](https://dev.epicgames.com/documentation/fortnite/creator-portal-overview-in-fortnite-creative#team-indicator)
-  4. [Account-Level Navigation Menu](https://dev.epicgames.com/documentation/fortnite/creator-portal-overview-in-fortnite-creative#portal-navigation-menu)
-  5. [Resources](https://dev.epicgames.com/documentation/fortnite/creator-portal-overview-in-fortnite-creative#resources)
+# Wildlife Spawner Devices
 
-##  Content Area
-[![The Projects page shows all of your Creative islands and UEFN projects.](https://dev.epicgames.com/community/api/documentation/image/b5b84544-3185-4c9a-a30b-034407e06d97?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b5b84544-3185-4c9a-a30b-034407e06d97?resizing_type=fit)
-The content area is where individual pages are displayed. By default, this displays the **Projects** page. Projects are viewable by teams. To see projects associated with a team click the **Team** tile to switch to a different team, or to **No Team (Just Me)**. Every island you create can be accessed from your own personal Projects page.
-To view a project’s publishing information, click a project tile. The project opens on the project's **Publishing** page, and the **[Project Navigation Menu](https://dev.epicgames.com/documentation/fortnite/project-navigation-menu-in-fortnite)** becomes available. See [Project Publishing Page](https://dev.epicgames.com/documentation/fortnite/publishing-page-features-in-fortnite-creative) for more information.
-##  Toolbar
-[![The toolbar gives you access to a number of helpful links that provide a way for you to personalize your page, play games, and link personal gaming information to your account.](https://dev.epicgames.com/community/api/documentation/image/2fc0d7c1-e65b-4e5b-b5ff-75831a47302e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2fc0d7c1-e65b-4e5b-b5ff-75831a47302e?resizing_type=fit)
-The toolbar provides access to a number of helpful links and resources.
-  * Epic Badge:
-    * Play Epic original games.
-    * Shop at different Epic-owned online stores.
-    * Access resources for different Epic tools and services.
-  * **Globe:**
-    * Select your preferred language.
-  * **Personalized Icon:**
-    * Manage your account settings.
-    * Link different gaming accounts to your Creator Portal.
-    * Redeem codes and cards.
-    * Toggle Dark Mode on or off.
-    * Sign out of the Creator Portal.
+Populate your island with animals — some nice and some not so nice — that you can herd, hunt, tame or dodge!
 
-##  Team, Projects, and Campaigns
-[![The Team Indicator tells you which team and project you’re viewing in the Creator Portal.](https://dev.epicgames.com/community/api/documentation/image/e59e8713-97a7-4835-bbc3-41ccc4cd27f5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e59e8713-97a7-4835-bbc3-41ccc4cd27f5?resizing_type=fit) The team and projects page.
-###  Team Tile
-The Team tile tells you which team’s projects you’re viewing in the Creator Portal. Clicking the icon opens the Team Selection panel, where you select which team's projects you want to view. To view personal projects, you can select **No Team (Just Me)**.
-###  Projects
-Selecting Projects opens the Projects page. On that page you can select a project to see Publishing, Analytics, In-Island Transactions, and other information for that project. For information on publishing projects, see [Publishing from the Creator Portal](https://dev.epicgames.com/documentation/fortnite/publishing-from-the-creator-portal-in-fortnite-creative). For information about monetizing your islands, see [Account-Level Monetization](https://dev.epicgames.com/documentation/fortnite/account-level-monetization-in-fortnite).
-###  Campaigns
-Clicking **Campaigns** takes you to the **[Campaigns](https://dev.epicgames.com/documentation/fortnite/campaigns-page-in-fortnite)** page, where you can create and manage Sponsored Row campaigns. For information on Sponsored Row campaigns, see [Sponsored Campaigns Overview](https://dev.epicgames.com/documentation/fortnite/sponsored-campaigns-overview-in-fortnite).
-###  Manage Team
-Selecting **Manage Team** allows you to manage a team and its members, if you have a team role with high-level permissions. To learn more about working on teams in Creator Portal, see [Setting Up Teams](https://dev.epicgames.com/documentation/fortnite/setting-up-teams-in-fortnite-creative).
-##  Account-Level Navigation Menu
-[![From the account-level navigation menu you can see and edit your Creator profile, project monetization information.](https://dev.epicgames.com/community/api/documentation/image/557d5410-e83d-4cb3-bbde-249ce20fea95?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/557d5410-e83d-4cb3-bbde-249ce20fea95?resizing_type=fit) The account-level navigation menu.
-The account-level navigation panel has links to your Profile Page, monetization data for all your islands, and a page where you can export reports of your analytics data. To learn more about the different features of the Creator Portal, see:
-To learn more about the pages linked in this menu, see the following pages:
-  * [Manage Your Profile Page](https://dev.epicgames.com/documentation/fortnite/manage-your-creator-page-in-fortnite-creative)
-  * **Analytics**
-This links to a legacy analytics page that is being deprecated. To see analytics information, go to the [Project Analytics](https://dev.epicgames.com/documentation/fortnite/project-analytics-for-fortnite-games) page for a specific project.
-  * **[Monetization](https://dev.epicgames.com/documentation/fortnite/account-level-monetization-in-fortnite)**
-  * **Reports**(page coming soon!)
+![Wildlife Spawner Devices](https://dev.epicgames.com/community/api/documentation/image/e475c9c9-4e19-467a-a308-b7c5bfd5f020?resizing_type=fill&width=1920&height=335)
 
-##  Resources
-[![This section has all the Creator support you need.](https://dev.epicgames.com/community/api/documentation/image/303cb0df-457f-4b7e-8ad7-9fbcbe42287a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/303cb0df-457f-4b7e-8ad7-9fbcbe42287a?resizing_type=fit)
-This section has all the support you need to connect with other developers and Epic’s Creator Support team, documentation on the Creative and Unreal Editor for Fortnite tools and features, and information on how to find rules and news for developers.
+The **Wildlife Spawner** device can be customized to [spawn](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) various animals.
+
+Animals you can spawn using this device include:
+
+- Sky Jelly
+- Wildwasps
+- Spring Chicken (Prey)
+- Chicken (Prey)
+- Frog
+- Boar (Prey)
+- Wolf (Predator)
+- Raptor (Predator)
+- Air Sprite
+- Water Sprite
+- Dash Sprite
+
+Players can hunt for the prey animals (chickens and boars), which will drop resources (such as meat) when they are eliminated. Some animals spawned by this device can be tamed and ridden by players:
+
+- Boars
+- Wolves
+- Raptors
+
+To tame an animal, you can just jump on its back when it is near you. Once an animal is tamed, it will follow the player at a distance and can be used as a mount. Some will attack other players and animals that are hostile to the player that tamed them. Players can tame up to three animals at a time. The **Raptor** can also jump while being ridden, and have a very high jump height. This can be used with the environmental design on your island to introduce traversal puzzles, secret areas or loot, and other variations in gameplay and movement.
+
+You can also select a different appearance for some animals, to match the biome of your island. Animals that have biome variants include:
+
+- Chicken
+- Boar
+- Wolf
+- Sprites
+
+Use the **Biome Variant** option to change the appearance of the animals spawned. Choices are listed in the Device Options section, below.
+
+While there isn't a limit on the number of Wildlife Spawners you can have on an island, there is a limit on the total number of spawned AI enemies on an island. This includes creatures, guards, and wildlife. You can only have 90 AI enemies active at a time, across all devices that spawn AI enemies. If you have a lot of Wildlife Spawners, or if you also have Guard or Creature Spawners on your island, keep track of the number of enemies each is spawning so you stay under the overall limit.
+
+For help on how to find the **Wildlife Spawner** device, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
+
+If you're using multiple copies of a device on an island, it can be useful to [rename](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the [Event Browser](https://dev.epicgames.com/documentation/fortnite/event-browser-in-fortnite-creative).
+
+## Contextual Filtering
+
+Some devices are affected by a feature called contextual filtering. This feature hides or displays options depending on the values selected for certain related options. This feature will reduce clutter in the Customize panel and make options easier to manage and navigate. However, it may not be easy to recognize which options or values trigger contextual filtering.
+
+To help you identify them, in our device docs we use *italic* for any values that trigger contextual filtering. All options will be listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option's value, there will be a note about that in the **Description** field for that option.
+
+## Device Options
+
+This device has some basic functionality, like choosing the type of animal, choosing the biome variant, and how many animals spawn. There are also advanced options, like setting the total number of animals spawned, and how much health each animal has.
+
+You can configure this device with the following options.
+
+Default values are **bold**. Values that trigger contextual filtering are *italic*.
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Type** | Sky Jelly, Wildwasps, Spring Chicken, *Chicken*, Frog, *Boar*, ***Wolf***, Raptor, *Air Sprite*, *Water Sprite*, *Dash Sprite*, Random, Random Prey, Random Predator | Determines the type of animal that is spawned. The shape of the device changes to match the type of animal that spawns. If you choose **Chicken**, **Boar**, **Sprit****e**, or **Wolf** the **Biome Variant** option is displayed below this one. |
+| **Biome Variant** | **Classic**, Medieval, Snow | This option only displays if you have chosen **Chicken**, **Boar**, or **Wolf** in the **Type** option. Determines which variant color is used for animals spawned from this device. |
+| **Spawn Count** | **4**, Pick a number | Determines the maximum number of animals that can be active at once. When activated, the spawner produces one animal at a time, up to the maximum number selected. Islands can have a maximum of 30 wildlife spawned and active at a time, across all Wildlife Spawner devices. |
+| **Allow Infinite Spawn** | **Yes**, *No* | Determines if this device should restrict the maximum number of wildlife spawned in its lifetime. |
+| **Total Spawn Limit** | **10**, Pick or enter a number | This option only displays if the **Allow Infinite Spawn** option is set to **No**. Sets the maximum number of wildlife this spawner can produce during its lifetime. |
+| **Spawn on Timer** | ***On***, Off | Determines if wildlife should be spawned on a timer, or only when receiving events. |
+| **Spawn Timer** | **3 seconds**, Pick a number | This option only displays if the **Spawn on Timer** option is set to **On**. Determines the minimum amount of time between wildlife spawns. |
+| **Spawn Through Walls** | **On**, Off | Determines whether animals must spawn within the [line of sight](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) of the device, or if they can spawn behind walls that obstruct the line of sight. |
+| **Spawn Radius** | **10.0M**, Pick or enter an amount | The maximum distance from the device that the Wildlife can spawn. |
+| **Activate from Any Distance** | **Yes**, *No* | Determines if this device requires that a player be within a specified distance in order to spawn wildlife. |
+| **Activation Distance** | **5M**, Pick a distance | This option only displays if the **Activate from Any Distance** is set to **No**. Determines the distance from the spawner that a player must be within for wildlife to begin spawnning. |
+| **Tamed Follow Distance** | **Default**, Pick a distance | Determines the distance from the taming player that wildlife will try to remain within while tamed. |
+| **Wander Range** | **Default**, Pick a distance | Determines the distance from the device that a wildlife can range peacefully. A wildlife may be pulled out of this range when fleeing, engaging in combat, or pursuing a goal. Wildlife pulled far enough outside of the **Wander Range** will not return. |
+| **Enabled On Game Start** | **Enabled**, Disabled | Determines whether the device is enabled when the game starts. |
+| **Force Spawn** | **Never**, On Timer Only, On Spawn Event Only, Always | Determines if this device should spawn new wildlife when it is at its **Number of Wildlife** cap. When a new wildlife is spawned this way, the oldest wildlife from this device will be eliminated. |
+| **Custom Damage** | **Default**, Pick an amount | Sets the amount of damage the Wildlife from this device can do to others. |
+| **Custom Damage to Player** | **Default**, Pick an amount | Sets the amount of damage the wildlife from this device can do to players. If this option is set to anything other than **Default**, this will override the value set in the **Damage** option. |
+| **Custom Damage to Environment** | **Default**, Pick an amount | Sets the amount of damage wildlife from this device can do to the environment. |
+| **Custom Movement Speed Multiplier** | Very Slow, Slow, **Default**, Fast, Very Fast | Sets the multiplier applied to the movement speed of spawned animals. |
+| **Invincible** | Yes, ***No*** | Determines if wildlife spawned from this device can take damage. |
+| **Starting Health** | **Default**, Pick an amount | This option only displays if the **Invincible** option is set to **No**. Sets the maximum health value for spawned animals. |
+| **Taming** | **Enabled**, Disabled | Determines whether animals spawned by this device can be tamed by players. |
+| **Maximum Tamed Wildlife** | **Default**, 1, 2, 3 | Determines the limit of wildlife from this device that a player can tame in game. Default means applying the same option set in the island settings. The device's tame limit won't be larger than the island setting limit. |
+| **Can Drop Loot** | **Yes**, No | Determines whether spawned animals drop resources when they are eliminated. |
+| **Riding** | *Enabled*, **Disabled** | Determines whether tamed wildlife spawned from this device can be ridden. If you choose **Enabled**, several other options display below this one in the Customize panel. |
+| **Allow Riding on Different Teams** | **On**, Off | Determines if the Wildlife spawned by this device can only be ridden by the players on the same team or not. |
+| **Starting Energy** | **100\%(Default)**, Pick a percentage | This option only displays if the **Riding** option is set to **Enabled**. Determines the starting energy value for the rideable wildlife spawned from this device. |
+| **Maximum Energy** | **100\%(Default)**, Pick a percentage | This option only displays if the **Riding** option is set to **Enabled**. Determines the maximum energy value for the rideable wildlife spawned from this device. |
+| **Energy Restore Amount** | **None**, Pick a percentage | This option only displays if the **Riding** option is set to **Enabled**. Determines the amount of energy restored when the associated functions are triggered. |
+| **Energy Consume Amount** | **None**, Pick a percentage | This option only displays if the **Riding** option is set to **Enabled**. Determines the amount of energy consumed when a player rides wildlife spawned by this device. |
+| **Prevent Player Dismounting** | **Off**, On | Determines if players are able to use the interact control to dismount. If you set this to **On**, player cannot dismount using the interact control and cannot dismount by jumping off the mount. They can still be dismounted by functions. |
+| **Wildlife Team Type** | Team Index, **Team Wildlife & Creatures**, Team Neutral | Determines which team Wildlife are assigned to. |
+| **Wildlife Team Index** | **Team 1**, Pick or enter a team | If the **Wildlife Team Type** is set to **Team Index**, this option sets the Team Index Wildlife are assigned. |
+| **Spawn on Patrol Path** | 0, Select a path number | Spawns wildlife on the selected Patrol Path Group.  Selecting a Patrol Path Group number other than 0 causes new options to become available, such as: Enable Resuming Patrol Path, and Change Patrol Path Target. |
+| **Enable Resuming Patrol Path** | **On**, Off | Determines if the wildlife should resume patrolling their path if it was disabled and then enabled.  If set to **Off**, the wildlife must be assigned a path through a path's "Assign AI To Path" function to continue path following. |
+| **Change Patrol Path Target** | **Never**, *On Spaw*n, *On Timer* | Determines how often the spawner will select a new random Patrol Path within its Patrol Path Group.  If set to NEVER, the device will always use the first Patrol Path in the Patrol Path Group.  Using any value other than Never causes further options to become available. |
+| **Change Patrol Path Timer** | 1.0, Select a time | This option becomes available when the  Change Patrol Path Timer is selected.  Determines the amount of time newly spawned Wildlife will be selecting the Patrol Path.  After it ends, newly spawned Wildlife will randomly select Patrol Path. This won't impact Wildlife that have already spawned. |
+| **Should Randomly Select Path** | **On**, Off | This option becomes available when  Change Patrol Path Target is selected.  Determines if the device should randomly select a path to use. If set to Off, the device will select the path in order of their indexes if they have been set, or on the path that has not had Wildlife spawned on it, which resets after a Wildlife has spawned on each Patrol Path in the Patrol Group.  If multiple paths have the same index they will be randomly ordered between themselves. |
+| **Sprite Activations** | 0, Select activations amount | This option becomes available when the Type option is set to one of the Sprite types. |
+
+## Direct Event Binding
+
+Following are the [direct event binding](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) options for this device.
+
+### Functions
+
+A [function](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) listens for an event on a device then performs an action.
+
+| Option | Description |
+| --- | --- |
+| **Enable When Receiving From** | This function enables the device when an event occurs. |
+| **Disable When Receiving From** | This function disables the device when an event occurs. |
+| **Spawn When Receiving From** | This function spawns an animal when an event occurs. |
+| **Despawn When Receiving From** | This function despawns an animal when an event occurs. |
+| **Destroy Spawner When Receiving From** | This function destroys the spawner when an event occurs. |
+| **Tame When Receiving From** | This function tames a spawned animal when an event occurs. |
+| **Untame All When Receiving From** | This function untames all spawned animals when an event occurs. |
+| **Untame from Instigator When Receiving From** | This function untames all animals tamed by the instigator when an event occurs. |
+| **Reset Total Spawn Count When Receiving From** | This function resets the total spawn amount when an event occurs. |
+| **Eliminate Tamed from Instigator When Receiving From** | This function eliminates the instigator's tamed animals when an event occurs. |
+| **Ride When Receiving From** | This function teleports the nearest ridable wildlife to the instigator and mounts the instigator on it. |
+| **Dismount All When Receiving From** | This function dismounts all players from all wildlife spawned by this device. |
+| **Dismount Instigator When Receiving From** | This function dismounts the instigator from all wildlife spawned by this device. |
+| **Restore Energy for All When Receiving From** | This function restores the amount of energy defined in the **Energy Restore Amount** option to all riding players. |
+| **Restore Energy for Instigator When Receiving From** | This function restores the amount of energy defined in the **Energy Restore Amount** option to the instigating player. |
+| **Consume Energy for All When Receiving From** | This function consumes the amount of energy defined in the **Energy Consume Amount** option from all players. |
+| **Consume Energy for Instigator When Receiving From** | This function consumes the amount of energy defined in the **Energy Consume Amount** option from the instigator. |
+
+### Events
+
+An [event](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) tells another device when to perform a function.
+
+| Option | Description |
+| --- | --- |
+| **On Spawned Send Event To** | When this device spawns wildlife, an event occurs, triggering the selected function. |
+| **On Eliminated Send Event To** | When wildlife spawned by this device are eliminated, an event occurs, triggering the selected function. |
+| **On Tamed Send Event To** | When wildlife spawned by this device are tamed, an event occurs, triggering the selected function. |
+| **On Untamed Send Event To** | When wildlife spawned by this device are untamed, an event occurs, triggering the selected function. |
+| **On Force Spawned Send Event To** | When wildlife is force spawned from this device, an event occurs, triggering the selected function. This causes the oldest wildlife spawned to be eliminated. |
+| **On Eliminated by A Neutral Player Send Event To** | When untamed wildlife spawned from this device are eliminated by a neutral player, an event occurs, triggering the selected function. |
+| **On Eliminated by An Enemy Player Send Event To** | When tamed wildlife spawned from this device are eliminated by an enemy player, an event occurs, triggering the selected function. |
+| **On Eliminated by Predator Send Event To** | When wildlife spawned by this device are eliminated by a Predator, an event occurs, triggering the selected function. |
+| **On Damaged Send Event To** | When wildlife spawned from this device are damaged, an event occurs, triggering the selected function. |
+| **On Something Is Eaten Send Event To** | When wildlife spawned from this device eat a food item, an event occurs, triggering the selected function. |
+| **On Ridden Send Event To** | When wildlife spawned from this device are ridden, an event occurs, triggering the selected function. |
+| **On Dismounted Send Event To** | When wildlife spawned from this device are dismounted, an event occurs, triggering the selected function. |
+| **On Eliminating Send Event To** | When wildlife spawned from this device are eliminated, an event occurs, triggering the selected function. |
+| **On Picked Up Send Event To** | When wildlife spawned from this device are picked up by a player, an event occurs, triggering the selected function. This works with Chickens and Spring Chickens. |
+| **On Placed Send Event To** | When wildlife spawned from this device are placed by a player after being picked up, an event occurs, triggering the selected function. This works with Chickens and Spring Chickens. |
+| **On Thrown Send Event To** | When wildlife spawned from this device are thrown by a player after being picked up, an event occurs, triggering the selected function. This works with Chickens and Spring Chickens. |

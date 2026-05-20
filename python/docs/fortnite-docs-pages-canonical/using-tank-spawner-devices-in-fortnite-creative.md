@@ -1,207 +1,85 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-tank-spawner-devices-in-fortnite-creative
 
-# Trigger Device Design Examples
-Explore some interesting ways to use Trigger devices in your gameplay!
-![Trigger Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/a7b65d62-5541-4f03-aa82-9c9772908cdc?resizing_type=fill&width=1920&height=335)
-######  Prerequisite topics
-In order to understand and use the content on this page, make sure you are familiar with the following topics:
-  * [Trigger Devices](https://dev.epicgames.com/documentation/fortnite/using-trigger-devices-in-fortnite-creative)
+# Tank Spawner Device
 
-**Trigger** devices are useful for triggering other devices, and can be activated by players, vehicles, or other devices.
-##  Make an Automatic Door
-When you combine a **Trigger** device with a **Lock** device, you have an easy way to set up a door that automatically opens and closes.
-###  Devices Used
-  * 2 x Trigger devices
-  * 1 x [Player Spawner](https://dev.epicgames.com/documentation/fortnite/using-player-spawn-pad-devices-in-fortnite-creative) device
-  * 1 x [Lock ](https://dev.epicgames.com/documentation/fortnite/using-lock-devices-in-fortnite-creative)device
+Add a mighty tank to your arena for high-powered fun!
 
-###  Set Up the Devices
-  1. Place the **Art Deco Bank** prefab.
-  2. Place a **Player Spawner** device in front of the front door.
-  3. Place a **Lock** device on the door panel. Make sure the light on the lock is blue — this indicates that it is successfully connected to the door.
-  4. Place a **Trigger** device in front of the door, and change the size to make sure it is wide enough to cover the entire ground in front of the double doors.
-  5. Customize the trigger so that it isn't visible in the game.
-[![](https://dev.epicgames.com/community/api/documentation/image/40fc087d-68a5-4cf2-8655-4b08b04cdedc?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/40fc087d-68a5-4cf2-8655-4b08b04cdedc?resizing_type=fit)
-  6. Place a second Trigger device away from the building. This trigger will close the door again after it is opened.
-  7. Customize the second trigger.
-[![](https://dev.epicgames.com/community/api/documentation/image/11f53415-d93b-478b-8833-7c73c2c05c1e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/11f53415-d93b-478b-8833-7c73c2c05c1e?resizing_type=fit)
-|
----|---
-Option |  Value
-Visible In Game |  Off
-Triggered by Player |  Off
-Trigger Delay |  2.0 Seconds
-Trigger VFX |  Off
-Trigger SFX |  Off
-  8. Configure the following **event** on the first trigger so that it opens the door and triggers the closing trigger when the player steps on it.
-[![](https://dev.epicgames.com/community/api/documentation/image/9e814725-f4d7-4196-a25d-46c881f3f780?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9e814725-f4d7-4196-a25d-46c881f3f780?resizing_type=fit)
-|  |
----|---|---
-Event |  Select Device |  Select Function
-On Triggered |  Lock Device |  Open
-On Triggered |  Close Trigger |  Trigger
-  9. Configure the following event on the closing trigger so that it closes the door after a delay.
-[![](https://dev.epicgames.com/community/api/documentation/image/82960535-18c0-4bbc-97be-78b6bd8c1b36?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/82960535-18c0-4bbc-97be-78b6bd8c1b36?resizing_type=fit)
-|  |
----|---|---
-Event |  Select Device |  Select Function
-On Triggered |  Lock Device |  Close
+![Tank Spawner Device](https://dev.epicgames.com/community/api/documentation/image/ada78096-5c16-450e-a308-5092c1124e43?resizing_type=fill&width=1920&height=335)
 
-You now have the basic functionality for an automatic door!
-###  Design Tip
-This simple functionality can be extended in many ways. If you want players to open the door from either side, place another trigger on the inside of the door and configure it the same way as the first.
-You can also connect other devices to a trigger. For example, you could set an alarm to go off if a player goes somewhere they shouldn't!
-##  Random Loadout
-Triggers can be activated by sequencers like the **Random Number Generator** device. Combining a trigger with a random number generator provides a way to grant a player a random loadout!
-###  Devices Used
-  * 4 x Trigger devices
-  * 1 x Player Spawner device
-  * 1 x [Random Number Generator](https://dev.epicgames.com/documentation/fortnite/using-random-number-generator-devices-in-fortnite-creative) device
-  * 4 x [Item Granter](https://dev.epicgames.com/documentation/fortnite/using-item-granter-devices-in-fortnite-creative) devices
-  * 1 x [Button ](https://dev.epicgames.com/documentation/fortnite/using-button-devices-in-fortnite-creative)device
+The **Tank** is a heavy-weight vehicle with 2 turrets and room for up to 3 players. [Place](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#place) a tank in a specific location and orientation to create the ultimate experience. This vehicle has unique features, such as:
 
-###  Set Up the Devices
-  1. Place a **Player Spawner** device.
-  2. Place a **Random Number Generator** device.
-  3. Customize the device.
-[![](https://dev.epicgames.com/community/api/documentation/image/df29b551-5689-4471-bffb-c9cd1747e862?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/df29b551-5689-4471-bffb-c9cd1747e862?resizing_type=fit)
-|
----|---
-Option |  Value
-Value Limit 2 |  4
-Roll Time |  Instant
-Zone Direction |  Forward
-Visible During Game |  No
-Play Audio |  Off
-  4. Place a **Trigger** device inside the first tile that extends out from the Random Number Generator device.
-[![](https://dev.epicgames.com/community/api/documentation/image/b2a1674c-9c31-4e63-945a-7f3fa0529176?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b2a1674c-9c31-4e63-945a-7f3fa0529176?resizing_type=fit)
-  5. Customize the trigger.
-[![](https://dev.epicgames.com/community/api/documentation/image/840e6d0e-548f-4773-a42f-879ea5fb840d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/840e6d0e-548f-4773-a42f-879ea5fb840d?resizing_type=fit)
-|
----|---
-Option |  Value
-Visible In Game |  Off
-Triggered by Player |  Off
-Trigger VFX |  Off
-Trigger SFX |  Off
-  6. Place an **Item Granter** device next to the random number generator. Register a **Combat Shotgun** to the device
-  7. Configure the following event on the trigger so that it triggers the item granter to grant the player the Combat Shotgun when triggered.
-[![](https://dev.epicgames.com/community/api/documentation/image/035a9eaa-4fe3-40f6-8b40-c917fc61d2e7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/035a9eaa-4fe3-40f6-8b40-c917fc61d2e7?resizing_type=fit)
-|  |
----|---|---
-Event |  Select Device |  Select Function
-On Triggered |  Item Granter 1 |  Grant Item
-  8. Duplicate the **Trigger** and **Item Granter** devices three more times, placing each in each of the sequencer zones of the random number generator. **Copy both devices at the same time to preserve the events bound between them.**
-  9. Update the three new item granters to have a **Combat Assault Rifle** , **Combat SMG** , and **Bolt Action Sniper Rifle** registered respectively.
-  10. Place a **Button** device and customize.
-[![](https://dev.epicgames.com/community/api/documentation/image/08595059-cc8b-4297-a079-78193085b9fd?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/08595059-cc8b-4297-a079-78193085b9fd?resizing_type=fit)
-|
----|---
-Option |  Value
-Interaction Text |  Grant New Loadout
-  11. Configure the following event on the **Button** device so that it starts the **Random Number Generator** device and gives the player a new loadout when activated.
-[![](https://dev.epicgames.com/community/api/documentation/image/ff65712e-af71-45eb-b26b-90fcd6ae76c2?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ff65712e-af71-45eb-b26b-90fcd6ae76c2?resizing_type=fit)
-|  |
----|---|---
-Event |  Select Device |  Select Function
-On Interact |  Random Number Generator |  Activate
+- Infrared zoom on the main turret scope.
+- Easily destroys buildings and vegetation.
+- Damages smaller vehicles (boats, cars, etc.).
+- Interacts with the Fuel Pump device for refueling.
 
-You now have the basic functionality for a random loadout system!
-###  Design Tip
-Another way to trigger the system is to configure the Random Number Generator device to activate at the start of the game, giving each player a random starting weapon.
-Think about how you could set up the system as an unlockable upgrade in which the player can re-roll their loadout!
-##  Build a Surfboard Time Trial
-The Trigger device can be activated by objects other than players, such as projectiles, creatures, and vehicles. In this example, you’ll use triggers to create a speed course for a surfboard. Yes, a surfboard!
-###  Devices Used
-  * 6 x Trigger devices
-  * 1 x Player Spawner device
-  * 1 x [Surfboard Spawner](https://dev.epicgames.com/documentation/fortnite/using-surfboard-spawner-devices-in-fortnite-creative) device
-  * 5 x [Prop Manipulator](https://dev.epicgames.com/documentation/fortnite/using-surfboard-spawner-devices-in-fortnite-creative) devices
-  * 5 x [VFX Spawner](https://dev.epicgames.com/documentation/fortnite/using-vfx-spawner-devices-in-fortnite-creative) devices
-  * 1 x [Timer ](https://dev.epicgames.com/documentation/fortnite/using-timer-devices-in-fortnite-creative)device
-  * 1 x [End Game](https://dev.epicgames.com/documentation/fortnite/using-end-game-devices-in-fortnite-creative) device
+For help on how to find the **Tank Spawner** device, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
 
-###  Set Up the Basic Gameplay
-  1. Begin with the **Archipelago Island** starter island.
-  2. Place a **Player Spawner** device on one of the islands.
-  3. Customize the player spawner so it isn't visible in-game.
-[![](https://dev.epicgames.com/community/api/documentation/image/4ad25a17-4a6b-4a10-af79-8f4572f218ea?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4ad25a17-4a6b-4a10-af79-8f4572f218ea?resizing_type=fit)
-  4. Place a **Surfboard Spawner** device and customize.
-[![](https://dev.epicgames.com/community/api/documentation/image/14e00b38-e6cd-49c7-a1c7-39c2027240cc?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/14e00b38-e6cd-49c7-a1c7-39c2027240cc?resizing_type=fit)
-|
----|---
-Option |  Value
-Visible During Game |  Off
-Vehicle Indestructible |  On
+If you're using multiple copies of a device on an island, it can be useful to [rename](https://dev.epicgames.com/documentation/en-us/fortnite-creative/rename-a-device) them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the [Event Browser](https://dev.epicgames.com/documentation/fortnite/event-browser-in-fortnite-creative).
 
-###  Configure the Checkpoint Zones
-  1. Place a **Square Frame** from the **Reactive Trim** Gallery.
-  2. Place a **Trigger** device inside the frame, resizing it to cover the inside of the frame as completely as possible.
-[![](https://dev.epicgames.com/community/api/documentation/image/26d189a8-f5d2-407d-9253-41a6d90fafca?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/26d189a8-f5d2-407d-9253-41a6d90fafca?resizing_type=fit)
-  3. Customize the trigger.
-[![](https://dev.epicgames.com/community/api/documentation/image/90a54815-e456-418f-b27a-3e00aa13ccc5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/90a54815-e456-418f-b27a-3e00aa13ccc5?resizing_type=fit)
-|
----|---
-Option |  Value
-Visible In Game |  Off
-Times Can Trigger |  1
-Trigger VFX |  Off
-Trigger SFX |  Off
-  4. Place a **Prop Manipulator** device and connect to the frame.
-  5. Place a **VFX Spawner** device in the center of the frame.
-  6. Customize the VFX spawner.
-[![](https://dev.epicgames.com/community/api/documentation/image/1ccb357e-ee1f-4d6e-9194-bd1af83271b9?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1ccb357e-ee1f-4d6e-9194-bd1af83271b9?resizing_type=fit)
-|
----|---
-Option |  Value
-Effect Type |  Burst
-Burst Visual Effect |  Explosion Electrical
-  7. Configure the following event on the trigger so that it hides the frame and triggers the visual effects when the player goes through it on the surfboard.
-[![](https://dev.epicgames.com/community/api/documentation/image/6fd4f992-e988-4a18-96f1-a54582910e1c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6fd4f992-e988-4a18-96f1-a54582910e1c?resizing_type=fit)
-|  |
----|---|---
-Event |  Select Device |  Select Function
-On Triggered |  VFX Spawner |  Restart
-On Triggered |  Prop Manipulator |  Hide Props
+## Removing the Device
 
-###  Set Up the Game End
-  1. Place a **Timer** device.
-  2. Customize the timer.
-[![](https://dev.epicgames.com/community/api/documentation/image/8ebb6ae6-f7d8-4650-8fd6-5bd32417c320?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8ebb6ae6-f7d8-4650-8fd6-5bd32417c320?resizing_type=fit)
-|
----|---
-Option |  Value
-Start at Game Start |  On
-Can Interact |  No
-Success on Timer End |  False
-Visible During Game |  Hidden
-Timer Color |  White
-Timer Running Text |  Ride through all zones in…
-  3. Place an **End Game** device in an area that the player can’t see.
-  4. Place another trigger and customize it.
-[![](https://dev.epicgames.com/community/api/documentation/image/72bcb584-a545-4e32-9207-e6736f67f293?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/72bcb584-a545-4e32-9207-e6736f67f293?resizing_type=fit)
-|
----|---
-Option |  Value
-Visible In Game |  Off
-Triggered by Player |  Off
-Triggered by Vehicles |  Off
-Transmit Every X Triggers |  5
-  5. Configure the following functions on the **Game End Trigger** device so that each trigger triggers it.
-[![](https://dev.epicgames.com/community/api/documentation/image/571cbbd8-6fdd-46a7-85a3-b4446cbda335?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/571cbbd8-6fdd-46a7-85a3-b4446cbda335?resizing_type=fit)
-|  |
----|---|---
-Function |  Select Device |  Select Event
-Trigger When Receiving From |  Trigger1-5 |  On Triggered
-  6. Configure the following events on the **Game End Trigger** device to stop the timer and end the game when the player completes the challenge.
-[![](https://dev.epicgames.com/community/api/documentation/image/9e187dd8-e4d6-4e78-9751-88adc5d0b56f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9e187dd8-e4d6-4e78-9751-88adc5d0b56f?resizing_type=fit)
-|  |
----|---|---
-Event |  Select Device |  Select Function
-On Triggered |  End Game Device |  Activate
-On Triggered |  Timer Device |  Pause
+You can remove this device by aiming at the device with your phone and pressing ****X****. Doing so will cause both the device and the foundation where it’s attached to be removed.
 
-You now have a working surfboard time trial!
-###  Design Tip
-The **Race Checkpoint** devices can produce a similar effect to this mechanic, but they are more specialized for races in which the player must go through checkpoints in a specific order.
-For this example, a custom trigger used with another trigger that tracks progress through a checkpoint works better.
+You can remove the device by destroying the foundation piece it is attached to.
+
+## Device Options
+
+This device has the basic function of being visible in-game or not. Additionally, there are some advanced options, like saving a player’s shield and health data.
+
+You can configure this device with the following options.
+
+Default values are **bold**.
+
+### Basic Options
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Visible During Game** | **On**, Off | Determines whether the device is visible during the game. This does affect its collision properties. |
+
+### All Options (Additional)
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Enabled During Phase** | **All**, None, Pre-Game Only, Gameplay Only | Determines the game [phases](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#game-phase) during which the device will be enabled. Pre-Game includes all phases prior to the Game starting (the waiting for players lobby on Featured Islands and the Game Start Countdown). |
+| **Respawn Time** | **Instant**, Never, Pick a Time | Respawns a vehicle that's been destroyed after a selected delay (the first vehicle spawned does not use this delay). |
+| **Respawn Vehicle When Enabled** | **Yes**, No, Only If Needed | If this is set to Yes, a vehicle will spawn when the device is enabled. “Only if needed” will not reset an existing vehicle. |
+| **Destroy Vehicle When Disabled** | **Yes**, No | Destroys a spawned vehicle when the spawner is disabled. |
+| **Owning Team** | **Any**, Pick a Team | Sets the team the device belongs to. |
+| **Selected Class** | **None**, Any, No Class, Pick a Number | Determines what class can use this vehicle.  Values for this option are:   - **None**: All players, including players with no class assigned, can use the vehicle. - **Any**: Any player with a class assigned can use the vehicle. - **No Class**: Only players with no class assigned can use the vehicle. - **Pick a class**: Pick a [class identifier](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#class-identifier); only players assigned that class can use the vehicle. |
+| **Vehicle Health** | **2500 (Default)**, Indestructible, Pick a Number | Determines how much damage the vehicle can take before it is destroyed. |
+| **Fuel Consumption** | **Has Infinite Fuel**, *Uses Fuel* | Determines if the spawned vehicle uses fuel. |
+| **Starting Fuel** | **Random**, Pick a percentage | Sets the percentage of fuel in the vehicle's fuel tank at spawn. "Random" will spawn the vehicle with a percentage of fuel between 25% and 80%. |
+| **Fuel Use** | Slow, **Normal**, Fast | Controls how quickly the vehicle will use fuel while driving. |
+| **Water Destruction Delay** | **5 Seconds**, Never, Instant, Pick a Time | When the vehicle becomes too deep in water to drive, destroy it after this delay. |
+
+## Channels
+
+When one device needs to "talk" to another device, it does so by [transmitting](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) a [signal](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) on a specific [channel](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary). The receiving device needs to be set up to [receive](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#receive) the signal on the same channel.
+
+A channel is identified by a number, and channel numbers are customized for a device under the option that uses the channel. Most devices will also pass the identity of the player who [triggered](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#trigger) the device with the signal.
+
+This device has receivers that perform a variety of functions when receiving a signal over a channel. Also, this device can transmit signals when certain conditions are met.
+
+### Receivers
+
+Receivers listen for a channel and perform an action when they hear any device (including themselves) send a signal on that channel.
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Assigns Driver When Receiving From** | **No Channel**, Pick a Channel Number | Seats the player that instigated the message as the spawned vehicle’s driver. |
+| **Respawn Vehicle When Receiving From** | **No Channel**, Pick a Channel Number | Spawns the vehicle (destroying the existing vehicle if it still exists). |
+| **Destroy Vehicle When Receiving From** | **No Channel**, Pick a Channel Number | If the vehicle that this spawner created still exists, destroy it. |
+| **Enable When Receiving From** | **No Channel**, Pick a Channel Number | Enable the vehicle spawner, allowing it to spawn vehicles. |
+| **Disable When Receiving From** | **No Channel**, Pick a Channel Number | Disables the vehicle spawner, stopping it from spawning any more vehicles. |
+
+### Transmitters
+
+Transmitters send a signal on the selected channel when triggered.
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **When Player Enters Vehicle Transmit On** | **No Channel**, Pick a Channel Number | Transmit a signal when a player enters the spawned vehicle. |
+| **When Player Exits the Vehicle Transmit On** | **No Channel**, Pick a Channel Number | Transmit a signal when a player exits the spawned vehicle. |
+| **When Vehicle Spawns Transmit On** | **No Channel**, Pick a Channel Number | Transmits a signal when a vehicle is spawned or respawns. |
+| **When Vehicle Is Destroyed Transmit On** | **No Channel**, Pick a Channel Number | Transmits a signal when a vehicle is destroyed. |

@@ -1,15 +1,102 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-starter-02-defining-boards-for-the-game-in-unreal-editor-for-fortnite
 
-# Material Effects
-Learn about different effects for materials in UEFN.
-![Material Effects](https://dev.epicgames.com/community/api/documentation/image/7e0351f2-647d-45e9-a5db-78c7672cc669?resizing_type=fill&width=1920&height=335)
-Learn about ways that you can create different effects for materials, like animation, lighting, and slicing.
-  * [![Dynamic Movement](https://dev.epicgames.com/community/api/documentation/image/0184ff75-6254-4312-a729-7d32037d6d7a?resizing_type=fit&width=640&height=640) Dynamic Movement Learn how to create Materials and textures to enrich your island experience. ](https://dev.epicgames.com/documentation/fortnite/create-dynamic-movement-in-unreal-editor-for-fortnite)
-  * [![Interactive Materials](https://dev.epicgames.com/community/api/documentation/image/0bca7d7b-44f4-435b-9004-193a8b20f4b8?resizing_type=fit&width=640&height=640) Interactive Materials Learn how to create an interactive material that reacts to other meshes and the environment. ](https://dev.epicgames.com/documentation/fortnite/create-interactive-materials-in-unreal-editor-for-fortnite)
-  * [![Light Effects](https://dev.epicgames.com/community/api/documentation/image/5660941b-a02a-4b5d-8a2f-f38f0a79c3e9?resizing_type=fit&width=640&height=640) Light Effects Learn how to create a pulsing light effect with materials. ](https://dev.epicgames.com/documentation/fortnite/create-light-effects-in-unreal-editor-for-fortnite)
-  * [![Moving UVs](https://dev.epicgames.com/community/api/documentation/image/18749b18-d3d3-4b8a-b9f0-a9e62e78a097?resizing_type=fit&width=640&height=640) Moving UVs Learn how to create a material that seems to move by manipulating its UV coordinates. ](https://dev.epicgames.com/documentation/fortnite/create-moving-uvs-in-unreal-editor-for-fortnite)
-  * [![Moving Textures](https://dev.epicgames.com/community/api/documentation/image/25162e1d-903e-409d-910f-41b0e811b842?resizing_type=fit&width=640&height=640) Moving Textures Learn how to create a material that moves across a mesh by targeting the world position of the texture. ](https://dev.epicgames.com/documentation/fortnite/moving-textures-in-unreal-editor-for-fortnite)
-  * [![Color-Changing Material](https://dev.epicgames.com/community/api/documentation/image/35796287-9d1e-4543-a87b-aa266352a634?resizing_type=fit&width=640&height=640) Color-Changing Material Use the Sine node to target the world position of a mesh and change its color. ](https://dev.epicgames.com/documentation/fortnite/colorchanging-material-in-unreal-editor-for-fortnite)
-  * [![Slicing Material Effect](https://dev.epicgames.com/community/api/documentation/image/0c752626-64d5-4c9d-9126-7a27e1c45d53?resizing_type=fit&width=640&height=640) Slicing Material Effect Learn how to create a material that slices through a mesh according to location data. ](https://dev.epicgames.com/documentation/fortnite/slicing-material-effect-in-unreal-editor-for-fortnite)
-  * [![Cut a Mesh in Half](https://dev.epicgames.com/community/api/documentation/image/80c3c0f4-143f-4595-89b6-7540cc24c62c?resizing_type=fit&width=640&height=640) Cut a Mesh in Half Learn how to create a material that cuts a mesh in half. ](https://dev.epicgames.com/documentation/fortnite/cutting-a-mesh-in-half-in-unreal-editor-for-fortnite)
-  * [![Animate Materials](https://dev.epicgames.com/community/api/documentation/image/38463471-1665-4f21-a8e1-9473e881532e?resizing_type=fit&width=640&height=640) Animate Materials Learn how to animate materials to create effects for a mesh's surface. ](https://dev.epicgames.com/documentation/fortnite/animate-materials-in-unreal-editor-for-fortnite)
+# 2. Defining Boards for the Game
+
+Create modular levels that you can customize in Unreal Editor for Fortnite using Verse.
+
+![2. Defining Boards for the Game](https://dev.epicgames.com/community/api/documentation/image/5ea12925-fe12-4557-8ef2-c3d09d0f5889?resizing_type=fill&width=1920&height=335)
+
+In the previous step, we created an NPC that can move forward, rotate left, and rotate right when it receives commands. Now in this step, we'll set up gameboards that the character can move around on.
+
+For this game, the gameboard needs to know and manage the following:
+
+- **Tile Size**: How big the tiles on the board are so the character knows how far to move.
+- **Camera**: What camera to use when the character reaches this gameboard. For this, we use the [Fixed Point Camera](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-fixed-point-camera-devices-in-fortnite-creative) device.
+- **Start Position**: The position where the character should start on the board. For this, we use a [Creative Prop](https://dev.epicgames.com/documentation/fortnite/converting-assets-into-props-in-unreal-editor-for-fortnite) so we can easily set it as an editable property and get its transform.
+- **End Goal**: The end goal for the character to progress towards which signals the end of the gameboard. For this, we use a [Trigger device](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-trigger-devices-in-fortnite-creative) that signals when the character steps on it.
+- **Obstacles**: Obstacles prevent the character from immediately reaching the end goal. These are explained in more detail in [Creating Obstacles](https://dev.epicgames.com/documentation/fortnite/verse-starter-02-defining-boards-for-the-game-in-unreal-editor-for-fortnite).
+
+Each of these are tracked in the gameboard's `class`. The class has the concrete specifier so it can be an editable property on a Verse device, and each class member has an editable attribute to be able to change their values from UEFN.
+
+Verse
+
+```
+# This class represents the gameboard and how it behaves.
+# This class has the concrete specifier so it can be an editable property on a Verse device.
+gameboard<public> := class<concrete>:
+
+    # The size of each tile on the gameboard. By default set to
+    # the default Fortnite tile size of 512x512x384.
+    @editable
+    TileSize<public>:vector3 = vector3{X:=512.0, Y:=512.0, Z:=384.0}
+
+    # The fixed point camera that provides a top-down view of the gameboard
+```
+
+Now that the gameboard is defined with its properties, let's add its behavior:
+
+- **Handling end goal**: When the gameboard is set up, we'll subscribe to the End Goal's `TriggeredEvent`. We use an event handler and a custom event to signal publicly that the end goal was reached when the trigger device is triggered by the character. For more details, check out [Coding Device Interactions](https://dev.epicgames.com/documentation/fortnite/coding-device-interactions-in-verse).
+- **Starting gameboard**: When it's the start of the gameboard, assign the Camera device to all players.
+- **Ending gameboard**: When it's the end of the gameboard, remove the Camera device from all players.
+
+The following is the complete class for `gameboard`:
+
+Verse
+
+```
+# This class represents the gameboard and how it behaves.
+# This class has the concrete specifier so it can be an editable property on a Verse device.
+gameboard<public> := class<concrete>:
+
+    # The size of each tile on the gameboard. By default set to
+    # the default Fortnite tile size of 512x512x384.
+    @editable
+    TileSize<public>:vector3 = vector3{X:=512.0, Y:=512.0, Z:=384.0}
+
+    # The fixed point camera that provides a top-down view of the gameboard
+```
+
+## Creating Obstacles
+
+Obstacles prevent the character from immediately reaching the end goal. We use Barrier devices as the obstacles in this game to block the character from moving, and Trigger devices that deactivate the barriers.
+
+Our definition of the `obstacle` class includes:
+
+- **IsObstaclePassed**: Data for storing whether the barriers are currently activated or deactivated. Logic type because there are only two states.
+- **Barriers**: [Barrier devices](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-barrier-devices-in-fortnite-creative) associated with the obstacle. This means you can have more than one barrier device attached to a trigger that deactivates them.
+- **BarrierDissolves**: [Cinematic sequences](https://dev.epicgames.com/documentation/fortnite/using-cinematic-sequence-device-in-unreal-editor-for-fortnite) to play when obstacles are passed.
+- **BarrierAppears**: [Cinematic sequences](https://dev.epicgames.com/documentation/fortnite/using-cinematic-sequence-device-in-unreal-editor-for-fortnite) to play when obstacles are reset.
+- **Trigger**: A [Trigger device](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-trigger-devices-in-fortnite-creative) for the character to reach to deactivate the obstacle.
+
+The following is the complete class for representing obstacles, and the class has the concrete specifier so it can be an editable property on a Verse device.
+
+Verse
+
+```
+# An obstacle on the gameboard, with an associated set of
+# Barrier devices, Trigger devices that deactivate the barriers,
+# and Cinematic Sequence devices that play sequences for barriers dissolving and appearing for visual feedback on what is happening.
+# This class has the concrete specifier so it can be an editable property on a Verse device.
+obstacle := class<concrete>:
+
+    # Data for storing whether barriers are currently enabled/disabled.
+    var IsObstaclePassed:logic = false
+
+    # The array of barriers for this obstacle.
+```
+
+## Adding Gameboards
+
+Now that the gameboard is defined, you can add an array of these gameboards to your Verse device, which you'll see later in [6. Managing the Game Loop](https://dev.epicgames.com/documentation/fortnite/verse-starter-06-managing-the-game-loop-for-in-unreal-editor-for-fortnite).
+
+To test out specific levels, you can reorder the boards so the level you want to test is the first in the list.
+
+## Next Step
+
+We've defined the gameboards and shown how to add as many as you want. In the next step, you'll learn how to design the boards to develop fun puzzles and work around limitations.
+
+- [![3. Designing Levels](https://dev.epicgames.com/community/api/documentation/image/19ab3795-416b-4ebf-a49b-4f92d594909b?resizing_type=fit&width=640&height=640)
+
+  3. Designing Levels
+
+  Learn how to design levels for a top-down camera and controlling a character through commands.](https://dev.epicgames.com/documentation/fortnite/verse-starter-03-designing-levels-for-in-unreal-editor-for-fortnite)

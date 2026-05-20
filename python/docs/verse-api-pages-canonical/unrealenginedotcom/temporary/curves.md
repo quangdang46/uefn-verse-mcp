@@ -1,7 +1,17 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/curves
 
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+# Curves module
 
-**Session ID** : 9dfa4678dba2ddfb
-**IP Address** : 14.191.95.176
+Learn technical details about the Curves module.
+
+Module import path: /UnrealEngine.com/Temporary/Curves
+
+- [`UnrealEngine.com`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom)
+- [`Temporary`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/temporary)
+- **`Curves`**
+
+## Classes and Structs
+
+| Name | Description |
+| --- | --- |
+| [`editable_curve`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/temporary/curves/editable_curve) |  |

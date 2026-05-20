@@ -1,7 +1,23 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/scenegraph/collisionchannels
 
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+# CollisionChannels module
 
-**Session ID** : 9dfa497cae6e0984
-**IP Address** : 14.191.89.252
+Learn technical details about the CollisionChannels module.
+
+Module import path: /Verse.org/SceneGraph/CollisionChannels
+The set of built-in collision_channels. This is a closed set for now.
+
+- [`Verse.org`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg)
+- [`SceneGraph`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph)
+- **`CollisionChannels`**
+
+## Classes and Structs
+
+| Name | Description |
+| --- | --- |
+| [`stationary`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/collisionchannels/stationary) |  |
+| [`dynamic`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/collisionchannels/dynamic) |  |
+| [`avatar`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/collisionchannels/avatar) |  |
+| [`visibility`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/collisionchannels/visibility) |  |
+| [`camera`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/collisionchannels/camera) |  |
+| [`physics`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/collisionchannels/physics) |  |

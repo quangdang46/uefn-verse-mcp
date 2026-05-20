@@ -1,83 +1,89 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-trigger-devices-in-fortnite-creative
 
-# Volume Devices
-Use the Volume to create large areas where events can be triggered upon entering or exiting.
-![Volume Devices](https://dev.epicgames.com/community/api/documentation/image/8a639279-f1c2-4486-b664-9d0a17db53fc?resizing_type=fill&width=1920&height=335)
-Have you ever wanted to trigger specific devices or events for a whole area of your island? The **Volume** device is designed to help you do that. As a customizable and nestable [volume](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#volume), you can size and place multiple volumes that can trigger events or functions when a player, vehicle, creature, wildlife animal, or guard enters or leaves that volume.
-There are lots of ways to use this device, but they work particularly well with the **Fixed Point Camera** , **Fixed Angle Camera** , and **Third Person Controls** devices. See [Designing with Cameras and Controls](https://dev.epicgames.com/documentation/fortnite/designing-with-cameras-and-controls-in-fortnite-creative) for more examples for how to use this device with camera and controls devices.
-**Looking for a spark of creative freedom?** See [](https://dev.epicgames.com/documentation/fortnite/down-but-not-out-device-design-example-in-fortnite-creative)**[Down But Not Out Device Design Example](https://dev.epicgames.com/documentation/fortnite/down-but-not-out-device-design-examples-in-fortnite-creative)** to liberate your imagination!
-To find the Volume device, go to the Content Browser and select the **Devices** category. From there you can search or browse for the device. For more information on finding devices see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
-##  Device Options
-You can configure this device with the following options.
-Default values are **bold**. Values that trigger contextual filtering are _italic_.
-Option  |  Value  |  Description
----|---|---
-**Visible in Game** |  On, **Off** |  Determines whether the volume is visible during the game.
-**Selected Team** |  **Any** , Pick or enter a team |  Determines which team is affected by the volume.
-**Invert Team Selection** |  On, **Off** |  Determines if all teams except the selected team are affected by the volume.
-**Selected Class** |  **Any** , Pick or enter a class |  Determines which class is affected by the volume.
-**Invert Class Selection** |  On, **Off** |  Determines if all classes except the selected class are affected by the volume.
-**Volume Shape** |  **Box** , _Cylinder_ , _Sphere_ |  Determines the shape of the volume. When you select either **Cylinde** r or **Sphere** , the **Volume Radius** option becomes available.
-**Volume Width** |  **1.0** , Pick or enter an amount |  Determines the width of the volume, in tiles.
-**Volume Depth** |  **1.0** , Pick or enter an amount |  Determines the depth of the volume, in tiles.
-**Volume Height** |  **1.0** , Pick or enter an amount |  Determines the height of the volume, in tiles.
-**Volume Radius** |  **1.0** , Pick or enter an amount  |  This option is only available if the **Volume Shape** option is set to **Cylinder** or **Sphere**. Determines the radius of the volume, in tiles.
-**Player Events Enabled** |  **On** , Off |  Determines if players trigger enter and exit events.
-**Vehicle Events Enabled** |  **On** , Off |  Determines if vehicles trigger enter and exit events.
-**External Volume** |  **None** , Select an external volume |  Provides a way to use a volume other than the default volume.
-**Creature and Wildlife Events Enabled** |  **On** , Off |  Determines if creatures and wildlife trigger enter and exit events.
-**Guard Events Enabled** |  **On** , Off |  Determines if guards trigger enter and exit events.
-###  Additional UEFN Options
-When you use this device in UEFN, additional user options are available.
-Option  |  Value  |  Description
----|---|---
-**Custom Volume Mesh** |  Select a volume mesh |  Assigns a custom mesh for the volume to use, rather than a shape.
-###  Physics-Enabled Options
-The following options become available when the [Physics](https://dev.epicgames.com/documentation/fortnite/physics) feature is enabled in a project:
-Option  |  Value  |  Description
----|---|---
-**Physics Events Enabled** |  **On** , Off  |  Determines whether the volume triggered physics entered and exit events.
-##  Direct Event Binding
-[Direct event binding ](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#direct-event-binding) allows devices to communicate directly, which makes your workflow more intuitive, and gives you more freedom to focus on your design ideas.
-Below are the functions and events for this device.
-###  Functions
-This device has no functions.
-###  Events
-An [event](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#event) tells another device when to perform a function. In UEFN, events are not editable. In Creative, follow these steps to set an event.
-  1. For any event, click the **option** , then **Select Device** to access and select from the **Device** dropdown menu.
-  2. Once you've selected a device, click **Select Function** to bind the device to a function for that device.
-  3. If more than one device is affected by the event, press the **Add** button to add a line and repeat these steps.
+# Trigger Devices
 
-Option  |  Description
----|---
-**On Enter Send Event To** |  When a valid entity enters the volume, an event is sent to the selected device, which triggers the selected function.
-**On Exit Send Event To** |  When a valid entity exits the volume, an event is sent to the selected device, which triggers the selected function.
-**On Physics Enter** |  When a physics prop enters the volume, an event is sent to the selected device, which triggers the selected function.
-**On Physics Exit** |  When a physics prop exits the volume, an event is sent to the selected device, which triggers the selected function.
-##  Using Volume Devices In Verse
-You can use the code below to control a Volume device in Verse. This code shows how to use events and functions in the Volume device API. Modify it to fit the needs of your experience.
-Verse
-```
-using { /Fortnite.com/Devices }
-using { /UnrealEngine.com/Temporary/Diagnostics }
-using { /Verse.org/Simulation }
+This configurable device can be used to relay signals to other devices.
 
-# A Verse-authored creative device that can be placed in a level
-volume_device_verse_example := class(creative_device):
+![Trigger Devices](https://dev.epicgames.com/community/api/documentation/image/4ef0ca7d-07e0-4b46-b299-389ae55dc992?resizing_type=fill&width=1920&height=335)
 
-    # Reference to the Volume device in the level.
-    # In the Details panel for this Verse device,
-    # set this property to your Volume device.
+When a **Trigger** device is triggered by a player, vehicle or [sequencer](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary), it can send a signal to another device that will initiate a specific action.
 
-```
+This device can be used with other devices, or alone.
 
-Copy full snippet(30 lines long)
-To use this code in your UEFN experience, follow these steps.
-  1. Drag a Volume device onto your island.
-  2. Create a new Verse device named **volume_device_verse_example**. See [Create Your Own Device Using Verse](https://dev.epicgames.com/documentation/fortnite/create-your-own-device-using-verse-in-unreal-editor-for-fortnite) for steps.
-  3. In Visual Studio Code, open **volume_device_verse_example.verse** in Visual Studio Code and paste the code above.
-  4. Before you can drag your Verse device into the level, you have to compile your code. In the Menu Bar, go to Verse > Build Verse Code.
-  5. Save your project and click **Launch Session** to playtest.
+For help on how to find the **Trigger** device, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
 
-###  Volume Device Verse API
-See the [`volume_device` API Reference](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/volume_device) for more information on using the Volume device in Verse.
+## Device Options
+
+In its default state, the trigger is set to be activated by any player, vehicle, or Sequencer. Its trigger effect is to play a sound, and by default it is not set up to trigger on a channel. However, all of this can be configured with the following options.
+
+Default values are **bold**.
+
+### Basic Options
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Trigger Sound** | **Enabled**, Disabled | Determines whether a sound is played when the device is triggered. |
+| **Visible in Game** | **Yes**, No | Determines whether the device is visible during the game. |
+
+### All Options (Additional)
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Activating Team** | **Any**, Pick a team | Can only be activated by this team. |
+| **Activating Class** | No Class, **Any**, Pick a class | Determines which [class](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#class) can activate the device. |
+| **Invert Class Selection** | On, **Off** | If set, the device will count all but the selected class. |
+| **Triggered by Player** | **On**, Off | Determines whether to trigger this channel when the player gets within the proximity of the device. |
+| **Triggered by Damage** | **Off**, On | Determines whether to trigger this channel when the object is damaged. |
+| **Triggered by Items** | **Off**, On | Determines whether to activate the trigger when an item hits it. This includes dropped items and projectiles. |
+| **Triggered by Vehicles** | **On**, Off | Determines whether to activate the trigger when a Vehicles gets within proximity of the device. |
+| **Triggered by Creatures** | On, **Off** | Determines whether or not to trigger this channel when a Creature or Wildlife gets within proximity of the device. |
+| **Triggered by Sequencers** | **On**, Off | Determines whether to activate the trigger when it is touched by Sequencer or RNG device pulse. |
+| **Triggered by Water** | **On**, Off | Determines whether or not to activate the trigger when it is touched by a Water device. |
+| **Triggered by Carryable Objects** | On, **Off** | Determines whether or not carriable objects activate the trigger. |
+| **Activate on Game Phase** | **None**, Game Countdown, Game Start | Sets the device to activate in the selected game phase. |
+| **Times Can Trigger** | **Off**, On, Pick a number | The number of times this device can trigger before being disabled. |
+| **Trigger Delay** | Pick a time interval | Determines the length of time the device will wait between being triggered and sending a signal. |
+| **Transmit Every X Triggers** | **1**, Pick a number | Sets the device to only send a signal after being triggered the specified number of times. |
+| **Reset Delay** | **None**, Pick a length of time | Specifies the length of time the device must wait after sending a signal before it can be triggered again. |
+| **Trigger Sound** | Disabled, **Enabled** | Determines whether a sound is played when the device is triggered. |
+| **Delayed Trigger Instigator Choice** | First, **Last**, Queue | Determines what happens when another player activates this trigger after it has already been activated and is waiting on a delay.  **First** will always send the first player that triggered this trigger.  **Last** will always send the most recent player that triggered the trigger.  **Queue** will send all players that have triggered this trigger from first to last. |
+| **Receive Damage While Invisible** | **Do Not Take Damage**, Take Damage | Determines whether this object will take damage while it is hidden in a game. This will block projectiles from hitting things behind it. |
+| **Enabled on Game Start** | **On**, Off | Determines whether the device is enabled when the game starts. |
+
+### Physics-Enabled Options
+
+The following options become available when [Physics](https://dev.epicgames.com/documentation/fortnite/physics) are enabled in a project:
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Triggered by Physics Props** | On, **Off** | Determines whether to trigger events when a physics prop gets within range of the device. |
+
+## Direct Event Binding
+
+Following are the direct event binding options for this device.
+
+### Functions
+
+A [function](https://dev.epicgames.com/documentation/en-us/fortnite-creative/function) listens for an event on a device, and then performs an action.
+
+| Option | Description |
+| --- | --- |
+| **Enable** | Enables the device. |
+| **Disable** | Disables the device. |
+| **Reset Times Triggered** | Resets the number of times the Trigger has been activated. |
+| **Trigger** | Activates the trigger. |
+
+### Events
+
+An [event](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#event) tells another device when to perform a function.
+
+| Option | Description |
+| --- | --- |
+| **On Triggered** | Sends an event to linked devices when the Trigger is activated. |
+
+## Gameplay Examples Using Triggers
+
+- [Color Switch Challenge](color-switch-challenge-in-fortnite-creative)
+- [Loo Roll Rush](loo-roll-rush-in-fortnite-creative)
+- [Storm Wars](https://dev.epicgames.com/documentation/fortnite/storm-wars-in-fortnite-creative)
+- [Timed Door](timed-door-in-fortnite-creative)

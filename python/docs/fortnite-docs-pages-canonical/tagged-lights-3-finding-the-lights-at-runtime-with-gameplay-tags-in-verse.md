@@ -1,84 +1,265 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/tagged-lights-3-finding-the-lights-at-runtime-with-gameplay-tags-in-verse
 
-# Import from Fab
-Learn how to import assets from Fab directly in Unreal Editor for Fortnite.
-![Import from Fab](https://dev.epicgames.com/community/api/documentation/image/d87f9e3a-f6a7-4d14-8a4b-519a8842fcaf?resizing_type=fill&width=1920&height=335)
-Unreal Editor for Fortnite (UEFN) has a [Fab](https://dev.epicgames.com/documentation/fab/fab-documentation) integration that provides direct access to Fab where you can import third party assets into your UEFN projects to create a truly unique island. Browse the different asset categories to find the perfect custom assets for your island.
-Browse assets in Fab from the Epic Games launcher before opening UEFN. For more information, see **[Exporting Assets from Fab in Launcher](https://dev.epicgames.com/documentation/fab/exporting-assets-from-fab-in-launcher)**.
-Assets compatible with UEFN and Fortnite Creative are curated and modified to work with Fortnite islands. Look for the **UEFN** tag in [Included formats](https://dev.epicgames.com/documentation/fortnite/fab-user-interface-reference-in-unreal-editor-for-fortnite#product-preview) when browsing Fab. Fab is available from the **Window** menu or by clicking the **Fab** button in the [Content Browser](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#content-browser).
-[![You can open Fab from the Window menu.](https://dev.epicgames.com/community/api/documentation/image/f1bd1d8b-e5a8-4167-b17d-2e2b69aecfd6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f1bd1d8b-e5a8-4167-b17d-2e2b69aecfd6?resizing_type=fit) Click to enlarge image.
-[![You can open Fab from the Content Browser by clicking the Fab button.](https://dev.epicgames.com/community/api/documentation/image/705c54b4-0999-437c-971e-b33e1c981667?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/705c54b4-0999-437c-971e-b33e1c981667?resizing_type=fit) Click to enlarge image.
-You can dock the Fab window into the UEFN interface.
-If you don’t have Fab in the **Window** options list, an [end user license agreement](https://www.fab.com/eula) opens in a popup. You must accept all the terms and conditions to get the Fab entitlements and to continue on to Fab.
-##  Browsing Custom Assets
-Use the [Fab UI](https://dev.epicgames.com/documentation/fortnite/fab-user-interface-reference-in-unreal-editor-for-fortnite) to navigate through the thousands of assets available. To view a larger selection of assets, toggle the [Include 3D compatible formats](https://dev.epicgames.com/documentation/fortnite/fab-user-interface-reference-in-unreal-editor-for-fortnite#navigation-controls) button.
-  * Assets have a unique look and feel, and are optimized to work in Fortnite while running on different platforms. Assets are free of advertisements and promotional material.
-  * Adding these customized pieces and packs to your project makes your island stand out because they aren’t Fortnite assets.
+# 3. Finding the Lights at Runtime with Verse Tags
 
-When using 3D models from Fab, be aware that some require a lot of memory and may not perform well on some platforms.
-##  Importing Fab Assets
-Follow the instructions below to import an asset into UEFN.
-  1. Click **Window** > **Fab** from the menu bar. The Fab window opens.
-  2. Select an **asset tile**.
-[![An example of an asset tile in Fab.](https://dev.epicgames.com/community/api/documentation/image/170d9a22-c7e4-4990-92b1-9ae4180da14b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/170d9a22-c7e4-4990-92b1-9ae4180da14b?resizing_type=fit) Click to enlarge image.
-  3. Select a **[License](https://dev.epicgames.com/documentation/fortnite/import-from-fab-in-unreal-editor-for-fortnite#license-types)** from the License dropdown.
-[![You must select a License type before you can purchase a Fab asset.](https://dev.epicgames.com/community/api/documentation/image/56ae6900-4dec-4437-8ef8-05b6f217cc66?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/56ae6900-4dec-4437-8ef8-05b6f217cc66?resizing_type=fit) Click to enlarge image.
-  4. Click the **Buy Now** button to [purchase an asset](https://dev.epicgames.com/documentation/fab/purchasing-and-downloading-assets-in-fab) and add it to your files in the Content Browser.
-[![Click the Buy Now button to purchase an asset and add it to your files in the Content Browser.](https://dev.epicgames.com/community/api/documentation/image/24755a9e-f3b7-4d38-b953-5e066e98e05b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/24755a9e-f3b7-4d38-b953-5e066e98e05b?resizing_type=fit) Click to enlarge image.
-  5. If the asset is free, click **Add to Content Browser** to add the asset to your files in the Content Browser.
-[![If the asset is free, click Add to Content Browser to add the asset to your files in the Content Browser.](https://dev.epicgames.com/community/api/documentation/image/b97b8bf2-80c1-428d-b9a9-137312887efb?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b97b8bf2-80c1-428d-b9a9-137312887efb?resizing_type=fit) Click to enlarge image.
+Create a puzzle where the player has to find the right combination of lights on and off to spawn an item, using a device created with Verse.
 
-Imported assets appear in the **Content Browser** under the **main project folder** in a new folder entitled, **Referenced Content**.
-[![Imported assets appear in the Content Browser under the main project folder in a new folder entitled, Referenced Content.](https://dev.epicgames.com/community/api/documentation/image/d137e7f4-2955-48e9-8b46-0f51fbf5f04e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d137e7f4-2955-48e9-8b46-0f51fbf5f04e?resizing_type=fit) Click to enlarge image.
-Some Fab assets have an option to select [Modifiable Content](https://dev.epicgames.com/documentation/fortnite/import-from-fab-in-unreal-editor-for-fortnite#using-modifiable-content).
-For information about selling your creations on Fab, see [Publishing Assets for Sale](https://dev.epicgames.com/documentation/fab/publishing-assets-for-sale-or-free-download-in-fab).
-###  Referenced Content
-**Referenced content** refers to assets that are compatible with UEFN and Fortnite . These assets can be used in UEFN projects by using a [Verse path](https://dev.epicgames.com/documentation/fortnite/import-from-fab-in-unreal-editor-for-fortnite#verse-path) to reference assets imported from Fab in Verse code.
-[![The asset description contains information important to the referenced content.](https://dev.epicgames.com/community/api/documentation/image/b72a2704-2f67-4e8b-94e5-68a8db39adb2?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b72a2704-2f67-4e8b-94e5-68a8db39adb2?resizing_type=fit) Click to enlarge image.
-When purchasing an asset through Fab, the **[Included formats](https://dev.epicgames.com/documentation/fortnite/fab-user-interface-reference-in-unreal-editor-for-fortnite#product-preview)** section provides asset update information as well as UEFN compatibility data, such as:
-  * The collision ready status.
-  * Optimization for Fortnite vertex, materials, and textures.
-  * Scale of the asset in [Fortnite units](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#unreal-units).
+![3. Finding the Lights at Runtime with Verse Tags](https://dev.epicgames.com/community/api/documentation/image/c1055196-5dd0-4498-b97e-4f736c63bd79?resizing_type=fill&width=1920&height=335)
 
-The benefits of using a referenced asset are:
-  * Faster moderation times.
-  * Your asset is always current with the latest version from its asset developer.
-  * Reduced disk space and cook times.
+###### Prerequisite topics
 
-###  Verse Path
-A [Verse path](https://dev.epicgames.com/documentation/fortnite/verse-glossary#path) is the global namespace for identifying your Fab assets. These paths are persistent, unique, and discoverable by any Verse programmer.
-[![Assets can be referenced through their Verse path.](https://dev.epicgames.com/community/api/documentation/image/571630b5-4c93-47e9-b8e7-32752181994e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/571630b5-4c93-47e9-b8e7-32752181994e?resizing_type=fit) Click to enlarge image.
-Exposing your Fab assets to Verse provides a way to use them from your Verse code to create unique gameplay or events. Adding assets using their Verse path means you will not be able to set [LODs](https://dev.epicgames.com/documentation/fortnite/level-of-detail-lod-best-practices-in-fortnite), [collision](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#collision) or destructibility.
-For more information about using a Verse path, see [Exposing Assets with Asset Reflection to Verse](https://dev.epicgames.com/documentation/fortnite/exposing-assets-with-asset-reflection-to-verse-in-unreal-editor-for-fortnite).
-###  License Types
-All available assets in Fab use licensing agreements to legally authorize you to use someone else's intellectual property. You must select a [pricing tier](https://dev.epicgames.com/documentation/fab/licenses-and-pricing-in-fab) before completing a purchase. Free assets are licensed through [Creative Commons Attribution](https://dev.epicgames.com/documentation/fortnite/import-from-fab-in-unreal-editor-for-fortnite#creative-commons-attribution).
-Purchasable assets are categorized with one or more of the following standard license types:
-  * **UEFN - Reference only** : A license that covers an individual developer or a small team with no more than $100k of revenue or funding in the last 12 months. This type of license only includes a referenced version of the asset.
-  * **Personal** : A license that covers an individual developer or a small team with no more than $100k or revenue or funding in the last 12 months.
-  * **Professional** : For studios or other entities with over $100k in revenue or funding in the past 12 months.
+In order to understand and use the content on this page, make sure you are familiar with the following topics:
 
-Pricing tiers vary by asset and standard license type.
-####  Creative Commons Attribution
-[Creative Commons Attribution](https://creativecommons.org/licenses/by/4.0/) requires you to give appropriate credit to the asset’s developer when using their work, along with providing a link to the license and indicating if changes were made to the asset.
-This license type has a set of predefined permissions for the use of the asset within specific limits. These permissions typically cover allowance for common uses, such as:
-  * Copying
-  * Distributing
-  * Displaying
-  * Creating derivative works that credit the original developer
+- [2. Setting Up the Level](https://dev.epicgames.com/documentation/fortnite/tagged-lights-2-setting-up-the-level-in-verse)
 
-Regardless of license type, you must provide attribution to third party assets used on your island when you publish. To learn more about providing attribution, see [Third Party Assets](https://dev.epicgames.com/documentation/fortnite/attribution-screen-in-fortnite-creative) in the [Using Creator Portal](https://dev.epicgames.com/documentation/fortnite/using-creator-portal-in-fortnite-creative) documentation.
-##  Using Modifiable Content
-Modifiable content refers to assets you can modify in line with the constraints of the license agreement. After importing modifiable content, the asset’s folder appears in the **Content Browser** under the **main project folder**. This folder contains all the import data for your imported asset: [materials](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#material), [meshes](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#mesh), and [textures](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#texture).
-In UEFN, modifiable content means:
-  * The asset is detached from any updates its developer makes and results in slower moderation times.
-  * You can set the [LODs, collision, and destructibility](https://dev.epicgames.com/documentation/fortnite/configuring-collision-for-a-static-mesh-in-unreal-editor-for-fortnite) to make the asset unique.
+By completing this step in the [Tagged Lights Puzzle](https://dev.epicgames.com/documentation/fortnite/tagged-lights-puzzle-in-verse) tutorial, you'll learn how to use **Verse Tags** to find actors marked with a specific tag while the game is running. Verse Tags let you work with multiple devices without having to set up their references in the editor. This can open up interesting gameplay opportunities where, for example, your code dynamically changes which devices are active as the player progresses through the game.
 
-##  Importing Packs
-Packs are multiple assets sold together in a single file and are purchased the same way you would any other asset. Packs are usually modular with all assets inside a pack created using the same style. Packs may include some unique assets that cannot be found elsewhere on their own. The singular assets of a pack are not always available for individual sale on [Fab.com](http://fab.com).
-[![Search for packs using the search bar.](https://dev.epicgames.com/community/api/documentation/image/a2142ee9-a6ac-438f-98d2-48ddd78c3067?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a2142ee9-a6ac-438f-98d2-48ddd78c3067?resizing_type=fit) Click to enlarge image.
-Packs can be delivered as referenced assets through a single Verse path. The assets in a pack can be individually referenced within UEFN by dragging pack items from the Content Browser into the viewport.
-Removing a pack asset from a project does not remove that asset from the pack listed under **[My Purchases](https://dev.epicgames.com/documentation/fab/purchasing-and-downloading-assets-in-fab)**.
-##  Limitations
-  * If the total file size of all assets exceeds 256 MB, you will not be able to deploy the level to Fortnite Creative. This limitation is to minimize download times.
-  * You can check the size of all content by going to File Explorer/Finder and locating the project under Fortnite Projects > ProjectName > Plugins > ProjectName > Content, and right-clicking the Referenced Content folder.
-  * Referenced assets are not compatible with Scene Graph Beta. Source assets are compatible with Scene Graph Beta, be sure to select the correct content type to use with Scene Graph.
+Follow these steps to create a new Verse Tag and assign it to all the lights in the level for the puzzle:
+
+1. Open [Verse Explorer](https://dev.epicgames.com/documentation/fortnite/verse-explorer-user-interface-reference-in-unreal-editor-for-fortnite) and double-click **tagged_lights_puzzle.verse** to open the script in Visual Studio Code.
+2. At the top of the code file:
+
+   - Add `using { /Verse.org/Simulation/Tags }` to reference the `tag` class and and use the `FindCreativeObjectsWithTag()` function.
+   - Add `using { /Verse.org/Simulation }` to be able to make editable properties.
+
+     Verse
+
+     ```
+           using { /Fortnite.com/Devices }
+           using { /Verse.org/Native }
+           using { /UnrealEngine.com/Temporary/Diagnostics }
+           using { /Verse.org/Simulation/Tags }
+           using { /Verse.org/Simulation }
+     								    
+           log_tagged_lights_puzzle := class(log_channel){}
+     ```
+
+      using { /Fortnite.com/Devices }
+     using { /Verse.org/Native }
+     using { /UnrealEngine.com/Temporary/Diagnostics }
+     using { /Verse.org/Simulation/Tags }
+     using { /Verse.org/Simulation }
+     log_tagged_lights_puzzle := class(log_channel){}
+3. Above the `log_tagged_lights_puzzle` class, add a new subclass named `puzzle_light` that inherits from the `tag` class. The inherited class name becomes a custom Verse Tag for you to use on any creative device.
+
+   Verse
+
+   ```
+        # Derive from the `tag` class in the Verse.org/Simulation/Tags module to create a new Gameplay Tag.
+        puzzle_light := class(tag){}
+   		
+        log_tagged_lights_puzzle := class(log_channel){}
+   ```
+
+    # Derive from the `tag` class in the Verse.org/Simulation/Tags module to create a new Gameplay Tag.
+   puzzle_light := class(tag){}
+   log_tagged_lights_puzzle := class(log_channel){}
+4. In the UEFN toolbar, click **Build Verse Scripts** to compile your code and your new `puzzle_light` Verse Tag to your project.
+5. In the UEFN **Outliner**, select a **Customizable Light Device** to open its **Details** panel.
+6. In the Details panel:
+7. In the `tagged_lights_puzzle` class definition, add two variable array fields:
+
+   - An editable `logic` variable array named `LightsState` to represent the current state of all lights (whether they’re turned off or on). It's also used to set the initial state of the lights, so its number of elements should match the number of lights tagged with the `puzzle_light` tag. In this example, all lights are turned off by default so the starting value for all lights is `false`.
+
+     Verse
+
+     ```
+           @editable
+           var LightsState : []logic = array{false, false, false, false}
+     ```
+
+      @editable
+     var LightsState : []logic = array{false, false, false, false}
+   - An editable `customizable_light_device` variable array named `Lights` to store all the Customizable Light devices tagged with the `puzzle_light` Verse Tag.
+
+     Verse
+
+     ```
+           @editable
+           var Lights : []customizable_light_device = array{}
+     ```
+
+      @editable
+     var Lights : []customizable_light_device = array{}
+8. When the game begins, the device should set up the lights to match the initial configuration specified in the `LightsState` array, and save the references in the `Lights` array so they can be updated when the [game state](https://dev.epicgames.com/documentation/fortnite/verse-glossary#game-state) changes. This work is going to be done in a method named `SetupPuzzleLights() : void` and called in the `OnBegin()` method so that the lights are set up when the game starts.
+
+   Verse
+
+   ```
+        SetupPuzzleLights() : void =
+            Logger.Print("Setting up in-game lights")
+
+        OnBegin<override>()<suspends> : void =
+            SetupPuzzleLights()
+   ```
+
+    SetupPuzzleLights() : void =
+   Logger.Print(&quot;Setting up in-game lights&quot;)
+   OnBegin&lt;override&gt;()&lt;suspends&gt; : void =
+   SetupPuzzleLights()
+9. In `SetupPuzzleLights()`, find all devices with the `puzzle_light` tag by calling `FindCreativeObjectsWithTag(puzzle_light{})` and save them in an array named `TaggedActors`. Since `TaggedActors` is a constant array whose scope is local to the method `SetupPuzzleLights()`, you don’t need to explicitly specify a type for the array because it can be inferred in this context.
+
+   Verse
+
+   ```
+        SetupPuzzleLights() : void =
+            Logger.Print("Setting up in-game lights")
+            TaggedActors := FindCreativeObjectsWithTag(puzzle_light{})
+   ```
+
+    SetupPuzzleLights() : void =
+   Logger.Print(&quot;Setting up in-game lights&quot;)
+   TaggedActors := FindCreativeObjectsWithTag(puzzle_light{})
+
+   Different calls of the function `FindCreativeObjectsWithTag()` may place the devices in different orders in the array result, because there's no guaranteed order when retrieving actors with Gameplay Tags.
+10. Now that you’ve collected all the devices that have the `puzzle_light` tag, make sure each light matches the initial state specified by the `LightsState` array. You can use a `for` loop to iterate through all the tagged devices.
+
+    Verse
+
+    ```
+         for:
+             ActorIndex -&gt; TaggedActor : TaggedActors
+         do:
+             TaggedActor
+    ```
+
+     for:
+    ActorIndex -&amp;gt; TaggedActor : TaggedActors
+    do:
+    TaggedActor
+11. The function `FindCreativeObjectsWithTag()` returns an array of type `creative_object_interface`. In this example, you’ll want to interact with each `TaggedActor` as a `customizable_light_device` so you can turn the light on or off.
+
+    - You can convert a class to one of its subclasses (called [type casting](https://dev.epicgames.com/documentation/fortnite/verse-glossary#type-casting)) using the syntax `NewDeviceReference := device_type_to_cast_to[DeviceReference]`, where `device_type_to_cast_to` is the device type you want, which in this example is `customizable_light_device`. This is a failable expression because the type conversion will fail if the device can’t be converted to that type (for example if it’s a different type of device).
+
+      Verse
+
+      ```
+            LightDevice := customizable_light_device[TaggedActor]
+      ```
+
+       LightDevice := customizable_light_device[TaggedActor]
+
+      The function `FindCreativeObjectsWithTag()` has the return type `[]creative_object_interface` because the function can return different types of actors, so its return type is the interface all actors must implement to be returned by `FindCreativeObjectsWithTag()`. See [Verse tags](https://dev.epicgames.com/documentation/fortnite/verse-tags-in-fortnite) to learn more.
+    - With `for` expressions, you can use failable expressions as a filter and create new variables that you can then use in the `for` code block. In this case, add the type conversion to `customizable_light_device` from the previous step to the iteration expression.
+
+      Verse
+
+      ```
+            for:
+                ActorIndex -&gt; TaggedActor : TaggedActors
+                LightDevice := customizable_light_device[TaggedActor]
+            do:
+                LightDevice
+      ```
+
+       for:
+      ActorIndex -&amp;gt; TaggedActor : TaggedActors
+      LightDevice := customizable_light_device[TaggedActor]
+      do:
+      LightDevice
+    - The last expression in a code block is the code block’s result. The `for` expression returns the result of the code block from each iteration in an array, so the result of this `for` expression is an array of `customize_light_device` references that were tagged with `puzzle_light`. This means you can update the `Lights` array with the result of the `for` expression directly.
+
+      Verse
+
+      ```
+            set Lights = for:
+                ActorIndex -&gt; TaggedActor : TaggedActors
+                LightDevice := customizable_light_device[TaggedActor]
+            do:
+                LightDevice
+      ```
+
+       set Lights = for:
+      ActorIndex -&amp;gt; TaggedActor : TaggedActors
+      LightDevice := customizable_light_device[TaggedActor]
+      do:
+      LightDevice
+    - This `for` loop should also call `TurnOn()` / `TurnOff()` on the lights to match their initial `LightsState` setup in the editor. The `for` expression can return the index used to get the current tagged device (`ActorIndex` in the example), which you can use to index into the `LightsState` array to see whether the light should be on or off.
+
+      Verse
+
+      ```
+            set Lights = for:
+                ActorIndex -&gt; TaggedActor : TaggedActors
+                LightDevice := customizable_light_device[TaggedActor]
+                ShouldLightBeOn:= LightsState[ActorIndex]
+            do:
+                LightDevice
+      ```
+
+       set Lights = for:
+      ActorIndex -&amp;gt; TaggedActor : TaggedActors
+      LightDevice := customizable_light_device[TaggedActor]
+      ShouldLightBeOn:= LightsState[ActorIndex]
+      do:
+      LightDevice
+    - Next, call `TurnOn()` / `TurnOff()` depending on whether `ShouldLightBeOn` is `true` / `false`. You can use an `if` expression to execute different expressions based on a condition (specifically a failable expression). In this case, the failable expression can use the query operator `?` with `IsLightOn`, which will succeed if `ShouldLightBeOn` is `true` (so call `TurnOn()`), and fail if `ShouldLightBeOn` is `false` (so call `TurnOff()`).
+
+      Verse
+
+      ```
+            set Lights = for:
+                ActorIndex -&gt; TaggedActor : TaggedActors
+                LightDevice := customizable_light_device[TaggedActor]
+                ShouldLightBeOn := LightsState[ActorIndex]
+            do:
+                if (ShouldLightBeOn?) then LightDevice.TurnOn() else LightDevice.TurnOff()
+                LightDevice
+      ```
+
+       set Lights = for:
+      ActorIndex -&amp;gt; TaggedActor : TaggedActors
+      LightDevice := customizable_light_device[TaggedActor]
+      ShouldLightBeOn := LightsState[ActorIndex]
+      do:
+      if (ShouldLightBeOn?) then LightDevice.TurnOn() else LightDevice.TurnOff()
+      LightDevice
+    - It’s a good idea to also print the index of the light and its starting value so you can verify your code is working as expected and compare to what you see in the level.
+    - When you use `{}` in the middle of a string, the expression between the `{}` is evaluated first and its value is added to the string. So you can use an `if` expression in the middle of a string to conditionally add values.
+
+      Verse
+
+      ```
+            set Lights = for:
+                ActorIndex -&gt; TaggedActor : TaggedActors
+                LightDevice := customizable_light_device[ActorIndex]
+                ShouldLightBeOn := LightsState[ActorIndex]
+            do:
+                Logger.Print("Adding Light at index {ActorIndex} with State:{if (ShouldLightBeOn?) then "On" else "Off"}")
+                if (ShouldLightBeOn?) then LightDevice.TurnOn() else LightDevice.TurnOff()
+                LightDevice
+      ```
+
+       set Lights = for:
+      ActorIndex -&amp;gt; TaggedActor : TaggedActors
+      LightDevice := customizable_light_device[ActorIndex]
+      ShouldLightBeOn := LightsState[ActorIndex]
+      do:
+      Logger.Print(&quot;Adding Light at index {ActorIndex} with State:{if (ShouldLightBeOn?) then &quot;On&quot; else &quot;Off&quot;}&quot;)
+      if (ShouldLightBeOn?) then LightDevice.TurnOn() else LightDevice.TurnOff()
+      LightDevice
+12. Your `SetupPuzzleLights()` method should now look like this:
+
+    Verse
+
+    ```
+         SetupPuzzleLights() : void =
+             TaggedActors := GetCreativeObjectsWithTag(puzzle_light{})
+             <#
+             For each device with the puzzle_light tag, check if it's a customizable_light_device by trying to cast it to that type.
+             If it is, get its initial LightState to TurnOn() or TurnOff() the LightDevice.
+             Save all the tagged customizable_light_device in the Lights array.
+             #>
+             set Lights = for:
+                     ActorIndex -> TaggedActor : TaggedActors
+                     LightDevice := customizable_light_device[TaggedActor]
+    ```
+13. Save the script in Visual Studio Code.
+14. In the UEFN toolbar, click **Build Verse Scripts** to compile your code.
+15. Click **Play** in the UEFN toolbar to playtest the level.
+
+When you playtest your level, you should see each light that’s added to the `Lights` array, along with its initial state, printed to the output log.
+
+## Next Step
+
+In the [next step](https://dev.epicgames.com/documentation/fortnite/tagged-lights-4-toggling-lights-with-buttons-in-verse) of this tutorial, you’ll learn how to toggle a specific set of lights when the player presses the buttons.

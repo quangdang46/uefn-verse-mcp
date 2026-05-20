@@ -1,149 +1,410 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/debug-your-game-with-debug-draw-in-verse
 
-# Working with TMNT Islands
-Learn more about building custom TMNT experiences using exclusive content.
-![Working with TMNT Islands](https://dev.epicgames.com/community/api/documentation/image/b85e22bf-71b3-4cb4-9da3-da3d1939304c?resizing_type=fill&width=1920&height=335)
-######  Prerequisite topics
-In order to understand and use the content on this page, make sure you are familiar with the following topics:
-  * [Accessing Brand Content](https://dev.epicgames.com/documentation/fortnite/accessing-brand-content-in-fortnite)
+# Debug Your Game with Debug Draw
 
-Bad guys beware, the Teenage Mutant Ninja Turtles are loose in Unreal Editor for Fortnite (UEFN) and Fortnite Creative! With new TMNT assets, you can now build action-packed experiences featuring your favorite characters, environments, and props from the TMNT universe. Whether you're creating an epic battle in the streets of New York City or designing the ultimate training dojo in the sewers, UEFN gives you the power to make games using one of the best-known franchises of all time.
-There are three custom templates, a full roster of TMNT characters, and an extensive selection of TMNT-themed [prefabs and galleries](https://dev.epicgames.com/documentation/fortnite/working-with-tmnt-islands-in-fortnite) when you create a project using the base maps found under **Brands** > **TMNT**. Each asset is designed to fit seamlessly within the Fortnite ecosystem, giving your projects that signature TMNT vibe.
-You can access the assets from the TMNT folder in the Content Browser of UEFN and the Creative inventory in-game.
-After creating, playtesting, and perfecting your island, you'll be ready to share your vision with the world! Make sure your island aligns with the [Teenage Mutant Ninja Turtles Brand Rules](https://dev.epicgames.com/documentation/fortnite/teenage-mutant-ninja-turtles-brand-rules-in-fortnite) before you publish.
-##  TMNT Island Templates
-Take your experiences to the next level! Explore the **Arcade,****Dimension X Starter** , and **City Starter** templates. Each template is designed and built to spark your imagination and have you saying Cowabunga!
-The **Dimension X Starter** island provides an out-of-this world landscape that is the perfect starting point for building multi-dimensional TMNT adventures. [Sculpt the barren landscape](https://dev.epicgames.com/documentation/fortnite/landscape-mode-in-unreal-editor-for-fortnite) and place pools of ooze underneath the swirling skies of outer space.
-[![TMNT Dimension X Starter Template in UEFN](https://dev.epicgames.com/community/api/documentation/image/e1abcee6-0dae-4601-8f54-438eb66ddd5a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e1abcee6-0dae-4601-8f54-438eb66ddd5a?resizing_type=fit) Dimension X Starter Island
-The [Arcade template](https://dev.epicgames.com/documentation/fortnite/tmnt-arcade-template-in-unreal-editor-for-fortnite) showcases a throwback Arcade side scroller game featuring classic TMNT foes, environment obstacles and custom player user interfaces. The **Arcade** tutorial walks you through setting up each element of gameplay to deliver a fun and engaging experience to players.
-[![Arcade Template](https://dev.epicgames.com/community/api/documentation/image/7f2f8d1c-6b08-40e2-b479-a2ace6cd9483?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7f2f8d1c-6b08-40e2-b479-a2ace6cd9483?resizing_type=fit) Arcade Template
-The [City Starter template](https://dev.epicgames.com/documentation/fortnite/tmnt-city-starter-visual-styles-in-unreal-editor-for-fortnite) brings the razzle dazzle by using different visual techniques to evoke the TMNT universe in all its cartoony glory. The tutorial teaches you how to use game design elements like level design, post processing, and custom lighting to make your experience more visually sophisticated.
-[![City Starter Template](https://dev.epicgames.com/community/api/documentation/image/b34c4a95-2246-4227-a160-8767c9c18db9?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b34c4a95-2246-4227-a160-8767c9c18db9?resizing_type=fit) City Starter Template
-##  IARC Audience Restrictions
-Any TMNT islands that you create will need to have an age-appropriate rating. The TMNT island templates and Creator Portal are set up to guide you through this process. As a general rule, create your island with all audiences in mind.
-The table below shows each Rating Authority, region, and the age-appropriate rating for a TMNT island.
-Rating Authority  |  Region  |  Maximum Age Rating Category
----|---|---
-[ESRB](https://www.esrb.org/ratings-guide/) |  North America |  T
-[PEGI](https://pegi.info/what-do-the-labels-mean) |  Europe & UK |  12
-[ACB](https://www.classification.gov.au/classification-ratings/what-do-ratings-mean) |  Australia |  M
-[Classlnd](https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1) |  Brazil |  12
-[USK](https://usk.de/die-usk-alterskennzeichen/) |  Germany |  16
-[GRAC](https://www.grac.or.kr/english/) |  South Korea |  12
-Russia |  Russia |  12
-[IARC General](https://www.globalratings.com/ratings-guide.aspx) |  Rest of World |  12
-##  Publishing TMNT Islands
-Publishing a TMNT Island follows the same process as publishing any other Fortnite Creative island through Creator Portal. To learn more about the publishing process from UEFN, refer to [Publishing Projects](https://dev.epicgames.com/documentation/fortnite/publishing-projects-in-unreal-editor-for-fortnite).
-##  Using TMNT Characters in UEFN and Creative
-You can spawn all available TMNT characters wherever you can use character outfits in UEFN and Creative. This includes the four iconic Turtles, their allies, and their fearsome villains. Use the following devices in UEFN and Creative and begin creating gameplay, animating cutscenes, and building new gameplay experiences with the full suite of TMNT characters.
-  * [Guard Spawner](https://dev.epicgames.com/documentation/fortnite/using-guard-spawner-devices-in-fortnite-creative)
-  * [Character Device](https://dev.epicgames.com/documentation/fortnite/using-character-devices-in-fortnite-creative)
-  * [NPC Spawner](https://dev.epicgames.com/documentation/fortnite/using-npc-spawner-devices-in-unreal-editor-for-fortnite)
+Use Verse to draw shapes to help debug your game.
 
-To use TMNT characters in the Character Device or Guard Spawner devices, go to the **Details** panel, and use the **Character Cosmetic** dropdown.
-To use them in the NPC Spawner, create a new **NPC Character Definition** , and use the **Character Cosmetic NPC Modifier**.
-##  TMNT Character Spawner
-Expand your island with themed NPCs (non-playable characters) using the TMNT Character Spawner device. This device is available in Unreal Editor for Fortnite (UEFN) and Creative. Choose TMNT characters to fight alongside or against players, using their iconic weapons to perform melee attacks.
-|  |  |
----|---|---|---
-[![Michelangelo](https://dev.epicgames.com/community/api/documentation/image/a65d7cd6-6909-485f-aef3-67b170bfdd54?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a65d7cd6-6909-485f-aef3-67b170bfdd54?resizing_type=fit) |  [![Raphael](https://dev.epicgames.com/community/api/documentation/image/99edc693-97b6-4356-95d7-f650469a2372?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/99edc693-97b6-4356-95d7-f650469a2372?resizing_type=fit) |  [![Donatello](https://dev.epicgames.com/community/api/documentation/image/9af7fcd5-1794-4e0c-8805-e9f737be2e0a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9af7fcd5-1794-4e0c-8805-e9f737be2e0a?resizing_type=fit) |  [![Leonardo](https://dev.epicgames.com/community/api/documentation/image/24faf804-b8d4-460f-af81-eb5687ff7ec8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/24faf804-b8d4-460f-af81-eb5687ff7ec8?resizing_type=fit)
-Michelangelo |  Raphael |  Donatello |  Leonardo
-|  |  |  |
----|---|---|---|---
-[![Splinter](https://dev.epicgames.com/community/api/documentation/image/b3648d58-d9b6-4a76-bf5e-34a822ec08ba?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b3648d58-d9b6-4a76-bf5e-34a822ec08ba?resizing_type=fit) |  [![April O'Neil](https://dev.epicgames.com/community/api/documentation/image/e9f7ebaf-48e3-434e-9046-5ad45c78ed56?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e9f7ebaf-48e3-434e-9046-5ad45c78ed56?resizing_type=fit) |  [![Foot Elite](https://dev.epicgames.com/community/api/documentation/image/b166f3e9-15bc-409b-a91d-8cbf0781dc4f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b166f3e9-15bc-409b-a91d-8cbf0781dc4f?resizing_type=fit) |  [![Shredder](https://dev.epicgames.com/community/api/documentation/image/c0588236-5507-45b8-a892-b1e34d7f54c6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c0588236-5507-45b8-a892-b1e34d7f54c6?resizing_type=fit) |  [![Super Shredder](https://dev.epicgames.com/community/api/documentation/image/61e32054-6ed8-465c-8b13-5b1a377a4e89?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/61e32054-6ed8-465c-8b13-5b1a377a4e89?resizing_type=fit)
-Splinter |  April O'Neil |  Foot Elite |  Shredder |  Super Shredder
-|  |  |
----|---|---|---
-[![TMNT Casey Jones in UEFN](https://dev.epicgames.com/community/api/documentation/image/c096dd9a-2846-4f3d-80d7-641ca7bddbf3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c096dd9a-2846-4f3d-80d7-641ca7bddbf3?resizing_type=fit) |  [![TMNT Bebop in UEFN](https://dev.epicgames.com/community/api/documentation/image/af42d3fb-f14d-4a29-82da-f344e9d24583?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/af42d3fb-f14d-4a29-82da-f344e9d24583?resizing_type=fit) |  [![TMNT Rocksteady in UEFN](https://dev.epicgames.com/community/api/documentation/image/6db13dfa-fe4b-4c79-8080-7e60a2d44298?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6db13dfa-fe4b-4c79-8080-7e60a2d44298?resizing_type=fit) |  [![TMNT Krang in UEFN](https://dev.epicgames.com/community/api/documentation/image/367ef7eb-384d-4246-93d8-67cee845f8aa?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/367ef7eb-384d-4246-93d8-67cee845f8aa?resizing_type=fit)
-Casey Jones |  Bebop |  Rocksteady |  Krang's Android
-####  Device Options
-Below are the general settings for the TMNT Character Spawner. The device is built on the Guard Spawner device. To learn more about the settings, such as hiring a character, see [Guard Spawner Devices](https://dev.epicgames.com/documentation/fortnite/using-guard-spawner-devices-in-fortnite-creative).
-Option  |  Value
----|---
-**Spawn Count** |  1-20
-**Spawn Through Walls** |  Enabled, Disabled
-**Enabled at Game Start** |  Enabled, Disabled
-**TMNT Character** |  Michelangelo, Raphael, Donatello, Leonardo, Shredder, Super Shredder, Splinter, April O'Neil, Foot Elite, Casey Jones, Bebop, Rocksteady, Krang's Android
-**Foot Elite Weapon Type** |  Sword, Katana, Random
-**Guard Team Option** |  Team Index, Team Wildlife & Creatures, Team Neutral
-**Guard Team Index** |  Team 1, Pick a team
-**Spawn Timer** |  None, Instant, 1 - 300 seconds
-**Spawn Radius** |  10M, 2.5M - 50M
-**Starting Health** |  100, 10 - 10000, Invulnerable
-**Max Health** |  100, 10 - 10000, Invulnerable
-**Starting Shield** |  No Shield, 10, 50, 100, 200, 500, 1000
-**Max Shield** |  No Shield, 10, 50, 100, 200, 500, 1000
-##  Mouser NPC
-Also introduced with the TMNT character set is**Mouser**. This enemy NPC contains unique animations, gameplay, and audio for TMNT themed experiences. Mouser is part of the NPC Spawner device, which is only available in UEFN.
-Add Mouser to your scene by first creating an NPC Character Definition.
-  1. In the**Content Drawer** , navigate to your project folder.
-  2. Right-click an empty space in the folder and select **Artificial Intelligence > NPC Character Definition**.
-  3. Name your character definition then double-click the thumbnail to edit your NPC's properties.
-  4. In the character type dropdown, select **Mouser**.
+![Debug Your Game with Debug Draw](https://dev.epicgames.com/community/api/documentation/image/eee27db4-acfb-418d-8fd3-18af2e94ba68?resizing_type=fill&width=1920&height=335)
 
-You can place Mouser in your scene with the NPC Character Definition asset or the NPC Spawner device.
-  * Drag the character definition into the map.
-  * Drag the NPC Spawner device into the map, and then add your character definition in the Details panel.
+To help with [debugging](https://dev.epicgames.com/documentation/fortnite/verse-glossary#debugging) your game, you can display certain game data for testing purposes while hiding that information from the player. One way to do this is logging, but you can show some game data in a more visual way with the **Debug Draw API**.
 
-To learn more about the device and character definitions, see [NPC Spawner Devices](https://dev.epicgames.com/documentation/fortnite/using-npc-spawner-devices-in-unreal-editor-for-fortnite) and [NPC Character Definitions](https://dev.epicgames.com/documentation/fortnite/using-npc-character-definitions-in-unreal-editor-for-fortnite).
-##  TMNT Devices
-In addition to the TMNT Character Spawner, you can use the following exclusive TMNT devices. These devices are built on pre-existing Fortnite devices and redesigned to fit the TMNT brand.
-|  |  |
----|---|---|---
-[![TMNT Driftboard Spawner](https://dev.epicgames.com/community/api/documentation/image/265d61e8-7821-4f99-8acb-1169a8434373?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/265d61e8-7821-4f99-8acb-1169a8434373?resizing_type=fit) |  [![TMNT Supply Drop Spawner](https://dev.epicgames.com/community/api/documentation/image/4af13d3c-32c4-49b3-aa46-3c42d8031d3d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4af13d3c-32c4-49b3-aa46-3c42d8031d3d?resizing_type=fit) |  [![TMNT Sewer Tunnel](https://dev.epicgames.com/community/api/documentation/image/9cf8d45f-791c-491d-8f54-a37aef3c483d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9cf8d45f-791c-491d-8f54-a37aef3c483d?resizing_type=fit) |  [![TMNT Loot Crate](https://dev.epicgames.com/community/api/documentation/image/4ce746e4-0588-4b06-ad32-fdb92d2dfd48?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4ce746e4-0588-4b06-ad32-fdb92d2dfd48?resizing_type=fit)
-TMNT Driftboard Spawner |  TMNT Supply Drop Spawner |  TMNT Sewer Tunnel |  TMNT Loot Crate
-Base Device: [Driftboard Spawner](https://dev.epicgames.com/documentation/fortnite/using-driftboard-spawner-devices-in-fortnite-creative) |  Base Device: [Supply Drop Spawner](https://dev.epicgames.com/documentation/fortnite/using-supply-drop-spawner-devices-in-fortnite-creative) |  Base Device: [Hiding Prop Gallery](https://dev.epicgames.com/documentation/fortnite/using-hiding-prop-gallery-devices-in-fortnite-creative) |  Base Device: [Chest and Ammo](https://dev.epicgames.com/documentation/fortnite/using-chest-and-ammo-gallery-devices-in-fortnite-creative)
-To learn more about devices, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
-##  Weapons and Items
-The following weapons are exclusive to the TMNT feature set.
-|  |  |
----|---|---|---
-[![Leonardo's Katanas](https://dev.epicgames.com/community/api/documentation/image/74d1c1b4-b6cb-4942-86b1-3c27b18d0ff0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/74d1c1b4-b6cb-4942-86b1-3c27b18d0ff0?resizing_type=fit) |  [![Michelangelo's Nunchaku](https://dev.epicgames.com/community/api/documentation/image/f472df1c-7ac9-41fd-a2e7-6395f813a6cd?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f472df1c-7ac9-41fd-a2e7-6395f813a6cd?resizing_type=fit) |  [![Raphael's Sai](https://dev.epicgames.com/community/api/documentation/image/7903da0c-1b70-4544-ab23-28ef59f17a56?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7903da0c-1b70-4544-ab23-28ef59f17a56?resizing_type=fit) |  [![Donatello's Staff](https://dev.epicgames.com/community/api/documentation/image/d82e0cd0-259f-4aaa-8ed5-96896477ff20?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d82e0cd0-259f-4aaa-8ed5-96896477ff20?resizing_type=fit)
-Leonardo's Katanas |  Michelangelo's Nunchaku |  Raphael's Sai |  Donatello's Staff
-There are various ways to add weapons to your islands like the [Item Spawner device](https://dev.epicgames.com/documentation/fortnite/using-item-spawner-devices-in-fortnite-creative). To automictically add the hero weapons to a player's inventory use the [Item Granter device](https://dev.epicgames.com/documentation/fortnite/using-item-granter-devices-in-fortnite-creative).
-The exclusive set includes the TMNT brand Pizza Party item. Grab a slice to increase your health.
-[![TMNT Pizza Party](https://dev.epicgames.com/community/api/documentation/image/af4ce7ed-c637-4f36-a5b7-0da2e9a4e705?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/af4ce7ed-c637-4f36-a5b7-0da2e9a4e705?resizing_type=fit)
-##  Prefabs and Galleries
-Creating your own custom TMNT islands just got easier with these radical prefabs and galleries.
-###  NYC
-Build your own New York City with themed content that contains TMNT references fans will instantly recognize. The NYC set includes 6 prefabs and 9 galleries, with roughly 93 unique prop assets!
-|  |
----|---|---
-[![Channel 6 News Tower](https://dev.epicgames.com/community/api/documentation/image/6e3612cd-83f7-4bd7-a230-ba7f47e0d3b5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6e3612cd-83f7-4bd7-a230-ba7f47e0d3b5?resizing_type=fit) |  [![Slash for Cash Gym](https://dev.epicgames.com/community/api/documentation/image/36159847-3db1-49c5-8e54-5d3ea94db629?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/36159847-3db1-49c5-8e54-5d3ea94db629?resizing_type=fit) |  [![Baxter's Lab](https://dev.epicgames.com/community/api/documentation/image/77576678-549a-415d-b9df-e2ff958c97ac?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/77576678-549a-415d-b9df-e2ff958c97ac?resizing_type=fit)
-Channel 6 News Tower |  Slash for Cash Gym |  Baxter's Lab
-|  |
----|---|---
-[![Clowntime Arcade](https://dev.epicgames.com/community/api/documentation/image/0b98af7e-375b-43ce-adca-a94d4cc32124?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0b98af7e-375b-43ce-adca-a94d4cc32124?resizing_type=fit) |  [![Rabbit Hutch](https://dev.epicgames.com/community/api/documentation/image/94f8f534-dbf9-4ce5-8455-1033b029ef05?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/94f8f534-dbf9-4ce5-8455-1033b029ef05?resizing_type=fit) |  [![Shredder's Hideout](https://dev.epicgames.com/community/api/documentation/image/4a8bb38e-1b04-4679-be72-ea7b7d086c0a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4a8bb38e-1b04-4679-be72-ea7b7d086c0a?resizing_type=fit)
-Clowntime Arcade |  Rabbit Hutch |  Shredder's Hideout
-Design your own city streets with these additional NYC gallery assets.
-|  |
----|---|---
-[![TMNT Channel 6 Building Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/1ebe4673-61c3-4bb5-932d-16f4c143c043?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1ebe4673-61c3-4bb5-932d-16f4c143c043?resizing_type=fit) |  [![TMNT NYC Floor & Stair Gallery](https://dev.epicgames.com/community/api/documentation/image/b027410b-4324-41f7-aca5-baa0ae7cb427?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b027410b-4324-41f7-aca5-baa0ae7cb427?resizing_type=fit) |  [![TMNT NYC Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/8be2ad1f-1b1b-42e6-a61f-a3f1da1350b4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8be2ad1f-1b1b-42e6-a61f-a3f1da1350b4?resizing_type=fit)
-TMNT Channel 6 Building Prop Gallery |  TMNT NYC Floor & Stair Gallery |  TMNT NYC Prop Gallery
-|  |
----|---|---
-[![TMNT NYC Graffiti Wall Gallery](https://dev.epicgames.com/community/api/documentation/image/57474d37-9f92-4fa8-a940-6c8092e63b8c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/57474d37-9f92-4fa8-a940-6c8092e63b8c?resizing_type=fit) |  [![TMNT NYC Wall Gallery A](https://dev.epicgames.com/community/api/documentation/image/c8006fe7-56ad-4e49-937e-e09ff5ef40b8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c8006fe7-56ad-4e49-937e-e09ff5ef40b8?resizing_type=fit) |  [![TMNT NYC Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/ff289084-076d-4d50-8551-85bca7b60efd?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ff289084-076d-4d50-8551-85bca7b60efd?resizing_type=fit)
-TMNT NYC Graffiti Wall Gallery |  TMNT NYC Wall Gallery A |  TMNT NYC Wall Gallery B
-The textures from the Graffiti wall gallery are also available as textures in UEFN, where you can use them with the [Decal device](https://dev.epicgames.com/documentation/fortnite/decal-device-in-unreal-editor-for-fortnite) on any suitable surface. Add a bit of TMNT flair to any existing Fortnite prefab!
-|  |
----|---|---
-[![TMNT NYC Wall Gallery C](https://dev.epicgames.com/community/api/documentation/image/92e7b23d-fdf8-4bb4-b4d8-2b00f91083d1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/92e7b23d-fdf8-4bb4-b4d8-2b00f91083d1?resizing_type=fit) |  [![TMNT NYC Wall Gallery D](https://dev.epicgames.com/community/api/documentation/image/7a758e4f-ef84-4017-b28d-2a97fa3f5d52?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7a758e4f-ef84-4017-b28d-2a97fa3f5d52?resizing_type=fit) |  [![TMNT NYC Wall Gallery E](https://dev.epicgames.com/community/api/documentation/image/952733a3-ef81-4484-962a-060960f743ac?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/952733a3-ef81-4484-962a-060960f743ac?resizing_type=fit)
-TMNT NYC Wall Gallery C |  TMNT NYC Wall Gallery D |  TMNT NYC Wall Gallery E
-###  Sewer
-Recreate the iconic TMNT sewer system on your island with Splinters Dojo and Turtle Lair prefabs.
-[![Splinter's Dojo](https://dev.epicgames.com/community/api/documentation/image/01d6baef-06c4-44c6-ac4d-3c752c42c890?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/01d6baef-06c4-44c6-ac4d-3c752c42c890?resizing_type=fit) Splinter's Dojo
-[![Turtle Lair](https://dev.epicgames.com/community/api/documentation/image/a9b463a1-45d5-4d86-a772-d4e38c653d8f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a9b463a1-45d5-4d86-a772-d4e38c653d8f?resizing_type=fit) Turtle Lair
-Build your own top secret lair with these TMNT sewer themed galleries.
-|
----|---
-[![TMNT Sewer Gallery](https://dev.epicgames.com/community/api/documentation/image/c2ed514a-2abe-4210-adcd-1ea5b33d5f02?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c2ed514a-2abe-4210-adcd-1ea5b33d5f02?resizing_type=fit) |  [![TMNT Sewer Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/d5e5f930-7db7-4e35-a309-9e81a13cda29?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d5e5f930-7db7-4e35-a309-9e81a13cda29?resizing_type=fit)
-TMNT Sewer Gallery |  TMNT Sewer Prop Gallery
-###  Technodrome
-Rolling into Fortnite is the Technodrome! Create engaging experiences with this multilevel infrastructure.
-[![Techodrome](https://dev.epicgames.com/community/api/documentation/image/6f587e27-39db-4709-aa06-b0ff1e3f58f1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6f587e27-39db-4709-aa06-b0ff1e3f58f1?resizing_type=fit)
-[![Technodrome Interior](https://dev.epicgames.com/community/api/documentation/image/e5e10b5c-1349-4033-8626-7cbe2993add9?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e5e10b5c-1349-4033-8626-7cbe2993add9?resizing_type=fit) Technodrome
-Check-out the techno galleries to design unique landscapes.
-|  |
----|---|---
-[![TMNT Technodrome Gallery](https://dev.epicgames.com/community/api/documentation/image/f09c12bd-4b66-4aaa-b45f-ad33a1ba729d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f09c12bd-4b66-4aaa-b45f-ad33a1ba729d?resizing_type=fit) |  [![TMNT Technodrome Prop Gallery A](https://dev.epicgames.com/community/api/documentation/image/bc94649c-ba3e-4b35-b170-16fb3b4c31c8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/bc94649c-ba3e-4b35-b170-16fb3b4c31c8?resizing_type=fit) |  [![TMNT Technodrome Prop Gallery B](https://dev.epicgames.com/community/api/documentation/image/47287058-38d3-4f8a-af57-53965d9892a5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/47287058-38d3-4f8a-af57-53965d9892a5?resizing_type=fit)
-TMNT Technodrome Gallery |  TMNT Technodrome Prop Gallery A |  TMNT Technodrome Prop Gallery B
+Using the Debug Draw API, you can draw basic shapes and set their location, size, color, and the length of time they appear on screen. For example, you might want to visualize the visibility range of an NPC or the distance from which audio can be heard from its point of origin. With the box debug shape, you could draw a box with dimensions and a location that match any volume, even if that volume is invisible in your game. This can help with figuring out the placement of volumes with certain effects.
+
+[![Debug arrows drawing the line of sight of guards](https://dev.epicgames.com/community/api/documentation/image/5a472f69-550a-4221-827b-cf44b913105a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5a472f69-550a-4221-827b-cf44b913105a?resizing_type=fit)
+
+*The arrow debug shape drawn from an NPC’s face to the limit of their visibility range can be used to help design the perfect placement for guards.*
+
+## Enable Verse Debug Draw
+
+The first step is to make sure you can see the shapes you draw.
+
+[![The details panel of Island Settings showing Debug and Verse Debug draw enabled.](https://dev.epicgames.com/community/api/documentation/image/9aa006ed-7e4c-4eda-9fa2-3cc0a790d067?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9aa006ed-7e4c-4eda-9fa2-3cc0a790d067?resizing_type=fit)
+
+Verse Debug Draw will only be active during a play session of UEFN. It is enabled per user, which means only those who have activated Debug and Verse Debug Draw will see debug shapes. Debug shapes will **not** appear in the UEFN viewport or on a published island, even if this option is checked in Island Settings.
+
+## Draw Your First Debug Shape
+
+To draw your first shape with the Debug Draw API, follow these steps.
+
+- `Center:= vector3{Z:= 150.0}`: This is a required parameter of type [vector3](https://dev.epicgames.com/documentation/en-us/uefn/verse-api/unrealenginedotcom/temporary/spatialmath/vector3) which determines the location of the sphere’s center. In this example you will use the [constructor](https://dev.epicgames.com/documentation/en-us/uefn/class-in-verse#constructingaclass) of the `vector3` type to create a literal value. This will set the center of the sphere at location `0.0, 0.0, 150.0`.
+- `?DrawDurationPolicy:= debug_draw_duration_policy.Persistent`: This parameter is optional but its default value will make the sphere disappear after a few seconds, so set it to the **Persistent** policy. This means that the sphere will remain visible on the island until it is hidden or cleared by other code.
+
+  Verse
+
+  ```
+  DebugDraw.DrawSphere(Center := vector3{Z:=150.0}, ?DrawDurationPolicy := debug_draw_duration_policy.Persistent)
+  ```
+
+  DebugDraw.DrawSphere(Center := vector3{Z:=150.0}, ?DrawDurationPolicy := debug_draw_duration_policy.Persistent)
+
+[![The debug sphere shape.](https://dev.epicgames.com/community/api/documentation/image/d0b5ba6f-bba4-4a19-a674-8b194bcbfde1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d0b5ba6f-bba4-4a19-a674-8b194bcbfde1?resizing_type=fit)
+
+After building your Verse code and launching a session, you should see a sphere appear at the location set by the `Center` parameter.
+
+## Shapes
+
+With the Debug Draw API, you can draw several shapes that appear as simple wireframes in a running UEFN session. Each shape is useful in different scenarios. The following sections explain the methods to draw each shape and the parameters that are unique to each method. A later section explains the parameters that are common to every method. Each code example in this section assumes you have added the code from Draw Your First Debug Shape to your Verse file.
+
+### Box
+
+Use the `DrawBox()` method to draw a cube.
+
+[![The debug box shape.](https://dev.epicgames.com/community/api/documentation/image/5f3a5063-3976-4a9f-871c-a937724361e9?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5f3a5063-3976-4a9f-871c-a937724361e9?resizing_type=fit)
+
+Verse
+
+```
+DebugDraw.DrawBox(vector3{Z:=150.0}, rotation{}, ?DrawDurationPolicy := debug_draw_duration_policy.Persistent)
+```
+
+DebugDraw.DrawBox(vector3{Z:=150.0}, rotation{}, ?DrawDurationPolicy := debug_draw_duration_policy.Persistent)
+
+| Unique Parameter | What It Does |
+| --- | --- |
+| Center:vector3 | Sets the center of the box |
+| Rotation:rotation | Sets how the box is rotated |
+| ?Extent:vector3 | Sets the length, width, and depth of the box |
+
+### Capsule
+
+Use the `DrawCapsule()` method to draw a capsule. A capsule is made up of a cylinder with one half of a sphere on either end.
+
+[![The debug capsule shape.](https://dev.epicgames.com/community/api/documentation/image/319122ee-7ac3-4ed0-b46a-b305c5e9b15e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/319122ee-7ac3-4ed0-b46a-b305c5e9b15e?resizing_type=fit)
+
+Verse
+
+```
+DebugDraw.DrawCapsule(vector3{Z:=200.0}, rotation{}, ?DrawDurationPolicy := debug_draw_duration_policy.Persistent)
+```
+
+DebugDraw.DrawCapsule(vector3{Z:=200.0}, rotation{}, ?DrawDurationPolicy := debug_draw_duration_policy.Persistent)
+
+| Unique Parameter | What It Does |
+| --- | --- |
+| Center:vector3 | Sets the center of the capsule |
+| Rotation:rotation | Sets how the capsule is rotated |
+| ?Height:float | Sets the length of the capsule |
+| ?Radius:float | Sets the radius of the capsule at its widest point |
+
+### Sphere
+
+Use the `DrawSphere()` method to draw a sphere.
+
+[![The debug sphere shape.](https://dev.epicgames.com/community/api/documentation/image/5e500903-104a-41a7-b502-ae67d1cee695?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5e500903-104a-41a7-b502-ae67d1cee695?resizing_type=fit)
+
+Verse
+
+```
+DebugDraw.DrawSphere(vector3{Z:=150.0}, ?DrawDurationPolicy := debug_draw_duration_policy.Persistent)
+```
+
+DebugDraw.DrawSphere(vector3{Z:=150.0}, ?DrawDurationPolicy := debug_draw_duration_policy.Persistent)
+
+| Unique Parameter | What It Does |
+| --- | --- |
+| Center:vector3 | Sets the center of the sphere |
+| ?Radius:float | Sets the radius of the sphere at its widest point |
+| ?NumSegments:int | Sets the number of lines that make up the sphere |
+
+### Cone
+
+Use the `DrawCone()` method to draw a cone.
+
+[![The debug cone shape.](https://dev.epicgames.com/community/api/documentation/image/1a12cb71-7615-42bf-9932-c151d46e12ac?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1a12cb71-7615-42bf-9932-c151d46e12ac?resizing_type=fit)
+
+Verse
+
+```
+DebugDraw.DrawCone(vector3{Z:=150.0}, vector3{Z:=-1.0}, ?DrawDurationPolicy := debug_draw_duration_policy.Persistent)
+```
+
+DebugDraw.DrawCone(vector3{Z:=150.0}, vector3{Z:=-1.0}, ?DrawDurationPolicy := debug_draw_duration_policy.Persistent)
+
+| Unique Parameter | What It Does |
+| --- | --- |
+| Origin:vector3 | Sets the location of the point of the cone |
+| Direction:vector3 | Sets the direction in which the cone opens |
+| ?Height:float | Sets the length of the cone |
+| ?NumSides:int | Sets the number of sides |
+| ?AngleWidthRadians:float | Sets the width of the cone in the X direction |
+| ?AngleHeightRadians:float | Sets the width of the cone in the Y direction |
+
+To make the bottom of your cone a perfect circle, `AngleWidthRadians` and `AngleHeightRadians` must be equal.
+
+### Cylinder
+
+Use the `DrawCylinder()` method to draw a cylinder.
+
+[![The debug cylinder shape.](https://dev.epicgames.com/community/api/documentation/image/17dbe54f-ef0e-4937-ad9c-1fb010b7e5d0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/17dbe54f-ef0e-4937-ad9c-1fb010b7e5d0?resizing_type=fit)
+
+Verse
+
+```
+DebugDraw.DrawCylinder(vector3{Z:=100.0}, vector3{Z:=200.0}, ?DrawDurationPolicy := debug_draw_duration_policy.Persistent)
+```
+
+DebugDraw.DrawCylinder(vector3{Z:=100.0}, vector3{Z:=200.0}, ?DrawDurationPolicy := debug_draw_duration_policy.Persistent)
+
+| Unique Parameter | What It Does |
+| --- | --- |
+| Start:vector3 | Sets the location of one end of the cylinder |
+| End:vector3 | Sets the location of the other end of the cylinder |
+| ?NumSegments:int | Sets the number of lines connecting one end of the cylinder to the other |
+| ?Radius:float | Sets the radius of the two circles making up each end of the cylinder |
+
+### Line
+
+Use the `DrawLine()` method to draw a line.
+
+[![The debug line shape.](https://dev.epicgames.com/community/api/documentation/image/480e0de5-536d-4b3b-ab6c-b779c38ab187?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/480e0de5-536d-4b3b-ab6c-b779c38ab187?resizing_type=fit)
+
+Verse
+
+```
+DebugDraw.DrawLine(vector3{Z:=100.0}, vector3{Z:=200.0}, ?DrawDurationPolicy := debug_draw_duration_policy.Persistent)
+```
+
+DebugDraw.DrawLine(vector3{Z:=100.0}, vector3{Z:=200.0}, ?DrawDurationPolicy := debug_draw_duration_policy.Persistent)
+
+| Unique Parameter | What It Does |
+| --- | --- |
+| Start:vector3 | Sets the location of one end of the line |
+| End:vector3 | Sets the location of the other end of the line |
+
+### Arrow
+
+Use the `DrawArrow()` method to draw an arrow.
+
+[![The debug arrow shape.](https://dev.epicgames.com/community/api/documentation/image/84228dda-2d84-4b35-9284-1ca78ac1aae6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/84228dda-2d84-4b35-9284-1ca78ac1aae6?resizing_type=fit)
+
+Verse
+
+```
+DebugDraw.DrawArrow(vector3{Z:=100.0}, vector3{Z:=200.0}, ?DrawDurationPolicy := debug_draw_duration_policy.Persistent)
+```
+
+DebugDraw.DrawArrow(vector3{Z:=100.0}, vector3{Z:=200.0}, ?DrawDurationPolicy := debug_draw_duration_policy.Persistent)
+
+| Unique Parameter | What It Does |
+| --- | --- |
+| Start:vector3 | Sets the location of the start of the arrow |
+| End:vector3 | Sets the location of the head of the arrow |
+| ?ArrowSize:float | Sets the length of the two lines that make up the head of the arrow |
+
+### Point
+
+Use the `DrawPoint()` method to draw a point.
+
+[![The debug point shape.](https://dev.epicgames.com/community/api/documentation/image/10cda316-1b75-4431-a2b4-420816dc9c41?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/10cda316-1b75-4431-a2b4-420816dc9c41?resizing_type=fit)
+
+Verse
+
+```
+DebugDraw.DrawPoint(vector3{Z:=200.0}, ?Thickness:= 10.0, ?DrawDurationPolicy := debug_draw_duration_policy.Persistent)
+```
+
+DebugDraw.DrawPoint(vector3{Z:=200.0}, ?Thickness:= 10.0, ?DrawDurationPolicy := debug_draw_duration_policy.Persistent)
+
+| Unique Parameter | What It Does |
+| --- | --- |
+| Position:vector3 | Sets the location of the point |
+
+The default `Thickness` of `DrawPoint` is too small to be visible. Set `Thickness` to a larger value as shown in the above example to see the point.
+
+## Common Parameters
+
+These parameters are common to all the methods that draw shapes. They are also all optional, and do not need to be included as arguments when calling a method. If you do choose to include them, be sure to use the parameters name prepended by a `?`. See [Calling Functions in Functions](https://dev.epicgames.com/documentation/en-us/uefn/functions-in-verse#callingfunctions) for more information on named and optional arguments.
+
+### Color
+
+Set the color of shapes using the `Color` parameter. Values must be of type `color`. The list of valid colors can be found in the [NamedColors module](https://dev.epicgames.com/documentation/en-us/uefn/verse-api/versedotorg/colors/namedcolors). Be sure to have the import expression for the `Colors` module at the top of your Verse file. Below is an example of setting a point to a different color.
+
+Verse
+
+```
+DebugDraw.DrawPoint(Position := vector3{Z:= 200.0}, ?Thickness := 20.0, ?Color := NamedColors.MediumSeaGreen)
+```
+
+DebugDraw.DrawPoint(Position := vector3{Z:= 200.0}, ?Thickness := 20.0, ?Color := NamedColors.MediumSeaGreen)
+
+### DrawDurationPolicy
+
+The `DrawDurationPolicy` determines how long a debug shape remains on screen. There are three possible values.
+
+- `SingleFrame` : The shape will remain on screen for the length of a single [frame](https://dev.epicgames.com/documentation/fortnite/verse-glossary#frame). This policy can be useful when you want to frequently redraw a shape.
+- `FiniteDuration`: This policy is used with the `Duration` parameter to display a shape for a certain number of seconds.
+- `Persistent`: With the Persistent policy, the shape will remain on screen until hidden or cleared by other code.
+
+### Duration
+
+The `Duration` parameter is used with the `FiniteDuration` policy to display a shape for a certain number of seconds. Below is an example of code that draws a sphere that displays for 30 seconds.
+
+Verse
+
+```
+DebugDraw.DrawSphere(vector3{}, ?DrawDurationPolicy := debug_draw_duration_policy.FiniteDuration, ?Duration := 30.0)
+```
+
+DebugDraw.DrawSphere(vector3{}, ?DrawDurationPolicy := debug_draw_duration_policy.FiniteDuration, ?Duration := 30.0)
+
+### Thickness
+
+The `Thickness` parameter sets the thickness of the lines that make up each debug shape. In the case of `DrawPoint()`, it sets the thickness of the single point.
+
+## Channels
+
+You can use channels to group related shapes together, and then hide, show, or clear all the shapes in a channel at once.
+
+To create a channel, use the `Channel` parameter when declaring an instance of `debug_draw`.
+
+Verse
+
+```
+DebugDraw:debug_draw = debug_draw{Channel := debug_draw_defaults}
+```
+
+DebugDraw:debug_draw = debug_draw{Channel := debug_draw_defaults}
+
+Now any shape you draw using the `DebugDraw` instance can be hidden, shown, or cleared with a single method. For example, if you draw a point, a sphere, and an arrow with the `DebugDraw` instance, you can then hide them for some time, then show them again, and finally clear them when they are no longer needed.
+
+Verse
+
+```
+# Point
+DebugDraw.DrawPoint(vector3{Z := 200.0}, ?Thickness:= 50.0, ?DrawDurationPolicy:= debug_draw_duration_policy.Persistent)
+
+# Sphere
+DebugDraw.DrawSphere(vector3{Z := 200.0}, ?DrawDurationPolicy:= debug_draw_duration_policy.Persistent)
+
+# Arrow
+DebugDraw.DrawArrow(vector3{Z := 200.0}, vector3{Z := 400.0}, ?DrawDurationPolicy:= debug_draw_duration_policy.Persistent)
+
+Sleep(5.0)
+```
+
+## Default Parameter Values
+
+| Parameter | Value |
+| --- | --- |
+| ?Color:color | `NamedColors.Yellow` |
+| ?DrawDurationPolicy:debug_draw_duration_policy | `debug_draw_duration_policy.FiniteDuration` |
+| ?Duration:float | `5.0` |
+| ?Thickness:float | `0.0` |
+| ?Radius:float | `10.0` |
+
+## Examples
+
+### Visualize the Range of an Audio Player Device
+
+The [Audio Player Device](https://dev.epicgames.com/documentation/en-us/uefn/intro-to-audio-in-unreal-editor-for-fortnite) has a setting to visualize its attenuation. But you can only see this visualization during edit mode. Follow these steps to learn how to to recreate the attenuation visuals in a play session.
+
+[![Two debug sphere shapes showing the attenuation falloff of an audio player device.](https://dev.epicgames.com/community/api/documentation/image/ad03e5b0-0011-4b49-a0c6-b00318920823?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ad03e5b0-0011-4b49-a0c6-b00318920823?resizing_type=fit)
+
+1. Drag an [Audio Player Device](https://dev.epicgames.com/documentation/en-us/uefn/intro-to-audio-in-unreal-editor-for-fortnite#theaudioplayerdevice:playingyoursoundwavesandsoundcues) into your level. In the Details panel, make sure that **Enable Attenuation Visuals** is checked. This will help you verify that you are recreating the visuals correctly with the debug shapes.
+2. In your Verse file, create a new `debug_draw` instance called `DebugDrawAudio`. Give it a channel with the name `debug_draw_audio`.
+
+   Verse
+
+   ```
+   DebugDrawAudio:debug_draw = debug_draw{Channel := debug_draw_audio}
+   ```
+
+   DebugDrawAudio:debug_draw = debug_draw{Channel := debug_draw_audio}
+3. Add two `@editable` constants of type `float`. Name them `DebugAttenuationMinDistance` and `DebugAttenuationFalloffDistance`. These will be the two radii of the spheres drawn to visualize the attenuation of the Audio Player Device.
+
+   Verse
+
+   ```
+   @editable
+        DebugAttenuationMinDistance:float = 100.0
+   		
+        @editable
+        DebugAttenuationFalloffDistance:float = 100.0
+   ```
+
+   @editable
+   DebugAttenuationMinDistance:float = 100.0
+   @editable
+   DebugAttenuationFalloffDistance:float = 100.0
+4. Add another `@editable` to represent the Audio Player Device. Name it `AudioPlayerDevice`.
+
+   Verse
+
+   ```
+   @editable
+        AudioPlayerDevice:audio_player_device = audio_player_device{}
+   ```
+
+   @editable
+   AudioPlayerDevice:audio_player_device = audio_player_device{}
+5. Declare a function called `DrawAudioDeviceRange()` and give it two parameters of type `float`: `AttenuationMinDistance` and `AttenuationFalloffDistance`.
+
+   Verse
+
+   ```
+   DrawAudioDeviceRange(AttenuationMinDistance:float, AttenuationFalloffDistance:float):void =
+   ```
+
+   DrawAudioDeviceRange(AttenuationMinDistance:float, AttenuationFalloffDistance:float):void =
+6. In the new function, get the Transform object of the Audio Player Device.
+
+   Verse
+
+   ```
+   AudioPlayerDeviceTransform:= AudioPlayerDevice.GetTransform()
+   ```
+
+   AudioPlayerDeviceTransform:= AudioPlayerDevice.GetTransform()
+7. Using the `DrawSphere` function from the Debug Draw API, draw two spheres to represent the Attenuation Min Distance and the Attenuation Falloff Distance. The `Radius` in the second `DrawSphere` call must be set to the sum of `AttenuationMinDistance` and `AttenuationFalloffDistance` because attenuation only starts outside the radius of the Attenuation Min Distance.
+
+   Verse
+
+   ```
+   DebugDrawAudio.DrawSphere(
+            AudioPlayerDeviceTransform.Translation,
+            ?Radius:= AttenuationMinDistance,
+            ?DrawDurationPolicy:= debug_draw_duration_policy.Persistent)
+        DebugDrawAudio.DrawSphere(
+            AudioPlayerDeviceTransform.Translation,
+            ?Radius:= AttenuationMinDistance + AttenuationFalloffDistance,
+            ?DrawDurationPolicy:= debug_draw_duration_policy.Persistent)
+   ```
+
+   DebugDrawAudio.DrawSphere(
+   AudioPlayerDeviceTransform.Translation,
+   ?Radius:= AttenuationMinDistance,
+   ?DrawDurationPolicy:= debug_draw_duration_policy.Persistent)
+   DebugDrawAudio.DrawSphere(
+   AudioPlayerDeviceTransform.Translation,
+   ?Radius:= AttenuationMinDistance + AttenuationFalloffDistance,
+   ?DrawDurationPolicy:= debug_draw_duration_policy.Persistent)
+8. In the `OnBegin()` function of your Verse file, call the `DrawAudioDeviceRange()` function.
+
+   Verse
+
+   ```
+   OnBegin<override>()<suspends>:void=
+        DrawAudioDeviceRange(DebugAttenuationMinDistance, DebugAttenuationFalloffDistance)
+   ```
+
+   OnBegin&lt;override&gt;()&lt;suspends&gt;:void=
+   DrawAudioDeviceRange(DebugAttenuationMinDistance, DebugAttenuationFalloffDistance)
+9. Build your Verse code. In the Details panel of your Verse device, make sure you set the values for **DebugAttenuationMinDistance** and **DebugAttenuationFalloffDistance**. These values should be equivalent to the **Attenuation Min Distance** and **Attenuation FalloffDistance** values for your Audio Player Device multiplied by 100.
+
+   The Audio Player Device uses meters for Attenuation Min Distance and Attenuation Falloff Distance. Since the Debug Draw API uses centimeters, you must convert the values.
+10. Complete Script
+
+    Verse
+
+    ```
+    using { /Fortnite.com/Devices }
+         using { /Fortnite.com/Characters }
+         using { /Fortnite.com/Playspaces }
+         using { /UnrealEngine.com/Temporary/Diagnostics }
+         using { /UnrealEngine.com/Temporary/SpatialMath }
+    		
+         debug_audio_device := class(creative_device):
+    		
+             @editable
+             AudioPlayerDevice:audio_player_device = audio_player_device{}
+    ```

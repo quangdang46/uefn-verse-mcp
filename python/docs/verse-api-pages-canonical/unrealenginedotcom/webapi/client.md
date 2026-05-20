@@ -1,7 +1,19 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/webapi/client
 
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+# client class
 
-**Session ID** : 9dfa473258fc8129
-**IP Address** : 14.191.95.176
+Learn technical details about the client class.
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /UnrealEngine.com/WebAPI }` |
+
+## Members
+
+This class has functions, but no data members.
+
+### Functions
+
+| Function Name | Description |
+| --- | --- |
+| [`Get`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/webapi/client/get) |  |

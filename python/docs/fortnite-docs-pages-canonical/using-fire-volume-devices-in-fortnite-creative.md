@@ -1,40 +1,49 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-fire-volume-devices-in-fortnite-creative
 
-# Read-Only Asset Editors
-View important data in cooked assets
-![Read-Only Asset Editors](https://dev.epicgames.com/community/api/documentation/image/943f9310-de2e-439d-979d-ef00bde9dcde?resizing_type=fill&width=1920&height=335)
-You can open [cooked](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#cook) assets in asset editors using a read-only mode. This mode allows you to view any data that is available and deemed appropriate in cooked assets without being able to modify the assets yourself.
-The major advantage of being able to view cooked assets shipped with UEFN is seeing all the essential data on how they are set up, which teaches you good practices and serves as a solid point of reference for creating your own assets.
-The types of assets that can be viewed in read-only mode are **Static Meshes** and **Textures**.
-Assets shipped with UEFN, downloaded from Fab, and any other third-party cooked assets imported into a project can all be viewed in the Read Only Asset Editor.
-##  Viewing UEFN Assets
-  1. Open a UEFN project.
-  2. In the **Content Browser** , go to **All** and press on the **Filter** funnel next to the search bar. Select **Static Mesh** and **Texture** to apply the filters.
-[![Filter results](https://dev.epicgames.com/community/api/documentation/image/0da694e2-04b0-4e3e-be82-e152cbe7b66e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0da694e2-04b0-4e3e-be82-e152cbe7b66e?resizing_type=fit)
-  3. Double-click on a static mesh or texture to open the corresponding read-only editor.
+# Fire Volume Devices
 
-##  Viewing FAB Assets
-  1. In your UEFN project, open the **Fab Marketplace**.
-[![FAB toolbar](https://dev.epicgames.com/community/api/documentation/image/6d8dde81-83fe-45d0-a463-8a72df2c482b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6d8dde81-83fe-45d0-a463-8a72df2c482b?resizing_type=fit)
-  2. Choose an asset, select **Add as a referenced asset** and click **Add to Content Browser** , or just drag it into your scene.
-[![FAB add to content browser](https://dev.epicgames.com/community/api/documentation/image/48f4b00c-7750-41c6-96a3-9a790273bfd9?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/48f4b00c-7750-41c6-96a3-9a790273bfd9?resizing_type=fit)
-  3. Back in The **Content Browser** , go to **All** >**Referenced Content** > **Asset_Name** , and double-click on the **Static Mesh** file associated with the asset.
-[![Asset in Content Browser](https://dev.epicgames.com/community/api/documentation/image/26d137b6-5766-4e98-b553-91c8dca6aecb?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/26d137b6-5766-4e98-b553-91c8dca6aecb?resizing_type=fit)
-  4. This opens the read-only static mesh editor.
+Specify where the player can set things on fire, and ignite or extinguish flames using channels.
 
-Some FAB assets will allow you to edit their properties. In those cases it is possible to select **Add as a modifiable Unreal Engine asset** before adding it to your Content Browser.
-[![modifiable asset](https://dev.epicgames.com/community/api/documentation/image/a3fc77ec-373b-4b37-9b8f-e71026a72a82?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a3fc77ec-373b-4b37-9b8f-e71026a72a82?resizing_type=fit)
-##  Read-Only Editor Differences
-In a regular editor window, most settings are available to you. You can change material layers and the collision of the asset.
-[![regular editor](https://dev.epicgames.com/community/api/documentation/image/c58d39f5-8f76-4edc-8b3f-0f7602613444?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c58d39f5-8f76-4edc-8b3f-0f7602613444?resizing_type=fit)
-_Click on image to expand._
-When you open a cooked read-only asset, you will notice that most options are grayed-out. In addition, you will see a **Read-Only** tag on the top right corner of the editor window.
-[![read-only editor](https://dev.epicgames.com/community/api/documentation/image/37ca7b04-7655-4590-aa26-8e760f327d63?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/37ca7b04-7655-4590-aa26-8e760f327d63?resizing_type=fit)
-_Click on image to expand._
-###  Preview Scene Settings
-In read-only you can still change the lighting and environment to preview how the asset will look in different settings. This will not change any of the asset’s properties, but can help you see if the asset is a good fit for your scene.
-  1. Go to **Window** and check **Preview Scene Settings**.
-[![Preview scene settings](https://dev.epicgames.com/community/api/documentation/image/f48b9be9-83ec-4387-96d2-d56dee747cd7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f48b9be9-83ec-4387-96d2-d56dee747cd7?resizing_type=fit)
-  2. Change the settings to customize the asset preview.
+![Fire Volume Devices](https://dev.epicgames.com/community/api/documentation/image/7cd1233c-1426-4077-85eb-3657b9797341?resizing_type=fill&width=1920&height=335)
 
-[Mushroom House](https://sketchfab.com/3d-models/mushroom-house-c98d255da98c4343b903aab07631eadd) by [GraphOrigin](https://sketchfab.com/olivia9900) licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+The **Fire Volume** device specifies where things can be set on fire. You can use this to limit which objects, terrain, or buildings can be set on fire and which can't. You can also ignite or extinguish fires in this [volume](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) using channels. This device can override [My Island settings](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) to create specific areas where fires are allowed or not allowed.
+
+  To find the **Fire Volume** device, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
+
+If you're using multiple copies of a device on an island, it can be helpful to [rename](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) them. You can choose names that relate to each device's purpose, so it's easier to remember what each one does.
+
+## Device Options
+
+This device has some basic functionality, like whether the zone is visible, and setting the size of the volume. Additionally, there are some advanced options, like whether or not objects in the volume can be ignited.
+
+You can configure this device with the following options.
+
+Default values are **bold**.
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Enabled at Game Start** | **Yes**, No | Determines whether the device is automatically enabled when the game starts. |
+| Zone Visible During Game | No, Yes | Determines whether the device's zone is visible to players during the game. If it is visible, a particle effect similar to embers will display in the zone. |
+| Zone Width | 1, Pick a size | Determines the width of the volume in tiles. |
+| Zone Depth | 1, Pick a size | Determines the depth of the volume in tiles. |
+| Zone Height | 1, Pick a size | Determines the height of the volume in tiles. |
+| Allow Objects to Ignite | Use Island Settings, Yes, No | The default value uses the Island Settings to determine whether objects can ignite. This option can be set to Yes or No to override the  sland settings. |
+
+## Direct Event Binding
+
+Following are the direct event binding options for this device.
+
+### Functions
+
+A [function](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary) listens for an event on a device then performs an action.
+
+| Option | Description |
+| --- | --- |
+| **Enable When Receiving From** | The device is enabled when an event occurs. |
+| **Disable When Receiving From** | The device is disabled when an event occurs. |
+| **Ignite When Receiving From** | Objects inside the volume are ignited when an event occurs. |
+| **Extinguish When Receiving From** | Objects on fire inside the volume are extinguished when an event occurs. |
+
+### Events
+
+This device has no events.

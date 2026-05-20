@@ -1,112 +1,58 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/orbit-camera-device-design-example-in-fortnite-creative
 
-# Zone Wars
-Create a Battle Royale with a Storm that changes with each phase.
-[![Zone Wars Gameplay Example](https://dev.epicgames.com/community/api/documentation/image/10bfeee7-7eb2-4938-818a-3468467be8b3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/10bfeee7-7eb2-4938-818a-3468467be8b3?resizing_type=fit)
-A simulation of the end-game scenario in Battle Royale with a condensed moving zone. Eliminate the competition as you avoid the Storm closing in. Randomized spawns and inventory items make each round unique.
-_Zone Wars Video_
-##  Ingredients
-**You will need:**
-  * **1+ Player Spawner device (as many as the design requires)**
-  * **1+ Item Spawner device (as many as the design requires)**
-  * **1 Advanced Storm Controller device**
-  * **6 Advanced Storm Beacon devices**
+# Orbit Camera Device Design Example
 
-##  Method
-The Zone Wars map uses an Advanced Storm Controller and Advanced Storm Beacons to build different Storm phases. You can allow Storms to move quickly, like a boosted version of the default Battle Royale mode. You also need to define Player Spawner and Item Spawner placement.
-The core mechanic for Zone Wars is the Storm configuration, and this example uses the following approach:
-  1. Define the initial Advanced Storm Controller.
-    1. This determines the initial Storm size and position.
-    2. The Advanced Storm Beacon for the 1st phase should also be using the same radius and position as the Advanced Storm Controller.
-    3. The **Bounds Radius** option can be used to restrict the random Storm movement, but it will be ignored if set to **Move to Beacon**.
+See how to incorporate the Orbit Camera in a game of hide-and-seek!
 
-[![First Method Illustration](https://dev.epicgames.com/community/api/documentation/image/48c3cc05-fee9-4c7a-93a8-7c06aa277110?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/48c3cc05-fee9-4c7a-93a8-7c06aa277110?resizing_type=fit)
-  1. Define the Advanced Storm Beacon for each phase (there are six total phases in the example setup).
-    1. This is the most important part of the Storm’s movement pattern.
-    2. The later the phase Storm is in, the smaller the radius would be and the higher the damage it does.
-    3. The last Storm phase should close the Storm with a 0M (zero meters) radius to make sure that a proper game end will happen.
+![Orbit Camera Device Design Example](https://dev.epicgames.com/community/api/documentation/image/72567f77-0ea3-4d7e-b513-372e9f07d90d?resizing_type=fill&width=1920&height=335)
 
-[![Second Method Illustration](https://dev.epicgames.com/community/api/documentation/image/6d47ae83-ff4b-40c7-9726-f9de68f7b864?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6d47ae83-ff4b-40c7-9726-f9de68f7b864?resizing_type=fit)
-The Storm's movement is centered on the Beacon by default. To introduce more random movement patterns, you need to use the **Move Randomly** option. More detailed setup options are located in the Configure Random Storm Movement section of this page.
-##  Modified Options
-###  Player Spawner Device Options
-Modified Options - Player Spawner  |
----|---
-Use As Island Start |  NO
-Visible during games |  NO
-Add enough Player Spawners for each room prepared for the Zone Wars, and make sure none are used as the island start.
-###  Item Spawner Device Options
-Modified Options - Item Spawner  |
----|---
-Item respawn |  OFF
-Random spawns |  RANDOM
-Visible during games |  OFF
-Time before first spawn |  INSTANT
-Time between spawns |  5 MINUTES
-Run over pickup |  ON
-Drop weapons, throwables, or items onto the Item Spawner and make sure they are spawned randomly without respawning.
-###  Advanced Storm Controller Device Options
-Modified Options - Advanced Storm Controller  |
----|---
-Storm Phases |  CUSTOM
-Phase One Radius |  50M
-Choose **Custom** for each Storm phase in the Advanced Storm Controller so that each phase can be customized by the Advanced Storm Beacons below. There should only be one Advanced Storm Controller active at a time.
-###  Advanced Storm Beacon Device Options
-Modified Options - Advanced Storm Beacon  |
----|---
-Phase |  1
-End Radius |  50M
-Wait Time |  10 SECONDS
-Resize Time |  1 MINUTE
-Damage |  5\%
-The first Phase should use the End Radius from the Advanced Storm Controller. Setting this value manually makes things even clearer.
-Modified Options - Advanced Storm Beacon  |
----|---
-Phase |  2
-End Radius |  30M
-Wait Time |  10 SECONDS
-Resize Time |  1 MINUTE
-Damage |  5\%
-Modified Options - Advanced Storm Beacon  |
----|---
-Phase |  3
-End Radius |  20M
-Wait Time |  10 SECONDS
-Resize Time |  1 MINUTE
-Damage |  5\%
-Modified Options - Advanced Storm Beacon  |
----|---
-Phase |  4
-End Radius |  10M
-Wait Time |  10 SECONDS
-Resize Time |  1 MINUTE
-Damage |  7\%
-Modified Options - Advanced Storm Beacon  |
----|---
-Phase |  5
-End Radius |  5M
-Resize Time |  1 MINUTE
-Damage |  10\%
-The following Advanced Storm Beacons will have a smaller radius and higher damage based on your design needs. By default, the Storm will move to the Beacon location, so there is no randomness in the setup.
-Modified Options - Advanced Storm Beacon  |
----|---
-Phase |  6
-End Radius |  0M
-Wait Time |  20 MINUTES
-Damage |  10\%
-It's best to set the last Advanced Storm Beacon's **End Radius** to 0M (zero meters), to make sure that you end the match in a state where no one can survive. It's not necessary to have a **Resize Time** option set for this phase.
-###  Configure Random Storm Movement
-In the previous setup we set the default Storm movement to Move to Beacon, to introduce randomness for the Storm movement and make the combat less repetitive. However, creators can also set the Movement Behavior to MOVE RANDOMLY for a better control.
-Modified Options - ADVANCED STORM BEACON  |
----|---
-Movement Behavior |  MOVE RANDOMLY
-Minimal Move Distance |  50M
-Maximal Move Distance |  75M
-With this setup, the new Storm position would be generated randomly between 50M to 75M (as seen below) and it will not follow the Beacon location.
-[![Configure Random Storm Movement](https://dev.epicgames.com/community/api/documentation/image/c5edd8d5-0a9b-40d3-91c4-30a6f008c9c1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c5edd8d5-0a9b-40d3-91c4-30a6f008c9c1?resizing_type=fit)
-Here are a few tips to help with random Storm movement:
-  * If both Minimal Move Distance and Maximal Move Distance are set to 0, the new storm circle will always be centered.
-  * If both Minimal Move Distance and Maximal Move Distance are set to 0 in Phase 1, the Storm circle will be centered in the island center.
-  * Minimal Move Distance should not be larger than Maximal Move Distance. If they are the same, then the Storm will simply move with a random rotation degree.
-  * If you don't want the new Storm to move outside of the previous Storm circle, just make sure the Maximal Move Distance is no larger than ½ of the previous Storm radius.
-  * Random movement will be restricted by the **Bounds Radius** and the new Storm location will always be generated within the radius.
+When you combine the **Orbit Camera** device with assets from the **Hiding Props Gallery** device, you have the foundation for a wacky game of hide-and-seek — the orbit camera provides players with a tricky new camera angle they can use to spy on their surroundings as they stay out of view!
+
+This design example is not a full mini-game, but it is a fun mechanic to use in a hide-and-seek game!
+
+## Porta-Peek Hide-and-Seek Device Mechanics
+
+For this game, you will place the devices, then configure and [bind](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#direct-event-binding) them.
+
+### Devices Used
+
+- 1 x **Portapotty** from the [**Hiding Props Gallery** device](using-hiding-prop-gallery-devices-in-fortnite-creative)
+- 1 x [**Orbit Camera** device](using-orbit-camera-devices-in-fortnite-creative)
+- 1 x [Timer device](https://dev.epicgames.com/documentation/fortnite/using-timer-devices-in-fortnite-creative)
+
+### Add the Portapotty
+
+Don't be fooled by the **Hiding Props Gallery** name — this is a collection of devices! They will be found under the **Devices category** in [**Creative inventory**](using-devices-in-fortnite-creative).
+
+[![](https://dev.epicgames.com/community/api/documentation/image/b45e3b7f-ad88-4ba6-a45d-c48c2bd51f40?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b45e3b7f-ad88-4ba6-a45d-c48c2bd51f40?resizing_type=fit)
+
+For this design example, the Portapotty uses the default options, but you will come back to this device later to configure other settings.
+
+### Add the Orbit Camera Device
+
+The **Orbit Camera** device provides a view that a player can rotate easily, unlike a fixed camera view that is stationary in relation to the player. This gives the player a chance to look at what's going on outside of their hiding spot and peer in any direction.
+
+### Add a Timer Device
+
+The **Timer** device will help control the transition of the camera so the player has time to get inside the Portapotty before the orbit camera takes over.
+
+### Bind Device Functions and Events
+
+[Direct event binding](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#direct-event-binding) is how you set devices to communicate directly with other devices. This involves setting [functions](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#function) and [events](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#event) for the devices involved.
+
+For the **Portapotty** device, configure the following **events**:
+
+[![](https://dev.epicgames.com/community/api/documentation/image/5c3352d6-7613-4ad9-b35d-4716fefa2f43?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5c3352d6-7613-4ad9-b35d-4716fefa2f43?resizing_type=fit)
+
+| Event | Select Device | Select Event |
+| --- | --- | --- |
+| **On Hide Send Event To** | Timer Device | Start |
+| **On Stop Hiding Send Event To** | Camera: Orbit | Remove from Player |
+
+And there you go! A fun way to add a new mechanic to your hiding games.
+
+Playtest this mechanic and note how the camera view changes when you enter the Portapotty.
+
+## Design Tip
+
+You can add this type of camera to any of the hiding props, so give it a try and see what kinds of games you can invent on your own island!

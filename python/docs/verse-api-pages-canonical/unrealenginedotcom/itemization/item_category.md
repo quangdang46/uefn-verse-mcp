@@ -1,7 +1,15 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/itemization/item_category
 
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+# item_category class
 
-**Session ID** : 9dfa44e5d867ddc9
-**IP Address** : 14.191.89.252
+Learn technical details about the item_category class.
+
+item_category is used to classify items.
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /UnrealEngine.com/Itemization }` |
+
+## Members
+
+This class has no members.

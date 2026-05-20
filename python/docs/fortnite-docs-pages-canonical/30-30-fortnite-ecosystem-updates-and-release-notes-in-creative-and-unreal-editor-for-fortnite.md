@@ -1,210 +1,191 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/30-30-fortnite-ecosystem-updates-and-release-notes-in-creative-and-unreal-editor-for-fortnite
 
-# Getting Started with Devices
-Learn how to add and modify devices in Fortnite, and how to use Verse to expand device functionality!
-![Getting Started with Devices](https://dev.epicgames.com/community/api/documentation/image/bb1348e4-cea2-400a-9047-ad2bba460074?resizing_type=fill&width=1920&height=335)
-Devices are the core building blocks of [game mechanics](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#game-mechanics). The games you can build in Fortnite are vast when you have a clear understanding of the devices and how they work!
-shortcuts to how to find, place, and modify devices, jump to:
-  * [Devices in UEFN](https://dev.epicgames.com/documentation/fortnite/getting-started-with-devices-in-fortnite#devices-in-uefn)
-  * [Devices in Creative](https://dev.epicgames.com/documentation/fortnite/getting-started-with-devices-in-fortnite)
+# 30.30 Fortnite Ecosystem Updates and Release Notes
 
-##  General Device Categories
-The categories below follow the categories laid out in the UEFN Content Browser. Creative uses tags to sort and filter devices that differ from the UEFN categories.
-In UEFN, devices fall into one of these categories:
-Category  |  What They Do
----|---
-**!****Experimental** |  Devices that are available for testing, but not for publishing. To see this category in the browser, you must first enable the experimental feature from the project settings.  To enable an experimental feature:
-  1. From the toolbar near the top of the window, click the **Project** dropdown.
-  2. Select **Project Settings**.
-  3. Scroll down to the **Experimental Access** section, then toggle the feature you want to enable.
+30.30 Fortnite Ecosystem Updates and Release Notes in Creative, Unreal Editor for Fortnite, and Verse
 
-These features can range from devices to island settings. The options also change periodically as features are moved into production readiness and new experimental features are added.
-**!Beta** |  Still in development, but available for devs to explore and use.
-**AI** |  Contains characters, enemies, wildlife, and friendly NPCs you can hire. Example devices include Creature Spawner, AI Patrol Path Node, and Creature Manager.
-**Audio** |  Devices that produce sound or music.
-**Audio > Patchwork** |  A suite of devices that you can use to create and manipulate music and visuals. Patchwork devices are a subcategory of Audio.
-**Environment** |  Elements that belong to the world rather than a player character, but that the player can interact with. For example, a player can collect fireflies from a Firefly Spawner and use them against other players to take away health points. Also, fruits from a Healing Cactus device can restore player health.
-**Environment > Hazard** |  Can deal damage. Examples include Bomb Flower and Explosive devices.
-**Gameplay** |  General gameplay ingredients that interact with the player. Examples include the Teleporter device — a rift that moves a player instantly to another location on the island, and the Target Dummy device that players can use to practice shooting ranged weapons.
-**Item** |  Devices that provide items to players or take them away.
-**Logic** |  Help build game logic. Includes devices like timers, triggers, and trackers.
-**Mode** |  Devices that support specific game modes. For example, Race Checkpoint and Race Manager devices support racing games.
-**Physics** |  Emulate the effects of real-world physics, such as gravity and movement.
-**Power Up** |  Devices that grant power-ups.These usually give buffs like extra damage or health. For example, The Damage Amplifier Powerup device can multiply the damage a player can deal to another player or NPC.
-**System** |  System devices can be used for things like changing a player's team, class, score, or analytics that let the developer track data. Examples of system devices include the Player Spawner, which determines where on the island a player will spawn or respawn, and the Changing Booth, which lets a player access their locker and change outfits mid-game.
-**Trap** |  Devices that can be used to trap or damage players or enemy AI.  **In Creative** , the only trap device is the Trick Tile, which destroys any object it is placed on when it's activated. Creative also has traps included in the Content Items category, but these cannot be customized the way a trap device can. **In UEFN** , there are many more trap devices available in UEFN. Examples include the Environmental Trap - Ice Block, which can cause players to slip and slide on the ice. And the Environmental Trap - Launch Pad, which shoots players up into the air.
-**Traversal** |  Things that provide movement across an island, but that aren't vehicles. Examples include devices like Zipline or D-Launcher.
-**UI** |  Devices that communicate information to players, like Beacon devices that indicate locations of things, or Billboard devices that display customized text like onboarding instructions or directions. Other UI devices can be used for gameplay interactions, like the Skilled Interaction device, that you can use to create button press interactions that vary based on user input, and Conversation devices (UEFN only) for creating interactive dialogs between players and NPCs.
-**Vehicle** |  Spawns vehicles that range from surfboards to war buses, with a lot in between.
-**Vehicle > Gameplay** |  Vehicle-related devices that affect gameplay that involves vehicles, like fuel pumps and service stations.
-To learn more about a specific device and its modifiable options, see the pages under [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite) or [UEFN-Only Devices](https://dev.epicgames.com/documentation/fortnite/uefnonly-devices-in-fortnite) for those devices only available in UEFN.
-##  Device Functions and Events
-When you place **props** on an island, they are primarily thematic decoration, and are only involved in gameplay in a static (unmoving) way — like building barriers for a parkour-mode game, or creating paths for a maze adventure. Otherwise, props are there primarily to set the **theme** of the island.
-Unlike props, which are passive, **devices do things** when they are triggered. The things they do are called **functions**.
-When one device sends a **signal** to another device, this is called an **event**. An event triggers one or more devices to **do a specific thing or set a particular condition** , and that action or condition is called a **function**.
-A function can be **triggered** when the device receives a signal from another device **event**. Events can be **instigated**(started) by player actions, time triggers, or other devices.
-[![](https://dev.epicgames.com/community/api/documentation/image/7d0e4f31-40d1-496c-93f0-d02543bf30aa?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7d0e4f31-40d1-496c-93f0-d02543bf30aa?resizing_type=fit)
-In the image above:
-  1. A player interacts with a button, which
-  2. sends a signal to
-  3. a light source that's set to OFF by default.
-  4. This triggers an event that
-  5. turns on the light source.
+![30.30 Fortnite Ecosystem Updates and Release Notes](https://dev.epicgames.com/community/api/documentation/image/06f1dbd9-75be-48b8-b092-fe909b8000d4?resizing_type=fill&width=1920&height=335)
 
-To make these mechanics work between devices, the device functions and events have to be **[bound](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#binding)**.
-**In UEFN** , you can bind functions to events for other devices, but you can't bind events to functions.
+We’ve combined Patch Notes and Release Notes into one document! Now you can read all about the new devices, updates, and changes in one place on the Epic Developer Community!
 
-**In Creative (Live Edit)** , you can bind functions to events or events to functions.
-##  Devices in UEFN
-In UEFN, Fortnite devices are kept together in a folder named **Fortnite > Devices**. This folder can be accessed either from the **Content Drawer** or a **Content Browser**.
-If you're coming into UEFN from Unreal Engine (UE), the user interface will be familiar in many ways, but not identical. See [Editor User Interface](https://dev.epicgames.com/documentation/fortnite/getting-to-know-the-user-interface-in-unreal-editor-for-fortnite) for more information.
-In UEFN, Fortnite devices are kept together in a folder named **Fortnite > Devices**. This folder can be accessed either from the **Content Drawer** or a **Content Browser**.
-###  Find and Place a Device
-To find an place a device in UEFN:
-[![](https://dev.epicgames.com/community/api/documentation/image/3532561d-01d2-4f56-9bfe-5d8e97b7bc92?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3532561d-01d2-4f56-9bfe-5d8e97b7bc92?resizing_type=fit) The path to devices is All > Fortnite > Devices. Each folder contains groupings of similar devices. Clicking the folder shows the devices in that group.
-  1. Open a **Content Browser** panel.
-  2. Find the **Fortnite** folder and click to expand.
-  3. Click **Devices** to expand.
-  4. The easiest way to find a device is to use the **search bar**.
-  5. To browse devices, click a folder to expand it, find the device you want, and drag it into the viewport.
+In the Fortnite Ecosystem v30.30 update, check out the Fall Guys island templates available in Creative and UEFN and make your own Fall Guys obstacle courses in Fortnite! These templates feature unique and colorful Fall Guys assets to use in your islands. Also included in this update are some of your most wanted weapons and items; the Creator Profile Link and Side Scroller Controls devices; and new Orthographic options for the Fixed Angle and Fixed Point Cameras.
 
-###  Modify Device Options
-To customize options for a device:
-  1. Select the device in your **viewport** or on the **Outliner** panel.
-  2. View the available options in the **Details** panel.
-  3. Click **All** to ensure all available options are shown. The other tabs are filters that limit the options that display.
+## Don’t Forget to Claim Your Marvelous Designer License!
 
-[![](https://dev.epicgames.com/community/api/documentation/image/3b35b011-8db7-49e8-b5fb-2ac71b4adadf?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3b35b011-8db7-49e8-b5fb-2ac71b4adadf?resizing_type=fit)
-  * Not all devices have the same options available.
-  * Some options are nested inside other options.
-  * Some options only become available when another option is enabled.
+You have one month left to claim your **free** one-year license of **Marvelous Designer**. Make sure to [apply for your unique coupon code](https://create.fortnite.com/welcome?lang=en-US) before **August 25**, 2024, at 5 PM ET. Then, keep an eye on your inbox — we’ll send you an email containing your code along with details on how to activate your license. If you’ve received the email already, head over to the [Marvelous Designer site to redeem](https://www.marvelousdesigner.com/mypage).
 
-###  Bind Functions to Events
-Functions and events are also found on the **Details** panel.
-Events are shown for information only, which means you can retrieve/receive or "read" the value (event in this case), but cannot set, alter, or modify it. In UEFN, you can only bind a function to an event.
-In UEFN, binding functions to events involves selecting **array elements**. In UEFN, an **element** is a single component in a group of components. An **array** is a container for storing similar elements. When setting up your functions, you can select the array element you want to bind the function to.
-  1. With a device selected, scroll down through the **Details** panel, then click the **User Options - Functions** to expand it.
-[![](https://dev.epicgames.com/community/api/documentation/image/b451a9aa-8df5-4ecb-95bb-b706a7dccd33?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b451a9aa-8df5-4ecb-95bb-b706a7dccd33?resizing_type=fit)
-  2. Click the function you want to modify.
-The list of functions varies based on the device you've selected.
-  3. From the list of available functions, click the **+ (plus)** icon to add an **array element**. The array shows the functions available for that device.
-  4. Click the first dropdown, and select a device. If you have a lot of devices, you can use the search bar to find one more easily.
-  5. Click the second dropdown, and select the event you want to bind to this function.
+## Create Fall Guys Islands in Fortnite with UEFN and Creative!
 
-##  Expand Device Functionality with the Verse API Reference
-An application programming interface, or API, is a set of program instructions that can be used or modified in an existing software application. The [Verse API Reference](https://dev.epicgames.com/documentation/fortnite/verse-api) is an API library that provides ways to customize devices in UEFN by using Verse.
-Extending a device's functionality using Verse can be more efficient than trying to program gameplay in Verse entirely.
-Every device in UEFN has a corresponding Verse API that you can use to add or change device features beyond the default option modifications available in UEFN.
-Not all devices have the same degree of customization available in the API. The customization available varies based on how much of the device code is accessible (exposed) in the API.
-###  API Terms
-There are a few basic concepts that can help you make best use of the Verse API Reference.
-The definitions below are specific to Verse, and may have slightly different meanings in other areas of Fortnite.
-Term  |  What It Means
----|---
-**module** |  An atomic unit of code that can be reused. You can import a module into a Verse file in UEFN, and modify that code to customize it without breaking any dependencies to other units of code.
-**class** |  In Verse, a class is a template for creating objects that have similar properties and behaviors, defined by fields (variables) and methods (functions). Each device is a class.
-**hierarchy** |  Levels (hierarchies) of rank, importance, or control. Common hierarchical relationships are parent/child or superclass/subclass. Objects lower in the hierarchy inherit properties and methods from objects above it.
-**inheritance** |  In Verse, you can create a new class that extends an existing class definition by adding or modifying properties. This is often called subclassing or inheritance, because one class inherits definitions from the other class.
-**variable** |  A value that can be changed during runtime.
-**function** |  The code that provides instructions for performing an action.
-**member** |  In Verse, a member is a variable or function that is part of a composite data structure, such as a class or module. Member variables are sometimes called fields, and member functions are sometimes called methods.
-**Verse-authored device** |  A device for use in UEFN that is programmed directly using Verse.
-**struct** |  A struct (short for structure), is a user-defined type that allows you to group several related variables together. Several structs are available in the API. A common use of structs is for error messages, where message text and relevant data from the failed function are grouped
-###  Find a Device API
-The device categories do not match the categories in the UEFN Content Browser. The device names also do not always match the name of the device in UEFN or Creative.
-To find the API for a device in the Table of Contents:
-  1. Go to the [Verse API Reference](https://dev.epicgames.com/documentation/fortnite/verse-api).
-  2. Find the **Fortnite.com module** , then the [Devices module](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices) underneath it.
+[![Fortnite character as a Fall Guys bean](https://dev.epicgames.com/community/api/documentation/image/88d011b7-ffe8-443d-9d28-ae31379b98fd?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/88d011b7-ffe8-443d-9d28-ae31379b98fd?resizing_type=fit)
 
-[![](https://dev.epicgames.com/community/api/documentation/image/794c0bb1-9cc1-4ac5-955f-7d293cac6b67?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/794c0bb1-9cc1-4ac5-955f-7d293cac6b67?resizing_type=fit)
-You can also search for the device by name or key words in the search bar.
-For some good examples of how you can use the Verse API to expand device functionality, see the [Spice Up the Gameplay with Verse](https://dev.epicgames.com/documentation/fortnite/first-island-05-spice-up-the-gameplay-with-verse-in-fortnite) page of the [Build Your First Island in Fortnite](https://dev.epicgames.com/documentation/fortnite/build-your-first-island-in-fortnite) tutorial.
-To learn more about Verse, see the Verse Language Reference.
-###  How the API Reference Pages Work
-When you drill all the way down in the API to a device page, the important information to look for is:
-  * **Verse using statement:** This is the statement you need to include in your Verse device to make use of the given module. For devices, it’s always:
-`using { /Fortnite.com/Devices }`
-  * **Inheritance hierarchy:** This is a parent-child structure where child classes (subclasses) inherit variables and functions from the classes above it in the hierarchical structure.
+You can now make Fall Guys obstacle courses in Fortnite! When you start a new project using the **Fall Guys template**, you’ll get access to a large selection of Fall Guys assets straight from the Blunderdome. Even better, all player characters will look, feel, and even move like the Beans you know and love from Fall Guys Original!
 
-[![](https://dev.epicgames.com/community/api/documentation/image/e478b84f-e9e4-4558-a41d-b3aabfeb4517?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e478b84f-e9e4-4558-a41d-b3aabfeb4517?resizing_type=fit) In this image, health_powerup_device_ inherits from powerup_device, which inherits from creative_device_base, and so on.
-To follow how a typical API page is organized, see the [health_powerup_device_class](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/devices/health_powerup_device) page.
-[![](https://dev.epicgames.com/community/api/documentation/image/e07e3cb8-ae47-436e-b998-b0206546aa86?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e07e3cb8-ae47-436e-b998-b0206546aa86?resizing_type=fit) The menu on the right provides quick navigation to information. The information on the left under each topic gives the name and description.
-The topics covered for each device are:
-  * **Inheritance Hierarchy:** The device hierarchal structure.
-  * **Members:** Broken down by Data and Functions.
+As part of the special templates, you have access to a large selection of prefabs and galleries, filled with pieces you can use to build custom Fall Guys-style obstacle courses. The obstacles and building components come in various sizes to fit your island's needs.
 
-  * **Data:** Includes variables and events that you can use to trigger behavior — for example, ItemPickedUpEvent is based on when a player picks up an item, which triggers something else to occur.
-  * **Functions:** All of the device functions that are exposed by the API.
+[![Fall Guys Obstacles Gallery](https://dev.epicgames.com/community/api/documentation/image/c1e987f3-e8b1-427e-a97c-8261029d97d1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c1e987f3-e8b1-427e-a97c-8261029d97d1?resizing_type=fit)
 
-###  Make Your Own Device with Verse
-In UEFN, you can also create your own [Verse-authored device](https://dev.epicgames.com/documentation/fortnite/verse-glossary#verse-authored-device) to create custom game mechanics from the ground up to address the unique requirements of your island. This can range from something as simple as a counter to track player eliminations to something complex like tying several devices together to leverage their combined functionalities.
-To learn more about how to create your own device with Verse, see [Modify and Run Your First Verse Program](https://dev.epicgames.com/documentation/fortnite/modify-and-run-your-first-verse-program-in-unreal-editor-for-fortnite).
-##  Devices in Creative
-The devices in Creative are mostly the same as those available in UEFN, but the way you find, place, and modify them is very different.
-###  Find a Device
-To find a device:
-  1. From [Create mode](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#create-mode), press the **M** key, then click **Content**.
-  2. Select the **Devices** category on the left. From here, you can browse the entire inventory of devices, or narrow your search.
-[![](https://dev.epicgames.com/community/api/documentation/image/8f3c7bde-b5c8-448e-906d-28dd35153996?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8f3c7bde-b5c8-448e-906d-28dd35153996?resizing_type=fit)
-  3. Narrow your search (optional):
-     * Use the search bar to search by device name.
-     * Filter devices in the right panel with tags.
-     * Click the **Sort** button to sort the results alphabetically.
+You will be able to publish your Fall Guys islands starting August 6 in the [Creator Portal](https://create.fortnite.com/welcome) — these islands won’t auto-publish so you’ll need to do it manually. Islands created with the Fall Guys starter islands may qualify for placement in a limited-time Fall Guys row in Discover.
 
-###  Place a Device
-There are different ways you can place a device on your island.
-[![](https://dev.epicgames.com/community/api/documentation/image/eabfe1a5-b87b-45bd-afd3-a187db4f3277?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/eabfe1a5-b87b-45bd-afd3-a187db4f3277?resizing_type=fit)
-  1. Select the device then:
-     * Click the **Quick Bar** tile,
-     * Press the corresponding tile number, or
-     * Drag the device on to the tile.
-The device should display on the Quick Bar when you return to your island.
-  2. Click **Place Now**. This places the device directly onto your island, and returns you to the island.
-  3. Click **Equip** to add it to the next available tile on your Quick Bar.
-  4. Click Exit to return to your island.
+We want to hear from you! As you’re building Fall Guys islands, feel free to provide feedback about the starter islands/templates, the tools, and the Bean character to the [EDC Forum Fall Guys Tools: Feedback Thread](https://forums.unrealengine.com/t/fall-guys-tools-feedback-thread/1940690) so we can continue to improve them with your help!
 
-For more on how to place, resize, copy, and delete devices (plus a whole lot more!), see [Hotkeys and Keybinding Shortcuts](https://dev.epicgames.com/documentation/fortnite/hotkey-and-keybinding-shortcuts-in-fortnite-creative). The device should display on the Quick Bar when you return to your island.Click Equip to add it to the next available tile on your Quick Bar.Click Exit to return to your island.
-###  Modify Device Options
-Because Creative can be used on multiple gaming devices, from PCs to consoles and handheld devices, the UI is more visual — and larger — compared to UEFN.
-To customize device options in Creative, approach a device and press **E** to open the **Customize** panel.
-[![](https://dev.epicgames.com/community/api/documentation/image/35addbeb-05ff-462e-8e8c-56ba47d80705?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/35addbeb-05ff-462e-8e8c-56ba47d80705?resizing_type=fit)
-[![](https://dev.epicgames.com/community/api/documentation/image/1656822a-ccf3-4c72-af5c-2d756b6620c5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1656822a-ccf3-4c72-af5c-2d756b6620c5?resizing_type=fit)
-The panel has **tabs** that you can use to navigate between the different options:
-[![](https://dev.epicgames.com/community/api/documentation/image/38c0a468-f484-459d-9031-70a76286520c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/38c0a468-f484-459d-9031-70a76286520c?resizing_type=fit)
-|  Options Tab Name  |  Description
----|---|---
-**1** |  Basic Options |  These are the most common options that you can customize.
-**2** |  All Options |  This tab shows options available for the device.
-**3** |  Modified Options |  This shows the modifications you’ve made.
-**4** |  Functions |  Use this tab to bind a function to an event.
-**5** |  Events |  Use this tab to bind an event to a function.
-**6** |  Search |  Some devices have a lot of available options. If you know the option name, you can use the Search tab to find a specific option.
-###  Bind Functions and Events
-In Creative, you can bind functions to events or events to functions.
-  1. With the **Customize** device panel open, click the **Functions** tab.
-  2. Select a function then click **Add**.
-[![](https://dev.epicgames.com/community/api/documentation/image/6c46d417-1f1b-4ae5-842d-2dc99819ce3e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6c46d417-1f1b-4ae5-842d-2dc99819ce3e?resizing_type=fit)
-  3. Click **Select Device** and select from the Device dropdown menu.
-  4. Click **Select Event** to bind the device to an event that triggers the function for the device.
+To learn more about Fall Guys in Fortnite, [check out the blog post](https://create.fortnite.com/news/create-fall-guys-islands-in-fortnite-with-uefn-and-creative) and our learning materials [Building Fall Guys Islands](https://dev.epicgames.com/documentation/fortnite-creative/building-fall-guys-islands-in-fortnite-creative), [Working with Fall Guys Islands](https://dev.epicgames.com/documentation/fortnite-creative/working-with-fall-guys-islands-in-fortnite-creative), and [Fall Guys Obstacle Course Assets](https://dev.epicgames.com/documentation/fortnite-creative/fall-guys-obstacle-course-assets-in-fortnite-creative).
 
-If more than one device or event triggers a function, click the Add button to add a line and repeat these steps.
-You can also bind devices from the **Events** tab.
-##  Tips for Customizing Devices in Creative
-Every device has its own specific settings that you can modify, but there are a few useful features common to most devices.
-Click the **settings (gear) icon** at the bottom of the panel to open a settings menu.
-[![](https://dev.epicgames.com/community/api/documentation/image/d4ff5cd1-9d71-4fd0-b345-cf24660f016c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d4ff5cd1-9d71-4fd0-b345-cf24660f016c?resizing_type=fit)
-###  Rename
-Give the device a **custom name** or **reset to the default** name.
-You can also rename the device at the top of the Customize panel.
-[![](https://dev.epicgames.com/community/api/documentation/image/28947e3c-0cbf-461b-9af3-e82507bc4abc?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/28947e3c-0cbf-461b-9af3-e82507bc4abc?resizing_type=fit)
-Giving a device a unique name is helpful if you are using multiple versions of the same device. For example, if you have multiple Wildlife Spawner devices, naming each one based on the type of wildlife it spawns makes it easier to find the right device if you want to change your customizations later.
-Renaming devices is also helpful when you use the [Event Browser](https://dev.epicgames.com/documentation/fortnite/event-browser-in-fortnite-creative).
-###  Reset All
-Most devices have multiple settings that you can customize. This resets all of the options back to default. This also resets the device name if you've changed it.
-###  Reset Properties
-This resets any option values back to the defaults, but does not change the device name.
-###  Reset Functions
-This only resets any functions you've defined for a device.
-###  Reset Events
-This only resets any events you've defined for a device.
-The resets are great for when you want to start over on device customization, or if you want to make two of the same device with very different settings.
+[![Building Fall Guys Islands in Creative and UEFN](https://dev.epicgames.com/community/api/documentation/image/82350b99-fb3b-4bfd-85d3-172b2da43bc7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/82350b99-fb3b-4bfd-85d3-172b2da43bc7?resizing_type=fit)
+
+### Fall Guys Prefabs & Galleries
+
+- Fall Guys Large Checkpoint
+- Fall Guys Medium Checkpoint
+- Fall Guys Small Checkpoint
+- Fall Guys Finish Funnel
+- Fall Guys Large Finish Platform
+- Fall Guys Medium Finish Platform
+- Fall Guys Small Finish Platform
+- Fall Guys Large Starting Platform
+- Fall Guys Medium Starting Platform
+- Fall Guys Small Starting Platform
+- Fall Guys Components Gallery
+- Fall Guys Obstacles Gallery
+- Fall Guys Elemental Gallery A
+
+## New Side Scroller Controls and Orthographic Cameras Settings
+
+Create Side Scrollers and retro-style, 2D isometric gameplay using the new [Side Scroller Controls Device](https://dev.epicgames.com/documentation/fortnite-creative/using-side-scroller-controls-devices-in-fortnite-creative) and Orthographic Camera settings in Creative and UEFN. The Side Scroller Controls device can be used with the Orthographic Camera device option on Fixed Angle, Fixed Perspective, and Orbit cameras to clamp a player to a directional axis.
+
+### Side Scroller Controls Device (Early Access)
+
+The Side Scroller Controls device is in Early Access. **Early Access** means we’re giving you an opportunity to try out a feature that’s still under development. By releasing a device as Early Access, our aim is to put exciting new features and devices into your hands as soon as their core functionality can be used effectively. We’ll take any feedback you provide to improve the device for final release.
+
+The Side Scroller Controls device can be paired with the Fixed Angle and Fixed Point Camera devices to create side scroller gameplay. You can use the Side Scroller Controls device to clamp the player character's movement and/or facing to a directional axis.
+
+[![The Side Scroller Controls Device can be paired with the Fixed Angle and Fixed Point Camera Devices to create side scroller gameplay.](https://dev.epicgames.com/community/api/documentation/image/02da8820-a613-4b24-9b0f-3329a728c75e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/02da8820-a613-4b24-9b0f-3329a728c75e?resizing_type=fit)
+
+### Orthographic Camera Settings Added to Fixed Point, Fixed Angle, and Orbit Cameras
+
+Using the Orthographic Camera device option removes all perspective from the camera’s view. You can also adjust the width and rotation of the orthographic view. This is useful for making isometric or 2D games, or used with the Side Scroller Controls device to make retro-style side scroller games.
+
+## New Scene Graph Platformer Tutorial
+
+Use the power of Scene Graph to create a platformer! In the [Scene Graph Platformer Tutorial](https://dev.epicgames.com/documentation/en-us/uefn/create-a-platformer-with-scene-graph-in-unreal-editor-for-fortnite), you’ll create custom Verse components to build platform behaviors, like moving back and forth, resetting, and disappearing on a loop! You’ll then iterate on these components to quickly build a platformer level! This tutorial is a great place to start learning how to use Verse with Scene Graph and create your own custom components.
+
+[![Ping Pong platformer example.](https://dev.epicgames.com/community/api/documentation/image/ae993d15-41a7-406a-947e-bcc617ea3aff?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ae993d15-41a7-406a-947e-bcc617ea3aff?resizing_type=fit)
+
+## New Devices and Items
+
+### Creator Profile Link Device
+
+Place the [Creator Profile Link](https://dev.epicgames.com/documentation/fortnite-creative/using-creator-profile-link-devices-in-fortnite-creative) device on your island to give players a way to discover more about you and your islands. In-game, the device displays a QR code that directs players to the island owner’s site on Fortnite.com. The creator’s page lets players see and discover other islands from the same creator, connect to the creator on social media, and learn more about the type of islands that creator likes to make.
+
+### Save Point Device Updates
+
+The **Save Scoreboard Stats Behavior** device option was added so you can choose from saving round stats, career stats, or both. This makes it easier to save career scores while also using score as a condition for ending the round.
+
+### Creator Most Wanted Weapons and Items
+
+You wanted it, you got it!
+
+| Weapon / Item | Image |
+| --- | --- |
+| Estate Vault Key | [Estate Vault Key](https://dev.epicgames.com/community/api/documentation/image/9626fda6-ca2d-4978-ae20-e82af3ac0898?resizing_type=fit) |
+| Dual Pistols | [Dual Pistols](https://dev.epicgames.com/community/api/documentation/image/29a27ede-b188-4237-b1f2-8ee89bdf071b?resizing_type=fit) |
+| Light Machine Gun | [Light Machine Gun](https://dev.epicgames.com/community/api/documentation/image/0255716b-8f1e-4881-8087-1c256ccad383?resizing_type=fit) |
+| Semi-Auto Sniper Rifle | [Semi-Auto Sniper Rifle](https://dev.epicgames.com/community/api/documentation/image/1080bdb3-cd02-408b-a674-1150924989e1?resizing_type=fit) |
+| Semi-Auto Suppressed Pistol | [Semi-Auto Suppressed Pistol](https://dev.epicgames.com/community/api/documentation/image/75d89045-8f7f-4d19-a348-e03c3210b513?resizing_type=fit) |
+| Suppressed Pistol | [Suppressed Pistol](https://dev.epicgames.com/community/api/documentation/image/de8b5194-c851-4d36-8ff4-e55bab0b3360?resizing_type=fit) |
+
+### LEGO Items Update
+
+The following resource currencies can now be used with various devices on LEGO Islands:
+
+- Wood
+- Stone
+- Metal
+- Gold
+
+## Coming Soon: Session Length Metrics in Creator Portal
+
+Session length metrics will be available in the Analytics tab! Team owners, administrators and publishers can visit the [navigation panel](https://dev.epicgames.com/documentation/en-us/fortnite-creative/project-navigation-in-fortnite-creative) on each published project within Creator Portal to view the Analytics tab. More new metrics will be added here soon!
+
+## Documentation and Learning Updates
+
+Check out these new documentation and learning updates:
+
+- [Using Creator Portal](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-creator-portal-in-fortnite-creative): A new section that focuses on everything the Creator Portal offers, from publishing to project management.
+- [Convert a Static Mesh into a Skeletal Mesh](https://dev.epicgames.com/documentation/en-us/uefn/convert-a-static-mesh-into-a-skeletal-mesh-in-unreal-editor-for-fortnite): Learn how to use the Skeleton Editor and Skeletal Mesh Editor to turn a 3D Static Mesh asset into a Skeletal Mesh by adding a skeleton that can be animated.
+- [Sorting Algorithms in Verse](https://dev.epicgames.com/documentation/en-us/uefn/sorting-algorithms-in-verse): Learn how to sort lists of objects using Verse, and how to profile, test, and select the right sorting algorithm for your use case.
+- [Make Your Own In-Game Leaderboard using Verse](https://dev.epicgames.com/documentation/en-us/uefn/make-your-own-in-game-leaderboard-in-verse): Learn how to create an in-game leaderboard that tracks player stats across games.
+- [Custom Round Logic](https://dev.epicgames.com/documentation/en-us/uefn/custom-round-logic-using-verse): Learn how to save information that persists across rounds and reset the persistent data when the multi-round game ends or a player leaves the session.
+- [Disappearing Platform on Loop](https://dev.epicgames.com/documentation/en-us/uefn/disappearing-platform-on-loop-using-verse-in-unreal-editor-for-fortnite), [Disappearing Platform on Touch](https://dev.epicgames.com/documentation/en-us/uefn/disappearing-platform-on-touch-using-verse-in-unreal-editor-for-fortnite), and [Synchronized Disappearing Platforms](https://dev.epicgames.com/documentation/en-us/uefn/synchronized-disappearing-platforms-using-verse-in-unreal-editor-for-fortnite): These tutorials have a fresh coat of paint! Learn how to create platforms that appear and disappear on a loop, on touch, and in a synchronized sequence.
+
+## Community Bug Fixes
+
+The following list of fixes are from issues that you submitted to us on the forums. Thank you for your patience and for reporting these issues!
+
+- Improved Launch Session reliability when connecting to server.
+- [Forum Issue Report](https://forums.unrealengine.com/t/launching-session-fails-connecting-to-private-ip-addresses-timing-out-multiple-times-before-succeeding/1892550)
+
+## Creative Updates and Fixes
+
+**Fixes**:
+
+- Conductor Hand Cannon now uses the proper season tag in the Creative inventory.
+
+## Creative and UEFN Updates and Fixes
+
+**New**:
+
+- Older versions of the Suppressed Pistol have been renamed to Semi-Auto Suppressed Pistol.
+
+### Devices
+
+**New**:
+
+- Three new drum kits were added to the Patchwork Drum Player device.
+- Improved the Patchwork Instrument Player's Glocken samples at lower registers.
+
+**Fixes**:
+
+- The Regrowth Delay option of the Healing Cactus now works as expected.
+
+### Fall Guys Islands Known Issues
+
+- Replays are currently not functional on Fall Guys islands.
+
+## UEFN Updates and Fixes
+
+**New**:
+
+- Find and Replace tabs are now available in animation editors.
+- The following are improvements to Environment and Landscape tools:
+
+  - Optimized runtime grass instance generation.
+  - Optimized landscape save times when runtime generation is enabled, by disabling grass map distance eviction in the editor.
+  - Changed the default LODBlendRange to 0.1 to improve the default behavior of landscape LOD tessellation.
+- Added Skeletal Mesh support to the Inspect tool.
+
+**Fixes**:
+
+- The following are fixes applied to Environment and Landscape tools:
+
+  - Landscape serialization used during Mobile preview mode no longer results in a crash.
+  - Landscape texture streaming is no longer disabled after garbage collection.
+  - Editor no longer crashes during a routine landscape save when rebuilding grass maps.
+- Animation editors no longer select the incorrect bone for non-mesh bones leading to array OOBs.
+- Changing the layout of the editor tabs no longer results in a corrupt layout.
+- Level Instance Edit Mode no longer crashes when using the mouse scroll wheel.
+- Curve tables no longer reset data or prevent data from being editable in PIE.
+- Assets and properties now appear localized.
+- The following Modeling tools no longer result in a crash state after resizing the brush using the ‘B’ hotkey method:
+
+  - Edit Materials
+  - Paint Maps
+
+### Scene Graph
+
+**New:**
+
+- Multi Select is enabled in the Prefab Editor for gizmo operations.
+
+**Fixes:**
+
+- Focus On Selection now works on initial creation, and for empty and non-physics body assets that have entities.

@@ -1,7 +1,16 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/simulation/session
 
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+# session class
 
-**Session ID** : 9dfa5026efdf71a8
-**IP Address** : 14.191.95.176
+Learn technical details about the session class.
+
+Type for which there is a single instance per round. Use `GetSession` to get the current round's `session` instance. May be used with `weak_map` to implement global variables.
+Note: may be changed in a future release to a single instance per game. Round-local behavior should not be relied upon.
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /Verse.org/Simulation }` |
+
+## Members
+
+This class has no members.

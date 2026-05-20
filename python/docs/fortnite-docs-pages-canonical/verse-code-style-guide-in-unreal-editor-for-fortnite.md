@@ -1,85 +1,503 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-code-style-guide-in-unreal-editor-for-fortnite
 
-# 35.10 Fortnite Ecosystem Updates and Release Notes
-Find out what's new with the 35.10 release of Fortnite on May 16, 2025!
-![35.10 Fortnite Ecosystem Updates and Release Notes](https://dev.epicgames.com/community/api/documentation/image/cf845e8c-99b4-4258-858e-296a13d737f1?resizing_type=fill&width=1920&height=335)
-Get ready to publish your Fortnite islands using the **The Walking Dead Universe** assets. Publishing for these islands unlocks today! In v35.10, you’ll find a new Gunfight template showcasing best practices for creating engaging first-person shooter games with UEFN, plus new Grand Glacier, Snowy Mountain, and Spooky Holiday Prefabs and Galleries. Read on to learn more!
-##  Publish Your The Walking Dead Universe Islands
-[![TWDU Islands in UEFN](https://dev.epicgames.com/community/api/documentation/image/2e3505ba-a54e-44fb-9a3d-f4f6df8564d8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2e3505ba-a54e-44fb-9a3d-f4f6df8564d8?resizing_type=fit)
-The wait is over, you can publish your Fortnite islands using The Walking Dead Universe (TWDU) assets, starting May 16 at 12 PM ET! Head to [Creator Portal](https://create.fortnite.com/welcome) to submit your island through content review.
-The Walking Dead Universe (TWDU) will be featured front and center in **Discover** , with a dedicated **Game Collections** slot following the approach used for previous IP launches. Skybound, the IP holder, will curate a **TWDU Picks** row to highlight a varied selection of their favorite TWDU experiences. We’re continuing to experiment with and refine Game Collections to promote a wide range of high-effort islands that bring IPs to life.
-TWDU islands are eligible for additional Discover placement, including Epic’s Picks — so don’t forget to [submit them](https://creative.fortnite.com/s/)! There will also be a quest for players to complete, encouraging players to explore TWDU islands.
-We can’t wait to see what you’ve created!
-##  New Gunfight Template to Create High-Caliber FPS Games with UEFN
-[![Gunfight Template in UEFN](https://dev.epicgames.com/community/api/documentation/image/98dbf1a6-5c41-4bf8-a493-6b962383fd55?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/98dbf1a6-5c41-4bf8-a493-6b962383fd55?resizing_type=fit)
-Explore best practices for building engaging first-person shooter (FPS) gameplay with the new Gunfight 2v2 example template in Unreal Editor for Fortnite (UEFN).
-This hands-on template offers a practical starting point for creating FPS islands using the [First-Person Camera](https://dev.epicgames.com/documentation/fortnite/using-first-person-camera-devices-in-fortnite-creative). It includes detailed Verse examples for player management, such as dynamic team balancing and weapon granting, all documented with inline notes.
-You’ll also find guidance on efficient FPS game structure and level design, including how to build multiple distinct play areas within a single Fortnite island. Each round shifts the action to a different area, demonstrating how to create varied playspaces in one match.
-Try out the playable version of the Gunfight template now (Code: 5043-2939-1074).
-Want to find out more about the Gunfight Example Template and other UEFN templates? Check that the coast is clear, then combat roll into the [UEFN Starter Templates](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-starter-templates) documentation.
-##  New Prefabs & Galleries
-  * Grand Glacier Hotel
-  * Grand Glacier Hotel Wall Gallery
-  * Grand Glacier Hotel Floor & Stair Gallery
-  * Grand Glacier Hotel Roof Gallery
-  * Grand Glacier Hotel Prop Gallery
-  * Grand Glacier Indoor Wall Gallery
-  * Snowy Mountain Nature Gallery
-  * Spooky Holiday Prop Gallery
+# Verse Code Style Guide
 
-We accidentally included assets from a licensed IP in the Japanese Forest Nature Gallery released in v35.00. For v35.10, we removed the assets from your projects and the gallery. The rest of the gallery will remain intact. We apologize for the inconvenience.
-##  Twitch Link Added to Creator Profiles
-You can now add your Twitch handle to your Creator Profile — joining TikTok, Discord, X, and Instagram as supported platforms.
-##  Fortnite Ecosystem Updates and Fixes
-Fixes:
-  * Fixed the Matchmaking Portal device from having the default texture on only half of one side when using the Live Edit tool.
-  * Fixed the Accolade device from failing to display text on the UI in subsequent rounds.
-  * Fixed the Accolades Award UI failing to appear during Edit mode.
-  * Fixed unreleased devices and prefabs exposure in both UEFN and VK Edit sessions.
-  * Improved the loading screen behavior for players who are loading into their island. Added additional checks for loading the terrain, props, and environment.
+Write consistent, maintainable Verse code that your team will want to read.
 
-###  Devices
-Fixes:
-  * Fixed an issue where two or more Prop Manipulator devices touching the same asset could not, in some cases, get selected based on their Priority settings.
-  * Fixed players being immune to Damage Volumes if they enter while driving a Baller.
-  * Fixed some UI icons that were not showing up when the Input Trigger device was changed.
+![Verse Code Style Guide](https://dev.epicgames.com/community/api/documentation/image/3e107afd-9d7c-41f8-bfdb-a22b68efe2a8?resizing_type=fill&width=1920&height=335)
 
-###  Items
-Fixes
-  * Fixed an issue where the Lawless Slap Cannon had the wrong visuals when dropped from the Creative Inventory.
+This guide provides a set of recommended standards for writing consistent code that's easy to maintain. By adhering to these guidelines, developers can improve code readability, reduce errors, and facilitate collaboration. A standardized code style is necessary to ensure code is easy to understand and maintain by both current and future developers working on a project.
 
-##  Brand Island Updates and Fixes
-###  LEGO® Islands
-New:
-  * Added the Impulse and Shockwave Grenades for use on LEGO Islands.
-  * Moved the Dialog Background and Dialog Divider textures out of the LEGO Action Adventure template. They are now available in the Content Drawer under **LEGO® Content > Textures > Quests**.
+This guide provides recommendations, but ultimately the choice is up to your team.
 
-Fixes:
-  * Fixed a case where the Assembly device could not be interacted with on mobile.
+## 1. Common Naming Patterns
 
-###  The Walking Dead Universe
-New:
-  * Added Dynamic Stride Length for Walker animations at increased speeds.
-  * Added additional color variations for the Walker Prisoner uniforms.
+Naming is crucial for readable and maintainable code. Try to be consistent in the naming style throughout your code.
 
-Fixes:
-  * Optimized Walkers to not do unnecessary animation when offscreen.
-  * Improved Walkers falling and aerial animations.
-  * Updated Walkers to better target and damage a player's built walls.
+### 1.1 Do
 
-##  UEFN Updates and Fixes
-Fixes:
-  * Fixed an issue where transformation emotes would not work in UEFN Islands.
-  * Fixed a faulty check where the loading screen would dismiss before the environment loaded.
-  * Fixed the localization support for the Advanced Transform category name of the Transform tool in the UV Editor.
+- **`IsX`**: Often used for naming logic variables to ask a question (for example, IsEmpty).
+- **`OnX`**: An overloadable function called by the framework.
+- **`SubscribeX`**: Subscribe to framework event named X, often passing an OnX function to it.
+- **`MakeC`**: Make an instance of class c without overloading the c constructor.
+- **`CreateC`**: Create an instance of class c, beginning its logical lifetime.
+- **`DestroyC`**: End the logic lifetime.
+- **`C:c`**: If you’re working with a single instance of class c, it’s fine to call it C.
 
-  * Resolved an issue where `MaterialFunctionInstance` failed to retrieve all parameters from the associated material function.
+### 1.2 Don’t
 
-##  Verse Updates and Fixes
-###  API
-Fixes:
-  * Added support to `MoveTo` for creative objects to scale something up from zero to a non-zero value.
+- Decorate type names. Just call it `thing`, not `thing_type` or `thing_class`.
+- Decorate enumeration values. Not `color := enum{COLOR_Red, COLOR_Green}`, use `color := enum{Red, Green}`.
 
-###  Tools
-Fixes:
-  * Fixed false dependency errors in the digests generated by UEFN for VS Code.
+## 2. Names
+
+### 2.1 Types use lower_snake_case
+
+Type names should always be `lower_snake_case`. This includes all types: structs, classes, typedefs, traits/interfaces, enums, etc.
+
+Verse
+
+```
+my_new_type := class
+```
+
+my_new_type := class
+
+### 2.2 Interfaces are adjectives
+
+Interfaces should be adjectives where possible, such as printable, enumerable. Where adjectives don’t seem right, append `_interface` to the name instead.
+
+Verse
+
+```
+my_new_thing_interface := interface
+```
+
+my_new_thing_interface := interface
+
+### 2.3 PascalCase everything else
+
+All other names should be PascalCase. Modules, member variables, parameters, methods, and so on.
+
+Verse
+
+```
+MyNewVariable:my_new_type = …
+```
+
+MyNewVariable:my_new_type = …
+
+### 2.4 Parametric Types
+
+- Name parametric types t or thing, where thing explains what the type is supposed to represent. For example:
+  `Send(Payload:payload where payload:type)`
+  You’re sending some parameterized data, `Payload`, of any `payload` type.
+- If there’s more than one parametric type, avoid using single letters, such as `t`, `u`, `g`
+- Never use `_t` suffix.
+
+## 3. Formatting
+
+It is important to stay consistent with formatting throughout your codebase. This makes the code easier to read and understand for yourself and other developers. Choose a formatting style that works for the project.
+
+As an example of staying consistent, you could choose one of the following spacing formats and use it throughout the codebase:
+
+Verse
+
+```
+MyVariable : int = 5
+MyVariable:int = 5
+```
+
+MyVariable : int = 5
+MyVariable:int = 5
+
+### 3.1 Indentation
+
+- Use four spaces for indentation, never tabs.
+- Code blocks should use indented blocks (spaced) rather than curly brackets (braced):
+
+  Verse
+
+  ```
+  my_class := class:
+            Foo():void =
+                Print("Hello World")
+  ```
+
+  my_class := class:
+  Foo():void =
+  Print(&quot;Hello World&quot;)
+  - Except when writing single line expressions like `option{a}`, `my_class{A := b}`, etc.
+
+### 3.2 Spaces
+
+- Use spaces around operators, unless it makes sense to keep the code compact for its context. Add brackets to explicitly define the order of operations.
+
+  Verse
+
+  ```
+  MyNumber := 4 + (2 * (a + b))
+  ```
+
+  MyNumber := 4 + (2 * (a + b))
+- Don’t add spaces at the beginnings and ends of brackets. Multiple expressions inside brackets should be separated by a single space.
+
+  Verse
+
+  ```
+  MyEnum := enum{Red, Blue, Green}
+  MyObject:my_class = my_class{X := 1, Y := 2}
+  Vector := vector3{Left := 1000.0, Up := -1000.0, Forward := 0.0}
+  Foo(Num:int, Str:[]char)
+  ```
+
+  MyEnum := enum{Red, Blue, Green}
+  MyObject:my_class = my_class{X := 1, Y := 2}
+  Vector := vector3{Left := 1000.0, Up := -1000.0, Forward := 0.0}
+  Foo(Num:int, Str:[]char)
+- Keep identifier and type together; add a space around the assignment `=` operator. Add a space around type definitions and constant initialization operators (`:=`).
+
+  Verse
+
+  ```
+  MyVariable:int = 5
+  MyVariable := 5
+  my_type := class
+  ```
+
+  MyVariable:int = 5
+  MyVariable := 5
+  my_type := class
+- Follow the same recommendations for brackets, identifiers, and types spacing for function signatures.
+
+  Verse
+
+  ```
+  Foo(X:t where t:subtype(class3)):tuple(t, int) = (X, X.Property)
+        Foo(G(:t):void where t:type):void
+        Const(X:t, :u where t:type, u:type):t = X
+  ```
+
+  Foo(X:t where t:subtype(class3)):tuple(t, int) = (X, X.Property)
+  Foo(G(:t):void where t:type):void
+  Const(X:t, :u where t:type, u:type):t = X
+
+### 3.3 Line Breaks
+
+- Use a spaced, multiline form to insert a line break.
+
+  |  |  |  |
+  | --- | --- | --- |
+  | **Do** | Verse  ``` MyTransform := transform:     Translation := vector3:         Left := 100.0         Up := 200.0         Forward := 300.0      Rotation := rotation:         Pitch := 0.0         Yaw := 0.0         Roll := 0.0 ``` MyTransform := transform: Translation := vector3: Left := 100.0 Up := 200.0 Forward := 300.0 Rotation := rotation: Pitch := 0.0 Yaw := 0.0 Roll := 0.0 | **More readable and easier to edit.** |
+  | **Don't** | Verse  ``` MyTransform := transform{Translation := vector3{Left := 100.0, Up := 200.0, Forward := 300.0}, Rotation := rotation{...}} ``` MyTransform := transform{Translation := vector3{Left := 100.0, Up := 200.0, Forward := 300.0}, Rotation := rotation{...}} | **Hard to read on a single line.** |
+
+- Define enums in spaced, multiline form if they need per-enumeration comments or if you need to insert a line break.
+
+  Verse
+
+  ```
+  enum:
+      Red, # Desc1
+      Blue, # Desc2
+  ```
+
+  enum:
+  Red, # Desc1
+  Blue, # Desc2
+
+### 3.4 Brackets
+
+Don’t use brackets for non-inheriting class definitions.
+
+|  |  |
+| --- | --- |
+| **Do** | Verse  ``` my_base_type := class: ``` my_base_type := class: |
+| **Don't** | Verse  ``` my_base_type := class(): ``` my_base_type := class(): |
+
+### 3.5 Avoid Dot-Space Notation
+
+Avoid using dot-space ". " notation in place of braces. This makes it visually harder to parse whitespace and is a potential source of confusion.
+
+|  |  |
+| --- | --- |
+| **Don't** | Verse  ``` spawn { F() } -> spawn. F() ``` spawn { F() } -> spawn. F() |
+| **Don't** | Verse  ``` using { Foo } -> using. Foo ``` using { Foo } -> using. Foo |
+
+## 4. Functions
+
+### 4.1 Implicit return by default
+
+Functions return their last expression value. Use that as an implicit return.
+
+Verse
+
+```
+Sqr(X:int):int =
+    X * X # Implicit return
+```
+
+Sqr(X:int):int =
+X * X # Implicit return
+
+If using any explicit returns, all returns in the function should be explicit.
+
+### 4.2 GetX functions should be
+
+Getters or functions with similar semantics that may fail to return valid values should be marked `<decides><transacts>` and return a non-option type. The caller should handle potential failure.
+
+Verse
+
+```
+GetX()<decides><transacts>:x
+```
+
+GetX()<decides><transacts>:x
+
+An exception is functions that need to unconditionally write to a `var`. Failure would roll the mutation back, so they need to use `logic` or `option` for their return type.
+
+### 4.3 Prefer Extension Methods to Single Parameter Functions
+
+Use extension methods instead of a function with a single typed parameter.
+
+Doing this helps Intellisense. By typing `MyVector.Normalize()` instead of `Normalize(MyVector)` it can suggest names with each character of the method name you type.
+
+|  |  |
+| --- | --- |
+| **Do** | Verse  ``` (Vector:vector3).Normalize<public>():vector3 ``` (Vector:vector3).Normalize<public>():vector3 |
+| **Don't** | Verse  ``` Normalize<public>(Vector:vector3):vector3 ``` Normalize<public>(Vector:vector3):vector3 |
+
+## 5. Failure Checks
+
+### 5.1 Limit single line Failable Expressions count to three
+
+- Limit conditional checks/failable expressions on a single line to a maximum of three.
+
+  Verse
+
+  ```
+  if (Damage > 10, Player := FindRandomPlayer[], Player.GetFortCharacter[].IsAlive[]):
+            EliminatePlayer(Player)
+  ```
+
+  if (Damage &gt; 10, Player := FindRandomPlayer[], Player.GetFortCharacter[].IsAlive[]):
+  EliminatePlayer(Player)
+- Use the form of `if` with parentheses `()` when the number of conditions is less than three.
+
+|  |  |  |
+| --- | --- | --- |
+| **Do** | Verse  ``` if (Damage > 10, Player := FindRandomPlayer[]):     EliminatePlayer(Player) ``` if (Damage > 10, Player := FindRandomPlayer[]): EliminatePlayer(Player) | **Keeps code concise but readable.** |
+| **Don't** | Verse  ``` if:     Damage > 10     Player := FindRandomPlayer[] then:     EliminatePlayer(Player) ``` if: Damage > 10 Player := FindRandomPlayer[] then: EliminatePlayer(Player) | **Unnecessarily splits code over multiple lines with no readability improvements.** |
+
+- If using more than two words for each expression, a maximum of two expressions on a single line is often more readable.
+
+  Verse
+
+  ```
+  if (Player := FindAlivePlayer[GetPlayspace().GetPlayers()], Team := FindEmptyTeam[GetPlayspace().GetTeamCollection().GetTeams()]):
+            AddPlayerToTeam(Player, Team)
+  ```
+
+  if (Player := FindAlivePlayer[GetPlayspace().GetPlayers()], Team := FindEmptyTeam[GetPlayspace().GetTeamCollection().GetTeams()]):
+  AddPlayerToTeam(Player, Team)
+- You can also apply the rule as in a failure context on a single line, don't use more than nine words.
+  When over the limit, use the spaced, multiline form.
+
+|  |  |  |
+| --- | --- | --- |
+| **Do** | Verse  ``` if:     Player := FindAlivePlayer[GetPlayspace().GetPlayers()]     Team := FindEmptyTeam[GetPlayspace().GetTeamCollection().GetTeams()]     Character := Player.GetFortCharacter[]     Character.GetHealth() < 50 then:     AddPlayerToTeam(Player, Team)     Character.SetHealth(100) ``` if: Player := FindAlivePlayer[GetPlayspace().GetPlayers()] Team := FindEmptyTeam[GetPlayspace().GetTeamCollection().GetTeams()] Character := Player.GetFortCharacter[] Character.GetHealth() < 50 then: AddPlayerToTeam(Player, Team) Character.SetHealth(100) | **The text reads better and the context is understandable over multiple lines.** |
+| **Don't** | Verse  ``` if (Player := FindAlivePlayer[GetPlayspace().GetPlayers()], Team := FindEmptyTeam[GetPlayspace().GetTeamCollection().GetTeams()], Character := Player.GetFortCharacter[], Character.GetHealth() < 50):     AddPlayerToTeam(Player, Team)     Character.SetHealth(100) ``` if (Player := FindAlivePlayer[GetPlayspace().GetPlayers()], Team := FindEmptyTeam[GetPlayspace().GetTeamCollection().GetTeams()], Character := Player.GetFortCharacter[], Character.GetHealth() < 50): AddPlayerToTeam(Player, Team) Character.SetHealth(100) | **The text is hard to parse.** |
+
+- Evaluate whether grouping multiple failable conditions into a single `<decides>` function would make the code easier to read and reuse. Note that if the code is only ever used in one place, a "section" comment without an ad hoc function can suffice.
+
+  Verse
+
+  ```
+  if:
+            Player := FindRandomPlayer[]
+            IsAlive[Player]
+            not IsInvulnerable[Player]
+            Character := Player.GetFortCharacter[]
+            Character.GetHealth < 10
+        then:
+            EliminatePlayer(Player)
+  ```
+
+  if:
+  Player := FindRandomPlayer[]
+  IsAlive[Player]
+  not IsInvulnerable[Player]
+  Character := Player.GetFortCharacter[]
+  Character.GetHealth &lt; 10
+  then:
+  EliminatePlayer(Player)
+- Can be rewritten as:
+
+  Verse
+
+  ```
+  GetRandomPlayerToEliminate()<decides><transacts>:player=
+            Player := FindRandomPlayer[]
+            IsAlive[Player]
+            not IsInvulnerable[Player]
+            Character := Player.GetFortCharacter[]
+            Character.GetHealth < 10
+            Player
+        if (Player := GetRandomPlayerToEliminate[]):
+            Eliminate(Player)
+  ```
+
+  GetRandomPlayerToEliminate()&lt;decides&gt;&lt;transacts&gt;:player=
+  Player := FindRandomPlayer[]
+  IsAlive[Player]
+  not IsInvulnerable[Player]
+  Character := Player.GetFortCharacter[]
+  Character.GetHealth &lt; 10
+  Player
+  if (Player := GetRandomPlayerToEliminate[]):
+  Eliminate(Player)
+- The same guideline applies to expressions in `for` loops.
+  For example:
+
+  Verse
+
+  ```
+  set Lights = for (ActorIndex -> TaggedActor : TaggedActors, LightDevice := customizable_light_device[TaggedActor], ShouldLightBeOn := LightsState[ActorIndex]):
+        Logger.Print("Adding Light at index {ActorIndex} with State:{if (ShouldLightBeOn?) then "On" else "Off"}")
+        if (ShouldLightBeOn?) then LightDevice.TurnOn() else LightDevice.TurnOff()
+        LightDevice
+  ```
+
+  set Lights = for (ActorIndex -&gt; TaggedActor : TaggedActors, LightDevice := customizable_light_device[TaggedActor], ShouldLightBeOn := LightsState[ActorIndex]):
+  Logger.Print(&quot;Adding Light at index {ActorIndex} with State:{if (ShouldLightBeOn?) then &quot;On&quot; else &quot;Off&quot;}&quot;)
+  if (ShouldLightBeOn?) then LightDevice.TurnOn() else LightDevice.TurnOff()
+  LightDevice
+- Better as:
+
+  Verse
+
+  ```
+  set Lights = for:
+           ActorIndex -> TaggedActor : TaggedActors
+           LightDevice := customizable_light_device[TaggedActor]
+           ShouldLightBeOn := LightsState[ActorIndex]
+       do:
+           if (ShouldLightBeOn?) then LightDevice.TurnOn() else LightDevice.TurnOff()
+           LightDevice
+  ```
+
+  set Lights = for:
+  ActorIndex -&gt; TaggedActor : TaggedActors
+  LightDevice := customizable_light_device[TaggedActor]
+  ShouldLightBeOn := LightsState[ActorIndex]
+  do:
+  if (ShouldLightBeOn?) then LightDevice.TurnOn() else LightDevice.TurnOff()
+  LightDevice
+
+### 5.2 Group Dependent Failure Expressions together
+
+When a condition in a failure context depends on a previous failure context succeeding, keep the two conditions together in the same failure context when possible, and follow guideline 5.1.
+
+This improves code locality, which simplifies logical understanding and debugging.
+
+|  |  |  |
+| --- | --- | --- |
+| **Do** | Verse  ``` EliminatingCharacter := EliminationResult.EliminatingCharacter if (FortCharacter := EliminatingCharacter?, EliminatingAgent := FortCharacter.GetAgent[]):     GrantNextWeapon(EliminatingAgent) ``` EliminatingCharacter := EliminationResult.EliminatingCharacter if (FortCharacter := EliminatingCharacter?, EliminatingAgent := FortCharacter.GetAgent[]): GrantNextWeapon(EliminatingAgent) | **Dependent or related conditions are grouped.** |
+| **Do** | Verse  ``` if:     FortCharacter := Player.GetFortCharacter[]     set AgentMap[Player] = 1     FirstItemGranter:item_granter_device = ItemGranters[0] then:     FortCharacter.EliminatedEvent().Subscribe(OnPlayerEliminated)     FirstItemGranter.GrantItem(Player) ``` if: FortCharacter := Player.GetFortCharacter[] set AgentMap[Player] = 1 FirstItemGranter:item_granter_device = ItemGranters[0] then: FortCharacter.EliminatedEvent().Subscribe(OnPlayerEliminated) FirstItemGranter.GrantItem(Player) | **Dependent or related conditions are grouped.** |
+| **Don't** | Verse  ``` EliminatingCharacter := Result.EliminatingCharacter if:     FortCharacter := EliminatingCharacter? then:     if:         EliminatingAgent := FortCharacter.GetAgent[]     then:         GrantNextWeapon(EliminatingAgent) ``` EliminatingCharacter := Result.EliminatingCharacter if: FortCharacter := EliminatingCharacter? then: if: EliminatingAgent := FortCharacter.GetAgent[] then: GrantNextWeapon(EliminatingAgent) | **Unnecessary indentation can make the flow harder to follow.** |
+| **Don't** | Verse  ``` if:     FortCharacter := Player.GetFortCharacter[] then:     FortCharacter.EliminatedEvent().Subscribe(OnPlayerEliminated) if:     set AgentMap[Player] = 1 if:     FirstItemGranter:item_granter_device = ItemGranters[0] then:     FirstItemGranter.GrantItem(Player) ``` if: FortCharacter := Player.GetFortCharacter[] then: FortCharacter.EliminatedEvent().Subscribe(OnPlayerEliminated) if: set AgentMap[Player] = 1 if: FirstItemGranter:item_granter_device = ItemGranters[0] then: FirstItemGranter.GrantItem(Player) | **Unnecessary indentation can make the flow harder to follow.** |
+
+It’s acceptable to split failure contexts if you handle each potential failure (or failure groups) separately.
+
+Verse
+
+```
+if (Player := FindPlayer[]):
+    if (Player.IsVulnerable[]?):
+        EliminatePlayer(Player)
+    else:
+        Print("Player is invulnerable, can’t eliminate.")
+else:
+    Print("Can’t find player. This is a setup error.")
+```
+
+if (Player := FindPlayer[]):
+if (Player.IsVulnerable[]?):
+EliminatePlayer(Player)
+else:
+Print("Player is invulnerable, can’t eliminate.")
+else:
+Print("Can’t find player. This is a setup error.")
+
+## 6. Encapsulation
+
+### 6.1 Prefer Interfaces to Classes
+
+Use interfaces instead of classes where reasonable. This helps reduce implementation dependencies and allows users to provide implementations that can be used by the framework.
+
+### 6.2 Prefer Private Access and Restrict Scope
+
+Class members should be 'private' in most cases.
+
+Class and module methods should be scoped as restrictively as possible - `<internal>` or `<private>` where appropriate.
+
+## 7. Events
+
+### 7.1 Postfix Events with Event and Prefix Handlers with On
+
+Subscribable events or delegate list names should be postfixed with 'Event', and event handler names should be prefixed with 'On'.
+
+Verse
+
+```
+MyDevice.JumpEvent.Subscribe(OnJump)
+```
+
+MyDevice.JumpEvent.Subscribe(OnJump)
+
+## 8. Concurrency
+
+### 8.1 Don’t Decorate Functions with Async
+
+Avoid decorating `<suspends>` functions with `Async` or similar terms.
+
+|  |  |
+| --- | --- |
+| **Do** | Verse  ``` DoWork()<suspends>:void ``` DoWork()<suspends>:void |
+| **Don't** | Verse  ``` DoWorkAsync()<suspends>:void ``` DoWorkAsync()<suspends>:void |
+
+It’s acceptable to add the `Await` prefix to a `<suspends>` function that internally waits on something to happen.
+This can clarify how an API is supposed to be used.
+
+Verse
+
+```
+AwaitGameEnd()<suspends>:void=
+    # Setup other things before awaiting game end…
+    GameEndEvent.Await()
+
+OnBegin()<suspends>:void =
+    race:
+        RunGameLoop()
+        AwaitGameEnd()
+```
+
+AwaitGameEnd()<suspends>:void=
+# Setup other things before awaiting game end…
+GameEndEvent.Await()
+OnBegin()<suspends>:void =
+race:
+RunGameLoop()
+AwaitGameEnd()
+
+## 9. Attributes
+
+### 9.1 Separate Attributes
+
+Put attributes on a separate line. It’s more readable, especially if multiple attributes are added to the same identifier.
+
+|  |  |
+| --- | --- |
+| **Do** | Verse  ``` @editable MyField:int = 42 ``` @editable MyField:int = 42 |
+| **Don't** | Verse  ``` @editable MyField:int = 42 ``` @editable MyField:int = 42 |
+
+## 10. Import Expressions
+
+### 10.1 Sort Import Expressions Alphabetically
+
+For example:
+
+Verse
+
+```
+using { /EpicGames.com/Temporary/Diagnostics }
+using { /EpicGames.com/Temporary/SpatialMath }
+using { /EpicGames.com/Temporary/UI }
+using { /Fortnite.com/UI }
+using { /Verse.org/Simulation }
+```
+
+using { /EpicGames.com/Temporary/Diagnostics }
+using { /EpicGames.com/Temporary/SpatialMath }
+using { /EpicGames.com/Temporary/UI }
+using { /Fortnite.com/UI }
+using { /Verse.org/Simulation }

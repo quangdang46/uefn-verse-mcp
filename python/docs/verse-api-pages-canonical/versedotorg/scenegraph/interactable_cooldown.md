@@ -1,7 +1,23 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/scenegraph/interactable_cooldown
 
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+# interactable_cooldown class
 
-**Session ID** : 9dfa4ca9b8459949
-**IP Address** : 14.191.89.252
+Learn technical details about the interactable_cooldown class.
+
+Used to set a cooldown when interacted.
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /Verse.org/SceneGraph }` |
+
+## Members
+
+This class has data members, but no functions.
+
+### Data
+
+| Data Member Name | Type | Description |
+| --- | --- | --- |
+| `Duration` | `?float` | The number of seconds after a successful interaction, before being able to initiate a subsequent interaction for anyone. This is only used if duration is greater than 0.0. Modifying this does not affect the RemainingDuration. When a cooldown starts on the component all other interactions are canceled. |
+| `RemainingDuration` | `?float` | The remaining cooldown, in seconds, before new interactions can be initiated on this component. |
+| `ExpiredEvent` | `unknown` | Event which fires when the shared cooldown expires. |

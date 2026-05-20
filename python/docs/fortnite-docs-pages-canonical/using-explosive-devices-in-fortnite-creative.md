@@ -1,32 +1,113 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-explosive-devices-in-fortnite-creative
 
-# Team Elimination Game
-Use Verse to create a multiplayer competitive game mode that advances teams through a series of weapons.
-![Team Elimination Game](https://dev.epicgames.com/community/api/documentation/image/d3875aef-3784-47cb-99e7-d48d8727b39f?resizing_type=fill&width=1920&height=335)
-Game modes that advance players through weapons are a staple of the action genre. By forcing players to react to each weapon they’re given, they create intense, varied, and exciting experiences where no game plays out the same. However, these experiences are highly dependent on the order players are granted weapons. If a player gets stuck on the same weapon for a significant amount of time, this can lead to frustration.
-This example adds a cooperative spin on the idea, where players advance through weapons as a team, and skilled players can advance their teammates up the tiers, helping them through weapons they might struggle with.
-By completing this guide, you’ll learn how to create a game mode where players advance through a series of weapons, with each elimination granting them or their teammates the next weapon.
-##  Verse Language Features Used
-  * map: This example uses the [map](https://dev.epicgames.com/documentation/fortnite/verse-glossary) container type, which provides handy key-value associations of players and their stats to track a player’s current weapon tier as well as team assignment.
-  * Type Aliasing: [Type aliasing](https://dev.epicgames.com/documentation/fortnite/verse-glossary#type-alias) allows you to give a type a unique name without creating a new type.
-  * option: This device uses [options](https://dev.epicgames.com/documentation/fortnite/verse-glossary) to determine which player should be assigned a weapon when a player scores an elimination.
-  * array: This device uses multiple [arrays](https://dev.epicgames.com/documentation/fortnite/verse-glossary) to store references to other devices and teams of players.
-  * for: With the [for expression](https://dev.epicgames.com/documentation/fortnite/verse-glossary#for-expression) expression, you can iterate over the arrays the device uses.
-  * if: The [if expression](https://dev.epicgames.com/documentation/fortnite/verse-glossary#if-expression) is used to check whether players have a higher weapon tier compared to their teammates, and if players have achieved the correct number of eliminations to end the game.
-  * failure: [Failure contexts](https://dev.epicgames.com/documentation/fortnite/verse-glossary#failure-context) are used to access arrays and to control the flow of the program.
+# Explosive Devices
 
-##  Verse APIs Used
-  * **Subscribable:** You’ll [subscribe](https://dev.epicgames.com/documentation/fortnite/verse-glossary#subscribe) to multiple events, such as players spawning, player eliminations, players joining the game, and more.
-  * **Playspace:** The [playspace](https://dev.epicgames.com/documentation/fortnite/verse-glossary#playspace) tracks subscribable events related to players joining and leaving the game. It also handles retrieving lists of players and teams, and finding the team for a given player. In this tutorial, you’ll subscribe to multiple playspace events, and retrieve players and teams using playspace [methods](https://dev.epicgames.com/documentation/fortnite/verse-glossary#method) so you can manipulate them directly.
-  * **Teams:** The team [class](https://dev.epicgames.com/documentation/fortnite/verse-glossary) removes and retrieves players from teams. You’ll use the team class in this tutorial to manipulate teams directly and compare weapon tiers of players.
+Make things go boom!
 
-##  Steps
-Follow these steps to learn how to create a multiplayer competitive game mode that advances teams through a series of weapons. The complete script is included in the final step for reference.
-  * [![1. Setting Up the Team Elimination Level](https://dev.epicgames.com/community/api/documentation/image/5030de10-4b60-4d7b-af28-d646e6916ab9?resizing_type=fit&width=640&height=640) 1. Setting Up the Team Elimination Level Use Verse to create a multiplayer competitive game mode that advances teams through a series of weapons. ](https://dev.epicgames.com/documentation/fortnite/team-elimination-1-setting-up-the-level-in-verse)
-  * [![2. Finding Devices at Runtime](https://dev.epicgames.com/community/api/documentation/image/b4061807-3dd1-4496-9f15-7a631f3d1f9e?resizing_type=fit&width=640&height=640) 2. Finding Devices at Runtime Use Verse to create a multiplayer competitive game mode that advances teams through a series of weapons. ](https://dev.epicgames.com/documentation/fortnite/team-elimination-2-finding-devices-at-runtime-in-verse)
-  * [![3. Subscribing to Player Events](https://dev.epicgames.com/community/api/documentation/image/06104297-24fa-45c2-87b3-919b3f8b7137?resizing_type=fit&width=640&height=640) 3. Subscribing to Player Events Use Verse to create a multiplayer competitive game mode that advances teams through a series of weapons. ](https://dev.epicgames.com/documentation/fortnite/team-elimination-3-subscribing-to-player-events-in-verse)
-  * [![4. Tracking Players Using Maps](https://dev.epicgames.com/community/api/documentation/image/5a6dd8ca-16fa-43cb-ba16-50b62f60a5f7?resizing_type=fit&width=640&height=640) 4. Tracking Players Using Maps Use Verse to create a multiplayer competitive game mode that advances teams through a series of weapons. ](https://dev.epicgames.com/documentation/fortnite/team-elimination-4-tracking-players-using-maps-in-verse)
-  * [![5. Granting Weapons on Eliminations](https://dev.epicgames.com/community/api/documentation/image/e8c42907-0294-4a94-a124-e86c96f227f4?resizing_type=fit&width=640&height=640) 5. Granting Weapons on Eliminations Use Verse to create a multiplayer competitive game mode that advances teams through a series of weapons. ](https://dev.epicgames.com/documentation/fortnite/team-elimination-5-granting-weapons-on-eliminations-in-verse)
-  * [![6. Handling a Player Joining a Game in Progress](https://dev.epicgames.com/community/api/documentation/image/99a3886e-6fcd-4e15-834b-35f045ffe51e?resizing_type=fit&width=640&height=640) 6. Handling a Player Joining a Game in Progress Use Verse to create a multiplayer competitive game mode that advances teams through a series of weapons. ](https://dev.epicgames.com/documentation/fortnite/team-elimination-6-handling-a-player-joining-a-game-in-progress-in-verse)
-  * [![7. Testing Multiplayer Using the Sentry Device](https://dev.epicgames.com/community/api/documentation/image/19cacadf-9add-4161-9ba2-182dc50c061d?resizing_type=fit&width=640&height=640) 7. Testing Multiplayer Using the Sentry Device Use Verse to create a multiplayer competitive game mode that advances teams through a series of weapons. ](https://dev.epicgames.com/documentation/fortnite/team-elimination-7-testing-multiplayer-using-the-sentry-device-in-verse)
-  * [![8. Final Result](https://dev.epicgames.com/community/api/documentation/image/93c003db-9c3f-4f69-b842-2dcca37a3329?resizing_type=fit&width=640&height=640) 8. Final Result Use Verse to create a multiplayer competitive game mode that advances teams through a series of weapons. ](https://dev.epicgames.com/documentation/fortnite/team-elimiation-8-final-result-in-verse)
+![Explosive Devices](https://dev.epicgames.com/community/api/documentation/image/f8d6a9bc-2506-4899-9b12-54abee46b557?resizing_type=fill&width=1920&height=335)
+
+When activated, the **Explosive** device causes damage to whatever is in its blast radius.
+
+There are several ways you can set it to be triggered:
+
+- From player interaction
+- By setting up [event binding](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) and activating it from another device
+- By setting a timer to detonate it after a specific time, or on a timed delay
+
+You can also set this device to ignore damage from specific teams.
+
+For help on how to find the Explosive device, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
+
+If you're using multiple copies of a device on an island, it can be useful to [rename](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the [Event Browser](https://dev.epicgames.com/documentation/fortnite/event-browser-in-fortnite-creative).
+
+## Contextual Filtering
+
+Some devices are affected by a feature called contextual filtering. This feature hides or displays options depending on the values selected for certain related options. This feature will reduce clutter in the Customize panel and make options easier to manage and navigate.
+
+However, it may not be easy to recognize which options or values trigger contextual filtering. To help you identify them, in our device docs we use italic for any values that trigger contextual filtering. All options will be listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option’s value, there will be a note about that in the Description field for that option.
+
+## Device Options
+
+The device can be customized to alter settings such as the blast radius and the [knockback](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) amount. You can also set a delay between the device being triggered and the explosion.
+
+The default values are **bold**.
+Values that use [contextual filtering](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) are in italics.
+
+Configure this device with the following options.
+
+Below are the following changes made to the device options:
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Can be Damaged** | **On**, *Off* | Determines if the device can be damaged. If set to **Off**, the following option is hidden: **Health**. |
+| **Health** | **1**, Indestructible, Pick a number | Determines how much damage the device can take before it explodes. |
+| **Display Damage Numbers** | On, **Off** | Determines whether damage numbers should be displayed when players deal damage to the device. |
+| **Blast Radius** | **2.0 Tiles**, Pick a number | Determines the radius of the explosion in tiles. |
+| **Player Damage** | **50**, Pick a number | Sets the amount of damage dealt to players within the explosion radius. |
+| **Ignore Team for Damage** | **None**, Pick a team | Sets a team to be immune to damage from the explosion. |
+| **Structure Damage** | **150**, Pick a number | Sets the amount of [damage dealt](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) to environment props within the explosion radius. |
+| **Damage Indestructible Buildings** | Yes, **No** | Determines whether the explosion can damage the environment even when environment damage is turned off in game settings. |
+| **Blast Line of Sight** | **No**, Yes | Determines whether the explosion requires clear line of sight to a player or prop to damage it. |
+| **Explode on Proximity** | **Off**, On | Determines whether a player's presence near the device will trigger a detonation. If set to **On**, other options will show. |
+| **Explode on Proximity Range** | **1.0 Tile**, On | Sets the distance in tiles for how close the player has to be to cause the device to explode. This option only shows if **Explode on Proximity** is set to **On**. |
+| **Knockback Player** | Select a Knockback amount | Determines the amount of impulse applied to players within the explosion radius. |
+| **Knockback Vehicle** | Select a Knockback amount | Determines the amount of impulse applied to vehicles within the explosion radius. |
+| **Proximity Delay** | **Off**, Pick a time | Determines the delay in seconds between a player's proximity triggering the device and it actually exploding. Only shows if **Explode on Proximity** is set to **On**. |
+| **Ignore Team for Proximity** | **None**, Pick a team | Sets a team to be ignored for the purposes of player proximity detonation. This makes the selected team invulnerable to this device. Only shows if **Explode on Proximity** is set to **On**. |
+| **Has Timed Detonation from Game Start** | **Off**, *On* | Determines if the device has a timer which causes the device to explode after the selected duration after game start. If set to **On**, the following option becomes available: **Time to Detonation from Game Start**. |
+| **Time to Detonation from Game Start** | **1 Second**, Pick a time in seconds | Sets how long after game start the device will explode. Only shows if **Has Timed Detonation from Game Start** is set to **On**. |
+| **Play Audio/VFX** | **Yes**, No | Determines whether to play explosion visual and audio effects when the device explodes. |
+| **Range Visualization** | **Off**, Damage, Proximity | Determines which range setting to visualize when editing the device. |
+| **Visible During Game** | **Yes**, No | Determines whether the device will be visible during the game. |
+| **Collision During Games** | Off, **On**, Only When Visible | Determines whether the device uses collision properties during the game. |
+| **Show Health Bar** | **Yes**, *No* | Determines if the device should display a health bar in the HUD when damaged. If set to **No**, the **Health Bar Style** option will be hidden. |
+| **Health Bar Style** | **Default**, *Badge Style*, *Badge Style (When Damaged)* | Determines the health bar style to use on the HUD. If you select **Badge Style** or **Badge Style (When Damaged)**, several other options will show. |
+| **Hide HUD Icon at** | **20M**, Pick a distance | Determines the distance at which the HUD icon stops being visible. Only displays if **Badge Style** or **Badge Style (When Damaged)** is selected for the **Health Bar Style** option. |
+| **Requires Line of Sight** | **Yes**, No | Determines whether direct line of sight is required to see the HUD icon. This option only displays if **Badge Style** or **Badge Style (When Damaged)** is selected for the **Health Bar Style** option. |
+| **Icon Identifier** | **None**, Pick an Icon | This option only displays if **Badge Style** or **Badge Style (When Damaged)** is selected for the **Health Bar Style** option. Assigns a letter to the HUD icon to make it identifiable. |
+| **Display Distance Text** | **No**, Yes | When set to **Yes** and if it is showing as a HUD element, the HUD element also displays the distance between the object and the player. |
+| **Clamp to Screen** | **No**, *Yes* | When set to **Yes** and if it is showing as a HUD element, this restricts the rendering to be within the area of the screen.  When this option is set to **Yes**, the option Show Offscreen Arrow become available. |
+| **Team Visibility** | Neutral, Friendlies, **Any**, Hostiles, Pick a team | Determines which team can see the icon in their HUD. This option only displays if **Badge Style** or **Badge Style (When Damaged)** is selected for the **Health Bar Style** option. |
+| **Friendly Icon Text** | Insert text | Specifies the text that's displayed on the HUD icon for friendly players. This option only displays if **Badge Style** or **Badge Style (When Damaged)** is selected for the **Health Bar Style** option. |
+| **Neutral Icon Text** | Insert text | Specifies the text that's displayed on the HUD icon for neutral players. This option only displays if **Badge Style** or **Badge Style (When Damaged)** is selected for the **Health Bar Style** option. |
+| **Hostile Icon Text** | Insert text | Specifies the text that's displayed on the HUD icon for hostile players. This option only displays if **Badge Style** or **Badge Style (When Damaged)** is selected for the **Health Bar Style** option. |
+| **HUD Text Size** | **1X**, 1.5X, 2X | Determines the size of text displayed on the HUD icon. This option only displays if **Badge Style** or **Badge Style (When Damaged)** is selected for the **Health Bar Style** option. |
+| **Play Audio** | No, **Yes** | Determines whether the device should play audio effects. |
+| **Device Mesh** | **Barrel**, Bomb | Determines what the explosive item looks like during the game. If you choose **Bomb**, the explosive is a cartoonish round bomb with a fuse coming out of the top. If you have the **Proximity Delay** option or the **Time to Detonation From Game Start** option turned on, the fuse on the bomb will remain lit while the timer is active. |
+| **Time Until Reset Allowed** | **1.0 Second**, Pick a time | Controls how long after a device explodes before it can be reset. |
+
+### Physics-Enabled Options
+
+The following options become available when [Physics](https://dev.epicgames.com/documentation/fortnite/physics) are enabled in a project:
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Knockback Physics Prop** | Select a Knockback amount. | Determines the amount of impulse applied to objects within the explosion radius. |
+
+## Event Binding
+
+Following are the [direct event binding](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) options for this device.
+
+### Functions
+
+A [function](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) listens for an event on a device then performs an action.
+
+| Option | Description |
+| --- | --- |
+| **Explode** | Explodes the device when an event occurs. |
+| **Turn on Visibility** | Makes the device visible when an event occurs. |
+| **Turn off Visibility** | Hides the device when an event occurs. |
+| **Reset** | Resets the device when an event occurs. |
+
+### Events
+
+An [event](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) tells another device when to perform a function.
+
+| Option | Description |
+| --- | --- |
+| **On Exploded** | Sends an event to a linked device when the device explodes. |
+
+## Gameplay Examples That Use Explosive Devices
+
+- [Search and Destroy](https://dev.epicgames.com/documentation/fortnite/search-and-destroy-bomb-in-fortnite-creative)
+- [Knock, Knock](https://dev.epicgames.com/documentation/fortnite/knock-knock-gameplay-example-in-fortnite-creative)

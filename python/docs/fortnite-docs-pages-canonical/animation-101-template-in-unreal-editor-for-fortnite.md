@@ -1,271 +1,164 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/animation-101-template-in-unreal-editor-for-fortnite
 
-# 4. Rotating Props
-Learn how to rotate obstacles on your course Fall Guys course.
-![4. Rotating Props](https://dev.epicgames.com/community/api/documentation/image/cd3adcbf-804b-4550-b0b0-0f74a96deec7?resizing_type=fill&width=1920&height=335)
-Another platforming obstacle common to the genre is objects that rotate, such as a spinning platform you have to constantly move on, or a bar that moves back and forth that you have to jump over.
-The second component of an object’s transform is its rotation, and you can manipulate an object to rotate around an axis. There are several different ways you can use rotation to make unique platforming challenges, and you’ll learn how to code them in this section.
-##  Making Props that Rotate
-Follow these steps to build code that rotates your props:
-  1. Create a new Verse class named `rotating_prop` that inherits from `movable_prop` using **Verse Explorer**. Add the `<concrete>` specifier to this class to expose its properties to UEFN.
-Verse
-```
+# Animation 101 Template
 
-|      # A prop that rotates by an additional rotation or rotates to match
+Learn various ways to animate skeletal meshes.
 
----|---
+![Animation 101 Template](https://dev.epicgames.com/community/api/documentation/image/c4e9a3fa-282e-4981-a358-41fda724c0b9?resizing_type=fill&width=1920&height=335)
 
-|      # a Creative prop's rotation.
+The **Animation 101** template is a fast way to learn how to animate skeletal meshes.
 
-|      rotating_prop<public> := class<concrete>(movable_prop):
+This template showcases the current slate of animation devices, tools, assets, and workflows available in UEFN.
 
-```
+It also packages some of the assets you’ll need to plug into those devices and tools from the Content Browser.
 
-# A prop that rotates by an additional rotation or rotates to match # a Creative prop&#39;s rotation. rotating_prop&lt;public&gt; := class&lt;concrete&gt;(movable_prop):
-Copy full snippet(3 lines long)
-  2. Add the `using { /Fortnite.com/Devices/CreativeAnimation }` and `using { /UnrealEngine.com/Temporary/SpatialMath }` statements to the top of the file to import these modules. You’ll need these to animate your prop. The tooltips used in this section are also included here.
-Verse
-```
-     using { /Fortnite.com/Devices }
-     using { /Fortnite.com/Devices/CreativeAnimation }
-     using { /Verse.org/Simulation }
-     using { /UnrealEngine.com/Temporary/SpatialMath }
+This template takes you on an educational journey into a museum where you will learn about skeletal meshes and how to animate them, using either the [Animated Mesh](https://dev.epicgames.com/documentation/fortnite/using-animated-mesh-device-in-unreal-editor-for-fortnite) device or the **[Control Rig](https://dev.epicgames.com/documentation/fortnite/control-rig)** and [Sequencer](https://dev.epicgames.com/documentation/fortnite/sequencer-and-control-rig-in-unreal-editor-for-fortnite).
 
-     AdditionalRotationTip<localizes>:message = "The rotation to apply to the RootProp."
-     ShouldRotateForeverTip<localizes>:message = "Whether the RootProp should rotate forever."
-     MatchRotationTargetTip<localizes>:message = "The optional prop whose rotation the RootProp should rotate to. Use this if you do not want to set an Additional Rotation."
+You can find this template in the **Project Templates** section of the **Project Browser**.
 
-     # A prop that rotates by an additional rotation or rotates to match
+This tutorial will walk you through the template and explain its contents.
 
-```
+[![Launch Session](https://dev.epicgames.com/community/api/documentation/image/9109c054-b852-47eb-9fab-debd631df368?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9109c054-b852-47eb-9fab-debd631df368?resizing_type=fit)
 
-Copy full snippet(12 lines long)
-  3. At the top of the `rotating_prop` class definition, add the following fields.
-    1. An editable `rotation` named `AdditionalRotation`. This is the rotation to apply to the prop. After `Move()` completes, the prop’s rotation will be offset by this value.
-Verse
-```
+## Skeletal Mesh
 
-|                          # The additional rotation to apply to the RootProp.
+[![iSkeletal Mesh](https://dev.epicgames.com/community/api/documentation/image/98bc2e58-6c4d-41d1-84cf-d4970fd75ca2?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/98bc2e58-6c4d-41d1-84cf-d4970fd75ca2?resizing_type=fit)
 
----|---
+When you load into the game, you will see a skeletal mesh of a Fortnite mannequin. Skeletal meshes are models that can be animated with the Animated Mesh device, or with the Control Rig in the Sequencer.
 
-|                          @editable {ToolTip := AdditionalRotationTip}
+Skeletal meshes are the primary asset that animations are played on.
 
-|                          AdditionalRotation:rotation = rotation{}
+In the **Content Drawer**, under **Mannequin**, you have various assets that make up our mannequin.
 
-```
+When you drag the FN_Mannequin skeletal mesh into the island, it will look like the process shown above and create a FortSkeletalMeshActor.
 
-# The additional rotation to apply to the RootProp. @editable {ToolTip := AdditionalRotationTip} AdditionalRotation:rotation = rotation{}
-Copy full snippet(3 lines long)
-    2. An editable `logic` named `ShouldRotateForever`. This specifies whether the prop should keep rotating without resetting.
-Verse
-```
+[![Mannequin Details Panel](https://dev.epicgames.com/community/api/documentation/image/026c3b17-57b1-43ba-b014-57c98a1b1495?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/026c3b17-57b1-43ba-b014-57c98a1b1495?resizing_type=fit)
 
-|  # Whether the RootProp should rotate forever.
+In the **Details** panel you can change the mannequin mesh to any other skeletal mesh. You can also change the material.
 
----|---
+In the museum's hallway, you will see skeletal meshes with different animations.
 
-|  @editable {ToolTip := ShouldRotateForeverTip}
+You can instance animations, which creates a skeletal mesh actor and associates an animation to play on it. You can also change the skeletal mesh and animation.
 
-|  ShouldRotateForever:logic = true
+When you drag an animation sequence from the Animations folder, it creates a FortSkeletalMesh with the FN_Mannequin skeletal mesh just as in the first example, but also associates an animation sequence to it.
 
-```
+The following settings will show in the **Details** panel when you apply an animation to a skeletal mesh.
 
-# Whether the RootProp should rotate forever. @editable {ToolTip := ShouldRotateForeverTip} ShouldRotateForever:logic = true
-Copy full snippet(3 lines long)
-    3. An editable optional `creative_prop` named `MatchRotationTarget`. If you want your prop to rotate to match another prop’s rotation, you can set this value rather than using the `AdditionalRotation`.
-Verse
-```
+[![Skeletal Mesh Details Panel](https://dev.epicgames.com/community/api/documentation/image/93850bae-fbe0-4287-8a8b-e917e2228629?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/93850bae-fbe0-4287-8a8b-e917e2228629?resizing_type=fit)
 
-|  # The optional prop whose rotation RootProp should rotate to match. Use this if you
+- Looping: Determines whether the animation loops.
+- Playing: Determines whether the animation plays in game /edit mode.
+- Initial Position: Sets the animation frame to sit on if you’re not playing.
+- Play Rate: Sets the animation speed. 1.0 = 100%
 
----|---
+For consistency, you can determine whether instanced animation sequences play or not.
 
-|  # do not want to set an additional rotation.
+## Animated Mesh Device
 
-|  @editable {ToolTip := MatchRotationTargetTip}
+[![Animated Mesh device](https://dev.epicgames.com/community/api/documentation/image/ded03b7d-9e5c-4f22-8cca-b96fe7788217?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ded03b7d-9e5c-4f22-8cca-b96fe7788217?resizing_type=fit)
 
-|  MatchRotationTarget:?creative_prop = false
+Inside the theater are skeletal meshes paired with an Animated Mesh device.
 
-```
+Using the Animated Mesh device, you can set skeletal meshes to play many different animations that can be paused and reversed through triggers like the **[Button](https://dev.epicgames.com/documentation/fortnite/using-button-devices-in-fortnite-creative)** device.
 
-# The optional prop whose rotation RootProp should rotate to match. Use this if you # do not want to set an additional rotation. @editable {ToolTip := MatchRotationTargetTip} MatchRotationTarget:?creative_prop = false
-Copy full snippet(4 lines long)
-    4. A variable `rotation` named `TargetRotation`. This is the rotation the prop is currently rotating toward.
-Verse
-```
+[![An example of the Animated Mesh details panel.](https://dev.epicgames.com/community/api/documentation/image/2694aef4-a566-4098-ba51-8831c654bd54?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2694aef4-a566-4098-ba51-8831c654bd54?resizing_type=fit)
 
-|  # The rotation the prop is currently rotating toward.
+Animated Mesh device user options and functions
 
----|---
+The Animated Mesh device gives you the same controls that the base Skeletal Mesh actor gives you. You can also bind events to tell this device when to play, pause, or play in reverse during the game.
 
-|  var TargetRotation:rotation = rotation{}
+You can use the Button devices on the desk to trigger these events as a demo.
 
-```
+Skeletal Meshes without this device, like the ones at the entryway, will be unchangeable during gameplay. For more control on animations during gameplay, use the Animated Mesh device.
 
-# The rotation the prop is currently rotating toward. var TargetRotation:rotation = rotation{}
-Copy full snippet(2 lines long)
-  4. Your final class definition should look like this:
-Verse
-```
-     using { /Fortnite.com/Devices }
-     using { /Fortnite.com/Devices/CreativeAnimation }
-     using { /Verse.org/Simulation }
-     using { /UnrealEngine.com/Temporary/SpatialMath }
+Skeletal Meshes don’t collide with the player, the world, or each other.
 
-     AdditionalRotationTip<localizes>:message = "The rotation to apply to the RootProp."
-     ShouldRotateForeverTip<localizes>:message = "Whether the RootProp should rotate forever."
-     MatchRotationTargetTip<localizes>:message = "The optional prop whose rotation the RootProp should rotate to. Use this if you do not want to set an Additional Rotation."
+## Cinematic Sequence Device
 
-     # A prop that rotates by an additional rotation or rotates to match
+[![Cinematic Sequence Device](https://dev.epicgames.com/community/api/documentation/image/7109ab1c-c30a-4758-b938-6e05935edd52?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7109ab1c-c30a-4758-b938-6e05935edd52?resizing_type=fit)
 
-```
+Up the stairway is where you will find the [Cinematic Sequence](https://dev.epicgames.com/documentation/fortnite/using-cinematic-sequence-device-in-unreal-editor-for-fortnite) device along with a button that triggers a short cinematic.
 
-Copy full snippet(28 lines long)
-  5. Since you already set up the `Move()` function that moves your prop in `movable_prop`, you can override it in this class. Override the `Move()` function in your `rotating_prop` class. In `Move()`, first, check if the `MatchRotationTarget` is set and save it in a variable `RotationToMatch`. If so, set the `TargetRotation` to the `RotationToMatch`. Otherwise, set it to the `AdditionalRotation`.
-Verse
-```
+You can watch this sequence in-game after interacting with the button, which activates the Play function of the Cinematic Sequence device.
 
-|      # Rotate the RootProp by applying the TargetRotation, or toward the MoveTarget if one is set.
+[![Cinematic Sequence Details](https://dev.epicgames.com/community/api/documentation/image/aeb5b67e-6f83-48e3-ba06-92cc1ed1c53b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/aeb5b67e-6f83-48e3-ba06-92cc1ed1c53b?resizing_type=fit)
 
----|---
+You can use the Cinematic Sequence device to playback Level Sequences built in the Sequencer.
 
-|      Move<override>()<suspends>:void=
+You must be in the project folder to add your own cinematics.
 
-|
+To make your own cinematics, locate the project folder in the **Content Drawer** then click **+Add**. Then, scroll to **Cinematics** and click **Level Sequence**.
 
-|          # Set the TargetRotation to the MoveTarget's rotation if the MoveTarget is set.
+You can double-click on your new Level Sequence to pull up the Sequencer.
 
-|          if:
+The Sequencer is where you edit Level Sequences with control over what, when, where, and how long a cinematic will play. There are also many more features in the Sequencer.
 
-|              RotationToMatch := MatchRotationTarget?.GetTransform().Rotation
+[![Sequencer](https://dev.epicgames.com/community/api/documentation/image/3ab06827-0ec9-4fbf-b9b4-4aa5e4c0b8a5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3ab06827-0ec9-4fbf-b9b4-4aa5e4c0b8a5?resizing_type=fit)
 
-|          then:
+To demo the Sequencer’s capabilities, navigate to the **Sequences** folder in the **Content Drawer** of UEFN. Then, select MuseumFlyThrough and double-click on it to open the Sequencer.
 
-|              set TargetRotation = RotationToMatch
+[![Sequencer](https://dev.epicgames.com/community/api/documentation/image/562cb6e4-8663-4df6-9544-ae751018e725?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/562cb6e4-8663-4df6-9544-ae751018e725?resizing_type=fit)
 
-|          else:
+Alternatively, you can access the Sequencer through the **Cinematics** tab of the **Window** menu.
 
-|              set TargetRotation = AdditionalRotation
+## Control Rig
 
-```
+The Control Rig can customize an animation as well as layer on props, visual effects, and more.
 
-# Rotate the RootProp by applying the TargetRotation, or toward the MoveTarget if one is set. Move&lt;override&gt;()&lt;suspends&gt;:void= # Set the TargetRotation to the MoveTarget&#39;s rotation if the MoveTarget is set. if: RotationToMatch := MatchRotationTarget?.GetTransform().Rotation then: set TargetRotation = RotationToMatch else: set TargetRotation = AdditionalRotation
-Copy full snippet(10 lines long)
-  6. As with `translating_prop`, specify the animation mode for your animation to play. Initialize a new `animation_mode` variable named `AnimationMode` to `animation_mode.OneShot`. This means your animation will stop once your object reaches its target. If the prop should not rotate forever or not move once and stop, set the animation mode to ping pong. Using ping pong will let you make objects that oscillate back and forth, like the bar on a metronome or a bridge that raises and lowers.
-Verse
-```
+Double-click on the **MuseumFlyThrough sequence** thubmnail to open Sequencer, from here you can modify the sequence to make your own. This Sequencer includes:
 
-|      # Set the default animation mode to play.
+- A camera cut track to animate and cut between cameras
 
----|---
+  [![The Camera Cut tracks in Sequencer.](https://dev.epicgames.com/community/api/documentation/image/a643b3a1-1b7e-4868-85cf-b2ef5bd352b3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a643b3a1-1b7e-4868-85cf-b2ef5bd352b3?resizing_type=fit)
 
-|      # The OneShot animation mode will play the animation once.
+  *Click image to enlarge.*
 
-|      var AnimationMode:animation_mode := animation_mode.OneShot
+Double-click the **Control Rig** thumbnail to open the Control Rig Editor.
 
-|
+- Three [Control Rigs](https://docs.unrealengine.com/5.1/en-US/animation-editor-mode-in-unreal-engine/)
 
-|      # If the RootProp should not reset and not stop when it finishes rotating,
+  [![The 3 Control Rigs assigned to the sequence.](https://dev.epicgames.com/community/api/documentation/image/271e1f2f-ca3a-4a7d-847a-9eaf7eb57e1c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/271e1f2f-ca3a-4a7d-847a-9eaf7eb57e1c?resizing_type=fit)
 
-|      # set the animation mode to PingPong.
+  *Click image to enlarge.*
 
-|      if:
+Next, you can open the **Content Drawer** to the **Mannequin** folder and select the **Meshes** folder. Then, drag FN_Mannequin_ControlRig onto your island.
 
-|          not ShouldRotateForever? and not MoveOnceAndStop?
+[![Animation Mode](https://dev.epicgames.com/community/api/documentation/image/df5ded80-e0f9-411a-9e38-7d2c7a8ca779?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/df5ded80-e0f9-411a-9e38-7d2c7a8ca779?resizing_type=fit)
 
-|      then:
+UEFN will then enter Animation Mode and automatically add this actor to your active sequence or make a new one.
 
-|          set AnimationMode = animation_mode.PingPong
+With the Control Rig, you can animate in the Control Rig Editor by creating a new Control and animation.
 
-```
+[![Control Rig](https://dev.epicgames.com/community/api/documentation/image/93f03474-e50a-4643-bec0-bd84fb9fc012?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/93f03474-e50a-4643-bec0-bd84fb9fc012?resizing_type=fit)
 
-# Set the default animation mode to play. # The OneShot animation mode will play the animation once. var AnimationMode:animation_mode := animation_mode.OneShot # If the RootProp should not reset and not stop when it finishes rotating, # set the animation mode to PingPong. if: not ShouldRotateForever? and not MoveOnceAndStop? then: set AnimationMode = animation_mode.PingPong
-Copy full snippet(10 lines long)
-If you set `ShouldReset` to **false** and `ShouldRotateForever` to **true** , your prop should keep its position after each animation while continuing to loop `Move()`.
-  7. Get the rotation for your root prop to rotate toward in a new variable named `RotateByMoveRotation` by calling `RotateBy()` on the `StartingTransform`, passing the `TargetRotation`.Then call `MoveToEase()`. Your complete `Move()` function should look like this.
-Verse
-```
-     # Rotate the RootProp by applying the TargetRotation, or toward the MoveTarget if one is set.
-     Move<override>()<suspends>:void=
+Double-clicking the **Control Rig** from the **Content Drawer** opens the Rig Graph, which allows you to add or change controls as you see fit.
 
-         # Set the TargetRotation to the MoveTarget's rotation if the MoveTarget is set.
-         if:
-             RotationToMatch := MatchRotationTarget?.GetTransform().Rotation
-         then:
-             set TargetRotation = RotationToMatch
-         else:
-             set TargetRotation = AdditionalRotation
+You can also create manual animations with the Control Rig and Sequencer.
 
-```
+Follow these steps to make a new animation.
 
-Copy full snippet(24 lines long)
-  8. In your `prop_animator` device class, add a new editable array of `rotating_prop` named `RotatingProps`. Add another `for` expression to `OnBegin()` that loops through all the rotating props and calls `Setup()` on them. Your updated `prop_animator` class should look like this:
-Verse
-```
-     using { /Fortnite.com/Devices }
-     using { /Verse.org/Simulation }
-     using { /UnrealEngine.com/Temporary/Diagnostics }
+1. Drag the **Control Rig** from the **Mannequin** > **Meshes** folders and place it in your project. Sequencer opens and your character is selected in the viewport.
+2. Add a **Transform Track**. Sequencer automatically applies a filter for **Control Rig Controls**.
 
-     TranslatingPropsTip<localizes>:message = "The props that translate (move) using animation."
-     RotatingPropsTip<localizes>:message = "The props that rotate using animation."
+   [![Transform Track](https://dev.epicgames.com/community/api/documentation/image/73e07ddd-0165-46e6-bca7-b83cada54fc6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/73e07ddd-0165-46e6-bca7-b83cada54fc6?resizing_type=fit)
+3. Select a control from the panel and a pivot point appears on the limb.
 
-     # Coordinates moving props through animation by calling each prop's Setup() method.
-     prop_animator := class(creative_device):
+   [![Select which controls you're using then move the mannequin.](https://dev.epicgames.com/community/api/documentation/image/c47cdf46-563d-4277-bbfa-01d5ed66c483?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c47cdf46-563d-4277-bbfa-01d5ed66c483?resizing_type=fit)
+4. Make a key frame by hitting **Enter** or the key icon on the track.
 
-```
+   [![IKey Frame](https://dev.epicgames.com/community/api/documentation/image/ea25cbbb-bd5e-4937-beb1-66e9457cf9b3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ea25cbbb-bd5e-4937-beb1-66e9457cf9b3?resizing_type=fit)
+5. Move the limb into a new pose.
+6. Scrub the play head forward, and repeat.
+7. Save the animation as an animation sequence. Watch [this](https://www.youtube.com/watch?v=FgJ1stTScxI&t=1538s) YouTube video to find out more.
 
-Copy full snippet(29 lines long)
-  9. Save your code and compile it.
+[![Bake to Control Rig](https://dev.epicgames.com/community/api/documentation/image/4983cb6d-a7c5-45bc-8603-be8df1bd69b5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4983cb6d-a7c5-45bc-8603-be8df1bd69b5?resizing_type=fit)
 
-##  Linking Props to Devices
-Back in the editor, delete some of the props after the translating props section to create another gap. Add a **FG01 Turntable base** and a **FG01 SpinningBar Double S** to your level. Name the base **RotatingBase** and the bar **Spinning Bar**. Position the bar above the base, and place both props above the gap.
-[![Rotating Props Setup](https://dev.epicgames.com/community/api/documentation/image/20ffcd21-a17f-4fc9-acd5-3490e4d9232b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/20ffcd21-a17f-4fc9-acd5-3490e4d9232b?resizing_type=fit)
-_Setup of the two rotating props. Both the spinning bar and rotating base spin in the same direction at different speeds._
-Select your **prop animator** in the **Outliner** , and add an array element to `RotatingProps` for each of your rotating props. Assign each prop with the following values:
-Option  |  Value  |  Explanation
----|---|---
-**Additional Rotation** |  Z, 90.0 |  This prop wsill make a 90-degree rotation around the Z-axis each time.
-**RootProp** |  Assign to prop you’re animating |  This is the prop you’re animating.
-**Move Duration** |  2.0, 3.0 |  Assign one of the props a shorter duration so that they rotate at different speeds.
-**Move Ease Type** |  Linear |  This will animate your props at a consistent speed.
-Push your changes, then check out your props! Try varying the different values to get different rotations, and try rotating in each of the different dimensions to create different types of obstacles.
-##  Next Up
-In the next section, you’ll combine movement and rotation to create props that can do both!
-  * [![5. Scaling Props](https://dev.epicgames.com/community/api/documentation/image/eb32ad64-f177-436e-9aff-093b15e3ea5b?resizing_type=fit&width=640&height=640) 5. Scaling Props Learn how to manipulate object scales with Verse so they grow and shrink. ](https://dev.epicgames.com/documentation/fortnite/animating-prop-movement-5-scaling-props-in-verse)
+To modify an existing animation, select **Bake To Control Rig** in the **Sequencer** then select your rig.
 
-##  Complete Code
-Here is the complete code built in this section:
-###  rotating_prop.verse
-Verse
-```
-using { /Fortnite.com/Devices }
-using { /Fortnite.com/Devices/CreativeAnimation }
-using { /Verse.org/Simulation }
-using { /UnrealEngine.com/Temporary/SpatialMath }
+Use this section of Unreal Engine [Control Rig](https://dev.epicgames.com/documentation/unreal-engine/rigging-with-control-rig-in-unreal-engine?application_version=5.5) documentation to learn how to rig characters an create animations.
 
-AdditionalRotationTip<localizes>:message = "The rotation to apply to the RootProp."
-ShouldRotateForeverTip<localizes>:message = "Whether the RootProp should rotate forever."
-MatchRotationTargetTip<localizes>:message = "The optional prop whose rotation the RootProp should rotate to. Use this if you do not want to set an Additional Rotation."
+[![Mannequin Animation](https://dev.epicgames.com/community/api/documentation/image/c542b3f2-7b0f-4a4a-8a8b-adf2c5cf6778?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c542b3f2-7b0f-4a4a-8a8b-adf2c5cf6778?resizing_type=fit)
 
-# A prop that rotates by an additional rotation or rotates to match
+You can even attach props to animated meshes.
 
-```
-
-Copy full snippet(54 lines long)
-###  prop_animator.verse
-Verse
-```
-using { /Fortnite.com/Devices }
-using { /Verse.org/Simulation }
-using { /UnrealEngine.com/Temporary/Diagnostics }
-
-TranslatingPropsTip<localizes>:message = "The props that translate (move) using animation."
-RotatingPropsTip<localizes>:message = "The props that rotate using animation."
-
-# Coordinates moving props through animation by calling each prop's Setup() method.
-prop_animator := class(creative_device):
-
-```
-
-Copy full snippet(30 lines long)
+[![Mannequin Attachment](https://dev.epicgames.com/community/api/documentation/image/15fbce26-64e9-4a48-a9e4-a35ce8689fe0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/15fbce26-64e9-4a48-a9e4-a35ce8689fe0?resizing_type=fit)

@@ -1,17 +1,40 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/editor-best-practices-in-unreal-editor-for-fortnite
 
-# Create a Custom Landscape
-Learn how to use Landscape Mode to create custom terrain.
-![Create a Custom Landscape](https://dev.epicgames.com/community/api/documentation/image/7f551eb7-b1aa-434f-b49b-80213b4a584e?resizing_type=fill&width=1920&height=335)
-Creating custom terrain is easy with [Landscape Mode](https://dev.epicgames.com/documentation/fortnite/landscape-mode-in-unreal-editor-for-fortnite) tools. Landscape Mode tools can be used on either a blank [island template](https://dev.epicgames.com/documentation/fortnite/sample-projects-and-templates-in-unreal-editor-for-fortnite) to build custom terrain from scratch, or to sculpt existing terrain on a populated island.
-This tutorial is broken into sections that cover the essential elements required to construct a unique terrain. Each section explores a different set of tools and how they work.
-Playtest your island often to make sure that the terrain is playable and works for the type of experience you’re creating.
-##  Overview
-By following these tutorials, you’ll learn to construct terrain, work with the water tools, create caves, lay down roads and paths, and use foliage to make your island feel more alive and real.
-  * [![Generating New Terrain](https://dev.epicgames.com/community/api/documentation/image/f1bb3ba0-fe25-477a-a2ed-966150e2cdf0?resizing_type=fit&width=640&height=640) Generating New Terrain Customize your terrain by size, location, and more. ](https://dev.epicgames.com/documentation/fortnite/generating-new-terrain-in-unreal-editor-for-fortnite)
-  * [![Sculpting the Terrain](https://dev.epicgames.com/community/api/documentation/image/fe35f9c9-639d-484d-b40d-f0ee563a54a9?resizing_type=fit&width=640&height=640) Sculpting the Terrain Learn how to sculpt a custom terrain. ](https://dev.epicgames.com/documentation/fortnite/sculpting-the-terrain-in-unreal-editor-for-fortnite)
-  * [![Painting the Terrain](https://dev.epicgames.com/community/api/documentation/image/8954e0d3-19fe-4349-856a-049939103597?resizing_type=fit&width=640&height=640) Painting the Terrain Paint your custom terrain to edit its appearance. ](https://dev.epicgames.com/documentation/fortnite/painting-the-terrain-in-unreal-editor-for-fortnite)
-  * [![Creating a Body of Water for Your Custom Landscape](https://dev.epicgames.com/community/api/documentation/image/5bafd9a8-fa18-4ac9-8e93-6a144f17ad50?resizing_type=fit&width=640&height=640) Creating a Body of Water for Your Custom Landscape Create a river to your landscape and change how the river looks and behaves. ](https://dev.epicgames.com/documentation/fortnite/create-a-body-of-water-to-your-custom-landscape-in-unreal-editor-for-fortnite)
-  * [![Making a Cave](https://dev.epicgames.com/community/api/documentation/image/d244afe5-e1aa-464b-bce8-7c6b49b56b27?resizing_type=fit&width=640&height=640) Making a Cave Create a cave inside your custom terrain. ](https://dev.epicgames.com/documentation/fortnite/making-a-cave-in-unreal-editor-for-fortnite)
-  * [![Creating Roads and Pathways](https://dev.epicgames.com/community/api/documentation/image/0b8ed9b1-3f4c-4722-9a1e-2da213a996f7?resizing_type=fit&width=640&height=640) Creating Roads and Pathways Learn how to create roads and pathways for your custom terrain. ](https://dev.epicgames.com/documentation/fortnite/creating-roads-and-pathways-in-unreal-editor-for-fortnite)
-  * [![Placing Foliage](https://dev.epicgames.com/community/api/documentation/image/92a9ea77-db24-4f64-95cb-9f01ca8b9f1b?resizing_type=fit&width=640&height=640) Placing Foliage Populate your island with foliage to finish off your terrain. ](https://dev.epicgames.com/documentation/fortnite/placing-foliage-in-a-custom-landscape-in-unreal-editor-for-fortnite)
+# Editor Best Practices
+
+Learn about best practices and tips and tricks for using the editor.
+
+![Editor Best Practices](https://dev.epicgames.com/community/api/documentation/image/75d7eefe-002e-4c89-b4f0-45ad62458347?resizing_type=fill&width=1920&height=335)
+
+In this section you'll learn all about best practices and tips and tricks for using UEFN, like keyboard shortcuts and grid snapping.
+
+- [![Grid Snapping](https://dev.epicgames.com/community/api/documentation/image/d09c4250-efb5-4abd-b028-5b95f30e8b43?resizing_type=fit&width=640&height=640)
+
+  Grid Snapping
+
+  Make clean-looking experiences by using grid snapping.](https://dev.epicgames.com/documentation/fortnite/using-grid-snapping-in-unreal-editor-for-fortnite)
+- [![Keyboard Shortcuts](https://dev.epicgames.com/community/api/documentation/image/eed3354c-34c0-4fda-ac8f-6aa2b0ed1e56?resizing_type=fit&width=640&height=640)
+
+  Keyboard Shortcuts
+
+  These keyboard shortcuts save time and increase productivity.](https://dev.epicgames.com/documentation/fortnite/keyboard-shortcuts-in-unreal-editor-for-fortnite)
+- [![Outliner Tips and Tricks](https://dev.epicgames.com/community/api/documentation/image/3f92777c-b562-408c-99bd-250f67a8db43?resizing_type=fit&width=640&height=640)
+
+  Outliner Tips and Tricks
+
+  By using simple shortcuts in the Outliner, you can increase your workflow efficiency in Unreal Editor for Fortnite.](https://dev.epicgames.com/documentation/fortnite/outliner-tips-and-tricks-in-unreal-editor-for-fortnite)
+- [![Starting and Organizing a Project](https://dev.epicgames.com/community/api/documentation/image/fe17b030-844e-4b3b-9b16-2592c5df4875?resizing_type=fit&width=640&height=640)
+
+  Starting and Organizing a Project
+
+  Learn how to create a project and set yourself up for success!](https://dev.epicgames.com/documentation/fortnite/starting-and-organizing-a-project-in-fortnite)
+- [![Levels](https://dev.epicgames.com/community/api/documentation/image/aabf15a4-5e7c-4b89-9c12-1c7550c153a2?resizing_type=fit&width=640&height=640)
+
+  Levels
+
+  Learn how to work with levels in UEFN to prototype your game development ideas and more.](https://dev.epicgames.com/documentation/fortnite/levels-in-fortnite)
+- [![Left-Up-Forward Coordinate System](https://dev.epicgames.com/community/api/documentation/image/75610f51-f873-43e4-a7f9-8892605cd574?resizing_type=fit&width=640&height=640)
+
+  Left-Up-Forward Coordinate System
+
+  An introduction to the UEFN coordinate system and Verse module transforms.](https://dev.epicgames.com/documentation/fortnite/leftupforward-coordinate-system-in-unreal-editor-for-fortnite)

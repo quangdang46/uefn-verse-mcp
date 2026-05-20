@@ -1,7 +1,29 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/scenegraph/collision_volume
 
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+# collision_volume class
 
-**Session ID** : 9dfa495a69c409f4
-**IP Address** : 14.191.89.252
+Learn technical details about the collision_volume class.
+
+Collision Volumes represent the collision shapes of meshes. They can be detected by Overlap and Sweep queries and generate collisions in the physics simulation.
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /Verse.org/SceneGraph }` |
+
+## Members
+
+This class has both data members and functions.
+
+### Data
+
+| Data Member Name | Type | Description |
+| --- | --- | --- |
+| `Collidable` | `?logic` | Enable/disable collision on this volume. |
+| `Queryable` | `?logic` | Enable/disable spatial queries against this volume. |
+
+### Functions
+
+| Function Name | Description |
+| --- | --- |
+| [`GetLocalTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/collision_volume/getlocaltransform) | Get the transform of this volume in the space of its owner (usually a component on an entity) |
+| [`SetLocalTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/collision_volume/setlocaltransform) | Set the transform of this volume in the space of its owner (usually a component on an entity) |

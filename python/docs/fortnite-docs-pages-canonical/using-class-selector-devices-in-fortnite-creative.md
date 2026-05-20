@@ -1,88 +1,92 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-class-selector-devices-in-fortnite-creative
 
-# Onboarding Players
-Learn how to make a smooth onboarding experience for your players.
-![Onboarding Players](https://dev.epicgames.com/community/api/documentation/image/78481bfb-99ee-4652-8b11-5ecb5906ce48?resizing_type=fill&width=1920&height=335)
-To **onboard** a new player means to make them familiar with the basic rules of the game, how to win, and any other information that might not be obvious.
-Don't assume that all players will know how to play your game without some simple onboarding. Onboarding is important for aspects of a game that are not immediately intuitive to the player. A smooth onboarding process gets the player into the game quickly, and with enough knowledge of the game objective to start playing.
-If you don't successfully onboard players, they could leave your game before understanding it, and never return. This reduces player traffic, potential revenue, and even a shot at being featured in Discover. Good onboarding makes users excited to play your game.
-There are three places where you can onboard your players:
-  * In the [game description](https://dev.epicgames.com/documentation/fortnite/onboarding-players-in-fortnite-creative)
-  * In a [pregame lobby](https://dev.epicgames.com/documentation/fortnite/onboarding-players-in-fortnite-creative)
-  * In the [game itself](https://dev.epicgames.com/documentation/fortnite/onboarding-players-in-fortnite-creative)
+# Class Selector Devices
 
-##  The Game Description
-When you're ready to share a game, you can publish it privately (to share with friends and collaborators), or publicly. Any description you add to the **Description** page can do a lot to orient a player to the gameplay.
-To add a description to your game from Fortnite Creative:
-  1. While on your island, press **Tab** , then select **My Island**. Click the **Description** tab.
+Put those custom classes you made with Class Designer to work on your island for new kinds of gameplay.
 
-[![The island description is where onboarding starts.](https://dev.epicgames.com/community/api/documentation/image/198a1bec-1471-4435-9ea1-9bac1b9a49d0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/198a1bec-1471-4435-9ea1-9bac1b9a49d0?resizing_type=fit)
-The description you enter shows when a player goes to your island link.
-It also shows on the island **Overview** tab when you press the **M** key on a keyboard.
-[![The description you enter shows up in a few places.](https://dev.epicgames.com/community/api/documentation/image/094c9441-b136-46bd-85c8-355cb123e033?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/094c9441-b136-46bd-85c8-355cb123e033?resizing_type=fit)
-You have a limited word count here, so make each word count in a way that will capture a player's attention.
-You can add more info later using the devices described below.
-##  The Pre-Game Lobby
-Don't assume that players know the game's rules or goals, and don't expect them to take the time to read about the game's rules after the game starts.
-Adding a pre-game lobby to your game is perfect for showing the player what's expected once the game starts.
-[![The pre-game lobby is a great place to explain how to play the game.](https://dev.epicgames.com/community/api/documentation/image/d0ca60b4-8bac-4f88-b65a-25b19b4d27d1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d0ca60b4-8bac-4f88-b65a-25b19b4d27d1?resizing_type=fit)
-_An example of a pre-game lobby with billboards that explain basic gameplay._
-For an example of pre-game lobby onboarding:
-  1. Go to your **golden rift** and press **E**.
-  2. Select **Create New** , then **Template Islands**.
-  3. Scroll down to **Create A Wave Defense Map**.
-  4. With the template selected, click **Confirm**.
-  5. Highlight the island you just created, then click **Set Portal**. Explore how the messaging is set up in this template island.
+![Class Selector Devices](https://dev.epicgames.com/community/api/documentation/image/c3d145bd-f466-4b1c-8ac5-c196565fe4db?resizing_type=fill&width=1920&height=335)
 
-For more on how to set up a pre-game lobby, see [Building Pre-Game Lobbies](https://dev.epicgames.com/documentation/en-us/fortnite-creative/building-pre-game-lobbies-in-fortnite-creative).
-##  In-Game Orientation
-Keeping the player oriented while the game is in progress is also an important part of onboarding.
-Sometimes the player needs a hint of what to do next, or a reference point that they can see to show which direction to move in.
-There are a number of informational devices that can help you onboard and orient the player in both the pre-game lobby and in-game.
-[![Informational devices can get a player comfortable with playing the game.](https://dev.epicgames.com/community/api/documentation/image/c5572cbb-e9a9-40fb-aeab-269865b57107?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c5572cbb-e9a9-40fb-aeab-269865b57107?resizing_type=fit)
-##  Using Informational Devices
-An **informational device** is any device in Fortnite Creative that you can use to communicate information to a player.
-For any device that can be used to add text, keep the following in mind:
-  * Keep the text brief, one or two sentences at the most.
-  * Use multiple devices if needed. Don't try to tell everything the user needs to know on one device.
-  * Show the player important information as soon as they spawn.
-  * Make sure your onboarding information is accurate and complete, without being overwhelming. The best way to guarantee all of the above is in place is to get your friends to playtest your island and give you feedback.
+The **Class Selector** device is used in conjunction with the [Class Designer](using-class-designer-devices-in-fortnite-creative) device for creating [class-based gameplay](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary). Once you've set up your custom [classes](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) with the Class Designer, you can use the Class Selector to set how they'll be used [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary).
 
-[![There are many informational devices that you can use.](https://dev.epicgames.com/community/api/documentation/image/83896a27-f22f-487c-b0dc-9571ceebb65a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/83896a27-f22f-487c-b0dc-9571ceebb65a?resizing_type=fit)
-For any informational device, make sure there is at least one tile of clear space between the device information and any items that could block the player's view. It can be frustrating to have to run around things to see the info.
-Following are some of the informational devices available and suggestions of where and how to use them.
-###  Billboards
-A [**Billboard** device](https://dev.epicgames.com/documentation/fortnite/using-billboard-devices-in-fortnite-creative) can display short messages to players. They are typically used for onboarding in the pre-game lobby, or providing [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#in-game) instructions.
-A billboard can hold up to 150 characters.You can control the appearance of both the billboard and the text displayed.
-Where possible, place billboards where they align to support visual information.
-[![Billboards are useful for onboarding.](https://dev.epicgames.com/community/api/documentation/image/2028551f-732a-4d0b-af79-401110e07b49?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2028551f-732a-4d0b-af79-401110e07b49?resizing_type=fit)
-_In this example, a guard appears in front of the billboard._
-Billboards are useful when you want the information to persist while the player reads it.
-###  Pop-Up Dialogs
-A [Pop-Up Dialog device](https://dev.epicgames.com/documentation/fortnite/using-popup-dialog-devices-in-fortnite-creative) gives you a way to make pop-up messages that a player can interact with.
-[![Popup dialogs remain on screen unil the player closes them.](https://dev.epicgames.com/community/api/documentation/image/ad481492-733a-4612-808d-541910d77b08?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ad481492-733a-4612-808d-541910d77b08?resizing_type=fit)
-You can control when these messages appear, and the players who can see them. You can also queue multiple messages and have them pop up sequentially.
-Pop-up messages do not pause gameplay, but the message will remain on the screen until the player clicks it.
-###  HUD Messages
-The heads-up display, or **HUD** , is a message that shows the player information during a game. It's a heads up because you can see the info on your screen without looking away from the screen. An example of a HUD is the bars at the top of the screen in-game that show a player's [health](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#health), [score](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#score), or ranking.
-But there are also other kinds of HUDs.
-A [**HUD message**](https://dev.epicgames.com/documentation/fortnite/using-hud-message-devices-in-fortnite-creative) is a text overlay that you can add to the game or pre-game lobby. You can use these messages to set a player up for the game, or to keep the game moving along once it starts.
-[![Use HUD messages at key spots to keep the game moving.](https://dev.epicgames.com/community/api/documentation/image/75e342dd-7d2d-4494-905c-4d79c50e5d9a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/75e342dd-7d2d-4494-905c-4d79c50e5d9a?resizing_type=fit)
-HUD messages are temporary and can be quickly read by the player without interrupting gameplay.
-###  Map Indicator Markers
-The [Map Indicator device](https://dev.epicgames.com/documentation/fortnite/using-map-indicator-devices-in-fortnite-creative) lets you add points of interest to your island that can help players quickly orient to where they are in relation to where they want to go.
-These markers display on both the [minimap](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#minimap) and the overview map.
-[![Add points of interest to orient players.](https://dev.epicgames.com/community/api/documentation/image/ff1c1585-8ae0-415c-8e67-d52618891fa4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ff1c1585-8ae0-415c-8e67-d52618891fa4?resizing_type=fit)
-###  Beacons
-[**Beacons**](https://dev.epicgames.com/documentation/fortnite/using-beacon-devices-in-fortnite-creative) are also useful for directing a player's attention to one or more specific locations.
-You'll find beacons in the **Beacon Gallery** on the [Galleries tab](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) instead of as a device on the [Devices tab](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary). There are a variety of beacons to select from. You can also customize a beacon after adding it to your island.
-Make sure that any beacons or badges you place are not hidden by buildings or other large props.]
-[![Don't hide your beacons or badges!](https://dev.epicgames.com/community/api/documentation/image/e7bd1ec0-cdf1-4d2e-b9cb-893050c2fdd5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e7bd1ec0-cdf1-4d2e-b9cb-893050c2fdd5?resizing_type=fit)
-The beacon will either show in world view, as a badge in the HUD, or both.
-###  HUD Controller
-Use the [**HUD Controller** device](https://dev.epicgames.com/documentation/fortnite/using-hud-controller-devices-in-fortnite-creative) to toggle different HUD messages on and off.
-Go to the [Onboarding Sample Island](https://dev.epicgames.com/documentation/fortnite/onboarding-sample-island-in-fortnite-creative) to see more ways these devices can be used for onboarding.
-Also check out the [Onboarding Video](https://www.youtube.com/watch?v=bX3u3UR2jkE) for more info!
-##  Playtesting
-[Playtest](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#playtest) frequently to ensure that all of your informational devices are working when and how you expect them to.
-Also get your friends in on the playtesting, ask what they thought about their onboarding experience, then tweak your onboarding based on their comments to make it even better!
+You need one Class Selector for each custom class you use. When in [Play mode](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary), a player can select or switch to a specific class by walking over the device's colored activation zone.
+
+You can also use the Class Selector to set up team selection independently from class selection, but be aware that team switching will force the player to [respawn](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary).
+
+To find the Class Selector device, see [Using Devices](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-devices-in-fortnite-creative).
+
+If you're using multiple copies of a device on an island, it can be helpful to [rename](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) them. You can choose names that relate to each device's purpose, so it's easier to remember what each one does.
+
+## Contextual Filtering
+
+Some devices are affected by a feature called contextual filtering. This feature hides or displays options depending on the values selected for certain related options. This feature will reduce clutter in the Customize panel and make options easier to manage and navigate.
+
+However, it may not be easy to recognize which options or values trigger contextual filtering. To help you identify them, in our device docs we use *italic* for any values that trigger contextual filtering. All options will be listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option's value, there will be a note about that in the **Description** field for that option.
+
+## Device Options
+
+Before you start to customize a Class Selector, make sure you've placed and customized your Class Designer devices, each with it's own **Class Identifier**. You will use this identifier with the **Class to Switch to** option in the Class Selector.
+
+Keep in mind the following:
+
+- You have to specify a **class number** for this to work.
+- That number must be defined in a Class Designer device.
+- If the number is not defined in a Class Designer, the player will be assigned default attributes with no weapons. The device **will not** fall back to the Default Class Identifier assigned in a Team Settings & Inventory device, or in [Island Settings > Mode](https://dev.epicgames.com/documentation/fortnite/mode-settings-in-fortnite-creative).
+
+Default values are **bold**. Values that trigger contextual filtering are *italic*.
+
+You can configure this device with the following options.
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Class to Switch To** | **Don't Override**, No Class, Pick a class number | Indicates which class the player will switch to, as defined by the **Class Identifier** in the **Class Designer**. If you choose **No Class**, the player will not switch their class. This is mostly used for team switching. |
+| **Send Game Start Class Changes at Warmup** | **Off**, On | Determines whether the device sends any **Class Changed** events that are triggered at the start of the game during warmup instead of when the countdown is finished. |
+| **Team To Switch To** | **Don't Override**, Random, Pick or enter a team number | With **Do Not Switch**, no team switching happens when a player changes their class. If you choose **Random**, the player switches to a random team that is not their current team. |
+| **Send Game Start Team Changes at Warmup** | **Off**, On | Determines whether the device sends any **Team Changed** events that are triggered at the start of the game during warmup instead of when the countdown is finished. |
+| **Activating Team** | **Any**, Pick or enter a team number | Only players in a specific team can use this device. If you choose **Any**, all teams can use this device. |
+| **Time to Switch** | **Instant**, Pick or enter a time | The time it takes for the player to switch their class after they walk over the activation zone. This is irrelevant to Team Switching since the player is forced to respawn when they switch teams. |
+| **Respawn Player On Switch** | On, **Off** | Determines whether a player will respawn when switching classes. |
+| **Restore Health and Shields on Switch** | **On**, Off | Determines whether the player's health and shields are restored to their starting amount when they switch classes. |
+| **Clear Items On Switch** | **Never**, Team, Class, Always | Determines whether items are removed from the player's inventory when they switch classes. [INCLUDE:#clearitems] |
+| **Size of Volume** | **1 Meter**, Pick a size | The size of the activation volume in meters. |
+| **Volume Visible In Game** | **On**, Off | Determines whether the activation volume is visible during the game. This does not affect the collision properties of the device. |
+| **Visible During Game** | **On**, Off | Determines whether the device is visible to the player. This also affects [collision](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) when the player interacts with the device. When **On**, the device has collision. When **Off**, the device has no collision. |
+| **Accent Color Type** | ***Direct Color***, Team Color, Team Relationship | Determines whether the device uses a custom color, or the team or team relationship color. If you set this to **Direct Color**, the **Accent Color** option displays below this one. |
+| **Accent Color** | **Aqua**, Pick a color swatch | Determines the color used by the device. Click the swatch to open the Color Picker. Select a color, then click the checkmark to close the Color Picker. |
+| **Enabled During Phase** | None, Always, Pre-Game Only, **Gameplay Only** | Sets the [game phase](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) in which the device is enabled. If you choose **Pre-Game Only**, the device is only enabled before the game begins. (Pre-game includes [lobby](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) and countdowns.) If you choose **Gameplay Only**, the device is only enabled during the game. |
+| **Activation Audio** | **On**, Off | This option only displays if the **Accent Color Type** option is set to **Direct Color**. Determines whether the Class Selector plays audio effects when activated. |
+| **Zone Audio** | **On**, Off | **Determines whether the Class Selector should play audio effects when players enter the zone.** |
+| **Display VFX Effect On Activation** | **On**, Off | Controls whether a [VFX](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) effect is created when a player changes class or team. |
+| **Throttle Class Changes** | On, **Off** | If this is set to **On**, when a player changes class the device will delay any subsequent class changes for 3 seconds in order to avoid potential performance impacts. |
+
+## Direct Event Binding
+
+Following are the [direct event binding](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) options for this device.
+
+### Functions
+
+A [function](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) listens for an event on a device then performs an action.
+
+| Option | Description |
+| --- | --- |
+| **Enable When Receiving From** | This function enables the device when an event occurs. |
+| **Disable When Receiving From** | This function disables the class selector when an event occurs. |
+| **Change Player to Class When Receiving From** | This function changes the player to the specified class when an event occurs. |
+| **Change Player to Team When Receiving From** | This function changes player to the specified Team when an event occurs. |
+| **Change Player to Team and Class When Receiving From** | This function changes the player to the specified team when an event occurss, even if player is within the team switch cooldown period. |
+| **Change Selector Team When Receiving From** | When an event occurs, this function changes the **Team to Switch To** value to the team of the instigating player. |
+
+### Events
+
+Sends an event to a linked device when a player interacts with the button.
+Direct event binding uses events as transmitters. An event tells another device to perform a function.
+
+| Option | Description |
+| --- | --- |
+| **On Class Switched Send Event To** | When a player switches classes, an event is sent to the selected device, which triggers the selected function. |
+| **On Team Switched Send Event To** | When a player switches teams, an event is sent to the selected device, which triggers the selected function. |
+
+## Gameplay Examples
+
+- [Class Setup In An Arena](https://dev.epicgames.com/documentation/fortnite/class-setup-in-an-arena-gameplay-example-in-fortnite-creative)
+- [Top Scorer In Class](https://dev.epicgames.com/documentation/fortnite/top-scorer-in-class-in-fortnite-creative)
+- [Dungeon Crawler](https://dev.epicgames.com/documentation/fortnite/dungeon-crawler-gameplay-example-in-fortnite-creative)

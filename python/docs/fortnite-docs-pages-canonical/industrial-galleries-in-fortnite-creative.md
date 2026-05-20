@@ -1,130 +1,156 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/industrial-galleries-in-fortnite-creative
 
-# 30.30 Fortnite Ecosystem Updates and Release Notes
-30.30 Fortnite Ecosystem Updates and Release Notes in Creative, Unreal Editor for Fortnite, and Verse
-![30.30 Fortnite Ecosystem Updates and Release Notes](https://dev.epicgames.com/community/api/documentation/image/06f1dbd9-75be-48b8-b092-fe909b8000d4?resizing_type=fill&width=1920&height=335)
-We’ve combined Patch Notes and Release Notes into one document! Now you can read all about the new devices, updates, and changes in one place on the Epic Developer Community!
-In the Fortnite Ecosystem v30.30 update, check out the Fall Guys island templates available in Creative and UEFN and make your own Fall Guys obstacle courses in Fortnite! These templates feature unique and colorful Fall Guys assets to use in your islands. Also included in this update are some of your most wanted weapons and items; the Creator Profile Link and Side Scroller Controls devices; and new Orthographic options for the Fixed Angle and Fixed Point Cameras.
-##  Don’t Forget to Claim Your Marvelous Designer License!
-You have one month left to claim your **free** one-year license of **Marvelous Designer**. Make sure to [apply for your unique coupon code](https://create.fortnite.com/welcome?lang=en-US) before **August 25** , 2024, at 5 PM ET. Then, keep an eye on your inbox — we’ll send you an email containing your code along with details on how to activate your license. If you’ve received the email already, head over to the [Marvelous Designer site to redeem](https://www.marvelousdesigner.com/mypage).
-##  Create Fall Guys Islands in Fortnite with UEFN and Creative!
-[![Fortnite character as a Fall Guys bean](https://dev.epicgames.com/community/api/documentation/image/88d011b7-ffe8-443d-9d28-ae31379b98fd?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/88d011b7-ffe8-443d-9d28-ae31379b98fd?resizing_type=fit)
-You can now make Fall Guys obstacle courses in Fortnite! When you start a new project using the **Fall Guys template** , you’ll get access to a large selection of Fall Guys assets straight from the Blunderdome. Even better, all player characters will look, feel, and even move like the Beans you know and love from Fall Guys Original!
-As part of the special templates, you have access to a large selection of prefabs and galleries, filled with pieces you can use to build custom Fall Guys-style obstacle courses. The obstacles and building components come in various sizes to fit your island's needs.
-[![Fall Guys Obstacles Gallery](https://dev.epicgames.com/community/api/documentation/image/c1e987f3-e8b1-427e-a97c-8261029d97d1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c1e987f3-e8b1-427e-a97c-8261029d97d1?resizing_type=fit)
-You will be able to publish your Fall Guys islands starting August 6 in the [Creator Portal](https://create.fortnite.com/welcome) — these islands won’t auto-publish so you’ll need to do it manually. Islands created with the Fall Guys starter islands may qualify for placement in a limited-time Fall Guys row in Discover.
-We want to hear from you! As you’re building Fall Guys islands, feel free to provide feedback about the starter islands/templates, the tools, and the Bean character to the [EDC Forum Fall Guys Tools: Feedback Thread](https://forums.unrealengine.com/t/fall-guys-tools-feedback-thread/1940690) so we can continue to improve them with your help!
-To learn more about Fall Guys in Fortnite, [check out the blog post](https://create.fortnite.com/news/create-fall-guys-islands-in-fortnite-with-uefn-and-creative) and our learning materials [Building Fall Guys Islands](https://dev.epicgames.com/documentation/fortnite-creative/building-fall-guys-islands-in-fortnite-creative), [Working with Fall Guys Islands](https://dev.epicgames.com/documentation/fortnite-creative/working-with-fall-guys-islands-in-fortnite-creative), and [Fall Guys Obstacle Course Assets](https://dev.epicgames.com/documentation/fortnite-creative/fall-guys-obstacle-course-assets-in-fortnite-creative).
-[![Building Fall Guys Islands in Creative and UEFN](https://dev.epicgames.com/community/api/documentation/image/82350b99-fb3b-4bfd-85d3-172b2da43bc7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/82350b99-fb3b-4bfd-85d3-172b2da43bc7?resizing_type=fit)
-###  Fall Guys Prefabs & Galleries
-  * Fall Guys Large Checkpoint
-  * Fall Guys Medium Checkpoint
-  * Fall Guys Small Checkpoint
-  * Fall Guys Finish Funnel
-  * Fall Guys Large Finish Platform
-  * Fall Guys Medium Finish Platform
-  * Fall Guys Small Finish Platform
-  * Fall Guys Large Starting Platform
-  * Fall Guys Medium Starting Platform
-  * Fall Guys Small Starting Platform
-  * Fall Guys Components Gallery
-  * Fall Guys Obstacles Gallery
-  * Fall Guys Elemental Gallery A
+# Industrial Galleries
 
-##  New Side Scroller Controls and Orthographic Cameras Settings
-Create Side Scrollers and retro-style, 2D isometric gameplay using the new [Side Scroller Controls Device](https://dev.epicgames.com/documentation/fortnite-creative/using-side-scroller-controls-devices-in-fortnite-creative) and Orthographic Camera settings in Creative and UEFN. The Side Scroller Controls device can be used with the Orthographic Camera device option on Fixed Angle, Fixed Perspective, and Orbit cameras to clamp a player to a directional axis.
-###  Side Scroller Controls Device (Early Access)
-The Side Scroller Controls device is in Early Access. **Early Access** means we’re giving you an opportunity to try out a feature that’s still under development. By releasing a device as Early Access, our aim is to put exciting new features and devices into your hands as soon as their core functionality can be used effectively. We’ll take any feedback you provide to improve the device for final release.
-The Side Scroller Controls device can be paired with the Fixed Angle and Fixed Point Camera devices to create side scroller gameplay. You can use the Side Scroller Controls device to clamp the player character's movement and/or facing to a directional axis.
-[![The Side Scroller Controls Device can be paired with the Fixed Angle and Fixed Point Camera Devices to create side scroller gameplay.](https://dev.epicgames.com/community/api/documentation/image/02da8820-a613-4b24-9b0f-3329a728c75e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/02da8820-a613-4b24-9b0f-3329a728c75e?resizing_type=fit)
-###  Orthographic Camera Settings Added to Fixed Point, Fixed Angle, and Orbit Cameras
-Using the Orthographic Camera device option removes all perspective from the camera’s view. You can also adjust the width and rotation of the orthographic view. This is useful for making isometric or 2D games, or used with the Side Scroller Controls device to make retro-style side scroller games.
-##  New Scene Graph Platformer Tutorial
-Use the power of Scene Graph to create a platformer! In the [Scene Graph Platformer Tutorial](https://dev.epicgames.com/documentation/en-us/uefn/create-a-platformer-with-scene-graph-in-unreal-editor-for-fortnite), you’ll create custom Verse components to build platform behaviors, like moving back and forth, resetting, and disappearing on a loop! You’ll then iterate on these components to quickly build a platformer level! This tutorial is a great place to start learning how to use Verse with Scene Graph and create your own custom components.
-[![Ping Pong platformer example.](https://dev.epicgames.com/community/api/documentation/image/ae993d15-41a7-406a-947e-bcc617ea3aff?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ae993d15-41a7-406a-947e-bcc617ea3aff?resizing_type=fit)
-##  New Devices and Items
-###  Creator Profile Link Device
-Place the [Creator Profile Link](https://dev.epicgames.com/documentation/fortnite-creative/using-creator-profile-link-devices-in-fortnite-creative) device on your island to give players a way to discover more about you and your islands. In-game, the device displays a QR code that directs players to the island owner’s site on Fortnite.com. The creator’s page lets players see and discover other islands from the same creator, connect to the creator on social media, and learn more about the type of islands that creator likes to make.
-###  Save Point Device Updates
-The **Save Scoreboard Stats Behavior** device option was added so you can choose from saving round stats, career stats, or both. This makes it easier to save career scores while also using score as a condition for ending the round.
-###  Creator Most Wanted Weapons and Items
-You wanted it, you got it!
-Weapon / Item  |  Image
----|---
-Estate Vault Key |  [![Estate Vault Key](https://dev.epicgames.com/community/api/documentation/image/9626fda6-ca2d-4978-ae20-e82af3ac0898?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9626fda6-ca2d-4978-ae20-e82af3ac0898?resizing_type=fit)
-Dual Pistols |  [![Dual Pistols](https://dev.epicgames.com/community/api/documentation/image/29a27ede-b188-4237-b1f2-8ee89bdf071b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/29a27ede-b188-4237-b1f2-8ee89bdf071b?resizing_type=fit)
-Light Machine Gun |  [![Light Machine Gun](https://dev.epicgames.com/community/api/documentation/image/0255716b-8f1e-4881-8087-1c256ccad383?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0255716b-8f1e-4881-8087-1c256ccad383?resizing_type=fit)
-Semi-Auto Sniper Rifle |  [![Semi-Auto Sniper Rifle](https://dev.epicgames.com/community/api/documentation/image/1080bdb3-cd02-408b-a674-1150924989e1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1080bdb3-cd02-408b-a674-1150924989e1?resizing_type=fit)
-Semi-Auto Suppressed Pistol |  [![Semi-Auto Suppressed Pistol](https://dev.epicgames.com/community/api/documentation/image/75d89045-8f7f-4d19-a348-e03c3210b513?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/75d89045-8f7f-4d19-a348-e03c3210b513?resizing_type=fit)
-Suppressed Pistol |  [![Suppressed Pistol](https://dev.epicgames.com/community/api/documentation/image/de8b5194-c851-4d36-8ff4-e55bab0b3360?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/de8b5194-c851-4d36-8ff4-e55bab0b3360?resizing_type=fit)
-###  LEGO Items Update
-The following resource currencies can now be used with various devices on LEGO Islands:
-  * Wood
-  * Stone
-  * Metal
-  * Gold
+Use Industrial Gallery pieces to create warehouse and factory structures.
 
-##  Coming Soon: Session Length Metrics in Creator Portal
-Session length metrics will be available in the Analytics tab! Team owners, administrators and publishers can visit the [navigation panel](https://dev.epicgames.com/documentation/en-us/fortnite-creative/project-navigation-in-fortnite-creative) on each published project within Creator Portal to view the Analytics tab. More new metrics will be added here soon!
-##  Documentation and Learning Updates
-Check out these new documentation and learning updates:
-  * [Using Creator Portal](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-creator-portal-in-fortnite-creative): A new section that focuses on everything the Creator Portal offers, from publishing to project management.
-  * [Convert a Static Mesh into a Skeletal Mesh](https://dev.epicgames.com/documentation/en-us/uefn/convert-a-static-mesh-into-a-skeletal-mesh-in-unreal-editor-for-fortnite): Learn how to use the Skeleton Editor and Skeletal Mesh Editor to turn a 3D Static Mesh asset into a Skeletal Mesh by adding a skeleton that can be animated.
-  * [Sorting Algorithms in Verse](https://dev.epicgames.com/documentation/en-us/uefn/sorting-algorithms-in-verse): Learn how to sort lists of objects using Verse, and how to profile, test, and select the right sorting algorithm for your use case.
-  * [Make Your Own In-Game Leaderboard using Verse](https://dev.epicgames.com/documentation/en-us/uefn/make-your-own-in-game-leaderboard-in-verse): Learn how to create an in-game leaderboard that tracks player stats across games.
-  * [Custom Round Logic](https://dev.epicgames.com/documentation/en-us/uefn/custom-round-logic-using-verse): Learn how to save information that persists across rounds and reset the persistent data when the multi-round game ends or a player leaves the session.
-  * [Disappearing Platform on Loop](https://dev.epicgames.com/documentation/en-us/uefn/disappearing-platform-on-loop-using-verse-in-unreal-editor-for-fortnite), [Disappearing Platform on Touch](https://dev.epicgames.com/documentation/en-us/uefn/disappearing-platform-on-touch-using-verse-in-unreal-editor-for-fortnite), and [Synchronized Disappearing Platforms](https://dev.epicgames.com/documentation/en-us/uefn/synchronized-disappearing-platforms-using-verse-in-unreal-editor-for-fortnite): These tutorials have a fresh coat of paint! Learn how to create platforms that appear and disappear on a loop, on touch, and in a synchronized sequence.
+![Industrial Galleries](https://dev.epicgames.com/community/api/documentation/image/4edba799-e4ce-43cc-8adc-e46d52c8a774?resizing_type=fill&width=1920&height=335)
 
-##  Community Bug Fixes
-The following list of fixes are from issues that you submitted to us on the forums. Thank you for your patience and for reporting these issues!
-  * Improved Launch Session reliability when connecting to server.
-  * [Forum Issue Report](https://forums.unrealengine.com/t/launching-session-fails-connecting-to-private-ip-addresses-timing-out-multiple-times-before-succeeding/1892550)
+**Industrial** Galleries share similar [themes](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#island-theme) of factory and warehouse structures and props.
 
-##  Creative Updates and Fixes
-**Fixes** :
-  * Conductor Hand Cannon now uses the proper season tag in the Creative inventory.
+In the **Galleries** [category](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#category), you can browse for building pieces to make unique structures. The Galleries tab also offers environmental and prop items as well.
 
-##  Creative and UEFN Updates and Fixes
-**New** :
-  * Older versions of the Suppressed Pistol have been renamed to Semi-Auto Suppressed Pistol.
+This page is a visual guide to help you find gallery that fit this theme more quickly.
 
-###  Devices
-**New** :
-  * Three new drum kits were added to the Patchwork Drum Player device.
-  * Improved the Patchwork Instrument Player's Glocken samples at lower registers.
+To learn more about how to place gallery pieces to create an island that’s uniquely your own, check out [Building Basics](https://dev.epicgames.com/documentation/fortnite/building-basics-in-fortnite-creative).
 
-**Fixes** :
-  * The Regrowth Delay option of the Healing Cactus now works as expected.
+## Event Category
 
-###  Fall Guys Islands Known Issues
-  * Replays are currently not functional on Fall Guys islands.
+|  |  |  |  |  |
+| --- | --- | --- | --- | --- |
+| [Pressure Plant Gallery](https://dev.epicgames.com/community/api/documentation/image/05351908-9123-4607-af8e-fb640d33ac63?resizing_type=fit) | [Monster Skull Gallery](https://dev.epicgames.com/community/api/documentation/image/56acea82-a099-48c0-8613-cfb75f46a2f8?resizing_type=fit) | [Giant Robot Volcano Base Gallery](https://dev.epicgames.com/community/api/documentation/image/8bc0015e-cc31-4f02-8461-0849c6e98f1e?resizing_type=fit) | [Giant Robot Gallery B](https://dev.epicgames.com/community/api/documentation/image/7a7f9301-eb93-4f07-9245-c659f0f270b2?resizing_type=fit) | [Giant Robot Gallery A](https://dev.epicgames.com/community/api/documentation/image/b6d78aad-20de-4219-8b40-f73cdde6c929?resizing_type=fit) |
+| **Pressure Plant Gallery** | **Monster Skull Gallery** | **Giant Volcano Base Gallery** | **Giant Robot Gallery B** | **Giant Robot Gallery A** |
 
-##  UEFN Updates and Fixes
-**New** :
-  * Find and Replace tabs are now available in animation editors.
-  * The following are improvements to Environment and Landscape tools:
-    * Optimized runtime grass instance generation.
-    * Optimized landscape save times when runtime generation is enabled, by disabling grass map distance eviction in the editor.
-    * Changed the default LODBlendRange to 0.1 to improve the default behavior of landscape LOD tessellation.
-  * Added Skeletal Mesh support to the Inspect tool.
+## Imposters Category
 
-**Fixes** :
-  * The following are fixes applied to Environment and Landscape tools:
-    * Landscape serialization used during Mobile preview mode no longer results in a crash.
-    * Landscape texture streaming is no longer disabled after garbage collection.
-    * Editor no longer crashes during a routine landscape save when rebuilding grass maps.
-  * Animation editors no longer select the incorrect bone for non-mesh bones leading to array OOBs.
-  * Changing the layout of the editor tabs no longer results in a corrupt layout.
-  * Level Instance Edit Mode no longer crashes when using the mouse scroll wheel.
-  * Curve tables no longer reset data or prevent data from being editable in PIE.
-  * Assets and properties now appear localized.
-  * The following Modeling tools no longer result in a crash state after resizing the brush using the ‘B’ hotkey method:
-    * Edit Materials
-    * Paint Maps
+|  |  |  |
+| --- | --- | --- |
+| [Imposters Weapons Lab Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/e0b6bf29-3761-4f2e-8d47-6812810e7877?resizing_type=fit) | [Imposters Factory Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/45db9c2b-37bc-435d-9f31-d80b8f20ce57?resizing_type=fit) | [Imposters Corridors Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/6a0b3f57-b322-4cbc-8f68-0dab202abca5?resizing_type=fit) |
+| **Imposters Weapons Lab Prop Gallery** | **Imposters Factory Prop Gallery** | **Imposters Corridors Prop Gallery** |
 
-###  Scene Graph
-**New:**
-  * Multi Select is enabled in the Prefab Editor for gizmo operations.
+## Factory Category
 
-**Fixes:**
-  * Focus On Selection now works on initial creation, and for empty and non-physics body assets that have entities.
+|  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| [Two Stacks Gallery](https://dev.epicgames.com/community/api/documentation/image/8614b2ab-f087-431f-b583-3ea33c2d6b5b?resizing_type=fit) | [The Club Gallery](https://dev.epicgames.com/community/api/documentation/image/2e5e6f64-661e-4188-a2fa-2534c853be27?resizing_type=fit) | [Slant Gallery](https://dev.epicgames.com/community/api/documentation/image/92ac66d3-a7f9-4ede-a325-4e03b62d0870?resizing_type=fit) | [One Stack Gallery](https://dev.epicgames.com/community/api/documentation/image/5a33772a-f2a8-4ac2-af85-3142d75d82c9?resizing_type=fit) | [Garage Gallery](https://dev.epicgames.com/community/api/documentation/image/34cc0198-42fe-4ca5-a327-72fa946efb09?resizing_type=fit) | [Factory Walls Gallery](https://dev.epicgames.com/community/api/documentation/image/b032a223-f93e-4fc0-9294-5d16d32fa131?resizing_type=fit) |
+| **Two Stacks Gallery** | **The Club Gallery** | **Slant Gallery** | **One Stack Gallery** | **Garage Gallery** | **Factory Walls Gallery** |
+
+|  |  |  |
+| --- | --- | --- |
+| [Factory Stairs and Catwalks](https://dev.epicgames.com/community/api/documentation/image/8a5cef80-e4bd-4df6-91bb-0870a2c6f68c?resizing_type=fit) | [Factory Roof Gallery](https://dev.epicgames.com/community/api/documentation/image/92c9c625-53ab-4466-b3e7-bbdd72e4bf6b?resizing_type=fit) | [Disco Gallery](https://dev.epicgames.com/community/api/documentation/image/52d9d06d-7ec1-4ab8-8b87-cf84978ab28f?resizing_type=fit) |
+| **Factory Stairs and Catwalks** | **Factory Roof Gallery** | **Disco Gallery** |
+
+## Flush Factory Category
+
+|  |
+| --- |
+| [Flush Factory Gallery](https://dev.epicgames.com/community/api/documentation/image/6c63d976-8b66-464f-88fc-8603205cea9b?resizing_type=fit) |
+| **Flush Factory Gallery** |
+
+## Junk Junction Category
+
+|  |
+| --- |
+| [Junk Junction Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/0867a5f0-1374-43af-b6f5-a6afe07df5e5?resizing_type=fit) |
+| **Junk Junction Prop Gallery** |
+
+## Movie Set Category
+
+|  |  |  |
+| --- | --- | --- |
+| [Movie Set Gallery](https://dev.epicgames.com/community/api/documentation/image/464f5034-f6ff-48d6-bfb3-b96dbcea1497?resizing_type=fit) | [Movie Set Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/d8cac496-2457-41c0-8086-1a0752e9e4eb?resizing_type=fit) | [Dinosaur Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/4960c43e-f132-4701-93d9-ac10d2e30174?resizing_type=fit) |
+| **Movie Set Gallery** | **Movie Set Prop Gallery** | **Dinosaur Prop Gallery** |
+
+## Power Plant Category
+
+|  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| [Power Plant Gallery Purple](https://dev.epicgames.com/community/api/documentation/image/9b5e327c-e41b-4c8f-8ebd-2f26fa3228c5?resizing_type=fit) | [Power Plant Gallery Orange](https://dev.epicgames.com/community/api/documentation/image/5d2d9e75-7530-4963-a1a2-cb03783e15f4?resizing_type=fit) | [Power Plant Gallery Green](https://dev.epicgames.com/community/api/documentation/image/4facdb25-acc0-4102-b4c3-0acdcce1130d?resizing_type=fit) | [Power Plant Gallery Blue](https://dev.epicgames.com/community/api/documentation/image/453ef71a-e6e6-4a26-8e4f-aa51992eb5f9?resizing_type=fit) | [Power Plant Gallery](https://dev.epicgames.com/community/api/documentation/image/bebbfa0b-36ab-4266-923d-516e20ee0fce?resizing_type=fit) | [Power Plant Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/b98f34a2-abe4-434a-ad60-0835765de576?resizing_type=fit) |
+| **Power Plant Gallery Purple** | **Power Plant Gallery Orange** | **Power Plant Gallery Green** | **Power Plant Gallery Blue** | **Power Plant Gallery** | **Power Plant Prop Gallery** |
+
+|  |
+| --- |
+| [Power Plant Cooling Tower Gallery](https://dev.epicgames.com/community/api/documentation/image/83550669-26fd-4d3b-b96d-353738132afb?resizing_type=fit) |
+| **Power Plant Cooling Tower Gallery** |
+
+## The Rig Category
+
+|  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| [The Rig Wall Gallery C](https://dev.epicgames.com/community/api/documentation/image/2ca04acc-d6d4-4300-93bb-e23008953ccb?resizing_type=fit) | [The Rig Wall Gallery B](https://dev.epicgames.com/community/api/documentation/image/49ead086-7530-495f-a660-63f3725ebcf3?resizing_type=fit) | [The Rig Wall Gallery A](https://dev.epicgames.com/community/api/documentation/image/f7642139-7752-4a7e-8a4f-5fe29fa2fea8?resizing_type=fit) | [The Rig Floor and Stair Gallery](https://dev.epicgames.com/community/api/documentation/image/8fd9aa53-f93e-43be-ab26-0cd7f1b322b0?resizing_type=fit) | [The Rig Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/97ae0506-d8b1-4e0d-82fd-a6cd76265570?resizing_type=fit) | [The Rig Base Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/b730ed58-6787-4195-95fa-248f40f3a295?resizing_type=fit) |
+| **The Rig Wall Gallery C** | **The Rig Wall Gallery B** | **The Rig Wall Gallery A** | **The Rig Floor and Stair Gallery** | **The Rig Prop Gallery** | **The Rig Base Prop Gallery** |
+
+## Shifty Shafts Category
+
+|  |  |
+| --- | --- |
+| [Mine Gallery](https://dev.epicgames.com/community/api/documentation/image/3d7fe7cf-1f9c-43e6-b1b0-2bc31b4ed0b0?resizing_type=fit) | [Mine Cart Gallery](https://dev.epicgames.com/community/api/documentation/image/7a3668fb-be94-4b7d-b54a-8126eef42995?resizing_type=fit) |
+| **Mine Gallery** | **Mine Cart Gallery** |
+
+## Slappy Shores Category
+
+|  |  |  |  |  |
+| --- | --- | --- | --- | --- |
+| [Slappy Shores Wall and Roof Gallery](https://dev.epicgames.com/community/api/documentation/image/81bc53fc-9435-4670-806a-1b44338f15d0?resizing_type=fit) | [Slappy Shores Grafitti Wall Gallery](https://dev.epicgames.com/community/api/documentation/image/b1b4afb2-f36c-446e-bdc2-ed862a6473f9?resizing_type=fit) | [Slappy Shores Floor and Stair Gallery](https://dev.epicgames.com/community/api/documentation/image/518737b1-6b07-447e-9e2a-fdcc27f84327?resizing_type=fit) | [Slappy Shores Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/b402f712-01f9-40bd-8669-6fd162bf3e42?resizing_type=fit) | [Slappy Shores Bridge Gallery](https://dev.epicgames.com/community/api/documentation/image/d1576bd5-4e72-4334-b8ec-975a09865455?resizing_type=fit) |
+| **Slappy Shores Wall and Roof Gallery** | **Slappy Shores Graffiti Wall Gallery** | **Slappy Shores Floor and Stair Gallery** | **Slappy Shores Prop Gallery** | **Slappy Shores Bridge Gallery** |
+
+## Slurp Swamp Category
+
+|  |  |  |  |  |
+| --- | --- | --- | --- | --- |
+| [Slurp Swamp Wall Gallery](https://dev.epicgames.com/community/api/documentation/image/6322d6e5-5eee-4171-87b3-778b51e694b3?resizing_type=fit) | [Slurp Swamp Floor and Stair Gallery](https://dev.epicgames.com/community/api/documentation/image/f37224ea-1dc5-43a9-9725-ebbe7bb72406?resizing_type=fit) | [Slurp Swamp Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/b324c8f0-4292-4df1-8d56-bf6d985b8586?resizing_type=fit) | [Slurp Swamp Pipe Gallery](https://dev.epicgames.com/community/api/documentation/image/06affbb6-721f-4795-9736-417392c36cac?resizing_type=fit) | [Slurp Container Gallery](https://dev.epicgames.com/community/api/documentation/image/4d139c08-8e00-4e97-b36e-d049111d31ec?resizing_type=fit) |
+| **Slurp Swamp Wall Gallery** | **Slurp Swamp Floor and Stair Gallery** | **Slurp Swamp Prop Gallery** | **Slurp Swamp Pipe Gallery** | **Slurp Container Gallery** |
+
+## Steel Bridge Category
+
+|  |  |  |  |  |
+| --- | --- | --- | --- | --- |
+| [Steel Bridge Gallery Yellow](https://dev.epicgames.com/community/api/documentation/image/9fcdb91c-dceb-498a-baa9-7e6725463185?resizing_type=fit) | [Steel Bridge Gallery Red](https://dev.epicgames.com/community/api/documentation/image/1f648a5c-c0ad-4258-9495-98c92ee701a9?resizing_type=fit) | [Steel Bridge Gallery Purple](https://dev.epicgames.com/community/api/documentation/image/bc3a7993-8df9-4656-9a23-2a4da71f45c6?resizing_type=fit) | [Steel Bridge Gallery Green](https://dev.epicgames.com/community/api/documentation/image/af47a88a-a79c-4399-a712-c458131e01c8?resizing_type=fit) | [Steel Bridge Gallery Blue](https://dev.epicgames.com/community/api/documentation/image/68560254-f425-4f52-b2e2-ab8445725384?resizing_type=fit) |
+| **Steel Bridge Gallery Yellow** | **Steel Bridge Gallery Red** | **Steel Bridge Gallery Purple** | **Steel Bridge Gallery Green** | **Steel Bridge Gallery Blue** |
+
+## Tilted Towers Category
+
+|  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| [Ruined Wall Gallery](https://dev.epicgames.com/community/api/documentation/image/f400d806-40f6-4369-bd57-2ea32200da6c?resizing_type=fit) | [Ruined Floor Gallery](https://dev.epicgames.com/community/api/documentation/image/f8a14c9b-4b4e-4c48-9829-a4bc2b358729?resizing_type=fit) | [Tilted Towers Wall Gallery N](https://dev.epicgames.com/community/api/documentation/image/68232732-6ca5-4a27-a7cf-f4561e92443c?resizing_type=fit) | [Tilted Towers Wall Gallery M](https://dev.epicgames.com/community/api/documentation/image/f094127a-03f6-498e-90ca-a33f5e81cd32?resizing_type=fit) | [Tilted Towers Wall Gallery L](https://dev.epicgames.com/community/api/documentation/image/40b0b318-945a-405c-826f-05e16a026893?resizing_type=fit) | [Tilted Towers Wall Gallery K](https://dev.epicgames.com/community/api/documentation/image/ecef37c3-ab4c-4148-a531-e8b64faea29f?resizing_type=fit) |
+| **Ruined Wall Gallery** | **Ruined Floor Gallery** | **Tilted Towers Wall Gallery N** | **Tilted Towers Wall Gallery M** | **Tilted Towers Wall Gallery L** | **Tilted Towes Wall Gallery K** |
+
+|  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| [Tilted Towers Wall Gallery J](https://dev.epicgames.com/community/api/documentation/image/431ddb36-8bf4-409b-8b99-b7294c5aadad?resizing_type=fit) | [Tilted Towers Wall Gallery I](https://dev.epicgames.com/community/api/documentation/image/127c1bdb-82f7-4dee-82d0-c4939fb3ccd1?resizing_type=fit) | [Tilted Towers Wall Gallery H](https://dev.epicgames.com/community/api/documentation/image/f72c3177-68b7-4450-90a5-ea2f7dc09b95?resizing_type=fit) | [Tilted Towers Wall Gallery G](https://dev.epicgames.com/community/api/documentation/image/9ada8180-cc74-4867-950c-e86dda8537cb?resizing_type=fit) | [Tilted Towers Wall Gallery F](https://dev.epicgames.com/community/api/documentation/image/cb62de5a-7980-40f0-9c45-1a7d4b1997cc?resizing_type=fit) | [Tilted Towers Wall Gallery E](https://dev.epicgames.com/community/api/documentation/image/40a0d3ef-4a15-4385-934b-b35bea8df25a?resizing_type=fit) |
+| **Tilted Towers Wall Gallery J** | **Tilted Towers Wall Gallery I** | **Tilted Towers Wall Gallery H** | **Tilted Towers Wall Gallery G** | **Tilted Towers Wall Gallery F** | **Tilted Towers Wall Gallery E** |
+
+|  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| [Tilted Towers Wall Gallery D](https://dev.epicgames.com/community/api/documentation/image/079ccede-7d3f-4833-accf-21d47dde5c16?resizing_type=fit) | [Tilted Towers Wall Gallery C](https://dev.epicgames.com/community/api/documentation/image/04e2837c-d2ef-46bf-a2fc-6801b3ca5063?resizing_type=fit) | [Tilted Towers Wall Gallery B](https://dev.epicgames.com/community/api/documentation/image/c95e2346-c94a-4612-b2cc-132c2a9a9aed?resizing_type=fit) | [Tilted Towers Wall Gallery A](https://dev.epicgames.com/community/api/documentation/image/614c6e31-dd36-4830-b2cc-7e7924fc5a45?resizing_type=fit) | [Tilted Towers Floor and Stair Gallery](https://dev.epicgames.com/community/api/documentation/image/5e4704b1-943b-4c4a-9851-1f562704ac79?resizing_type=fit) | [Office Gallery](https://dev.epicgames.com/community/api/documentation/image/d9868280-546f-41df-9f4f-04ccec814fc4?resizing_type=fit) |
+| **Tilted Towers Wall Gallery D** | **Tilted Towers Wall Gallery C** | **Tilted Towers Wall Gallery B** | **Tilted Towers Wall Gallery A** | **Tilted Towers Floor and Stair Gallery** | **Office Gallery** |
+
+|  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| [Neo Tilted Gallery B](https://dev.epicgames.com/community/api/documentation/image/317e2b93-0850-4e59-97bb-ccd35609a197?resizing_type=fit) | [Neo Tilted Gallery A](https://dev.epicgames.com/community/api/documentation/image/f99a97b1-81c8-4587-b5a8-05f1949c3b9f?resizing_type=fit) | [Neo Tilted Durrr Burger Gallery](https://dev.epicgames.com/community/api/documentation/image/928780bb-31b6-4879-a919-484ae2aaad8d?resizing_type=fit) | [L Apartments Gallery](https://dev.epicgames.com/community/api/documentation/image/b1191d96-ae0b-4295-8063-4b5af8fc9d17?resizing_type=fit) | [Fish Apartments Gallery](https://dev.epicgames.com/community/api/documentation/image/6c1f97a4-6ccb-4c60-abca-32bd34784b6d?resizing_type=fit) | [Dark Tilted Wall Gallery](https://dev.epicgames.com/community/api/documentation/image/ee8e678d-8517-4b27-95e6-95fd9c8a832d?resizing_type=fit) |
+| **Neo Tilted Gallery B** | **Neo Tilted Gallery A** | **Neo Tilted Durrr Burger Gallery** | **L Apartments Gallery** | **Fish Apartments Gallery** | **Dark Tilted Wall Gallery** |
+
+|  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| [Dark Tilted Floor and Stair Gallery](https://dev.epicgames.com/community/api/documentation/image/dce210b0-a4b6-4549-80a2-b714e6519d62?resizing_type=fit) | [Clock Tower Gallery](https://dev.epicgames.com/community/api/documentation/image/d449dcef-3370-4afd-897a-c3eac8531c17?resizing_type=fit) | [Castle Tower Gallery](https://dev.epicgames.com/community/api/documentation/image/43eaa8f1-0006-41b5-aabe-aeea5a57bd6e?resizing_type=fit) | [Bridge Girder Gallery White](https://dev.epicgames.com/community/api/documentation/image/be5564bd-e7d6-4f9e-b37d-817a612d54a1?resizing_type=fit) | [Bridge Girder Gallery Orange](https://dev.epicgames.com/community/api/documentation/image/1714c1e0-308c-4487-a30f-fb898885a165?resizing_type=fit) | [Bridge Girder Gallery Grey](https://dev.epicgames.com/community/api/documentation/image/d8bc00ff-977e-4176-9628-0adef13bba31?resizing_type=fit) |
+| **Dark Tilted Floor and Stair Gallery** | **Clock Tower Gallery** | **Castle Tower Gallery** | **Bridge Girder Gallery White** | **Bridge Girder Gallery Orange** | **Bridge Girder Gallery Grey** |
+
+|  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| [Bridge Girder Gallery Green](https://dev.epicgames.com/community/api/documentation/image/5df6365a-8095-4a91-ab60-37fb31b127a3?resizing_type=fit) | [Bridge Girder Gallery Blue](https://dev.epicgames.com/community/api/documentation/image/54801569-7935-4458-8566-2f8ca8be7292?resizing_type=fit) | [Basketball Court Gallery](https://dev.epicgames.com/community/api/documentation/image/51c01de7-72f1-4d46-831f-b18b5303a751?resizing_type=fit) | [Holoscreen Gallery](https://dev.epicgames.com/community/api/documentation/image/ba973d94-e875-4fac-bcdc-4eaf86bc65df?resizing_type=fit) | [Neo Tilted Car Gallery](https://dev.epicgames.com/community/api/documentation/image/6b24eaeb-c922-4791-a234-b8e715a8597a?resizing_type=fit) | [Tilted Towers Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/3502a366-69e0-4294-af09-9aa1b4703232?resizing_type=fit) |
+| **Bridge Girder Gallery Green** | **Bridge Girder Gallery Blue** | **Basketball Court Gallery** | **Holoscreen Gallery** | **Neo Tilted Car Gallery** | **Tilted Towers Prop Gallery** |
+
+|  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| [Neo Tilted Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/26511a22-b53a-42c4-9cbc-cb0c881c9a5f?resizing_type=fit) | [Dark Tilted Prop Gallery](https://dev.epicgames.com/community/api/documentation/image/f27bdc5e-3a31-4773-9a9c-3ad6cb81f192?resizing_type=fit) | [Background Skyscraper Topper Gallery B](https://dev.epicgames.com/community/api/documentation/image/60026158-54d1-4bc4-a82d-e1ffdbe72af1?resizing_type=fit) | [Background Skyscraper Topper Gallery A](https://dev.epicgames.com/community/api/documentation/image/3515e9a0-e76e-4985-9073-6372154ce7fc?resizing_type=fit) | [Background Skyscraper Gallery E](https://dev.epicgames.com/community/api/documentation/image/66b8411f-878b-4fca-8ae5-1a8fbde41367?resizing_type=fit) | [Background Skyscraper Gallery D](https://dev.epicgames.com/community/api/documentation/image/a075bdb3-8e6e-4dc9-8ca0-a480846e5e3f?resizing_type=fit) |
+| **Neo Tilted Prop Gallery** | **Dark Tilted Prop Gallery** | **Background Skyscraper Topper Gallery B** | **Background Skyscraper Topper Gallery A** | **Background Skyscraper Gallery E** | **Background Skyscraper Gallery D** |
+
+|  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| [Background Skyscraper Gallery C](https://dev.epicgames.com/community/api/documentation/image/944002f2-e65c-4cac-b14c-91374ada2a12?resizing_type=fit) | [Background Skyscraper Gallery B](https://dev.epicgames.com/community/api/documentation/image/39938449-a980-4884-ad5b-1e28f1c6b4c5?resizing_type=fit) | [Background Skyscraper Gallery A](https://dev.epicgames.com/community/api/documentation/image/a9a3798c-9216-499b-b132-3cfd9331305e?resizing_type=fit) | [Background City](https://dev.epicgames.com/community/api/documentation/image/4a964ad3-2b1b-4684-8cfc-c5b18554da0b?resizing_type=fit) | [Background Buildings Gallery C](https://dev.epicgames.com/community/api/documentation/image/09d72d87-6bab-4e30-a909-4cda13c8a151?resizing_type=fit) | [Background Buildings Gallery B](https://dev.epicgames.com/community/api/documentation/image/e8183410-81d2-46ef-95dd-b827b53248f6?resizing_type=fit) |
+| **Background Skyscraper Gallery C** | **Background Skyscraper Gallery B** | **Background Skyscraper Gallery A** | **Background City** | **Background Buildings Gallery C** | **Background Buildings Gallery B** |
+
+|  |
+| --- |
+| [Background Buildings Gallery A](https://dev.epicgames.com/community/api/documentation/image/d71a7da0-72d7-4e8b-9dfd-287e8cae4b11?resizing_type=fit) |
+| **Background Buildings Gallery A** |

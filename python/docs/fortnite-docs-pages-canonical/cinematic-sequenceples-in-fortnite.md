@@ -1,89 +1,189 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/cinematic-sequenceples-in-fortnite
 
-# Reports
-Download reports for multiple islands to analyze and compare island data.
-![Reports](https://dev.epicgames.com/community/api/documentation/image/6a617423-43ee-4b8d-8c75-cad74b130d85?resizing_type=fill&width=1920&height=335)
-Export and analyze island insights at scale. Use the **Reports** tab to download analytics data across all your islands at once in CSV format.
-The **Reports** tab provides a centralized way to export analytics data for any islands where you are an **Owner** or **Administrator**. Instead of opening each island’s analytics individually, you can download data from multiple islands in one place.
-Reports are exported as a **ZIP file** with folders for each island you select. Inside each folder is a CSV for each metric you selected under **Data Source**. You can use these CSVs for deeper analysis, external reporting, or visualization in the tools of your choice.
-The Reports feature is currently in BETA and more functionality will be added over time.
-You must have the [Owner or Admin role](https://dev.epicgames.com/documentation/fortnite/creating-teams-in-creator-portal-in-unreal-editor-for-fortnite) to use this feature.
-##  Bulk Download
-Select **Reports** from the [project navigation menu](https://dev.epicgames.com/documentation/fortnite/project-navigation-menu-in-fortnite).
-[![An example of opening the Reports screen from the project navigation menu.](https://dev.epicgames.com/community/api/documentation/image/ad3e420c-335e-4ca3-8dfc-3741a2ff35ba?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ad3e420c-335e-4ca3-8dfc-3741a2ff35ba?resizing_type=fit) Reports
-Once you’ve opened the **Reports** page you can select data points across multiple islands and download bulk reports for those islands. The bulk download tool allows you to export island analytics data by selecting:
-  * A time range
-  * One or more islands
-  * One or more data sources (metrics)
+# Cinematic Sequence Device Design Examples
 
-All selections must be completed before you can generate your reports.
-To begin a bulk download, follow these steps:
-  1. Click the **time field** to open the **Time range** dropdown menu.
-[![An example of the time range dropdown menu.](https://dev.epicgames.com/community/api/documentation/image/873a24d5-b143-4aec-bf0e-fcbd3b28a7ca?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/873a24d5-b143-4aec-bf0e-fcbd3b28a7ca?resizing_type=fit) Time range
-  2. Select a range of time from the dropdown menu or select **Custom** to choose a custom date range from the calendar.
-[![An example of selecting a custom time range.](https://dev.epicgames.com/community/api/documentation/image/5bdb5084-3668-4e98-9651-697017f12751?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5bdb5084-3668-4e98-9651-697017f12751?resizing_type=fit) Custom range
-  3. Click **Apply**.
-  4. Click **Select Island** to open the **Island** dropdown menu and select the islands you want data from.
-[![An example of selecting islands from the island dropdown menu.](https://dev.epicgames.com/community/api/documentation/image/cf07fcac-b82d-4ac5-9e9b-4a90c12668b3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/cf07fcac-b82d-4ac5-9e9b-4a90c12668b3?resizing_type=fit) Select islands
-You have additional options:
-     * **All** - Selects all islands in the list.
-     * **Last Published** - Only selects data from the last published islands.
-     * **My Islands** - Only selects islands created by you.
-  5. Click **Apply**.
-  6. Select the data points you want to appear on the reports from the **Data Source** list.
-[![An example of selecting data points from the Data source section.](https://dev.epicgames.com/community/api/documentation/image/478a1c08-a4e5-4651-aa56-b2c33e7d369d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/478a1c08-a4e5-4651-aa56-b2c33e7d369d?resizing_type=fit) Data source
-  7. Click **Generate** to begin downloading the report.
+See several ways you can make use of engaging in-game cutscenes for your island.
 
-While the report is generating, a progress bar appears at the bottom of the Reports page.
-[![An example of the Reports download progress bar.](https://dev.epicgames.com/community/api/documentation/image/9130b731-5cf0-4e08-b0b7-63e4f79e7a29?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9130b731-5cf0-4e08-b0b7-63e4f79e7a29?resizing_type=fit) Reports download progress bar
-Once you see the success notification you can safely leave the Reports page.
-[![An example of the success message that displays when a report has successfully downloaded.](https://dev.epicgames.com/community/api/documentation/image/2558afdd-5c48-481e-956a-e933fa9c7532?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2558afdd-5c48-481e-956a-e933fa9c7532?resizing_type=fit) Success message
-###  Data Categories
-Data sources correspond to the same analytics categories found in the Analytics page for the individual projects. Each category can be expanded to choose specific metrics, or you can select everything at once.
-Available categories:
-  * **Audience** - Impressions, clicks, plays, CTR, and related metrics
-  * **Gameplay** - Session information, gameplay interactions, XP devices, and more.
-  * **Engagement** - Minutes played, active players, returning players, and more.
-  * **Satisfaction** - Player ratings and satisfaction signals
-  * **Retention** - Return behavior across days
+![Cinematic Sequence Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/f19c2523-0aaf-4089-a226-909ceec9a349?resizing_type=fill&width=1920&height=335)
 
-###  Download and File Format
-The time required to prepare your download depends on:
-  * Number of islands selected
-  * Number of metrics selected
-  * Length of the time range
+Available in **Unreal Editor for Fortnite (UEFN) only**, this device is perfect for creating [cutscenes](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#cutscene) for player onboarding, in-game instructions, or just for fun!
 
-Large exports (many islands + long time ranges + all metrics) may take several minutes. A warning message will appear if your export is expected to take longer than usual.
-You must stay on the Reports page until generation completes.
-Reports are downloaded and exported as a ZIP file containing one or more CSV files. Each CSV corresponds to a unique combination of metric and island.
-You can open CSVs with most spreadsheet and analysis tools, including Excel, Google Sheets, and data tools such as Tableau, Looker, or Python notebooks.
-##  Report Issues
-There are a few reasons a report cannot generate or does not fully gather all data:
-  * [Missing information](https://dev.epicgames.com/documentation/fortnite/reports-in-fortnite#missing-information)
-  * [Download error](https://dev.epicgames.com/documentation/fortnite/reports-in-fortnite#download-error)
-  * [An issue with the data](https://dev.epicgames.com/documentation/fortnite/reports-in-fortnite#data-issues)
+## Starting Weapon Sequence
 
-###  Missing Information
-If you forget to fill in one or more of the report fields, the field appears red and a prompt appears on the form. The **Generate** button will not be selectable at this time.
-[![An example of the missing fields turning red.](https://dev.epicgames.com/community/api/documentation/image/722d006f-d777-42c6-a92f-b7fdc5e44c86?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/722d006f-d777-42c6-a92f-b7fdc5e44c86?resizing_type=fit) Missing information
-###  Download Error
-If an issue occurs while the download is in process, the report won’t generate. The progress bar goes into a failed state and stops downloading the report. A **download failed** message appears in the top-right corner of the screen.
-[![An example of the download progress bar in a failed state.](https://dev.epicgames.com/community/api/documentation/image/e1b0a51a-0af6-4173-a7fe-b9bb0315d90e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e1b0a51a-0af6-4173-a7fe-b9bb0315d90e?resizing_type=fit) Fail download
-[![An example of the download failed messaging.](https://dev.epicgames.com/community/api/documentation/image/454e43e5-bfc1-4e23-b059-ca807779f15d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/454e43e5-bfc1-4e23-b059-ca807779f15d?resizing_type=fit) Download fail message
-###  Data Issues
-If there’s an issue with any of the data selected, the report will continue generating.
-[![An example of a download experiencing data issues.](https://dev.epicgames.com/community/api/documentation/image/7805346e-1950-4eaa-8580-59c5c015988b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7805346e-1950-4eaa-8580-59c5c015988b?resizing_type=fit) Data issues
-However, once the report is generated a warning message appears to inform you that not all information could be pulled into the report.
-[![An example of the data issue messaging.](https://dev.epicgames.com/community/api/documentation/image/c0ec72f4-adb2-44dd-8a7b-3b8a83feda58?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c0ec72f4-adb2-44dd-8a7b-3b8a83feda58?resizing_type=fit) Data issue message
-##  Cancel Report
-At any time while the report is generating you can cancel the bulk download. To cancel the report, follow these steps.
-  1. Click **Cancel** on the progress bar. A confirmation pop-up message appears.
-[![Click the Cancel button to cancel the report download.](https://dev.epicgames.com/community/api/documentation/image/4d1b3e2e-2789-4751-accf-7443fcadd49a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4d1b3e2e-2789-4751-accf-7443fcadd49a?resizing_type=fit) Cancel report
-  2. Click**Cancel report** on the pop-up. The report is canceled.
-[![An example of the cancel confirmation pop-up message.](https://dev.epicgames.com/community/api/documentation/image/c09afe80-6117-418a-8842-f7b0cae028be?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c09afe80-6117-418a-8842-f7b0cae028be?resizing_type=fit) Cancel download confirmation
+The **Cinematic Sequence** device has settings that you can use to create a basic opening sequence to give the player their starting weapons one by one instead of all at once!
 
-##  Best Practices
-  * **Start with a narrow time range**. To speed the report generation, try 7 or 30 days before exporting larger files.
-  * **Focus on key islands**. To speed up report generation and keep analysis efficient, select only the specific islands that you want to analyze.
-  * **Export only the metrics you need**. Selecting fewer metrics reduces processing time.
-  * **Group similar islands**. If you’re a developer with a large portfolio, grouping islands by theme or season makes report analytics more insightful and reduces download times.
+### Devices Used
+
+- 1 x [Cinematic Sequence](https://dev.epicgames.com/documentation/fortnite/using-cinematic-sequence-device-in-unreal-editor-for-fortnite) device
+- 1 x [Player Spawner](https://dev.epicgames.com/documentation/fortnite/using-player-spawn-pad-devices-in-fortnite-creative) device
+- 1 x [Item Granter](https://dev.epicgames.com/documentation/fortnite/using-item-granter-devices-in-fortnite-creative) device
+
+### Set Up the Devices
+
+1. Place a **Player Spawner** device.
+2. Place an **Item Granter** device.
+3. Customize the Item Granter as follows:
+
+   [![](https://dev.epicgames.com/community/api/documentation/image/c7959e60-d3dc-4d9d-8f19-50f61768a4cd?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c7959e60-d3dc-4d9d-8f19-50f61768a4cd?resizing_type=fit)
+
+   | Option | Value |
+   | --- | --- |
+   | On Grant Action | Keep All |
+   | Item List - Index [0] - Item Definition | Tactical Assault Rifle L1 |
+   | Item List - Index [1] - Item Definition | Tactical Pistol L1 |
+   | Item List - Index [2] - Item Definition | Grenade |
+   | Receiving Players | All |
+4. Create a [level sequence](https://dev.epicgames.com/community/learning/tutorials/r4jn/fortnite-uefn-using-level-sequencer) called **StartingWeaponsSequence**.
+5. Place a **Cinematic Sequence** device.
+6. Customize the Cinematic Sequence device as follows:
+
+   [![](https://dev.epicgames.com/community/api/documentation/image/f0eea0a7-687c-4c8a-9486-006b7312a50a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f0eea0a7-687c-4c8a-9486-006b7312a50a?resizing_type=fit)
+
+   | Option | Value |
+   | --- | --- |
+   | Sequence | StartingWeaponSequence |
+   | Auto Play | Yes |
+7. Open the **StartingWeaponSequence** and add the Item Granter to the timeline. Create three [keyframes](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#keyframe) for gameplay events. The first will **Grant Item** and the next two will call **Cycle to Next Item**.
+
+   [![](https://dev.epicgames.com/community/api/documentation/image/1ddee787-279e-4f88-9643-834083278619?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1ddee787-279e-4f88-9643-834083278619?resizing_type=fit)
+
+You now have the basic functionality for an opening weapon sequence!
+
+### Design Tip
+
+Simple effects like this are a great way to give your game a more polished, cinematic quality. Making gameplay changes sequential instead of all at once can also give the player a chance to process what’s happening during the game. In this example, players see each weapon separately for a better starting understanding of their loadout!
+
+## Survival Platforming Minigame
+
+You can use the Cinematic Sequence device to trigger different sequential events with different devices.
+
+In this example, you’ll create a simple platforming mechanic with beacons to indicate where the player should jump.
+
+### Devices Used
+
+- 1 x Cinematic Sequence device
+- 1 x Player Spawner device
+- 1 x [Damage Volume](https://dev.epicgames.com/documentation/fortnite/using-damage-volume-devices-in-fortnite-creative) device
+- 16 x [Prop Manipulator](https://dev.epicgames.com/documentation/fortnite/using-prop-manipulator-devices-in-fortnite-creative) devices
+- 16 x [Beacon](https://dev.epicgames.com/documentation/fortnite/using-beacon-devices-in-fortnite-creative) devices
+
+### Set Up the Play Area
+
+### Configure the Disappearing Platforms
+
+1. Place a **Prop Manipulator** device on one of the floor pieces.
+2. Customize the Prop Manipulator so the **Start Hidden** option is set to **On**:
+
+   [![](https://dev.epicgames.com/community/api/documentation/image/a64bdc99-2fae-45ac-b2bb-4aebe87a21ad?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a64bdc99-2fae-45ac-b2bb-4aebe87a21ad?resizing_type=fit)
+3. Duplicate this Prop Manipulator, placing one on each of the 16 floor pieces.
+4. Change the Prop Manipulator that the player spawns on to not start hidden.
+5. Place a **Beacon** device in the center of one of the floor pieces.
+6. Customize the Beacon as follows:
+
+   [![](https://dev.epicgames.com/community/api/documentation/image/087c9d40-d22c-4834-be23-d4eca477bc90?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/087c9d40-d22c-4834-be23-d4eca477bc90?resizing_type=fit)
+
+   | Option | Value |
+   | --- | --- |
+   | Beacon Particle Style | Flare |
+   | Enabled on Phase | None |
+7. Duplicate this Beacon and place one on each of the 16 floor pieces.
+8. Go through each Prop **Manipulator/Beacon** pair and rename the devices in number order.
+9. Create a level sequence and name it **PlatformSequence**.
+10. Place a **Cinematic Sequence** device.
+11. Customize the Cinematic Sequence as follows:
+
+    [![](https://dev.epicgames.com/community/api/documentation/image/41e5a91a-8b49-434f-accf-f50acd26015d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/41e5a91a-8b49-434f-accf-f50acd26015d?resizing_type=fit)
+
+    | Option | Value |
+    | --- | --- |
+    | Sequence | PlatformSequence |
+    | Loop Playback | True |
+    | Auto Play | True |
+12. Follow the pattern of **Gameplay Event** **keyframes** below, with each of the Beacons in order.
+
+    For the first beacon, **Disable** it on the first frame and Enable again at 60 frames before the sequence loops. For all of the other Beacons, Enable on the first keyframe, then Disable 60 frames later.
+
+    [![](https://dev.epicgames.com/community/api/documentation/image/24192c46-cbf1-4f64-b86b-0e50515d1aa8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/24192c46-cbf1-4f64-b86b-0e50515d1aa8?resizing_type=fit)
+13. Follow a similar pattern for all of the Prop Manipulators in order, this time with the first Prop Manipulator calling Show Props on the first frame and Hide Props 60 frames later.
+
+    [![](https://dev.epicgames.com/community/api/documentation/image/5c692ad3-0931-446e-ad8e-a83365859f44?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5c692ad3-0931-446e-ad8e-a83365859f44?resizing_type=fit)
+
+You now have the basic functionality for a survival platforming minigame!
+
+### Design Tip
+
+The Cinematic Sequence device is great for this kind of timed gameplay. Keyframes can be copy/pasted easily on the timeline, so you can quickly get sequential repeating behavior on different devices like this!
+
+## Build a Rhythm Game!
+
+With the ability to time different gameplay events with the Cinematic Sequence device, you can create the core functionality of a rhythm game.
+
+### Devices Used
+
+- 1 x Cinematic Sequence device
+- 1 x Player Spawner device
+- 1 x [Item Granter](https://dev.epicgames.com/documentation/fortnite/using-item-granter-devices-in-fortnite-creative) device
+- 3 x [Prop Manipulator](https://dev.epicgames.com/documentation/fortnite/using-prop-manipulator-devices-in-fortnite-creative) devices
+- 1 x [Score Manager](https://dev.epicgames.com/documentation/fortnite/using-score-manager-devices-in-fortnite-creative) device
+- 1 x [Radio](https://dev.epicgames.com/documentation/fortnite/radio) device
+
+### Set Up the Basic Functionality
+
+1. Start with the **Shark Island** starter island.
+2. Place a **Player Spawner** on the helipad and customize it so that **Visible in Game** is set to **Off**.
+3. Place an **Item Granter**.
+4. Customize the Item Granter as follows:
+
+   [![](https://dev.epicgames.com/community/api/documentation/image/51bcb42f-06e4-4e4b-9db2-92cf8b3ebc52?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/51bcb42f-06e4-4e4b-9db2-92cf8b3ebc52?resizing_type=fit)
+
+   | Option | Value |
+   | --- | --- |
+   | Item List - Index [0] - Item Definition | Pistol L1 |
+   | Receiving Players | All |
+   | Equip Granted Item | True |
+   | Spare Weapon Ammo | 999 |
+   | Grant on Game Start | True |
+5. From the **Fortnite > Galleries > Props > Egg Gallery**, place **three large eggs** in the sky over the water. These will be the targets.
+6. Place a **Prop Manipulator** on one of the eggs.
+7. Customize the Prop Manipulator as follows:
+
+   [![](https://dev.epicgames.com/community/api/documentation/image/e9b8179f-de4c-4dde-a446-bd9c3dbbbdac?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e9b8179f-de4c-4dde-a446-bd9c3dbbbdac?resizing_type=fit)
+
+   | Option | Value |
+   | --- | --- |
+   | Start Hidden | True |
+   | Modify Prop Health | True |
+   | Is Prop Invulnerable | True |
+8. Duplicate this Prop Manipulator and place it on the two other eggs.
+9. Place a **Score Manager**.
+10. Customize the Score Manager as follows:
+
+    [![](https://dev.epicgames.com/community/api/documentation/image/74a69864-99c6-46e3-be40-90d886290c76?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/74a69864-99c6-46e3-be40-90d886290c76?resizing_type=fit)
+
+    | Option | Value |
+    | --- | --- |
+    | Display Score Update on HUD | True |
+    | HUD Message | Hit! |
+11. Configure the following function on the Score Manager so that when one of the eggs is hit, the Score Manager increases the player’s score.
+
+    [![](https://dev.epicgames.com/community/api/documentation/image/3ae768b1-dce4-4390-b3a6-a9fece9f871c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3ae768b1-dce4-4390-b3a6-a9fece9f871c?resizing_type=fit)
+
+    | Function | Device | Event |
+    | --- | --- | --- |
+    | Activate | Prop Manipulator0–2 | On Damaged |
+
+### Configure the Rhythm Mechanics
+
+### Modify Island Settings
+
+Make the following modifications to the island settings object.
+
+- Under **Round**, change **Stat** ****Value** to **End**** to **Score**, then change **Stat Value to End** to **10**.
+
+  [![](https://dev.epicgames.com/community/api/documentation/image/e3140f2d-5a19-4b26-ae80-0003b233a3e1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e3140f2d-5a19-4b26-ae80-0003b233a3e1?resizing_type=fit)
+
+You now have a basic rhythm game!
+
+### Design Tip
+
+This example uses a very simple repeating pattern to show the basics of rhythm mechanics with the Cinematic Sequence device, but you can use the timeline to create much more complicated compositions! Explore using different objects to represent different types of notes, with an  indication of which notes will be coming next!

@@ -1,7 +1,32 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/itemization/find_inventory_event
 
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+# find_inventory_event class
 
-**Session ID** : 9dfa447afd8a847e
-**IP Address** : 14.191.95.176
+Learn technical details about the find_inventory_event class.
+
+When adding an item, 'find_inventory_event' is used as a first pass to find the best inventory for an item. It is sent downwards.
+'add_item_query_event' can be used to veto inventory choices. It is sent upwards.
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /UnrealEngine.com/Itemization }` |
+
+## Exposed Interfaces
+
+This class exposes the following interfaces:
+
+| Name | Description |
+| --- | --- |
+| [`scene_event`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/scene_event) | An event which can be sent through the scene graph. |
+
+## Members
+
+This class has data members, but no functions.
+
+### Data
+
+| Data Member Name | Type | Description |
+| --- | --- | --- |
+| `ItemComponent` | `item_component` |  |
+| `ChosenInventory` | `??inventory_component` |  |
+| `ChosenInventoryPriority` | `?float` |  |

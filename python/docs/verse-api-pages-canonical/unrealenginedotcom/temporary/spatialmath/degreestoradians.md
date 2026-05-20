@@ -1,26 +1,40 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/degreestoradians
 
 # DegreesToRadians function
+
 Learn technical details about the DegreesToRadians function.
+
 Returns radians from `Degrees`.
-|
----|---
-Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }`
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }` |
+
 `DegreesToRadians<public>(Degrees:float)<reads><computes>:float`
+
 ## Parameters
+
 `DegreesToRadians` takes the following parameters:
-Name | Type | Description
----|---|---
-`Degrees` | `float` |
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `Degrees` | `float` |  |
+
 ## Attributes, Specifiers, and Effects
+
 ### Specifiers
-The following specifiers determine how you can interact with `DegreesToRadians` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
-Specifier | Meaning
----|---
-`public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
+
+The following specifiers determine how you can interact with `DegreesToRadians` in your programs. For the complete list of specifiers, see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+
+| Specifier | Meaning |
+| --- | --- |
+| `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data. |
+
 ### Effects
-The following effects determine how `DegreesToRadians` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
-Effect | Meaning
----|---
-`reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version.
-`computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect.
+
+The following effects determine how `DegreesToRadians` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+
+| Effect | Meaning |
+| --- | --- |
+| `reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version. |
+| `computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect. |

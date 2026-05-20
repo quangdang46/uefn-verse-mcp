@@ -1,113 +1,354 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/create-custom-npc-behavior-in-unreal-editor-for-fortnite
 
-# Functions in Fortnite Creative
-Use functions to create a tower escape trivia game in Fortnite Creative!
-![Functions in Fortnite Creative](https://dev.epicgames.com/community/api/documentation/image/2408a3bd-0de7-4596-98a4-5a490e95fc21?resizing_type=fill&width=1920&height=335)
-[Lesson Plan PDF](https://d1iv7db44yhgxn.cloudfront.net/documentation/attachments/cf7b512e-569b-46bd-b184-6ef602fa0c9e/fortnite-creative-functions-lesson-plan.pdf)[Student Guide PDF](https://d1iv7db44yhgxn.cloudfront.net/documentation/attachments/fe276955-5f03-4cc4-9188-3f2f53aa2f21/create-a-tower-escape-trivia-game.pdf)[Teacher Guide PDF](https://d1iv7db44yhgxn.cloudfront.net/documentation/attachments/6d339af6-f502-463c-8638-3d07a5b81977/fortnite-creative-functions-teacher-guide.pdf)[Lesson Rubric PDF](https://d1iv7db44yhgxn.cloudfront.net/documentation/attachments/688b7de5-0467-487a-9d71-ef9ca656a10b/functions-lesson-plan-rubric.pdf)
-##  Class Information
-  * **Grades:** 8–12 (students must be 13 or older to participate in this class)
-  * **Lesson timeframe:** One hour
-  * **Featured tool:** Fortnite Creative
-  * **Class / learning environment:** A Fortnite-capable device with a one-to-one device-to-student ratio, and with internet connectivity. A computer lab or mobile laptop cart should provide the ideal environment.
+# Create Custom NPC Behavior
 
-##  Author Contact
-Authors: Steven Isaacs and Brian Dickman
-Email: stevei2071@gmail.com | brian@cleverlike.com
-Twitter: @mr_isaacs | @cleverlike
-LinkedIn: https://www.linkedin.com/in/steve-isaacs/ | https://www.linkedin.com/in/cleverlike
-##  DESCRIPTION OF CLASS/LEARNING ENVIRONMENT
-This lesson is designed for **Hour of Code** during Computer Science Education Week.
-This can serve as a stand-alone lesson, or be used in conjunction with the other activities to complete a larger project.
-Author Steve Isaacs teaches Game Design and Development as a quest- or choice-based learning environment that provides students with opportunities to take different approaches to meeting the learning outcomes based on their own interests, in terms of content as well as project options.
-Author Brian Dickman studied computer science and operates a full-time game development studio that produces entertaining and educational content inside popular video games.
-##  Lesson Overview
-Do you have what it takes to escape the trivia tower? Better yet, do you have what it takes to create a trivia tower escape game?
-This activity will demonstrate the use of functions in Fortnite Creative as you are tasked with creating a game that requires the player to answer a number of trivia questions in order to escape. Each correct answer will trigger the function to allow the player to advance along with a rewarding tune and visual effect. Incorrect answers will trigger not-so-pleasant sound and visual effect and require the player to try again.
-By completing this activity, students will understand the basics of functions as they relate to coding through the use of the sequencer and a series of devices.
-##  Desired Results
-What are the learning outcomes for students?
-###  ESSENTIAL QUESTIONS/BIG IDEAS
-Can students learn computer science concepts as part of a meaningful activity rather than simply learning syntax as an isolated skill?
-Will learning computer science concepts like functions through an activity in Fortnite Creative generalize to understanding the concept in a coding environment?
-Can students learn computer science concepts through game mechanics?
-Will students show more motivation to learn computer science when the concepts are introduced in a game environment?
-##  Learning Activities
-###  Introduction to Functions
-A **function** is a unit of code that is often defined by its role within a greater code structure. Specifically, a function contains a unit of code that works on various inputs, many of which are variables, and produces concrete results involving changes to variable values or actual operations based on the inputs.
-– from [Techopedia.com](https://www.techopedia.com/definition/25615/function)
-Or more simply put:
-A **function** is a piece of code that you can easily call over and over again.
-– from [code.org](https://curriculum.code.org/csd-1718/unit3/19/)
-For example, the activity in this lesson will have students set up a number of functions to be used to run a trivia game show in Fortnite Creative. Essentially, each function (represented by the sequencer) will run a series of commands (using devices) in the game.
-**Pseudocode** is the act of simulating writing code to illustrate the idea that the code would represent. Pseudocode would show the general structure but does not necessarily follow proper syntax. In these lessons we will periodically use pseudocode to demonstrate the concepts.
-In terms of pseudocode, this could look like
-**Function 1 (askQuestion): starting the round/asking the player a question** **Function 2 (startTimer): the countdown timer**
-myFunction(askQuestion) Do the following Reset answer buttons Play sound Choose random number for trivia question Present the Question myFunction(startTimer) Start countdown timer If countdown gets to 0 Then Time is up Play sound Show message (“Sorry, you did not answer in time”) Activate next question End function End function
-**Function 3: (correctAnswer)** myFunction(correctAnswer) Do the following Play happy sound Show message (“Correct! Great job!!”) Add point to score Activate next question EndFunction EndFunction
-**Function 4: (wrongAnswer)** myFunction(wrongAnswer) Do the following Play bad sound Show message (“Sorry, Try again!”) Activate next question EndFunction
-In the example above, when the function (askQuestion) is initiated, a number of things happen:
-  1. Reset answer buttons.
-  2. Play a sound to indicate the question will be coming up.
-  3. Choose a random number to determine which trivia question to ask.
-  4. Present the question to the player.
+Use Verse code to create your own NPC behavior unique to your game design needs!
 
-Then we introduce another function (startTimer) which initiates:
-  1. Start countdown timer.
-  2. Play a sound if the timer reaches 0 to conclude the opportunity to answer this question.
+![Create Custom NPC Behavior](https://dev.epicgames.com/community/api/documentation/image/6978a70a-27a8-4e11-8ab5-7493a38d7ca2?resizing_type=fill&width=1920&height=335)
 
-We add two additional functions (correctAnswer) and (wrongAnswer). These initiate the following:
-  1. Play a sound.
-  2. Adjust score if appropriate.
-  3. Display a message.
-  4. Activate the next question.
+The behavior of an NPC character is defined by their behavior script. The behavior script is what tells characters what actions to take in the world, such as where to go, what to fight, and how to interact with other characters. Characters such as guards and wildlife may have additional behaviors, such as perception, alertness, and the ability to be hired or tamed.
 
-Here is a video that explains functions:
-[CS Principles: Defining and Calling Functions](https://youtu.be/yPWQfa4CHbw)
-Functions can be used in any coding language, and also in environments like Fortnite Creative.
-In Fortnite, we will use the [Sequencer](https://www.epicgames.com/fortnite/en-US/creative/docs/using-pulse-trigger-devices-in-fortnite-creative) and place our events/actions within the Sequencer so that when the Sequencer is activated, the actions inside will be executed.
-##  Activities
-Refer to the Student Guide and Teacher Notes for the step-by-step directions for the activity.
-Students should access and work from the Student Guide.
-Use the downloadable rubric to assess student work.
-##  EXTERNAL RESOURCES
-[Code.org](http://www.code.org)
-[Hour of Code](https://hourofcode.com/us)
-[Makecode Arcade: Functions](https://arcade.makecode.com/courses/csintro2/functions)
-[CS Principles: Intro to Variables Part 1](https://youtu.be/G41G_PEWFjE) [CS Principles: Intro to Variables Part 2](https://youtu.be/ijjVDBPwA1o) [Definition of variables](https://whatis.techtarget.com/definition/variable)
-##  Standards Mapping
-[Common Core Standards](http://www.corestandards.org/)
-[ISTE Standards for Students](https://www.iste.org/standards/iste-standards-for-students)
-[NCSS Standards](https://www.socialstudies.org/standards/national-curriculum-standards-social-studies-introduction)
-[NGSS Standards](https://www.nextgenscience.org/)
-[CSTA Standards for Students](https://csteachers.org/Page/standards)
-**1A-AP-09** Model the way programs store and manipulate data by using numbers or other symbols to represent information.
-**1B-AP-10** Create programs that include sequences, events, loops, and conditionals.
-**1B-AP-12** Modify, remix, or incorporate portions of an existing program into one’s own work, to develop something new or add more advanced features.
-**1B-AP-15** Test and debug (identify and fix errors) a program or algorithm to ensure it runs as intended.
-**2-AP-10** Use flowcharts and/or pseudocode to address complex problems as algorithms.
-**2-AP-13** Decompose problems and subproblems into parts to facilitate the design, implementation, and review of programs.
-**2-AP-14** Create procedures with parameters to organize code and make it easier to reuse.
-**2-AP-17** Systematically test and refine programs using a range of test cases.
-**3A-AP-13** Create prototypes that use algorithms to solve computational problems by leveraging prior student knowledge and personal interests.
-**3A-AP-16** Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue by using events to initiate instructions.
-**3A-AP-17** Decompose problems into smaller components through systematic analysis, using constructs such as procedures, modules, and/or objects.
-**3A-AP-18** Create artifacts by using procedures within a program, combinations of data and procedures, or independent but interrelated programs.
-**3A-AP-22** Design and develop computational artifacts working in team roles using collaborative tools.
-###  INTERDISCIPLINARY AND 21ST CENTURY CONNECTIONS
-This lesson covers areas related to coding/Computer Science.
-21st Century Connections:
-  * Critical thinking
-  * Creativity
-  * Collaboration
-  * Communication
-  * Technology literacy
-  * Flexibility
-  * Leadership
-  * Initiative
-  * Social skills
+An **NPC Behavior**  is a user-defined Verse script that adds extra functionality to an NPC character’s existing behaviors. The `npc_behavior` API lets you define code that runs when an NPC character spawns or despawns, and you can use it to create custom characters like medics, shopkeepers, or bosses. NPC Behaviors inherit from the `npc_behavior` abstract class and require importing the `/Fortnite.com/AI` module to use.
 
-##  MODIFICATIONS AND ACCOMMODATIONS
-Provide modifications and accommodations as appropriate based on student needs, IEP, 504, etc.
-Students can work in teams to integrate a paired programming approach.
-Sample map can be provided for students to deconstruct / modify.
-Provide adaptive controller / game controller if necessary.
+To run an NPC Behavior Script, you need to attach it to an [NPC Character Definition](https://dev.epicgames.com/documentation/fortnite/using-npc-character-definitions-in-unreal-editor-for-fortnite). How an NPC Behavior Script interacts with a character definition depends on the [NPC Character type](https://dev.epicgames.com/documentation/fortnite/npc-types-in-unreal-editor-for-fortnite). Custom-type NPCs need a behavior script to perform actions, while Guard and Wildlife-type NPCs will run their default behavior if they aren’t given a behavior script. For more information on creating an NPC Character Definition and the different character types, see the Character Definition page.
+
+This tutorial goes over the basics of creating an NPC behavior script and teaches you how to spawn an NPC and navigate it to an objective.
+
+## Creating a New NPC Behavior Script
+
+Follow these steps to create an NPC Behavior Script in UEFN that spawns a guard and patrols them between two points.
+
+1. Open your project in UEFN, then in the [Menu Bar](https://dev.epicgames.com/documentation/fortnite/user-interface-reference-for-unreal-editor-for-fortnite), go to **Verse > Verse Explorer**.
+2. In [Verse Explorer](https://dev.epicgames.com/documentation/fortnite/verse-explorer-user-interface-reference-in-unreal-editor-for-fortnite), right-click on your project name and choose **Add new Verse file to project** to open the **Create Verse Script** window.
+
+   [![Add New Verse File to Project](https://dev.epicgames.com/community/api/documentation/image/25adbe7c-ffdc-4c11-8c09-d27b1b9fa470?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/25adbe7c-ffdc-4c11-8c09-d27b1b9fa470?resizing_type=fit)
+3. In the Create Verse Script window, click **NPC Behavior** to select it as your template.
+4. Name your NPC Behavior by changing the text in the **NPC Behavior Name** field to the name of your device. In this example, the device is named **my_first_npc_behavior**.
+
+   [![My First NPC Behavior](https://dev.epicgames.com/community/api/documentation/image/f2dc08ec-86fa-4918-af82-e64a5143133c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f2dc08ec-86fa-4918-af82-e64a5143133c?resizing_type=fit)
+5. Click **Create** to create the Verse file.
+6. In Verse Explorer, double-click the name of your Verse file to open it in Visual Studio Code.
+7. Save your code, compile it, and create a new NPC character definition. For more information on creating an NPC character, see the [Character Definition](https://dev.epicgames.com/documentation/fortnite/using-npc-character-definitions-in-unreal-editor-for-fortnite) page.
+8. Assign your `my_first_behavior` script as the Verse behavior of your new Character Definition.
+9. Click launch session in the UEFN toolbar to playtest your level. When you playtest your level, characters spawned from your NPC Spawner should pick a random point near when they spawn and navigate to it. When they reach that point, they should wait a certain amount of time and navigate back to their starting point. If you’ve enabled [Verse Debug Draw enabled](https://dev.epicgames.com/documentation/fortnite/debug-your-game-with-debug-draw-in-verse) from the [Island Settings device](https://dev.epicgames.com/documentation/fortnite/island-settings-in-unreal-editor-for-fortnite), you should see arrows drawn that show where the character is focusing, as well as boxes that show the point a character is navigating to.
+
+## Navigatable
+
+You can use the `Navigatable` API to direct characters to certain targets and for things like patrolling, guarding a point, or following another character. Guard-type NPCs can do this with AI Patrol Path nodes, but here you’ll use verse code to extend this functionality to any type of character and avoid placing additional devices in the level. The character’s `navigatable` [interface](https://dev.epicgames.com/documentation/fortnite/verse-glossary) allows you to navigate characters to a `navigation_target`, which you can create from an `agent` or `position`. Custom, Guard, and Wildlife-type NPCs can all use the navigatable interface. To get the character’s `navigatable` interface you’ll first need to get a reference to their `fort_character`, which you can do by calling `GetFortCharacter[]`.
+
+Verse
+
+```
+# Get the Navigatable Interface, this allows you to tell it to move.
+Navigatable := Character.GetNavigatable[]
+```
+
+# Get the Navigatable Interface, this allows you to tell it to move.
+Navigatable := Character.GetNavigatable[]
+
+In the template example, the code chooses a position from a random offset where the character spawns and saves it in a variable `GoToPoint`. It then creates a `navigatoin_target` from both the `GotToPoint` and the character’s spawn point.
+
+Verse
+
+```
+# Create a random offset from the spawn point to walk toward.
+GoToPoint := NPCSpawnPoint + vector3{X := GetRandomFloat(-DistanceFromSpawnPtToMove,DistanceFromSpawnPtToMove),
+                                     Y := GetRandomFloat(-DistanceFromSpawnPtToMove,DistanceFromSpawnPtToMove),
+                                     Z := 0.0 }
+
+if(ShowAIDebug?):
+    Print(my_first_npc_behavior_message_module.OnNavigateBeginMessage(Agent,GoToPoint.X,GoToPoint.Y,GoToPoint.Z), ?Duration := AIDebugDrawTime)
+
+# Create a navigation target from these two positions that the navigation interface can use.
+NavTargetStart := MakeNavigationTarget(GoToPoint)
+```
+
+The `NavigateTo()` function returns a `navigation_result` enum, which contains info about whether the character reached their `navigation_target`. You can check the value of your `navigation_result` to give characters behaviors based on whether they reached their target or not.
+
+Verse
+
+```
+# Check to see if something has interfered with the NPC reaching the intended location and print a
+# message to the output log.
+if (NavResultGoTo <> navigation_result.Reached):
+    if(ShowAIDebug?):
+        Print(my_first_npc_behavior_message_module.OnNavigateErrorMessage(Agent,GoToPoint.X,GoToPoint.Y,GoToPoint.Z), ?Duration := AIDebugDrawTime)
+else:
+    # Once it arrives at its location, wait for this duration in seconds
+    Navigatable.Wait(?Duration := MoveToWaitDuration)
+```
+
+# Check to see if something has interfered with the NPC reaching the intended location and print a
+# message to the output log.
+if (NavResultGoTo <> navigation_result.Reached):
+if(ShowAIDebug?):
+Print(my_first_npc_behavior_message_module.OnNavigateErrorMessage(Agent,GoToPoint.X,GoToPoint.Y,GoToPoint.Z), ?Duration := AIDebugDrawTime)
+else:
+# Once it arrives at its location, wait for this duration in seconds
+Navigatable.Wait(?Duration := MoveToWaitDuration)
+
+For more information on how characters navigate the world and to visualize the different areas characters can navigate to, see the [Navigation Mesh](https://dev.epicgames.com/documentation/en-us/fortnite-creative/navigation-mesh-in-fortnite-creative) page.
+
+## Focus
+
+When characters perform actions, they look at specific targets. The specific target a character is looking at is the character’s **focus**. Characters focus on the character they’re talking to, the target they’re attacking, or the position they’re navigating to. The `focus_interface` lets you specify specific targets for your characters to focus on. Custom, Guard, and Wildlife-type NPCs can all use the focus interface. The `MaintainFocus()` function focuses your character on a target, which can be either a `vector3` position or an `agent`. The `focus_interface` is part of the `fort_character` interface, and you can retrieve it using `GetFocusInterface[]`.
+
+Verse
+
+```
+# Get the Focus Interface, this allows you to tell it to look at something or somewhere.
+Focus := Character.GetFocusInterface[]
+```
+
+# Get the Focus Interface, this allows you to tell it to look at something or somewhere.
+Focus := Character.GetFocusInterface[]
+
+In the template example, after the character begins navigating back to the starting position, the code uses `MaintainFocus()` to force them to focus on the previous `navigation_target`. This causes the character to walk backward and watch behind them as they return to their starting point.
+
+Verse
+
+```
+# Leveraging concurrency to wait until the NPC reaches its destination, while the calls to look back at its origin point 
+# and drawing a debug arrow never completes, continuing, ensures only the NavigateTo can win the race.
+NavResultGoToNext := race:
+    # Move back to its starting position.
+    Navigatable.NavigateTo(NavTargetEnd)
+
+    # Sets NPC to look at its previous position which will make it walk backwards. 
+    # This is meant to show the utility of the focus interface.
+    block:
+        Focus.MaintainFocus(GoToPoint)
+```
+
+## Leashable
+
+When guards guard an objective, you want to make sure they stay in an area around the objective and don’t wander off too far. The `fort_leashable` interface is a Guard-type NPC-specific interface that lets you specify a radius around a target that guards won’t patrol out of. You can leash guards to specific positions or other NPCs, and guards will update their position to stay near their leash target if it moves. Note that currently Custom and Wildlife-type NPC characters cannot use the `fort_leashable` interface. You can retrieve the `fort_leashable` interface using `GetFortLeashable[]`.
+
+Verse
+
+```
+# Get the Leash Interface, which lets you confine a guard to a certain area.
+Leashable := Character.GetFortLeashable[]
+```
+
+# Get the Leash Interface, which lets you confine a guard to a certain area.
+Leashable := Character.GetFortLeashable[]
+
+You can leash guards to either positions or other agents, such as when guarding a capture point or protecting an important NPC. Each leash has an `InnerRadius` and `OuterRadius`, which specify how close and how far in centimeters guards should stay from their leash target respectively. The template example does not use the `leashable` interface, but you might find it useful when creating your own guard NPCs.
+
+Verse
+
+```
+# Leash the guard to a position so they stay between 500 and 1000
+# cm of the position they're leashed to
+Leashable.SetLeashPosition(NPCSpawnPoint, InnerRadius := 500.0, OuterRadius := 1000.0)
+
+# Leash the guard to an agent so they stay between 500 and 1000
+# cm of the agent they're leashed to
+Leashable.SetLeashAgent(AgentToFollow, InnerRadius := 500.0, OuterRadius := 1000.0)
+# Clear all leashes on the guard
+Leashable.ClearLeash()
+```
+
+# Leash the guard to a position so they stay between 500 and 1000
+# cm of the position they're leashed to
+Leashable.SetLeashPosition(NPCSpawnPoint, InnerRadius := 500.0, OuterRadius := 1000.0)
+# Leash the guard to an agent so they stay between 500 and 1000
+# cm of the agent they're leashed to
+Leashable.SetLeashAgent(AgentToFollow, InnerRadius := 500.0, OuterRadius := 1000.0)
+# Clear all leashes on the guard
+Leashable.ClearLeash()
+
+## Debug Draw
+
+At the top of the file, this template defines a dedicated channel for debug draw. You can use the [Debug Draw](https://dev.epicgames.com/documentation/fortnite/debug-your-game-with-debug-draw-in-verse) to visualize certain game data for testing purposes. For instance, you can visualize the visibility range of your character, or draw a shape around the location they’re traveling to. **Verse Debug Draw** must be enabled from the **Debug** tab in **Island Settings** to visualize these debug shapes, and they will not appear in published experiences. The channel at the top of the file lets you hide, show, or clear all the debug shapes in a channel using a single method.
+
+Verse
+
+```
+# Create a dedicated debug channel to draw to for this behavior
+npc_debug_draw := class(debug_draw_channel) {}
+```
+
+# Create a dedicated debug channel to draw to for this behavior
+npc_debug_draw := class(debug_draw_channel) {}
+
+The `new_npc_behavior` template class defines several values used for visualization and movement.
+
+- The `MoveToWaitDuration` defines how long in seconds your character waits at a point before moving.
+
+  Verse
+
+  ```
+        # How long to wait in seconds after the NPC navigates to a point before moving on.
+        @editable_number(float):
+            Categories:=array{my_first_npc_behavior_message_module.SettingsCategory},
+            MinValue:=option{0.5},
+            MaxValue:=option{10.0}
+        MoveToWaitDuration:float = 5.0
+  ```
+
+   # How long to wait in seconds after the NPC navigates to a point before moving on.
+  @editable_number(float):
+  Categories:=array{my_first_npc_behavior_message_module.SettingsCategory},
+  MinValue:=option{0.5},
+  MaxValue:=option{10.0}
+  MoveToWaitDuration:float = 5.0
+- The `DistanceFromSpawnPtToMove` defines the range of the random offset from the spawnpoint for your character to move.
+
+  Verse
+
+  ```
+        # The negative min and absolute max x & y coordinate offset in centimeters to tell the NPC to move to
+        @editable_number(float):
+            Categories:=array{my_first_npc_behavior_message_module.SettingsCategory},
+            MinValue:=option{0.0}
+        DistanceFromSpawnPtToMove:float = 1500.0
+  ```
+
+   # The negative min and absolute max x &amp; y coordinate offset in centimeters to tell the NPC to move to
+  @editable_number(float):
+  Categories:=array{my_first_npc_behavior_message_module.SettingsCategory},
+  MinValue:=option{0.0}
+  DistanceFromSpawnPtToMove:float = 1500.0
+- The `ShowAIDebug` logic value lets you toggle drawing debug shapes from the editor.
+
+  Verse
+
+  ```
+        # Whether to draw debug to the NPC channel when Verse Debug Draw is enabled in Island Settings.
+        @editable:
+            Categories:=array{my_first_npc_behavior_message_module.SettingsCategory}
+        ShowAIDebug:logic = true
+  ```
+
+   # Whether to draw debug to the NPC channel when Verse Debug Draw is enabled in Island Settings.
+  @editable:
+  Categories:=array{my_first_npc_behavior_message_module.SettingsCategory}
+  ShowAIDebug:logic = true
+- The `AIDebugDrawTime` float lets you specify the amount of time to render the debug draw location.
+
+  Verse
+
+  ```
+  # How long in seconds to render the debug draw location and print text. 
+  # It is recommended to keep this in sync with MoveToWaitDuration otherwise the print will not be shown if a previous message is displayed. @editable_number(float): 
+      Categories:=array{my_first_npc_behavior_message_module.SettingsCategory}, 
+      MinValue:=option{0.5} 
+  AIDebugDrawTime:float = 5.0
+  ```
+
+  # How long in seconds to render the debug draw location and print text.
+  # It is recommended to keep this in sync with MoveToWaitDuration otherwise the print will not be shown if a previous message is displayed. @editable_number(float):
+  Categories:=array{my_first_npc_behavior_message_module.SettingsCategory},
+  MinValue:=option{0.5}
+  AIDebugDrawTime:float = 5.0
+- The `LookAtDebugDrawDuration` float lets you specify how long to render the look arrow debug draw.
+
+  Verse
+
+  ```
+        # How long in seconds to render the look at arrow's debug draw.
+        LookAtDebugDrawDuration:float = 0.5
+  ```
+
+   # How long in seconds to render the look at arrow&#39;s debug draw.
+  LookAtDebugDrawDuration:float = 0.5
+- The `DebugDrawNPC` channel defines the debug draw instance, and uses the channel defined at the top of the file.
+
+  Verse
+
+  ```
+        # How long in seconds to render the look at arrow's debug draw.
+        @editable_number(float):
+            Categories:=array{my_first_npc_behavior_message_module.SettingsCategory},
+            MinValue:=option{0.5}
+        LookAtDebugDrawDuration:float = 0.5
+  ```
+
+   # How long in seconds to render the look at arrow&#39;s debug draw.
+  @editable_number(float):
+  Categories:=array{my_first_npc_behavior_message_module.SettingsCategory},
+  MinValue:=option{0.5}
+  LookAtDebugDrawDuration:float = 0.5
+- Finally the `VerticalOffsetToNPCHead` defines this offset from the NPC’s pelvis to the head to draw the debug look arrow from. Without this offset, the debug look arrow would be drawn from the center of the NPC.
+
+  Verse
+
+  ```
+        # Used for specifying a point offset from the NPC pelvis to the head to draw the look at arrow from.
+        VerticalOffsetToNPCHead<private>:float = 55.0
+  ```
+
+   # Used for specifying a point offset from the NPC pelvis to the head to draw the look at arrow from.
+  VerticalOffsetToNPCHead&lt;private&gt;:float = 55.0
+
+Two functions in the `new_npc_behavior` template class draw debug shapes. The `DrawDebugLocation()` function draws a large point at a specified position for a `LookAtDebugDrawDuration`  amount of time.
+
+Verse
+
+```
+# This function draws a box around a specified position for a finite amount of time.
+# NOTE: To see this in game, Verse Debug Draw must be enabled in Island Settings.
+DrawDebugLocation(Location:vector3):void = 
+    DebugDrawNPC.DrawPoint( Location, 
+                            ?Color := NamedColors.SteelBlue, 
+                            ?Thickness := 100.0, 
+                            ?DrawDurationPolicy := debug_draw_duration_policy.FiniteDuration, 
+                            ?Duration := AIDebugDrawTime )
+```
+
+# This function draws a box around a specified position for a finite amount of time.
+# NOTE: To see this in game, Verse Debug Draw must be enabled in Island Settings.
+DrawDebugLocation(Location:vector3):void =
+DebugDrawNPC.DrawPoint( Location,
+?Color := NamedColors.SteelBlue,
+?Thickness := 100.0,
+?DrawDurationPolicy := debug_draw_duration_policy.FiniteDuration,
+?Duration := AIDebugDrawTime )
+
+The `DrawDebugLookAt()` function lets you visualize where a character is looking by drawing an arrow from the agent’s head to its look point.
+
+Verse
+
+```
+# This function draws an arrow from the Agent's head to its look at point every half a second.
+# NOTE: To see this in game, Verse Debug Draw must be enabled in Island Settings.
+DrawDebugLookAt(Character:fort_character, LookAtPoint:vector3)<suspends>:void=
+    loop:
+        DebugDrawNPC.DrawArrow( Character.GetTransform().Translation + vector3{ Z := VerticalOffsetToNPCHead},
+                                LookAtPoint,
+                                ?ArrowSize := 50.0,
+                                ?Color := NamedColors.Yellow,
+                                ?Thickness := 5.0,
+                                ?DrawDurationPolicy := debug_draw_duration_policy.FiniteDuration,
+```
+
+## Adding your Character to the Level
+
+Now that you’ve learned about the NPC BehaviorScript, it’s time to create a character and use the script on an island. The following workflow is designed for Guard-type characters, but the NPC Behavior Script will still work for Custom and Wildlife-type characters.
+
+1. Create a new NPC Character Definition named **MyFirstCharacterDefinition**. Click your new character definition to open the **Character Definition** screen.
+2. In the **Character Definition** screen, modify the following properties:
+
+   1. Under **NPC Character Type**, set **Type** to **Guard**. The guard interface lets you access guard-specific character functionality, such as events for when the guard is alerted or suspicious and lets you hire guards to use as allies. Guards may also equip weapons, while Custom and Wildlife-type characters currently cannot. You can also change the name of your character under the **Name** tab.
+   2. Under **NPC Character Behavior**, set **Behavior** to **Verse Behavior**. Then set the **NPC Behavior Script** to `my_first_npc_behavior`. Your character will still have access to functionality from the guard interface, but will use your Verse script to decide what to do during `OnBegin` and `OnEnd`.
+   3. In the **Modifiers** tab, under **Guard Spawn Modifier**, click the **Cosmetic** tab to change your character’s cosmetic appearance. You can choose from a preexisting cosmetic, or enable **Character Cosmetic Retargeting** to use a custom model. Note that only guards and Custom-type characters can use character cosmetic retargeting, while wildlife cannot. For more information on character modifiers and which ones apply to different character types, see the [NPC Character Definition](https://dev.epicgames.com/documentation/fortnite/using-npc-character-definitions-in-unreal-editor-for-fortnite) page.
+   4. On the **Modifiers** tab, click **Add Element** to add a new modifier to your character. Change the type of the new modifier to **Inventory Modifier**. Note that only guards can use the inventory modifier.
+   5. Under **Inventory Modifier**, click **Add Element** to add a new item to your character’s inventory. Set the **Item Definition** to a weapon, item, item, or anything else your character should have. You can add multiple items to your character’s inventory, and your characters will use weapons to fight, items to heal, etc.
+   6. On the **Modifiers** tab, click **Add Element** to add a new modifier to your character. Change the type of the new modifier to **UI Modifier**.
+   7. Under **UI Modifier**, click the **Name** tab to change your character’s name. Your character’s name will display above their head.
+
+[![My First Character Definition](https://dev.epicgames.com/community/api/documentation/image/e482bd43-6006-4706-820c-2d8f68f5cbe2?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e482bd43-6006-4706-820c-2d8f68f5cbe2?resizing_type=fit)
+
+## On Your Own
+
+By completing this guide, you’ve learned how to create an NPC Behavior Script to make your very own custom characters. For more reading and to learn how to create specific types of characters and scenarios, check out some of the NPC Behavior tutorials listed below.
+
+## Tutorials That Use NPC Behavior
+
+- [![Create Your Own NPC Medic](https://dev.epicgames.com/community/api/documentation/image/4eee7e77-f687-4360-9ca8-339fe4b09bc5?resizing_type=fit&width=640&height=640)
+
+  Create Your Own NPC Medic
+
+  Use Verse Code to create a custom NPC medic.](https://dev.epicgames.com/documentation/fortnite/create-your-own-npc-medic-in-unreal-editor-for-fortnite)

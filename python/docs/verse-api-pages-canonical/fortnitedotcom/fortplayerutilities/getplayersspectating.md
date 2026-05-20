@@ -1,25 +1,38 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/fortplayerutilities/getplayersspectating
 
 # (InPlayer:player).GetPlayersSpectating extension
+
 Learn technical details about the (InPlayer:player).GetPlayersSpectating extension.
+
 Returns an `[]player`s currently spectating `InPlayer`.
-|
----|---
-Verse `using` statement | `using { /Fortnite.com/FortPlayerUtilities }`
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /Fortnite.com/FortPlayerUtilities }` |
+
 `(InPlayer:player).GetPlayersSpectating<public><native>()<transacts>:[]player`
+
 ## Parameters
+
 `GetPlayersSpectating` takes the following parameters:
-Name | Type | Description
----|---|---
-`InPlayer` | `player` |
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `InPlayer` | `player` |  |
+
 ## Attributes, Specifiers, and Effects
-The following attributes, specifiers, and effects determine how you can interact with `GetPlayersSpectating` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+
+The following attributes, specifiers, and effects determine how you can interact with `GetPlayersSpectating` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+
 ### Specifiers
-Specifier | Meaning
----|---
-`public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
-`native` | Indicates that the definition details of the element are implemented in C++. Verse definitions with the `native` specifier auto-generate C++ definitions that a developer can then fill out its implementation. You can use this specifier on classes, interfaces, enums, methods, and data.
+
+| Specifier | Meaning |
+| --- | --- |
+| `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data. |
+| `native` | Indicates that the definition details of the element are implemented in C++. Verse definitions with the `native` specifier auto-generate C++ definitions that a developer can then fill out its implementation. You can use this specifier on classes, interfaces, enums, methods, and data. |
+
 ### Effects
-Effect | Meaning
----|---
-`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You'll be notified when you compile your code if the `transacts` effect was added to a function that can't be rolled back. Note that this check is not done for functions with the `native` specifier.
+
+| Effect | Meaning |
+| --- | --- |
+| `transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier. |

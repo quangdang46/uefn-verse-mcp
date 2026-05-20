@@ -1,7 +1,21 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/itemization/change_inventory_result
 
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+# change_inventory_result class
 
-**Session ID** : 9dfa43a08f928579
-**IP Address** : 14.191.95.176
+Learn technical details about the change_inventory_result class.
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /UnrealEngine.com/Itemization }` |
+
+## Members
+
+This class has data members, but no functions.
+
+### Data
+
+| Data Member Name | Type | Description |
+| --- | --- | --- |
+| `ItemComponent` | `item_component` |  |
+| `PreviousInventory` | `?inventory_component` |  |
+| `CurrentInventory` | `?inventory_component` |  |

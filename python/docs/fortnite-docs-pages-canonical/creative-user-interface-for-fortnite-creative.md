@@ -1,26 +1,37 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/creative-user-interface-for-fortnite-creative
 
-# Patchwork x Yacht Heist
-Steal the keycard, blow open the vault and escape with the loot while a custom music track syncs with the gameplay!
-![Patchwork x Yacht Heist](https://dev.epicgames.com/community/api/documentation/image/6ff8ac20-6091-489a-b3b3-d2391aa128f6?resizing_type=fill&width=1920&height=335)
-**Patchwork x Yacht Heist** is a single-player stealth island with an adaptive custom soundtrack created using **Fortnite Patchwork**. The template teaches [vertical (layered)](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#vertical-composition) and [horizontal (track-based)](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#horizontal-composition) game composition, which are core concepts in creating [game soundtracks](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#adaptive-music).
-The Yacht Heist is divided into two main phases: **Sneak** and **Escape**.
-In the Sneak phase, the player steals a keycard and makes their way down to the vault. They blow open the vault, revealing the jewel inside. During this phase, the music stays tense, with added instruments when the player is noticed by guards.
-When the player picks up the jewel, the Escape phase begins. They are given more powerful weapons as many more guards arrive. They must blow their way to the front of the yacht to escape. At the beginning of this phase, the music switches to a fast, high-energy track to underscore the drama of the escape.
-The Patchwork x Yacht Heist template shows you how to use Patchwork on your island to enhance your gameplay with music!
-To follow along on the template island, open **Creative** , walk up to your golden rift, and create a new island based on the **Yacht Heist** template. This will give you the ability to fly around the island and edit.
-Alternatively, you can play the island by using the **2345-5615-0218** island code to see how it comes together in-game.
-[![yacht with devices](https://dev.epicgames.com/community/api/documentation/image/6472bb27-e09c-4fee-98ef-dcf37fa592fa?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6472bb27-e09c-4fee-98ef-dcf37fa592fa?resizing_type=fit)
-##  Overview
-The following is an overview of the steps you'll need to recreate this island, in the ideal sequence:
-  * [![1. The Patchwork Adaptive Soundtrack](https://dev.epicgames.com/community/api/documentation/image/ba6fda85-7869-44dc-b8a1-bb4927182a1f?resizing_type=fit&width=640&height=640) 1. The Patchwork Adaptive Soundtrack Make the adaptive soundtrack your game using Patchwork devices. ](https://dev.epicgames.com/documentation/fortnite/yacht-heist-1-the-patchwork-adaptive-soundtrack-in-fortnite-creative)
-  * [![2. The Guard Alert System](https://dev.epicgames.com/community/api/documentation/image/7d6cd150-d8d1-4166-870e-1532f5a737e1?resizing_type=fit&width=640&height=640) 2. The Guard Alert System Find out how guards are alerted and how their state changes the Patchwork adaptive soundtrack. ](https://dev.epicgames.com/documentation/fortnite/yacht-heist-2-the-guard-alert-system-in-fortnite-creative)
-  * [![3. The Sneak Phase](https://dev.epicgames.com/community/api/documentation/image/22ae824a-022a-4a5f-8430-fe21088b0aeb?resizing_type=fit&width=640&height=640) 3. The Sneak Phase See how to set up the sneak phase of the Yacht Heist. ](https://dev.epicgames.com/documentation/fortnite/yacht-heist-3-the-sneak-phase-in-fortnite-creative)
-  * [![4. The Escape Phase](https://dev.epicgames.com/community/api/documentation/image/be4ca3a8-7390-48a9-a22b-5e3bd4247caf?resizing_type=fit&width=640&height=640) 4. The Escape Phase This section shows you how to set up the escape phase of the Yacht Heist. ](https://dev.epicgames.com/documentation/fortnite/yacht-heist-4-the-escape-phase-in-fortnite-creative)
+# Creative User Interface
 
-##  What You Will Learn
-By following this tutorial, you will learn how to:
-  * Connect a custom Patchwork soundtrack to other Creative devices to make game music that changes and adapts to gameplay.
-  * Add vertical and horizontal game music adaptivity.
-  * Create an engaging and cohesive single-player experience.
-  * Organize Creative devices into a clear and easy-to-understand game flow.
+Whether you're a player or a game developer, understanding the Fortnite Creative user interface will help you find what you need fast!
+
+![Creative User Interface](https://dev.epicgames.com/community/api/documentation/image/3d995868-abcd-4366-92b8-2ba8af47a946?resizing_type=fill&width=1920&height=335)
+
+Whether you're a player or a game developer, understanding the Fortnite Creative user interface will help you find what you need fast!
+
+Go through the key docs linked below to quickly learn your way around Creative!
+
+- [![Let's Play!](https://dev.epicgames.com/community/api/documentation/image/fdc51fd1-6329-4a4d-908a-30826c3e88e2?resizing_type=fit&width=640&height=640)
+
+  Let's Play!
+
+  Time to jump in and play games in Fortnite Creative!](https://dev.epicgames.com/documentation/fortnite/lets-play-in-fortnite-creative)
+- [![Exploring Discover](https://dev.epicgames.com/community/api/documentation/image/1217c3f0-6c9e-4776-8db3-0530a86b9d0d?resizing_type=fit&width=640&height=640)
+
+  Exploring Discover
+
+  Discover is your access to everything in Fortnite! Learn how to make the most of the Discover user interface (UI) in Fortnite Creative.](https://dev.epicgames.com/documentation/fortnite/exploring-discover-in-fortnite-creative)
+- [![Exploring the Sidebar and Game Menu](https://dev.epicgames.com/community/api/documentation/image/717e40cb-57a2-4da4-bd31-a294e9614b5a?resizing_type=fit&width=640&height=640)
+
+  Exploring the Sidebar and Game Menu
+
+  The Sidebar is your access to the Fortnite Game Menu and many other options.](https://dev.epicgames.com/documentation/fortnite/exploring-the-sidebar-and-game-menu-in-fortnite-creative)
+- [![Exploring the Content Browser Menu](https://dev.epicgames.com/community/api/documentation/image/ebe1e3a0-7bf1-41fd-89b5-5b34c3638487?resizing_type=fit&width=640&height=640)
+
+  Exploring the Content Browser Menu
+
+  Access the full Creative inventory, from prefabs and galleries to devices, weapons and more!](https://dev.epicgames.com/documentation/fortnite/exploring-the-content-browser-menu-in-fortnite-creative)
+- [![Hotkeys and Keybinding Shortcuts](https://dev.epicgames.com/community/api/documentation/image/df139f42-b7b5-413a-bcf1-8c0176f36cbb?resizing_type=fit&width=640&height=640)
+
+  Hotkeys and Keybinding Shortcuts
+
+  Explore the hotkeys available in Fortnite Creative!](https://dev.epicgames.com/documentation/fortnite/hotkey-and-keybinding-shortcuts-in-fortnite-creative)

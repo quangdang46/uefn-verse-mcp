@@ -1,207 +1,49 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-starter-03-designing-levels-for-in-unreal-editor-for-fortnite
 
-# Exposing Assets with Asset Reflection to Verse
-Learn how to use your assets in your Verse code!
-![Exposing Assets with Asset Reflection to Verse](https://dev.epicgames.com/community/api/documentation/image/a16550f1-b61c-4add-9819-7f525ed67dee?resizing_type=fill&width=1920&height=335)
-You can expose your assets in UEFN to Verse so that you can use them from your Verse code. This is called **asset reflection** , and you can use it to insert images in your custom UI or use meshes for your custom props.
-When you expose an asset to Verse, the name of the asset becomes the [identifier](https://dev.epicgames.com/documentation/fortnite/verse-glossary#identifier), a compiler symbol, that you can then use in your Verse code, and you can access your asset from its [Verse Path](https://dev.epicgames.com/documentation/fortnite/modules-and-paths-in-verse). Naming of assets should follow the [naming conventions and rules](https://dev.epicgames.com/documentation/fortnite/verse-code-style-guide-in-unreal-editor-for-fortnite) for identifiers. You can see all of your assets that are exposed to Verse in your project's **Assets.digest.verse** file.
-For the Assets.digest.verse file to be generated, you must have at least one Verse file in your project before building Verse code.
-For example, if your texture has the name MyTexture, it'll appear in your **Assets.digest.verse** file as `MyTexture<scoped {MyProject}>:texture_2d = external {}`.
-When you place your assets in subfolders in the project **Content** folder, the subfolder name becomes the name of the Verse module. For example, when you create a custom mesh named **MySphere** and it's in the subfolder **Meshes** of the project **Content** folder, you must qualify the name of the mesh with the module (subfolder) name in code, such as `Meshes.MySphere`.
-Currently, you can expose the following types of assets to Verse:
-  * Meshes
-  * Textures
-  * Materials
-  * Niagara VFX Particle Systems
+# 3. Designing Levels
 
-The following sections describe how to set up each kind of asset to be available in your Verse code.
-##  Meshes
-To be able to reference your meshes in your Verse code, you must:
-  1. [Model](https://dev.epicgames.com/documentation/fortnite/modeling-mode-in-unreal-editor-for-fortnite) your mesh in UEFN, or import a mesh into your project.
-Assets that you [import from Fab](https://dev.epicgames.com/documentation/fortnite/import-from-fab-in-unreal-editor-for-fortnite) must be added as a modifiable Unreal Engine asset for them to show in the **Assets.digest.verse** file. You currently cannot use referenced assets from Fab in your Verse code.
-  2. Save the mesh by choosing **File > Save All**.
-  3. Verify that the name of your mesh appears in your project **Assets.digest.verse** file.
+Learn how to design levels for a top-down camera and controlling a character through commands.
 
-You can then use your mesh with Verse APIs, such as setting the mesh on a Creative prop.
-The following example is a [Verse-authored device](https://dev.epicgames.com/documentation/fortnite/create-your-own-device-in-verse) that spawns a prop when the game starts. The example uses a mesh named **MySphere** that was in the subfolder **Meshes** of the project **Content** folder.
-[![MySphere in Meshes subfolder of project's content folder](https://dev.epicgames.com/community/api/documentation/image/ccf878e1-97ef-49a4-9610-ea870db93395?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ccf878e1-97ef-49a4-9610-ea870db93395?resizing_type=fit)
-Verse
-```
-using { /Fortnite.com/Devices }
-using { /Verse.org/Simulation }
-using { /UnrealEngine.com/Temporary/Diagnostics }
-using { /Fortnite.com/UI }
-using { /UnrealEngine.com/Temporary/UI }
-using { /UnrealEngine.com/Temporary/SpatialMath }
+![3. Designing Levels](https://dev.epicgames.com/community/api/documentation/image/9748b4c7-e61e-4abd-b87a-061d75798a65?resizing_type=fill&width=1920&height=335)
 
-# A Verse-authored creative device that spawns a prop and sets its mesh.
-my_device := class(creative_device):
+Each of the gameboards was designed with the top-down camera in mind. The size of the UI, coupled with needing to keep everything in frame and not have the NPC appear too small, limited the maximum size of each gameboard. This meant the boards had to be about 4 by 6 tiles in size. Since the top-down camera made it difficult to see the NPC's orientation given their small size on the screen, an arrow graphic appears around the NPC whenever it stops moving.
 
-```
+There are three things to keep in mind in designing the boards:
 
-Copy full snippet(22 lines long)
-[![Set static mesh on custom spawned prop in Verse](https://dev.epicgames.com/community/api/documentation/image/d9955bae-6db6-40c2-ad22-e696f207ada8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d9955bae-6db6-40c2-ad22-e696f207ada8?resizing_type=fit)
-##  Textures
-To be able to reference your texture in your Verse code, you must:
-  1. Import your texture into UEFN.
-Assets that you [import from Fab](https://dev.epicgames.com/documentation/fortnite/import-from-fab-in-unreal-editor-for-fortnite) must be added as a modifiable Unreal Engine asset for them to show in the **Assets.digest.verse** file. You currently cannot use referenced assets from Fab in your Verse code.
-  2. Save the texture by choosing **File > Save All**.
-  3. Verify that the name of your texture appears in your project's **Assets.digest.verse** file.
+- Keep it compact
+- Introduce new concepts one by one
+- Make players think
 
-You can then use your texture with Verse APIs, such as [Verse UI](https://dev.epicgames.com/documentation/fortnite/creating-in-game-ui-in-verse).
-##  Materials
-To be able to reference your material in your Verse code, you must:
-  1. Create your material in UEFN.
-  2. Verify that the name of your material appears in your project’s **Assets.digest.verse** file.
+Although the 4x6 area was limiting, working within those constraints made sure boards never got out of hand, and players felt like they had a quick sense of progression through the game. Players should be able to look at the board and figure out a solution quickly, but given the nature of command input, they also need to think through the steps in their heads before hitting the execute button. The five boards were designed to start simple and introduce one new concept per board before wrapping up with board 5 as the final test.
 
-You can then use your material with Verse APIs, such as [Verse UI](https://dev.epicgames.com/documentation/fortnite/creating-in-game-ui-in-verse) and setting the material on creative props.
-[![Material location in the content browser for the set material example](https://dev.epicgames.com/community/api/documentation/image/e5b7a55f-38c4-4635-bf7d-9633d601862b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e5b7a55f-38c4-4635-bf7d-9633d601862b?resizing_type=fit)
-Verse
-```
-using { /Fortnite.com/Devices }
-using { /Verse.org/Simulation }
-using { /UnrealEngine.com/Temporary/Diagnostics }
-using { /UnrealEngine.com/Temporary/SpatialMath }
+|  |  |
+| --- | --- |
+| This board is completely linear and only asks the player to go in one direction with the “forward” command. This gives the player an extremely simple goal, as well as time to play with the different commands and see what they do. | [Design for gameboard 1 in Verse Commander minigame](https://dev.epicgames.com/community/api/documentation/image/94ef10ff-eaee-4f69-9a7c-bd9b42963b46?resizing_type=fit) |
+| This board introduces turning, requiring the player to use both types of turn commands to pass the level. | [Design for gameboard 2 in Verse Commander minigame](https://dev.epicgames.com/community/api/documentation/image/a7122649-bc3a-41af-9fc6-f30a80815957?resizing_type=fit) |
+| This board introduces obstacles in the form of barriers. Although the board is a loop, the path a player can take is linear due to the placement of the barriers. This forces the player to interact with the obstacle trigger, teaching them about barriers and how to pass them. This board also requires multiple execute commands, since the number of commands needed to pass is larger than the max command limit of the command queue. | [Design for gameboard 3 in Verse Commander minigame](https://dev.epicgames.com/community/api/documentation/image/53897e4d-f773-43c1-8656-54f4101fb889?resizing_type=fit) |
+| This board adds multiple barriers into the mix, requiring the player to take a path with a ton of turns to get to both obstacle triggers. The orange obstacle trigger had to be moved into a corner due to pathing issues with the NPC. | [Design for gameboard 4 in Verse Commander minigame](https://dev.epicgames.com/community/api/documentation/image/88a94c0c-0827-4975-982e-d30a70b55f5a?resizing_type=fit) |
+| This board is much like board 4 in that it has multiple triggers and requires a long, winding path. Issues with NPC navigation really limited the design of this board, since the NPC would often attempt to path around walls to get to the other side, breaking them off the gameboard grid. This design had to be reworked a few times and showcased some of the limitations of the current NPC navigatable API. | [Design for gameboard 5 in Verse Commander minigame](https://dev.epicgames.com/community/api/documentation/image/dda6001c-3fe5-4cf7-bf62-33cdda7ef052?resizing_type=fit) |
 
-my_device := class(creative_device):
+Although the boards in this example are relatively simple, the design leaves a great amount of room for variations. Boards with traps, teleporters, boards with different cameras, multi-level boards, etc. Each of these are different directions you could take this template on your own. Challenging yourself to work within limitations using a simple concept can often produce new ideas you never thought you'd try.
 
-    # Runs when the device is started in a running game
-    OnBegin<override>()<suspends>:void=
-        SpawnLocation := transform:
+## Designing Around Limitations
 
-```
+Much of the movement code in this template was designed around the current limitations of AI Navigation. NPCs can't currently be directly controlled, and instead have to be given navigation targets using the `navigatable` interface. Although any position can be designated as a navigation target, ultimately, the decision of how to get there is up to the NPC.
 
-Copy full snippet(19 lines long)
-[![Material set on the spawned prop](https://dev.epicgames.com/community/api/documentation/image/fe3a45ef-7047-4c4a-8adb-d25b4113b523?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/fe3a45ef-7047-4c4a-8adb-d25b4113b523?resizing_type=fit)
-###  Material Parameters
-When you create a material and add parameters to it, those parameters appear as fields on the material class in the **Assets.digest.verse** file. When you set your material on a mesh, you can then modify the parameters on the material in Verse at runtime.
-The following parameter types from your material can be exposed in Verse:
-Material Parameters  |  Verse Type  |  Description
----|---|---
-[scalar](https://dev.epicgames.com/documentation/en-us/unreal-engine/material-parameter-expressions-in-unreal-engine#scalarparameter) |  [`float`](https://dev.epicgames.com/documentation/fortnite/float-in-verse) |  A single floating point value.
-[texture](https://dev.epicgames.com/documentation/en-us/unreal-engine/material-parameter-expressions-in-unreal-engine#textureobjectparameter) |  [`texture`](https://dev.epicgames.com/documentation/en-us/uefn/verse-api/versedotorg/assets/texture) |  A parameter for accessing and setting the texture on a material.
-[vector4](https://dev.epicgames.com/documentation/en-us/unreal-engine/material-parameter-expressions-in-unreal-engine#vectorparameter) |  [`color`](https://dev.epicgames.com/documentation/en-us/uefn/verse-api/versedotorg/colors/color) |  The `color` struct in Verse only contains three elements, RGB. If you need a fourth element, or to represent the alpha for a color, you'll need to use an additional scalar parameter.
-The following example uses a material named **ConcreteMaterial** with a vector4 parameter named **MyRandomColor**.
-[![ConcreteMaterial setup and definition](https://dev.epicgames.com/community/api/documentation/image/f4390da9-d2da-4c8c-bf04-25b28af06298?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f4390da9-d2da-4c8c-bf04-25b28af06298?resizing_type=fit)
-This is what appears in the **Assets.digest.verse** file for this material:
-Verse
-```
+AI Navigate the world using the [Navigation Mesh](https://dev.epicgames.com/documentation/en-us/fortnite-creative/navigation-mesh-in-fortnite-creative), which helps them make pathing decisions and designates where they can and cannot go. Sometimes these decisions may not align with what you want out of your gameplay experience, such as an AI trying to smash through a wall rather than jump over an obstacle.
 
-|
-ConcreteMaterial_material<scoped {ParameterizedMaterialsTest}> := class<final><public>(material):
+Since the NPC in this template moves one tile at a time, keeping them aligned with the gameboard was very important. In most circumstances this wasn't a problem, however, since NPCs always try to take the shortest path to their destination, they often try to navigate around walls or barrier devices instead of sticking to the grid. Furthermore, barrier devices have different navigation mesh properties than walls, and NPCs would regularly walk into the barrier devices and continue trying to path through them rather than stopping. This necessitated the placement of numerous [AI Navigation Modification Devices](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-ai-navigation-modification-devices-in-fortnite-creative) throughout each level, blocking out the navigation mesh and creating “hallways” for the NPC to move through. Since AI definitely cannot navigate to these areas, this kept the NPC in line with the grid and prevented them from making unexpected navigation decisions such as trying to run through barriers or around walls.
 
----|---
+[![Project view for gameboard 4 in Verse Commander minigame](https://dev.epicgames.com/community/api/documentation/image/d0d5bb00-b909-4b45-9d75-5d65b8256183?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d0d5bb00-b909-4b45-9d75-5d65b8256183?resizing_type=fit)
 
-|     var Specular:float = external {}
+Turning was also a problem. Currently, when given a navigation target directly to their right or left, NPCs will take a slightly curved path to align with the target, then move towards it. This was problematic since it meant the NPC often bumped into walls, or had difficulty navigating tight corners and would become misaligned with the game board after a few turns. Many movement abilities also had to be removed from the AI, such as the ability to jump or mantle Since those would allow them to get out of bounds.
 
-|
+## Next Step
 
-|     var WorldPositionOffset:color = external {}
+We've created five levels for the character to progress through. In the next step, you'll define generic command data and the specific commands used by the character.
 
-|
+- [![4. Representing Command Data](https://dev.epicgames.com/community/api/documentation/image/ba5e3ce7-3e79-4242-a6f4-8b39c808b725?resizing_type=fit&width=640&height=640)
 
-|     var BaseTexture:texture = external {}
+  4. Representing Command Data
 
-|
-
-|
-ConcreteMaterial<scoped {ParameterizedMaterialsTest}>:material = external {}
-
-```
-
-ConcreteMaterial_material<scoped {ParameterizedMaterialsTest}> := class<final><public>(material): var Specular:float = external {} var WorldPositionOffset:color = external {} var BaseTexture:texture = external {} ConcreteMaterial<scoped {ParameterizedMaterialsTest}>:material = external {}
-Copy full snippet(8 lines long)
-To be able to access and update the parameters on this material, you must instantiate your material in your Verse code first. In the following example, the material is instantiated and then set on a mesh before the parameters are modified.
-Verse
-```
-using { /Fortnite.com/Devices }
-using { /Verse.org/Colors }
-using { /Verse.org/Random }
-using { /Verse.org/Simulation }
-using { /UnrealEngine.com/Temporary/Diagnostics }
-using { /UnrealEngine.com/Temporary/SpatialMath }
-
-# A Verse-authored creative device that spawns three props and randomly changes their color
-material_color_test_device := class(creative_device):
-
-```
-
-Copy full snippet(43 lines long)
-##  VFX Assets and Particle Systems
-To be able to reference your Niagara VFX particle system in your Verse code, you must:
-  1. Create your particle system in UEFN.
-  2. Verify that the name of your particle system appears in your project’s **Assets.digest.verse** file.
-
-You can then spawn the particle system using the `SpawnParticleSystem()` function. The following example uses a particle system named **MyParticleSystem** that was in the subfolder **VFX** of the project's **Content** folder.
-[![MyParticleSystem in VFX subfolder of project's content folder](https://dev.epicgames.com/community/api/documentation/image/3f74c26a-1657-4d2f-b239-b88ed326cf87?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3f74c26a-1657-4d2f-b239-b88ed326cf87?resizing_type=fit)
-Verse
-```
-using { /Fortnite.com/Devices }
-using { /Verse.org/Simulation }
-using { /UnrealEngine.com/Assets }
-using { /UnrealEngine.com/Temporary/Diagnostics }
-
-# A Verse-authored creative device that spawns a VFX particle system
-vfx_test_device := class(creative_device):
-
-    # Runs when the device is started in a running game
-    OnBegin<override>()<suspends>:void=
-
-```
-
-Copy full snippet(19 lines long)
-##  Known Limitations
-The following lists current limitations with asset reflection:
-  * When you use `SetMesh` on a prop, the material of the new mesh might not show up in the prop because some props in the Creative toolset have an override material defined. If the prop has no override material, when you change the mesh, the material of the new mesh is used.
-  * Giving an asset the same name as another identifier in your project will result in compilation errors. For example, a project with the structure shown below will not compile because there is an asset called `MyMesh` and a folder called `MyMesh`. The folder or the asset would have to be renamed for the code to compile.
-    * MyFolder /
-      * MyMesh.uasset
-      * MyMesh /
-        * MyOtherMesh.uasset
-
-###  Troubleshooting
-If you’re encountering issues with updating your **Assets.digest.verse** file or compiling your asset reflection code, try the fixes below.
-  * Do not use Verse [keywords](https://dev.epicgames.com/documentation/fortnite/verse-glossary#keyword) such as `set` or `block` as the name of any assets or folders. The **Assets.digest.verse** file creates Verse identifiers from these names. Using a keyword as a Verse identifier will cause compilation errors. See the Verse Language Quick Reference for a list of Verse keywords.
-  * Do not use the names of Verse APIs or API members as the name of assets or folders. See the [Verse API Reference](https://dev.epicgames.com/documentation/fortnite/verse-api).
-  * Follow the Verse [naming conventions](https://dev.epicgames.com/documentation/fortnite/verse-code-style-guide-in-unreal-editor-for-fortnite) when naming your assets and folders, or they may be skipped in the digest file generation.
-  * If you are trying to reference an asset outside of its module, you could receive an access error. This is because modules have the `<internal>` [access specifier](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse) by default. To fix the error, you need to add the `<public>` access specifier to the module declaration. If the module was specified by creating a folder in your project, you need to change the module accessibility in your code. For example, in the following project structure, `Materials`, `Meshes`, and `Textures` are submodules of the `Watermelon` module.
-    * MyProject /
-      * MiniGame /
-        * MiniGameAssets /
-          * Watermelon /
-            * Materials /
-            * Meshes /
-              * Watermelon.uasset
-            * Textures /
-      * hello_world_device.verse
-
-The following code in `hello_world_device.verse` changes the `Meshes` module's accessibility to public.
-Verse
-```
-
-|
-MiniGame := module:
-
----|---
-
-|     MiniGameAssets<public> := module:
-
-|         Watermelon<public> := module:
-
-|             Meshes<public> := module {}
-
-```
-
-MiniGame := module: MiniGameAssets<public> := module: Watermelon<public> := module: Meshes<public> := module {}
-Copy full snippet(4 lines long)
-Now the project's `hello_world_device.verse` file can reference the `Watermelon.uasset` in code using the path `MiniGame.MiniGameAssets.Watermelon.Meshes.Watermelon`.
-If an identifier causes an error in your Verse code, it will likely cause an error as the name of an asset or folder. Check potential asset and folder names by typing them as identifiers in code first.
-##  Enable Asset Reflection
-With the release of 26.00, the ability to expose assets from UEFN to Verse is enabled by default for all newly created UEFN projects. For any of your projects created before 26.00, you will need to enable this feature by following these steps:
-  1. Close your project in UEFN.
-  2. Locate the **.uplugin** file in the project directory.
-  3. Open the **.uplugin** file in a text editor.
-  4. Find the property **EnableVerseAssetReflection** and set it to **true**.
-  5. If no such property is present, add the following line under **VersePath** : `"EnableVerseAssetReflection" : true,`
-  6. Save the **.uplugin** file.
-  7. Re-open your project in UEFN.
+  Learn how to represent and use the character commands in Verse code.](https://dev.epicgames.com/documentation/fortnite/verse-starter-04-representing-command-data-for-in-unreal-editor-for-fortnite)

@@ -1,154 +1,146 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/lighting-scalability-manager-in-unreal-editor-for-fortnite
 
-# 34.30 Fortnite Ecosystem Updates and Release Notes
-34.30 Fortnite Ecosystem Updates and Release Notes in Creative, Unreal Editor for Fortnite, and Verse.
-![34.30 Fortnite Ecosystem Updates and Release Notes](https://dev.epicgames.com/community/api/documentation/image/7c6b7514-57e2-48fb-937b-df4c2a81bc0a?resizing_type=fill&width=1920&height=335)
-The v34.30 update gives more control over matchmaking queues. Negan from The Walking Dead Universe arrives as an NPC, teaming up with players to fight Walkers, which now have customizable behavior.
-A new tutorial teaches you how to create animated timers in UEFN.
-Other additions include Fencing Fields Prefabs and Galleries, OG Weapons like the Zapotron and Guided Missile, and updates to devices like the Item Spawner and Reboot Van.
-##  Creator Queue Controls MVP
-Creators can now adjust how matchmaking queues behave. The Matchmaking Server (MMS) creates these queues when a party chooses to play an island in a public match and there is not an existing game session they can join. If, at any point, the number of players being sought is achieved, then the queue is flushed and the players in the queue are sent to the new game session. If the queue exists for too long and an acceptable queue has not been collected, then the queue will be canceled rather than starting a session that cannot properly function.
-Matchmaking queues have 2 phases:
-  * **Main phase** - If the queue fills for a full session then players are sent to a new match. If a match has not been made by the end of the main phase then the queue enters an Overtime phase.
-  * **Overtime phase** - During the overtime phase a lower number of players can be targeted to attempt to get a satisfactory session started rather than canceling the queue. If, at the end of the queue's overtime phase, we have not reached the Minimum Players, the queue will be canceled. Otherwise, we will proceed into the match with the current queue.
+# Lighting Scalability Manager
 
-New island settings have been added to enable creators to customize their queue:
-  * **Queue Main Duration**
-  * **Overtime Player Target**
-  * **Minimum Players**
-  * **Queue Overtime Duration**
+Show and hide lights and post process volumes based on specific scalability settings.
 
-The result is that creators now have the ability to control thresholds for their games. The base goal is always to prefer fuller matches, but, if a game has a very meaningful population point at which the island hits a better gameplay experience, then creators can use that as the Overtime Player Target, and fall back to that after a short wait for Max Players. Then, in cases where that fails, a fallback to a minimum player count occurs.
-###  Private Match Exception
-Since parties form their own match lobby, and launch the session themselves, these queue controls are not used for Private Matchmakes.
-##  The Walking Dead Universe
-###  Fight Walkers with Negan at your side!
-Negan is now available as a character in the NPC Spawner. Fight side by side to take down Walkers with his best girl, Lucille, or with the Shiva Shotgun - which now has a flashlight, making it extra useful in those dark spaces.
-[![](https://dev.epicgames.com/community/api/documentation/image/e24e1912-5a32-4c9f-b0e3-10137636becb?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e24e1912-5a32-4c9f-b0e3-10137636becb?resizing_type=fit)
-Walkers now do more damage to each other if they’re on different teams, and they’ve had several cosmetic and animation upgrades to make them an even more interesting enemy. Remember that you can configure Walkers to behave in a variety of ways to make them fit your island’s gameplay!
-Want to know more? The [Configuring Walkers page](https://dev.epicgames.com/documentation/uefn/twdu-configuring-walker-npcs-in-unreal-editor-for-fortnite) documents how to change the look, feel, and behavior of Walkers, and the [Walker NPC Template doc](https://dev.epicgames.com/documentation/uefn/twdu-walker-npc-template-in-unreal-editor-for-fortnite) explains how to level up your [level design](https://dev.epicgames.com/documentation/uefn/the-walking-dead-universe-level-design-in-unreal-editor-for-fortnite) to get the most out of your [hero weapons](https://dev.epicgames.com/documentation/uefn/the-walking-dead-universe-weapons-in-unreal-editor-for-fortnite).
-Remember! You’ll be able to publish your The Walking Dead Universe islands starting May 16 via the Creator Portal. Release the horde of Walkers, and let players fight their way through your unique environments.
-##  Rift Point Volume Device Updates
-Play a special animation, or a sound cue when players enter and exit the volume, or create custom events that can only be created with the use of the new Verse functions.
-  * **Entered****and**E******xit Events** - An event that happens when a player enters or exits the rift.
+![Lighting Scalability Manager](https://dev.epicgames.com/community/api/documentation/image/ffdc0036-a0a8-462c-a4e7-fc4c93deb7af?resizing_type=fill&width=1920&height=335)
 
-**New Verse Functions:**
-  * **GetAgentsInVolume** - A function that searches for Players in the volume.
-  * **IsAgentInVolume** - A function that checks whether Players have entered the volume.
+The Lighting Scalability Manager in Unreal Editor for Fortnite (UEFN) is used to hide and show lights and post process volumes (PPV) based on specific scalability settings (cinematic, epic, high, medium and low). This allows you to customize and optimize your lighting per platform and situation.
 
-##  Item Spawner Device Updates
-True dual weapons can now have their secondary initial and spare ammo counts customized. This allows creators to customize the new Pump & Dump weapon the same as they can existing weapons.
-  * **Initial Secondary Weapon Ammo** - The amount of ammunition already loaded in the secondary dual wield weapon when granted (clamped to weapon's magazine size)
-  * **Spare Secondary Weapon Ammo** - The amount of spare ammunition for the secondary weapon added to the player's inventory when a dual wield weapon is granted. If default, will provide ammo based on the ammo type if the player does not currently have any ammo of that type.
+Behind the scenes the Lighting Scalability Manager is listening to changes in **Global Illumination Quality**.
 
-##  Reboot Van Device Updates
-Creators can utilize the new Reboot Card Purchasing feature from Battle Royale. The device accepts any type of resource to suit a wide variety of use cases. The required resource can be set by dropping the resource item onto the ground next to the device.
-**New Options**
-  * **Can Purchase Reboot Card** - Determines if players can purchase an eliminated player’s reboot card.
-  * **Cost To Purchase Reboot Card** - Determines how much of the set currency it costs to purchase an eliminated player’s reboot card.
-  * **Can Purchase Expired Reboot Card** - Determines if players can purchase a reboot card when the timer has expired.
+## Using the Lighting Scalability Manager
 
-**New Event**
-  * **On Reboot Card Purchased** - Fires when a player purchases a Reboot Card.
+The Lighting Scalability Manager can be found in the **ContentBrowser** under **All** > **Fortnite** > **Lighting** > **Tools**.
 
-##  New OG Weapons
-  * Zapotron
-  * Guided Missile
-  * Dragon's Breath Shotgun
+[![Finding the Lighting Scalability Manager](https://dev.epicgames.com/community/api/documentation/image/3c802322-a1af-4c3c-b0f3-2a185c3e8532?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3c802322-a1af-4c3c-b0f3-2a185c3e8532?resizing_type=fit)
 
-##  New Prefabs & Galleries
-  * Added 4 New **Fencing Fields Prefabs:**
-    * Fencing Fields Diner
-    * Fencing Fields Factory
-    * Fencing Fields Warehouse
-    * Fencing Fields Mansion
-  * Added 5 New **Fencing Fields Galleries:**
-    * Fencing Fields Floor Gallery
-    * Fencing Fields Roof Gallery
-    * Fencing Fields Wall Gallery
-    * Fencing Fields Prop Gallery
-    * Fencing Fields Nature Gallery
+To use the Lighting Scalability Manager:
 
-##  Animated Timer UI Tutorial in UEFN
-[![](https://dev.epicgames.com/community/api/documentation/image/9c32c942-066e-4ccb-a31e-4c2fd123d2c0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9c32c942-066e-4ccb-a31e-4c2fd123d2c0?resizing_type=fit)
-Learn how to create your own custom animated timer in UEFN. Make your racing games feel more engaging with a pulsing timer as the clock runs out, or apply the pressure to a free for all island with a clock face that changes color to warn players their time is almost up.
-See the [Making an Animated Timer](https://dev.epicgames.com/documentation/en-us/uefn/making-an-animated-timer-in-unreal-editor-for-fortnite) document for more information.
-##  Scene Events in Scene Graph
-[![](https://dev.epicgames.com/community/api/documentation/image/f3c8cb77-0f9b-417b-9872-d80e0368e93f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f3c8cb77-0f9b-417b-9872-d80e0368e93f?resizing_type=fit)
-Scene events are communication protocols that provide a way for different parts of a Scene Graph to talk to one another. Multiple components can respond to a scene event, and events can be sent up or down the hierarchy. It might be helpful to imagine a scene event as messages you can pass across the Scene Graph, giving each component an opportunity to respond to the message.
-See the new document, [Scene Events](https://dev.epicgames.com/documentation//uefn/scene-events-in-unreal-editor-for-fortnite), to learn more about using and creating scene events. Follow along with the tutorial to better understand how scene events can be used to modify component behavior, or create a complex string of events in the scene.
-##  ICYMI: Discover Performance Snapshot for Fortnite Creators
-You can now get a personalized view of your Fortnite island's Discover performance. Once your island surpasses 5,000 daily impressions in Discover, the Discover Performance Snapshot will be available in your Publishing tab the next day. This snapshot provides key engagement and attraction metrics that influence your island’s discoverability, helping you spot trends and identify areas to optimize.
-For more information and to check out other recent improvements to Creator Portal, check out [the blog](https://create.fortnite.com/news/get-a-personalized-view-of-your-fortnite-island-s-discover-performance).
-##  Community Bug Fixes
-The following fixes are from issues that you submitted to us on the forums. Thank you for your patience and for reporting these issues!
-  * Fixed an issue where Physical Materials such as Lava and Ice were not behaving as expected.
-  * [Forum Report](https://forums.unrealengine.com/t/lava-tile-stopped-continuous-bouncing-after-the-recent-update/2385571)
-  * Fixed an issue where 'Fortnite cell snapping' settings were not saving between sessions.
-  * [Forum Report](https://forums.unrealengine.com/t/fortnite-cell-snapping-re-enables-itself-when-launching-uefn/2364744)
-  * Fixed an issue where the NPC Spawner's Agent did not work as a damage function instigator.
-  * [Forum Report](https://forums.unrealengine.com/t/npc-spawners-agent-does-not-work-as-a-damage-function-instigator/1881914)
+1. From the **Content Browser** search for the **Lighting Scalability Manager** in the search bar, drag the Lighting Scalability Manager thumbnail into the viewport. The thumbnail is replaced with an **Editor Icon** in the scene.
+2. Open the Actor dropdown menu in the toolbar and select a light actor to add to the scene.
 
-##  Fortnite Ecosystem Updates and Fixes
-**Fixes:**
-  * Fixed a material issue with Alien Trees making them reflect bright light.
-  * Fixed the issue where copied Earth Sprites would not display their item pool.
-  * Fixed an issue where the Bank Vault and Armored Transport would sometimes not display a progress bar if activated too quickly after starting the game or resetting the vault.
+   [![Open the Actor dropdown menu to select a light](https://dev.epicgames.com/community/api/documentation/image/e779e7bb-0c5e-4eff-8a96-54758bfc0fdb?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e779e7bb-0c5e-4eff-8a96-54758bfc0fdb?resizing_type=fit)
+3. In the Outliner, rename your lighting actor **Low**.
+4. In the Outliner duplicate the lighting actor until you have **two** more copies, then rename them:
 
-  * Fixed an issue where surfaces such as lava and ice fail to react properly to players landing on them. Players are now damaged and bounce.
+   [![Rename the light Actors](https://dev.epicgames.com/community/api/documentation/image/9e96d417-181a-4af0-be95-6f6b6161ed49?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9e96d417-181a-4af0-be95-6f6b6161ed49?resizing_type=fit)
+5. In the Outliner select the **Lighting Scalability Manager**, this opens the scalability manager options in the **Details** panel. Click the **Actor Array Element** icon (plus sign) to add elements into the Actor array.
 
-##  Brand Island Updates and Fixes
-###  LEGO
-**New:**
-  * Multiplayer Previewing has been added to LEGO Islands! Use Minifigure NPC's to playtest your island!
-  * New tool tip text for LEGO collectible objects that reads, "Choose what color of stud you want your collectible to be!"
+   [![Click the Actor Array](https://dev.epicgames.com/community/api/documentation/image/4f9bda57-4b86-4b2b-9a8c-a675f0c4ecff?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4f9bda57-4b86-4b2b-9a8c-a675f0c4ecff?resizing_type=fit)
+6. In the Details panel, click the **arrow** next to the **Array Index** property. This opens the **Actor Options** panel.
 
-###  The Walking Dead Universe
-**New:**
-  * Add new TWDU ambient sound cues for creators.
+   [![](https://dev.epicgames.com/community/api/documentation/image/4bb00e44-774a-44ea-9ee5-6d629863d1f7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4bb00e44-774a-44ea-9ee5-6d629863d1f7?resizing_type=fit)
+7. Select the **Actor** dropdown menu and select one of your **light actors** from the list.
 
-**Fixes:**
-  * Removed the audio file named "Zombie" from the TWDU audio files.
+   Alternatively, you can also hit the dropper next to the arrow and select the object you want loaded in the viewport.
+8. Check the proper scalability setting for the actor according to whether the lighting is meant for low scalability, medium scalability, high scalability, or epic/cinematic scalability. Uncheck the other scalability settings that don’t belong with the light actor.
 
-###  Fall Guys Islands
-  * Multiplayer Previewing is now available on Fall Guys islands.
+In the image below, the PointLight_Low is paired with Low settings for lower performing platforms.
 
-##  UEFN Updates and Fixes
-**New:**
-  * Improved visualization with a new collision mesh count metric to track unique collisions.
-  * All validation issues (both sentry and asset) are now reported under the "UEFN Validation" section of the Message Log.
+[![Low Scalability Setting](https://dev.epicgames.com/community/api/documentation/image/a5f033fd-ab53-4a6d-aaf0-a3bdeeeedf25?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a5f033fd-ab53-4a6d-aaf0-a3bdeeeedf25?resizing_type=fit)
 
-**Fixes:**
-  * Fixed a validation error related to opening the Patchwork Music Manager in older projects.
+The actors work as expected in-game for the platforms that make use of the associated scalability settings.
 
-  * Fixed a validation error related to enabling "Spawn Wind FX" on tree props.
+Repeat steps 5-7 to set the scalability for the other two lighting actors. Playtest on multiple platforms to see the scalability manager at work.
 
-###  Animation and Cinematics
-**Fixes:**
-  * Fixed three issues related to Sequencer:
-    * Added missing Key Interpolation options in the Keys right-click menu.
-    * Bindings would not update with the added actors when using Binding Properties in the right-click menu.
-    * Binding labels would not update when updating bindings with Assign Actor > Add Selected, or Replace with Selected.
+## Lighting Scalability Manager Options
 
-###  Environments and Landscapes
-**Fixes:**
-  * Fixed a crash state related to undoing landscape creation.
-  * Fixed the bug preventing Fortnite Cell Snap state from saving between sessions.
+These are the Lighting Scalability Manager’s options:
 
-###  Materials
-**Fixes:**
-  * Fixed a bug triggered by copying, pasting, then deleting collapsed material nodes. These actions would cause the Input and Output pin base expressions to linger in the material graph. There is no solution in place to fix materials affected by this issue and they will need to be recreated.
+[![The scalability settings that most used in the Lighting Scalabaility Manager.](https://dev.epicgames.com/community/api/documentation/image/bbcebc6a-dbf9-4a97-b333-3a26f0ac49f5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/bbcebc6a-dbf9-4a97-b333-3a26f0ac49f5?resizing_type=fit)
 
-###  Modeling
-**New:**
-  * The new default CollisionMode option is now set to SimpleAndComplex.
+| Number | Option | Description |
+| --- | --- | --- |
+| 1. | **Refresh Scalability** | Refreshes the scalability settings in the editor. |
+| 2. | **Actor Array Element Icon** | Adds an array field to the Actor option. |
+| 3. | **Delete Icon** | Deletes the actor array from the Actor options. |
+| 4. | **Actor Dropdown Menu** | Loads the selected actor into the slot. |
+| 5. | **Scalability Checkboxes** | Selects or deselects the scalability for the actor. |
+| 6. | **Use Selected Actor Icon** | Uses the selected actor from the level editor. |
+| 7. | **Select and Frame Actor Icon** | Selects and frames the actor in the viewport. |
+| 8. | **Pick Actor Icon** | Picks an actor from the viewport. |
 
-##  Verse Updates and Fixes
-###  Verse Language
-**Fixes:**
-  * Fixed an issue where interfaces created in Verse that use concrete classes did not support enforcing default fields.
-    * If the code doesn't compile due to this error, then either do not make the class concrete, or add an override of the data field in the class with a default value.
+You should rename actors according to the scalability setting you intend to use with that actor. For example, **PointLight_00_CineEpicHigh** and **PointLight_00_Medium_Low**. These both share the prefix PointLight_00_ but have a different suffix to designate the scalability setting they are used with.
 
-###  Tools
-**Fixes:**
-  * Fixed a bug where Verse code compiles regardless of errors reported in VS Code.
+## Custom Indoor Lighting Example
+
+You can hide and show specific lights according to scalability settings. This allows you to have custom indoor lighting tailored to each scalability setting for a consistent user experience regardless of platform.
+
+The light pool and color are matched by using duplicate light actors and the Scalability Manager in the scalability examples below.
+
+### No Scalability in Use
+
+The custom indoor lighting example uses the **Tilted Towers map** inside a prefab building that has no windows and a few lights to demonstrate the power of the Scalability Manager at work.
+
+[![Lights are set up on a Scalability Manager, but not using scalability.](https://dev.epicgames.com/community/api/documentation/image/8757623a-27a4-4783-8bb8-aeeeaaca6978?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8757623a-27a4-4783-8bb8-aeeeaaca6978?resizing_type=fit)
+
+In the image above is an example of the Lighting Scalability Manager used with the Cine_Spotlight without adding any scalability settings in the manager.
+
+### Scalability in Use
+
+Nothing can be done about matching the scene lighting in low scalability. However, something can be done about matching the scene better on **Medium** and **High** settings using the Lighting Scalability Manager.
+
+Create **3 Spotlights** for the **TV**, one for **Medium scalability**, one for **High scalability**, and one for **Epic/Cine scalability**.
+
+Create **2 Point Lights** for the **desk lamp**, one for **Medium scalability**, and one for **High scalability**.
+
+Set up the Lighting Scalability Manager for the spotlights as follows:
+
+| Actor Settings | Scalability Settings | Explanation | Image |
+| --- | --- | --- | --- |
+| SpotLight_Medium Intensity: **80.0 cd** | Medium | The setting works well for providing some shallow lighting highlights on the ground. | [CAPTION] Medium SpotLight [/CAPTION] |
+| SpotLight_High Intensity: **12.0 cd** | High | The setting works well for providing some lighting highlights on the ground. | [CAPTION] High SpotLight [/CAPTION] |
+| SpotLight_Epic Intensity: **8.0 cd** | Epic, Cinematic | The setting works well for providing some realistic lighting highlights on the ground. | [/CAPTION] Epic/Cine SpotLight [/CAPTION] |
+
+*Click on images to enlarge.*
+
+This allows you to match the light intensity and color across each scalability setting to make the scene match as closely as possible for all players across platforms.
+
+Set up the Lighting Scalability Manager for the point lights as follows:
+
+| Actor Settings | Scalability Settings | Explanation | Image |
+| --- | --- | --- | --- |
+| PointLight_Medium Intensity: **10.0 cd** | Medium | The setting works well to provide fill lighting on the wall and deeper shadows. | [CAPTION] Medium PointLight [/CAPTION] |
+| PointLight_High Intensity: **0.05 cd** | High | The setting works well for providing fill lighting with fog highlights on the wall and deeper shadows. | [CAPTION] High PointLight [/CAPTION] |
+
+You can see the results of the Light Scalability Manager with the different scalability light actors below. The results show the Lighting Scalabaility Manager without using any scalability settings and with tuning the proper scalability for each light actor:
+
+**Epic Scalability**
+
+![Epic No Scalability](https://dev.epicgames.com/community/api/documentation/image/b404b1aa-a1e1-40fd-a163-4b73b6c1e5c6?resizing_type=fit&width=1920&height=1080)
+
+![Epic In Game After Scalability](https://dev.epicgames.com/community/api/documentation/image/5fab9ca9-347f-48c1-9358-ab07d76552c5?resizing_type=fit&width=1920&height=1080)
+
+**High Scalability**
+
+![High No Scalability](https://dev.epicgames.com/community/api/documentation/image/f7dfdee2-3494-486b-811f-840155231c9d?resizing_type=fit&width=1920&height=1080)
+
+![High In Game After Scalability](https://dev.epicgames.com/community/api/documentation/image/a1be1127-721b-4ce0-9148-92884bb4ad9d?resizing_type=fit&width=1920&height=1080)
+
+**Medium Scalability**
+
+![Medium No Scalability](https://dev.epicgames.com/community/api/documentation/image/5ac4c146-2ce1-47dd-9c40-1c16d0d897ce?resizing_type=fit&width=1920&height=1080)
+
+![Medium In Game After Scalability](https://dev.epicgames.com/community/api/documentation/image/6628a488-c862-43e4-9842-85d649b72109?resizing_type=fit&width=1920&height=1080)
+
+**Low Scalability**
+
+![Low No Scalability](https://dev.epicgames.com/community/api/documentation/image/3e2e145a-ecd0-4e45-8420-e6ce777886e6?resizing_type=fit&width=1920&height=1080)
+
+![Low In Game After Scalability](https://dev.epicgames.com/community/api/documentation/image/91a263e6-1ee5-498e-906e-cbef36c28fa5?resizing_type=fit&width=1920&height=1080)
+
+Low scalability looks like this no matter what settings are used in the Lighting Scalability Manager.
+
+With the Lighting Scalability Manager you can use custom lighting to match your scene at different scalability to Lumen.
+
+### Multiple Usage Example
+
+You can use multiple Lighting Scalability Managers to further organize, categorize, and name your custom lighting as you see fit.
+
+For Instance, in the same example below, two Lighting Scalability Managers are used. One named **_SpotLight** and second named **_PointLight**. The lights are loaded the same way as above and the scalability is assigned for each light.
+
+![Spotlights setup on the first Scalability Manager.](https://dev.epicgames.com/community/api/documentation/image/6421a090-adfb-43e5-88b6-dbb3fa90cef8?resizing_type=fit&width=1920&height=1080)
+
+![Point lights setup on the second Scalability Manager](https://dev.epicgames.com/community/api/documentation/image/f41e7976-f2ab-472f-af5d-44c337ab706b?resizing_type=fit&width=1920&height=1080)

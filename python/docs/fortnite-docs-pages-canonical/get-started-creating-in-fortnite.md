@@ -1,9 +1,32 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/get-started-creating-in-fortnite
 
-# Creepin' Cardboard Devices
-Place Creepin' Cardboard devices for players to hide in and sneak around.
-![Creepin' Cardboard Devices](https://dev.epicgames.com/community/api/documentation/image/45d0427b-7a21-4e07-b551-25e1a49eb76a?resizing_type=fill&width=1920&height=335)
-The **Creepin’ Cardboard** device is an environmental object that players can interact with. When placed, it looks like a large cardboard box, with one of several possible random skins. [In-game](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary), players can approach the box and press **E** to hide inside. Press and hold **E** to exit the Creepin’ Cardboard device.
-While hiding in the Creepin’ Cardboard device, players can move around slowly, collect weapons and items, and can pop up out of the box to fire weapons by holding the right mouse button to aim. However, players will need to exit the Creepin’ Cardboard to reload. Exiting a Creepin’ Cardboard device does not destroy it; players can reuse it. A Creepin’ Cardboard device is destroyed if it takes any damage when not in use.
-Unlike most devices, Creepin’ Cardboard devices cannot be customized in any way, and have no options.
-For help finding the Creepin' Cardboard device, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-creepin-cardboard-devices-in-fortnite-creative).
+# Get Started Creating in Fortnite
+
+Ready to get building? Here’s what you need to know to get started creating and publishing islands in Fortnite.
+
+![Get Started Creating in Fortnite](https://dev.epicgames.com/community/api/documentation/image/20706d75-3925-4bbf-b399-495761a2acb9?resizing_type=fill&width=1920&height=335)
+
+Whether you are using the Creative toolset, or Unreal Editor for Fortnite (UEFN), explore the links below to learn about the tools, and how to get started building your islands in Fortnite.
+
+- [![Install and Launch Fortnite](https://dev.epicgames.com/community/api/documentation/image/a20bad97-3ba6-42f9-bec9-fc8dbb59c2ec?resizing_type=fit&width=640&height=640)
+
+  Install and Launch Fortnite
+
+  Get your Fortnite tools locked and loaded by learning how to download, install, and launch Fortnite!](https://dev.epicgames.com/documentation/fortnite/install-and-launch-fortnite-creative-and-unreal-editor-for-fortnite)
+- [![Build Your First Island in Fortnite](https://dev.epicgames.com/community/api/documentation/image/b98c2293-e949-4cfa-a837-b5074e4a4f8b?resizing_type=fit&width=640&height=640)
+
+  Build Your First Island in Fortnite
+
+  Build a mini-game in Unreal Editor for Fortnite with this step-by-step tutorial!](https://dev.epicgames.com/documentation/fortnite/build-your-first-island-in-fortnite)
+- [![Your First Island: Level Up with Verse](https://dev.epicgames.com/community/api/documentation/image/888d2f34-aa71-4484-b123-339964b096f0?resizing_type=fit&width=640&height=640)
+
+  Your First Island: Level Up with Verse
+
+  You've built your first island. Ready to take it to the next level?](https://dev.epicgames.com/documentation/fortnite/your-first-island-level-up-with-verse-in-fortnite)
+- [![Verse Language Get Started](https://dev.epicgames.com/community/api/documentation/image/aa0554a1-dd53-4851-b07f-eb9a67e5ae21?resizing_type=fit&width=640&height=640)
+
+  Verse Language Get Started
+
+  Get started with how to learn Verse and programming for the first time!](https://dev.epicgames.com/documentation/fortnite/verse-language-get-started-in-unreal-editor-for-fortnite)
+
+---

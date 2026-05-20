@@ -1,122 +1,120 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/making-a-custom-mini-map-in-unreal-editor-for-fortnite
 
-# Armored Transport Spawner Devices
-Use this armored transport to provide more opportunities for players to plan and perform heists on your island!
-![Armored Transport Spawner Devices](https://dev.epicgames.com/community/api/documentation/image/07407406-5867-417a-b35b-71424987a48e?resizing_type=fill&width=1920&height=335)
-The Armored Transport Spawner gives you an armored truck, similar to what security companies use to move money from customers to banks. Spawned armored transports contain an embedded vault that works similarly to the Bank Vault device.
-The armored transport can be driven by both players and AI characters, such as those created by Guard Spawner and NPC Spawner devices. The armored transport drives similarly to the Big Rig semi-truck vehicle, and holds a driver and one passenger.
-Other things to keep in mind with this vehicle and its embedded vault:
-  * You can determine which teams and classes are able to drive the armored transport, and which are able to break open the vault.
-  * You can use most of the standard vehicle options to customize things like:
-    * How much damage the vehicle does when it collides with players, other vehicles, or the environment
-    * Whether the vehicle is destroyed when stuck underwater
-    * Whether the vehicle spawns with modifications
-  * You can determine whether your players need thermite to interact with the vault, or not.
-  * You can manipulate the vault through functions and events.
-  * You can manipulate the difficulty for opening the vault by increasing or decreasing the weakpoints' health, whether weapons can damage the weakpoints, and how quickly the weakpoints passively lose health.
+# Making a Mini Map with the Map Controller Device
 
-For help with finding the **Armored Transport Spawne** r device, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
-If you're using multiple copies of a device on an island, it can be useful to rename them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the [Event Browser](https://dev.epicgames.com/documentation/fortnite/event-browser-in-fortnite-creative).
-##  Contextual Filtering In Creative
-Some devices are affected by a feature called contextual filtering. This feature hides or displays options depending on the values selected for certain related options. This reduces clutter in the Customize panel and makes options easier to manage and navigate. To help identify them, values that trigger contextual filtering are in italic.All options are listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option's value, there will be a note about it in the **Description** field for that option.Device Options
-Default values are **bold**. Values that trigger contextual filtering are _italic_.
-You can configure this device with the following options.
-Option  |  Values  |  Description
----|---|---
-**Enabled During Phase** |  None, **Always** , Pre-Game Only, Gameplay Only, Create Only |  Determines the game phases during which the device will be enabled. **Pre-Game** includes all phases prior to the start of the game.
-**Enable Respawn** |  **_On_** , Off |  Determines if the vehicle respawns after being destroyed. If this is set to **On** , an additional option displays below this one.
-**Respawn Time** |  **Instant** , Pick or enter an amount |  In Creative, this option only displays if the **Enable Respawn** option is set to **On**. Determines the delay after a vehicle is destroyed, before it respawns.
-**Respawn Vehicle When Enabled** |  No, Only If Needed, **Yes** |  If this is set to **Yes** , a vehicle will spawn a vehicle when the device is enabled. **Only if Needed** will not reset an existing vehicle.
-**Destroy Vehicle When Disabled** |  **On** , Off |  Destroys a spawned vehicle when the device is disabled.
-**Allowed Class** |  No Class, **All** , Any, Pick or enter a number |  Determines what class can use this vehicle. Values for this option are:
-  * **All** : All players, including players with no class assigned, can use the vehicle.
-  * **Any** : Any player with a class assigned can use the vehicle.
-  * **No Class** : Only players with no class assigned can use the vehicle.
-  * **Pick or enter a number** : Pick a class identifier; only players assigned that class can use the vehicle.
+Create and display a custom mini map using the Map Controller device.
 
-**Visible During Game** |  **On** , Off |  Determines whether the vehicle is visible during the game. This does affect its collision properties.
-**Fuel Consumption** |  On, **Off** |  Determines if the spawned vehicle uses fuel. If this is set to On is selected, two additional options are displayed.
-**Random Starting Fuel** |  **_On_** , Off |  In Creative, this option only displays if the **Fuel Consumption** option is set to **On**. If this option is set to **On** , the vehicle spawns with a random amount of fuel, between 25% and 80% of the maximum amount, and two additional options display below this one. If this is set to Off, an additional option displays below this one.
-**Min Random Starting Fuel** |  **0** , Pick an amount |  In Creative, this option only displays if the **Random Starting Fuel** option is set to **On**. Determines the minimum random fuel percentage the vehicle spawns with.
-**Max Random Starting Fuel** |  **0** , Pick an amount |  In Creative, this option only displays if the Random Starting Fuel option is set to On. Determines the maximum random fuel percentage the vehicle spawns with.
-**Starting Fuel** |  **100** , Pick a percentage |  In Creative, this option only displays if the **Fuel Consumption** option is set to **On** and the Random Starting Fuel option is set to **Off**. The percentage of fuel in the tank at spawn based on total capacity. **100** means that the tank is full.
-**Fuel Use Multiplier** |  **1.0** , Pick or enter a number |  In Creative, this option only displays if the **Fuel Consumption** option is set to **On**. Determines how quickly the vehicle uses fuel while driving.
-**Boost Enabled** |  **_On_** , Off |  Determines whether boost is enabled on the vehicle. If this is set to **On** , additional options display.
-**Unlimited Boost** |  On, **_Off_** |  In Creative, this option only displays if the **Boost Enabled** option is set to **On**. Determines whether boost uses fuel. If this is set to **Off** , an additional option displays.
-**Boost Fuel Use** |  **0.5** , Pick or enter a number |  In Creative, this option only displays if the **Fuel Consumption** and **Boost Enabled** options are set to **On**. Controls how quickly the vehicle uses fuel while boosting.
-**Boost Regen Multiplier** |  **Default** , Pick or enter a number |  In Creative, this option only displays if the **Boost Enabled** option is set to **On**. If boost is enabled, this determines how quickly the boost meter fills.
-**Radio Enabled** |  **True** , False |  Determines whether the spawned vehicle is able to use the radio.
-**Spawn with Cow Catcher** |  On, **Off** |  Determines whether the spawned vehicle has a cow catcher.
-**Vehicle Indestructible** |  On, Off |  Sets whether the spawned vehicle can be damaged or destroyed.
-**Vehicle Health** |  **800** , Pick a number |  In Creative, this option only displays when **Vehicle Indestructible** is set to **Off**. Determines how much damage the vehicle can take before it is destroyed.
-**Damage Friendly Fire** |  On, **Off** |  Setting this option to **On** means friendly vehicles can damage this device's spawned vehicles when they collide.
-**Damage Other Vehicles** |  On, Off |  Setting this option to **On** means this device's spawned vehicles can damage other vehicles when they collide.
-**Allow Damage from Other Vehicles** |  On, **Off** |  Determines whether other vehicles cause damage when colliding with vehicles spawned by this device.
-**Damage Own Vehicle** |  On, Off |  Determines whether a collision caused by the driver will damage the spawned vehicle.
-**Max Explosion Delay** |  **1.0** , Instant, Pick a delay time |  Determines the maximum amount of seconds the vehicle has zero health, before it explodes.
-**Lifetime After Explosion** |  **1.0** , Instant, Pick an amount of time |  Determines how long the destroyed vehicle remains in the world after it explodes, before it is removed.
-**Explosion Damage to Environment** |  **800** , None, Pick an amount of damage |  Determines the amount of damage a spawned vehicle deals to environment objects when it explodes.
-**Explosion Damage to Players** |  800, None, Pick an amount of damage  |  Determines the amount of damage a spawned vehicle deals to players when it explodes.
-**Explosion Damage to Vehicles** |  **800** , None, Pick an amount of damage  |  Determines the amount of damage a spawned vehicle deals to other vehicles when it explodes.
-**Destroy When Stuck Underwater** |  **_On_** , Off |  Determines whether the vehicle destroys itself when it is stuck underwater. By default, this is set to **On** , and the **Water Destruction Time** r option is displayed. If you choose **Off** , the **Water Destructions Timer** option is not displayed.
-**Water Destruction Timer** |  **5.0 seconds** , Pick or enter an amount of time |  In Creative, this only displays if the **Destroy When Stuck Underwater** option is set to **On**. When the vehicle is stuck underwater, this is the amount of time before it destroys itself.
-**Spawn with Vault** |  **Yes** , No |  Determines if the vehicle has a vault onboard when it spawns.
-**Activating Team** |  **Any** , Pick a team |  Determines the team this vehicle spawner belongs to.
-**Allow Driving with Ready Vault** |  Yes, **No** |  Determines if players are allowed to drive the vehicle while the Vault is ready to be interacted with.  If too many vehicles are driving with ready Vaults, it can cause lag.
-**Invulnerable While Active** |  **Yes** , No |  Determines if the vehicle is invulnerable when the Vault is active.
-**Spawn With Vault Enabled** |  Yes, **No** |  By default, the Vault is not enabled when the vehicle spawns. If this is set to Yes, spawned vehicles will have the Vault active and ready to be interacted with.
-**Loot Pool Reset** |  Small, Medium, **Large** |  If you are using the default loot pool, this determines what size loot pool will drop from the Vault.
-**Requires Thermite** |  **On** , Off |  Determines if the player needs to have thermite when interacting with the Vault door to start the vault-opening process.
-**Weakpoint Passive Damage Per Second** |  **Don't Overrid****e** , 0, Pick or enter an amount |  Determines how much damage the vault's weakpoints take each second. If set to the default **Don't Override** , the damage per second will start low and increase over time.
-**Weakpoint Health** |  **750.0** , Pick or enter an amount |  Determines how much damage a weakpoint can take before being destroyed and activating the next weakpoint.
-**Weakpoints Take External Damage** |  On, Off  |  Determines if weakpoints take damage from weapons or items.
-**Number of Weakpoints** |  **5** , Pick an amount |  Determines how much damage a weakpoint can take before being destroyed and activating the next weakpoint.
-**Vault Interacting Team** |  **Any** , Pick a team |  Determines which team can interact with the device.
-**Invert Vault Interacting Team Selection** |  On, **Off** |  If this is set to **On** , all teams except the team selected in the **Vault Interacting Team** option can interact with the device.
-**Vault Interacting Class** |  No Class, All, **Any** , Pick a class |  Determines which class can interact with the device. **No Class** means only players with no assigned class can interact. **All** means all players can interact regardless of class. **Any** means any player with an assigned class can interact.
-**Invert Vault Interacting Class Selection** |  On, Off |  If this is set to **On** , all classes except the class selected in the **Vault Interacting Class** option can interact with the device.
-##  Direct Event Binding
-Following are the direct event binding options for this device.
-###  Functions
-A function listens for an event on a device then performs an action.
-  1. For any function, click the option, then **Select Device** to access and select from the **Device** dropdown menu.
-  2. Once you've selected a device, click **Select Event** to bind the device to an event that will trigger the function for the device.
-  3. If more than one device or event triggers a function, click the **Add** button to add a line and repeat these steps.
+![Making a Mini Map with the Map Controller Device](https://dev.epicgames.com/community/api/documentation/image/4b6319ac-bffa-4e83-81ed-770ca83a6c93?resizing_type=fill&width=1920&height=335)
 
-Option  |  Description
----|---
-**Enable When Receiving From** |  This function enables the device when an event occurs.
-**Disable When Receiving From** |  This function disables the device when an event occurs.
-**Respawn Vehicle When Receiving From** |  This function spawns the vehicle when an event occurs.
-**Destroy Vehicle When Receiving From** |  This function destroys the vehicle when an event occurs.
-**Assigns Driver When Receiving From** |  This function seats the instigating player as the vehicle's driver.
-**Apply Off Road Tires When Receiving From** |  This function applies off-road tires when an event occurs.
-**Remove Tire Modification When Receiving From** |  This function removes tire modifications when an event occurs.
-**Pop All Tires When Receiving From** |  This function pops all tires on the spawned vehicle when an event occurs.
-**Repair All Tires When Receiving From** |  This function repairs all the vehicle's tires when an event occurs.
-**Repair Vehicle When Receiving From** |  This function repairs the vehicle when an event occurs.
-**Force Vault Open When Receiving From** |  Destroys the remaining weakpoints and opens the vault when an event occurs.
-**Activate Vault Door When Receiving From** |  Begins the vault opening sequence without thermite when an event occurs.
-**Deactivate Vault Door When Receiving From** |  Disables the weakpoint vulnerability and freezes the progress on all of them when an event occurs.
-**Reset Vault When Receiving From** |  Resets the vault when an event occurs.
-**Enable Vault When Receiving From** |  Enables the device when an event occurs.
-**Disable Vault When Receiving From** |  Disables the device when an event occurs.
-**Destroy Current Weakpoint When Receiving From** |  Destroys the currently active weakpoint when an event occurs.
-**Restore Current Weakpoint Health When Receiving From** |  Restores the health of the currently active weakpoint when an event occurs.
-###  Events
-An event tells another device when to perform a function.
-  1. For any function, click the option, then **Select Device** to access and select from the **Device** dropdown menu.
-  2. Once you've selected a device, click **Select Function** to bind this event to a function for that device.
-  3. If more than one function is triggered by the event, click the **Add** button to add a line and repeat these steps.
+A map and minimap are important tools that help players navigate a large game world while providing critical information about terrain, objectives, and points of interest. A map can give players a quick overview of the game environment, either for navigating landscapes or engaging in intense strategic battles. Maps contribute a lot to overall gaming experience, whether exploring mazes, uncovering hidden treasures, or simply planning routes.
 
-Options  |  Description
----|---
-**On Player Enters the Vehicle** |  When a player enters the spawned vehicle, an event is sent to the selected device, which triggers the selected function.
-**On Player Exits the Vehicle** |  When a player exits the spawned vehicle, an event is sent to the selected device, which triggers the selected function.
-**On Vehicle Spawns** |  When a vehicle spawns or respawns, an event is sent to the selected device, which triggers the selected function.
-**On Vehicle Is Destroyed** |  When the spawned vehicle is destroyed, an event is sent to the selected device, which triggers the selected function.
-**On Vault Sequence Started Send Event To** |  When the vault sequence is started by a player or event, an event is sent to the selected device.
-**On Vault Opened Send Event To** |  When the vault is opened, an event is sent to the selected device.
-**On Weakpoint Activated Send Event To** |  When a weakpoint becomes active, an event is sent to the selected device.
-**On Weakpoint Vulnerable Send Event To** |  When a weakpoint becomes vulnerable (such as after being frozen), an event is sent to the selected device.
-**On Weakpoint Destroyed Send Event To** |  When a weakpoint is destroyed, an event is sent to the selected device.
+In Unreal Editor for Fortnite (UEFN), use the **Map Controller** devices to:
+
+- Change the framing of the map and immediately preview the results.
+- Control the zoom on the minimap when the device is active.
+- Place multiple Map Controller devices on your island and activate them as needed.
+- Customize the look and feel of your maps.
+
+## Positioning the Device
+
+In the **Content Browser**, navigate to **Fortnite** > **Devices**, then find and drag a **Map Controller** device into your viewport. Notice the map preview screen appears at the bottom right.
+
+[![map preview](https://dev.epicgames.com/community/api/documentation/image/66babaf1-471c-45c9-b69d-502446c80920?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/66babaf1-471c-45c9-b69d-502446c80920?resizing_type=fit)
+
+Use the edges of the device volume to define the area captured for the map. The Map Controller displays everything beneath the area that it covers (the downward triangles indicate where the top of the device is).
+
+### Changing the Map Size
+
+Change the **Capture Box Size** in the details menu to make the volume larger or smaller. The device scale is locked, so it retains its square shape.
+
+Only modify the **Map Capture Box Height** if you want the device to trigger when a player enters the Map Controller volume.
+
+### Changing the Map Shape
+
+Change the **Minimap Shape** in the details menu from Default to Square or Cirular. This setting works alongside other settings for the minimap as well.
+
+In the image below, the minimap is set to Circular and uses a Map Capture Box size of 5.0 and a Map Capture Box Height of 1.0.
+
+[![The minimap is set to Circle and uses a Map Capture Box size of 7.0 and a Map Capture Box Height of 29.0.](https://dev.epicgames.com/community/api/documentation/image/d0a01a30-62f8-4e7d-8016-d7d8791b4664?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d0a01a30-62f8-4e7d-8016-d7d8791b4664?resizing_type=fit)
+
+### Changing the Map Rotation
+
+Switch the minimap view to follow the player's viewpoint by turning **On** the **Minimap Lock Player Rotation** setting.
+
+In the image below the Minimap Lock Player Rotation setting is turned On.
+
+### Setting the Minimap Zoom Factor
+
+Changing the **Minimap Zoom Factor** affects how zoomed in the map appears in game when following the player.
+
+The minimap below has a zoom factor of 2.
+
+[![Zoom Factor: 2](https://dev.epicgames.com/community/api/documentation/image/4b40bbc0-247f-4ec9-adae-70d626f36c4c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4b40bbc0-247f-4ec9-adae-70d626f36c4c?resizing_type=fit)
+
+This next minimap has a zoom factor of 5. Notice how it's more zoomed in.
+
+[![Zoom Factor: 5](https://dev.epicgames.com/community/api/documentation/image/532218e9-e2c3-4bae-a838-c7ddfc34c8f7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/532218e9-e2c3-4bae-a838-c7ddfc34c8f7?resizing_type=fit)
+
+Checking **Full Frame Minimap** displays the entire map volume and no longer follows the player.
+
+[![full frame minimap](https://dev.epicgames.com/community/api/documentation/image/3b987f12-05b2-40bc-9066-6e2e5afb5ae9?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3b987f12-05b2-40bc-9066-6e2e5afb5ae9?resizing_type=fit)
+
+### Setting Up a 3D Map
+
+You can rotate the device along the X, Y and Z axes to capture the island from a different angle.
+
+[![tilted map](https://dev.epicgames.com/community/api/documentation/image/a60b920a-ad6d-46ab-975e-a2a525d338b0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a60b920a-ad6d-46ab-975e-a2a525d338b0?resizing_type=fit)
+
+Test the position of the map inside the game client to ensure you’re getting the expected result.
+
+## Priority System
+
+For the Map Controller device, **Priority** determines which device takes priority when multiple devices are active.
+
+When placing the device, the default priority is **0**. Any Map Controller device with a higher Priority number will override devices with a lower priority.
+
+### Visualizing Priorities
+
+The examples below demonstrate how the priority system works. A total of five maps are each represented by a letter and a priority number: **A1**, **B2**, **C2**, **D5** and **E5**. A1 is the default map, and every other map is connected to an ON/OFF switch. All maps display in the minimap when active.
+
+When two Map Controller devices are set to the same priority, the one most recently activated will be prioritized by the game.
+
+The player will always see the highest priority map displayed out of all active maps.
+
+A lower priority map will never override a high priority map.
+
+### How to Use Priorities
+
+Priority stacks can really simplify your workflow when used correctly!
+
+Imagine a ghost hunting game where, on one team, ghosts must hide from the hunters and collect energy items, while on the other team, hunters use trackers to locate the ghosts. Instead of manually triggering each map to turn on and off, you can grant hunters their own, high-priority, specialized map that will override the ghosts’ maps without any additional logic.
+
+In an open-world survival game, set the outdoor map to a low priority, and make maps of indoor spaces high priority. Once again, with no complicated logic, players will switch maps seamlessly as they enter and exit buildings and other areas of interest.
+
+Now, try coming up with your own scenarios!
+
+## Making Custom Maps
+
+UEFN gives you the ability to completely customize your maps in a few simple steps!
+
+Make sure that your island is mostly finalized before capturing a map image! Modifying a custom map requires a lot more effort than simply moving your Map Controller device to a different location.
+
+1. Position the **Map Controller** device over the area you want to display.
+
+   [![map controller position](https://dev.epicgames.com/community/api/documentation/image/ec99f065-d946-4590-ae16-187d244ed7f2?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ec99f065-d946-4590-ae16-187d244ed7f2?resizing_type=fit)
+2. In the Details panel, scroll down to **Capture Map Image** and click to capture the high-resolution snapshot.
+
+   [![capture map image](https://dev.epicgames.com/community/api/documentation/image/be685bcf-7ad6-44df-8f3c-c8cc12ce9489?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/be685bcf-7ad6-44df-8f3c-c8cc12ce9489?resizing_type=fit)
+3. This saves the image file in your local **AppData** folder. Your path could look something like this: **C:\Users\your_name\AppData\Local\UnrealEditorFortnite\Saved\Screenshots\Maps**
+4. Open the image in the editor software of your choosing, and make the desired changes.
+5. Once finished, export the modified map to a folder.
+
+   [![export map](https://dev.epicgames.com/community/api/documentation/image/3e71c30c-e796-4d28-b046-3c4dc8113f02?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3e71c30c-e796-4d28-b046-3c4dc8113f02?resizing_type=fit)
+6. Drag the custom map file into your project, or **import** it from the **Content Browser**.
+7. Double-click on the imported file, and change the following settings:
+
+   [![texture settings](https://dev.epicgames.com/community/api/documentation/image/8ad1c30f-494d-4d71-8a60-a184c9d51f52?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8ad1c30f-494d-4d71-8a60-a184c9d51f52?resizing_type=fit)
+8. Back in the **Map Controller Details** panel, check the box next to **Custom Map Texture**, then select the imported image as the custom texture.
+9. Save your project! When you launch a session, you should see your custom maps displaying on both the minimap, and the map screen.
+
+   [![custom map](https://dev.epicgames.com/community/api/documentation/image/f93673f9-c7b1-46f0-9b84-853afae56a83?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f93673f9-c7b1-46f0-9b84-853afae56a83?resizing_type=fit)

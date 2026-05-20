@@ -1,91 +1,126 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/35-10-fortnite-ecosystem-updates-and-release-notes
 
-# Explosive Devices
-Make things go boom!
-![Explosive Devices](https://dev.epicgames.com/community/api/documentation/image/f8d6a9bc-2506-4899-9b12-54abee46b557?resizing_type=fill&width=1920&height=335)
-When activated, the **Explosive** device causes damage to whatever is in its blast radius.
-There are several ways you can set it to be triggered:
-  * From player interaction
-  * By setting up [event binding](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) and activating it from another device
-  * By setting a timer to detonate it after a specific time, or on a timed delay
+# 35.10 Fortnite Ecosystem Updates and Release Notes
 
-You can also set this device to ignore damage from specific teams.
-For help on how to find the Explosive device, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
-If you're using multiple copies of a device on an island, it can be useful to [rename](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the [Event Browser](https://dev.epicgames.com/documentation/fortnite/event-browser-in-fortnite-creative).
-##  Contextual Filtering
-Some devices are affected by a feature called contextual filtering. This feature hides or displays options depending on the values selected for certain related options. This feature will reduce clutter in the Customize panel and make options easier to manage and navigate.
-However, it may not be easy to recognize which options or values trigger contextual filtering. To help you identify them, in our device docs we use italic for any values that trigger contextual filtering. All options will be listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option’s value, there will be a note about that in the Description field for that option.
-##  Device Options
-The device can be customized to alter settings such as the blast radius and the [knockback](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) amount. You can also set a delay between the device being triggered and the explosion.
-The default values are **bold**. Values that use [contextual filtering](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) are in italics.
-Configure this device with the following options.
-Below are the following changes made to the device options:
-Option  |  Value  |  Description
----|---|---
-**Can be Damaged** |  **On** , _Off_ |  Determines if the device can be damaged. If set to **Off** , the following option is hidden: **Health**.
-**Health** |  **1** , Indestructible, Pick a number |  Determines how much damage the device can take before it explodes.
-**Display Damage Numbers** |  On, **Off** |  Determines whether damage numbers should be displayed when players deal damage to the device.
-**Blast Radius** |  **2.0 Tiles** , Pick a number |  Determines the radius of the explosion in tiles.
-**Player Damage** |  **50** , Pick a number |  Sets the amount of damage dealt to players within the explosion radius.
-**Ignore Team for Damage** |  **None** , Pick a team |  Sets a team to be immune to damage from the explosion.
-**Structure Damage** |  **150** , Pick a number |  Sets the amount of [damage dealt](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) to environment props within the explosion radius.
-**Damage Indestructible Buildings** |  Yes, **No** |  Determines whether the explosion can damage the environment even when environment damage is turned off in game settings.
-**Blast Line of Sight** |  **No** , Yes |  Determines whether the explosion requires clear line of sight to a player or prop to damage it.
-**Explode on Proximity** |  **Off** , On |  Determines whether a player's presence near the device will trigger a detonation. If set to **On** , other options will show.
-**Explode on Proximity Range** |  **1.0 Tile** , On |  Sets the distance in tiles for how close the player has to be to cause the device to explode. This option only shows if **Explode on Proximity** is set to **On**.
-**Knockback Player** |  Select a Knockback amount |  Determines the amount of impulse applied to players within the explosion radius.
-**Knockback Vehicle** |  Select a Knockback amount |  Determines the amount of impulse applied to vehicles within the explosion radius.
-**Proximity Delay** |  **Off** , Pick a time |  Determines the delay in seconds between a player's proximity triggering the device and it actually exploding. Only shows if **Explode on Proximity** is set to **On**.
-**Ignore Team for Proximity** |  **None** , Pick a team |  Sets a team to be ignored for the purposes of player proximity detonation. This makes the selected team invulnerable to this device. Only shows if **Explode on Proximity** is set to **On**.
-**Has Timed Detonation from Game Start** |  **Off** , _On_ |  Determines if the device has a timer which causes the device to explode after the selected duration after game start. If set to **On** , the following option becomes available: **Time to Detonation from Game Start**.
-**Time to Detonation from Game Start** |  **1 Second** , Pick a time in seconds |  Sets how long after game start the device will explode. Only shows if **Has Timed Detonation from Game Start** is set to **On**.
-**Play Audio/VFX** |  **Yes** , No |  Determines whether to play explosion visual and audio effects when the device explodes.
-**Range Visualization** |  **Off** , Damage, Proximity |  Determines which range setting to visualize when editing the device.
-**Visible During Game** |  **Yes** , No |  Determines whether the device will be visible during the game.
-**Collision During Games** |  Off, **On** , Only When Visible |  Determines whether the device uses collision properties during the game.
-**Show Health Bar** |  **Yes** , _No_ |  Determines if the device should display a health bar in the HUD when damaged. If set to **No** , the **Health Bar Style** option will be hidden.
-**Health Bar Style** |  **Default** , _Badge Style_ , _Badge Style (When Damaged)_ |  Determines the health bar style to use on the HUD. If you select **Badge Style** or **Badge Style (When Damaged)** , several other options will show.
-**Hide HUD Icon at** |  **20M** , Pick a distance |  Determines the distance at which the HUD icon stops being visible. Only displays if **Badge Style** or **Badge Style (When Damaged)** is selected for the **Health Bar Style** option.
-**Requires Line of Sight** |  **Yes** , No |  Determines whether direct line of sight is required to see the HUD icon. This option only displays if **Badge Style** or **Badge Style (When Damaged)** is selected for the **Health Bar Style** option.
-**Icon Identifier** |  **None** , Pick an Icon |  This option only displays if **Badge Style** or **Badge Style (When Damaged)** is selected for the **Health Bar Style** option. Assigns a letter to the HUD icon to make it identifiable.
-**Display Distance Text** |  **No** , Yes |  When set to **Yes** and if it is showing as a HUD element, the HUD element also displays the distance between the object and the player.
-**Clamp to Screen** |  **No** , _Yes_ |  When set to **Yes** and if it is showing as a HUD element, this restricts the rendering to be within the area of the screen. When this option is set to **Yes** , the option Show Offscreen Arrow become available.
-**Team Visibility** |  Neutral, Friendlies, **Any** , Hostiles, Pick a team |  Determines which team can see the icon in their HUD. This option only displays if **Badge Style** or **Badge Style (When Damaged)** is selected for the **Health Bar Style** option.
-**Friendly Icon Text** |  Insert text |  Specifies the text that's displayed on the HUD icon for friendly players. This option only displays if **Badge Style** or **Badge Style (When Damaged)** is selected for the **Health Bar Style** option.
-**Neutral Icon Text** |  Insert text |  Specifies the text that's displayed on the HUD icon for neutral players. This option only displays if **Badge Style** or **Badge Style (When Damaged)** is selected for the **Health Bar Style** option.
-**Hostile Icon Text** |  Insert text |  Specifies the text that's displayed on the HUD icon for hostile players. This option only displays if **Badge Style** or **Badge Style (When Damaged)** is selected for the **Health Bar Style** option.
-**HUD Text Size** |  **1X** , 1.5X, 2X |  Determines the size of text displayed on the HUD icon. This option only displays if **Badge Style** or **Badge Style (When Damaged)** is selected for the **Health Bar Style** option.
-**Play Audio** |  No, **Yes** |  Determines whether the device should play audio effects.
-**Device Mesh** |  **Barrel** , Bomb |  Determines what the explosive item looks like during the game. If you choose **Bomb** , the explosive is a cartoonish round bomb with a fuse coming out of the top. If you have the **Proximity Delay** option or the **Time to Detonation From Game Start** option turned on, the fuse on the bomb will remain lit while the timer is active.
-**Time Until Reset Allowed** |  **1.0 Second** , Pick a time |  Controls how long after a device explodes before it can be reset.
-###  Physics-Enabled Options
-The following options become available when [Physics](https://dev.epicgames.com/documentation/fortnite/physics) are enabled in a project:
-Option  |  Value  |  Description
----|---|---
-**Knockback Physics Prop** |  Select a Knockback amount. |  Determines the amount of impulse applied to objects within the explosion radius.
-##  Event Binding
-Following are the [direct event binding](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) options for this device.
-###  Functions
-A [function](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) listens for an event on a device then performs an action.
-  1. For any function, click the **option** , then **Select Device** to access and select from the **Device** dropdown menu.
-  2. Once you've selected a device, click **Select Event** to bind the device to an event that will trigger the function for the device.
-  3. If more than one device or event triggers a function, click the **Add** button to add a line and repeat these steps.
+Find out what's new with the 35.10 release of Fortnite on May 16, 2025!
 
-Option  |  Description
----|---
-**Explode** |  Explodes the device when an event occurs.
-**Turn on Visibility** |  Makes the device visible when an event occurs.
-**Turn off Visibility** |  Hides the device when an event occurs.
-**Reset** |  Resets the device when an event occurs.
-###  Events
-An [event](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) tells another device when to perform a function.
-  1. For any event option, click the **option** , then **Select Device** to access and select from the **Device dropdown menu**.
-  2. Once you've selected a device, click **Select Function** to bind this event to a function for that device.
-  3. If more than one function is triggered by the event, click the **Add** button to add a line and repeat these steps.
+![35.10 Fortnite Ecosystem Updates and Release Notes](https://dev.epicgames.com/community/api/documentation/image/cf845e8c-99b4-4258-858e-296a13d737f1?resizing_type=fill&width=1920&height=335)
 
-Option  |  Description
----|---
-**On Exploded** |  Sends an event to a linked device when the device explodes.
-##  Gameplay Examples That Use Explosive Devices
-  * [Search and Destroy](https://dev.epicgames.com/documentation/fortnite/search-and-destroy-bomb-in-fortnite-creative)
-  * [Knock, Knock](https://dev.epicgames.com/documentation/fortnite/knock-knock-gameplay-example-in-fortnite-creative)
+Get ready to publish your Fortnite islands using the **The Walking Dead Universe** assets. Publishing for these islands unlocks today! In v35.10, you’ll find a new Gunfight template showcasing best practices for creating engaging first-person shooter games with UEFN, plus new Grand Glacier, Snowy Mountain, and Spooky Holiday Prefabs and Galleries. Read on to learn more!
+
+## Publish Your The Walking Dead Universe Islands
+
+[![TWDU Islands in UEFN](https://dev.epicgames.com/community/api/documentation/image/2e3505ba-a54e-44fb-9a3d-f4f6df8564d8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2e3505ba-a54e-44fb-9a3d-f4f6df8564d8?resizing_type=fit)
+
+The wait is over, you can publish your Fortnite islands using The Walking Dead Universe (TWDU) assets, starting May 16 at 12 PM ET! Head to [Creator Portal](https://create.fortnite.com/welcome) to submit your island through content review.
+
+The Walking Dead Universe (TWDU) will be featured front and center in **Discover**, with a dedicated **Game Collections** slot following the approach used for previous IP launches. Skybound, the IP holder, will curate a **TWDU Picks** row to highlight a varied selection of their favorite TWDU experiences. We’re continuing to experiment with and refine Game Collections to promote a wide range of high-effort islands that bring IPs to life.
+
+TWDU islands are eligible for additional Discover placement, including Epic’s Picks — so don’t forget to [submit them](https://creative.fortnite.com/s/)! There will also be a quest for players to complete, encouraging players to explore TWDU islands.
+
+We can’t wait to see what you’ve created!
+
+## New Gunfight Template to Create High-Caliber FPS Games with UEFN
+
+[![Gunfight Template in UEFN](https://dev.epicgames.com/community/api/documentation/image/98dbf1a6-5c41-4bf8-a493-6b962383fd55?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/98dbf1a6-5c41-4bf8-a493-6b962383fd55?resizing_type=fit)
+
+Explore best practices for building engaging first-person shooter (FPS) gameplay with the new Gunfight 2v2 example template in Unreal Editor for Fortnite (UEFN).
+
+This hands-on template offers a practical starting point for creating FPS islands using the [First-Person Camera](https://dev.epicgames.com/documentation/fortnite/using-first-person-camera-devices-in-fortnite-creative). It includes detailed Verse examples for player management, such as dynamic team balancing and weapon granting, all documented with inline notes.
+
+You’ll also find guidance on efficient FPS game structure and level design, including how to build multiple distinct play areas within a single Fortnite island. Each round shifts the action to a different area, demonstrating how to create varied playspaces in one match.
+
+Try out the playable version of the Gunfight template now (Code: 5043-2939-1074).
+
+Want to find out more about the Gunfight Example Template and other UEFN templates? Check that the coast is clear, then combat roll into the [UEFN Starter Templates](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-starter-templates) documentation.
+
+## New Prefabs & Galleries
+
+- Grand Glacier Hotel
+- Grand Glacier Hotel Wall Gallery
+- Grand Glacier Hotel Floor & Stair Gallery
+- Grand Glacier Hotel Roof Gallery
+- Grand Glacier Hotel Prop Gallery
+- Grand Glacier Indoor Wall Gallery
+- Snowy Mountain Nature Gallery
+- Spooky Holiday Prop Gallery
+
+We accidentally included assets from a licensed IP in the Japanese Forest Nature Gallery released in v35.00. For v35.10, we removed the assets from your projects and the gallery. The rest of the gallery will remain intact. We apologize for the inconvenience.
+
+## Twitch Link Added to Creator Profiles
+
+You can now add your Twitch handle to your Creator Profile — joining TikTok, Discord, X, and Instagram as supported platforms.
+
+## Fortnite Ecosystem Updates and Fixes
+
+Fixes:
+
+- Fixed the Matchmaking Portal device from having the default texture on only half of one side when using the Live Edit tool.
+- Fixed the Accolade device from failing to display text on the UI in subsequent rounds.
+- Fixed the Accolades Award UI failing to appear during Edit mode.
+- Fixed unreleased devices and prefabs exposure in both UEFN and VK Edit sessions.
+- Improved the loading screen behavior for players who are loading into their island. Added additional checks for loading the terrain, props, and environment.
+
+### Devices
+
+Fixes:
+
+- Fixed an issue where two or more Prop Manipulator devices touching the same asset could not, in some cases, get selected based on their Priority settings.
+- Fixed players being immune to Damage Volumes if they enter while driving a Baller.
+- Fixed some UI icons that were not showing up when the Input Trigger device was changed.
+
+### Items
+
+Fixes
+
+- Fixed an issue where the Lawless Slap Cannon had the wrong visuals when dropped from the Creative Inventory.
+
+## Brand Island Updates and Fixes
+
+### LEGO® Islands
+
+New:
+
+- Added the Impulse and Shockwave Grenades for use on LEGO Islands.
+- Moved the Dialog Background and Dialog Divider textures out of the LEGO Action Adventure template. They are now available in the Content Drawer under **LEGO® Content > Textures > Quests**.
+
+Fixes:
+
+- Fixed a case where the Assembly device could not be interacted with on mobile.
+
+### The Walking Dead Universe
+
+New:
+
+- Added Dynamic Stride Length for Walker animations at increased speeds.
+- Added additional color variations for the Walker Prisoner uniforms.
+
+Fixes:
+
+- Optimized Walkers to not do unnecessary animation when offscreen.
+- Improved Walkers falling and aerial animations.
+- Updated Walkers to better target and damage a player's built walls.
+
+## UEFN Updates and Fixes
+
+Fixes:
+
+- Fixed an issue where transformation emotes would not work in UEFN Islands.
+- Fixed a faulty check where the loading screen would dismiss before the environment loaded.
+- Fixed the localization support for the Advanced Transform category name of the Transform tool in the UV Editor.
+
+- Resolved an issue where `MaterialFunctionInstance` failed to retrieve all parameters from the associated material function.
+
+## Verse Updates and Fixes
+
+### API
+
+Fixes:
+
+- Added support to `MoveTo` for creative objects to scale something up from zero to a non-zero value.
+
+### Tools
+
+Fixes:
+
+- Fixed false dependency errors in the digests generated by UEFN for VS Code.

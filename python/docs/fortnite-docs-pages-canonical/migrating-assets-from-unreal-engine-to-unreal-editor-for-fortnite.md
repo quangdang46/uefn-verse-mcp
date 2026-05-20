@@ -1,44 +1,86 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/migrating-assets-from-unreal-engine-to-unreal-editor-for-fortnite
 
-# Migrating Assets from Unreal Engine
-Get the recommended workflow for moving content to UEFN from Unreal Engine.
-![Migrating Assets from Unreal Engine](https://dev.epicgames.com/community/api/documentation/image/b2d42d47-876d-44d2-bbe3-b07c3e03da67?resizing_type=fill&width=1920&height=335)
-You can use content originally created in Unreal Engine 5 (UE5) in Unreal Editor for Fortnite (UEFN). UEFN supports a wide range of UE5 asset types.
-The preferred asset migration workflow is to use the Migration Tool in the Unreal Editor, and select the Content folder in your UEFN project as the target destination.
-This migration path provides a means to reuse your previously-saved assets from UE5 in new UEFN projects, while also leveraging the new features and Fortnite content available in UEFN.
-**Unreal Editor for Fortnite (UEFN)** has a way for users to import custom content from a wide range of platforms.
-Your Unreal project must be running on Unreal Engine 5.1 or later for the tool to work properly.
-UEFN does not support all of Unreal Engine's asset types. Further, some supported asset types have additional limitations to comply with Fortnite performance requirements. For example, Static Mesh assets should not exceed 20k vertices. Read about UEFN asset limitations here.
-## Migration Tool
-The Migration Tool was updated in Unreal Engine 5.1 to support UEFN as a target destination.
-To move content from UE to UEFN with the Migration Tool, your projects must meet the following minimum version requirements.
-  * Source — An Unreal Engine project running in UE 5.1 or newer.
-  * Destination — A UEFN project running on Fortnite 23.00UEFN or newer.
+# Migrating Assets in UEFN and Unreal Engine
 
-  1. Open Unreal Engine and select the project with content that you want to migrate to UEFN.
-  2. Locate the asset(s) or folder(s) you want to import into UEFN and **right-click** to see the context menu.
-    1. For a single asset, select **Asset Actions > Migrate...***
-![asset migrate](https://d1iv7db44yhgxn.cloudfront.net/documentation/images/7201be69-acb4-48c9-bb60-e33921b87f3b/asset_migrate.png)
-    1. For a folder, select **Migrate...**
-![folder migrate](https://d1iv7db44yhgxn.cloudfront.net/documentation/images/fea3feba-f857-4931-8926-def6bc7fba11/folder_migrate.png)
-  3. A Save Content window opens with the selected file, click Save Selected.
-![Save Content window](https://d1iv7db44yhgxn.cloudfront.net/documentation/images/294cef6c-43fa-4e45-8325-ac524683d09f/save-content.png)
-  4. A Save Level As window opens, name the level, then click Save.
-![save Level As window](https://d1iv7db44yhgxn.cloudfront.net/documentation/images/dcb3f66d-2292-44d2-95a9-ee6fc4ad0967/save-level.png)
-  5. An **Asset Report** dialog opens, showing the contents of the selected assets. Click **OK** to confirm.
-If you don't want to migrate an asset in this list, uncheck the checkbox next to that asset. Keep in mind, however, that this might break other assets you are trying to migrate (for example, a material will no longer show correctly if one of its textures is missing).
-![asset report](https://d1iv7db44yhgxn.cloudfront.net/documentation/images/4084a7c3-3add-4067-bd81-d126d6574ca2/asset_report.png)
-  6. A file browser window opens, prompting you to select the UEFN project you want to migrate assets to. Open to your UEFN project folder, then navigate to **Plugins** > **Project_Name** > **Content** and click **Select Folder**.
-![destination_folder](https://d1iv7db44yhgxn.cloudfront.net/documentation/images/b079891a-0b4d-4614-8887-b96c400732e5/destination_folder.png)
+Workflows for moving content between UEFN and Unreal Engine.
 
-The assets should now be present in your chosen UEFN project folder and visible from the Content Browser.
-![uefn_assets](https://d1iv7db44yhgxn.cloudfront.net/documentation/images/98fc9702-8a71-4ef4-a7bd-4084e2d694a9/uefn_assets.png)
-Copy-pasting content directly into your UEFN project directory is not a supported workflow, and will not result in a successful migration.
+![Migrating Assets in UEFN and Unreal Engine](https://dev.epicgames.com/community/api/documentation/image/b2d42d47-876d-44d2-bbe3-b07c3e03da67?resizing_type=fill&width=1920&height=335)
+
+The content your project holds, whether it’s something you’ve imported from a third-party application, or it is something you created in the editor, can be migrated between different projects and engines. This allows you to reuse content between different projects with little to no set up whether they are using Unreal Editor for Fortnite (UEFN) or Unreal Engine.
+
+## Content Migration Workflow
+
+When you have content in your project you want to use in other projects in Unreal Engine or UEFN, you can use the **Migration Tool** to select the assets you want to migrate from the Content Browser using the right-click context menu.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/64f22053-d7de-46d5-a4a4-0ee388e99918?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/64f22053-d7de-46d5-a4a4-0ee388e99918?resizing_type=fit)
+
+The Asset Report Window seen when choosing to Migrate Content to another Project/Editor.
+
+This tool enables you to migrate various types of assets between your projects. Some types of assets can only be migrated one way or not at all depending on the type of content it is. For example, content located in brand intellectual property (IP) folders cannot be migrated at all.
+
+When you think about all the ways you can migrate content between Unreal Engine and Unreal Editors, you’ll want to think about the ways in which you can migrate your content between them. You can migrate from:
+
+- Unreal Engine to Unreal Engine (Same version or newer)
+- Unreal Engine to UEFN
+- UEFN to UEFN (Same version or newer)
+
+Additionally, with any of these content migrations, you must consider the release version you are migrating from, which can be:
+
+- Releases that are on the same version
+- Older release version to a newer release version
+
+You cannot migrate from a current (or latest) version release to an older version release. Assets are not version agnostic in this way.
+
+## What To Know About Migrating Content?
+
+Here are some things to keep in mind when migrating content between projects and editors. This is **not** an exhaustive list.
+
+- **The Migration Tool is a means to move content but does not verify its compatibility with the engine you're migrating to.**
+
+  - It’s important to understand where you’re migrating content from and to whereas there aren’t many restrictions with the types of assets you can move between projects and engine versions. Compatibility doesn’t just mean the content is supported, but also that it’s migrated to a release that is the same or newer than the one you are currently using.
+- **Assets must be moved to a Content folder.**
+
+  - The tool will only migrate content to appropriate locations within a project. This ensures that content won’t lose references to the assets that it needs and the content will work as intended. For example, choosing a different folder than the Content folder or a path outside of a project will result in messages like the ones below.
+
+    |  |  |
+    | --- | --- |
+    |  |  |
+    | Migrating to a folder that doesn’t have an Unreal project associated with it. | Migrating to a folder different than a Content folder inside of an Unreal project. |
+- **Migrating to supported engine versions.**
+
+  - You can maintain working content by migrating assets to Unreal Engine and UEFN versions with the same release version or from older version releases to newer version releases. Content migrated from a newer version release to an older one will not work, the assets may show up in the content browser, but you cannot open and edit them.
+- **Supported Content and Assets.**
+
+  - UEFN does not support all of Unreal Engine’s asset types for migration. Further, some supported asset types have additional limitations to enable them to comply with Fortnite performance requirements. For example, Static Mesh assets should not exceed 20k vertices.
+- **Single Assets can be made up of many other assets.**
+
+  - Individual assets can be made up of additional assets, such as materials that have multiple texture assets associated with them. When you migrate any of these assets, the references they have to other content in the project gets picked up for migration as well. To better understand what references to other assets your content may have, you can use the [Reference Viewer](https://dev.epicgames.com/documentation/unreal-engine/reference-viewer-in-unreal-engine?application_version=5.5) to see these connections.
+
+## Migration Tool Requirements
+
+The Migration Tool has the following requirements:
+
+- **Asset Source:** This should be content from a UEFN or Unreal Engine project running on Unreal Engine 5.1 or a later version release.
+- **Destination:** This should be a UEFN project running on latest version of Fortnite, or Unreal Engine running on Unreal Engine 5.1 or a later version release.
+
+### Using the Migration Tool
+
+To migrate content between projects and engine versions with the Migration Tool, use the following steps:
+
+You can now check the project you migrated the content to see that it migrated successfully. Even if the project is currently open when you initiate and complete the migration process, you should still see this become available in the project’s content browser to check it.
+
 ## Limitations
-The Migration Tool is not aware of the content limitations of the destination, so it cannot perform any sort of asset validation when you attempt to migrate content. In other words, the Migration Tool will migrate your assets whether or not they are actually compatible with UEFN.
-As noted above, UEFN has many asset limitations. For example, some asset types cannot exceed a certain size, and some UE5 asset types are not supported at all.
-The current implementation of the Migration Tool needs to load all the assets in memory to migrate them. This tool is in active development. We expect to provide performance improvements and a better user experience for validating and cleaning up incompatible content in the future.
+
+When migrating content, the tool itself does not perform content validation and is not aware of any limitations the content might have when migrating to a specific editor or engine. In other words, the Migration Tool will copy your assets whether or not they are actually compatible with their destination project.
+
+As mentioned in the section above, UEFN has limited support for some features based on its integration with Fortnite and maintaining performance and operability. This means that some assets cannot exceed certain sizes, and some Unreal Engine asset types have restrictions or simply aren’t supported at all.
+
 ## Troubleshooting
-Whenever you migrate an asset type that is not recognized by UEFN, you will see **unsupported assets** appear in your Content Browser.
-![Unsupported Assets](https://d1iv7db44yhgxn.cloudfront.net/documentation/images/7b08f362-0e81-4bb1-800a-f5f4de80bbf8/unsupported-assets.png)
-Having unsupported assets in your project can prevent you from testing your experience, so it is recommended that you delete them.
+
+When you migrate an asset type from Unreal Engine that is not recognized by UEFN, the content will still appear in the Content Browser but will be listed as an unsupported asset type.
+
+[![Unsupported Assets](https://dev.epicgames.com/community/api/documentation/image/3ff6c5ca-3573-468a-99db-d13b1cf54e8d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3ff6c5ca-3573-468a-99db-d13b1cf54e8d?resizing_type=fit)
+
+Example of unsupported assets migrated to a project.
+
+Having these types of assets in your project can prevent you from testing your UEFN experience, so it is recommended that you delete these assets to avoid potential errors in the project.

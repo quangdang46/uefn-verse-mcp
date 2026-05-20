@@ -1,39 +1,61 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/vfx-lava-cave-in-unreal-editor-for-fortnite
 
-# Set Up Your Tax Profile
-When you enroll in a monetization program with Epic Games, you'll need to set up a tax profile as part of the enrollment process before you can receive any payouts.
-![Set Up Your Tax Profile](https://dev.epicgames.com/community/api/documentation/image/db9cc74e-c5d9-4f25-ad8f-e4e2e0fd2dd5?resizing_type=fill&width=1920&height=335)
-Your tax profile is the information Epic Games is required to collect to fulfill tax withholding and reporting requirements.
-You'll only reach the Tax Profile screen if you need to provide tax information, are of an eligible age for the program, and have demonstrated that you qualify to join the selected program.
-If you have already successfully set up a tax profile with Epic Games, you should not have to do it again.
-##  Consents Screen
-[Tax Identity](http://www.taxidentity.com/) is an external company that handles all tax documents on behalf of Epic. It uses your **Social Security number** , **national ID number** , or **Tax ID** to confirm your identity and comply with applicable tax reporting obligations.
-You'll fill out the necessary forms based on your country of residence, and Tax Identity will retain your tax information.
-[![tax ID consent form](https://dev.epicgames.com/community/api/documentation/image/7d0952f0-2703-4bd1-be6a-3711366422f5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7d0952f0-2703-4bd1-be6a-3711366422f5?resizing_type=fit)
-  1. Click **Yes** to consent to providing an electronic signature.
-  2. Click **Yes** to **I consent to electronic receipt of my information reporting documentation** to receive your year-end forms by email, or **No** to have the forms mailed to you.
+# Lava Cave with VFX
 
-##  New Tax Record Screen
-  1. When prompted, click **CREATE TAX PROFILE** to open a dialog.
-  2. Click **CREATE TAX PROFILE** again and the **New Tax Record** dialog opens.
+Make your levels more engaging by incorporating high-quality lighting, post-processing, and VFX.
 
-  3. Select the type of tax profile you want to create.
-**If you have any questions about which option to select, consult with a tax professional.**
-  4. Select one of these options:
-     * **PERSONAL:** This is for an individual. For this, you will need your personal Social Security Number (SSN), or the equivalent number for tax reporting in your country of residence.
-     * **SOLE PROPRIETOR:** If you have an unincorporated business that you own and operate alone, and want any funds to go to the business.
-     * **SINGLE MEMBER LLC:** LLC stands for Limited Liability Company, and is only available in the US. To set up this tax information, you must have already set up your LLC, and you must be the only owner/partner in the company.
-     * **BUSINESS:** This is the option to use if you have a business with one or more partners. If you select BUSINESS, you will also be asked for your business email before the tax wizard opens.
-  5. Click **CONTINUE**.
+![Lava Cave with VFX](https://dev.epicgames.com/community/api/documentation/image/0c5a219d-eea1-40c2-9078-f055873cf7f4?resizing_type=fill&width=1920&height=335)
 
-##  Start Tax Interview
-The information you enter below should be for the individual actively participating in the program.
-If you are completing this form on behalf of a company or organization, your information will be collected separately.
-[![tax interview screen](https://dev.epicgames.com/community/api/documentation/image/3b0359ad-21bc-40e1-bc8a-8c52db0154f0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3b0359ad-21bc-40e1-bc8a-8c52db0154f0?resizing_type=fit)
-  1. Read the instructions carefully, then click **Continue**.
-  2. Fill out all of the required information. The questions will be based on the tax profile type you select and your country of residence.
-Click the **Help** button at any time if there is something you don't understand, and more information will be provided. Also, if you enter incorrect information and can't change it, click **Exit** , then restart the interview. Exiting the interview before completing and saving will erase all the information and give you a fresh start.
-  3. When you get to the end of the form and have submitted it, click **Exit Interview** to return to the website.
+The Lava Cave VFX template demonstrates a combination of visual effects that draw the player into the environment. These effects can add depth to your level design and gameplay.
 
-Verification can take up to five business days, depending on your country of residence. Epic will send you an email when your tax information is verified, with a link to take you back to where you left off in your enrollment.
-While you're waiting, go see what's new on the **Discover UI** in Fortnite!
+Unreal Editor for Fortnite (UEFN) offers many [VFX](https://dev.epicgames.com/documentation/fortnite/visual-effects-in-unreal-editor-for-fortnite) tools, such as post-processing, [customizable lights](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-customizable-light-devices-in-fortnite-creative), and Niagara effects.
+
+With Lava Cave, players set out on a brief volcanic journey to retrieve a lost sword. The gameplay theme is strengthened with dramatic cutscenes and a [post-processing](https://dev.epicgames.com/documentation/fortnite/intro-to-postprocessing-in-unreal-editor-for-fortnite) shimmer volume that creates visual heat waves.
+
+Use a combination of VFXs and prop assets to add dynamic elements that enhance your environment visually. This template uses a variety of light sources to create glows and visual contrasts.
+
+Lava Cave also uses props like customizable lights, firepits, and lava assets to highlight and give contrast to walls and statues. These props often come as Niagara actors with their own point lights attached, and can be found in the **Fortnite** > **Props** folder of the **Content Browser**.
+
+Below is a peek at features and tools used to create the Lava Cave environment. You can find this experience in the **Feature Examples** section of the **Project Browser**.
+
+## Brazier VFX
+
+Use a combination of lights as VFX to create an ambiance that fits your theme.
+
+[![FirePit](https://dev.epicgames.com/community/api/documentation/image/108468de-5b8a-40a8-8da8-830538412b0d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/108468de-5b8a-40a8-8da8-830538412b0d?resizing_type=fit)
+
+Combine the VFX device with Niagara [**point lights**](https://dev.epicgames.com/documentation/en-us/unreal-engine/point-lights-in-unreal-engine?application_version=5.3) to create effects similar to the braziers in Lava Cave.
+
+[![Spot Lights](https://dev.epicgames.com/community/api/documentation/image/2a61e80a-9b95-4f6c-b81b-8723fd82201b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2a61e80a-9b95-4f6c-b81b-8723fd82201b?resizing_type=fit)
+
+Lava Cave also uses [spotlights](https://dev.epicgames.com/documentation/en-us/unreal-engine/spot-lights-in-unreal-engine?application_version=5.3) to cast an orange glow from statue bases and accent pieces in the environment.
+
+## Torch Fires
+
+Use assets like customizable lights as bursts of VFX in your project. These assets could be imported from the [Fab Marketplace](https://dev.epicgames.com/documentation/fortnite/import-from-fab-in-unreal-editor-for-fortnite) or found in the **Fortnite** < **Galleries** < **Customizable Light Gallery** folder in the **Content Browser**.
+
+[![Torchlight](https://dev.epicgames.com/community/api/documentation/image/ec704727-df78-4b45-b1e0-b967743279a7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ec704727-df78-4b45-b1e0-b967743279a7?resizing_type=fit)
+
+Lava Cave uses a torch Niagara asset from the [**Customizable Light Gallery**](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-audio-and-visual-effect-galleries-in-fortnite-creative) that has an attached point light.
+
+You can also use [Lumen](lighting-quick-start-guide-in-unreal-editor-for-fortnite) and other light tools to brighten specific areas.
+
+For level lighting, Lava Cave also uses the [**Day Sequence**](day-sequence-device-in-unreal-editor-for-fortnite) device along with the [**Lumen Exposure Manager**](lumen-exposure-manager-in-unreal-editor-for-fortnite) to add level lighting to this experience.
+
+## Falling Particles and Camera Effects
+
+You can use the [**VFX Creator**](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-vfx-creator-devices-in-fortnite-creative) device to create particle effects in your gameplay. VFXs such as [falling dust](https://dev.epicgames.com/documentation/fortnite/create-a-realistic-dust-particle-effect-in-unreal-editor-for-fortnite) and fire pit smoke are used to bring the Lava Cave environment to life.
+
+[![Falling Particles](https://dev.epicgames.com/community/api/documentation/image/ddb652a6-2ede-4847-92ad-2701cfa90422?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ddb652a6-2ede-4847-92ad-2701cfa90422?resizing_type=fit)
+
+[**Trigger**](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-trigger-devices-in-fortnite-creative) devices are used to start a [cinematic](cinematic-sequence-device-in-unreal-editor-for-fortnite) where particles fall from the ceiling, causing an earthquake-styled [camera shake](camera-shake-effect-in-unreal-editor-for-fortnite). A combination of [Niagra actors](https://dev.epicgames.com/documentation/fortnite/creating-fireworks-using-niagara-in-unreal-editor-for-fortnite), VFX Creator devices, camera shakes, and post-processing are also used to further transform the environment.
+
+## Lava Bursts
+
+You can find many Niagara VFX under **Fortnite** < **VFX** of the **Content Browser**.
+
+[![Lava Bursts](https://dev.epicgames.com/community/api/documentation/image/fdc5cc8d-331a-46c7-a53a-07c5dcf87fd1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/fdc5cc8d-331a-46c7-a53a-07c5dcf87fd1?resizing_type=fit)
+
+Lava Cave uses Lava Burst Niagrara actors on top of lava tiles to create a realistic volcanic environment.
+
+Combine the effects mentioned above to create an engaging environment that strengthens your gameplay.

@@ -1,30 +1,84 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/creating-custom-skilled-interactions-in-unreal-editor-for-fortnite
 
-# Creating Gameplay with Devices
-Find out what devices actually are, how they work, and why they can save you hours of unnecessary programming!
-![Creating Gameplay with Devices](https://dev.epicgames.com/community/api/documentation/image/dbc2a01f-dc48-440f-9b51-fbf11bdda3fb?resizing_type=fill&width=1920&height=335)
-For any game, gameplay is controlled by [game mechanics](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#game-mechanics). Each mechanic covers a specific aspect of the game's functionality. These can range from general rules that define the what a player has to do to win the game ([win conditions](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#win-condition)) to specific things like where a player spawns on the island, how players can move, and what items can be granted to a player and when.
-A device is a set of pre-programmed game mechanics in a single package that you can place on an island. Most devices have a visual representation — either as a mesh [asset](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#asset) or as an icon. Some are visible in-game, some are visible only when editing the island, and for some, you can set the visibility on or off for gameplay.
-[![](https://dev.epicgames.com/community/api/documentation/image/adb243b9-db08-4f24-afe7-f0761f6ab22d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/adb243b9-db08-4f24-afe7-f0761f6ab22d?resizing_type=fit) The device on the left is the Down But Not Out device, and is represented by an icon. The one on the right is the Character device and has a mesh.
-##  Out of the Box, and Then Some!
-Devices add interactivity by detecting player actions, triggering events, managing game states, and creating simple-to-complex interactions within the island.
-You can use the default Fortnite devices as they are, or you can expand their functionality by customizing them, either through device options or with Verse.
-##  The History of Fortnite Devices
-Devices were originally designed specifically for making games and other experiences in Fortnite Creative, which launched in December of 2018.
-FN Creative provided a [sandbox environment](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#sandbox-game) where developers create and save their own games and share them with friends.
-Many of the device mechanics were pulled directly from **Fortnite Battle Royale** , and early developer-made games were simple modes like racing and shooter games.
-The number of devices has expanded exponentially since that first launch, along with the sophistication of the devices themselves and the experiences developers can create with them.
-##  Learn What Different Devices Do
-With devices, you can prototype gameplay and modify them to suit your needs. It's worth taking a minute to [see what devices are available](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite) before trying to use pure code to reinvent a functionality that already exists. Using and customizing an existing device can streamline your development workflow and save you hours of programming and testing since the available devices have already been proven to work. And if the device doesn't do everything you want, check the [Verse API Reference](https://dev.epicgames.com/documentation/fortnite/verse-api) to see what functionality you can add with Verse!
-Some devices are only available in UEFN. For a list of these and the pages that describe them, see [UEFN-Only Devices](https://dev.epicgames.com/documentation/fortnite/uefnonly-devices-in-fortnite). UEFN-only devices cannot be placed on your island from Creative, but once you have placed them in UEFN, options for most of the devices can be modified in Creative during a [Live Edit](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#live-edit) session.
-##  Using Device Functions and Events
-One of the great features of Fortnite devices is that you can set them up to perform specific functions when they are triggered by [events ](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#event)from other devices.
-When one device is [bound ](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#binding)to another device, it can send a signal to the other device. The transmission of this signal is called an **event**. An event triggers one or more devices to do a particular thing or set a particular condition, and that action or condition is called a **function**.
-For example, you could set up a **Button** device to trigger a **Customizable Light** to **On** when a player interacts with the button. Once this device is set up, you can copy-paste it to create a duplicate, then change the copied device to turn the light **Off**. You might even be able to customize one device to do both actions as an **On-Off** toggle.
-**So much faster than coding from scratch — these built-in functions and events can dramatically speed up your design productivity!**
-##  Ready for More?
-For more on how to find and modify devices in UEFN or Creative, and how to set up event triggers:
-  * [![Getting Started with Devices](https://dev.epicgames.com/documentation/fortnite/images/static/document_list/empty_thumbnail.svg) Getting Started with Devices Learn how to add and modify devices in Fortnite, and how to use Verse to expand device functionality! ](https://dev.epicgames.com/documentation/fortnite/getting-started-with-devices-in-fortnite)
+# Creating Custom Skilled Interactions
 
-, see **[Getting Started with Devices](https://dev.epicgames.com/documentation/fortnite/getting-started-with-devices-in-fortnite)**.
-If you're looking for some cool inspiration, check out [Device Design Examples](https://dev.epicgames.com/documentation/fortnite/device-design-examples-in-fortnite-creative) for some great ideas on how you can use devices to create fun and unusual game mechanics!
+Use Viewbindings to connect your custom UI to the Skilled Interaction device.
+
+![Creating Custom Skilled Interactions](https://dev.epicgames.com/community/api/documentation/image/49dc0fb5-ab24-497e-af33-8d4001d712e0?resizing_type=fill&width=1920&height=335)
+
+This walkthrough provides an example of a **UMG** (Unreal Motion Graphics) design and its **View Model** bindings that you can use to create a custom UI for the [Skilled Interaction device](https://dev.epicgames.com/documentation/fortnite/using-skilled-interaction-devices-in-fortnite-creative).
+
+As you create your custom skilled interaction, make sure to set an event to begin the interaction. You can also set event triggers that grant players items for successfully completing the skilled interaction.
+
+You can build on these examples by setting [cinematic cutscenes](https://dev.epicgames.com/documentation/fortnite/making-cinematics-and-cutscenes-in-unreal-editor-for-fortnite) once players or objects target certain zones.
+
+[![Golf Example](https://dev.epicgames.com/community/api/documentation/image/998f476b-2886-4d72-97dd-6a835eb35d23?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/998f476b-2886-4d72-97dd-6a835eb35d23?resizing_type=fit)
+
+This tutorial covers how to create a quick-press skilled interaction in which players can hold a trigger input to target the correct zones.
+
+Before you begin customizing your UI, must create and import any assets to use in your designs. Visit **[Creating Custom UI with Material Instances](https://dev.epicgames.com/documentation/fortnite/creating-custom-ui-with-material-instances-in-unreal-editor-for-fortnite)** to learn more about using materials in your design.
+
+## Set up the Device
+
+Follow the steps below to create a golf example in which players target a perfect zone to grant success when hit. When designing your UI, feel free to rename the panels as you place them in the **Hierarchy** panel.
+
+## Add the Background Image
+
+[![Golf Example](https://dev.epicgames.com/community/api/documentation/image/b430c439-7292-4d95-b3c7-2c6c4f1f032c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b430c439-7292-4d95-b3c7-2c6c4f1f032c?resizing_type=fit)
+
+Follow the steps below to create the background image for the vertical meter bar in this example. The background in this walkthrough is a rounded, black bar in which the zones will sit on top of.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/9fe424a6-e767-4914-a605-fde4cae1a5c4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9fe424a6-e767-4914-a605-fde4cae1a5c4?resizing_type=fit)
+
+Use the image above as a reference when recreating the steps in this tutorial.
+
+## Set up the Zones
+
+You can create a bad zone for your example that will grant an automatic failure when targeted. However, this example only uses a perfect zone, which consists of three containers:
+
+- An initial empty area, called **PerfectZoneStart**.
+- The good or perfect zone, called **SizeBox**.
+- The empty area after, called **PerfectZoneEnd**.
+
+Follow the steps below to recreate this example's perfect zone.
+
+[![Golf Example](https://dev.epicgames.com/community/api/documentation/image/08bd3fb1-2035-48dd-b829-56a43a78a0c8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/08bd3fb1-2035-48dd-b829-56a43a78a0c8?resizing_type=fit)
+
+1. From the **Palette** panel, drag and nest a **Stack Box** inside the child **Overlay**, named SID in the example.
+2. Then, drag and nest the following children inside the **Stack Box**: **Scale Box** > **Size Box**.
+3. Inside the same **Stack Box**, also drag a **Size Box** > **Scale Box** > **Overlay** > **Image**.
+4. Inside the same **Stack Box**, also drag an **Overlay** > **Size Box**.
+
+   [![](https://dev.epicgames.com/community/api/documentation/image/639d58b3-032e-4d42-a390-18d402e91c9c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/639d58b3-032e-4d42-a390-18d402e91c9c?resizing_type=fit)
+
+   [![](https://dev.epicgames.com/community/api/documentation/image/9d3be976-ae1d-447e-ac3a-c8ab5f2f261f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9d3be976-ae1d-447e-ac3a-c8ab5f2f261f?resizing_type=fit)
+5. To add extra detail, you can include notches for the background zones by adding an **Image**, named Notches in the example, underneath the **Stack Box**.
+
+## Set up the Scrubber
+
+For this example, the scrubber needs to be inside a moving container. To do this, you must create a **Stack Box** with two items.
+
+The first item holds a **Size Box** set to **User Scale**, which you are later going to bind to the **Skilled Interaction Meter Scale** in the **ViewModel**. The second item will hold a container with the scrubber.
+
+[![Scrubbers](https://dev.epicgames.com/community/api/documentation/image/0e76316b-ea41-4bbd-970e-ea78e39d93ac?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0e76316b-ea41-4bbd-970e-ea78e39d93ac?resizing_type=fit)
+
+## Set up the ViewModel
+
+To connect your custom UI to the Skilled Interaction device, follow these steps.
+
+1. In the **User Widget**, navigate to **Window** > **Viewmodels** to open the **Viewmodels** window.
+2. Click **+Viewmodel**. Then, select **Device - Skilled Interaction View Model** and click **Select**.
+3. Either from the bottom toolbar or the **Window** tab, select **View Bindings**.
+4. Set up your **View Bindings** to match the image below.
+
+   [![Viewbindings](https://dev.epicgames.com/community/api/documentation/image/f63067cd-dd3b-4818-acc5-a83bdbb46605?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f63067cd-dd3b-4818-acc5-a83bdbb46605?resizing_type=fit)
+
+   1. Click **+ Add Widget** to add the **ScrubberMovingZone**.
+   2. Set the **ScubberMovingZone** to **User Specified Scale** and **UEFN_SkilledInteraction_ViewModel** to **Current Meter Value**.
+   3. Click **+ Add Widget** to add the **PerfectZoneStart**.
+   4. Set the **PerfectZoneStart** to **User Specified Scale** and **UEFN_SkilledInteraction_ViewModel** to **Perfect Zone Min**.
+   5. Click **+ Add Widget** to add the **PerfectZoneEnd**.
+   6. Set the **PerfectZoneStart** to **User Specified Scale** and add a conversion function for **Add Int Double**.
+   7. Set **A** to **1**.
+   8. Set **B** to **UEFN_SkilledInteraction_Viewmodel/Perfect Zone Max**.
+   9. Set **Negate B** to **True**.

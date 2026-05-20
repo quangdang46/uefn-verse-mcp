@@ -1,142 +1,92 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/water-tools-in-unreal-editor-for-fortnite
 
-# Make a Soccer Game
-Make a soccer game that uses the built-in physics of UEFN.
-![Make a Soccer Game](https://dev.epicgames.com/community/api/documentation/image/b1cca7d2-a73c-42d2-8cff-c66112f7cb6c?resizing_type=fill&width=1920&height=335)
-Follow the steps below to create your very own physics-enabled soccer game, where players use their pickaxe to get the ball into their opponents' goal:
-##  Set Up the Project
-  1. Create a new project from any island template.
-The **Blank** template is recommended if you want to ensure a flat area to work with.
-If you start with the Blank template, apply the **M_FortniteLandscape_Customizable** material to the **GridPlanes** to give the ground a grassy look.
-  2. From the Project dropdown in the menu bar, select **Project Settings**.
-[![](https://dev.epicgames.com/community/api/documentation/image/81276bd0-c65f-4ccb-a95e-d765de439433?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/81276bd0-c65f-4ccb-a95e-d765de439433?resizing_type=fit)
-  3. Scroll to the bottom, under **Experimental Access** , to find and enable the **Physics** checkbox.
-[![](https://dev.epicgames.com/community/api/documentation/image/7502969a-4d53-4c02-91c9-cb3ddba4a73b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7502969a-4d53-4c02-91c9-cb3ddba4a73b?resizing_type=fit)
+# Water Tools
 
-##  Import the Soccer Ball
-  1. Download a soccer ball asset from your preferred asset marketplace. In this example, a .glb asset is used. It contains a static mesh, texture and material instance.
-[![](https://dev.epicgames.com/community/api/documentation/image/f56bf1de-5518-4f6a-875c-774dd2e614ac?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f56bf1de-5518-4f6a-875c-774dd2e614ac?resizing_type=fit)
-[Soccer Ball](https://sketchfab.com/3d-models/soccer-ball-88590cf1e42e44bfb85ce3b6b1959648) by [tinmanjuggernaut](https://sketchfab.com/tinmanjuggernaut) on Sketchfab, used under the [Sketchfab Standard License](https://sketchfab.com/licenses).
-  2. Import the ball by dragging the .glb file into your **Content Browser**. You can leave the default settings.
-[![800](https://dev.epicgames.com/community/api/documentation/image/f7cda6f9-6a64-4aab-815c-8eb9ea386e20?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f7cda6f9-6a64-4aab-815c-8eb9ea386e20?resizing_type=fit)
-  3. Double-click the **static mesh** to open the asset for editing.
-[![](https://dev.epicgames.com/community/api/documentation/image/4fd42d45-dd81-4e24-b4af-028a75ac1037?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4fd42d45-dd81-4e24-b4af-028a75ac1037?resizing_type=fit)
-  4. In the viewport, select **Show** and check **Simple Collision**.
-  5. If there is collision already, delete it.
-[![](https://dev.epicgames.com/community/api/documentation/image/75905301-eb07-4b11-b0ed-0a95948c2905?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/75905301-eb07-4b11-b0ed-0a95948c2905?resizing_type=fit) Removing collision from the static mesh
-  6. From the **Collision** menu in the top ribbon, select **Add Sphere Simplified Collision**.
-[![](https://dev.epicgames.com/community/api/documentation/image/c09042b8-274f-4b97-8629-f9808aa38f7a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c09042b8-274f-4b97-8629-f9808aa38f7a?resizing_type=fit)
-  7. In the **Collision** settings of the **Details** panel, set:
----
-Radius - **102.0**
-Collision Preset - **Block All**
-Center - **0 on all axes**
-  8. The collision should now be visible. Save your static mesh.
-[![](https://dev.epicgames.com/community/api/documentation/image/87af1bcd-d5b2-42e9-99df-80ad8360381a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/87af1bcd-d5b2-42e9-99df-80ad8360381a?resizing_type=fit)
+Create rivers, lakes, and oceans with these custom Environment tools.
 
-##  Create the Soccer Ball Prop
-  1. In the **Content Browser** , right-click the static mesh and select **Scripted Asset Actions** > **Convert to Prop** > **Stone**.
-  2. A folder called **CustomProps** will be created in your project. Open the folder and drag the Blueprint prop into the scene.
-[![](https://dev.epicgames.com/community/api/documentation/image/6b63f09f-b220-4f01-9ec4-5b4ac2075191?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6b63f09f-b220-4f01-9ec4-5b4ac2075191?resizing_type=fit)
-  3. In the **Details** panel, press the **+Add** button and add a **Fort Physics** component.
-[![](https://dev.epicgames.com/community/api/documentation/image/d371e266-8045-49b0-9a22-1a5510d504b6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d371e266-8045-49b0-9a22-1a5510d504b6?resizing_type=fit)
-  4. On the **FortPhysics** component, set:
----
-Simulate Physics - **True**
-Override Mass - **True**
-Mass - **20.0**
-Linear Dampening - **0.1**
-Angular Dampening - **0.3**
-Impulse On Hit Multiplier - **3.0**
+![Water Tools](https://dev.epicgames.com/community/api/documentation/image/15f92c5c-df03-4faa-976c-149fab39aca6?resizing_type=fill&width=1920&height=335)
 
-##  Add Soccer Game Elements
-  1. Select **IslandSettings0** in your Outliner and change the following settings:
----
-Max Players - **6**
-Teams - **Team Index: 2**
-Team Size - **Split Evenly**
-Join In Progress - **Spawn**
-Invincibility - **True**
-Allow Building - **None**
-Start With Pickaxe - **True**
-  2. Place six **Player Spawner** devices:
----
-First 3: Player Team - **Team Index 1**
-Other 3: Player Team - **Team Index 2**
-Visible in Game - **False**
-Try launching a session at this point to make sure everything works as intended.
-  3. Using props, build out your field!
-[![](https://dev.epicgames.com/community/api/documentation/image/f4c8b563-290c-4d53-9683-74b4e37c6d54?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f4c8b563-290c-4d53-9683-74b4e37c6d54?resizing_type=fit)
----
-Use **Colossal Coliseum** in Fortnite > **Prefabs**
-Use **Recreation Soccer Field** as your pitch
-  4. Find the **FortniteRecreation SoccerGoal** in the Content Browser and place two instances for your goal areas. Scale them up **1.5x** to accommodate the size of the ball.
-[![](https://dev.epicgames.com/community/api/documentation/image/26d66b8c-5512-4b7d-86cd-3e5291b454f4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/26d66b8c-5512-4b7d-86cd-3e5291b454f4?resizing_type=fit)
-  5. Add a **Barrier** device to enclose the field and keep the ball from flying out of bounds.
-[![](https://dev.epicgames.com/community/api/documentation/image/69477a5c-9b46-4e62-9fa2-48efecc29ebe?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/69477a5c-9b46-4e62-9fa2-48efecc29ebe?resizing_type=fit)
-Change the **Zone Shape** to **Hollow Box** , and put the bottom of the device below the ground. Otherwise, it will interfere with the player spawners.
-If you are spawning in skydiving and not on the Player Spawn Pad, it could be that the bottom of the device needs to be lowered, or that the Zone Shape isn’t set to Hollow Box.
+**Unreal Editor for Fortnite (UEFN)** has tools to create customizable bodies of water. You can place an ocean, rivers, lakes, islands, and swiming pools from the **Environment folder** in the [Content Browser](https://dev.epicgames.com/documentation/fortnite/user-interface-reference-for-unreal-editor-for-fortnite). These water bodies, with the exception of the swimming pool, automatically raise or lower the terrain and do not require manual terrain sculpting.
 
-##  Set Up Devices
-Currently, the devices that work with **Physics** are all located in the **Fortnite > Devices > !Experimental **folder.
-  1. To detect goals, set up two **Volume** devices:
-[![](https://dev.epicgames.com/community/api/documentation/image/ecd5dcbd-dab2-4930-881f-3420ccf7ae5d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ecd5dcbd-dab2-4930-881f-3420ccf7ae5d?resizing_type=fit)
-Name the volume device behind the Team 1 spawn pads **Team_A_Goal**.
-Name the volume device behind the Team 2 spawn pads **Team_B_Goal**.
-Size Settings
----
-Width - **0.6**
-Depth - **2.2**
-Height - **1.0**
-  2. Add a **Tracker** device:
----
-Name - **Tracker Score Team A**
-Stat to Track - **Score**
-Tracker Title - **Team A Score**
-Sharing - **Team**
-  3. Duplicate the Tracker device and rename the copy to **Tracker Score Team B**. Change the Tracker Title to **Team B Score**.
-  4. Add a **HUD Message** device:
----
-Name - **HUD Message Device Score A**
-Play Sound - **Scoring_Point_Added_Cue**
-Background -**Pick a color**
-Placement - **Custom**
-Screen Anchor - **Center**
-Message - **“Team A Goal!!!”**
-  5. Duplicate the HUD Message device.
----
-Name - **HUD Message Device Score B**
-Message - **“Team B Goal!!!”**
-Background - **Pick a second color**
-  6. Add two **Air Vent** devices at an angle next to the goal. When the ball hits either of these air vents, it will launch the ball away from the goal area. Set **Knockup Force Multiplier** to **0.1**.
-[![](https://dev.epicgames.com/community/api/documentation/image/8935770e-55f2-44d7-ae77-9f49f7a26bf8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8935770e-55f2-44d7-ae77-9f49f7a26bf8?resizing_type=fit)
+Water tools should not be confused with the [Water device](https://www.epicgames.com/fortnite/en-US/creative/docs/using-water-devices-in-fortnite-creative) in Fortnite Creative. Water tools use [splines](unreal-editor-for-fortnite-glossary#spline) to create an editable outline for the body of water with curves and bends.
 
-##  Make a Game Manager Using Verse
-Using Verse is the quickest and simplest way to manage your game, so let's create a Game Manager! For more information on how to create a Verse device, check out [Create Your Own Device Using Verse](https://dev.epicgames.com/documentation/uefn/create-your-own-device-using-verse-in-unreal-editor-for-fortnite).
-Create a new Verse file and name it **game_manager.verse**. Double-click the file to open it in VS Code.
-Add the following code to the file:
-Verse
-```
-using { /Fortnite.com/Devices }
-using { /Verse.org/Simulation }
-using { /UnrealEngine.com/Temporary/Diagnostics }
-using { /UnrealEngine.com/Temporary/SpatialMath }
+[![The Water Mesh Actor](https://dev.epicgames.com/community/api/documentation/image/55e55f8d-374f-49d8-94a5-cc9c560b5415?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/55e55f8d-374f-49d8-94a5-cc9c560b5415?resizing_type=fit)
 
-# A Verse-authored creative device that can be placed in a level
-game_manager := class(creative_device):
+## Add a River
 
-```
+To use the **River** tool, locate the **River thumbnail** from the **Environment** folder in the **Content Browser**, then drag it into the viewport.
 
-Copy full snippet(75 lines long)
-Compile the code and save your project.
-You may need to tweak the positions of hiding and resetting the ball.
-In UEFN, place the Verse device you just created in the scene and connect all the editable variables to your devices.
-[![](https://dev.epicgames.com/community/api/documentation/image/eed61d9d-6211-4034-a520-fbfa4f81f33d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/eed61d9d-6211-4034-a520-fbfa4f81f33d?resizing_type=fit)
-Start a session or push all changes to the Live Edit session and verify:
-  * The ball is moving when you push into it or hit it with the pickaxe.
-  * When you push the ball into the goal, a HUD message pops up, the score changes, and the ball resets to the center of the field.
+[![Drag the River tool from the Content Browser into the Viewport](https://dev.epicgames.com/community/api/documentation/image/ad9c8773-c9c5-43e3-99df-3c23bcdfa016?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ad9c8773-c9c5-43e3-99df-3c23bcdfa016?resizing_type=fit)
 
-Enjoy your new soccer game!
-Experiment by adding more balls, more devices, changing the scale, etc.! Here's an example of a modified soccer game:
+When the river tool is placed in the viewport, you can begin sculpting your river.
 
-[![](https://dev.epicgames.com/community/api/documentation/image/d80d1f83-3ac8-4bef-b146-c86bfc123cfd?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d80d1f83-3ac8-4bef-b146-c86bfc123cfd?resizing_type=fit)
+### Sculpt Rivers with Spline Points
+
+Spline points are like vertebrae on a spine; the line bends and flexes between points based on how you edit and move the spline.
+
+Right-click anywhere on a spline to open the **spline edit** menu.
+
+[![The spline edit menu](https://dev.epicgames.com/community/api/documentation/image/abd1b61b-1e0c-496f-9181-61d7844febdb?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/abd1b61b-1e0c-496f-9181-61d7844febdb?resizing_type=fit)
+
+The menu items under **Spline Point** include:
+
+| Menu Item | Value |
+| --- | --- |
+| **Delete Spline Point** | Deletes the selected spline point. |
+| **Duplicate Spline Point** | Creates a duplicate of the selected spline point. |
+| **Select Spline Points** | Opens a submenu with the following options:   - **Select All Spline Points:** Selects all points in the spline. - **Select Prev Spline Point:** Selects the previous points in the spline. - **Select Next Spline Point:** Selects the next point in the spline. - **Add Prev Spline Point:** Adds the previous spline point to the selection. - **Add Next Spline Point:** Adds the next spline point to the selection. |
+| **Spline Point Type** | Sets the spline point to either provide curve controls or linear controls. |
+| **Reset to Automatic Tangent** | Determines how to reset the tangent of curve spline points. Choose between:   - **Unclamped Tangent:** Reset the tangent value to its default unclamped value. - **Clamped Tangent:** Reset the tangent for this spline point to default value |
+| **Spline Generation Panel** | Opens a panel to create basic shapes within the selected spline. |
+| **Focus Selected** | Moves the camera in front of the selected spline. |
+| **Snap Align** | Opens a side menu with different options to snap or align the selected spline points:   - **Snap to Floor:** Snaps the selected spline to the floor. - **Align to Floor:** Aligns the selected spline with the floor. - **Snap to Nearest Spline Point:** Snaps the selected spine to the nearest spline point. - **Align to Nearest Spline Point:** Aligns the selected spline with the nearest spline point. - **Align Perpendicular to the Nearest Spline Point:** Aligns the selected spline perpendicular to the nearest spline point. - **Snap to Actor:** Snaps the selected spline point to a selected actor. - **Align to Actor:** Aligns the selected spline to a selected actor. - **Align Perpendicular to Actor:** Aligns the selected spline perpendicular to the selected actor. - **Snap All to Select X:** Snaps all splines to the selected spline point’s world X-axis position. - **Snap All to Select Y:** Snaps all splines to the selected spline point’s world Y-axis position. - **Snap All to Select Z:** Snaps all splines to the selected spline point’s world Z-axis position. - **Snap to Last Selected X:** Snap selected spline points to the X-axis world position of the last selected spline point. - **Snap to Last Selected Y:** Snap selected spline points to the Y-axis world position of the last selected spline point. - **Snap to Last Selected Z:** Snap selected spline points to the Z-axis world position of the last selected spline point. |
+| **Reset to Default** | Resets the selected spline to its archetype default. |
+| **Visualize Roll and Scale** | Toggle whether the visualization should roll and scale to the selected spline point. |
+| **Allow Discontinuous Splines** | Toggle whether the visualization allows Leave and Arrive tangents to be set separately. |
+| **Visualize Water Velocity** | Toggle the ability to visualize the velocity of the water. |
+| **Visualize River Width** | Toggle the ability to visualize the width of the river. |
+| **Visualize Depth** | Toggle the ability to visualize the depth of the river. |
+
+Extend the river by clicking spline points on either end of the default river tool, then translate the spline points by their pivot points.
+
+Create new spline points between the existing spline points by making duplicate spline points, then moving and editing the new spline points or by right-clicking at the spline and choosing **Add Spline Point Here**.
+
+Manipulate curves by clicking a spline point, then clicking one of the two tangent control points.
+
+Once you have created a river, toggle **Visualize Water Velocity**, **Visualize River Width**, and **Visualize River Depth** to view different characteristics. Viewing the river through these toggles helps you define what parts of the river need editing to fit the terrain. you can also change these properties for each spline point in the details panel.
+
+## Add a Lake
+
+To use the **Lake** tool, locate the **Lake thumbnail** in the **Content Browser** and drag it into the viewport. A default lake shape appears.
+
+Make a unique lake shape by adding or duplicating and translating spline points in the viewport.
+
+[![Default lake outline](https://dev.epicgames.com/community/api/documentation/image/498acbf5-fd59-4ad4-b3b0-9a7f7f044474?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/498acbf5-fd59-4ad4-b3b0-9a7f7f044474?resizing_type=fit)
+
+The spline menu offers all the basic spline editing features, but the river toggles are not available. Additional properties for the lake water body are available in the details panel such as depth, wave appearance, and how it interacts with the terrain.
+
+[![A unique lake shaped using duplicate splines and curvatures.](https://dev.epicgames.com/community/api/documentation/image/3dd2e27f-1b84-4a61-aff8-0d944c18922d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3dd2e27f-1b84-4a61-aff8-0d944c18922d?resizing_type=fit)
+
+## Add an Ocean
+
+To use the **Ocean** tool, locate the  **Ocean thumbnail** in the **Content Browser** and drag it into the viewport. A default ocean shape appears. Note that it usually makes sense to only have one ocean actor in your level.
+
+The Ocean water body provides very similar controls as the Lake water body. The difference is that for oceans the water appears outside of the spline whereas for lakes the water appear inside the spline.
+
+The ocean appears around the edge of the viewport, and currents move the water. Currents are a default part of the ocean environment.
+
+Edit spline points to create a custom shoreline.
+
+## Add an Island
+
+To use the Island tool, locate the Island thumbnail in the Content Browser and drag it into the viewport. For islands to be effective, they need to be placed inside of another water body.
+The Island tool provides the common spline editing capabilities, but it does not provide any additional properties. Its main purpose is to prevent other water bodies from carving out the terrain in the defined area.
+
+[![Island water tool](https://dev.epicgames.com/community/api/documentation/image/d85e3332-e446-4385-baf8-70c18307c69d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d85e3332-e446-4385-baf8-70c18307c69d?resizing_type=fit)
+
+## Add a Swimming Pool
+
+To use the SwimmingPool tool, locate the SwimmingPool thumbnail in the Content Browser and drag it into the viewport. This creates a free floating rectangle of water that does not affect the terrain with the main use cases being artificial swimming pools or fountains.
+The spline controls for the SwimmingPool tool are effectively non-functional. The shape is restricted to a rectangle, and you can use the normal translate, rotate, and scale controls to manipulate it.
+
+[![Pool water tool](https://dev.epicgames.com/community/api/documentation/image/48271727-d9c6-429b-bdac-2366bc80e900?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/48271727-d9c6-429b-bdac-2366bc80e900?resizing_type=fit)

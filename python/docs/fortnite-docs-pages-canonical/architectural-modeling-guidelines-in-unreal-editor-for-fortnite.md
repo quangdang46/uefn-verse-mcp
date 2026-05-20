@@ -1,238 +1,232 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/architectural-modeling-guidelines-in-unreal-editor-for-fortnite
 
-# Verse Detonation Template
-Use Verse with the Explosive device to create bombs for players to disarm.
-![Verse Detonation Template](https://dev.epicgames.com/community/api/documentation/image/d86fc2a0-e61e-472c-bd51-d48dbf6d8793?resizing_type=fill&width=1920&height=335)
-The **Verse Detonation Template** shows you how to create a game where two teams battle to arm and disarm bomb sites.
-This tutorial uses the Verse device and basic devices such as the Map Indicator device to perform gameplay mechanics like making beacons show depending on conditions.
-This template demonstrates Verse concepts like:
-  * Enums
-  * Concurrency
-    * Race
-    * Await
+# Architectural Modeling Guidelines
 
-##  Overview
-The following is an overview of the steps you'll need to recreate this island in the ideal sequence:
-  1. [Create a new project ](https://dev.epicgames.com/documentation/fortnite/starting-and-organizing-a-project-in-fortnite#create-a-new-project)and [modify Island Settings](https://dev.epicgames.com/documentation/fortnite/island-settings-in-unreal-editor-for-fortnite) to set up the game.
-  2. Set up devices.
-  3. Add the Verse Script.
-  4. [Set up the Verse device](https://dev.epicgames.com/documentation/fortnite/create-your-own-device-using-verse-in-unreal-editor-for-fortnite).
+Design unique and modular architectural assets for Unreal Editor for Fortnite using these guidelines for reference in size, vertices, and more.
 
-##  Creating a New Project and Setting Up the Game
-  1. Open UEFN and create a new empty project.
-  2. Select the **IslandSettings** device in the **Outliner** and locate **User Options - Game Rules**.
-[![Island Settings](https://dev.epicgames.com/community/api/documentation/image/47e8dd0a-a946-4410-aace-51b0248cab8d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/47e8dd0a-a946-4410-aace-51b0248cab8d?resizing_type=fit)
-  3. Modify the User Options as shown below.
+![Architectural Modeling Guidelines](https://dev.epicgames.com/community/api/documentation/image/88d951e6-a885-431e-b171-d2ff886a3c95?resizing_type=fill&width=1920&height=335)
 
-Option  |  Value  |  Explanation
----|---|---
-**Teams** |  Team Index 2 |  Players will be divided into teams of two.
-**Total Rounds** |  5 |  There will be five rounds before the game ends.
-**Allow Spectating Other Teams** |  Disallowed |  Players will not be able to spectate other teams.
-**Infinite Building Resources** |  False |  Players will not have infinite building materials during the game.
-**Building Can Destroy Environment** |  False |  Placing player-built structures cannot destroy any parts of the environment it overlaps with.
-**Environment Damage** |  Off |  Players cannot damage the environment during the game.
-**Pickaxe Destruction** |  None |  Pickaxes will cause no damage to the environment or buildings.
-**Allow Manual Respawning** |  False |  Players cannot use the **Respawn** menu option during the game.
-**Use Team Score** |  True |  Each team in the game gains stats through a sum of its players.
-##  Setting up the Devices
-This tutorial uses the following devices:
-  * 8 x [Explosive](https://www.fortnite.com/fortnite/en-US/creative/docs/using-explosive-devices-in-fortnite-creative)
-  * 2 x [Timed Objectives](https://www.fortnite.com/fortnite/en-US/creative/docs/using-timed-objective-devices-in-fortnite-creative)
-  * 4 x [Map Indicators](https://www.fortnite.com/fortnite/en-US/creative/docs/using-map-indicator-devices-in-fortnite-creative)
-  * 1 x [End Game](https://www.fortnite.com/fortnite/en-US/creative/docs/using-end-game-devices-in-fortnite-creative)
-  * ~ x [Player Spawn Pad](https://www.fortnite.com/fortnite/en-US/creative/docs/using-player-spawn-pad-devices-in-fortnite-creative)
-  * 1 x [Verse](https://dev.epicgames.com/documentation/fortnite/create-your-own-device-using-verse-in-unreal-editor-for-fortnite)
+With these guidelines, you’ll learn how to create architecture specifically for use in **Unreal Editor for Fortnite (UEFN)**. Each section below covers the measurements and [vertex](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#vertex) counts that work smoothly in UEFN.
 
-###  Explosive Device
-[![Explosive Device](https://dev.epicgames.com/community/api/documentation/image/82da554c-1e68-4387-991b-b4027e1ff61b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/82da554c-1e68-4387-991b-b4027e1ff61b?resizing_type=fit)
-Use the **Explosive** device to cause the explosion for detonated timers. On opposite sides of the map, copy and place a group of four Explosive devices.
-To set up this device, configure the **User Options** as follows:
-Option  |  Value  |  Explanation
----|---|---
-**Can Be Damaged** |  False |  This device will not take damage from players.
-###  Timed Objective
-[![Timed Objective](https://dev.epicgames.com/community/api/documentation/image/39c86917-25d3-485c-8c8d-fd3c953584a5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/39c86917-25d3-485c-8c8d-fd3c953584a5?resizing_type=fit)
-The **Time Objective** device serves as the detonator for each site. Place a Timed Objective device on both groups of Explosive devices.
-To set up this device, configure the **User Options** as follows:
-Option  |  Value  |  Explanation
----|---|---
-**Time** |  30 |  Determines the timer's length for the objective.
-**Start Score** |  2 |  Sets the amount of score to be awarded for successfully starting an unstarted timer.
-**Stop Score** |  5 |  Determines the amount of score to be awarded after successfully stopping an active timer.
-**Completed Score** |  3 |  Sets the amount of score to be awarded when the timer is complete.
-**Timer Label Text Style** |  Bold Orange |  Sets the style for the countdown display and custom text.
-**Start Team Filter** |  Team Index 1 |  Determines which team can start an unstarted timer.
-**Start Interact Text** |  Arm Bomb |  Sets the custom text to be displayed as a prompt for a player who can start an unstarted timer.
-**Start Interact Time** |  5 |  Determines the length of interaction required to start an unstarted timer.
-**Stop Team Filter** |  Team Index 2 |  Determines which team can stop an active timer.
-**Stop Interact Text** |  Disarm Bomb |  Sets the custom text to be displayed as a prompt for a player who can stop an active timer.
-**Stop Interact Time** |  5.0 |  Determines the length of interaction required to stop an active timer.
-**Timer Sound Distance** |  Whole Map |  Determines whether the timer sound is localized or audible anywhere on the map.
-###  Map Indicator Device
-[![Map Indicator](https://dev.epicgames.com/community/api/documentation/image/1af849b0-5bdc-46dd-8401-529fc5974cb5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1af849b0-5bdc-46dd-8401-529fc5974cb5?resizing_type=fit)
-Use the **Map Indicator** device to create custom markers on the minimap. For each explosive site place two Map Indicator devices above it, one for each team.
-To set up this device, configure the **User Options** as follows:
-Option  |  Value  |  Explanation
----|---|---
-**Icon Color** |  pick a color |  Sets the color of the displayed icon. Choose a color that represents each team.
-**Text** |  Explosive A - Explosive B |  Name one pair of Map Indicator devices Bomb A and the other Bomb B.
-###  End Game Device
-[![End Game](https://dev.epicgames.com/community/api/documentation/image/e2a2cc1f-ec7f-42ba-8a01-9d64926107f4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e2a2cc1f-ec7f-42ba-8a01-9d64926107f4?resizing_type=fit)
-Use the **End Game** device to end the round upon successfully disarming the bomb or if 30 seconds elapses and it explodes via Verse script.
-To set up this device, configure the **User Options** as follows:
-Option  |  Value  |  Explanation
----|---|---
-**Winning Team** |  Activating Team |  The team that activates the device will win the game.
-**What to End** |  End Round |  This device will end the game round.
-###  Player Spawn Pad Device
-[![Player Spawn Pad](https://dev.epicgames.com/community/api/documentation/image/7123eaa3-c069-47ca-93b3-c8a645c5f7a6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7123eaa3-c069-47ca-93b3-c8a645c5f7a6?resizing_type=fit)
-Group the team's **Player Spawn Pad** devices on opposite sides of your map. Each team will have its own spawners with Team 1 arming the bomb and Team 2 disarming the bomb. Teams will swap each round.
-To set up this device, configure the **User Options** as follows:
-Option  |  Value  |  Explanation
----|---|---
-**Player Team** |  Team Index 1 - 2 |  One set of spawn pads will be set to Team Index 1, while the other will be set to Team Index 2.
-###  Adding the Verse Scripts
-[Add the following Verse scripts](https://dev.epicgames.com/documentation/fortnite/create-your-own-device-using-verse-in-unreal-editor-for-fortnite), starting by referencing devices with the [@editable](https://dev.epicgames.com/documentation/fortnite/editable-properties-in-verse) function.
-You can copy the code in the order it's written. Comments are added within the script for clarity.
-Verse
-```
+### Architectural Budgets
 
-|     # enum to determine the state of the bombs
+An architectural budget is the total size of an architectural asset's data. These budgets are important to UEFN [projects](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#project) because some [assets](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#asset), like rocks or signs, might be placed numerous times on an island. Placing multiple instances of one [object](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#object) means that the project takes on the data size for the first asset placed, but not the duplicates.
 
----|---
+Project budgets include the data from the assortment of assets placed throughout the island.
 
-|
+UEFN projects have a maximum budget size that encompasses not only the assets inside the project, but the [devices](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#device), landscape, lighting – everything that makes up the complete island experience.
 
-|     bomb_state<public>:= enum {AllUnarmed, BombAArmed, BombBArmed}
+Below are examples of some basic architectural budgets for set pieces, floors, roofs, and more.
 
-```
+## Set Pieces
 
-# enum to determine the state of the bombs bomb_state<public>:= enum {AllUnarmed, BombAArmed, BombBArmed}
-Copy full snippet(3 lines long)
-The above code defines an enumeration to track the state of the bombs.
-Verse
-```
-      search_and_destroy := class(creative_device):
+Set pieces, such as stairs, can have a large budget for complex structures with detailed materials, or smaller budgets for simple designs and less detailed materials.
 
-        Logger:log = log{Channel:=log_search_and_destroy}
+### Stairs
 
-        @editable
+The suggested budgets below are for stairs.
 
-        TimedObjectiveA: timed_objective_device = timed_objective_device{}
+|  | LOD3 - Vertex Count | LOD0 MAX - Vertex Count |
+| --- | --- | --- |
+| Complex | 150 | 7,000 |
+| Medium | 120 | 3,900 |
+| Simple | 100 | 1,700 |
 
-        @editable
+[![Staircase budgets.](https://dev.epicgames.com/community/api/documentation/image/9d8496da-860d-42b3-ad4c-99af819a6686?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9d8496da-860d-42b3-ad4c-99af819a6686?resizing_type=fit)
 
-```
+### Floors and Ceilings
 
-Copy full snippet(49 lines long)
-You can use @editable to reference the devices.
-Verse
-```
-    # Runs when the device is started in a running game
+Floors and ceilings are usually all in one piece. The suggested budgets below are for floors.
 
-        OnBegin<override>()<suspends>:void=
+|  | LOD3 - Vertex Count | LOD0 MAX - Vertex Count |
+| --- | --- | --- |
+| Complex | 100 | 1,300 |
+| Medium | 75 | 600 |
+| Simple | 50 | 300 |
 
-            # The race expression is used to run a block of two or more async expressions concurrently (simultaneously). When the fastest expression completes, it "wins the race".
+[![Floor budgets](https://dev.epicgames.com/community/api/documentation/image/e39615ca-70e6-4ade-a638-56dbc3c7d21c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e39615ca-70e6-4ade-a638-56dbc3c7d21c?resizing_type=fit)
 
-            # https://www.fortnite.com/en-US/creative/docs/uefn/race-in-verse
+### Roof Pieces
 
-            race:
+Roof pieces can have a number of styles. The suggested budgets below are for roofs.
 
-```
+|  | LOD3 - Vertex Count | LOD0 MAX - Vertex Count |
+| --- | --- | --- |
+| Complex | 150 | 4,300 |
+| Medium | 120 | 2,253 |
+| Simple | 100 | 400 |
 
-Copy full snippet(37 lines long)
-The first section of code shows concurrency using race to determine if Bomb A or Bomb B was armed first.
-Verse
-```
-         block:
+[![Roof budgets](https://dev.epicgames.com/community/api/documentation/image/6a305a21-8ee8-4d0c-8003-e123c91ecd36?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6a305a21-8ee8-4d0c-8003-e123c91ecd36?resizing_type=fit)
 
-                    # Wait for Bomb B to be armed
+### Balcony Pieces
 
-                    ArmingPlayer:= TimedObjectiveB.StartedEvent.Await()
+Balcony pieces can have a number of styles. The suggested budgets below are for balconies.
 
-                    Print("Bomb B Armed",?Duration:=5.0)
+|  | LOD3 - Vertex Count | LOD0 MAX - Vertex Count |
+| --- | --- | --- |
+| Complex | 120 | 1,800 |
+| Medium | 100 | 1,500 |
+| Simple | 50 | 1,200 |
 
-```
+[![Balcony budgets](https://dev.epicgames.com/community/api/documentation/image/0e9529b0-55f1-4c87-bee4-2a0152daee7d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0e9529b0-55f1-4c87-bee4-2a0152daee7d?resizing_type=fit)
 
-Copy full snippet(63 lines long)
-The above code shows concurrency where the script waits for Timed Objective to either complete or be stopped.
-Verse
-```
-        # Disable the unarmed Beacons and enable the Beacon over the armed bomb
+### Walls
 
-        UpdateBeacons():void=
+Walls are two-sided architectural assets that have an interior and exterior. The suggested budgets below are for walls.
 
-            BombABeaconArm.Disable()
+|  | LOD3 - Vertex Count | LOD0 MAX - Vertex Count |
+| --- | --- | --- |
+| Complex | 120 | 2,000 |
+| Medium | 100 | 1,400 |
+| Simple | 50 | 700 |
 
-            BombBBeaconArm.Disable()
+[![Wall budgets](https://dev.epicgames.com/community/api/documentation/image/24312a24-875d-4474-b642-4fd0886ebc87?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/24312a24-875d-4474-b642-4fd0886ebc87?resizing_type=fit)
 
-```
+### Doors
 
-Copy full snippet(21 lines long)
-The above code updates the state of the beacons depending on which bomb is armed.
-Verse
-```
-     BombDetonated(Agent:agent):void=
+Doors can have a number of styles. The suggested budgets below are for doors.
 
-            Print("Bomb Detonated", ?Duration:=5.0)
+|  | LOD3 - Vertex Count | LOD0 MAX - Vertex Count |
+| --- | --- | --- |
+| Complex | - | 1,500 |
+| Medium | - | 900 |
+| Simple | - | 400 |
 
-            # Determine which set barrels should explode
+[![Door budgets](https://dev.epicgames.com/community/api/documentation/image/a2249531-0904-4f6e-beba-0604aa8790c9?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a2249531-0904-4f6e-beba-0604aa8790c9?resizing_type=fit)
 
-            if:
+## Creating Modular Pieces
 
-                BombState = bomb_state.BombAArmed
+You can create assets that use the world grid to snap pieces together, then package these items to make them modular. All buildings in the gallery folder in UEFN are made with modular pieces; doors, walls, roofs, stairs, and so on.
 
-```
+Modular pieces can be grouped by theme, genre, or art style. The [Fab](https://dev.epicgames.com/documentation/fortnite/import-from-fab-in-unreal-editor-for-fortnite) marketplace also has packs that include modular pieces.
 
-Copy full snippet(19 lines long)
-The above method is called when the Timed Objective device completes. It determines which barrels should explode and end the game.
-Verse
-```
+[![This image shows an example of modular pieces.](https://dev.epicgames.com/community/api/documentation/image/98711ec8-2476-465e-8972-351f78ef8c6f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/98711ec8-2476-465e-8972-351f78ef8c6f?resizing_type=fit)
 
-|       ExplodeBarrels(Barrels:[]explosive_device, Agent:agent):void=
+### Modular Guidelines
 
----|---
+The following is a list of guidelines for creating modular pieces for UEFN.
 
-|
+- Build using the existing building metrics and boundaries already used in UEFN.
+- Make sure your pivot points are in the correct position to work with the existing building system.
+- Use tiling textures and world-aligned materials to avoid seams.
+- Adding extra paneling, borders, and details to modular pieces can help reduce the amount of additional separate objects needed for set dressing.
+- Make modular objects in themed sets that can be mixed and matched. For example, for a modular wall, you can have a plain wall, then use the plain wall with built-in borders, and again with windows.
 
-|             for (Barrel : Barrels):
+The primary values in the tables below account for instances where traps can be used with that architectural piece. If the thickness for architectural pieces beow are too slim for the design you have in mind, it’s acceptable to make your pieces thicker than the guidelines set below.
 
-|
+[![Above is an example of using the same wall piece and adding detail to it to make it modular.](https://dev.epicgames.com/community/api/documentation/image/84d2e08e-6418-4f27-b5ea-a675e36a8926?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/84d2e08e-6418-4f27-b5ea-a675e36a8926?resizing_type=fit)
 
-|                 Barrel.Explode(Agent)
+*Click image to enlarge.*
 
-```
+### Walls
 
-ExplodeBarrels(Barrels:[]explosive_device, Agent:agent):void= for (Barrel : Barrels): Barrel.Explode(Agent)
-Copy full snippet(5 lines long)
-The above for loop to explode each barrel at the correct bomb site.
-###  Verse Device
-[![Verse Device](https://dev.epicgames.com/community/api/documentation/image/e3255960-7142-4481-8fbc-a7bb7eb8fe1f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e3255960-7142-4481-8fbc-a7bb7eb8fe1f?resizing_type=fit)
-Compile your Verse script then find your device in the **Content Drawer**. Drag the Verse device onto an unseen area of your map to customize the settings.
-Use this device to link direct event binding to the needed devices so they can be referenced by the Verse script.
-[![Direct Event Binding](https://dev.epicgames.com/community/api/documentation/image/09b74cdc-a4d5-41ec-9755-f2ff9f08ae2b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/09b74cdc-a4d5-41ec-9755-f2ff9f08ae2b?resizing_type=fit)
-In the device's **Details** panel, configure the settings to match each referenced device like the photo above.
-To set up this device, configure the **User Options** as follows:
-Option  |  Value  |  Explanation
----|---|---
-**TimeObjectiveA** |  Timed Objective BombSiteA |  Links the Timed Objective device with the Explosive site.
-**TimeObjectiveB** |  Timed Objective BombSiteB |  Links the Timed Objective device with the Explosive site.
-**ExplosiveBarrelsA** |  0 - BarrelBombSiteA_1 |  Links the Explosive device.
-**ExplosiveBarrelsA** |  1 - BarrelBombSiteA_2 |  Links the Explosive device.
-**ExplosiveBarrelsA** |  2 - BarrelBombSiteA_3 |  Links the Explosive device.
-**ExplosiveBarrelsA** |  3 - BarrelBombSiteA_4 |  Links the Explosive device.
-**ExplosiveBarrelsB** |  0 - BarrelBombSiteB_1 |  Links the Explosive device.
-**ExplosiveBarrelsB** |  1 - BarrelBombSiteB_2 |  Links the Explosive device.
-**ExplosiveBarrelsB** |  2 - BarrelBombSiteB_3 |  Links the Explosive device.
-**ExplosiveBarrelsB** |  3 - BarrelBombSiteB_4 |  Links the Explosive device.
-**EndGameDevice** |  End Game Device2 |  Links the End Game device.
-**BombAMapIndicators** |  0 - Map_Team1_BombsiteA |  Links the Map Indicator device with the Explosive site.
-**BombAMapIndicators** |  1 - Map_Team2_BombsiteA |  Links the Map Indicator device with the Explosive site.
-**BombBMapIndicators** |  0 - Map_Team1_BombsiteB |  Links the Map Indicator device with the Explosive site.
-**BombBMapIndicators** |  1 - Map_Team2_BombsiteB |  Links the Map Indicator device with the Explosive site.
-**BombABeaconArm** |  BeaconArmBombSiteA |  Arms the explosive for site A.
-**BombABeaconDisarm** |  BeaconDisarmBombSiteA |  Disarms the explosive site A.
-**BombBBeaconArm** |  BeaconArmBombSiteB |  Arms the explosive for site B.
-**BombBBeaconDisarm** |  BeaconDisarmBombSiteB |  Disarms the explosive for site B.
-Select **Launch Session** to test out your completed level.
+UEFN has a building gallery in the Content Browser that consists of:
+
+- Plain walls
+- Walls with windows
+- Walls with doors
+- Walls with doorways
+- Building corners
+- Roof end caps
+
+  - Quarter wall piece with roof (can be curved)
+  - Railing
+  - Trim Pieces (half wall and quarter wall)
+  - Roof cap
+  - Bay roof
+  - Corner roof piece (inner curved and outer curved)
+  - Roof edge
+  - Solar panels
+- Archways
+- And more
+
+You can only place traps on plain walls.
+
+[![Examples of walls.](https://dev.epicgames.com/community/api/documentation/image/e18cf732-f340-43ab-88dc-c84b35f39377?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e18cf732-f340-43ab-88dc-c84b35f39377?resizing_type=fit)
+
+The basic dimensions for a wall are:
+
+| Building Actor Dimensions | Measurements |
+| --- | --- |
+| Width (X-axis) | 512 cm |
+| Height (Z-axis) | 384 cm |
+| Thick (Y-axis) | 24 cm (12 cm along +Y and 12 cm along -Y) |
+
+Walls with decorations like windows and doors can have a thickness that extends along the positive and negative Y-axes. Half walls are 192 cm tall and 512 cm wide. Quarter walls are 96 cm tall and 512 cm wide.
+
+The main goal when creating a wall is to ensure that the majority of the thickness of the wall remains at 24 cm total thickness. If you want to include an accessory as part of the wall that extends your mesh, that’s acceptable. For example if you were to design an AC unit into a window piece, that would warrant extending beyond 24 cm.
+
+Use the graybox set in the Content Browser when creating architectural pieces. The graybox set contains the proper size and shapes for grid-compliant pieces. Find the graybox set by selecting **Fortnite** > **Graybox** from the Content Browser folders.
+
+### Floors and Ceilings
+
+Floor and ceiling actors are hybrids, meaning the top faces have floor textures and the bottom faces have ceiling textures so they work whether you place them above or below a player, without having to rotate the piece.
+
+Traps can be placed on floor or ceiling pieces, so make sure that your floors and ceilings are not too thick, which can cause the traps to clip through the asset.
+
+[![Example of floor and ceiling pieces.](https://dev.epicgames.com/community/api/documentation/image/4711e237-3df3-4b30-bd63-cdecba35d3cc?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4711e237-3df3-4b30-bd63-cdecba35d3cc?resizing_type=fit)
+
+| Building Actor Dimensions | Measurements |
+| --- | --- |
+| Length (X-axis) | 512 cm |
+| Width (Z-axis) | 512 cm |
+| Thick (Y-axis) | 24 cm (12 cm along +Z and 12 cm along -Z) |
+
+A floor mesh can also include a skylight, a corner with railing, or a semi-circular tile. You cannot place traps on these types of building actors.
+
+### Stairs
+
+Stairs come in four varieties:
+
+- Regular staircase
+- Half staircase
+- Staircase with a right-hand turn
+- Double-back staircase
+
+[![Example of stairs and their varieties.](https://dev.epicgames.com/community/api/documentation/image/63faa6f7-3066-4d3e-8d59-9f83c3e6f315?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/63faa6f7-3066-4d3e-8d59-9f83c3e6f315?resizing_type=fit)
+
+| Building Actor Dimensions | Measurements |
+| --- | --- |
+| Length (X-axis) | 512 cm |
+| Width (Y-axis) | 512 cm |
+| Height (Z-axis) | 384 cm |
+| Thick | 24 cm |
+
+Stay within the gridspace outlined above when creating stairs. Otherwise the staircase won’t meet the top of a wall, but instead hang above or below the top of the wall. Railings can go beyond the gridspace boundary.
+
+### Roofs
+
+Roofs are flexible in terms of modeling restrictions. There are two kinds of roof, in the image below this is not a typical roof piece, it’s a peak. A typical roof is a ramp that intersects with one grid piece.
+
+The guidelines for a typical ‘ramp’ style roof provides a way for you to create double or triple height roofs, or transition from wall to roof to a flat top over the course of multiple grid pieces.
+
+It’s okay in certain situations to have the roof extend beyond the confines of the dimensions below to make overhangs, rain gutters, and so on. But these decorative features greatly reduce the model’s versatility.
+
+| Building Actor Dimensions | Measurements |
+| --- | --- |
+| Length (X-axis) | 512 cm |
+| Width (Y-axis) | 512 cm |
+| Height (Z-axis) | 384 cm |
+| Thick | 24 cm (12 cm along +Y and 12 cm along -Y) |
+
+Stay within the gridspace when creating roofs. Below are examples of where overhangs have been added to a roof mesh. Overhang elements are circled in yellow.
+
+[![Example of roof with trim element.](https://dev.epicgames.com/community/api/documentation/image/e948d9ba-9ec4-468a-abdc-a25a7146d4e7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e948d9ba-9ec4-468a-abdc-a25a7146d4e7?resizing_type=fit)
+
+A good solution to circumvent this is to have the overhang part be a separate model, like a trim set that goes with the roof set. This adds draw calls, but you’ll have an easier time making sure the roof meshes tile better to wall building actors.
+
+You can create separate pieces to create a roof cap that sits on top of the ramp style roof for decoration.
+
+[![An example of a decorative roof cap that sits on top of the ramp roof style.](https://dev.epicgames.com/community/api/documentation/image/2adfd8c6-762e-4a30-8af3-fdd26d33a3b6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2adfd8c6-762e-4a30-8af3-fdd26d33a3b6?resizing_type=fit)
+
+### Trim
+
+Building trim gives buildings a more realistic look. Trim should never exceed the dimensions outlined below. There a many different types and styles of trim as you can see in the image below.
+
+[![Examples of what a piece of trim can be.](https://dev.epicgames.com/community/api/documentation/image/1bbad731-d594-4559-9e75-207d61763f13?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1bbad731-d594-4559-9e75-207d61763f13?resizing_type=fit)
+
+| Building Actor Dimensions | Measurements |
+| --- | --- |
+| Width (X-axis) | 512 cm |
+| Height (Z-axis) | 964 cm |
+| Thick (Y-axis) | 70 cm |

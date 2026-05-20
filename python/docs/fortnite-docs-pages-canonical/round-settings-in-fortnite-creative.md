@@ -1,128 +1,65 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/round-settings-in-fortnite-creative
 
-# 4. Toggling Lights with Buttons
-Create a puzzle where the player has to find the right combination of lights on and off to spawn an item, using a device created with Verse.
-![4. Toggling Lights with Buttons](https://dev.epicgames.com/community/api/documentation/image/6dad7db8-a913-4762-b18f-6ddf208c2991?resizing_type=fill&width=1920&height=335)
-######  Prerequisite topics
-In order to understand and use the content on this page, make sure you are familiar with the following topics:
-  * [3. Finding the Lights at Runtime with Verse Tags](https://dev.epicgames.com/documentation/fortnite/tagged-lights-3-finding-the-lights-at-runtime-with-gameplay-tags-in-verse)
+# Round Settings
 
-By completing this step in the [Tagged Lights Puzzle](https://dev.epicgames.com/documentation/fortnite/tagged-lights-puzzle-in-verse) tutorial, you'll learn how to toggle a group of lights based on which button the player interacts with.
-##  Toggling Lights
-You’ll need to create a mapping between a button and the group of lights it should toggle when the player interacts with the button. To do this, you can map each button to the indices of the lights in the `Lights` array.
-This example using the following mapping between buttons and lights:
-  * Button 1 maps to the light at index 0 and the light at index 3
-  * Button 2 maps to the light at index 0, the light at index 1, and the light at index 2
-  * Button 3 maps to the light at index 0, and the light at index 1
-  * Button 4 maps to the light at index 1
+Set the parameters for rounds in your game.
 
-You can represent this mapping with an array named `ButtonsToLights`, where each element of `ButtonsToLights` is another array that holds the indices of the lights. The type of `ButtonsToLights` is then `[][]int`, to specify that `ButtonsToLights` is an array of integer arrays.
-|  |  |  |
----|---|---|---|---
-**Index** |  0 |  1 |  2 |  3
-**Element** |  array{0, 3} |  array{0, 1, 2} |  array{0, 1} |  array{1}
-Follow these steps to toggle the lights:
-  1. Create an array of integer arrays named `ButtonsToLights` and initialize it with the button-to-light indices mapping described in the table above.
-Verse
-```
+![Round Settings](https://dev.epicgames.com/community/api/documentation/image/ff8bcd04-2622-45a5-a3af-20eae52ca4a5?resizing_type=fill&width=1920&height=335)
 
-```
+Games are divided into **rounds**. A round is a single play in a game to a specific end result, and a game can have only one round or many rounds. A round can be based on a time limit, an accumulation of points, or the accomplishment of some other objective.
 
-ButtonsToLights : [][]int = array{array{0, 3}, array{0, 1, 2}, array{0, 1}, array{1}}
-Copy full snippet(1 line long)
-An array’s indices start at 0 and go up to the number of elements minus 1. So the first element of `ButtonsToLights` is at index 0 and the last element is at index 3.
-  2. Add a new [method](https://dev.epicgames.com/documentation/fortnite/verse-glossary#method) called `ToggleLights()` to the `tagged_lights_puzzle` class. This method will toggle the lights in the `Lights` array on / off based on the indices given to the function as an integer array (to match the elements of the array `ButtonsToLights`) and update the elements at the same indices in `LightsState`.
-    1. Add the parameter `LightIndices : []int` to the method `ToggleLights()` and print each index to the output log using the `for` expression. `                         ToggleLights(LightIndices : []int) : void =                              for:                                  LightIndex : LightIndices                              do:                                  Logger.Print("Toggling light at {LightIndex}") `
-    2. Call `ToggleLights()` in `OnBegin()` to test out the method as you create it. Use the first element of `ButtonsToLights` as a test. Because indexing into an array is a [failable expression](https://dev.epicgames.com/documentation/fortnite/verse-glossary#failable-expression), you’ll have to access the array from a failure context. This example uses the `if` expression for the failure context.
-Verse
-```
+Games can be won based on individual rounds won. Gameplay can change between rounds. This would include changes like team assignments, weapons, and so on.
 
-```
+The **Round category** is where you define such settings as end conditions and victory conditions for each round, and what happens when a round is complete. Each of these can also be defined for the overall game on Mode Settings. There are multiple round categories that you can modify to change gameplay, and many of these have multiple settings.
 
-OnBegin&lt;override&gt;()&lt;suspends&gt; : void = SetupPuzzleLights() # Use the first element of ButtonsToLights to test the method ToggleLights if (LightIndices : []int = ButtonsToLights[0]): ToggleLights(LightIndices)
-Copy full snippet(6 lines long)
-  3. Now that you have the `LightIndex`, access the `Lights` and `LightsState` arrays at that index to get the Customizable Light Device reference and its current state. Toggling a light means: if the light is on, turn it off; and if the light is off, turn it on. Update the print statement to say what the new state of the light will be.
-Verse
-```
+From the **Island Settings** tab, click the **Round category**, then click a **subcategory** to expand the settings.
 
-```
+[![Use round settings to control gameplay.](https://dev.epicgames.com/community/api/documentation/image/c9052f73-6013-428a-bcdd-928799424d97?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c9052f73-6013-428a-bcdd-928799424d97?resizing_type=fit)
 
-ToggleLights(LightIndices : []int) : void = for: LightIndex : LightIndices Light := Lights[LightIndex] IsLightOn := LightsState[LightIndex] do: Logger.Print(&quot;Turning light at {LightIndex} {if (IsLightOn?) then &quot;Off&quot; else &quot;On&quot;}&quot;)
-Copy full snippet(7 lines long)
-  4. Now update the state of the Customizable Light Device both in-game and in the `LightsState` array.
-    1. Call `TurnOn()` on the light if `IsLightOn` is `false` and `TurnOff()` on the light if `IsLightOn` is `true`. The last expression in a code block is the result, so setting `false` or `true` as the last expression means that value will be stored in `NewLightState`.
-Verse
-```
-ToggleLights(LightIndices : []int) : void =
-    for:
-        LightIndex : LightIndices
-        Light := Lights[LightIndex]
-        IsLightOn := LightsState[LightIndex]
-    do:
-        Logger.Print("Turning light at {LightIndex} {if (IsLightOn?) then "Off" else "On"}")
-        NewLightState :=
-            if (IsLightOn?):
-                Light.TurnOff()
+If you know the name of a setting you want to change, use the **search box** to find it.
 
-```
+Any changes you make to these settings are automatically saved. You can restore the settings to their original values at any time by clicking the **Restore Defaults** button. This will reset only the settings for your current category.
 
-Copy full snippet(14 lines long)
-    2. Update the `LighsState` element at `LightIndex` with the value in `NewLightState`. Since array indexing is a failable expression, setting the `LightsState` must be wrapped in a failure context. In this example, the failure context is the `if` expression. Print to the output log that the state was updated.
-Verse
-```
-ToggleLights(LightIndices : []int) : void =
-    for:
-        LightIndex : LightIndices
-        IsLightOn := LightsState[LightIndex]
-        Light := Lights[LightIndex]
-    do:
-        Logger.Print("Turning light at {LightIndex} {if (IsLightOn?) then "Off" else "On"}")
-        NewLightState :=
-            if (IsLightOn?):
-                Light.TurnOff()
+The following sections describe the settings available in each subcategory, and how you can use them.
 
-```
+Some settings are grayed out. This usually indicates that another setting must be changed before that setting is available.
 
-Copy full snippet(16 lines long)
-It's a good idea to print to the output log when using failure contexts. If any expression fails in a failure context, then any changes made in the failure context are rolled back, as if they never happened. If you print to the output log, you can double-check that the change was made if the text appears in the output log, without relying solely on the in-game state to verify whether the change was successful.
+## End Condition Settings
 
-##  Connecting Button Presses to Toggling Lights
-Now that you’ve defined how to toggle the lights, the next step is to connect button presses to toggling the lights on or off.
-You can do this by subscribing to the Button’s `InteractedWithEvent`. See [Coding Device Interactions](https://dev.epicgames.com/documentation/fortnite/coding-device-interactions-in-verse) for more details on event subscription.
-The `InteractedWithEvent` expects an event handler with one parameter `InPlayer : agent` and a `void` return type, but the event handler also needs to know which lights the button that sent the event is connected to and also hold a reference to your Verse device `tagged_lights_puzzle` to be able to call its method `ToggleLights()`.
-You can bundle all this information into a custom object by creating a new class that contains the indices and the function to subscribe. This way each button has its own personal state and event handler as represented by this new class.
-Follow these steps to create a custom object for event handling:
-  1. Create a new class named `button_event_handler`. The class definition should have the following:
-    1. An integer array named `Indices`.
-    2. A `tagged_lights_puzzle` field named `PuzzleDevice`, which is the reference to your Verse device, so you can call the `ToggleLights()` method.
-    3. A method named `OnButtonPressed()` with the parameter `InPlayer : agent` and a `void` return type, which calls `ToggleLights()` on the `PuzzleDevice`. `                         button_event_handler := class():                              # Positions used to access the lights this button controls.                              Indices : []int 								                              # tagged_lights_puzzle that created this button_event_handler so we can call functions on it.                              PuzzleDevice : tagged_lights_puzzle 								                                  OnButtonPressed(InPlayer : agent) : void =                                  # Tell the PuzzleDevice to toggle the lights at the positions this button controls.                                  PuzzleDevice.ToggleLights(Indices) `
-  2. Create an editable `button_device` array field in the `tagged_lights_puzzle` class to reference the buttons the player can interact with: `     @editable      Buttons : []button_device = array{} `
-  3. Now update `OnBegin()` in the `tagged_lights_puzzle` class to create a `button_event_handler` instance for each button. The button_event_handler needs the following information:
-     * Indices of the lights associated with the button, which you can get from the `ButtonsToLights` array using the `ButtonIndex` provided by the `for` expression. You can get this as a filter condition of the `for` expression used to iterate through all the `Buttons`. This also acts as a safeguard that protects the code from indexing invalid data; if the indexing fails, the program would still be valid since that failing iteration is skipped (this failure could happen if you forgot to match the number of `ButtonsToLights` to the number of `Buttons`).
-     * A reference to your Verse device, the instance of `tagged_lights_puzzle`. To get a reference to the current object from inside a class definition, you can use `Self`.
-     * Creating a `button_event_handler` object with this data looks like the following:
-Verse
-```
+**Rounds** can have end conditions the same as games do. In rounds, these are the conditions that must be met to end a round.
 
-```
+| Option |  | Description |
+| --- | --- | --- |
+| Time Limit | 5 Minutes, None, Pick a time | Sets how long a round will last. If there's only one round, then this is also how long the game lasts. If set to None, there is no time limit. |
+| Timer Direction | Count Down, Count Up | Specifies whether the timer will count down to zero, or up from zero to the set time limit. |
+| Eliminations to End | Off, Pick a number | If you set a number, the round will end when a player or team reaches the objective of the number of specified eliminations. |
+| AI Enemy Eliminations to End | Off, Pick a number | If you set a number, the round will end when a player or team reaches the objective of the number of specified AI enemy eliminations. |
+| Objectives to End | Off, Pick a number | If you set a number, the round will end when a player or team reaches the set number of objectives. |
+| Collect Items to End | Off, All, Specific Count | If All or Specific Count, the round will end when a player or team has collected the specified items. If you select Specific Count, you can also say how many under Collect Item Count. |
+| Stat to End | Off, Score, Collect Items, Objectives, AI Eliminations, Eliminations, Elimination Assists, Eliminated, Damage Dealt, Damage Taken | Compares the value of this setting to the value of the Stat Value to End option to determnine when the round ends. |
+| Stat Value to End | 1, Pick a number | This setting is only available if the Stat to End is set to something other than Off. Ends the round when the Stat to End reaches the value set in this option. |
+| Collect Item Count | 1, Pick a number | If Collect Items to End is set to Specific Count, you can define that count here. |
 
-OnBegin&lt;override&gt;()&lt;suspends&gt; : void = SetupPuzzleLights() for: ButtonIndex -&gt; Button : Buttons LightIndices := ButtonsToLights[ButtonIndex] do: button_event_handler{Indices := LightIndices, PuzzleDevice := Self}
-Copy full snippet(8 lines long)
-  4. You can now use the newly created handler's `OnButtonPressed()` function to subscribe to the Button device's `InteractedWithEvent`. When the `OnButtonPressed()` function is called, you have access to the light indices and a reference to the `tagged_lights_puzzle` device associated with the button that the player interacted with.
-Verse
-```
+## Post Round
 
-```
+**Post round** **settings** determine what happens at the end of a round, such as animations, slow motion, and so on.
 
-OnBegin&lt;override&gt;()&lt;suspends&gt; : void = SetupPuzzleLights() for: ButtonIndex -&gt; Button : Buttons LightIndices := ButtonsToLights[ButtonIndex] do: Button.InteractedWithEvent.Subscribe(button_event_handler{Indices := LightIndices, PuzzleDevice := Self}.OnButtonPressed)
-Copy full snippet(8 lines long)
-  5. Save the script in Visual Studio Code.
-  6. In the UEFN toolbar, click **Build Verse Scripts** to update your Verse device in the level with your new code.
-  7. In the **Outliner** , select the **tagged_lights_puzzle** device to open its **Details** panel.
-  8. In the Details panel, add four elements to the `Buttons` array and assign a different button for each one. You don't need to modify the other properties because the script will populate those properties.
-  9. In the UEFN toolbar, click **Play** to playtest the level.
+| Option | Values | Description |
+| --- | --- | --- |
+| Victory Animation | Default, None | Determines what animation is shown upon victory. The Default shows the confetti animation. |
+| Slow Motion On End of Round | On, Off | Determines whether slow motion effects are enabled or not when the round ends. |
+| Round Winner Display Time | Don't Show, 3 seconds, Pick an amount of time | Determines how long the round winner's name is displayed at the end of the round. |
+| Round Score Display Time | Don't Show, 15 seconds, Pick an amount of time | Determines how long the scoreboard is displayed at the end of the round. |
+| Keep Dropped Items Between Rounds | On, Off | Determines if items dropped on the ground are destroyed or if they remain after the end of a round. |
 
-When you playtest your level now, you should be able to interact with the buttons, and each button should toggle a different set of lights based on the `ButtonsLightsIndices` setup. Keep in mind that `FindCreativeObjectsWithTag()` doesn’t guarantee a specific order, so the lights that are toggled based on the order in the script might not match the order you see in the level.
-[![Player pressing buttons and each button toggles a different set of lights](https://dev.epicgames.com/community/api/documentation/image/0a1274b4-7ece-4f5a-b9d1-02fde66f1969?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0a1274b4-7ece-4f5a-b9d1-02fde66f1969?resizing_type=fit)
-##  Next Step
-In the [next step](https://dev.epicgames.com/documentation/fortnite/tagged-lights-5-detecting-when-the-puzzle-is-solved-in-verse) of this tutorial, you’ll learn how to detect when the player solves the puzzle so you can spawn an item and prevent further interaction with the puzzle
+## Victory Condition Settings
+
+**Victory condition settings** determine which player or team wins a round. You can use these settings in conjunction with the **end condition settings** to determine very specific victory conditions.
+
+| Option | Values | Description |
+| --- | --- | --- |
+| Round Win Condition | None, Pick a condition | Determines the basis for winning a round. If the Scoreboard options under User Interface are left at default, the stat chosen for this option will display in the first column.  Possible conditions are:  **Eliminations:** Most eliminations overall  **Assists:** Most assisted eliminations  **Eliminated:** Least eliminations for team or player  **Collect Items:** Most collected items  **Health:** Amount of health left at end of round  **AI Eliminations:** Number of hostile AIs eliminated  **Score:** Amount of score at end of round  **Objectives:** Number of objective accomplished in the round  **Time:** Time left at end of round  **Spawns Left:** Number of respawns left at end of round  **Lap Time:** Average lap time per round  **Time Alive:** Time survived until elimination  **Damage Dealt:** The amount of damage dealt by player or team  **Damage Taken:** The amount of damage taken by player or team  **Race Time:** Best time (useful for racing or parkour games) |
+| Tiebreaker Condition 1 | None, Pick a condition | If the Round Win Condition results in a tie, this condition will break the tie. Conditions are the same as for Round Win Condition. By default, this stat shows in the second Scoreboard column. |
+| Tiebreaker Condition 2 | None, Pick a condition | This condition breaks the tie if the first two conditions are tied. |
+| Tiebreaker Condition 3 | None, Pick a condition | This condition breaks the tie if the first three conditions are tied. |
+| Tiebreaker Condition 4 | None, Pick a condition | This condition breaks the tie if all earlier conditions are tied. If this one is also tied, the round is a draw. |

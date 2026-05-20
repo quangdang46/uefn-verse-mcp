@@ -1,7 +1,21 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/simulation/editable_number
 
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+# editable_number function
 
-**Session ID** : 9dfa4f1799e7e2fb
-**IP Address** : 14.191.95.176
+Learn technical details about the editable_number function.
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /Verse.org/Simulation }` |
+
+`editable_number<public>(t:any):`
+
+This function is a parametric type, meaning it returns a class or interface rather than a value or object instance.
+
+## Parameters
+
+`editable_number` takes the following parameters:
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `t` | `any` |  |

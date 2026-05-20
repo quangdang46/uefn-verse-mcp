@@ -1,55 +1,63 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/uefnonly-devices-in-fortnite
 
-# Water Devices
-Create bodies of water like lakes, ponds or canals that players can swim and fish in, or drive boats on!
-![Water Devices](https://dev.epicgames.com/community/api/documentation/image/a7597e62-6e1a-4c89-b62e-42163f9c9547?resizing_type=fill&width=1920&height=335)
-You can use the **Water device** to create a body of water on your island that players can interact with. You can control the water level, and make it increase or decrease with triggered events.
-The device creates water within a specific [volume](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#volume), which you can customize to create lakes, ponds, oceans, swimming pools, sewers, and so on. Players can swim in these bodies of water, or drive boats on them. You can also place [fishing zones](https://dev.epicgames.com/documentation/fortnite/using-fishing-zone-devices-in-fortnite-creative) in these bodies of water so that players can fish.
-For information on finding devices see [**Using Devices**](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite-creative). To find the Water device in UEFN, open the Content Drawer and click **Fortnite > Devices > Environment**.
-If you're using multiple copies of a device on an island, it can be helpful to [rename](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#rename-a-device) them. You can choose names that relate to each device's purpose, so it's easier to remember what each one does.
-##  Device Options
-This device has some basic functionality, like setting the size of the water volume, and how quickly the volume fills or empties. Additionally, there are some advanced options, like when the device is enabled, and whether it interacts with [Trigger devices](https://dev.epicgames.com/documentation/fortnite/using-trigger-devices-in-fortnite-creative).
-Default values are **bold**.
-You can configure this device with the following options.
-Option  |  Value  |  Description
----|---|---
-**Enable During Phase** |  None, All, Create Only, Game Countdown Only, **Gameplay Only** |  Determines in which phases the water volume is enabled.
-**Interact With Trigger** |  **Off** , On |  Determines whether the water interacts with the Trigger device. If you choose **Yes** , you can place Trigger devices in the water volume where they will be affected by the water level. You can then use the Trigger to initiate an event related to the water level.
-**Zone Width** |  **1.0** , Pick a size in tiles |  Determines the width of the water volume, in [tiles](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#tile).
-**Zone Depth** |  **1.0** , Pick a size in tiles |  Determines the depth of the water volume, in tiles.
-**Zone Height** |  **1.0** , Pick a size in tiles |  Determines the height of the water volume, in tiles.
-**Default Vertical Water Percentage** |  **100.0** , Pick a percentage |  Determines the default vertical water level as a percentage of the value set in the **Water Height** option.
-**Vertical Filling Speed (T PM)** |  **60.0** , Pick a speed |  Determines the rate at which the volume fills with water.
-**Vertical Emptying Speed (T PM)** |  **60.0** , Pick a speed |  Determines the rate at which the volume's water empties.
-**Water Type** |  **Default** , River Styx, Red River Styx |  Determines what kind of water fills the volume. **River Styx** creates green water with a special effect. **Red River Styx** creates red water with a special effect.
-##  Direct Event Binding
-Following are the [direct event binding](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#direct-event-binding) options for this device.
-###  Functions
-A [function](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) listens for an event on a device then performs an action.
-  1. For any function, click the option, then Select Device to access and select from the **Device** dropdown menu.
-  2. Once you've selected a device, click Select Event to bind the device to an event that will trigger the function for the device.
-  3. If more than one device or event triggers a function, press the Add button to add a line and repeat these steps.
+# UEFN-Only Devices
 
-Option  |  Description
----|---
-**Enable When Receiving From** |  Enables the device when an event occurs.
-**Disable When Receiving From** |  Disables the device when an event occurs.
-**Reset Water When Receiving From** |  Resets the water level to its default percentage level when an event occurs.
-**Resume Vertical Movement When Receiving From** |  Resumes the last vertical movement of the water when an event occurs.
-**Start Vertical Emptying When Receiving From** |  Starts emptying the water level when an event occurs.
-**Start Vertical Filling When Receiving From** |  Starts filling the volume vertically with water when an event occurs.
-**Stop Vertical Movement When Receiving From** |  Stops the volume from filling or emptying further when an event occurs.
-###  Events
-Direct event binding uses events as transmitters. An event tells another device to perform a function.
-  1. For any event option, click the **option** , then **Select Device** to access and select from the **Device** dropdown menu.
-  2. Once you've selected a device, click **Select Function** to bind the timer to a function for that device.
-  3. If more than one function is triggered by the event, press the **Add** button and repeat.
+Learn about using devices in UEFN and Verse!
 
-Option  |  Description
----|---
-**On Player Entering Water Send Event To** |  Sends an event to a linked device when a player enters the water.
-**On Player Leaving Water Send Event To** |  Sends an event to a linked device when a player enters the water.
-**On Vertical Emptying Completed Send Event To** |  Sends an event to a linked device when the water level reaches 0 percent.
-**On Vertical Filling Completed Send Event To** |  Sends an event to a linked device when the water level reaches 100 percent.
-##  Device Design Examples That Use This Device
-  * [Grind Vine Device Example](https://dev.epicgames.com/documentation/fortnite/grind-vine-device-design-example-in-fortnite-creative)
+![UEFN-Only Devices](https://dev.epicgames.com/community/api/documentation/image/9279faf2-a191-43be-8974-5772bf7050e8?resizing_type=fill&width=1920&height=335)
+
+In UEFN, you have access to all the devices available in Fortnite Creative, but there are also devices that you can only use with UEFN.
+
+Once you've placed a UEFN-only device on your island, you might also be able to modify the device options in Creative during a Live Edit session, depending on the device.
+
+You can also customize or even build your own devices in UEFN using Verse.
+
+To learn more about all of the devices available, see the full list of documented devices under [Using Devices](https://www.epicgames.com/fortnite/en-US/creative/docs/using-devices-in-fortnite-creative) .
+
+For any Creative design examples in the [Device Design Examples](https://dev.epicgames.com/documentation/fortnite/device-design-examples-in-fortnite-creative), you can also make these examples in UEFN.
+
+- [![Conversations](https://dev.epicgames.com/community/api/documentation/image/f51fca61-571b-4991-af61-222031fdb757?resizing_type=fit&width=640&height=640)
+
+  Conversations
+
+  Learn how to develop narratives, use the conversation device, and more.](https://dev.epicgames.com/documentation/fortnite/conversations-in-unreal-editor-for-fortnite)
+- [![Decal Device](https://dev.epicgames.com/community/api/documentation/image/283b4c9f-1dfa-401c-aed4-f6b71610474a?resizing_type=fit&width=640&height=640)
+
+  Decal Device
+
+  Use the Decal device to add graffiti, secret messages and symbols to your island.](https://dev.epicgames.com/documentation/fortnite/decal-device-in-unreal-editor-for-fortnite)
+- [![Using Accolades](https://dev.epicgames.com/community/api/documentation/image/51af6264-2ead-4359-b350-4470bfc9b2f1?resizing_type=fit&width=640&height=640)
+
+  Using Accolades
+
+  Learn to grant players different types of Accolades in UEFN!](https://dev.epicgames.com/documentation/fortnite/using-accolades-devices-in-unreal-editor-for-fortnite)
+- [![Using Analytics](https://dev.epicgames.com/community/api/documentation/image/ab23aae1-cf9d-4e31-a931-3f34e78a2520?resizing_type=fit&width=640&height=640)
+
+  Using Analytics
+
+  Gather analytical data about players' ability to complete objectives using the Analytics device.](https://dev.epicgames.com/documentation/fortnite/using-analytics-in-unreal-editor-for-fortnite)
+- [![Using Direct Event Binding](https://dev.epicgames.com/community/api/documentation/image/5cdf238f-f013-4214-9bb6-2d6b80a3a0aa?resizing_type=fit&width=640&height=640)
+
+  Using Direct Event Binding
+
+  Use direct event binding to link device interactions.](https://dev.epicgames.com/documentation/fortnite/direct-event-binding-in-unreal-editor-for-fortnite)
+- [![Create Your Own Device Using Verse](https://dev.epicgames.com/community/api/documentation/image/78acf6e2-82a8-4f3d-b0da-6e5eb05f353a?resizing_type=fit&width=640&height=640)
+
+  Create Your Own Device Using Verse
+
+  Make your own device and rules using Verse!](https://dev.epicgames.com/documentation/fortnite/create-your-own-device-using-verse-in-unreal-editor-for-fortnite)
+- [![Coding Device Interactions](https://dev.epicgames.com/community/api/documentation/image/41e020b3-05f2-4eb8-8644-0ddc73ae8fb2?resizing_type=fit&width=640&height=640)
+
+  Coding Device Interactions
+
+  Use Verse to code your own functions and behavior that run when events occur](https://dev.epicgames.com/documentation/fortnite/coding-device-interactions-in-verse)
+- [![Gameplay Camera and Control Devices](https://dev.epicgames.com/community/api/documentation/image/ed78b2af-c312-40cd-ba22-b131bad18f72?resizing_type=fit&width=640&height=640)
+
+  Gameplay Camera and Control Devices
+
+  Add lights and post processing to a fixed camera to create the ultimate experience.](https://dev.epicgames.com/documentation/fortnite/gameplay-camera-and-control-devices-in-unreal-editor-for-fortnite)
+- [![Persistence Devices](https://dev.epicgames.com/community/api/documentation/image/feeec9a1-02ed-417f-8d4c-375f2c8a1331?resizing_type=fit&width=640&height=640)
+
+  Persistence Devices
+
+  Create save points, player inventory, leaderboards, and evolving worlds by recording persistent data.](https://dev.epicgames.com/documentation/fortnite/persistence-devices-in-unreal-editor-for-fortnite)

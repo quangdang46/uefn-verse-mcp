@@ -1,182 +1,292 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/lego-asset-inventory-in-fortnite-creative
 
-# 38.10 Fortnite Ecosystem Updates and Release Notes
-Find out what's new with the 38.10 release of Fortnite on November 11, 2025!
-![38.10 Fortnite Ecosystem Updates and Release Notes](https://dev.epicgames.com/community/api/documentation/image/f3047226-2ab1-47e9-9bf1-3d173274e8e1?resizing_type=fill&width=1920&height=335)
-Developer tools for in-island transactions are now live in UEFN! Test in-game item sales now and get ready to publish islands with V-Bucks purchases when publishing opens.
-We’ve also added device fixes, new Shogun’s Solitude Prefabs and Galleries, and more tools and updates in the Fortnite Tools mode to help you build and scale faster.
-##  Tools for In-Island Transactions Now Available
-Developer tools for in-island transactions are now available in preview within UEFN. Use these to test [in-island item sales](https://www.fortnite.com/news/fortnite-developers-will-soon-be-able-to-sell-in-game-items?lang=en-US#:~:text=In%20December%2C,more%20details%20soon) in your unpublished projects – unlocking new monetization opportunities for Fortnite developers on top of [engagement payouts](https://dev.epicgames.com/documentation/fortnite/engagement-payout-in-fortnite-creative).
-Soon you’ll be able to [publish games](https://dev.epicgames.com/documentation/fortnite/publishing-islands-in-fortnite-creative) with in-island transactions that players can use to purchase items in your islands using [V-Bucks](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#v-bucks). We’ll share more on publishing timelines in the coming weeks. Once published, you’ll be able to monitor the performance of in-island transactions directly in the Creator Portal.
-Check out the [blog](https://www.fortnite.com/news/tools-for-in-island-transactions-now-available-to-fortnite-developers) and [documentation](https://dev.epicgames.com/documentation/fortnite/in-island-transactions-in-fortnite) for a full breakdown, including what you can (and can’t) sell, how in-island transactions work, an in-island transactions feature example, and more.
-Be sure to check out the full **[Fortnite Developer Rules](https://legal.epicgames.com/fortnite/developer-rules)** and the **[In-Island Transactions Restrictions](https://dev.epicgames.com/documentation/fortnite/in-island-transactions-restrictions-in-fortnite) ** document to learn about the new guidelines for integrating transactions into your island.
-[![](https://dev.epicgames.com/community/api/documentation/image/ffffa2df-6bb2-46d1-8a11-17377f2c3bc7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ffffa2df-6bb2-46d1-8a11-17377f2c3bc7?resizing_type=fit)
-###  In-Island Transactions Feature Example
-The In-Island Transactions Feature Example explores how products defined in Verse can be associated with a variety of gameplay benefits for players such as items, gameplay attribute increases, access to new areas, and more. Each example progressively builds upon the last using Farm themed assets. There is additional information about tools to improve iteration and organization.
-[![](https://dev.epicgames.com/community/api/documentation/image/e8427a92-0a15-4129-9c32-73f4997cd53d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e8427a92-0a15-4129-9c32-73f4997cd53d?resizing_type=fit)
-###  In-Island Transactions Debug Commands
-To help you efficiently debug your projects, we are committed to adding more debug commands to the Beta Debug Command menu. We've added:
-  * **Grant All Products:** Grants the maximum amount of all products.
-  * **Grant One of All Products:** Grants one of each product.
-  * **Force Remove Products:** Removes all owned products.
-  * **Open Storefront:** Displays a debug storefront populating it with a dynamically generated offer for each product defined in the project.
-  * **Purchases Always Fail:** On: Store purchases will always fail regardless of if they could succeed or not. Off: Store purchases behave as intended.
+# LEGO® Asset Inventory
 
-##  User Interfaces Feature Template Updates
-[![The custom In-Island Transactions example in the feature template.](https://dev.epicgames.com/community/api/documentation/image/1d3fb83a-8e93-4691-83d5-4be8f2c02211?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1d3fb83a-8e93-4691-83d5-4be8f2c02211?resizing_type=fit) Click image to enlarge.
-Open the template to explore the custom shop UI and see **[Verse Fields Examples](https://dev.epicgames.com/documentation/fortnite/verse-fields-examples-in-fortnite)** to learn how the custom UI comes together using widgets and Verse! Learn more about creating custom meter materials using the **[Material Collection](https://dev.epicgames.com/documentation/fortnite/material-assets-in-unreal-editor-for-fortnite)** now available from the **Fortnite** > **UI** > **Materials** folders.
-Launching a session or pushing changes in the User Interfaces feature template will cause a compilation error. These errors will reset whenever a project is opened. To workaround this issue, open the `UW_MaterialCollectionScreen` widget and press Compile to clear the error. This bug will be fixed in an upcoming release.
-##  Fortnite Tools Mode Updates
-Fortnite Tools mode has new tools to help you quickly build and scale your islands.
-  * Create Volume: Create and scale any type of volume you need on your island.
-  * Find Overlap: Find objects in the viewport that overlap to reduce memory constraints.
-  * Scatter: Randomly add static meshes to your island.
+Check out the inventory of LEGO® assets available through the LEGO template islands.
 
-New tools were also added to **[Snap to Target](https://dev.epicgames.com/documentation/fortnite/fortnite-tools-mode-in-fortnite#snap-to-target-nbsp)** and **3D Select** for precise placement and selection. Check out what’s new, see **[Fortnite Tools Mode](https://dev.epicgames.com/documentation/fortnite/fortnite-tools-mode-in-fortnite)**.
-##  Island Localization Tools
-Island localization is now exported by default and auto localized when creating a new **Private Version** , either through **Project** > **Upload to Private Version** , or **Project** > **Publish Project**. The localization process has the following options:
-  * Opt-out of the localization process permanently for your project by unchecking the **Automatically Build Localization** option in your project settings.
-  * Opt-out temporarily for a single Private Version by unchecking the **Build Localization** option on the Private Version settings dialog.
+![LEGO® Asset Inventory](https://dev.epicgames.com/community/api/documentation/image/226c9459-6efc-4a88-9697-c5151238fc7d?resizing_type=fill&width=1920&height=335)
 
-If you haven’t initialized your project’s localization export settings, follow these steps:
-  1. Generate a **Private Version** of your island to build the localization data.
-  2. Specify the **native language** for your project.
+When you open the LEGO® inventory, you're opening the door to a world of LEGO Elements and assets! This exclusive content is at your disposal for your building fun. [LEGO Elements](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#lego-elements) can be mixed and matched with Fortnite props to create the ultimate experience.
 
-This option only appears when the native language hasn’t already been set, and mirrors the native language setting found in **Project Settings**.
-##  Content Browser and Inventory Updates
-Check out all the new devices and items available this release!
-###  Device Updates and Fixes
-**Fixes:**
-  * **Air Vent**
-Fixed a bug that caused the Air Vent FX to play continually.
-**Air Vent - Physics Enabled**
-Fixed a faulty warning from popping-up.
-Fixed a bug that affected the `FortPhysicsImpulseComponent` and `OnPhysicsImpulseOverlapTriggered` options.
+These LEGO assets come pre-built, so you don’t have to worry about losing pieces, adding too many bricks, or accidentally skipping an instruction step!
 
-  * **Teleporter**
-Fixed an issue that caused the Teleporter device to use impulse instead of direct velocity.
-**Teleporter - Physics Enabled**
-Fixed a bug that caused the Teleporter to teleport players nonstop.
+Use these custom LEGO assets in Fortnite to create weird, wacky, wonderful experiences with the fun and color you'd expect.
 
-  * **Crash Pad & Bouncer Gallery - Physics Enabled**
-Fixed an overlap issue that caused the visual FX and sound FX to retrigger on prop collision with a device from the Crash Pad & Bouncer Gallery.
-  * **Changing Booth**
-Fixed an issue that caused the Changing Booth UI to remain open on players when the device received the Remove Player events.
+Some assets in the **Content** tab or **Content** browser may not be available for a certain brand. This is because islands created with an external brand should reflect the vibe, tone, and idea behind the brand. For example, Fall Guys Beans are cute and playful — it's never appropriate for them to use weapons because that does not align with the Fall Guys brand. Similarly, not all of the Fortnite assets are available in LEGO® Islands because they are not Minifigure-compatible (Minifigures do have small hands, after all).
 
-  * **NPC Spawner**
-Fixed an issue where NPCs spawned during the Warmup phase instead of the Game Started phase.
+Make sure to check out each brand's introduction blog post and the accompanying documentation so you get the full understanding of what is (and isn't) okay within a specific brand and why.
 
-###  New Prefabs & Galleries
-  * Shogun’s Solitude Castle Prefab
-  * Shogun’s Solitude Main Square Prefab
-  * Shogun’s Solitude Floor and Stairs Gallery
-  * Shogun’s Solitude Wall Gallery
-  * Shogun’s Solitude Roof Gallery
-  * Shogun’s SOlitude Prop Gallery
+All LEGO animals, props, houses and other assets are cataloged under **LEGO®** in the Content menu for Creative and the **Content Browser** for UEFN.
 
-##  Community Bug Fixes
-The following fixes are from issues that you submitted to us on the forums. Thank you for your patience and for reporting these issues!
-  * Fixed an issue where the default quick bar was failing to be replaced on mobile UI when selecting Quickbar Slot Widget Override Class.
-    * [Forum Report](https://forums.unrealengine.com/t/custom-quickbar-ui-duplicated-on-mobile/2619351)
-  * Fixed an issue where projects received the error **Encountered unexpected content beacon connection failure** when running Memory Calculation.
-    * [Forum Report](https://forums.unrealengine.com/t/critical-error-memory-calculation-fails-to-run/2659070)
-  * Fixed an issue where the **Pop Up Dialog** device would stop working when the **Do not close on button press** option was chosen.
-    * [Forum Report](https://forums.unrealengine.com/t/the-pop-up-dialog-device-stops-working-when-you-turn-on-do-not-close-on-button-press/2654500)
+[![The list of LEGO inventory in Fortnite.](https://dev.epicgames.com/community/api/documentation/image/17561672-936d-45ae-bd0e-1487e16942aa?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/17561672-936d-45ae-bd0e-1487e16942aa?resizing_type=fit)
 
-##  Fortnite Ecosystem Updates and Fixes
-**New:**
-  * Added season tags to weapons, this provides a way to search for every weapon in Creative by its release season.
-  * Dynamic resolution is available for DX12 rendering mode when anti-aliasing is disabled.
+To learn more on how to build a LEGO Island, see [Working with LEGO® Islands](https://dev.epicgames.com/documentation/fortnite/working-with-lego-islands-in-fortnite-creative).
 
-**Fixes:**
-  * Fixed performance issues in UEFN caused by placing large numbers of actors at once with the phone tool.
-  * Fixed an issue where the reticle for the Chain of Hades disappeared in Creative.
-  * Fixed issue where the original Pumpkin Launchers used the wrong weapon icon.
-  * Fixed an issue that prevented Frame Rate Limit from updating when the Auto-Set Quality button was selected.
-  * Changed the minimum from 0% to 1% for 3D Resolution in video settings.
+All Fortnite original props, prefabs, and galleries or icons that have a military theme are not available on LEGO Islands.
 
-##  LEGO Island Updates and Fixes
-**New:**
-  * Fixed a Verse compilation issue in the Santa's Toy Factory island template.
-  * The Enable Leash and Leash Distance settings are now available for NPC Characters.
+Within Unreal Editor for Fortnite (UEFN), you can also open the **Content Drawer** and navigate to **All**> **LEGO® Content**to access additional assets like materials and audio files.
 
-##  UEFN Updates and Fixes
-###  Editor
-**New:**
-  * Camera IDs were added to the Capture Manager to ingest asset metadata.
+## Prefabs and Galleries
 
-**Fixes:**
-  * Fixed a live edit issue where quickly placing prefabs or large assets into a project and pushing changes would undo map changes and cause the editor to disconnect.
-  * Fixed a surface alignment issue for entities by introducing surface alignment when dragged into the Prefab Editor.
-  * Fixed a regression error in the viewport that caused middle-clicking in the level editor viewport to select objects.
-  * Fixed a film overlay issue where the tint value would reset every time the configuration menu was opened.
-  * Fixed the following user interface (UI) issues with template projects in the Project Browser:
-    * Template project UI now shows for all plugins and updated fallback images for template categories.
-    * New Project dialog now lists template projects from enabled plugins.
-    * Users can now see and start from installed templates that include disabled plugins.
-    * Empty or invalid background image paths no longer show broken template categories. The updated search now includes template projects from all available plugins.
-    * A warning icon and tooltip was added for templates with disabled plugins.
-These changes reduce the risk of project issues and ensure project creation works as expected.
+Prefabs and galleries are ready-made building blocks for your LEGO creations. They include detailed LEGO builds and collections of assets that you can place, customize, and combine to shape your island.
 
-###  Environments and Landscapes
-**New:**
-  * Landscape edit layers weight blending improvements:
-The three weight-blending settings have moved to the landscape layer info asset. These new weight blending tools provide improved weight blending solutions that are compatible with edit layers and are applied at every blend step of the merge algorithm.
-The three methods are now:
-    * **None**
-    * **Final Weight Blending** : A new landscape setting that defines the default weight blending, Non-Weight Blended or Weight Blended.
-    * **Advanced Weight Blending** : Provides a way to let certain layers be weight-blended with each other but remain additive against others.
+To learn more, see [Using Prefabs and Galleries](https://dev.epicgames.com/documentation/fortnite/using-prefabs-and-galleries-in-fortnite-creative).
 
-  * Added a **Sort by Blend Method** option in the target layers list of the landscape paint panel.
-  * Changed the landscape texture patch's texture sampler to **Border** to prevent visual issues with the edges.
-  * Exposed the patch component's layer to the API:
-    * `GetLandscape`
-    * `GetFallOff`
-    * `GetFallOffMode`
-    * `GetBlendMode`
-    * `SetLandscape`
-    * `SetFallOff`
-    * `SetFallOffMode`
-    * `SetBlendMode`
+Larger prefabs and galleries can affect island memory. To learn more about optimizing your islands performance, see [Building with LEGO Elements](https://dev.epicgames.com/documentation/fortnite/working-with-lego-islands-in-fortnite-creative#building-with-lego-elements).
 
-  * Added a new option to the edit layer called **Collapse All Edit Layers**. This option removes all edit layers and flattens the current data into the base edit layer.
-  * You can hide the landscape selector in Landscape mode when the New tool in the Manage panel is active.
-  * Updated the default spline edit layer selection:
-    * Selecting the Splines Edit Layer no longer auto-activates the Splines tool.
-    * Double-clicking on the Splines layer or using the right-click context menu option to toggle between the Splines Tool and last active tool.
-  * Removed the landscape option Paint-time weight balancing.
+### Prefabs
 
-**Fixes:**
-  * Fixed an issue with the Landscape Patch and Patch Editor that caused a crash state when using the Undo operation.
-  * Fixed an issue related to the Add Component tool:
-    * The tool now properly generates extrapolated height data on each persistent edit layer for continuity on the corners on each layer.
-    * Prevents existing neighboring components from causing issues when adding a new component.
-    * Automatically applies splines after component creation, so that new components are immediately affected by the splines that overlap with them.
-  * Fixed an issue that resulted in a crash state when exiting a level instance with the Landscape Editor when the Landscape Copy tool was active.
+Prefabs are themed LEGO builds that can help you get started quickly. They're designed to save time while letting you focus on creativity. Each prefab is fully editable, you can rebuild it, resize it, or mix pieces from multiple prefabs to create something new.
 
-###  Materials
-**Fixes:**
-  * Added stencil masking support to fix issues with the Receive Decals setting on primitives.
+Use prefabs as foundations, landmarks, or gameplay spaces. They're flexible and meant to inspire experimentation rather than prescribe a specific type of game or environment.
 
-###  Modeling
-**New:**
-  * Added support for the Tangents tool that provides a way to choose the reference UV layer when computing tangents.
+| Bloom Tycoon |  |  |  |  |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+| **Animal Farm** | **Block House** | **Block Landscape A** | **Chess** | **Block Landscape B** |
+|  |  |  |  |  |
+| **Block Temple** | **Banana Garden** | **Hedge Garden** | **Pond Garden** | **Stone Garden** |
+| Space |  |  |  |  |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+| **Space Connection** | **Space Control** | **Space Quarters** | **Space Vessel** | **Space Production** |
+| Spring |  |  |  |  |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+| **Spring Market** | **Spring Playground** |  |  |  |
+| Suburban |  |  |  |  |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+| **Suburban Red Brick House** | **Suburban Blue House** |  |  |  |
+| Toy Factory |  |  |  |  |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+| **Toy Factory Winter Lodge** |  |  |  |  |
+| Other |  |  |  |  |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+| **Music Concert Stage** | **Primitives Obstacle Course** |  |  |  |
 
-**Fixes:**
-  * Fixed a crash issue in handling degenerate cases with sparse solvers used for some smooth surface filling and interpolation in modeling tools.
-  * Fixed a case where the `CollisionEnabled` flag could be incorrectly copied and displayed.
-  * Fixed an issue where hard edges could be lost on static meshes and skeletal meshes when using modeling tools if recompute normals are enabled and the source mesh has hard edges tagged.
-  * Fixed issues that resulted in a crash state casued by the Mesh Bevel operation.
+### Galleries
 
-##  Scene Graph
-**New:**
-  * Added support for map pinging on entities.
+Galleries provide groups of individual LEGO assets, from furniture and foliage to structural pieces and decorations. They let you handpick and assemble elements that fit your island's design.
 
-##  Unreal Revision Control (URC) Updates and fixes
-**Fixes:**
-  * Fixed an issue resulting in the error message “Failed to load immutable data, not found” for which the workaround was deleting/regenerating the .urc folder.
-  * Fixed an issue where server connection errors were incorrectly reported as “repository not found; metadata not found.” The error message will now correctly reflect the root cause.
-  * Fixed an issue where, in material conflicts, the viewport focus button could target instances of actors without the material applied.
+You can use galleries to fill in details, expand prefabs, or build original structures completely from scratch.
 
-###  Known Issues
-  * We have temporarily disabled the user interface communicating URC background process progress, given some reports that the editor lagged when it was visible.
+You can pull individual props directly from the Props folder in the Content Browser directly into your island. This gives you access to single objects from a prefab or gallery so you can place and customize them without using the full set.
+
+| Building |  |  |  |  |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+| **Space City Floor & Stairs Gallery A** | **Space Roof Gallery A** | **Space Wall Gallery A** | **Suburban Floor Gallery A** | **Suburban Roof Gallery A** |
+|  |  |  |  |  |
+| **Suburban Stair Gallery A** | **Suburban Wall Gallery Blue** | **Suburban Wall Gallery Red Brick** | **Suburban Wall Gallery Yellow Brick** | **Toy Factory Winter Lodge Gallery** |
+| Music |  |  |  |  |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+| **Music Concert Prop Gallery A** | **Music Concert Prop Gallery B** |  |  |  |
+| Nature |  |  |  |  |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+| **Spring Woodland Nature Gallery** |  |  |  |  |
+| Props |  |  |  |  |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+| **Bloom Tycoon Animal Prop Gallery** | **Bloom Tycoon Blocks Prop Gallery** | **Bloom Tycoon Farming Prop Gallery** | **Bloom Tycoon Games Prop Gallery** | **Bloom Tycoon Garden Prop Gallery** |
+|  |  |  |  |  |
+| **LEGO® Ninjago® Props Gallery** | LEGO® Ninjago®  Whispering Woods Props Gallery | Scary Space Prop Gallery A | Space City Prop Gallery A | Space Exterior Prop Gallery A |
+|  |  |  |  |  |
+| Space Friends Prop Gallery A | Space Plants Prop Gallery A | Spring Celebration Prop Gallery | Suburban Prop Gallery | Toy Factory Character Prop Gallery |
+|  |  |  |  |  |
+| Toy Factory Indoor Prop Gallery | Toy Factory Outdoor Prop Gallery | **Toy Factory Winter Lodge Prop Gallery** |  |  |
+| Shape |  |  |  |  |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+| **Primitives Prop Gallery** |  |  |  |  |
+
+### Brick Modules
+
+Brick modules are preassembled brick-built pieces, similar to gallery assets. You can combine these pieces together to build out your environment design. These modular pieces are not designed to be separated back into individual bricks.
+
+For UEFN projects, you can use Brick Modules as placed elements and create additional designs with the Brick Editor. Use the Brick Editor to build new brick-by-brick structures that complement or extend the modules you place.
+
+To learn more, see [Working with the LEGO® Brick Editor](https://dev.epicgames.com/documentation/fortnite/working-with-the-lego-brick-editor-in-fortnite).
+
+|  |  |  |
+| --- | --- | --- |
+|  |  |  |
+| **Ninjago Monastery** | **Ninjago Whispering Woods Monastery** | **Ninjago Whispering Woods Village** |
+
+## Devices
+
+There are almost 100 Fortnite devices available for LEGO Islands. All of these devices are [Minifigure-compatible](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) and have the same options as in Fortnite. However, not all devices are available on LEGO Islands.
+
+Patchwork devices use Fortnite's regular scale. This means Minifigures don't need glasses to read all the knob labels!
+
+Some devices are designed specifically to support LEGO gameplay and player interaction. These include:
+
+- [Assembly Devices](https://dev.epicgames.com/documentation/fortnite/using-lego-assembly-devices-in-fortnite-creative): Custom to LEGO Islands is the Assembly device, which you can use to build and disassemble props with a single button.
+- [Collectible Devices](https://dev.epicgames.com/documentation/fortnite/using-lego-collectible-devices-in-fortnite-creative): Lets you add LEGO Elements that players can pick up, and use as part of island gameplay. You can customize these devices to support different types of objectives or game styles.
+
+Certain devices are reviewed by Fortnite and LEGO moderation teams for features they support to ensure the island is compliant with the [LEGO® Brand Rules](https://dev.epicgames.com/documentation/fortnite/lego-brand-rules-in-fortnite). This includes:
+
+- Devices that support text input.
+- Spawners and spawned items provided to players.
+
+### Excluded Devices List
+
+The following table lists the devices that will not be selectable under the Devices tab on LEGO Islands.
+
+| Device Name | Reason for Omission |
+| --- | --- |
+| **Armored Battlebus Spawner** | Minifigures can't reach the pedals. |
+| **ATK Spawner** | Minifigures can't reach the pedals. |
+| **Baller Spawner** | Minifigures don't like that they can't play sports with the items spawned from this spawner. |
+| **Barrier Plate** | Minifigures are not heavy enough to trigger the plate. |
+| **Big Rig Spawner** | Minifigures can't reach the pedals. |
+| **Biplane Spawner** | Minifigures can't reach the steering wheel on the biplanes. |
+| **Boat Spawner** | Minifigures can't reach the steering wheel on the boats. |
+| **Cannon Spawner** | Military references cannot be used on a LEGO Island. |
+| **Chiller** | Minifigures don't like to be chilled. |
+| **Creature Manager** | These creatures are too scary for Minifigures. |
+| **Creature Placer** | These creatures are too scary for Minifigures. |
+| **Creature Spawner** | These creatures are too scary for Minifigures. |
+| **Crowd Volume** | Everything is awesome, except for the crowd volume. |
+| **Damage Amplifier Power-Up** | Minifigures can't take damage. |
+| **Dirt Bike Spawner** | Minifigures can't see over the handlebars. |
+| **Driftboard Spawner** | Minifigures have a hard time performing a Laser Flip with a Driftboard. |
+| **Fang Spawner** | Minifigures can't reach the pedals. |
+| **Guard Spawner** | Lord Business has enough guards. |
+| **Heavy Turret** | Military references cannot be used on a LEGO Island. |
+| **Helicopter Spawner** | Minifigures can't reach the steering wheel on the helicopters. |
+| **Melee Designer** | Minifigures get too confused during melee. |
+| **Mounted Turret** | Military references cannot be used on a LEGO Island. |
+| **Nitro Drift Sedan Spawner** | Minifigures can't reach the pedals. |
+| **Octane Spawner** | The available cars aren't fast enough for Clutch Powers. |
+| **Pickup Truck Spawner** | Minifigures can't reach the pedals. |
+| **Poison Dart Trap** | Darts bounce off Minifigures. |
+| **Quadcrasher Spawner** | Minifigures can't reach the pedals. |
+| **Rocket Boost** | Clutch doesn't need help going fast. |
+| **Rocket Racing Vehicle Spawner** | Minifigures can't reach the pedals. |
+| **Scoreboard** | Minifigures can't reach to change the numbers. |
+| **Sedan Spawner** | Minifigures can't reach the pedals. |
+| **Shooting Range Gallery** | Bad Cop doesn't need any more target practice. |
+| **Shopping Cart Spawner** | Minifigures can't reach the handle on the shopping carts. |
+| **Siege Cannon** | Military references cannot be used on a LEGO Island. |
+| **Signal Remote Manager** | The buttons on the remote are hard to press for a Minifigure. |
+| **Speaker** | Loud and sudden music scares the LEGO llamas. |
+| **Spike Trap** | Minifigures don't like spikes. |
+| **Sportbike Spawner** | Minifigures can't see over the handlebars. |
+| **Sports Car Spawner** | Minifigures can't reach the pedals. |
+| **Surfboard Spawner** | Minifigures can't perform a Bottom Turn on the Surfboard. |
+| **SUV Spawner** | Minifigures can't reach the pedals. |
+| **Tank Spawner** | Military references cannot be used on a LEGO Island. |
+| **Taxi Spawner** | Minifigures prefer to walk. |
+| **UFO Spawner** | Minifigures are scared of UFOs. |
+| **Video Player** | This device doesn't work with LEGO TVs. |
+
+The following **Environmental Traps** are also unavailable:
+
+- Fire (Ceiling, Floor, Wall)
+- Poison Dart (Ceiling, Floor, Wall)
+- Spike (Ceiling, Floor, Wall)
+
+### LEGO Styles
+
+You can expand your island with LEGO Minifigures as NPCs with the **NPC Spawner** device. Through the device you can choose and manage over 500 [LEGO Styles](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#lego-styles). You can change the LEGO Style to match the theme of your experience, create visual variety, or distinguish groups of characters. To learn more, see [NPC Spawner Devices](https://dev.epicgames.com/documentation/fortnite/using-npc-spawner-devices-in-unreal-editor-for-fortnite).
+
+In Unreal Editor for Fortnite (UEFN), LEGO Styles are controlled through [NPC Character Modifiers](https://dev.epicgames.com/documentation/fortnite/using-npc-character-definitions-in-unreal-editor-for-fortnite#npc-character-modifiers). To use LEGO Styles in the **NPC Spawner** device, create a new**NPC Character Definition**, and use the **Character Cosmetic NPC Modifier**.
+
+To learn more about updating an NPC's style, inventory, or behavior, see the [NPC Character Definitions](https://dev.epicgames.com/documentation/fortnite/using-npc-character-definitions-in-unreal-editor-for-fortnite) page.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/a0e9eb17-7bb4-4921-a458-dee8201b0dfa?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a0e9eb17-7bb4-4921-a458-dee8201b0dfa?resizing_type=fit)
+
+## Tools and Weapons
+
+LEGO Islands can include tools and weapons which are [Minifigure-compatible](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#minifigure-compatible). These classic Fortnite tools and weapons have been redesigned to be used by Minifigures. You can place them in your LEGO experience, included in chests, or configured through devices to support objectives, progression, and player interaction.
+
+You can find tools, weapons, and ammo within Unreal Editor for Fortnite (UEFN). Open the **Content Drawer** and navigate to **All > LEGO® Content > Weapons**.
+
+### Tools
+
+Tools are utility objects that minifigures can carry and use. You can place tools as world pickups, added to chests, or granted through devices to support quests, crafting loops, or other progression mechanics.
+
+| Tools |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |
+| **Grappler** | **Patchwork Tool** | **Prop-o-Matic** |  |  |  |
+
+### Weapons
+
+Weapons are Fortnite styled LEGO versions. You can use these weapons in gameplay, including [PvP](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#pvp) or [PvE](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#pve) experiences.
+
+You can place weapons as pickups in the world, added to containers, granted as rewards, or used in combat-based objectives. They can support challenges, adventure gameplay, or reward systems.
+
+Some weapons are available in different rarities. Higher-rarity versions often feature improved stats such as durability or effectiveness.
+
+| Weapons |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |
+| **Axe** | **Burst Pulse Rifle** | **Crossbow** | **CX Burst Laser Mk.** | **CX Pulse Laser Mk.** | **Double Saucer** |
+|  |  |  |  |  |  |
+| **Explosive Goo Gun** | **Good Ol’ Trusty** | **Katana** | **Kinetic Blade** | **Kymera Ray Gun** | **Nunchucks** |
+|  |  |  |  |  |  |
+| **Overclocked CX Burst Laser** | **Overclocked CX Pulse Laser** | **Protype Pulserifle X2** | **Pulserifle X2 Mk.** | **Royal Sting Blaster** | **Scythe** |
+|  |  |  |  |  |  |
+| **Shuriken** | **Snowball Launcher** | Sting Blaster | **Super Saucer** | **Sword** |  |
+
+#### Ammo
+
+Certain LEGO weapons need specific resources to operate, and that is where ammo comes in. Each ammo type is designed with a unique style so players can instantly recognize what they have collected.
+
+|  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |  |
+| **Arrow** | **Energy** | **Heavy** | **Light** | **Medium** | **Rocket** | **Shell** |
+
+## Items
+
+Items are collectible or consumable objects available in your LEGO Island that players can pick up, use, or consume. They can support progression, resource systems, or rewards, but are optional depending on your island's design. You can place Items directly in the world, grant them through devices, or use them as part of quests or objectives.
+
+You can find Items within Unreal Editor for Fortnite (UEFN). Open the **Content Drawer** and navigate to **All > LEGO® Content > Items**.
+
+### Collectibles
+
+Collectibles are Items that players can pick up and hold for later use. They often serve as resources, quest items, or currency in your island.
+
+You can use collectibles to support progression systems, or trading mechanics. You can place them as world pickups or add them to [containers](https://dev.epicgames.com/documentation/fortnite/lego-asset-inventory-in-fortnite-creative#chests).
+
+| Collectibles |  |  |  |  |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+| **Chronosteel Shard** | **Diamond** | **Mechanical Gear** | **Monster Shard** | **Pumpkin** |
+|  |  |  |  |  |
+| **Red Mushroom** | **Spinjitsu** | **Vampire Teeth** |  |  |
+
+**Spinjitzu** is activated using the Dodge input (**Ctrl** by default) while the item is in the player's inventory. The ability remains active as long as the player has stamina.
+
+### Consumables
+
+Consumables are Items that provide an immediate benefit when used. These benefits include restoring health, or providing shield during gameplay.
+
+Consumables are useful for survival experiences, combat focused islands, or moments where you want players to recover or prepare before a challenge. You can place them in the world, included in loot systems, or awarded as part of missions or events.
+
+| Food |  |  |  |  |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+| **Apple** | **Banana** | **Coconut** | **Corn** | **Egg** |
+|  |  |  |  |  |
+| **Meat** | **Pizza** | **Slapberry** | **Slap Juice** | **Slurp Juice** |
+
+## Containers
+
+Argghhh, matey! Fill these LEGO chests or llamas with tools, items, or anything else players need. Chests are equipped the same way as classic Fortnite chests, only these are built with bricks to match other LEGO assets.
+
+You can find Containers within Unreal Editor for Fortnite (UEFN). Open the **Content Drawer** and navigate to **All > LEGO® Content > Containers > SetupAssets > Blueprints**.
+
+Different-sized chests have different capacities.
+
+|  |  |
+| --- | --- |
+|  |  |
+| **Tiered Chest** | **Spawn Drop** |

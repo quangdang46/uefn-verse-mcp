@@ -1,29 +1,104 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/setting-up-teams-in-fortnite-creative
 
-# In-Game User Interfaces
-Create custom user interfaces for each player by using Verse to define interactions for the UI elements and UMG to design the look of the UI elements.
-![In-Game User Interfaces](https://dev.epicgames.com/community/api/documentation/image/31188381-eb1f-4d17-933d-387019e2c31e?resizing_type=fill&width=1920&height=335)
-An in-game user interface (UI) is an interface that can be customized for user interaction during a game. A custom UI can only be added per player — a custom UI is associated with a specific player, and only that player can see it.
-In Unreal Editor for Fortnite (UEFN) custom UI is developed in two interconnected ways:
-  1. **Back end design** - This refers to the **Verse UI[API](https://dev.epicgames.com/documentation/fortnite/verse-glossary#api)** and Verse code that tracks player data, customizes the behavior of the interactable elements, and creates a [hierarchical](https://dev.epicgames.com/documentation/fortnite/verse-glossary#hierarchical) layout by nesting UI elements ([widgets](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#widget)).
-  2. **Front end design** - This refers to the design and style of UI elements in the game as well as the placement of all your UI elements in the HUD.
+# Setting Up Teams
 
-All UI elements are created and built using [**Unreal Motion Graphics** (UMG)](https://docs.unrealengine.com/5.1/umg-ui-designer-for-unreal-engine/) widgets.The tutorials below use Verse to create and add logic to the widget functionality, and UMG widgets to create UI elements and plan the layout for the UI.
-  * [![Removing and Controlling the Fortnite Default HUD](https://dev.epicgames.com/community/api/documentation/image/dc91243b-a002-4cf4-b7ec-507d8a4420ba?resizing_type=fit&width=640&height=640) Removing and Controlling the Fortnite Default HUD Learn how to customize or remove the HUD available by default in Fortnite. ](https://dev.epicgames.com/documentation/fortnite/removing-and-controlling-the-fortnite-default-hud-in-unreal-editor-for-fortnite)
-  * [![UI Widget Editor](https://dev.epicgames.com/community/api/documentation/image/eff95799-1e4a-40b9-a6e1-3ebd7683841d?resizing_type=fit&width=640&height=640) UI Widget Editor Learn about the different parts of Unreal Motion Graphics (UMG) - the UI Widget Editor. ](https://dev.epicgames.com/documentation/fortnite/ui-widget-editor-in-unreal-editor-for-fortnite)
-  * [![User Interfaces Feature Template](https://dev.epicgames.com/community/api/documentation/image/f4c33dbc-7e19-45c4-a734-bd3b6d581ebc?resizing_type=fit&width=640&height=640) User Interfaces Feature Template Learn how to create a custom UI by exploring Creative devices, widgets, and material functions. ](https://dev.epicgames.com/documentation/fortnite/user-interfaces-feature-template-in-unreal-editor-for-fortnite)
-  * [![UI Layout in UMG](https://dev.epicgames.com/community/api/documentation/image/f3beb81c-7b7d-42bd-8a99-d13cdbc3a7ed?resizing_type=fit&width=640&height=640) UI Layout in UMG Learn how to work in UMG to create layouts for your UI designs. ](https://dev.epicgames.com/documentation/fortnite/ui-layout-in-umg-in-unreal-editor-for-fortnite)
-  * [![Widget Types](https://dev.epicgames.com/community/api/documentation/image/9cfe559b-a7d4-4c6c-81e4-0aee492e7222?resizing_type=fit&width=640&height=640) Widget Types A reference for all the widgets you can add to your custom UI. ](https://dev.epicgames.com/documentation/fortnite/widget-types-in-unreal-editor-for-fortnite)
-  * [![Creating Custom UI with Material Instances](https://dev.epicgames.com/community/api/documentation/image/967fb393-107b-497f-836a-4eba6b12e631?resizing_type=fit&width=640&height=640) Creating Custom UI with Material Instances Learn how to create and use material instances in UMG widgets for a custom look and UI design. ](https://dev.epicgames.com/documentation/fortnite/creating-custom-ui-with-material-instances-in-unreal-editor-for-fortnite)
-  * [![Animating UI](https://dev.epicgames.com/community/api/documentation/image/9ea609bd-2f4c-48d1-b2ee-17fc77d81362?resizing_type=fit&width=640&height=640) Animating UI Use sequencer to animate UI widgets. ](https://dev.epicgames.com/documentation/fortnite/aninmating-ui-in-unreal-editor-for-fortnite)
-  * [![Making a Custom HUD](https://dev.epicgames.com/community/api/documentation/image/d8f262ed-73e8-4cc3-aa53-fc511b750e12?resizing_type=fit&width=640&height=640) Making a Custom HUD Create your own custom heads-up display by learning more about designing nameplates, as well as health and shield indicators. ](https://dev.epicgames.com/documentation/fortnite/making-a-custom-hud-in-unreal-editor-for-fortnite)
-  * [![Using the Viewmodel in UMG](https://dev.epicgames.com/community/api/documentation/image/9e8b2a2c-789f-4438-a638-91584d852208?resizing_type=fit&width=640&height=640) Using the Viewmodel in UMG Learn how to use the Viewmodel to create custom UI. ](https://dev.epicgames.com/documentation/fortnite/using-the-viewmodel-in-umg-in-unreal-editor-for-fortnite)
-  * [![Making a Custom Countdown Timer](https://dev.epicgames.com/community/api/documentation/image/a1734ab8-d910-4f97-a6fe-f5ea582662e4?resizing_type=fit&width=640&height=640) Making a Custom Countdown Timer Create your own countdown timer in Verse! ](https://dev.epicgames.com/documentation/fortnite/making-a-custom-countdown-timer-using-verse)
-  * [![Making an Animated Timer](https://dev.epicgames.com/community/api/documentation/image/672ab147-1d5d-4fd9-8581-b58df26f4876?resizing_type=fit&width=640&height=640) Making an Animated Timer Learn how to animate your own custom Timer clock with UMG. ](https://dev.epicgames.com/documentation/fortnite/making-an-animated-timer-in-unreal-editor-for-fortnite)
-  * [![Making a Title Sequence](https://dev.epicgames.com/community/api/documentation/image/c5da1c38-4e65-4b65-a09e-7b997319430a?resizing_type=fit&width=640&height=640) Making a Title Sequence Create a custom intro sequence using the camera devices and Verse that plays before the game starts. ](https://dev.epicgames.com/documentation/fortnite/making-a-title-sequence-in-unreal-editor-for-fortnite)
-  * [![Making a Mini Map with the Map Controller Device](https://dev.epicgames.com/community/api/documentation/image/8cc42379-b374-4681-b83a-94c81780f884?resizing_type=fit&width=640&height=640) Making a Mini Map with the Map Controller Device Create and display a custom mini map using the Map Controller device. ](https://dev.epicgames.com/documentation/fortnite/making-a-custom-mini-map-in-unreal-editor-for-fortnite)
-  * [![UI Pop-Ups](https://dev.epicgames.com/community/api/documentation/image/a32a0b72-ce9a-4a75-bcb6-413d11b52a8b?resizing_type=fit&width=640&height=640) UI Pop-Ups Use UMG Widgets to design a unique message for a quest using the HUD Message device or a pop-up menu that grants items with a button. ](https://dev.epicgames.com/documentation/fortnite/ui-popups-in-unreal-editor-for-fortnite)
-  * [![Creating Custom Skilled Interactions](https://dev.epicgames.com/community/api/documentation/image/2503217b-ad95-465e-a292-b04111a4dd2f?resizing_type=fit&width=640&height=640) Creating Custom Skilled Interactions Use Viewbindings to connect your custom UI to the Skilled Interaction device. ](https://dev.epicgames.com/documentation/fortnite/creating-custom-skilled-interactions-in-unreal-editor-for-fortnite)
-  * [![Mission Selection Screen](https://dev.epicgames.com/community/api/documentation/image/d4c9c5b6-953a-4e28-a5f4-f38049a6118c?resizing_type=fit&width=640&height=640) Mission Selection Screen Learn how to create a mission selection screen that drops players into their mission. ](https://dev.epicgames.com/documentation/fortnite/making-a-mission-selection-screen-in-unreal-editor-for-fortnite)
-  * [![UI Materials Collection](https://dev.epicgames.com/community/api/documentation/image/69a00f85-3325-4191-8a26-2f32ef7cc8e5?resizing_type=fit&width=640&height=640) UI Materials Collection Create customized materials for stat tracking and customizing a UI. ](https://dev.epicgames.com/documentation/fortnite/ui-materials-collection-in-fortnite)
-  * [![Creating UI with Verse](https://dev.epicgames.com/community/api/documentation/image/32f2441a-c88c-4046-ba13-5d7d159deaf7?resizing_type=fit&width=640&height=640) Creating UI with Verse Create custom UI with the power of Verse. ](https://dev.epicgames.com/documentation/fortnite/creating-ui-with-verse-in-unreal-editor-for-fortnite)
+Use the Creator Portal to build a collaborative team of developers for Unreal Editor for Fortnite projects.
+
+![Setting Up Teams](https://dev.epicgames.com/community/api/documentation/image/50ee26e6-34c8-49f5-9b39-2ac4e7a799c1?resizing_type=fill&width=1920&height=335)
+
+The **Creator Portal** provides a way for you to form collaborative teams of developers that can work together on shared projects in **Unreal Editor for Fortnite (UEFN)**.
+
+With the **UEFN teams feature**, you can set clear roles and responsibilities, have different team members working on different features at the same time, and track changes and versions for shared projects.
+
+These collaborative UEFN projects can also be published through the Creator Portal.
+
+## Setting Up Teams and Assigning Roles
+
+Team roles have different functions and responsibilities. Team members can have different roles, depending on the project, so assign roles based on each one’s strengths and the permissions you want to grant them.
+
+| Role | Responsibilities |
+| --- | --- |
+| **Owner** | Controls all team branding, [branding profiles](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#brand), and monetization. The owner can also assign team members, view projects and project links, create new project versions, edit project metadata, submit project metadata for moderation, transfer project ownership, and promote and demote admins. The owner is also the person who sets up the team, and will remain as owner unless they transfer ownership to another team member. |
+| **Administrator** | Can view projects and project links, and can create new project versions, edit project metadata, submit project metadata for moderation, and promote and demote admins. |
+| **Publisher** | Can publish and manage projects, view projects and project links, create new project versions, and submit project metadata for moderation. |
+| **Collaborator** | Can view projects and project links, create new project versions, and edit project metadata. |
+
+A team can have a maximum of 30 members. If you try to exceed that number, you'll get a message:
+
+[![team full message](https://dev.epicgames.com/community/api/documentation/image/f3a62b5f-ca01-4bf5-9451-195ba2366fe0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f3a62b5f-ca01-4bf5-9451-195ba2366fe0?resizing_type=fit)
+
+Before you invite others to a team, you will go through an age verification process that includes providing the email address you use with your Epic account.
+
+You must be over 18 to invite other developers to a team, or to accept an invite to join another team.
+
+[![Verify your age with the email used to create your Epic account.](https://dev.epicgames.com/community/api/documentation/image/8007bc33-e4b3-4bd5-9c16-6b3601147427?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8007bc33-e4b3-4bd5-9c16-6b3601147427?resizing_type=fit)
+
+Team members must be over 18 to join a team and work on team projects.
+
+### Create a New Team
+
+[![](https://dev.epicgames.com/community/api/documentation/image/41b9c238-040e-45e8-9d51-06f8a7ec4e54?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/41b9c238-040e-45e8-9d51-06f8a7ec4e54?resizing_type=fit)
+
+### Manage Teams
+
+From the Creator Portal, you can switch the portal view between your personal profile and the team profile by clicking the **Selected Team** button and selecting a team.
+
+Once you've selected a team, click the **Manage Team** button. This button is grayed out if no team is selected.
+
+[![manage team button](https://dev.epicgames.com/community/api/documentation/image/eb64e66d-1cca-4dc1-a4fe-078a9d503dfa?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/eb64e66d-1cca-4dc1-a4fe-078a9d503dfa?resizing_type=fit)
+
+The **Team Members** screen will open.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/f2b58ed5-b227-4e5c-8da4-0139679e6fb0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f2b58ed5-b227-4e5c-8da4-0139679e6fb0?resizing_type=fit)
+
+From this screen, you can:
+
+### Accept a Team Invite
+
+When you’re invited to join a team, you’ll receive a URL to click.
+
+You must be over 18 years of age to accept an invitation to join another developer's team.
+
+To join:
+
+## Changing the Team View
+
+You may be a member of multiple teams, all of which you can view and access through the Creator Portal.
+
+To change which team you’re currently viewing, click the Selected Team button, then select a team from the teams displayed.
+
+## Delete Team
+
+Once a team has concluded business or no longer needs to exist, the team can be permanently deleted from the Creator Portal. Only a team owner has the capability to delete a team. Make sure to inform all team members that the team will be deleted and that they'll no longer have access to any associated projects to avoid any confusion.
+
+All team projects of any status must first be transferred to other teams or back to the project owner before a team can be deleted. To do that, click the ellipsis menu of the project and select **Transfer Project** from the dropdown menu.
+
+[![Click Transfer Project to transfer the project to another team.](https://dev.epicgames.com/community/api/documentation/image/1a34652d-e6d2-41ce-8ea6-fd8ba9f224f8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1a34652d-e6d2-41ce-8ea6-fd8ba9f224f8?resizing_type=fit)
+
+Select a team to transfer the project to. Once the team no longer has projects listed under the Projects tab you can begin to delete the team.
+
+[![Click Manage Teams.](https://dev.epicgames.com/community/api/documentation/image/1e9c3bfc-9fc6-4e1a-a21c-bcc3e7f273da?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1e9c3bfc-9fc6-4e1a-a21c-bcc3e7f273da?resizing_type=fit)
+
+[![A popup opens prompting you to select Continue or Cancel the delete process.](https://dev.epicgames.com/community/api/documentation/image/a018602d-ef25-4a1e-be14-887d03ebbb11?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a018602d-ef25-4a1e-be14-887d03ebbb11?resizing_type=fit)
+
+Once a Team is deleted:
+
+- The team deletion is permanent and irreversible.
+- All members will be automatically removed from the team.
+- The deleted team will disappear from the UEFN Team list for all team members including the owner.
+
+## Transfer Archived Projects
+
+If you forget to transfer archived projects you’ll get a warning message informing you of a project that needs to be transferred.
+
+[![The warning pops up when you have projects that need to be transferred when you’re trying to delete a team.](https://dev.epicgames.com/community/api/documentation/image/287670be-4205-4fa7-8898-4391b02ec76f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/287670be-4205-4fa7-8898-4391b02ec76f?resizing_type=fit)
+
+To transfer an archived project:
+
+[![Check for any Archived projects.](https://dev.epicgames.com/community/api/documentation/image/48c44fe1-84a8-430b-a5d5-9f0809a8cf64?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/48c44fe1-84a8-430b-a5d5-9f0809a8cf64?resizing_type=fit)
+
+[![Unarchive all projects on the Archived Project page.](https://dev.epicgames.com/community/api/documentation/image/bfcc4b17-1236-4b62-ba4b-32382eccb1c7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/bfcc4b17-1236-4b62-ba4b-32382eccb1c7?resizing_type=fit)
+
+[![Select Current Projects from the dropdown menu.](https://dev.epicgames.com/community/api/documentation/image/e0fbef97-153d-4111-a13b-62db854129a4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e0fbef97-153d-4111-a13b-62db854129a4?resizing_type=fit)
+
+[![Click Transfer Project to transfer the project to another team.](https://dev.epicgames.com/community/api/documentation/image/7b284eb3-a83a-4aa5-91a6-87b2773682ef?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7b284eb3-a83a-4aa5-91a6-87b2773682ef?resizing_type=fit)

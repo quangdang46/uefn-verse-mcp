@@ -1,74 +1,267 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/shootem-up-knockem-down-in-fortnite-creative
 
-# Reporting Content on Fortnite Communities
-Protect your community by reporting content that doesn't comply with the Fortnite Community Guidelines.
-![Reporting Content on Fortnite Communities](https://dev.epicgames.com/community/api/documentation/image/fba9fcc9-dfe8-471e-b226-14163cecd3d0?resizing_type=fill&width=1920&height=335)
-Community posts and content are visible from the web and the Fortnite ecosystem. Due to the public nature of communities and posts, it’s best to ensure the content and community visitors in your communities adhere to the **[Fortnite Communities Guidelines](https://communities.epicgames.com/fortnite-communities-guidelines)**.
-If a person is posting content that violates the guidelines and [Epic Games Terms of Service](https://legal.epicgames.com/en-US/epicgames/tos), you should report that person immediately.
-##  Finding Community Content
-The following are the various places where community content is visible in Fortnite:
-###  Message of the Day
-Community content appears as the **Message of The Day** on an Island lobby tile.
-[![An example of the Message of the Day.](https://dev.epicgames.com/community/api/documentation/image/17e8d948-360b-44c3-aeb0-e04b6019060d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/17e8d948-360b-44c3-aeb0-e04b6019060d?resizing_type=fit) Click image to enlarge.
-###  Community Highlights
-Community content appears in different **Community Highlights** sections:
-  * On a developer page.
-  * On an island page.
-  * On the **Following** window from the Discover feed.
+# Shoot'em Up, Knock'em Down
 
-[![An example of posts on the Following window.](https://dev.epicgames.com/community/api/documentation/image/e4c84096-a0c7-4c16-8603-b514b2cea1b7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e4c84096-a0c7-4c16-8603-b514b2cea1b7?resizing_type=fit) Click image to enlarge.
-##  Viewing Posts
-You can open and view a **Post** by selecting a **post tile** from any of the places mentioned above.
-[![An example of viewing a post.](https://dev.epicgames.com/community/api/documentation/image/90b4ae9a-5f65-4b2d-bd9f-35a30c1edfc3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/90b4ae9a-5f65-4b2d-bd9f-35a30c1edfc3?resizing_type=fit) Click image to enlarge.
-To delete a post, refer to **[Fortnite Communities](https://dev.epicgames.com/documentation/fortnite/fortnite-communities-in-fortnite)** > **[Deleting Posts and Replies](https://dev.epicgames.com/documentation/fortnite/fortnite-communities-in-fortnite)**.
-##  Reporting Posts in Fortnite
-Help keep Fortnite Communities safe by reporting content that violates **[Epic Games Terms of Service](https://legal.epicgames.com/en-US/epicgames/tos)** and the **[Fortnite Communities Guidelines](https://communities.epicgames.com/fortnite-communities-guidelines)**.
-###  Terms of Service Violations
-  1. Click the **Report Post** button to start a new report.
-  2. Select the reason for your report. The following options are considered **Terms of Service (TOS)** violations:
-    1. Offensive, inappropriate, or misleading content.
-    2. Scamming, cheating, or exploiting.
-    3. Spam and/or broken links.
-[![Report Post window with selectable reasons to report.](https://dev.epicgames.com/community/api/documentation/image/5abd13a4-0697-47f0-8694-2716170229fe?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5abd13a4-0697-47f0-8694-2716170229fe?resizing_type=fit) Click image to enlarge.
-  3. For TOS violations, you can complete your report directly.
-[![An example of a submitted report.](https://dev.epicgames.com/community/api/documentation/image/26859fdc-f9f0-4bf7-9772-444cf797fffb?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/26859fdc-f9f0-4bf7-9772-444cf797fffb?resizing_type=fit) Click image to enlarge.
-Once your report has been completed, a confirmation screen appears.
-[![A report submit confirmation](https://dev.epicgames.com/community/api/documentation/image/36562a2e-dd0f-4355-af96-94901f475a4f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/36562a2e-dd0f-4355-af96-94901f475a4f?resizing_type=fit) Click image to enlarge.
+Create a unique free-for-all target-shooting game!
 
-###  Illegal Content in Fortnite
-  1. Click the **Report Post** button.
-  2. Select **Illegal Content** as the reason for the report.
-[![Select Illegal Content reason.](https://dev.epicgames.com/community/api/documentation/image/419295f4-215d-4e7f-b4f1-53917b244c72?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/419295f4-215d-4e7f-b4f1-53917b244c72?resizing_type=fit) Click image to enlarge.
-  3. Read the **What is Illegal Content** description to determine whether the content is illegal or not. Once you’ve determined what you're reporting is illegal content, click**Next**.
-[![What is Illegal Content disclaimer.](https://dev.epicgames.com/community/api/documentation/image/c96af7a8-df14-46ec-b73e-19b651ea8ce1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c96af7a8-df14-46ec-b73e-19b651ea8ce1?resizing_type=fit) Click image to enlarge.
-  4. Scan the barcode to launch the safety site on your mobile device, then continue to complete the report form on your mobile device.
-[![An example of an illegal content report QR code.](https://dev.epicgames.com/community/api/documentation/image/b836bd57-782f-483b-835a-705d040bc9a5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b836bd57-782f-483b-835a-705d040bc9a5?resizing_type=fit) Click image to enlarge.
+![Shoot'em Up, Knock'em Down](https://dev.epicgames.com/community/api/documentation/image/273beb0f-1ffd-4ca0-84b1-14d9d871f18e?resizing_type=fill&width=1920&height=335)
 
-##  Reporting from Fortnite Communities on the Web
-There are different types of community content that you can report from the internet:
-  * Community details
-  * Channel names
-  * Posts
-  * Replies
+This **target-shooting [free-for-all](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#freeforall)** game tutorial guides you through the process of planning and placing [prefabs](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#prefab), [gallery](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#gallery) items, and devices, as well as creating player [classes](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#class), and using [chests](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#chest) and [loot llamas](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#llama) for a fast-paced, incredibly fun, free-for-all, target-shooting experience.
 
-###  Reporting Community Details
-From the community’s front page, click the **vertical****ellipsis menu** next to the **Following button** and select **Report**.
-[![An example of reporting from the Community Details.](https://dev.epicgames.com/community/api/documentation/image/4039d313-cd98-426a-a10b-009926c61865?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4039d313-cd98-426a-a10b-009926c61865?resizing_type=fit) Click image to enlarge.
-###  Reporting Channel Names
-You can find the full list of channels lower down on the community’s front page. Click the **ellipsis menu** to the right of the channel and select **Report**.
-[![An example of reporting a channel name.](https://dev.epicgames.com/community/api/documentation/image/d28c631f-4cbe-4759-a371-6f7f3fcc342e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d28c631f-4cbe-4759-a371-6f7f3fcc342e?resizing_type=fit) Click image to enlarge.
-###  Reporting a Post
-To the right of the post title, click the **vertical****ellipsis menu** and select **Report**.
-[![An example of reporting a post.](https://dev.epicgames.com/community/api/documentation/image/42339316-a931-4f89-b50d-931e4800d224?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/42339316-a931-4f89-b50d-931e4800d224?resizing_type=fit) Click image to enlarge.
-###  Reporting a Reply
-To the right of the **Reply icon** , click the **ellipsis menu** and select **Report**.
-[![An example of reporting a reply.](https://dev.epicgames.com/community/api/documentation/image/2c5969d2-2d37-462f-8f8f-d4d9940400e0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2c5969d2-2d37-462f-8f8f-d4d9940400e0?resizing_type=fit) Click image to enlarge.
-###  Completing a Report
-After clicking **Report** , select the reason for your report from the list.
-[![An example of the report content reasons.](https://dev.epicgames.com/community/api/documentation/image/49b81141-4a0d-43a4-bdbd-49f6c7d4d7d4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/49b81141-4a0d-43a4-bdbd-49f6c7d4d7d4?resizing_type=fit) Click image to enlarge.
-You can complete your report for TOS violations from the **Report Content** window.
-[![An example of reporting a post for TOS violations.](https://dev.epicgames.com/community/api/documentation/image/21e75a93-65b2-4b2f-9d9b-3b3d4c6dfe24?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/21e75a93-65b2-4b2f-9d9b-3b3d4c6dfe24?resizing_type=fit) Click image to enlarge.
-When reporting illegal content you are redirected to the Safety website and required to provide additional information.
-[![An example of the illegal content report modal.](https://dev.epicgames.com/community/api/documentation/image/7b8d4226-ad91-4a19-b9e5-c7f9802b4251?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7b8d4226-ad91-4a19-b9e5-c7f9802b4251?resizing_type=fit) Click image to enlarge.
-Complete the additional report details from the **Report Content** window so Epic can take action.
-[![An example of the Report Content window.](https://dev.epicgames.com/community/api/documentation/image/a1ceeb8b-e22e-4021-8ad7-a53e3a05857a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a1ceeb8b-e22e-4021-8ad7-a53e3a05857a?resizing_type=fit) Click image to enlarge.
+The gameplay features five 5-minute [rounds](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#round) for up to twelve players. The player with the highest score at the end of the final round wins the game.
+
+The island features hidden chests and loot llamas with [higher-tier](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#high-tier) [weaponry](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#weapon) and items. Different target types award points depending on the target dummy's difficulty level. Play through with friends to get a feeling for the competitive nature of the game.
+
+The sample island code for Shoot'em Up, Knock'em Down is **2661 3872 5705**. Head to the **Fortnite lobby** to take a look!
+
+From the [Fortnite lobby](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary), click **CHANGE** above the PLAY! button, then select **ISLAND CODE** on the top navigation bar. Enter the code above, and press **Enter**. The window displays information about the island. Click **PLAY** to launch the game.
+
+Note the different features of the island, then come back and explore this tutorial to see how you can recreate it on your own island.
+
+## Devices Used
+
+These devices were used for this gameplay example:
+
+- 12 X [Player Spawn Pad](https://dev.epicgames.com/documentation/fortnite/using-player-spawn-pad-devices-in-fortnite-creative)
+- 120 X targets from the [Target Dummy](https://dev.epicgames.com/documentation/fortnite/using-target-dummy-devices-in-fortnite-creative) device
+- 48 X [Customizable Light](https://dev.epicgames.com/documentation/fortnite/using-customizable-light-devices-in-fortnite-creative) devices
+- 1 X [Class Designer](https://dev.epicgames.com/documentation/fortnite/using-class-designer-devices-in-fortnite-creative)device
+- 1 X [Barrier](https://dev.epicgames.com/documentation/fortnite/using-barrier-devices-in-fortnite-creative) device
+
+## Overview of Tutorial Steps
+
+Following is an overview of the steps you'll need to recreate this island and the ideal sequence:
+
+1. Create a new island using a [starter island](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#starter-island).
+2. Add roads and scenery from the [Gallery](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#gallery) in the Creative menu.
+3. Add buildings from the [Prefabs](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary).
+4. Add 12 [Player Spawn pads](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary).
+5. Add 1 [Class Designer](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#class-designer) device.
+6. Add 120 [Target Dummy](https://dev.epicgames.com/documentation/fortnite/using-target-dummy-devices-in-fortnite-creative) device targets.
+7. Add a [barrier](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#barrier) around the battle arena.
+8. Edit the **My Island** options.
+
+## Create Your Island
+
+[![Creating your free-for-all target shooting game](https://dev.epicgames.com/community/api/documentation/image/2c5b3526-4ff4-4e4e-9484-c69eb67bb4b3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2c5b3526-4ff4-4e4e-9484-c69eb67bb4b3?resizing_type=fit)
+
+Start with any [starter Island](building-your-first-island-in-fortnite-creative). The Meadow Island was used in this example. If you have an aesthetic in mind for your game, you can also build your own terrain on a [grid island](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#grid).
+
+The prefabs used in this example include:
+
+- Houses from **Pleasant Park**
+- Stores, arcades, and restaurants from **Retail Row**, **Paradise Palms**, and **Roadside**
+
+  [![(Retail Row Prefabs)](https://dev.epicgames.com/community/api/documentation/image/0df2a205-408a-4ebc-8c59-08d64f4c3738?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0df2a205-408a-4ebc-8c59-08d64f4c3738?resizing_type=fit)
+
+  *Click image to enlarge.*
+
+It also has items from the [gallery](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#gallery), such as:
+
+- Streets and roads from **Street Gallery B**
+- Trees and bushes from **Variant Foliage Gallery A**
+
+  [![(Road Gallery)](https://dev.epicgames.com/community/api/documentation/image/dba9e308-f69f-4214-82d8-10cd9ce91811?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/dba9e308-f69f-4214-82d8-10cd9ce91811?resizing_type=fit)
+
+  *Click image to enlarge.*
+
+## Plan and Place Prefabs and Gallery Pieces
+
+Before building your arena, set your [Grid Snap](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#grid-snap) level to 8. Begin by placing your buildings before the gallery road pieces. Once you've laid out your structures, add the road pieces around your buildings.
+
+Adding road pieces around your buildings is easier than trying to fit buildings within the streets you create because buildings will have different depths and widths, which makes street planning difficult. Try to keep the space between your buildings two tiles wide to accommodate the road pieces.
+
+Watch the memory bar as you lay out your arena. Prefabs use a lot of memory and could potentially slow the [frame rate](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#frame-rate) on your island. Don't crowd buildings together — players should be able to discover each other easily. Part of the fun in the game is for players to shoot each other to delay their opponents from collecting more points.
+
+## Add Player Spawn Pads
+
+Where you place the spawn pad is important because a player might spawn in a wall or a prop and fall out of the game. Place Player Spawn Pads inside buildings, and be sure the pad is placed in the middle of a [tile](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#tile) to ensure that the player can successfully join the game.
+
+[![(Player Spawn Pad)](https://dev.epicgames.com/community/api/documentation/image/036c57b1-e1e6-42b0-ac34-b0e71e5cb911?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/036c57b1-e1e6-42b0-ac34-b0e71e5cb911?resizing_type=fit)
+
+1. Press the **Tab** key to open the **Creative Menu**, then click **Devices > Customizable Light device > EQUIP** to add the Player Spawn Pad Device to your [Quick Bar](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#quick-bar).
+2. Also add the following devices:
+
+   - Barrier device
+   - Shooting Gallery device
+   - Class Designer device
+   - Player Spawn Pad device
+3. Click **PLACE NOW** to [place](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#place) your first spawn pad.
+4. Edit the Player Spawn Pad **Visible during games** option to **No**.
+
+   [![Player Spawn Pad options](https://dev.epicgames.com/community/api/documentation/image/6ece7f6b-f2c8-4b9a-93d7-e3027affda42?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6ece7f6b-f2c8-4b9a-93d7-e3027affda42?resizing_type=fit)
+
+There's no need to modify any other settings on this device to make the game work.
+
+Copy the spawn pad and paste 11 more on your island for a total of 12 Player Spawn Pads.
+
+## Add Class a Designer Device
+
+[![Place a Class Designer device](https://dev.epicgames.com/community/api/documentation/image/eb925813-84bc-4ce3-ac67-5698f99033e0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/eb925813-84bc-4ce3-ac67-5698f99033e0?resizing_type=fit)
+
+By adding a player class, you can provide a weapon to players who respawn so they don't have to find one when they reenter the game.
+
+Make sure you click **OK** after changing your settings. Otherwise, your customized options will not be saved.
+
+## Place Target Devices
+
+Make shooting the targets more interesting by having a variety of target types for players to shoot at, and place them in a variety of places — out in the open, in windows, and partially hidden. On this island, there are three types of targets: standing still, hopping, and moving side to side.
+
+Get the Shooting Target Gallery device from the **Devices** tab, then placing the device in the arena and edit the options for the first target. Next, place the target in your arena so you can copy and paste that model around, making small settings adjustments to create targets that are harder or easier to hit.
+
+Repeat the process described above with the hopping and moving targets you create.
+
+Make sure harder targets award more points.
+
+[![(Targets)](https://dev.epicgames.com/community/api/documentation/image/d0220e0a-3f51-4ef0-9763-a849038cacfe?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d0220e0a-3f51-4ef0-9763-a849038cacfe?resizing_type=fit)
+
+### Standing-Still Targets
+
+[![Standing Still Target](https://dev.epicgames.com/community/api/documentation/image/1f159657-7d75-4faf-ad8f-4c7b41865293?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1f159657-7d75-4faf-ad8f-4c7b41865293?resizing_type=fit)
+
+Use the same option settings below on all target types except Score Value.
+
+### Hopping Targets
+
+[![Hopping Target](https://dev.epicgames.com/community/api/documentation/image/cd418659-d801-4fb9-9e5e-78fb16b18b25?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/cd418659-d801-4fb9-9e5e-78fb16b18b25?resizing_type=fit)
+
+Set the following options for your hopping targets.
+
+[![Hopping target options](https://dev.epicgames.com/community/api/documentation/image/b3c29107-4991-478d-9b60-1fcf36878ce4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b3c29107-4991-478d-9b60-1fcf36878ce4?resizing_type=fit)
+
+| Option | Value | Explanation |
+| --- | --- | --- |
+| **Score Value** | 3 | Set to 3 because the hopping target requires a bit more skill to hit than the standing-still target. |
+| **Bullseye** | Small | Smaller bullseye targets were added to make the hopping targets harder to shoot. |
+| **Hopping Frequency Time** | 1 Second | Make the target more difficult to hit by setting the hopping frequency to 1 second. |
+
+### Moving Targets
+
+[![Moving Target](https://dev.epicgames.com/community/api/documentation/image/fc1dfeb5-ed2d-49f2-948b-48ea17966bb5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/fc1dfeb5-ed2d-49f2-948b-48ea17966bb5?resizing_type=fit)
+
+Set the following options for your moving targets.
+
+[![Moving target options](https://dev.epicgames.com/community/api/documentation/image/f770b684-457c-4cdf-a0c3-c9221ed66084?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f770b684-457c-4cdf-a0c3-c9221ed66084?resizing_type=fit)
+
+| Option | Value | Explanation |
+| --- | --- | --- |
+| **Length** | 2 | The number represents the number of tiles the target rail stretches across. |
+| **Movement Start Range** | 1/2 | Sets the target's movement range to half a tile. |
+| **Score Value** | 10 | Awards 10 points when knocked down. |
+
+Place an equal amount of targets for each player within their area. You want players to discover each other while finding new targets.
+
+## Place Customizable Light
+
+It is pretty dark inside the buildings, which can make it hard to find targets. Place four lights per building near where you've placed targets that are partially hidden or are in dark corners of the structure.
+
+[![Placing Customizable Light devices](https://dev.epicgames.com/community/api/documentation/image/61fad3f0-6eca-4dae-bdae-3ce83fa50c9e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/61fad3f0-6eca-4dae-bdae-3ce83fa50c9e?resizing_type=fit)
+
+## Place the Barrier Device
+
+The Barrier device keeps players within the boundaries of the arena. Without the Barrier device, players could potentially leave the game arena and get lost, causing them to lose the game.
+
+[![(Barrier Device)](https://dev.epicgames.com/community/api/documentation/image/e198093e-0e94-4466-a545-75f39017a956?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e198093e-0e94-4466-a545-75f39017a956?resizing_type=fit)
+
+Press the **Spacebar** twice to fly up to where you can view the entire barrier to ensure it surrounds the area you intend to cover.
+
+## Create a Chest and Loot Llama
+
+Provide players with the opportunity to find better weapons by adding chests and loot llamas to the arena.
+
+Go to the [Weapons](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) category of the Creative tools. To add weapons to a chest, do the following:
+
+1. Go to the **Weapons** tab in the **Creative Inventory**.
+2. Select the Rare **Tactical Assault Rifle** and click **Add to Chest.**
+3. Continue to add the following weapons to your chest:
+
+   - Epic Striker Pump Shotgun
+   - Uncommon Makeshift Submachine Gun
+4. Go to the **Items** tab in the **Creative Inventory**.
+5. Select the **Small Shield Potion** and click **Add to Chest**.
+6. Continue to add the following items to your chest:
+
+   - Med Kit
+   - Boogie Bomb
+7. Click the **Chest > Create Chest** tab from the **Creative Inventory**.
+8. Click **Back** to return to Create mode on your island. The chest you created will be in front of you.
+9. Copy and paste your chest into buildings and partially hidden areas for players to find.
+
+   [![Create a chest](https://dev.epicgames.com/community/api/documentation/image/8cdcdd84-4d6f-4d7f-af0a-d237c7f306b0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8cdcdd84-4d6f-4d7f-af0a-d237c7f306b0?resizing_type=fit)
+
+To create a loot llama, do the following:
+
+1. Select a **Legendary MK Seven Assault Rifle** and click **Add to Chest**.
+2. Continue to add the following weapons to your loot llama:
+
+   - Legendary Auto Shotgun
+   - Legendary Machine Pistol
+3. Click the **Items** tab in the **Creative Inventory**.
+4. Select the **Med Mist** item then click **Add to Chest**.
+5. Add the **Chug Splash** item to the llama next.
+6. Click **Chest > Create Llama** from the **Creative Inventory**.
+7. Click **Back**, you'll be in **Create mode** on your island and the loot llama you created will be in front of you.
+8. Copy and paste your loot llama in between buildings and partially hidden areas for players to find.
+
+   [![(Loot Llama)](https://dev.epicgames.com/community/api/documentation/image/6b4bb8f6-2cf5-476f-9389-a1f208b938bc?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6b4bb8f6-2cf5-476f-9389-a1f208b938bc?resizing_type=fit)
+
+## My Island Settings
+
+Change the following settings in My Island to ensure that all players can enter the game, respawn, and experience a smooth transition from one round to the next.
+
+### Game Menu
+
+[![My Island Game menu](https://dev.epicgames.com/community/api/documentation/image/748eb45a-fcaa-4ec2-873f-93eb7a0aa0d8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/748eb45a-fcaa-4ec2-873f-93eb7a0aa0d8?resizing_type=fit)
+
+| Options | Value | Explanation |
+| --- | --- | --- |
+| **Max Players** | 12 | Allows up to twelve players to enter the game. |
+| **Default Class Identifier** | 1 | Identifies the class you created with the class designer device as the default class in the game. |
+| **Total Rounds** | 5 | Create five rounds to complete one game. |
+| **Join in Progress** | Spawn | Players can join a game in progress when a spawn pad is available. If a spawn pad isn’t available, the player will fall from the sky instead. |
+| **Autostart** | Immediate | Starts the game immediately for all players. |
+| **Elimination Score** | 5 | Players who eliminate another player receive five points. |
+
+### Settings Menu
+
+[![My Island Settings menu](https://dev.epicgames.com/community/api/documentation/image/921f0a24-08a0-4873-9d7e-68cd0c4bbe1c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/921f0a24-08a0-4873-9d7e-68cd0c4bbe1c?resizing_type=fit)
+
+| Options | Value | Explanation |
+| --- | --- | --- |
+| **Time of Day** | 2:00 PM | Makes it daylight throughout the game. |
+| **Fog Thickness** | 0% | No fog will be generated during gameplay. |
+| **Enable Fire** | No | Weapons will not cause fire damage to structures and buildings. |
+| **Infinite Resources** | Off | Resources are turned off for the game since there is no building happening. |
+| **Show Wood Resources** | No | Does not show wood resource amounts in the Equipment Bar. |
+| **Show Brick Resources** | No | Does not show brick resource amounts in the Equipment Bar. |
+| **Show Metal Resources** | No | Does not show metal resource amounts in the Equipment Bar. |
+| **Allow Building** | None | Prevents players from building structures in-game. |
+| **Pickaxe Destruction** | None | Prevents players from doing damage to the environment and structures with their pickaxe. |
+| **Spawn Immunity Time** | 5 Seconds | Give players who respawn into the game five seconds of immunity. |
+| **Allow Sliding** | On | Allows players to slide and shoot during gameplay. |
+| **Player Flight Sprint** | Off | Prevents players from using flight sprint. |
+
+### UI Options
+
+[![My Island UI options](https://dev.epicgames.com/community/api/documentation/image/2d806f52-0d18-4437-9d26-f117c0a3c38d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2d806f52-0d18-4437-9d26-f117c0a3c38d?resizing_type=fit)
+
+| Options | Value | Explanation |
+| --- | --- | --- |
+| **Game Score Display Time** | 6 Seconds | Displays the game score for 6 seconds. |
+| **Round Winner Display Time** | Don’t Show | Does not show the round winner at the end of the round. |
+| **Round Score Display Time** | Don’t Show | Does not show the round score at the end of the round. |
+| **HUD Information Type** | Score | Shows the score on the HUD. |
+| **Max Trackers on HUD** | 3 | Tracks three different types of information on the HUD device. |
+| **Show Cumulative Stat Value on HUD** | Yes | Shows the cumulative points scored for each individual player in their HUD devices across all rounds. |
+| **Win Condition** | Score | The highest score is the winning score condition. |
+| **Tiebreaker 1** | Eliminated | How many opponents were eliminated by the players will be the tie-breaking condition. |
+
+## Designer Tips
+
+Here are some tips for changing or adding things to your island to change how the island plays out, or to create new games based on this island by changing various devices or settings.
+
+### Create Teams
+
+Use **Player Spawn Pads** to create teams, and add **Score Manager** devices to award points to teams based on which targets they eliminate.
+
+Using teams in the free-for-all playstyle would be great on a larger map. You might also want to think about adding a domination factor to the gameplay by adding [Capture Area devices](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary).

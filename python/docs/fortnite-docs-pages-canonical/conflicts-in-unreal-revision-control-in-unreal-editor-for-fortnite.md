@@ -1,86 +1,86 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/conflicts-in-unreal-revision-control-in-unreal-editor-for-fortnite
 
-# Matchmaking Queue Controls
-Customize the player experience on your island with Matchmaking Queue Controls.
-![Matchmaking Queue Controls](https://dev.epicgames.com/community/api/documentation/image/7c9a883b-2094-4a9b-a995-cab3b9653850?resizing_type=fill&width=1920&height=335)
-You can use Matchmaking Queue Controls for your island to increase player satisfaction and player engagement. [Parties](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#party) expect to play together when joining multi-player games in [Discover](https://dev.epicgames.com/documentation/en-us/fortnite-creative/exploring-discover-in-fortnite-creative). To avoid splitting party members up, you can configure and customize matchmaking in queue control in the [Island Settings](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary).
-##  Controls and Requirements
-The [island settings](https://dev.epicgames.com/documentation/en-us/fortnite-creative/understanding-island-settings-in-fortnite-creative) provide a way to customize island queues and matchmaking. Learn more about matchmaking and queues in the [Mode Settings](https://dev.epicgames.com/documentation/en-us/fortnite-creative/mode-settings-in-fortnite-creative) document.
-These island settings address Queue Requirements and Matchmaking Queue Controls to create a better player and party experience. Below is a list of requirements and controls:
-###  Queue Requirements
-  * Island Settings to define wait time.
-    * **Queue Overtime Duration** : The amount of time players wait in queue to reach either the Overtime Player Target or be sent into the game with the Minimum Players necessary for the game.
-    * **Queue Main Duration** : The amount of time players wait in queue for the preferred player count to be reached.
+# Conflicts in Unreal Revision Control
 
-###  Matchmaking Queue Controls
-  * Island Settings to define target player counts.
-    * **Overtime Player Target**
-    * **Minimum Players**
+Learn more about what conflicts are and how to avoid them.
 
-##  Queue Controls
-With the Matchmaking and Queue options, you can configure the threshold for your games. You can group members of a party together according to the size of the party and the team size requirements, as well as customize the player journey into the match, and the requirements to start the game on your island. This is done by having differing threshold requirements for starting the game (these are customizable and not one size fits all).
-  1. **Maximum Players** : The preferred number of players for the map and the preferred player experience.
-  2. **Overtime Player Target** : A target for the amount of players to start the game even if the maximum number of players hasn’t been reached before a certain amount of time, as long as the minimum number has been reached. You can set this target to indicate the number of players needed to get as close to the desired experience as possible on your island.
-  3. **Minimum Players** : The absolute minimum number of players necessary to start the game and still be fun for all players.
+![Conflicts in Unreal Revision Control](https://dev.epicgames.com/community/api/documentation/image/82d222f9-3073-4922-9013-7d1e6e63e655?resizing_type=fill&width=1920&height=335)
 
-Below are diagrams depicting thresholds to either start a game, or cancel it.
-Maximum Players Threshold  |  Overtime Player Target Threshold  |  Minimum Players Threshold  |  Queue Canceled
----|---|---|---
-[![The preferred number of players for the map and the preferred player experience.](https://dev.epicgames.com/community/api/documentation/image/f5da1b96-1411-4b78-968e-d5251b4da1b7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f5da1b96-1411-4b78-968e-d5251b4da1b7?resizing_type=fit) Maximum Phase  |  [![A target for the amount of players to start the game even if the maximum number of players hasn’t been reached before a certain amount of time, as long as the minimum number has been reached. You can set this target to indicate the number of players needed to get as close to the desired experience as possible on your island.](https://dev.epicgames.com/community/api/documentation/image/902d32e6-fc0f-434b-84c7-fafd531c9925?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/902d32e6-fc0f-434b-84c7-fafd531c9925?resizing_type=fit) Overtime Phase  |  [![The absolute minimum number of players necessary to start the game and still be fun for all players.](https://dev.epicgames.com/community/api/documentation/image/fa0277ba-ae4c-47d7-9a9c-e203fe00a8d4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/fa0277ba-ae4c-47d7-9a9c-e203fe00a8d4?resizing_type=fit) Minimum Phase  |  [![The game does not start because it didn't meet the minimum player requirement to start.](https://dev.epicgames.com/community/api/documentation/image/1022dbf7-e1d9-4992-9a9d-996e04953063?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1022dbf7-e1d9-4992-9a9d-996e04953063?resizing_type=fit) Queue Canceled
-###  Queue Basics
-By determining **Queue Main Duration** and **Queue Overtime Duration** alongside **Maximum Players** , **Overtime Player Target** , and **Minimum Players** , you can prevent players from experiencing long wait times to join an island.
-The purpose of these settings is to generally prioritize fuller matches over short queue times. However, if the game can’t reach the maximum player number, but there is a middle ground between minimum and maximum players, you can use that as the **Overtime Player Target** , and fall back to that after a short wait for **Max Players**. Then, in cases where that fails, a fallback to a minimum player count happens.
-###  Threshold Determination
-Thresholds use a prioritization system to determine team sizes during matchmaking. The prioritization system determines which matchmaking queue control values take priority: max players, team size, number of teams, squad size, fill, and more. This is calculated by considering the following:
-  * **Party Size is Less Than or Equal To Team Size** - All players in the party will be delivered to the island on the same team.
+A revision control conflict occurs when an individual tries to submit changes made to the local version of their project that cannot be reconciled with the latest source of truth in revision control.
 
-  * **Party Size is Greater Than Team Size** - The party is forced to split up, but they are distributed by placing as many members on the same team as possible.
+This can happen for a handful of reasons, but most commonly is due to an individual making changes to a portion of a team project that a teammate has since made changes to. Submitting their changes without first syncing the changes of their collaborators causes a conflict.
 
-###  Queue Analytics
-Analytics are available to measure the **Queue Time** , which is the first phase of matchmaking. The analytics record the average queue time across all players on the island, and provide data based on results. For more information on Queue Analytics, see [Project Analytics](https://dev.epicgames.com/documentation/en-us/fortnite-creative/project-analytics-for-fortnite-games).
-##  Set Up a Custom Queue
-Once the thresholds for your island are determined, you’re ready to set up the matchmaking for your island.
-For this example set up, the game type is [Capture the Flag](https://dev.epicgames.com/documentation/en-us/uefn/build-a-capture-the-flag-in-unreal-editor-for-fortnite).
-To make this experience engaging the preferred player count would be **8** maximum players. This game would not be playable with less than 4 players, therefore, the minimum number of players to start the game is **4**.
-In this case you would use the following [Mode Settings](https://dev.epicgames.com/documentation/en-us/fortnite-creative/mode-settings-in-fortnite-creative):
-  1. **Max Players** = 8
-  2. **Teams Index** = 2
-  3. **Minimum Players** = 4
-  4. **Overtime Player Target** = 4
-  5. **Queue Main Duration** = 5 s
-  6. **Queue Overtime Duration** = 15 s
+The best way for you and your teammates to avoid conflicts is to keep auto checkout and auto undo enabled. Use [revision control best practices](https://dev.epicgames.com/documentation/fortnite/unreal-revision-control-best-practices-in-unreal-editor-for-fortnite) to reduce project conflicts and better understand how [revision](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#revision) control works.
 
-While you can extend queue times to 2 minutes, it's best to make wait times minimal to get players and parties on your island quickly.
-With these settings, the game starts immediately when 8 players are put into the same match. When there are fewer than 8 players, the matchmaking server seeks to start the game between 5-15 seconds by checking the minimum and mid-tier thresholds. This means that if the Max Players requirement is not met, but the requirements for the Overtime Player Target and Minimum Players have been reached or exceeded, the game can start.
-###  Additional Queue Examples
-Below are some examples of Fortnite games and miscellaneous game types for an idea of how different game genres might handle queues.
-####  Fortnite Ballistic
-In Fortnite Ballistic, the custom queue might be customized like so:
-  1. **Max Players** = 10 (Preferred for an optimal experience.)
-  2. **Teams Index** = 2
-  3. **Minimum Players** = 4 (Lowest number of players to get the game started if the Overtime Player Target cannot be reached within 15 seconds.)
-  4. **Overtime Player Target** = 6 (Enough players on both teams to make the game fun.)
+## Conflict Prevention Warnings with Auto Checkout and Auto Undo
 
-####  Racing Games
-In a Racing game, the custom queue might be customized like so:
-  1. **Max Players** = 12 (Preferred for an optimal experience.)
-  2. **Minimum Players** = 1 (Lowest number of players to get the game started if the Overtime Player Target cannot be reached within 15 seconds.)
-  3. **Overtime Player Target** = 6 (Enough players to make the game fun.)
+Unreal Revision Control helps avoid most conflicts by enabling auto checkout and auto undo by default when a project is created using [revision control](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#revision-control).
 
-####  Fortnite Battle Royale
-In a Fortnite Battle Royale, the custom queue might be customized like so:
-  1. **Max Players** = 100 (Preferred for an optimal experience.)
-  2. **Minimum Players** = 55 (Lowest number of players to get the game started if the Overtime Player Target cannot be reached within 15 seconds.)
-  3. **Overtime Player Target** = 75 (Enough players to make the game fun.)
+These features work together to automatically attempt to check out an asset when a change is made to it, and automatically undo the change if the checkout fails. The system triggers a warning that this has occurred in order to prevent a conflict from occurring.
 
-####  Prop Hunt
-In a Prop Hunt game, the custom queue might be customized like so:
-  1. **Max Players** = 11 (Preferred for an optimal experience.)
-  2. **Minimum Players** = 7 (Lowest number of players to get the game started if the Overtime Player Target cannot be reached within 15 seconds.)
-  3. **Overtime Player Target** = 7 (Enough players to make the game fun.)
+These warnings trigger primarily in the following two scenarios:
 
-####  Maze Race
-In a Maze Race game, the custom queue might be customized like so:
-  1. **Max Players** = 10 (Preferred for an optimal experience.)
-  2. **Minimum Players** = 1 (Lowest number of players to get the game started if the Overtime Player Target cannot be reached within 15 seconds.)
-  3. **Overtime Player Target** = 7 (Enough players to make the game fun.)
+### Attempting to make changes to assets that are checked out by a teammate
+
+If you attempt to make changes to an asset that is currently checked out by a teammate, the changes are automatically undone to prevent you from making changes to assets that your teammate has exclusively checked out.
+
+You do not need to take any action when this happens because the conflict has already been avoided, but if you need to make changes to the asset in question it is best to coordinate with your teammate to check it back in, sync their latest changes, and proceed with your own.
+
+The first time this occurs you will see the following warning modal, informing you which of your changes have been undone and to whom they are checked out. If you wish to see this every time, uncheck the “Don’t show me this again” checkbox.
+
+Subsequently, a toast notification will inform you anytime this occurs.
+
+### Attempting to make changes to assets are not synced to the latest version
+
+If you attempt to make changes to an asset for which you have not yet synced the latest version, the changes are automatically undone to prevent you from making changes that you cannot check in later.
+
+In this case, simply sync latest and proceed with your changes.
+
+The first time this occurs will see the following warning modal, informing you which of your changes have been undone. If you wish to see this every time, uncheck the “Don’t show me this again” checkbox.
+
+Subsequently, a toast notification will inform you anytime this occurs.
+
+## Conflict Error Messages
+
+Conflicts are most common when Auto Checkout and Auto Undo are turned off. Circumstances that cause conflicts in Unreal Revision Control, include:
+
+- Not syncing frequently to latest
+- Making changes without first checking out an asset
+- Working offline
+
+The following sections cover conflict errors and common causes that you may encounter.
+
+### Not at Latest Conflicts
+
+One type of conflict occurs when you attempt to sync latest or check in changes and have made changes to an asset that has been changed and checked in by someone else in a revision that is newer than the one you’ve most recently synced.
+
+A conflict occurs in this case because you’ve made changes to an outdated version of the asset.
+
+In this case, you receive an error message informing you which asset(s) are in conflict and who made the latest changes to them that you must sync. Your only option to resolve the conflict is to sync the latest changes and overwrite yours.
+
+Once you sync latest and overwrite, you may check out the assets you wish to change and subsequently make and check in your changes.
+
+### Checked Out Asset Conflicts
+
+Another type of conflict occurs when you have made changes to an asset that is currently checked out by someone else and attempt to sync latest or check in changes.
+
+The conflict occurs because you’ve made changes to something that you do not have the right to edit since it is exclusively checked out by a teammate.
+
+In this case, you receive an error informing you which asset(s) you have changed that you do not have checked out and instructions to coordinate with your teammate.
+
+If you wish to disregard your change, you can revert your changes to individual conflicting assets via the revision control context menu and reattempt the Sync or Check in.
+
+### Duplicate Asset Conflicts
+
+A third and rare type of conflict can occur if two teammates accidentally create assets with the same name and file path and try to save and check in these objects independently. The first person to check in will be successful, and the second person will receive an error message.
+
+Renaming the second object is the best course of action that does not result in erasing the object. An alternative would be changing the asset’s location in the project’s hierarchy because as long as the file path is different, no conflicts will occur.
+
+## Working offline
+
+Although some work can continue to a UEFN project while offline, this is not advisable. Working offline runs the risk of causing conflicts with colleagues because assets cannot be checked out without an internet connection and two people may end up working on the same thing at once.
+
+If you work offline, it is recommended to:
+
+- Communicate with your teammates beforehand what you intend to work on and if possible check out any assets before losing connection.
+- Re-establish your internet connection as soon as possible, sync to latest, and check in any changes you’ve made.

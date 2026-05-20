@@ -1,25 +1,38 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/applylocalrotationz
 
 # (InitialRotation:rotation).ApplyLocalRotationZ extension
+
 Learn technical details about the (InitialRotation:rotation).ApplyLocalRotationZ extension.
+
 Makes a `rotation` by applying `AngleRadians` of left-handed rotation around the local +Z axis to `InitialRotation`.
-|
----|---
-Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }`
-`(InitialRotation:rotation).ApplyLocalRotationZ<public>(AngleRadians:float)<transacts>:`[`rotation`](https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/rotation)
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }` |
+
+`(InitialRotation:rotation).ApplyLocalRotationZ<public>(AngleRadians:float)<transacts>:`[`rotation`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/rotation)
+
 ## Parameters
+
 `ApplyLocalRotationZ` takes the following parameters:
-Name | Type | Description
----|---|---
-`InitialRotation` | `rotation` |
-`AngleRadians` | `float` |
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `InitialRotation` | `rotation` |  |
+| `AngleRadians` | `float` |  |
+
 ## Attributes, Specifiers, and Effects
-The following attributes, specifiers, and effects determine how you can interact with `ApplyLocalRotationZ` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/en-us/fortnite/specifiers-and-attributes-in-verse).
+
+The following attributes, specifiers, and effects determine how you can interact with `ApplyLocalRotationZ` in your programs, as well as how it behaves in your programs and UEFN. For the complete list of attributes, specifiers, and effects; see the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
+
 ### Specifiers
-Specifier | Meaning
----|---
-`public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data.
+
+| Specifier | Meaning |
+| --- | --- |
+| `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data. |
+
 ### Effects
-Effect | Meaning
----|---
-`transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier.
+
+| Effect | Meaning |
+| --- | --- |
+| `transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier. |

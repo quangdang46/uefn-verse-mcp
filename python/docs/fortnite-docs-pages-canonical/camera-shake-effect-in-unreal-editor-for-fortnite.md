@@ -1,149 +1,84 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/camera-shake-effect-in-unreal-editor-for-fortnite
 
-# The Audio Mixer Device
-Adjust volumes of sound groups using the Audio Mixer device.
-![The Audio Mixer Device](https://dev.epicgames.com/community/api/documentation/image/ffc1f2c1-272e-4e78-8a1a-f649f0328aca?resizing_type=fill&width=1920&height=335)
-Use the **Audio Mixer** device to adjust the volume for groups of sounds with dynamic and automatic control of a game’s volume mix, much like a professional mixing console would.
-With the Audio Mixer, you can adjust the level of sounds that are already in Fortnite (such as weapons, character footsteps, and vehicles) as well as custom [sound waves](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#sound-wave) and [sound cues](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#sound-cue) by using [**control buses**](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#control-bus) and [**control bus mixes**](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#control-bus-mix).
-The Audio Mixer is also available directly in Fortnite Creative. Check out the [Audio Mixer Device](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-audio-mixer-devices-in-fortnite-creative) for more info.
-Jump to [Activate Mix for a Duration](https://dev.epicgames.com/documentation/fortnite/using-audio-mixer-devices-in-unreal-editor-for-fortnite) for a step-by-step guide on activating a mix for a short duration on your island.
-##  Control Buses
-When a sound is set to use a **control bus** , all the sounds on that bus can be modulated together in a **Control Bus Mix**.
-The following control buses are available to control the volume of the sounds that occur in Fortnite by default:
-Control Bus Name  |  Description
----|---
-CB FortAmbient |  Used to set the volume of FN ambient sounds.
-CB FortExplosions |  Used to set the volume of FN explosion sounds.
-CB FortFootstep |  Used to set the volume of character footsteps.
-CB FortGadgets |  Used to set the volume of sounds associated with FN Creative gadgets and devices.
-CB FortGlobal |  Used to set the volume of all FN sounds.
-CB FortHitNotify |  Used to set the volume of sounds associated with the Player getting impacted.
-CB FortImpacts |  Used to set the volume of impact sounds.
-CB FortJam Volume |  Used to control the volume of Jam tracks.
-CB FortMusic |  Used to set the volume of music (includes emote music).
-CB FortPatchwork Volume |  Used to set the volume of Patchwork devices.
-CB FortVehicles |  Used to set the volume of vehicle sounds (not including engine sounds).
-CB FortVehicles Engine |  Used to set the volume of vehicle engines.
-CB FortWeapon |  Used to set the volume of weapons.
-You can also create your own control buses. To create a control bus:
-  1. In the **Content Browser** , with the project content folder selected, click the **+Add** button or right-click in an empty space in the Content Browser to bring up a context menu.
-  2. Under the **Create Advanced Assets** section, click **Audio > Modulation**, then click**Control Bus**.
-  3. Enter a name for your new **control bus**.
-  4. Open the **Control Bus** asset and set the **Parameter to Volume**
+# Camera Shake Effect
 
-To use a control bus on custom audio assets, the control bus must be set on the sound wave asset. The sound wave can still be used on a sound cue and the effect will be applied.
-To add a control bus to your sound wave:
-  1. In the **Content Browser** , open the sound wave you want to add to a control bus to.
-  2. Under Modulation, set **Volume Routing** to **Override**.
-  3. Click the **Modulate** checkbox.
-  4. Add one or more **control buses** to the **Volume Modulators** array.
+Add a camera shake to your level sequence to create a distinct cinematic mood for your project.
 
-##  Control Bus Mixes
-**Control bus mixes** take a group of control buses and allow you to define the volume level for each control bus.
-To create a control bus mix:
-  1. In the **Content Browser** , with the project content folder selected, click the **+ Add** button or right-click in an empty space in the Content Browser to bring up a context menu.
-  2. Under the **Create Advanced Assets** section, click **Audio > Modulation**, then click**Control Bus Mix**.
-  3. Enter a name for your new **control bus mix**.
+![Camera Shake Effect](https://dev.epicgames.com/community/api/documentation/image/2370fc11-f6d8-412e-84d7-05d70c5c6bc4?resizing_type=fill&width=1920&height=335)
 
-Control bus mixes can also be created directly from the Mixer device.
-Control bus mixes take an array of **mix stages**. Each mix stage has the following parameters:
-Parameter  |  Description
----|---
-Bus |  A control bus. Can be a Fortnite-defined bus or a user-created one.
-Value |  The volume of the sounds routed to this control bus should be scaled when a mix is activated.
-Attack Time (sec) |  [Attack](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#attack) is the time in sections for the mix to be applied when the mix is activated.
-Release Time (sec) |  [Release](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#release) is the time in sections for the mix to be applied when the mix is deactivated.
-##  Finding and Placing the Device
-  1. Open the **Content Browser.**
-  2. Open the **Fortnite** folder index list.
-  3. Open the **Devices** folder.
-  4. Select the **Audio Mixer** device and click-and-drag the device into the **viewport**.
-  5. Select the **Audio Mixer** device in the**Outliner** panel.
-  6. Configure the **User Options** for the **Audio Mixer** device in the **Details** panel
+Add a tension-building camera shake to a [level sequence](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#sequencer) or [actor](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#actor) using a **camera shake effect**.
 
-##  User Options
-This device applies a control bus mix when activated, and you can configure this device to set the value:
-Option  |  Value  |  Description
----|---|---
-**Mix** |  **None,** Select a Control Bus Mix |  The control bus mix to apply when the device is activated.
-##  Direct Event Binding
-Devices in UEFN use **Event Binding** to communicate. To set [direct event binding](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#direct-event-binding) for your device in UEFN:
-  1. Select the device in the **Outliner** panel.
-  2. Open the **Details** panel.
-  3. Navigate to **User Options-Functions**.
-  4. Add an element to a function.
-  5. Select a **device** to interact with.
-  6. Set the **function** the device performs to send a trigger to the **Audio Mixer**.
+You can add a camera shake during the sequence editing process, or after a sequence has been created.
 
-###  Functions
-A [**function** ](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#function)tells the selected device what it needs to do when the triggering device performs an action.
-Option  |  Value  |  Description
----|---|---
-**Activate Mix** |  Click the **Add** icon to select a device, then select an [event](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#event). |  Activates the control bus Mix when the selected device and event triggers the Audio Mixer device.
-**Deactivate Mix** |  Click the **Add** icon to select a device, then select an event. |  Deactivates the control bus Mix when the selected device and event triggers the Audio Mixer device.
-**Register Player When Receiving From** |  Click the **Add** icon to select a device, then select an event. |  When an event occurs, this function registers the triggering player to this device.
-**Unregister Player When Receiving From** |  Click the **Add** icon to select a device, then select an event. |  When an event occurs, this function unregisters the triggering player to this device.
-**Unregister All Players When Receiving From** |  Click the **Add** icon to select a device, then select an event. |  When an event occurs, this function unregisters all players from this device.
-##  Using the Audio Mixer Device in Verse
-All Audio Mixer functions are exposed in Verse. You can now activate mixes, deactivate mixes and register/unregister players to a mix or bus using Verse.
-Verse
-```
-# Copyright Epic Games, Inc. All Rights Reserved.
+Create a camera shake using a Blueprint class. You can then attach the camera shake Blueprint class to an actor in your [project](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#project) or a sequence during the editing process.
 
-using { /Fortnite.com/Devices }
-using { /Verse.org/Simulation }
-using { /UnrealEngine.com/Temporary/Diagnostics }
+[![An example of camera shake applied to a level sequence.](https://dev.epicgames.com/community/api/documentation/image/738d0829-38ed-4be4-bac2-d901ba3394e9?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/738d0829-38ed-4be4-bac2-d901ba3394e9?resizing_type=fit)
 
-# A creative device that allows an audio mixer to be toggled on and off via a button device
-on_off_audio_mixer_device := class(creative_device):
+There are 4 different **camera shake patterns**:
 
-    @editable
+Both the Perlin Noise Camera Shake Pattern and the Wave Oscillator Camera Shake Pattern are created by determining the amplitude and frequency for the camera shake effect’s location, rotation, and field of view (FOV). You can edit it further by determining the duration of the effect and the blend in and out time to fade it in and out.
 
-```
+The camera’s rotation is determined by roll, yaw, and pitch (X, Y, Z).
 
-Copy full snippet(28 lines long)
-To use this code in your UEFN experience, follow these steps.
-  1. Drag an Audio Mixer device onto your island.
-  2. Create a new Verse device named **audio_mixer_device_example**. To learn how to create a new device in Verse, see [Create Your Own Device Using Verse](https://dev.epicgames.com/documentation/en-us/uefn/create-your-own-device-in-verse).
-  3. Open Verse Explorer and double-click **audio_mixer_device_example.verse** to open the script in Visual Studio Code.
-  4. Paste in the code above, compile, and drag the Verse-authored device onto your island.
-  5. Select your Verse device in the **Outliner**.
-  6. In the device’s **Details** panel, assign the object reference for the AudioMixerDevice to the Audio Mixer device on your island. You can use the eyedropper to pick the device in the viewport, or use the dropdown and search for the device.
-  7. Save your project and click **Launch Session**.
+[![Rotation directions.](https://dev.epicgames.com/community/api/documentation/image/183621f2-36ec-4f3b-b500-970a5172bb47?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/183621f2-36ec-4f3b-b500-970a5172bb47?resizing_type=fit)
 
-###  Audio Mixer API
-See the `audio_mixer_device` API Reference for more information on using the Audio Mixer device in Verse.
-##  Activate a Mix for a Duration
-For this example, let's prototype a Hide and Seek game. Footsteps are muted while players look for a hiding spot, and once the timer runs out, everything is fair game! These four devices are required to test this example:
-  * Player Spawner
-  * Audio Mixer
-  * Timer
-  * Round Settings
+## Creating the Blueprint Object
 
-[![Timer Example](https://dev.epicgames.com/community/api/documentation/image/10c7e169-951b-4c38-8c6a-b3b2a5a222bc?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/10c7e169-951b-4c38-8c6a-b3b2a5a222bc?resizing_type=fit)
-  1. Select and drag the **Audio Mixer** device into the viewport.
-  2. In the **Details** panel, assign **CBFortFootstep** in the Bus field.
-  3. Set **Fader Value** to **0.0**.
-  4. Check **Activate on Game Start**.
-[![CBFortFootstep](https://dev.epicgames.com/community/api/documentation/image/5ddfd174-a233-4894-b826-a248fb21663e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5ddfd174-a233-4894-b826-a248fb21663e?resizing_type=fit)
-  5. Select a **Timer** device and drag it into your scene.
-  6. Customize the device settings as you see fit for your island. In this example, **Duration** is set to **30.0**.
-[![Timer options](https://dev.epicgames.com/community/api/documentation/image/328df765-041b-4886-a61e-009332359423?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/328df765-041b-4886-a61e-009332359423?resizing_type=fit)
-  7. Select and drag the **Round Settings** device into the viewport. This example uses the default options.
-  8. Select the **Audio Mixer** device again and go to the **User Options - Functions** section.
-  9. Click **+** to add an Array element to **Activate Mix**
-  10. Select the **Round Settings** device and choose the **On Round Start** option.
-  11. Click **+** to add an Array element to **Deactivate Mix**
-  12. Select the **Timer** device and choose the **On Success** option.
-[![Mixer functions](https://dev.epicgames.com/community/api/documentation/image/5353689e-eabe-4540-8d83-5e2f4ebfd550?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5353689e-eabe-4540-8d83-5e2f4ebfd550?resizing_type=fit)
-  13. Press on **Launch Session** and test your game! When a round starts, you should not be able to hear footsteps until the 30-second timer has run out.
-[![Launch Session](https://dev.epicgames.com/community/api/documentation/image/a01c8cc3-6089-47e9-a123-9718fd9ea52c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a01c8cc3-6089-47e9-a123-9718fd9ea52c?resizing_type=fit)
+1. Right-click in the **Content Browser** and select **Blueprint Class**.
 
-##  More Topics
-  * [![Adding Audio to Your Project](https://dev.epicgames.com/community/api/documentation/image/4120c4ca-d9f0-4179-95fe-10297986b79e?resizing_type=fit&width=640&height=640) Adding Audio to Your Project Add audio to a project. ](https://dev.epicgames.com/documentation/fortnite/adding-audio-to-your-project-in-unreal-editor-for-fortnite)
+   [![Right-click in the Content Browser to create a blueprint class.](https://dev.epicgames.com/community/api/documentation/image/e74899fc-9eb5-4038-b338-e1386977c255?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e74899fc-9eb5-4038-b338-e1386977c255?resizing_type=fit)
+2. Go to **CameraShakeBase** > **Select**.
 
-  * [![Audio Player Device](https://dev.epicgames.com/community/api/documentation/image/b75bc25e-8809-400a-b3bf-fbc937a8cec8?resizing_type=fit&width=640&height=640) Audio Player Device Import, play and customize sound waves and sound cues. ](https://dev.epicgames.com/documentation/fortnite/using-audio-player-devices-in-unreal-editor-for-fortnite)
+   [![Select camera shake base.](https://dev.epicgames.com/community/api/documentation/image/7bf955d0-69ba-45e9-b917-26266858b90c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7bf955d0-69ba-45e9-b917-26266858b90c?resizing_type=fit)
+3. Name the **Camera Shake** Blueprint object.
 
-  * [![Importing Custom Audio](https://dev.epicgames.com/community/api/documentation/image/54adc69d-66fe-4b57-8b03-df9597f7f562?resizing_type=fit&width=640&height=640) Importing Custom Audio Import custom audio into your island and immerse players in the world of your creation. ](https://dev.epicgames.com/documentation/fortnite/importing-custom-audio-in-unreal-editor-for-fortnite)
+   [![Name the camera shake class.](https://dev.epicgames.com/community/api/documentation/image/75577eba-abf2-4679-a91a-2a25be12eb95?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/75577eba-abf2-4679-a91a-2a25be12eb95?resizing_type=fit)
+4. Double-click the **Camera Shake** thumbnail to open the shake editor.
+5. Select the **Perlin Noise Camera Shake Pattern** from the **Root Shake Pattern** dropdown menu. The camera shake editor opens once a shake pattern is selected.
 
-  * [![Audio Troubleshooting](https://dev.epicgames.com/community/api/documentation/image/b3caded9-a92a-4682-91dd-ee1acc7fdfa4?resizing_type=fit&width=640&height=640) Audio Troubleshooting Answers to common audio issues in Unreal Editor for Fortnite. ](https://dev.epicgames.com/documentation/fortnite/audio-troubleshooting-in-unreal-editor-for-fortnite)
+   [![Select a camera shake pattern from the Root Shake Pattern drop down menu.](https://dev.epicgames.com/community/api/documentation/image/697b39ff-fb6b-44d9-92f8-67dc8a26c8ad?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/697b39ff-fb6b-44d9-92f8-67dc8a26c8ad?resizing_type=fit)
+6. Set the **Location Amplitude Multiplier** to **20** and the **Location Frequency Multiplier** to **5**.
+7. Set the **Duration** to **20**.
+8. Click **Compile** > **Save**.
+
+The camera will shake at an amplitude of 20. A frequency of 5 means that it will reach the peak (a location move of 20 units) about 5 times per second, so it will shake about a hundred times over the 20 seconds.
+
+The effect will fade in and out for 0.2 seconds (the default fade in and out). The higher the amplitude, the more vigorous the shake will be. This can be a problem for players who have issues with seizures.
+
+The lower the amplitude, the less likely the camera shakes will be an issue for players. An amplitude range of 2–75 should be enough for a sequence that contains a camera shake pattern.
+
+### Adding a Camera Shake Effect to a Sequence
+
+Create a sequence with a camera shake effect to add a sense of urgency or size to a boss character or gameplay.
+
+1. Create a sequence by right-clicking in the **Content Browser** and selecting **Cinematics** > **Level Sequence**.
+
+   [![Create a level sequence.](https://dev.epicgames.com/community/api/documentation/image/824baabc-d661-4f6a-b835-7447e24e2670?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/824baabc-d661-4f6a-b835-7447e24e2670?resizing_type=fit)
+2. Name the sequence thumbnail.
+
+   [![Name the level sequence thumbnail.](https://dev.epicgames.com/community/api/documentation/image/3d3516cf-0ece-4096-a139-6b185ea15c20?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3d3516cf-0ece-4096-a139-6b185ea15c20?resizing_type=fit)
+3. Double-click the sequence thumbnail to open the sequence editor.
+4. Follow the direction in the [**Sequencer and Control Rig**](sequencer-and-control-rig-in-unreal-editor-for-fortnite) document to create a sequence.
+5. Click the **Track icon** next to the **CineCameraActor** and select **Camera Shake** > **Blueprint Class** (the camera shake effect you created).
+
+   [![Add the camera shake effect you created to the sequence.](https://dev.epicgames.com/community/api/documentation/image/963806e4-766b-46d2-9017-76e9c6b461bc?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/963806e4-766b-46d2-9017-76e9c6b461bc?resizing_type=fit)
+6. Move the Blueprint camera shake class into the sequence and stretch the camera shake to the duration you want the shake to take effect for during the sequence.
+
+   [![Move and edit the camera shake in the sequence.](https://dev.epicgames.com/community/api/documentation/image/936396c3-fd3d-4530-885e-09151e7652b0?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/936396c3-fd3d-4530-885e-09151e7652b0?resizing_type=fit)
+7. Click **Save**.
+
+Your level sequence has the camera shake effect applied to the sequence.
+
+You can even add the camera shake effect to the sequence while editing your sequence. It works much like the workflow above.
+
+This adds the camera shake to your project and plays for the duration set in the camera shake effect Duration settings.
+
+### Adding a Camera Shake Effect to an Actor
+
+Make the camera shake activate for a player based on their proximity to an actor.
+
+A thumbnail is created for the Blueprint Class associated with the actor in your project.
+
+[![An example of a Blueprint Class thumbnail.](https://dev.epicgames.com/community/api/documentation/image/2e0fd8c3-4c9f-41ca-bd26-02454ae5624c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2e0fd8c3-4c9f-41ca-bd26-02454ae5624c?resizing_type=fit)
+
+Playtest your project to see the camera shake based on how far away the player is from the actor in the scene. If you want the camera to shake only when a player is close, change the Inner and Outer Attenuation Radius settings to an amount less than 10.

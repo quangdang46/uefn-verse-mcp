@@ -1,7 +1,9 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite-creative/function
 
-# One more step
-Please complete a security check to continue
-Verification successful. Waiting for dev.epicgames.com to respond
-**Session ID** : 9e9c6ec65f5202be
-**IP Address** : 14.191.95.176
+# function
+
+Functions are things devices do. This includes starting or stopping actions or conditions, changing player attributes, and customizing gameplay in other ways.
+
+Functions are things devices do. This includes starting or stopping actions or conditions, changing player attributes, and customizing gameplay in other ways. For a device function to be triggered, you have to bind it to an event on another device. This is how you use devices to create gameplay.
+
+Compare to [event](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#event).

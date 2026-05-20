@@ -1,7 +1,27 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/webapi/body_response
 
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+# body_response class
 
-**Session ID** : 9dfa470e6ff9ddbe
-**IP Address** : 14.191.89.252
+Learn technical details about the body_response class.
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /UnrealEngine.com/WebAPI }` |
+
+## Inheritance Hierarchy
+
+This class is derived from `response`.
+
+| Name | Description |
+| --- | --- |
+| [`response`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/webapi/response) |  |
+
+## Members
+
+This class has functions, but no data members.
+
+### Functions
+
+| Function Name | Description |
+| --- | --- |
+| [`GetBody`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/webapi/body_response/getbody) |  |

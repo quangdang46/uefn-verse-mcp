@@ -1,149 +1,170 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-orbit-camera-devices-in-fortnite-creative
 
-# Domination Game Tutorial
-Create zones that teams can capture for game points using Capture Area devices.
-![Domination Game Tutorial](https://dev.epicgames.com/community/api/documentation/image/c88fc495-83b7-42fb-8c98-ef00acc844af?resizing_type=fill&width=1920&height=335)
-[![Domination gameplay example](https://dev.epicgames.com/community/api/documentation/image/13976737-816b-43e8-a220-0ee2d785a4db?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/13976737-816b-43e8-a220-0ee2d785a4db?resizing_type=fit)
-_click image to enlarge._
-Players spawn onto the island and battle adversaries to expand their dominion over the battle arena by running from one building to the next, capturing the zone, and fighting to remain in control over as many buildings as they can.
-Domination is the name of the game, create a town with three strategic locations where you place [Capture Area devices](https://dev.epicgames.com/documentation/fortnite/using-capture-area-devices-in-fortnite-creative). Using [Player Spawn Pads](https://dev.epicgames.com/documentation/fortnite/using-player-spawn-pad-devices-in-fortnite-creative), [Score Managers](https://dev.epicgames.com/documentation/fortnite/using-score-manager-devices-in-fortnite-creative) and [Item Granters](https://dev.epicgames.com/documentation/fortnite/using-item-granter-devices-in-fortnite-creative) to create two teams who fight for control of the battle ground. Each successful capture of an area awards 5 points to the capturing team.
-##  Devices Used
-To learn more about placing [devices](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#device), [props](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#prop), and using the [grid](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#grid), see the Fortnite Creative [Video Tutorials](https://www.epicgames.com/fortnite/en-US/creative/docs/fortnite-creative-video-tutorials).
-  * **3 x** [Capture Area devices](https://dev.epicgames.com/documentation/fortnite/using-capture-area-devices-in-fortnite-creative)
-  * **8 x** [Player Spawn Pad devices](https://dev.epicgames.com/documentation/fortnite/using-player-spawn-pad-devices-in-fortnite-creative)
-  * **1 x** [Item Granter devices](https://dev.epicgames.com/documentation/fortnite/using-item-granter-devices-in-fortnite-creative)
+# Orbit Camera Devices
 
-Place the first device and change the settings. Afterward, copy/paste the device to quickly set up your island.
-##  Prefabs Used
-  * **6 x** [Wild West Prefab](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#prefab)
+Set up a camera that follows a character but that the player can rotate freely.
 
-You can use any prefab set to create this gameplay example.
-##  Instructions
-Each of the devices you need for this gameplay example is described below.
-###  Setting Up the Arena
-  1. Press **Tab** to go into the [Creative Inventory](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary).
-  2. Click **Prefabs** , select the following prefab for this example: **Wild West**.
-Use **Search All** above the prefab list to find the prefab set you’re looking for.
-[![Wild West Prefabs](https://dev.epicgames.com/community/api/documentation/image/21b6120e-27e0-4abf-9a99-cd32a6c43e12?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/21b6120e-27e0-4abf-9a99-cd32a6c43e12?resizing_type=fit)
-_Click image to enlarge._
-  3. Click on a Wild West building then click **Equip** until you have all 6 Wild West buildings added to your [Quick Bar](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary).
-  4. Click **OPEN** to enter [Create mode](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#create-mode) and begin placing the buildings in a city block formation with the entrances of each structure facing the street in the middle.
-[![Place Wild West Prefabs](https://dev.epicgames.com/community/api/documentation/image/31753f39-67c7-47d0-8819-ada04bffec05?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/31753f39-67c7-47d0-8819-ada04bffec05?resizing_type=fit)
-_Creating a Wild West street_
+![Orbit Camera Devices](https://dev.epicgames.com/community/api/documentation/image/4bbb61d7-442d-48fc-89bc-bd059912f73f?resizing_type=fill&width=1920&height=335)
 
-###  Placing the Capture Area Devices
-Device settings for each device can be found in Basic Options, All Options, and Channels.
-  1. Click **Tab** to open Create mode.
-  2. Click **Devices** >**Capture Area devices** >[Equip](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#equip) to add the Capture Area device to your **Quick Bar**. Continue to add the following devices from the device menu:
-    1. Player Spawn Pad device
-    2. Score Manager device
-    3. Item Granter
-  3. Click **Place Now** once all the devices are added to your Quick Bar, this takes you back onto the island.
-  4. Click **E** to open the doors to all the buildings where you’ll place the Capture Area devices, then place the device and edit the options.
-When placing the Capture Area device, make sure that the capture radius stays within the building, otherwise an opponent can take over the building without stepping foot inside the structure. Try to place the device in a central location, you can delete furniture and any objects that might get in the way of placing the device on the floor.
-[![Placing the Capture Area Devices](https://dev.epicgames.com/community/api/documentation/image/c92b8404-533c-42ed-bce9-9850626b6c72?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c92b8404-533c-42ed-bce9-9850626b6c72?resizing_type=fit)
-_Placing the Capture Area devices_
-Any customizable settings for devices not listed below should stay at their default settings.
-[![Capture Area Modified Option settings](https://dev.epicgames.com/community/api/documentation/image/dfcbe557-063b-4fda-9b89-b89ba442695b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/dfcbe557-063b-4fda-9b89-b89ba442695b?resizing_type=fit)
-_Click to enlarge image._
-Option  |  Value  |  Explanation
----|---|---
-**Accent Color** |  **Team Relationship** |  Uses colors to distinguish the two teams.
-**Capture Radius** |  **0.5 Tile** |  Allows players to easily capture the area inside the building.
-**Capture Height** |  **1 Tile** |  Allows players to jump if being shot at and still be able to capture the building.
-**Item Visible in Game** |  **Yes** |  Allows players to easily find the capture area device.
-**Period Scoring** |  **Owning Team** |  Allows the owning team to gain points while in control of the area.
-**Periodic Scoring Time** |  **5 Seconds** |  Sets the interval between the owning team’s scoring times.
-**Enemies Contest Scoring** |  **Yes** |  The presence of enemies in the area prevents the neutralization or ownership of the capture area device.
-**Can Be Captured by Team** |  **All** |  Allows all teams to take control of the area.
-**Control Time** |  **5 Seconds** |  Determines how long a team member must remain in the area to capture it.
-**Scoring on Taking Control** |  **5** |  Determines the score award for taking control of the area.
-**Neutralize Time** |  **5 Seconds** |  Allows the opposing team to neutralize and capture the area for their team.
-**Take Control Faster Per Player** |  **X1.5** |  Increases the capture rate when team members are in the area.
-**Partial Progress Decay Speed** |  **50%** |  Sets the progress lost speed for teams that leave an area before completing the capturing of the area.
-**Count As Objective** |  **Yes** |  Ownership of the area counts towards scoring purposes. This option is optional, it allows the game to be won instantly to someone holding 3 points.
-**HUD Elements** |  **Badge** |  Sets which in-world HUD Element will show.
-**Requires Line of Sight** |  **No** |  Players don’t need direct line of sight to see the HUD elements in-game.
-**Hostile Icon Text** |  **Location Name** |  Type the name of the building where the Capture Area device can be found.
-**Hide HUD Icon at** |  **500M** |  HUD Elements will be hidden from players when they are more than 500M from the Capture Area device.
-**Icon Identifier** |  **Select an Icon** |  Select letters to represent each building and the capture zones.
-**Friendly Icon Text** |  **Location Name** |  Type the name of the building where the Capture Area device can be found.
-**Neutral Icon Text** |  **Location Name** |  Type the name of the building where the Capture Area device can be found.
-**HUD Text Size** |  **2X** |  Makes the Badge Icon and text 2X larger than the default setting.
-Remember to press **OK** after customizing your options to save them.
+The **Camera: Orbit** (Orbit Camera) device provides a view that follows a target player character but that the player can rotate to freely look around.
 
-###  Placing the Player Spawn Pad Devices
-  1. Select the Player Spawn Pad from the **Quick Bar**.
-  2. Place the first Player Spawn pad. This is where you’ll create a spawn area for Team 1.
-[![Creating a spawn area](https://dev.epicgames.com/community/api/documentation/image/371ef688-1bdf-49da-be98-38c05f23bb24?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/371ef688-1bdf-49da-be98-38c05f23bb24?resizing_type=fit)
-_Creating a team spawn area_
-[![Player Spawn Pad options](https://dev.epicgames.com/community/api/documentation/image/0d773080-60d5-4b1b-88ae-1b3a982fbc31?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0d773080-60d5-4b1b-88ae-1b3a982fbc31?resizing_type=fit)
-_Click to enlarge image._
-Option  |  Value  |  Explanation
----|---|---
-**Team** |  **Team 1** |  Sets the Player Spawn Pad to spawn a Team 1 player here.
-**Visible During Games** |  **No** |  Conceals the location of spawning players and keeps them hidden from enemy fire while spawning onto the island. Hinders the opposing team camping the respawn point.
-**When Player Spawned Transmit on** |  **Channel 1** |  Transmits a signal to the score manager that a team member has entered the game.
-  3. Edit the options for the first device, then copy/paste three more Player Spawn Pads.
-  4. Copy the Player Spawn pad one more time.
-  5. Move to another area and place another copy of the Player Spawn Pad.
-  6. Change the **Team** setting to **Team 2**.
-  7. Copy this Player Spawn Pad and paste three more in the area to create Team 2’s spawn area.
+This camera differs from a **[Fixed Point Camera](https://dev.epicgames.com/documentation/fortnite/using-fixed-point-camera-devices-in-fortnite-creative)** device, where the camera maintains a set location, and a [Fixed Angle Camera](https://dev.epicgames.com/documentation/fortnite/using-fixed-angle-camera-devices-in-fortnite-creative) device, where the camera moves in sync with the player at a locked angle that provides a consistent perspective. The orbit camera follows the player, but the player can still rotate the view to see in different directions without turning.
 
-###  Placing the Item Granter Devices
-  1. Select the **Item Granter** from the **Quick Bar**.
-  2. Place the **Item Granter** in the middle of the common area and change the option settings.
-[![Placing the Item Granter device](https://dev.epicgames.com/community/api/documentation/image/dee2d889-e8a6-4c23-80b6-70122562dc97?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/dee2d889-e8a6-4c23-80b6-70122562dc97?resizing_type=fit)
-Before loading the **Item Granter** with weapons, think about the type of weapons players will need for close and mid-range attacks. Add the following weapons to the Item Granter in this Order: Assault Rifle, SMG, Pistol, and Shotgun from the blue tier weapon options.
-  3. Click on the items you want players to have during the game, then click **Equip**.
-  4. Click, drag, and hold the item’s icon from the [Equipment bar](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) until the orange [backpack icon](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#backpack-icon) appears, then release.
-All weapons and items will be granted to players on each respawn after dying and at the beginning of each round. The items you select will automatically be added to the Item Granter.
-[![Item Granter modified options](https://dev.epicgames.com/community/api/documentation/image/45f15ac4-719c-47e9-831e-a165990fa59c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/45f15ac4-719c-47e9-831e-a165990fa59c?resizing_type=fit)
-_Click to enlarge image._
-Option  |  Value  |  Explanation
----|---|---
-**Receiving Players** |  **All** |  All Teams receive the same weapons from this device.
-**Grant** |  **All Items** |  Provides all weapons to players.
-**Grant Condition** |  **Always** |  Players are granted weapons at every respawn and the beginning of each round.
-**Equip Granted Item** |  **First Item** |  Equips the first weapon from the weapons list.
-**Grant Item When Receiving From** |  **Channel 1** |  Grants items to players after they spawn into the game which sends a signal to this device on Channel 1.
+You can use a [Third Person Controls](https://dev.epicgames.com/documentation/fortnite/using-third-person-controls-devices-in-fortnite-creative) device with this camera, but it also works without it.
 
-##  My Island Settings
-You can use **My Island** options to enhance your game’s experience. My Island options work with your device settings to determine the game’s structure and how your devices work together, and what the game UI does during your game. Try using the following:
-###  Game
-[![My Island Game Options](https://dev.epicgames.com/community/api/documentation/image/15e997d3-b31e-4363-8553-028a8daa9e65?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/15e997d3-b31e-4363-8553-028a8daa9e65?resizing_type=fit)
-_Click to enlarge image._
-Option  |  Value  |  Explanation
----|---|---
-**Max Players** |  **6** |  Sets the total number of players to the same as the amount of spawn pads in the game.
-**Teams** |  **2** |  Determines the number of teams .
-**Team Size** |  **Split Evenly** |  Decides how players are split between teams.
-**Matchmaking Type** |  **Flexible Teams** |  Allows party members to be on any team to make matchmaking faster and fill games quicker.
-**Total Rounds** |  **3** |  Provides a best of 3 game setup for teams.
-**End Game on Match Win** |  **Yes** |  Determines which team wins based on score amount.
-**Score to End** |  **100** |  Determines the score teams must reach to end the round.
-Time Limit** |  **15** |  Provides a decent amount of gameplay per round.
-###  Settings
-[![My Island Settings Options](https://dev.epicgames.com/community/api/documentation/image/2b0e0ccf-4420-48d9-af9d-99ee4c42cfb6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2b0e0ccf-4420-48d9-af9d-99ee4c42cfb6?resizing_type=fit)
-_Click to enlarge image._
-Option  |  Value  |  Explanation
----|---|---
-**Infinite Ammo** |  **On** |  Players have infinite ammo during the game.
-**Allow Building** |  **No** |  Players can’t gather resources and build during the game.
-**Environment Damage** |  **Off** |  Players can’t destroy the environment.
-**Allow Item Drop** |  **No** |  Players don’t drop weapons when eliminated from the game.
-**Show Wood Resource Count** |  **No** |  Stops the Wood resources from showing in the players’ quick bar.
-**Show Stone Resource Count** |  **No** |  Stops the Stone resources from showing in the players’ quick bar.
-**Show Metal Resource Count** |  **No** |  Stops the Metal resources from showing in the players’ quick bar.
-###  UI
-[![My Island UI Options](https://dev.epicgames.com/community/api/documentation/image/00992e1d-7276-4250-a74d-3aae0fd37d57?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/00992e1d-7276-4250-a74d-3aae0fd37d57?resizing_type=fit)
-_Click to enlarge image._
-Option  |  Value  |  Explanation
----|---|---
-**HUD Info Type** |  **Score** |  Reveals the winner.
-**Use Team Score** |  **Yes** |  Takes in the points gathered by all team members rather than an individual’s score.
-**Scoreboard Win Condition** |  **Score** |  Team score determines the winner.
-**Scoreboard Tiebreaker 1** |  **Eliminations** |  Teams who finish the game with equal points will have the win determined by the amount of eliminations instead.
-**Scoreboard Tiebreaker 2** |  **Health** |  Teams who finish the game with equal points and equal eliminations will have the win determined by the health points of the team instead. The team with the greater amount of health points will win the game instead.
-##  Playing Your Game
-Capture Area devices can take your game to a whole new level by getting players to take control over as many areas as they can. You can take advantage of the other Capture Area device settings that allow players to drop items for team members and increase the team’s war chest.
+To learn more about how to use the camera and control devices together, see [Designing with Cameras and Controls](https://dev.epicgames.com/documentation/fortnite/designing-with-cameras-and-controls-in-fortnite-creative).
+
+For help on finding the **Orbit Camera** device in Creative, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite). To find this device in UEFN, open the Content Drawer and click **Fortnite > Devices > !Beta**.
+
+To learn about using cameras and controls devices in **UEFN**, see:
+
+- **[Gameplay Camera and Control Devices](https://dev.epicgames.com/documentation/fortnite/gameplay-camera-and-control-devices-in-unreal-editor-for-fortnite)** for general information.
+- **[Making a Title Sequence](https://dev.epicgames.com/documentation/fortnite/making-a-title-sequence-in-unreal-editor-for-fortnite)** for a gameplay example using UEFN.
+
+Looking for new ways to use the Orbit Camera in Creative? See our [Orbit Camera Design Example](https://dev.epicgames.com/documentation/fortnite/orbit-camera-device-design-example-in-fortnite-creative)!
+
+## Camera Terms and Definitions
+
+When building a game, cameras are used for lots of different purposes. There are some specialized terms used for these in-game cameras that you might be unfamiliar with. Many of these terms are used in the device options for this and other camera devices. The list below gives some of these terms and their definitions.
+
+| Term | Definition |
+| --- | --- |
+| **field of view** | The term **field of view** (or **FOV** for short) refers to what the camera can actually "see". The field of view is represented as an angle, and is measured in degrees. Angles have two sides, joined at a point called the **vertex**. With cameras, the vertex is the lens (virtual in this case) of the camera. The arms of the angle spread up and down (the vertical axis) from that vertex. The higher the number of degrees, the wider the angle, and the more the camera can see. |
+| **pitch, yaw** | **Pitch** and **yaw** are terms originating in aviation. They refer to the different types of rotation a plane can perform when moving. These terms were adopted into 3D design and game development to more precisely define a virtual 3D environment and how things are positioned in that virtual space. Pitch and yaw are measured relative to the object's original position. **Pitch** refers to up and down movement of an object, and **yaw** refers to horizontal left or right movement of an object. **Note**: the **axis of rotation** is different from the direction of movement. For example, if a plane **pitches**, the nose of the plane moves up or down; but the plane is **rotating** on the Y-axis (which is the left-right or east-west horizontal axis). See the terms **X-axis**, **Y-axis**, and **Z-axis** in this table. |
+| **angle pitch** | This is a measurement of how much the camera points up or down while framing its target. |
+| **angle yaw** | This is a measurement of how much the camera turns left or right while framing its target. |
+| **camera offset** | Normally the camera view centers on its target. The **camera offset** is how far from the center the camera view is. The camera can have an offset amount on the X-, Y-, or Z-axis and it can have an offset on more than one axis at a time. |
+| **X-axis** | In a 3D space (real or virtual), the X-axis represents horizontal forward/backward (or north/south) movement. |
+| **Y-axis** | In a 3D space (real or virtual), the Y-axis represents horizontal left/right (or east/west) movement. |
+| **Z-axis** | In a 3D space (real or virtual), the Z-axis represents vertical up/down movement. |
+| **camera transition** | When you have multiple cameras active, a **transition** is when you move from one camera view to another. In Fortnite, camera devices have an **In Priority** and an **Out Priority**. The camera transition is determined by the highest priority, comparing the Out Priority of the current camera with the In Priority of the destination camera. |
+| **transition types** | **Ease In**: the camera transition will start slowly and speed up as it continues. **Ease Out**: the camera transition will slow down as it ends. **Ease In-Out**: the camera transition will start slowly, speed up, then slow again as it ends. **Linear**: the camera transition moves smoothly from one camera to another at the same speed. **Fade**: The camera will fade in from black and fade out to black. |
+| **priority system** | If multiple cameras are assigned to a player, priority determines which camera is active at any point in time. Priority can be set in the device options. If two cameras are tied for the highest priority, the most recently added camera will become active. |
+| **boom collision** | In film, a boom jib is an apparatus that holds the camera. Boom operators can move and orient the camera with levers and wheels to get the shot they desire. The Boom Collision properties for fixed angle cameras allow you to determine the behavior of that camera when an object in the scene gets between the camera and its target. |
+| **deadzone** | The **deadzone** refers to an established area within which the target can move around without affecting the camera. When the target moves to an edge of the deadzone, the camera will move to follow the target. |
+| **look-at location** | Where the camera is looking at any time. With the orbit camera, it might be something other than the player. |
+| **soft deadzone** | The area inside of the deadzone where the camera starts to accelerate to follow the player. This area blends the look-at location between remaining stationary and following the target. |
+
+## Contextual Filtering
+
+Some devices are affected by a feature called **contextual filtering**. This feature hides or displays options depending on the values selected for certain related options. This feature reduces clutter in the Customize panel and makes options easier to manage and navigate.
+
+However, it may not be easy to recognize which options or values trigger contextual filtering. To help you identify them, we use *italic* in our device docs for any values that trigger contextual filtering. All options are listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option's value, there will be a note about that in the Description field for that option.
+
+## Device Options
+
+You can control the position of the camera relative to the target, the size and shape of the camera.
+
+Configure this device with the following options.
+
+Default values are **bold**. Values that trigger contextual filtering are *italic*.
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Creative Preview** | **Start**, Stop | Click **Start** to preview what the camera is seeing. Click **Stop** to leave the preview and go back to editing your island. |
+| **Field of View** | **80**, Pick or enter a number of degrees from 20-120 | This option only displays if the **Projection Mode** option is set to **Perspective**. The term **field of view** refers to what the camera can actually see. This setting determines the angle on the vertical axis, in degrees, that represents the Field of View for this camera. A higher number makes a wider angle, which results in a larger field of view. |
+| **Camera Shake** | On, **Off** | If this is set to **On**, the camera will support screen shake events in the game. |
+| **Priority** | **0**, Pick or enter a number | Determines where this camera falls in the priority system. When multiple cameras are added to a player, the camera with the highest priority is considered the active camera. |
+| **Affects Team** | **Any**, Pick or enter a team | Determines which team is affected by this device.  The camera does not react dynamically to changes in team during the game. If your island allows players to change teams during the game, you might have to manually re-add cameras to those players after a team change. |
+| **Affects Class** | No Class, **Any**, Pick or enter a class | Determines which classes are affected by this device. **No Class** means only players with no assigned class are affected. **Any** means all players, including those with no assigned class, are affected. |
+| **Invert Team** | On, **Off** | If this is set to **On**, all teams are affected by this device except the team selected in the **Affects Team** option. |
+| **Invert Class** | On, **Off** | If this is set to **On**, all classes are affected by this device except the class selected in the **Affects Class** option. |
+| **Enabled During Phase** | None, **Always**, Pre-Game Only, Gameplay Only | Determines which phases the camera is active in. If you choose **None**, the camera can only be enabled manually using events. |
+| **Remove on Elimination** | On, **Off** | Determines whether this camera is removed from a player when they are eliminated. |
+| **Add to Players on Start** | **On**, Off | Determines whether this camera is automatically added to all players when the game starts. |
+| **Preview Device Color** | **#74ABFFFF**, Pick an color | Changes the device's color. |
+| **Transition In Priority** | **0**, Pick or enter a number | This is the priority used when this camera is the destination for a transition. |
+| **Transition In Time** | **0.2 sec**, Pick or enter an amount | This is how long the transition lasts when this camera is the destination. |
+| **Fade in Hold Time** | **0.0s**, Pick or enter a time | Determines the total time in seconds for the fade-out effect, when using fade-type transitions. |
+| **Transition In Type** | Linear, Ease-In, Ease-Out, **Ease-In-Out**, *Fade* | This determines what type of transition this camera uses when it is the destination camera. |
+| **Transition Out Priority** | **0**, Pick or enter a number | This is the priority used when this camera transitions to another. |
+| **Transition Out Time** | **0.2 sec**, Pick or enter an amount | This is how long the transition lasts when this camera is the origin camera for a transition. |
+| **Fade Out Hold Time** | **0.0s**, Pick or enter a time | Determines the total time in seconds in seconds for the fade-in effect, when using fade-type transitions. |
+| **Transition Out Type** | Linear, Ease-In, Ease-Out, **Ease-In-Out**, *Fade* | This determines what type of transition this camera uses when it is the origin camera for a transition. |
+| **Look At Focus Target On Activate** | On, **Off** | If this is set to **On**, when the camera activates it looks at the focus target override that has been set for this camera. |
+| **Hide Player Character** | On, **Off** | Sets the player character to be invisible but only for that player. |
+| **Distance** | **100 cm**, Pick or enter a number | Determines the distance between the camera and the player. |
+| **Offset X** | **0 cm**, Pick or enter a positive or negative number | This setting can move the view forward or backward, relative to the camera's position. A positive number moves the view forward, a negative number moves the view backward. |
+| **Offset Y** | **50 cm**, Pick or enter a positive or negative number | Normally the camera view centers on its target. This setting can move the view left or right, relative to the camera's position. A positive number moves the view to the left, a negative number moves the view to the right. |
+| **Offset Z** | **75 cm**, Pick or enter a positive or negative number | Normally the camera view centers on its target. This setting can move the view up or down, relative to the camera's position. A positive number moves the view down, a negative number moves the view up. |
+| **Offset When Crouched** | On, **Off** | If this is set to **On**, the camera will be offset on the vertical axis when the player crouches. |
+| **Horizontal Speed** | **10 cm/s**, Pick or enter a number | Determines the speed at which the camera moves in the X axis (forward/back) and Y axis (left/right) in order to frame the target. |
+| **Vertical Speed** | **0 cm/s**, Pick or enter a number | Determines the speed at which the camera moves in the Z axis (up/down) to frame the target. |
+| **Clamp Horizontal Rotation** | *On*, **Off** | This restricts (clamps) the range for camera rotation horizontally. When you set to **On**, the **Clamp Horizontal Rotation Min** and **Max** options show. |
+| **Clamp Horizontal Rotation Min** | **-90 degrees**, Pick an angle | This option only displays if the **Clamp Horizontal Rotation** is set to **On**. Determines the minimum amount the camera can rotate in a negative horizontal direction. |
+| **Clamp Horizontal Rotation Max** | **90 degrees**, Pick an angle | This option only displays if the **Clamp Horizontal Rotation** is set to **On**. Determines the maximum amount the camera can rotate in a positive horizontal direction. |
+| **Clamp Horizontal Mode** | **Player Relative**, Device Relative, World Relative | Determines the basis for locking horizontal rotation when the camera is attached to a player. |
+| **Clamp Vertical Rotation** | *On*, **Off** | Clamps the range for camera rotation vertically. When you set to **On**, the **Clamp Vertical Rotation Min **and** Max** options show. |
+| **Clamp Vertical Rotation Min** | **-45 degrees**, Pick an angle | When **Clamp Horizontal Rotation** is set to **On**, you can use this option to set the minimum the camera can rotate in a negative vertical direction. |
+| **Clamp Vertical Rotation Max** | **45 degrees**, Pick an angle | When **Clamp Horizontal Rotation** is set to **On**, you can use this option to set the maximum rotation in a positive vertical direction. |
+| **Boom Collision** | ***On***, Off | By default, boom collision is **On**. This means objects in the world that are between the camera and its target will hide the target. Additional options for boom collision show, and you can use them to set the behaviors that occur in relation to collision. |
+| **Collision Type** | Instant, ***Predictive***, *Transparency* | This option only displays if the **Boom Collision** option is set to **On**. This determines what the camera does if objects in the world obscure the target. If this option is set to **Predictive**, two more options show below this one. If this option is set to **Transparency**, three more options show. |
+| **Collision In Time** | **0.5 sec**, Pick or enter an amount | This option only displays if the **Collision Type** option is set to **Predictive**. Determines how fast the camera pulls in when using Predictive Collision. |
+| **Collision Out Time** | **0.5 sec**, Pick or enter an amount | This option only displays if the **Collision Type** option is set to **Instant** or **Predictive**. Determines how fast the camera pulls out when using Predictive Collision. |
+| **Transparency Collision Radius** | **5.0 cm**, Pick or enter an amount | The radius from the camera's path to its target. This is used to identify which objects to make transparent. |
+| **Transparency Amount** | **0.4**, Pick an amount | This option only displays if the **Collision Type** option is set to **Transparency**. Determines how opaque objects are when they break the line of sight of your character. **0** means they are totally transparent; **1** means they are totally opaque. |
+| **Transparency Cutout Radius** | **100cm**, Pick or enter an amount | This option only displays if the **Collision Type** option is set to **Transparency**. Determines an area of full transparency around the camera target when a boom collision has occurred. |
+| **Deadzone** | *On*, **Off** | If you choose **On**, this establishes an area in which the target can move without affecting the camera position. When the target reaches the edge of the deadzone, the camera moves to follow the target. |
+| **Deadzone Type** | *Sphere*, ***Cylinder***, *Rectangle* | This option only shows if the **Deadzone** option is set to **On**, and determines the shape of the deadzone. |
+| **Deadzone Height** | **0 cm**, Pick or enter an amount | This option displays if the **Deadzone Type** option is set to **Cylinder** or **Rectangle**, and determines the height of the deadzone. |
+| **Deadzone Diameter** | **200 cm**, Pick or enter an amount | This option displays if the **Deadzone Type** option is set to **Sphere** or **Cylinder**. |
+| **Deadzone Width** | **100 cm**, Pick or enter an amount | This option only displays if the **Deadzone Type** option is set to **Rectangle**. It determines the width of the deadzone. |
+| **Deadzone Depth** | **100 cm**, Pick or enter an amount | This option only displays if the **Deadzone Type** option is set to **Rectangle**. Determines the depth of the deadzone. |
+| **Deadzone Soft Percent** | **100\%**, Pick or enter a percentage | Determines an area within the deadzone where the camera blends between remaining stationary and following the player. |
+| **Deadzone Jump Size** | **Off**, Pick or enter a size | If you specify a size, it determines the area within which a player can jump up and down without the camera following them. |
+| **Auto Rotate When Moving** | *On*, **Off** | If this is set to **On**, the camera will automatically rotate to its default position when the player is moving. |
+| **Auto Rotate Moving Yaw Speed** | **4°/S**, Pick or enter an amount | This option only displays if the **Auto Rotate When Moving** option is set to **On**. Determines the speed (in degrees per second) to rotate the camera ray while the player is moving. |
+| **Auto Rotate Moving Pitch Speed** | **10°/S**, Pick or enter an amount | This option only displays if the **Auto Rotate When Moving** option is set to **On**. Determines the speed (in degrees per second) to rotate the camera pitch while the player is moving. |
+| **Auto Rotate Moving Delay** | **0.75**, Pick or enter an amount of time | This option only displays if the **Auto Rotate When Moving** option is set to **On**. Determines how much time it takes before the device activates auto-rotation while moving. |
+| **Auto Rotate Terrain Offset Enabled** | *On*, **Off** | This option only displays if the **Auto Rotate When Moving** option is set to **On**. If this is set to **On**, the camera automatically adjusts its pitch up and down based upon the slope of the terrain the player is traveling on. |
+| **Auto Rotate Terrain Offset Max** | **15.0**, Pick or enter an amount | This option only displays if the **Auto Rotate Terrain Offset Enabled** option is set to **On**. Determines the maximum amount of offset that can affect the camera's pitch. |
+| **Auto Rotate Terrain Offset Sensitivity** | **60**, Pick or enter an amount | This option only displays if the **Auto Rotate Terrain Offset Enabled** option is set to **On**. Determines how often the camera checks the elevation. The higher this value is, the more reactive to changing terrain the auto-rotation will be. |
+| **Show Dead Zone in Preview** | On, **Off** | If this is set to **On**, the deadzone will be visible when previewing this camera. |
+
+## Direct Event Binding
+
+Following are the [direct event binding](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) options for this device.
+
+### Functions
+
+A [function](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) listens for an event on a device then performs an action.
+
+| Option | Description |
+| --- | --- |
+| **Enable When Receiving From** | Enables the camera when an event occurs. |
+| **Disable When Receiving From** | Disables the camera when an event occurs. |
+| **Add to Player When Receiving From** | Adds this camera to the instigating player when an event occurs. |
+| **Remove from Player When Receiving From** | Removes this camera from the instigating player when an event occurs. |
+| **Add to All When Receiving From** | Adds this camera to all players when an event occurs. |
+| **Remove from All When Receiving From** | Removes this camera from all players when an event occurs. |
+| **Focus On Target When Receiving From** | When an event occurs, this function sets the camera to focus on a target instead of focusing on the player. |
+| **Focus On Player When Receiving From** | When an event occurs, this function sets the camera to focus on the player. This applies to all players. |
+
+### Events
+
+This device has no events.
+
+## Use The Orbit Camera In Verse
+
+You can use the code below to control an Orbit Camera device with Verse. This code shows how to use events and functions in the Orbit Camera device API. Modify it to fit the needs of your experience.
+
+Verse
+
+```
+using { /Fortnite.com/Devices }
+using { /Verse.org/Simulation }
+using { /UnrealEngine.com/Temporary/Diagnostics }
+
+# A Verse-authored creative device that can be placed in a level
+gameplay_camera_fixed_angle_device_verse_example := class(creative_device):
+        # Reference to the Gameplay Camera Fixed Angle Device in the level.
+    # In the Details panel for this Verse device,
+    # set this property to your Gameplay Camera Fixed Angle Device.
+    @editable
+```
+
+To use this code in your UEFN experience, follow these steps.
+
+### Orbit Camera API
+
+See the [`gameplay_camera_orbit_device` API Reference](https://dev.epicgames.com/documentation/en-us/uefn/verse-api/fortnitedotcom/devices/gameplay_camera_orbit_device) for more information on using the Orbit Camera device in Verse.

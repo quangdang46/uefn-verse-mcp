@@ -1,196 +1,314 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/getting-started-with-patchwork-in-fortnite-creative
 
-# VFX Spawner Devices
-Integrate custom visual effects into your gameplay.
-![VFX Spawner Devices](https://dev.epicgames.com/community/api/documentation/image/b19bcc29-d84c-4a72-b3e8-db3a9c762419?resizing_type=fill&width=1920&height=335)
-With **VFX Spawner** devices, you can place different [visual effects](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#vfx) around your island.
-These effects fall into one of two types:
-  * **Continuous** : Once activated, the effect will continue to loop until it is deactivated.
-  * **Burst** : A quick effect that occurs once, then stops.
+# Getting Started with Patchwork
 
-Things you can do with the VFX Spawner device include:
-  * Use a burst effect, such as a poof of dust or a small explosion, to mask the spawning of a prop.
-  * Use any of the musical note effects to visually show the source of music.
-  * Simulate weather with effects like rain or snow, or even a tornado!
+Learn how the Patchwork devices work and get jamming in minutes!
 
-These effects are also useful for ambience. Integrating an effect with your environment can create subtle, effective moods.
-**Looking for more inspiration?** See [**D-Launcher Device Design Examples**](https://dev.epicgames.com/documentation/fortnite/d-launcher-device-design-examples-in-fortnite-creative.INT.udn) to kick off your imagination!
-To find the VFX Spawner device, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
-If you're using multiple copies of a device on an island, it can be helpful to [rename](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#rename-a-device) them. Choosing names that relate to a device's purpose makes it easier to remember what each one does, and easier to find a specific device when using the [Event Browser](https://dev.epicgames.com/documentation/fortnite/event-browser-in-fortnite-creative).
-##  Contextual Filtering
-Some devices are affected by a feature called **contextual filtering**. This feature hides or displays options depending on the values selected for certain related options. This reduces clutter in the Customize panel and makes options easier to manage and navigate. To help identify them, values that trigger contextual filtering are in _italic_.
-All options are listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option's value, there will be a note about it in the Description field for that option.
-##  Device Options
-This device has some basic functionality, like setting the type of effect and the speed of the effect's looped animation. Additionally, there are some advanced options, like the phases when the effect is enabled.
-Default values are **bold**. Values that trigger contextual filtering are _italic_.
-You can configure this device with the following options.
-Option  |  Value  |  Description
----|---|---
-**Effect Type** |  **_Continuous_** , _Burst_ |  Determines whether the effect will play in a continuous loop, or in a short burst, then stop. The next option changes based on what you select here.
-**Visual Effect** |  **Fireworks** , Pick an effect |  This sets the type of visual effect the device produces when the **Effect Type** is set to **Continuous**. See [Continuous Effects](https://dev.epicgames.com/documentation/fortnite/using-vfx-spawner-devices-in-fortnite-creative#continuous-effects) for a list of available effects.
-**Burst Visual Effect** |  **Explosion Small** , Pick an effect |  This sets the type of visual effect the device produces when the **Effect Type** to **Burst**. See [Burst Effects](https://dev.epicgames.com/documentation/fortnite/using-vfx-spawner-devices-in-fortnite-creative#burst-effects) for a list of available effects.
-**Sound Effect** |  **Default** , None, Pick a sound |  Determines what sound plays when the visual effect is spawned. **Default** plays whatever sound is attached to a visual effect (such as **Lightning**), but you can override the default by picking a different option. Some of the sounds are a short burst, while others are continuous. See the **Sound Effects** section for a list of available sounds.
-**Enabled on Phase** |  None, **Always** , Pre-Game Only, Gameplay Only, Create Only |  Determines the phases in which the device is enabled.
-**Colorize VFX** |  _On_ , **Off** |  Sets whether the spawned effects use the color selected in the **Custom Color** option. This is useful if you want to assign colors to your effects based on teams. If set to **On** , this makes the next option, **Custom Color** , available
-**Custom Color** |  **Cerulean** , Pick a color |  Choose a custom color for the VFX. Click the color swatch to open the Color Picker. Select a color, then click the checkmark. Note that this option only displays when the **Colorize VFX** option is set to **On**. [![Color Picker](https://dev.epicgames.com/community/api/documentation/image/8f029a0a-1690-4397-9df4-1617a13466ab?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8f029a0a-1690-4397-9df4-1617a13466ab?resizing_type=fit)
-**Visible to Team** |  **Any** , Pick or enter a team |  Determines which team can see the VFX.
-**Invert Team Selection** |  On, **Off** |  If this is set to **On** , all teams can see the VFX except the team selected in the **Visible to Team** option.
-**Visible to Class** |  No Class, All, **Any** , Pick or enter a class |  Determines which classes can see the VFX. Values for this option are:
-  * **No Class** : Only players without an assigned class can see this effect.
-  * **All** : All players with an assigned class can see this effect.
-  * **Any** : All players, with or without an assigned class, can see the effect.
-  * **Pick or enter a class** : Only players on the selected class can see the effect.
+![Getting Started with Patchwork](https://dev.epicgames.com/community/api/documentation/image/71371f82-e634-402c-a59f-83652b4285e5?resizing_type=fill&width=1920&height=335)
 
-**Invert Class Selection** |  On, **Off** |  If this is set to **On** , all classes can see the VFX except the class selected in the **Visible to Class** option.
-**Spawn Rate** |  **1.0** , Pick or enter a number |  Determines the rate at which the effects are spawned.
-**Enable on Reset** |  **On** , Off |  If this is set to **On** , the disabled device will automatically be enabled when the **Reset When Receiving From** function is triggered.
-**Enabled Time** |  **Infinite** , Pick an amount |  The length of time the visual effect is enabled.
-**Clear Particles on Disable** |  **On** , Off |  If this is set to **On** , spawned effects will be cleared when the device is disabled. If it is set to **Off** , spawned particles will be cleared at the end of their animation.
-##  Direct Event Binding
-Direct event binding allows devices to communicate directly, which makes your workflow more intuitive, and gives you more freedom to focus on your design ideas.
-Below are the following direct event binding options for this device.
-###  Functions
-A [function](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary) listens for an event on a device then performs an action.
-  1. For any function, click the **option** , then **Select Device** to access and select from the **Device dropdown menu**.
-  2. Once you've selected a device, click **Select Event** and select the event that triggers this function.
-  3. If more than one device or event triggers a function, press the **Add** button to add a line and repeat these steps.
+Welcome to **Fortnite Patchwork**! The devices you are about to explore let you create and manipulate music intuitively. Get ready to unleash your inner maestro and take your creativity to new heights!
 
-Option  |  Description
----|---
-**Enable When Receiving From** |  This function enables the device when an event occurs.
-**Disable When Receiving From** |  This function disables the device when an event occurs.
-**Restart When Receiving From** |  This function resets the device when an event occurs.
-###  Events
-Direct event binding uses events as transmitters. An event tells another device to perform a function.
-  1. For any event option, click the **option** , then **Select Device** to access and select from the **Device dropdown menu**.
-  2. Once you've selected a device, click **Select Function** to bind the event to a function for that device.
-  3. If more than one function is triggered by the event, press the **Add** button and repeat.
+The best way to learn Patchwork is to get hands-on with it. Make sure you have **Fortnite** running and the **Patchwork Music Gallery Island (5806-7083-7937)** loaded up.
 
-Option  |  Description
----|---
-**On Effect Enabled Send Event To** |  When an effect is enabled, an event occurs.
-**On Effect Disabled Send Event To** |  When an effect is disabled, an event occurs.
-##  Continuous Effects
-Here is a list of the currently available continuous visual effects.
-  * **Fireworks** : Fireworks that go off randomly near the device, with sound effects.
-  * **Large Fireworks** : Fireworks that go off randomly but high in the sky, with sound effects.
-  * **Leaves** : Leaves that drift through the air, giving a sense of autumn.
-  * **Eyes** : A collection of creepy eyes, that might be peering out of the darkness.
-  * **Bats** : Bats flying through the air evoke Halloween.
-  * **Lightning** : Lightning striking the ground, with sound effects.
-  * **Lightning_2** : Lightning bolts going away from the device, with sound effects.
-  * **Lightning_3** : Lightning striking the ground with an explosion on impact, including sound effects.
-  * **Embers** : Small embers floating up, as though from an open fire.
-  * **Fog** : A drifting pattern of fog.
-  * **Sparkles** : Sparkly bits of light that move around.
-  * **Disco Balls** : An assortment of mirrored balls of varying sizes.
-  * **Laser Beams** : Focused, moving beams of light that shoot out of the top of the device.
-  * **ConcertRain** : Falling lights that suggest a mix of meteorites and distant strikes of lightning.
-  * **SparkRain** : Colorful rainfall that includes sound effects.
-  * **Area of Fog** : Ground-level clouds of fog that move continually.
-  * **Spooky Ghosts** : Ghostly figures that move in and out of the player's vision in a spooky fashion.
-  * **Balloons** : Colorful balloons that float up into the sky until they cheerfully disappear.
-  * **Snow** : A gentle sprinkle of snow.
-  * **Floating Space Rocks** : Space rocks (meteorites) that float mysteriously in the air.
-  * **Bubbles** : Iridescent bubbles that look like they're fresh from a bubble machine.
-  * **Falling Sparkles** : Similar to sparkles, but instead of moving around, they're slowing falling to the ground.
-  * **Confetti** : Falling bits of paper — perfect for a parade!
-  * **Flying Space Rocks** : Space rocks (meteorites) falling from the sky.
-  * **Dust Clouds** : Imagine moving across a dune on a dirt bike. These are the clouds your bike might kick up.
-  * **Rain** : A steady drizzle of rain.
-  * **Small Tornado** : A tornado that spins upward.
-  * **Light Fog** : A fog light enough to see through easily.
-  * **Sky Lanterns** : Colorful paper lanterns you might see rising over a pond or lake for a festival.
-  * **SkyLanterns_A** : Like the previous lanterns, but these are all red.
-  * **SkyLanterns_B** : Like the previous lanterns, but all blue.
-  * **SkyLanterns_C** : Like the previous lanterns, but all green.
-  * **Waterfall Crash** : Roiling water like what appears at the bottom of a high waterfall.
-  * **Waterfall Splash** : Splashing water like what you might see at the foot of a smaller waterfall.
-  * **Waterfall Mist** : A light mist like you'd find at the edge of a gentle waterfall.
-  * **Musical Notes Bubbles** : Musical notes that act like bubbles and pop.
-  * **Musical Notes Chrome** : Notes with a metallic sheen.
-  * **Musical Notes Goo** : Notes that are dripping a black goo.
-  * **Musical Notes Retro** : Notes that look three-dimensional.
-  * **Musical Notes Glitch** : Notes that look like the colors are out of register, and that have odd, glitchy behavior.
-  * **Musical Notes Wood** : Notes that look like they're carved from wood.
-  * **Small Fire** : A small fire effect, like you might use with a torch or brazier.
-  * **Trash Can Flies** : A cloud of flies that would typically be seen around a garbage pile or container.
-  * **Ambient Dust** : Flecks of material floating in a random way, such as dust particles that hang in the air in an old abandoned building.
+[![Welcome to Gallery](https://dev.epicgames.com/community/api/documentation/image/33d0a2fd-8116-44a3-adcb-4fc6f1ca1979?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/33d0a2fd-8116-44a3-adcb-4fc6f1ca1979?resizing_type=fit)
 
-##  Burst Effects
-Here is a list of the currently available burst effects.
-  * **Explosion Small** : A small explosion with sound effects.
-  * **Explosion Medium** : A slightly larger explosion with sound effects.
-  * **Explosion Large** : An even larger explosion with sound effects.
-  * **Explosion Electrical** : A large explosion with sound effects that mimics a transformer blowing or a similar electrical explosion.
-  * **Dust Poof** : A light poof of dust, enough to partially hide the spawning of a new effect.
-  * **Small Splash** : A limited, small splash such as that made by dropping or throwing a small object into water.
+Let's get started!
 
-##  Sound Effects
-Here is a list of the currently available sound effects you can use with your visual effect.
-  * **Default** : Uses any sound effects that are attached to a visual effect. If none are attached, then the effect is silent.
-  * **None** : Turns off any default sound effects.
-  * **Alpine** : Suggests wind moving briskly through an snowy forest.
-  * **Alpine_Evening** : Similar to Alpine, but with a hollower and more resonant tone.
-  * **Alpine_Morning** : Similar to Alpine, but with a softer and higher pitched whistling sound.
-  * **Bats** : The sound of bats soaring through the air. Works well with the Bats effect.
-  * **Beam** : A continuous rumble and whine that rises and falls in pitch. Could be used with the Laser Beam effect, or used for a rocket ignition.
-  * **Beam_Attack** : Similar to the Beam, but this sound is a short burst.
-  * **Beam_Impact** : This sound is also a short burst. Either Beam Attack or Beam Impact could be used for a laser weapon hitting a target.
-  * **Breeze** : Unlike Alpine, which is a brisk winter or snowy wind, this is gentler and slower, suggesting a warm breeze swaying the treetops.
-  * **Fireworks** : A short boom, trailing off into crackling.
-  * **Charge** : A large rumbling, leading into higher pitched whizzing.
-  * **Charged_Attack** : A larger, more intense rumble followed by crackling instead of whizzing.
-  * **Charge_Loop** : A slowly building, rising whine looped to stretch out the rising tone.
-  * **Ghost** : A ghost moaning.
-  * **Halloween_Laugh** : An eerie laugh.
-  * **Halloween_Singing** : A voice singing wordlessly in a minor key, in a large echoing space. This is randomized, slightly different each time it plays.
-  * **Halloween_Whispers** : Unintelligible murmuring that may be human or machine, with distant laughter.
-  * **Lightning_Strike** : The sound of lightning striking.
-  * **Lightning_Strike_02** : A variation of the lightning strike, with slightly different impact sound.
-  * **Lightning_Strike_03** : A variation of the lightning strike, with slightly different impact sound from the two other lightning strike effects.
-  * **Lightning_Strike_04** : A variation of the lightning strike, with slightly different impact sound from the two other lightning strike effects.
-  * **Electricity** : A crackling and buzzing sound, like a Tesla coil.
-  * **Electricity_02** : A longer and quieter crackling, buzzing sound. Similar to the sound of laser swords swinging and connecting.
-  * **Electricity_03** : Like Electricity 2, but with interrupting staccato zaps or shots.
-  * **Electricity_04** : A solid ka-chunk with quiet buzzing in the background, as if you are throwing a large switch or breaker.
-  * **Electricity_05** : Similar to Electricity 4, but louder. Could be an explosion or shot as much as it could be a switch thrown.
-  * **Electricity_06** : Similar to Electricity, but smoother and with less crackling.
-  * **Explosion** : A small detonation, or a gun going off.
-  * **Explosion_02** : A large detonation, or a large gun or cannon firing.
-  * **Explosion_03** : A quieter large detonation, like a cannon firing from a distance.
-  * **Impact** : The sound of an small or medium sized object hitting a floor or wall.
-  * **Impact_02** : An impact with some rattling, like a full bag hitting a floor or wall.
-  * **Impact_03** : An impact with sounds of breaking or destruction.
-  * **Impact_04** : A short muffled thud.
-  * **Impact_05** : Another cannon shot, at medium distance.
-  * **Impact_06** : A sharper gun shot sound.
-  * **Impact_Junk** : The sound of junk (metal and glass) being tossed around and broken, or of something landing on a junk pile.
-  * **Impact_Squish** : A thud ending in squelching sounds, like a thrown object landing on something wet.
-  * **Electric_Blast** : Like Electricity combined with Explosion 2 or 3. Impact or blasting sound, but accompanied by buzzing and crackling.
-  * **Jolt** : A very short zap, like an energy weapon blast.
-  * **Whistling_Projectiles** : A sound like a rocket or missile passing by, but with no impact sound at the end.
-  * **Ominous_Loop** : An eery, resonant instrumental chord. Dies out, then comes back.
-  * **Projectile** : Like Whistling Projectiles, but with a larger number of missles or rockets, at varying distances.
-  * **Night_Wind** : A high wind on a moor or a plain, with soft squeals and moans mixed in.
-  * **Steamy_Vent** : The sound of liquid boiling, with a whistling sound like steam escaping through a small hole.
-  * **Storm** : A loud rumbling mixed with electric buzzing and crackling.
-  * **Spooky_Laugh** : High pitched, echoing laughter.
-  * **Vent_Launch** : A burst of air, sound of a vent releasing.
-  * **Weak_Point** : The creaking sound of metal breaking.
-  * **Wind** : Similar to Alpine or Breeze, but with a louder burst like a gust of wind.
-  * **Woosh** : A wooshing sound, like something passing by very fast.
-  * **Woosh_02** : The sound of an object being swung past you very fast, such as a sword.
-  * **Splash** : An impact sound and light splash, as if something had been thrown into a liquid.
-  * **Impact_Soft** : A very quiet impact, like a small object landing on a soft surface.
-  * **Pickup** : Something being picked up.
-  * **Pickup_02** : Like Pickup, but even quieter.
-  * **Pickup_03** : Like Pickup, but with quiet rustling like cloth.
-  * **Fuse** : A crackling or fizzling sound, like a long fuse on a bomb.
-  * **Heal** : A quiet high pitched ringing with a deeper hum underneath it, on a loop.
-  * **Health_Field** : A background sound similar to the Heal sound, but with crackling sounds of impacts on top of it.
-  * **Healing_Grenade_Underwater** : A plop into water followed by air bubbles moving up to the surface.
-  * **Health_Zone** : Similar to Heal, but barely audible and with a more resonant background hum.
-  * **Heal_Serene** : Similar to Health Zone, but instead of ringing there is high pitched chimes or voices on top.
-  * **Heal_Tranquil** : Very faint ringing, with a higher pitched resonant hum similar to running your finger around the rim of a glass.
-  * **Burn** : The sound of a crackling fire.
+For a deeper dive on each device, see [Using Patchwork Devices](https://dev.epicgames.com/documentation/fortnite/using-patchwork-devices-in-fortnite-creative).
+
+## Basic Controls
+
+Have a look around the **Patchwork Music Gallery** island courtyard, then make your way into the building. Ensure that the [Patchwork tool](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#patchwork-tool) is equipped. This is the controller that you will use to interact with Patchwork devices in real time.
+
+### Patchwork Tool
+
+In **Create mode**, you'll find the Patchwork tool under the **Weapons** tab in Creative inventory, and it will appear in a weapon slot at the bottom right when equipped.
+
+Use this tool to do things like:
+
+1. Pick up and [patch](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#patch) (connect) devices by pressing the **Fire** button on the cable connectors.
+
+   [![](https://dev.epicgames.com/community/api/documentation/image/083a9fd5-a8e5-42da-b4ec-2f1354d3b665?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/083a9fd5-a8e5-42da-b4ec-2f1354d3b665?resizing_type=fit)
+2. Open and close Patchwork devices by pressing the **Fire** button. Some devices have more than one open state!
+3. Toggle switches On and Off by pressing the **Fire** button.
+
+   [![GIF toggle](https://dev.epicgames.com/community/api/documentation/image/765b9e37-ded1-43b2-b46e-58a232074bf5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/765b9e37-ded1-43b2-b46e-58a232074bf5?resizing_type=fit)
+4. Turn knobs by pressing and holding the **Fire** button and aiming the reticle up or down.
+5. Cycle through carousel presets by pressing the **Fire** button while pointing at the arrows.
+
+   [![GIF carousel](https://dev.epicgames.com/community/api/documentation/image/d7bff57e-29b7-455a-9e54-a2a81e6e8aad?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d7bff57e-29b7-455a-9e54-a2a81e6e8aad?resizing_type=fit)
+6. Add or remove notes on a Sequencer by pressing the **Fire** button while pointing to a specific grid cell.
+7. You can zoom in with the Patchwork tool, to get a closer look at the controls. Use the same control you would use for using a scope on a weapon.
+8. You can turn tooltips on and off. The button you use to toggle tooltips on or off is in the list of hot keys on the left of your screen. If tooltips are turned on, whatever you point at with the Patchwork tool will have a popup tooltip with information about that device or control.
+
+   [![Tooltip displayed](https://dev.epicgames.com/community/api/documentation/image/20acffbf-c968-42b6-8d21-97124a022e9a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/20acffbf-c968-42b6-8d21-97124a022e9a?resizing_type=fit)
+
+If you feel like skipping the theory and trying things out for yourself, make your way to the courtyard and jump to [Jamming with Patchwork](https://dev.epicgames.com/documentation/fortnite/getting-started-with-patchwork-in-fortnite-creative)!
+
+## Volume
+
+As you enter the first room, you'll see a [Speaker](https://dev.epicgames.com/documentation/fortnite/using-patchwork-speaker-devices-in-fortnite-creative) device in the middle of the room.
+
+Press and hold the **Fire** button to connect the Patchwork tool to the knob, then aim up and down to adjust the volume. Notice how the knob value and speaker visual effects change as you raise and lower the volume.
+
+Head over to the **Cables** room to continue the tour!
+
+## Cables
+
+To make sounds with Patchwork devices, you have to patch the devices together with **cables**.
+
+Cables for music devices come in three varieties:
+
+|  |  |  |
+| --- | --- | --- |
+| **Note Cable** | [note cable](https://dev.epicgames.com/community/api/documentation/image/6e162f37-a8cb-4ccb-aa05-e36f4a24feb6?resizing_type=fit) | Sends a series of note values. Like sheet music, these cables communicate what to play and when to play it. To actually play the notes, patch a note cable into an [audio generator](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#audio-generator) like the Patchwork Instrument Player. |
+| **Audio Cable** | [audio cable](https://dev.epicgames.com/community/api/documentation/image/96b24d9d-b1c3-4253-94cb-5cda692da887?resizing_type=fit) | Sends sound waveform data. Connect these to an output device like the Patchwork Speaker to hear the audio. |
+| **Control Cable** | [control cable](https://dev.epicgames.com/community/api/documentation/image/fc8db368-62df-476a-9626-2c6d9dc64f2b?resizing_type=fit) | Sends control signals to specific knobs and carousels on devices. Think of these as robotic hands that can turn a knob or press a button to automate changes in your audio. |
+
+Aim the **Patchwork tool** at the connector of the device on the left, then press the **Fire** button. You are now holding a cable! The color of the cable and the shape of the connector match the color and shape of the port on the middle device. This lets you know they can be patched.
+
+Patch the cable by pressing the Fire button while aiming at the matching port.
+
+Repeat this process to patch the teal cable to the matching port on the Speaker.
+
+When the three devices are patched, you should hear a short audio loop playing.
+
+You can experiment with the controls on these devices to change what you hear, or move along to the [Sequencer](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#patchwork-note-sequencer) room.
+
+## Sequencer
+
+Now move on to the Sequencer room! With a [Note Sequencer](using-patchwork-note-sequencer-devices-in-fortnite-creative), you can visually plan out the series of notes you want to play, then make adjustments to what pitch they play, how fast they play, and so on.
+
+When you enter, you should hear the Note Sequencer already playing a loop. This linear sequence of pitches is called a [melody](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#melody). This melody is [monophonic](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#monophony), meaning it plays one pitch at a time.
+
+Use the Patchwork tool to adjust the **Octave** knob on the Sequencer. Just like for the Speaker, hold down the **Fire** button and aim up or down. When you do this, the same loop continues to play, but you'll hear it shift up or down in pitch.
+
+[![note sequencer octave](https://dev.epicgames.com/community/api/documentation/image/cb64e841-5895-4aed-b888-bc4fb86d2922?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/cb64e841-5895-4aed-b888-bc4fb86d2922?resizing_type=fit)
+
+Adjust the **Rate** carousel on the Sequencer. Again, the same loop continues to play, but at a different speed. Note the green vertical highlight on the grid. This shows which notes are currently playing, and travels faster or slower based on the Rate setting.
+
+[![note sequencer rate](https://dev.epicgames.com/community/api/documentation/image/03baf22f-3f7a-42e1-9f4e-c9d0356c7b38?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/03baf22f-3f7a-42e1-9f4e-c9d0356c7b38?resizing_type=fit)
+
+Next, change the **Page** knob to see and hear some different looping note patterns.
+
+[![note sequencer page](https://dev.epicgames.com/community/api/documentation/image/0abfe9d6-5f62-4ba9-ac55-672b20c7272a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0abfe9d6-5f62-4ba9-ac55-672b20c7272a?resizing_type=fit)
+
+Finally, practice aiming at the spaces on the grid to add and remove notes from the pattern.
+
+## Shaping Sounds
+
+This next group of rooms shows how you can use different Patchwork devices to transform your note sequences into a variety of sounds.
+
+An [audio generator](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#audio-generator) is a type of device that turns notes from a Sequencer into sound that can play from a Speaker. Each audio generator processes notes in its own way, adding unique textures to the note input.
+
+As you move into the next room, try using the controls on the [Omega Synthesizer](https://dev.epicgames.com/documentation/fortnite/using-patchwork-omega-synthesizer-devices-in-fortnite-creative) to customize your sound. Cycle through the **Presets** carousel to see how the knob positions affect the audio that this synthesizer produces. You can also use the Patchwork tool to experiment with the **Resonance**, **Bite**, **Glide**, **Sync**, **Overdrive** and **Tone** knobs on this synthesizer to discover how it can make the same note input sound very different.
+
+In the next room, you can experiment with the [Instrument Player](https://dev.epicgames.com/documentation/fortnite/using-patchwork-instrument-player-devices-in-fortnite-creative) device. This is an audio generator with pre-recorded samples of real instruments, that you can use to quickly change how your sequence sounds.
+
+Cycle through the available samples on the carousel to hear your sequence played by different instruments!
+
+This room also has a Note Sequencer! Experiment by stacking notes on top of each other to make chords. Stacking notes vertically creates [polyphony](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#polyphony).
+
+[![note stack](https://dev.epicgames.com/community/api/documentation/image/d3dc03fd-024c-47ce-85ed-1e3a47730980?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d3dc03fd-024c-47ce-85ed-1e3a47730980?resizing_type=fit)
+
+Unlike the Instrument Player, the Omega Synthesizer is [monophonic](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#monophony), meaning it can only play one note at a time. You can toggle the Monophonic option on your Note Sequencers depending on which audio generators you patch them to.
+
+Hold the Fire button and drag a note across two or more grid columns to achieve a [Sustain](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#sustain) effect. You can drag to the onset of the next note, or to the edge of the grid if there are no other notes in that row.
+
+[![note sustain](https://dev.epicgames.com/community/api/documentation/image/da858406-f699-4696-b577-cf17af12d822?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/da858406-f699-4696-b577-cf17af12d822?resizing_type=fit)
+
+## Making Beats
+
+You're coming up on the **Drums** room!
+
+This room has a [Drum Sequencer](using-patchwork-drum-sequencer-devices-in-fortnite-creative), and a [Drum Player](using-patchwork-drum-player-devices-in-fortnite-creative). Like the Note Sequencer plans out your notes, you can use the Drum Sequencer to plan out your beat pattern. The Drum Player, like the Instrument Player, has samples of different drum and percussion sounds. Some of those sounds are from real drums, and some are from synthesized drums.
+
+The Drum Sequencer has five unique shapes along the right side, and a 4x4 grid that you can fill with the shapes of your choosing. Each grid cell can hold all five shapes at once, but use that feature sparingly to avoid a cacophony!
+
+[![drum shapes](https://dev.epicgames.com/community/api/documentation/image/d1de1bff-8682-41d8-a7ad-c33cf367f7af?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d1de1bff-8682-41d8-a7ad-c33cf367f7af?resizing_type=fit)
+
+Add or remove some shapes to hear how that changes the beat.
+
+[![drum grid](https://dev.epicgames.com/community/api/documentation/image/2ac7b7e4-40c3-42d5-8a2c-67e698ad5d01?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2ac7b7e4-40c3-42d5-8a2c-67e698ad5d01?resizing_type=fit)
+
+Cycle through the Presets carousel to get a feel for the kinds of grooves you can get straight out of the box!
+
+Walk over to the Drum Player and change the [drum kit](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#drum-kit). You can adjust the **Volume**, **Tune**, and **Shape** knobs for each sample to customize your kit even further!
+
+## Adding a Chord Progression
+
+The next room shows how to add interesting changes to your music.
+
+Chords are groups of notes played simultaneously, and are usually used to accompany a melody.
+
+A [chord progression](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#chord-progression) is a series of chords that are played one after another.
+
+[![progressor](https://dev.epicgames.com/community/api/documentation/image/c741484e-8022-4141-b6ca-9eedb518530d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c741484e-8022-4141-b6ca-9eedb518530d?resizing_type=fit)
+
+Browse the **Presets** carousel to try some chord progressions commonly found in Western music.
+
+The **Global** toggle (set to **On** by default) will ensure that your Note Progressor syncs with the currently set chord progression. In music theory, Roman numerals are used to represent how far the notes are transposed from the root in a progression. The **Maj: Jazzy** chord progression, for example, will set knobs 1 through 4 to **I - vi - ii - V** respectively.
+
+Each knob on the **[Note Progressor](https://dev.epicgames.com/documentation/fortnite/using-patchwork-note-progressor-devices-in-fortnite-creative)** corresponds to a [transposition](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#transpose) of the note inputs. The **I** chord is the **root**, which means if the knob is set to I, the notes you input to the Progressor will play unchanged. On the Note Progressor’s knobs, up or down arrows next to the Roman numerals indicate when you’re transposing the notes up or down from the root. Experiment by turning knobs up or down to see what kinds of progressions you can come up with.
+
+[![progressor knobs](https://dev.epicgames.com/community/api/documentation/image/caca341d-7f0c-4116-980d-c924337e5b89?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/caca341d-7f0c-4116-980d-c924337e5b89?resizing_type=fit)
+
+## Adding Modulators
+
+A **Modulator** is a type of patchwork device that can automatically adjust settings on other devices. Think of them like friendly robots that can turn knobs for you!
+
+In this room, you'll use Low Frequency Oscillators or [LFO](https://dev.epicgames.com/documentation/fortnite/using-patchwork-lfo-modulator-devices-in-fortnite-creative) modulators to continuously change the sound of the Omega Synthesizer.
+
+The modulator on the left is already patched to the Volume knob on the synth. Adjust the **Rate** carousel on this modulator to hear how that changes the sound.
+
+[![LFO rate](https://dev.epicgames.com/community/api/documentation/image/66dd5db5-df75-4d2c-a8c5-afc102213044?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/66dd5db5-df75-4d2c-a8c5-afc102213044?resizing_type=fit)
+
+The modulator on the right isn't patched to anything. Modulator cables can be picked up and patched like other cables, but they need to be patched into device knobs and carousels instead of ports. Pick up the cable and patch it to the **Bite** knob.
+
+[![LFO bite](https://dev.epicgames.com/community/api/documentation/image/dd874bab-291d-4dd3-a085-519fc617d358?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/dd874bab-291d-4dd3-a085-519fc617d358?resizing_type=fit)
+
+Experiment with the controls on both modulators to explore the range of patterns you can create.
+
+## Adding Effects
+
+The next two rooms will show you how to take your sound customization game even further!
+
+### Distortion Effect
+
+The [Distortion Effect](using-patchwork-distortion-effect-devices-in-fortnite-creative) device can simulate the warm sound of a signal being [overdriven](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#overdrive) through an analog tube amp, or create an unsettling [digital processing](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#audio-signal-processing) and warping sound.
+
+Turn the **Drive** knob all the way up to see how crunchy you can get the music to sound.
+
+[![distortion drive](https://dev.epicgames.com/community/api/documentation/image/61886585-9810-4936-bb9c-250f8687dbdd?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/61886585-9810-4936-bb9c-250f8687dbdd?resizing_type=fit)
+
+The **Mix** knob will change the percentage of the distortion that is mixed into the original [dry](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) signal.
+
+### Echo Effect
+
+The [Echo Effect](using-patchwork-echo-effect-devices-in-fortnite-creative) device repeats the incoming audio signal at a specified [delay](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#delay) and [feedback](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#feedback) level. It can be used to fill out a thin synth sound, for instance, or to mimic familiar echo effects found in the world, like yelling into a canyon.
+
+Adjust the **Mix** knob to **0.5** and turn up the **Feedback**. You'll immediately see how the amount of echo goes up.
+
+[![echo mix feedback knobs](https://dev.epicgames.com/community/api/documentation/image/931d996f-4492-41b4-9b41-68d5d4721d81?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/931d996f-4492-41b4-9b41-68d5d4721d81?resizing_type=fit)
+
+Adjusting the **Sync Timing** carousel will bring the echoes closer together or further apart.
+
+## Jamming With Patchwork
+
+Ready to put your skills to the test?
+
+Enter the **Jam Zone**!
+
+The towering device in the middle of the courtyard is the [Music Manager](using-patchwork-music-manager-devices-in-fortnite-creative). This device can change the [tempo](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#tempo) and the [key](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#key) of every Patchwork device placed in the level.
+
+[![music manager](https://dev.epicgames.com/community/api/documentation/image/9c4a5cd6-1ce5-4538-ac0b-fc951bd9e09d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9c4a5cd6-1ce5-4538-ac0b-fc951bd9e09d?resizing_type=fit)
+
+The courtyard has four sections:
+
+- Bass
+- Lead
+- Drums
+- Chord
+
+No need to follow any particular order, trust your intuition!
+
+Add notes to a sequencer, then select which instrument or kit will play those notes. Tweak the settings on the audio generators, then add or remove distortion and echo effects. Play around by adding modulators to different knobs and carousels.
+
+Try creating patterns on multiple pages and enabling **Auto-Page** on the Sequencers to make your song longer.
+
+Check out the **Patchwork Club (6730-0905-0185)** if you want even more control over sections of your track!
+
+[![Patchwork club image](https://dev.epicgames.com/community/api/documentation/image/3e78b741-2e42-4556-b4b7-057346c25ae4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3e78b741-2e42-4556-b4b7-057346c25ae4?resizing_type=fit)
+
+- [![Cable Splitter](https://dev.epicgames.com/community/api/documentation/image/d70b3e31-ee4e-4b51-b3a3-d3f058e233fb?resizing_type=fit&width=640&height=640)
+
+  Cable Splitter
+
+  See how to send audio data to multiple devices!](https://dev.epicgames.com/documentation/fortnite/using-patchwork-cable-splitter-devices-in-fortnite-creative)
+- [![Distortion Effect](https://dev.epicgames.com/community/api/documentation/image/fe26526b-54d6-4832-8114-6deb1f7f1a00?resizing_type=fit&width=640&height=640)
+
+  Distortion Effect
+
+  Use this audio-shaping tool that results in sounds typical of genres like electronic, rock, and metal.](https://dev.epicgames.com/documentation/fortnite/using-patchwork-distortion-effect-devices-in-fortnite-creative)
+- [![Drum Player](https://dev.epicgames.com/community/api/documentation/image/b8cf7066-0ea5-4468-a0e3-a3180258e9ec?resizing_type=fit&width=640&height=640)
+
+  Drum Player
+
+  Use the Drum Player device to play different drum sounds for your music setup.](https://dev.epicgames.com/documentation/fortnite/using-patchwork-drum-player-devices-in-fortnite-creative)
+- [![Drum Sequencer](https://dev.epicgames.com/community/api/documentation/image/c9b73c30-c206-4b39-8909-c05e6d761374?resizing_type=fit&width=640&height=640)
+
+  Drum Sequencer
+
+  Use the Drum Sequencer device to make your own drum pattern, or choose from a number of presets.](https://dev.epicgames.com/documentation/fortnite/using-patchwork-drum-sequencer-devices-in-fortnite-creative)
+- [![Echo Effect](https://dev.epicgames.com/community/api/documentation/image/9fe53df2-535a-4aed-b983-b8b9299565f8?resizing_type=fit&width=640&height=640)
+
+  Echo Effect
+
+  This device takes in an audio signal and sends it out again, but with a time delay, like your voice echoing in a canyon.](https://dev.epicgames.com/documentation/fortnite/using-patchwork-echo-effect-devices-in-fortnite-creative)
+- [![FX Filter](https://dev.epicgames.com/community/api/documentation/image/2968fdfa-2c32-4af5-81be-78abe50392e6?resizing_type=fit&width=640&height=640)
+
+  FX Filter
+
+  Change the character of your audio by filtering certain frequencies.](https://dev.epicgames.com/documentation/fortnite/using-patchwork-filter-devices-in-fortnite-creative)
+- [![FX Gain](https://dev.epicgames.com/community/api/documentation/image/17373304-04db-4f85-adba-d4a44cbff17a?resizing_type=fit&width=640&height=640)
+
+  FX Gain
+
+  Amplify all of your Patchwork audio with a single device!](https://dev.epicgames.com/documentation/fortnite/using-patchwork-gain-devices-in-fortnite-creative)
+- [![Instrument Player](https://dev.epicgames.com/community/api/documentation/image/400c75be-0d90-4616-8f07-6bab3c33a705?resizing_type=fit&width=640&height=640)
+
+  Instrument Player
+
+  The Instrument Player device gives you a selection of instruments for playing melodic content.](https://dev.epicgames.com/documentation/fortnite/using-patchwork-instrument-player-devices-in-fortnite-creative)
+- [![LFO Modulator](https://dev.epicgames.com/community/api/documentation/image/c4b5f838-6a8d-47e1-9f52-9db16729ab7b?resizing_type=fit&width=640&height=640)
+
+  LFO Modulator
+
+  Use the Low-Frequency Oscillator Modulator device to modify a setting on another Patchwork device in a repeating pattern.](https://dev.epicgames.com/documentation/fortnite/using-patchwork-lfo-modulator-devices-in-fortnite-creative)
+- [![Music Manager](https://dev.epicgames.com/community/api/documentation/image/ea656a73-4d82-4b19-ab27-1744ab3297c1?resizing_type=fit&width=640&height=640)
+
+  Music Manager
+
+  Use this device to change the key, mode and tempo for all Patchwork devices on your island.](https://dev.epicgames.com/documentation/fortnite/using-patchwork-music-manager-devices-in-fortnite-creative)
+- [![Note Progressor](https://dev.epicgames.com/community/api/documentation/image/a71f7792-e484-4468-a835-3fb2108bf5b5?resizing_type=fit&width=640&height=640)
+
+  Note Progressor
+
+  The Note Progressor transposes a note pattern to a different key or follows a user-specified chord progression.](https://dev.epicgames.com/documentation/fortnite/using-patchwork-note-progressor-devices-in-fortnite-creative)
+- [![Note Sequencer](https://dev.epicgames.com/community/api/documentation/image/152a0539-36fb-4215-9631-6736999bcbe6?resizing_type=fit&width=640&height=640)
+
+  Note Sequencer
+
+  The Note Sequencer device allows you to choose the notes you want to use in your compositions.](https://dev.epicgames.com/documentation/fortnite/using-patchwork-note-sequencer-devices-in-fortnite-creative)
+- [![Note Trigger](https://dev.epicgames.com/community/api/documentation/image/bed80978-d8b0-4531-9993-e515995660d3?resizing_type=fit&width=640&height=640)
+
+  Note Trigger
+
+  The Note Trigger relays signals to other Creative/UEFN devices each time a particular note is played.](https://dev.epicgames.com/documentation/fortnite/using-patchwork-note-trigger-devices-in-fortnite-creative)
+- [![Omega Synthesizer](https://dev.epicgames.com/community/api/documentation/image/cd4b37b9-039d-46b5-9f57-931644136443?resizing_type=fit&width=640&height=640)
+
+  Omega Synthesizer
+
+  The Omega Synthesizer device allows you to turn note inputs into audio data.](https://dev.epicgames.com/documentation/fortnite/using-patchwork-omega-synthesizer-devices-in-fortnite-creative)
+- [![Song Sync](https://dev.epicgames.com/community/api/documentation/image/61a15270-2652-42fc-b8ae-a433f6211a75?resizing_type=fit&width=640&height=640)
+
+  Song Sync
+
+  Use the Song Synchronizer device to design your own virtual concerts, or make your game world move to the music.](https://dev.epicgames.com/documentation/fortnite/using-patchwork-song-sync-devices-in-fortnite-creative)
+- [![Speaker](https://dev.epicgames.com/community/api/documentation/image/780e06d4-572a-4000-93e3-84c4dc6d6fa2?resizing_type=fit&width=640&height=640)
+
+  Speaker
+
+  Use the Patchwork Speaker device to play the Patchwork audio you create, either at a specific location or across the entire island.](https://dev.epicgames.com/documentation/fortnite/using-patchwork-speaker-devices-in-fortnite-creative)
+- [![Step Modulator](https://dev.epicgames.com/community/api/documentation/image/d6d1c0b3-dcd4-4489-b49d-dd352758c0c5?resizing_type=fit&width=640&height=640)
+
+  Step Modulator
+
+  Patch the Step Modulator device to controls on other devices to create sequenced patterns with values from the Step Modulator.](https://dev.epicgames.com/documentation/fortnite/using-patchwork-step-modulator-devices-in-fortnite-creative)
+- [![Value Setter](https://dev.epicgames.com/community/api/documentation/image/a989b185-5af2-439c-b5a2-f61bc3ba908e?resizing_type=fit&width=640&height=640)
+
+  Value Setter
+
+  This is the glue that allows Creative and UEFN devices to control the state of Patchwork systems.](https://dev.epicgames.com/documentation/fortnite/using-patchwork-value-setter-devices-in-fortnite-creative)
+
+![](https://dev.epicgames.com/community/api/documentation/image/f3b6666a-b02a-4e81-9704-e8697fed29dc?resizing_type=fit)

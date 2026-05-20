@@ -1,122 +1,156 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-fields-examples-in-fortnite
 
-# Scene Events
-Learn about creating Scene Events to change your component's behavior and add interesting events to your scene.
-![Scene Events](https://dev.epicgames.com/community/api/documentation/image/486e8235-4da1-4f19-a154-79513638f7a2?resizing_type=fill&width=1920&height=335)
-Scene events provide a way to send signals up or down the scene graph. They are all about decoupling parts of the scene graph from each other, allowing them to communicate through messages instead of directly binding to each other.
-You define a custom event, send it from an entity, and any component along the way responds by overriding `OnReceive`.
-  * `SendDown` sends the event from an entity downward through its children, grandchildren, and so on (depth-first).
-  * `SendUp` sends the event upward through its parent, grandparent, and so on toward the root.
+# Verse Fields Examples
 
-Multiple components can respond to a scene event. Every component in an entity’s hierarchy gets its `OnReceive` called. A component can consume the event (return `true`) to stop propagation, or pass through (return `false`) to let it keep traveling.
-The three things you need:
-  * **A custom event** : A class that inherits from `scene_event`.
-  * **A responding component** : Overrides `OnReceive`, casts the event, and reacts.
-  * **A send call** : `Entity.SendDown(Event)` or `Entity.SendUp(Event)`.
+Learn how to use Verse fields to create custom UI for your next project.
 
-Scene events can be reused across your projects, you can expand upon scene events by adding additional events or tweaking the behavior of entities and components in a chain of events to do something slightly different.
-##  Cast Pattern
-The `OnReceive` call provides a way to create a generic `scene_event`. To find out what specific type was sent, use a failable cast:
+![Verse Fields Examples](https://dev.epicgames.com/community/api/documentation/image/840e1e66-8fc6-4310-a4d7-f1ec532d7ba4?resizing_type=fill&width=1920&height=335)
+
+Verse fields can be defined directly in UMG. Variables are created in a User Widget then bound to widget properties in the Verse code. Variables pass Verse data and are reflected in the asset digest, they also provide a way to create custom dynamic UI without relying on device view models.
+
+## In-Island Transactions UI Example
+
+The storefront example expands on the Marketplace API by adding custom UI elements through Verse fields and Verse UI. Data is passed from the API to a data layer, and a Verse class is used to track players and respond to players purchasing objects.
+
+[![In the UI template, the In-Island Transactions has a custom shop front UI.](https://dev.epicgames.com/community/api/documentation/image/6e52df49-1360-4ce0-a71f-db55d041aa62?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6e52df49-1360-4ce0-a71f-db55d041aa62?resizing_type=fit)
+
+Click image to enlarge.
+
+The following files in the template create the look of the custom UI:
+
+- `shop_setup_device_template` - This file defines the `var Shop` and calls the `ShowUI` function to display the UI coded in the `ui_shop` file.
+- `ui_shop` - A class that consolidates all widgets into a Verse file through Verse UI. UMG handles the character image, item details, headers and price, and rows of items. The Verse API handles the background layers and buttons.
+- `ui_shop_offer_item` - A class to add to the View button of each item row.
+- `link_volume_to_shop_device` - A device script that uses the Volume device as a trigger to show  the shop interface.
+
+All materials, textures, and user widgets used with this example are in the **UI** > **Verse** > **InIslandTransaction** folders.
+
+[![An example of the User Widgets used to create the shop UI.](https://dev.epicgames.com/community/api/documentation/image/d58eb81c-c64d-4118-b383-c512dd4fb1ab?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d58eb81c-c64d-4118-b383-c512dd4fb1ab?resizing_type=fit)
+
+Click image to enlarge.
+
+### Shop UI
+
+The design for the main shop UI is coded in an OverlayRoot. The OverlayRoot uses a material block to call the material instances for the background materials of the Main background and the offer background.
+
 Verse
-```
+
+Shop UI
 
 ```
+set OverlayRoot = overlay:
+            Slots := array:
+                overlay_slot:
+                    Widget := BackgroundWidget                      
+                    VerticalAlignment := vertical_alignment.Fill
+                    HorizontalAlignment := horizontal_alignment.Fill                    
+                overlay_slot:
+                    Widget := CloseButton
+                    Padding := margin {Left := 824.0, Bottom := 30.0}
+                    VerticalAlignment := vertical_alignment.Bottom
+```
 
-if (SpecificEvent := my_event[E]): # Cast succeeded — access SpecificEvent.Amount, etc.
-Copy full snippet(2 lines long)
-If the event isn't that type, the cast fails and the `if` block is skipped. This filters for only the events you need. The `OnReceive` gets called for every scene event passing through the hierarchy, so the cast is essential.
-##  Event Propagation
-The `SendDown` event traverses depth-first, it calls `OnReceive` on each component of the starting entity, then recurses into the first child (and its children) before moving to the next sibling.
-The `SendUp` event traverses in the opposite direction from `SendDown`, it starts entity first, then parent, then grandparent, up to the root.
-Both event types stop immediately if any component consumes the event (returns `true` from `OnReceive`). Both return `logic — true` if the event was consumed somewhere, or `false` if it traveled the entire path without being consumed.
-###  Consumed Events
-  * Return `true` from `OnReceive` — propagation stops, no further entities react to the event.
+A second overlay widget is added which contains a Stack Box. The Stack Box is used to create the body of the offers. The final Stack Box slot is reserved for the `OfferDetailsOverlayRoot` which is a User Widget that contains the design for the details.
 
-This is useful when a component fully handles the event and no additional components in the hierarchy respond to the event. For example, a shield absorbing damage before it reaches the entity underneath.
 Verse
-```
-damage_event<public> := class(scene_event):
-    Amount<public>:int
 
-# A shield that absorbs all damage and stops it from reaching children.
-shield_component := class(component):
-    var ShieldHP:int = 100
-
-    OnReceive<override>(E:scene_event):logic =
-        if (Dmg := damage_event[E]):
-            set ShieldHP -= Dmg.Amount
+Shop UI
 
 ```
+ overlay_slot:
+                                Widget := stack_box:
+                                    Orientation := orientation.Horizontal
+                                    Slots := array:
+                                        stack_box_slot:
+                                            Widget := stack_box:
+                                                Orientation := orientation.Vertical
+                                                Slots := array:
+                                                    stack_box_slot:
+                                                        Widget := HeaderWidget
+```
 
-Copy full snippet(22 lines long)
-If the shield entity is an ancestor of the health entity, `SendDown` hits the shield first. Because the shield returns `true`, the health component is not affected by the event.
-###  Pass Through Events
-  * Return `false` (the default) — the event keeps traveling through the hierarchy.
+### PopulateOffers
 
-The base `OnReceive` on `component` returns `false`, which is why calling `(super:)OnReceive(E)` at the end of your override is the standard pattern for passing an event onward.
-##  Scene Events Examples
-Following are code examples of basic scene events behavior.
-###  Define an Event
+The `PopulateOffers` function creates the number of item rows entered for each item listed in the  `OfferItemWidget` creating a repeatable action that works for each offer in the Stack Box. For example, if you have three offers, this function creates three offer widgets for each of your items.
+
+[![The bay in the template hall that holds the In-Island transaction example.](https://dev.epicgames.com/community/api/documentation/image/8effff5e-175e-4f0f-a198-15b0cf19696e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8effff5e-175e-4f0f-a198-15b0cf19696e?resizing_type=fit)
+
+Click image to enlarge.
+
 Verse
-```
+
+PopulateOffers
 
 ```
+    PopulateOffers(InOffers:[]offer) : void =
+       
+        for (Offer : InOffers):
 
-my_event<public> := class(scene_event): Amount<public>:int
-Copy full snippet(2 lines long)
-###  Respond to an Event in a Component
+            var OfferItemWidget : ui_shop_offer_item = ui_shop_offer_item {}
+```
+
+ PopulateOffers(InOffers:[]offer) : void =
+for (Offer : InOffers):
+var OfferItemWidget : ui_shop_offer_item = ui_shop_offer_item {}
+
+For each offer, the `UpdateSelectedOfferDetails` function updates the following data:
+
+- Name
+- Icon
+- ShortDescription
+- PriceFloat
+
 Verse
-```
+
+PopulateOffers
 
 ```
+    UpdateSelectedOfferDetails(SelectedOffer : offer) : void =
 
-my_responder := class(component): var Score:int = 0 OnReceive<override>(E:scene_event):logic = if (Event := my_event[E]): set Score += Event.Amount (super:)OnReceive(E)
-Copy full snippet(7 lines long)
-###  Send Event
+        var PriceFloat : float = 0.0
+
+            if (PriceVB := price_vbucks[SelectedOffer.Price]):
+                set PriceFloat = GetPriceVBucks(PriceVB)
+```
+
+The `HandleBuyButtonClicked` method sends the player into the Epic Games payment workflow when the player makes a purchase.
+
 Verse
-```
+
+PopulateOffers
 
 ```
+    HandleBuyButtonClicked(SelectedOffer : offer) <suspends> : void =
+       
+        BuyButton.OnClick().Await()
+       
+        if (PlayerUI := GetPlayerUI[Player]):
+            HideUI(PlayerUI)
+       
+        BuyOffer(Player, SelectedOffer)
+```
 
-Event := my_event{Amount := 10} MyEntity.SendDown(Event)
-Copy full snippet(2 lines long)
-###  Handle Multiple Event Types
+ HandleBuyButtonClicked(SelectedOffer : offer) <suspends> : void =
+BuyButton.OnClick().Await()
+if (PlayerUI := GetPlayerUI[Player]):
+HideUI(PlayerUI)
+BuyOffer(Player, SelectedOffer)
+
+### Device Trigger
+
+In this example, a [Volume device](https://dev.epicgames.com/documentation/fortnite/using-volume-devices-in-fortnite-creative) is used as a trigger to open the shop UI. You can use any device as a substitute trigger. Or no device at all. Players can approach items individually and the UI will pop-up.
+
 Verse
-```
+
+Link Volume to Shop
 
 ```
+# A Verse-authored creative device that can be placed in a level
+link_volume_to_shop_device := class(creative_device):
 
-OnReceive<override>(E:scene_event):logic = if (DmgEvent := damage_event[E]): # Handle damage... else if (HealEvent := heal_event[E]): # Handle healing... (super:)OnReceive(E)
-Copy full snippet(6 lines long)
-###  Use var Fields to Collect Information from Responders
-Verse
+    @editable
+    var ShopTemplate:shop_setup_device_template = shop_setup_device_template{}
+    
+    @editable
+    var OfferVolume:volume_device = volume_device{}
 ```
-my_event<public> := class(scene_event):
-    I<public>:int
-    var Activations:int = 0      # Responders can increment this
-
-# In the responder:
-OnReceive<override>(E:scene_event):logic =
-    if (CE := my_event[E]):
-        set CE.Activations += 1
-    (super:)OnReceive(E)
-
-```
-
-Copy full snippet(14 lines long)
-##  Things to Watch Out For
-  * Always call `(super:)OnReceive(E)` to ensure superclasses get their `OnReceive` invoked.
-For classes that inherit directly from components, this is less important. In those cases, returning `false` to continue propagation at the end of the function is reasonable.
-  * Always cast before accessing fields. The parameter type is `scene_event`, not your specific event class.
-  * Don't consume accidentally. Returning `true` silently hides the event from the rest of the hierarchy.
-  * The entity must be in the scene for `SendUp/SendDown` to work. This restriction might be lifted in the future.
-
-##  API Quick Reference
-|
----|---
-**API** |  **What it does**
-`scene_event` |  Interface. Inherit from this to make your own event type.
-`Entity.SendDown(E)` |  Send event to this entity and all descendants.
-`Entity.SendUp(E)` |  Send event to this entity and all ancestors.
-`Component.SendDown(E)` |  Send event from this component's entity downward. (prefer `Entity.SendDown/Up` whenever possible to improve compatibility)
-`OnReceive(E):logic` |  Override to respond. Return `true` to consume, false to pass through.

@@ -1,7 +1,23 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/scenegraph/interactable_cooldown_per_agent
 
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+# interactable_cooldown_per_agent class
 
-**Session ID** : 9dfa4cc64dd286b1
-**IP Address** : 14.191.95.176
+Learn technical details about the interactable_cooldown_per_agent class.
+
+Used to set a cooldown per agent when interacted.
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /Verse.org/SceneGraph }` |
+
+## Members
+
+This class has data members, but no functions.
+
+### Data
+
+| Data Member Name | Type | Description |
+| --- | --- | --- |
+| `Duration` | `?float` | The duration in seconds after a successful interaction, before the interacting agent can initiate a subsequent interaction. This is only used if the duration is greater than 0.0. Modifying this does not affect any RemainingPerAgentCooldownDuration. This property gives other agents time to interact, when there is a limited number of Simultaneous Interactors. |
+| `RemainingDuration` | `?[agent]float` | The cooldown remaining, in seconds, before a particular agent is able to initiate an interaction on this component. |
+| `ExpiredEvent` | `unknown` | Event which fires when the per agent cooldown expires. Sends the agent which was previously affected by the cooldown. |

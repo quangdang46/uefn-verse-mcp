@@ -1,52 +1,79 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-supply-drop-spawner-devices-in-fortnite-creative
 
-# Project In-Island Transactions
-Learn about what information is found on the In-Island Transactions page in Creator Portal.
-![Project In-Island Transactions](https://dev.epicgames.com/community/api/documentation/image/4e206ea4-ddc5-4da8-8c77-04aee3df5993?resizing_type=fill&width=1920&height=335)
-A project's In-Island Transactions page shows the offers and entitlements you have included in the project you are viewing. To view this page, click **In-Island Transactions** in the Project Navigation menu on the left.
-If you don't have any in-island transactions on your island, the page will give you some basic information about adding purchasable items to your island. See [In-Island Transactions](https://dev.epicgames.com/documentation/fortnite/in-island-transactions-in-fortnite) for more information on in-island transactions.
-[![In-Island Transaction page if you have no purchasable offers on your island](https://dev.epicgames.com/community/api/documentation/image/d77d4b76-e2d3-43d4-831e-16025db034c6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d77d4b76-e2d3-43d4-831e-16025db034c6?resizing_type=fit) In-Island Transaction page if you have no purchasable offers on your island
-If you do have in-island transactions on your island, there will be two tabs on this page:
-  * Offer Catalog
-  * Entitlement Catalog
+# Supply Drop Spawner Devices
 
-##  Offer Catalog
-The Offer Catalog tab gives you information on the offers you have made available for purchase on this island. An [offer](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/marketplace/offer) can be one individual entitlement, or a [bundle](https://dev.epicgames.com/documentation/fortnite/bundle-offer).
-[![The Offer Catalog tab shows offers that are available for purchase on your island.](https://dev.epicgames.com/community/api/documentation/image/b1b34b04-a37a-4ab4-8085-7f6ba51bbf53?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b1b34b04-a37a-4ab4-8085-7f6ba51bbf53?resizing_type=fit) The Offer Catalog tab shows offers that are available for purchase on your island.
-At the top is a box that contains a summary of information:
-  * **Offers Available** : How many offers you have for sale on this island.
-  * **Total Offers Sold** : Total number of offers from this island that have been purchased.
-  * **Average Unique Buyers Per Day** : How many individual players have purchased an offer on your island each day.
-  * **Average Offers Per Buyer** : The average number of offers each individual buyer has purchased.
-  * **Most Popular Offer** : The offer that has been purchased by the most players.
+Spawn an aerial supply drop to provide players with weapons or supplies.
 
-The following table describes the information that is displayed below the summary.
-Column  |  Description
----|---
-**Offers** |  The name of the offer.
-**Type** |  Offers can be for one entitlement, or for a bundle. This shows which type of offer this is.
-**Total Sold** |  How many of this offer have been purchased by players.
-**Report Rate** |  The number of player reports for an offer divided by the total number sold.
-**Price** |  How much, in V-Bucks, the player pays for this offer.
-**Last Sold** |  The date of the last purchase of this offer.
-**Details (Arrow)** |  Click this arrow to display a pop-up with more detailed information about the offer.
-##  Entitlement Catalog
-The Entitlement Catalog tab shows a list of the individual entitlements you are offering for sale.
-[![The Item Catalog tab shows all the individual items that are available for purchase on your island.](https://dev.epicgames.com/community/api/documentation/image/220b39ec-b6bc-42fd-9100-e24e0cb43332?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/220b39ec-b6bc-42fd-9100-e24e0cb43332?resizing_type=fit) The Item Catalog tab shows all the individual items that are available for purchase on your island.
-At the top is a box that contains a summary of information:
-  * **Consumables Available** : How many [consumables](https://dev.epicgames.com/documentation/fortnite/consumable-product) are available for sale. Consumables are limited and can be used up.
-  * **Durables Available** : How many durables are available for sale. Durables cannot be used up.
-  * **Consumables Share of Sales** : Shows how many consumables were sold, as a percentage of total sales.
-  * **Durables Share of Sales** : Shows how many durables were sold, as a percentage of total sales.
-  * **Most Popular Entitlement** : This is the entitlements that was part of the highest percentage of offer transactions for the dates selected.
+![Supply Drop Spawner Devices](https://dev.epicgames.com/community/api/documentation/image/f05fc604-4e95-4192-b0c4-9df8d38d9695?resizing_type=fill&width=1920&height=335)
 
-The following table describes the information that is displayed below the summary.
-Column  |  Description
----|---
-**Entitlements** |  The name of the entitlement.
-**Consumable or Durable** |  Displays whether the entitlement is durable or consumable.
-**Transactions** |  The number of transactions that include this entitlement.
-**Units sold** |  The number of instances of this entitlement that have been sold.
-**Average Daily Buyers** |  This shows the average number of daily buyers that purchased this entitlement.
-**Last Sold** |  The date for the most recent purchase of this entitlement.
-**Details (Arrow)** |  Click this arrow to display a pop-up with more detailed information about the entitlement.
+A **Supply Drop Spawner** [spawns](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#spawning) a box of supplies that parachutes down from the sky. This can be triggered by players, providing a more dynamic and immersive way of equipping players with weapons and other items.
+
+There are a lot of [game modes](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#game-mode) where this would be useful. For example:
+
+- If your island is a Battle Royale or Storm Wars game, you can spawn [supply drops](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) just like Fortnite Battle Royale.
+- If you have a zombie defense game, players could request a supply shipment from an organization or NPCs.
+- If your island is a survival game, this could be a way to provide critical supplies in a tough area.
+
+If you're using multiple copies of a device on an island, it can be helpful to [rename](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#rename-a-device) them. You can choose names that relate to each device's purpose, so it's easier to remember what each one does.
+
+## Contextual Filtering
+
+Some devices are affected by a feature called contextual filtering. This feature hides or displays options depending on the values selected for certain related options. This feature will reduce clutter in the Customize panel and make options easier to manage and navigate.
+
+However, it may not be easy to recognize which options or values trigger contextual filtering. To help you identify them, in our device docs we use italic for any values that trigger contextual filtering. All options will be listed, including those affected by contextual filtering; if they are hidden or displayed based on a specific option’s value, there will be a note about that in the Description field for that option.
+
+## Device Options
+
+Configure this device with the following options.
+
+Default values are **bold**. Values that trigger contextual filtering are *italic*.
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Destructible Balloon** | **True**, False | Determines whether the balloon is destructible. |
+| **Balloon Health** | **250**, Pick an amount | If the balloon is destructible, determines how much damage the balloon can take before it is destroyed and drops the supply crate. |
+| **Owning Team** | **Any**, Pick or enter a team | Determines which team can damage the balloon and interact with the supply crate. |
+| **Invert Team Selection** | On, **Off** | If set to **On**, all teams except the one selected in the **Owning Team** option can interact with the supply drop. |
+| **Invert Team Damage** | On, **Off** | If set to **On**, all teams except the one selected in the **Owning Team** option can damage the balloon. |
+| **Owning Class** | No Class, **Any**, Pick or enter a class | Determines which class can interact with the supply crate. If you choose **No Class**, only players with no assigned class can interact with the supply crate. If you choose **Any** any player with an assigned class can interact with the supply crate. |
+| **Invert Class Selection** | On, **Off** | If set to **On**, all classes except the one selected in the **Owning Class** option can interact with the supply crate. |
+| **Invert Class Damage** | On, **Off** | Determines which classes can damage the supply drop balloon. If set to **On**, all teams except the one selected in the **Owning Class** option can damage the balloon. |
+| **Spawn Without Balloon** | True, **False** | Determines whether the supply drop spawns with a balloon. |
+| **Fall Speed** | **1.0x**, Pick a multiplier | Determines how fast the supply crate falls, expressed as a multiple of normal speed. |
+| **Start Locked** | True, **False** | Determines whether the supply crate is locked when spawned. |
+| **Spawn Radius** | Island, **Above**, *Custom* | Determines how far from the spawner the supply crate can spawn. If you choose **Island**, supply crates can spawn anywhere on the island. If you choose **Above**, supply crates will always spawn directly above the device. If you choose **Custom** another option displays below this one. |
+| **Custom Spawn Radius** | **0.0 m**, Pick or enter a radius | Customize how far from the device the supply drop spawns. |
+| **Show Flare Where Landing** | **True**, False | Determines whether the flare smoke and reticle appear when the supply drop spawns. |
+| **Show Icon on Minimap** | **True**, False | Determines whether the supply drop icon should appear on the minimap when the supply drop spawns. |
+| **Spawn Delay** | Off, **Game Start**, *Custom* | Determines how long the device waits before spawning a supply drop. If you select **Game Start** a supply drop will spawn when the game starts. If you select **Off**, the supply drop will only be spawned by event binding. If you choose **Custom** another option displays below this one. |
+| **Custom Spawn Delay** | **1.0 second**, Pick or enter an amount | Customize how long it takes for the device to spawn a supply drop crate. |
+| **Supply FX Color** | **Blue**, Pick a color swatch | Determines the color of the smoke and reticle VFX for the spawner. |
+| **Balloon Style** | **Standard**, Old School, Birthday, Holiday, Drop Pad | Determines the visual style of the balloon attached to the supply crate. |
+
+## Direct Event Binding
+
+Following are the [direct event binding](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#direct-event-binding) options for this device.
+
+### Functions
+
+A [function](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#function) listens for an event on a device then performs an action.
+
+| Option | Description |
+| --- | --- |
+| **Spawn Supply Drop When Receiving From** | Spawns a supply drop when an event occurs, provided one hasn't already spawned. |
+| **Destroy Balloon When Receiving From** | When an event occurs, it destroys the balloon and causes the supply crate to drop. |
+| **Open Supply Drop When Receiving From** | When an event occurs, it opens the supply drop whether it is locked or unlocked. |
+| **Unlock Supply Drop When Receiving From** | When an event occurs, it unlocks the supply crate so players can open it. |
+| **Lock Supply Drop When Receiving From** | When an event occurs, it locks the supply crate so players can't open it. |
+| **Destroy Spawned Drops When Receiving From** | When an event occurs, it destroys all supply drops spawned by this device. |
+
+### Events
+
+Direct event binding uses events as transmitters. An event tells another device to perform a function.
+
+| Option | Description |
+| --- | --- |
+| **On Opened Send Event On** | When the supply crate is opened, an event occurs. |
+| **On Balloon Popped Send Event On** | When the balloon on the supply crate is popped, an event occurs. |
+| **On Landing Send Event On** | When the supply crate lands for the first time, an event occurs. |
+| **On Crate Destroyed Event On** | When the crate is destroyed, an event occurs. |

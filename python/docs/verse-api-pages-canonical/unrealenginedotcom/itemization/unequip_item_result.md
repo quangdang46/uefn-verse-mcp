@@ -1,7 +1,19 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/unrealenginedotcom/itemization/unequip_item_result
 
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+# unequip_item_result class
 
-**Session ID** : 9dfa46285af8dd8c
-**IP Address** : 14.191.89.252
+Learn technical details about the unequip_item_result class.
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /UnrealEngine.com/Itemization }` |
+
+## Members
+
+This class has data members, but no functions.
+
+### Data
+
+| Data Member Name | Type | Description |
+| --- | --- | --- |
+| `Item` | `entity` |  |

@@ -1,7 +1,26 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/scenegraph/collision_profile
 
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+# collision_profile class
 
-**Session ID** : 9dfa4917ad3f08f9
-**IP Address** : 14.191.95.176
+Learn technical details about the collision_profile class.
+
+A collision profile determines how a volume interacts with other volumes for Overlap queries, Sweep queries, and physics simulation. When two volumes are being tested to see how they interact, the algorithm looks like this:
+GetInteraction(A:collision_profile, B:collision_profile):collision_interaction =
+InteractionA = B.GetChannelInteraction(A.Channel)
+InteractionB = A.GetChannelInteraction(B.Channel)
+return Min(InteractionA, InteractionB)
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /Verse.org/SceneGraph }` |
+
+## Members
+
+This class has data members, but no functions.
+
+### Data
+
+| Data Member Name | Type | Description |
+| --- | --- | --- |
+| `Channel` | `collision_channel` | The collision channel for the owning object. |
+| `GetChannelInteraction` | (`collision_channel`):`collision_interaction` | How the owning object should interact with other objects.GetChannelInteraction is a function which maps a collision_channel to a collision_interaction. It can be implemented as an simple sequence of if statements. For example, to block all channels except camera: BlockAllIgnoreCamera(Channel:collision_channel):collision_interaction = if (CollisionChannels.camera[Channel]): return collision_interaction.Ignore return collision_interaction.Block MyProfile:collision_profile = MakeCollisionProfile(CollisionChannels.dynamic, BlockAllIgnoreCamera) |

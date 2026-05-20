@@ -1,16 +1,94 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-vehicle-mod-items-in-fortnite-creative
 
-# Squid Game Islands
-Get started creating Squid Game brand islands.
-![Squid Game Islands](https://dev.epicgames.com/community/api/documentation/image/d286568f-88c2-46cc-9322-2a0a55b86082?resizing_type=fill&width=1920&height=335)
-Bring the games and deception with **Squid Game** brand islands. Explore the world of Squid Game in Fortnite with a wide range of tools and assets. These resources are designed for all developers to craft unique experiences that capture the essence of the brand.
-[![Squid Game in UEFN and Fortnite Creative](https://dev.epicgames.com/community/api/documentation/image/f4972379-9e04-40db-845d-59873404c757?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f4972379-9e04-40db-845d-59873404c757?resizing_type=fit) Squid Game Characters
-You can access the Squid Game feature set in Creative and Unreal Editor for Fortnite (UEFN) starter islands. However, certain features, like the **Minigame Mastery** and **Social Deduction** gameplay templates, are only available in UEFN.
-[![](https://dev.epicgames.com/community/api/documentation/image/8f16d223-ead6-4f93-a8e8-162fbf61859f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8f16d223-ead6-4f93-a8e8-162fbf61859f?resizing_type=fit) UEFN Brand Templates
-To learn more about accessing brand content, see [Game Collections](https://dev.epicgames.com/documentation/fortnite/game-collections-in-fortnite).
-##  Let the Games Begin
-Use the following resources when building your Squid Game islands.
-  * [![Squid Game Brand Rules](https://dev.epicgames.com/community/api/documentation/image/82a402d3-a977-40d3-bd71-c0db2fddad6e?resizing_type=fit&width=640&height=640) Squid Game Brand Rules Brand rules for working with Squid Game assets and templates to create and publish custom Squid Games Islands. ](https://dev.epicgames.com/documentation/fortnite/squid-game-brand-rules-in-fortnite)
-  * [![Working With Squid Game Islands](https://dev.epicgames.com/community/api/documentation/image/666bb2dc-ca7d-44fd-a02d-622a4d9ce653?resizing_type=fit&width=640&height=640) Working With Squid Game Islands Learn more about creating custom Squid Game islands using exclusive Squid Game content. ](https://dev.epicgames.com/documentation/fortnite/working-with-squid-game-islands-in-unreal-editor-for-fortnite)
-  * [![Minigame Mastery Template](https://dev.epicgames.com/community/api/documentation/image/3afae326-74a1-46ed-9c5f-06bf12c3f5da?resizing_type=fit&width=640&height=640) Minigame Mastery Template Discover ways to build exciting new mini-games with devices and examples that'll help you create your very own Squid Game island. ](https://dev.epicgames.com/documentation/fortnite/squid-game-minigame-mastery-template-in-unreal-editor-for-fortnite)
-  * [![Social Deduction Template](https://dev.epicgames.com/community/api/documentation/image/cb2944cf-85a1-4239-85e3-2e71440535a0?resizing_type=fit&width=640&height=640) Social Deduction Template Learn how to use devices to build all kinds of social deception for Squid Game islands through gameplay examples. ](https://dev.epicgames.com/documentation/fortnite/squid-game-social-deduction-template-in-unreal-editor-for-fortnite)
+# Vehicle Mod Items
+
+Trick out your vehicles with mod items.
+
+![Vehicle Mod Items](https://dev.epicgames.com/community/api/documentation/image/e32637fb-0b1a-407a-b242-8e7d086944e1?resizing_type=fill&width=1920&height=335)
+
+**Vehicle mods** are [items](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) that can be attached to vehicles like the [**Bear**](using-pickup-truck-spawner-devices-in-fortnite-creative) pickup truck.
+
+These mods can only be used on four-wheeled road vehicles. [ATK](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#atk) vehicles, boats, and helicopters cannot [equip](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#equip) these vehicle mods.
+
+Vehicle mod items include:
+
+- **Off-Road Tires**
+- **Cow Catcher**
+
+[![Vehicle Mod Throw](https://dev.epicgames.com/community/api/documentation/image/37c09578-a9a7-4cc5-b3b6-6e8d908f2663?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/37c09578-a9a7-4cc5-b3b6-6e8d908f2663?resizing_type=fit)
+
+To attach a vehicle mod, use the [aiming arc](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#aiming-arc) to throw the equipped mod at a vehicle.
+
+[![Vehicle Mod](https://dev.epicgames.com/community/api/documentation/image/36804464-797b-42dd-a551-c17356538a07?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/36804464-797b-42dd-a551-c17356538a07?resizing_type=fit)
+
+Thrown mods will automatically equip if aimed at a vehicle. Once attached, vehicle mods cannot be removed.
+
+Players can also throw vehicle mods on the ground to aid in combat gameplay.
+
+## Finding and Placing Items
+
+Clicking **Equip** will add the item to your [Equipment bar](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary).
+
+When you're back in [Create mode](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#create-mode), you can view any items you've [equipped](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) by pressing the **F** key. You can select equipped items by either scrolling your middle mouse button or by pressing its corresponding number on your keyboard.
+
+From the [Chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) tab, you can select either **Create Chest** or **Create Llama** to store the items in a [chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#chest) or a [llama](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#llama) for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game).
+
+Chests and llamas are a great way to offer item bundles to players. Selecting **Add To Chest** will add the item to the [Chest tab](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary). Each time you click **Add To Chest**, the item count will increase by one, shown as a yellow box on the Chest tab.
+
+You can add up to fifteen items to the **Chest** tab. When it’s full, the **Add To Chest** tab will disappear. To add more items, you first have to remove items from the **Chest** tab.
+
+There are many ways for you to offer these items to players. Use any of the devices under the [Registering Items](https://dev.epicgames.com/documentation/fortnite/using-vehicle-mod-items-in-fortnite-creative#registering-items) section to either offer or require these items during gameplay.
+
+## Managing Items
+
+[![Vehicle Mod Loadout Bar](https://dev.epicgames.com/community/api/documentation/image/4df148d8-6c19-46f3-85ff-ae1de074f87e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4df148d8-6c19-46f3-85ff-ae1de074f87e?resizing_type=fit)
+
+You can manage these items when you are in [Play inventory](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#play-inventory). To access the **Play** inventory screen, press **Tab** and click **Play** in the top navigation bar. Here, you can swap item positions or drop them from your Equipment bar.
+
+You cannot reposition or copy items with the phone tool. To delete an item from your inventory in Create mode, you will have to select either *Respawn* or *Back To Hub* from the *Menu*. When you do this, your inventory clears.
+
+## Using Vehicle Mod Items
+
+Use these items to attach to vehicles or to provide aid during combat gameplay.
+
+|  | Item | Usage |
+| --- | --- | --- |
+| [Off-Road Tires](https://dev.epicgames.com/community/api/documentation/image/6c3faceb-5d6c-49ef-b7b2-3e03ea68c6f2?resizing_type=fit) | **Off-Road Tires** | Throw at vehicles to easily ride over rough terrain and large structures. Once placed on vehicles, these tires cannot be removed. Players can also throw Off-Road Tires at the ground to bounce on. Once thrown on the ground, the tires can be picked back up. Tires can be equipped one at a time.  [Off-Road Terrain](https://dev.epicgames.com/community/api/documentation/image/2fa0e085-ed3c-41dd-ba1b-ef34b3f081c1?resizing_type=fit) |
+| [Cow Catcher](https://dev.epicgames.com/community/api/documentation/image/dce4c330-3157-42ed-98f4-0321a8b5d33c?resizing_type=fit) | **Cow Catcher** | Throw at vehicles to equip a tough barrier players can use to ram through durable buildings. A Cow Catcher serves as a vehicle’s shield with its own [health bar](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#health-bar) that depletes before the vehicle can be damaged. Players can also throw these items at the ground to serve as cover during combat. Once thrown at the ground, these items cannot be picked up. Can be equipped in stacks of four.  [Cow Catcher Ram](https://dev.epicgames.com/community/api/documentation/image/69d00cc5-cf11-4080-b2a8-43b846ff06ec?resizing_type=fit) |
+
+## Registering Items
+
+[![Registered Consumables](https://dev.epicgames.com/community/api/documentation/image/cdb17577-5382-4a68-9aa1-c69fbf424976?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/cdb17577-5382-4a68-9aa1-c69fbf424976?resizing_type=fit)
+
+You can drop items directly onto devices that can either hold or [grant](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#grant) items. You must [register](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#register) these items to save in the device's memory.
+
+[![Registering Consumables](https://dev.epicgames.com/community/api/documentation/image/948b7ff0-7b15-46dd-a723-cee1fb4d211d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/948b7ff0-7b15-46dd-a723-cee1fb4d211d?resizing_type=fit)
+
+*To register items to a device, stand directly on or immediately beside the device.*
+
+To register an item for this kind of device, follow these steps. You can also watch a [video tutorial](https://mediaspace.unrealengine.com/media/RegisteringCraftingConsumablesinFortniteCreative/1_zpmj3v0g) that shows you how to register items, both crafting and usable.
+
+The compatible device will automatically register the dropped item. Compatible devices that can hold items include:
+
+- **Vending Machine**
+- **Team Settings & Inventory**
+- **Class Designer**
+- **Capture Item Spawner**
+- **Capture Area**
+- **Item Granter**
+- **Item Spawner**
+- **Conditional Button**
+- **Elimination Manager**
+- **Item Remover**
+
+Use these devices to set up your own system for granting and spawning items onto your island.
+
+## Using Items for Crafting
+
+You can pair items with each other and with weapons to create the process of [crafting](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#crafting), where players exchange items for another.
+
+To do so, you can choose from the list of compatible devices above like the [**Conditional Button**](using-conditional-button-devices-in-fortnite-creative) and [Item Spawner](https://dev.epicgames.com/documentation/fortnite/using-item-spawner-devices-in-fortnite-creative) to set up the crafting process.
+
+For example, you can require [**Duct Tape**](using-nature-items-in-fortnite-creative) and [**Efficient Mechanical Parts**](using-mechanical-crafting-items-in-fortnite-creative) as items needed to craft **Off-Road Tires**.
+
+Visit our [video tutorials](https://mediaspace.unrealengine.com/playlist/dedicated/208434573/1_gxu6mwv5/1_qfnz9w5c) to learn more about working with items and for tips to enhance gameplay.

@@ -1,38 +1,125 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/in-island-transactions-restrictions-in-fortnite
 
-# Integrating Cinematics
-Discover all the elements you need to create satisfying and thoughtful cinematics for your game.
-![Integrating Cinematics](https://dev.epicgames.com/community/api/documentation/image/aa7a989c-13b4-4d8e-a723-45f96276f9d1?resizing_type=fill&width=1920&height=335)
-Integrating a cinematic into a game requires planning so that a cutscene does not seem out of place. Cinematics should complement the storytelling experience by creating a natural break in the game without feeling jarring to the player.
-Poorly placed and shot cutscenes can hurt a game or feel useless to players. Before investing a lot of time creating cutscenes, be sure that a cinematic is the most effective way to communicate with players. Cutscenes should never interrupt a player in the middle of gameplay or break the flow of a game.
-Plan cutscenes by considering what the audience needs to know, why they need this information and when. The following elements can help you think about the kinds of cutscenes you want in your game.
-##  Onboarding
-If your game mechanics are not easily understood, a cutscene showing players how to navigate and play your game can greatly help. Sometimes a Billboard device can provide instructions, but there are times where showing a player how to do something is more effective than reading about it.
-Think about the best way to present onboarding information. Does the player need special equipment, do they need to start in a particular place to find health and weapons before leaving an area? Answer these types of questions alongside showing players how to traverse a level so they know everything they need to start playing.
-If players can’t grasp your game mechanics, they will likely leave your island frustrated and some players may not return.
-Read [**Onboarding Players**](https://dev.epicgames.com/documentation/en-us/fortnite-creative/onboarding-players-in-fortnite-creative) to learn effective techniques to familiarize players with your game mechanics.
-##  Narrative
-Narrative refers to the overarching story of your world and can set the scene for players. If you’ve got an engaging story you want to tell, you can create cutscenes that provide background on [characters](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#character) and events in your world. Narrative can even involve dialogue between characters.
-For games involving dialogue, here are a few considerations:
-  * Is the dialogue engaging?
-  * Is the dialogue too long?
-  * Is the dialogue necessary?
-  * Is the dialogue important to how the game is played?
+# In-Island Transactions Restrictions
 
-##  Revelation
-Revelation can be considered another form of onboarding because you're providing the player with information and dropping hints about gameplay elements. Revealing information is suitable for cutscenes as long as you’re not revealing any secrets, but showing information the player may not have easily discovered on their own.
-The right amount of revelation in a cinematic reduces player frustration. As long as a cutscene doesn’t come too early or too late in the game, a short cinematic is exactly what a player needs to continue playing.
-You can use camera movement and video editing to match the style of gameplay to reveal information to players. This can be as simple as using a cutscene to focus on a symbol, a character, or anything in the level that needs to be brought to the player’s attention.
-Using a storyboard can help you identify areas in your island where players might need some help or information revealed to help them advance in the gameplay.
-You can review your game’s data in the [Creator Portal](https://dev.epicgames.com/documentation/en-us/fortnite-creative/monetization-and-analytics-in-fortnite-creative) to better understand player behavior on your island and find areas where player engagement drops off. Maybe this area could use a cutscene.
-##  Staying Organized
-Storyboarding keeps a game’s story on track and accounts for all cinematics by selecting points in the gameplay where a cinematic can provide background information, look at obstacles ahead, or reveal what a quest requires to continue.
-You can even use a storyboard to plan out the visual aesthetics of your project by using images as inspiration for the atmosphere you aim to build in your game and cutscenes.
-[![Create a storyboard to help you create a series of obstacles and rooms that are planned and make sense for your project.](https://dev.epicgames.com/community/api/documentation/image/224fdfd9-295e-4dff-af6b-6064f7a0f08d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/224fdfd9-295e-4dff-af6b-6064f7a0f08d?resizing_type=fit)
-_Click image to enlarge._
-##  More Topics
-  * [![Composition Techniques](https://dev.epicgames.com/community/api/documentation/image/7d443d0c-08fd-4b45-8cb5-68f8bf733334?resizing_type=fit&width=640&height=640) Composition Techniques Use composition to capture artful cinematics for your gameplay. ](https://dev.epicgames.com/documentation/fortnite/making-cinematics-1-composition-techniques-in-unreal-editor-for-fortnite)
+Understand the rules and restrictions for offering in-island purchases to players in different regions.
 
-  * [![Lighting and Color](https://dev.epicgames.com/community/api/documentation/image/762eee9b-f756-457e-9082-ccb1d2ee760f?resizing_type=fit&width=640&height=640) Lighting and Color Use lighting and color effectively in a cinematic to create emotion and set the scene. ](https://dev.epicgames.com/documentation/fortnite/making-cinematics-2-lighting-and-color-in-unreal-editor-for-fortnite)
+Some regions and platforms have rules and restrictions about what in-island items you can offer and how you can offer them. This document includes some additional information to help you get started. Please see [Fortnite Island Developer Rules](https://legal.epicgames.com/en-US/fortnite/developer-rules), and [FAQ](https://dev.epicgames.com/documentation/fortnite/in-island-transactions-overview-in-fortnite) for more information.
 
-  * [![Camera Movement and Framing](https://dev.epicgames.com/community/api/documentation/image/a2fcf6b0-cf89-4383-8a91-6437d751f768?resizing_type=fit&width=640&height=640) Camera Movement and Framing Discover how camera movement and framing creates satisfying and thoughtful cinematics for your game. ](https://dev.epicgames.com/documentation/fortnite/making-cinematics-3-camera-movement-and-framing-in-unreal-editor-for-fortnite)
+Epic is providing the below for information purposes only. Epic is not providing legal advice and the information contained within is not legal advice. As the developer, it is your responsibility to comply with all relevant laws and Epic policies. You should consult a legal advisor when determining how and when the law applies to the content you publish in Fortnite.
+
+## Paid Random Items
+
+In addition to your responsibility to comply with laws, you must comply with certain restrictions that apply when offering Paid Random Items. Failure to utilize the functions described below will constitute a violation of Epic policies.
+
+### Offers using Purchase API
+
+When offering Paid Random Items for V-Bucks, you must have the `PaidRandomItem` value set to `true` for the item. This will permit Epic to restrict your Paid Random Items in accordance with the restrictions below.
+
+### Offers using Verse
+
+When offering Paid Random Items redeemable with other paid in-island items, you must use the `RestrictPaidRandomItems` function. This requires you, as the developer, to input the restrictions within your code.
+
+As required by local law, Paid Random Items are restricted in the following areas:
+
+- Singapore
+- Qatar
+- Australia
+- Netherlands
+- Belgium
+- United Kingdom (U18)
+- Brazil
+
+Finally, in addition to using the appropriate APIs, you must disclose the actual numerical odds of what the player may receive before the player makes a purchase. For example, if you offer a health potion pack that has a random chance of granting either 5, 10 or 50 potions, you must disclose the odds of their potential award before purchase (e.g., 60% chance of granting 5 potions, 30% chance of granting 10 potions, and 10% chance of granting 50 potions).
+
+## Direct Prompts to Purchase
+
+In your offers, you must ensure the language you use relating to transactions is not misleading or overtly pressuring. In addition, you must not pressure or directly prompt a minor (for this restriction, players under 18 unless specified to the contrary below) to make a purchase or to ask their parents to make a purchase for the minor.
+
+If your offer language or other messaging in your game outside of the offer — for example, by using a command like “buy” or “order” at the start of a sentence, uses all capital letters or an exclamation point when making a prompt—such as "BUY NOW"!—it’s likely considered a direct prompt and may have age and location restrictions.
+
+Below are some examples of language that is prohibited, and in contrast, some acceptable examples.
+
+| Unacceptable Examples | Acceptable Examples |
+| --- | --- |
+| Buy Now! | Available now! |
+| Grab it! | Available for purchase! |
+| Upgrade!/Play!/Try!/Unlock! (when a purchase is required) | See [developer name] Shop for details! |
+| Buy one get one for free! | If you buy one, you’ll get one for free! |
+
+If offers or messaging in your island include a direct prompt to purchase, you must use the `RestrictDirectPromptsToPurchase` function. This per-player function will indicate if you need to restrict the offer or messaging from appearing for that player. `RestrictDirectPromptsToPurchase` will return `true` for players in the regions listed below:
+
+If your offer includes a direct prompt to purchase, you must use the `RestrictDirectPromptsToPurchase` function which will restrict the offer from appearing in the regions listed below:
+
+|  |  |  |
+| --- | --- | --- |
+| Austria | France (under 17) | Netherlands |
+| Belgium | Germany | Poland |
+| Bulgaria | Greece | Portugal |
+| Canada (under 13) | Hungary | Romania |
+| Croatia | Ireland | Slovakia |
+| Cyprus | Italy | Slovenia |
+| Czechia (Czech Republic) | Latvia | Spain |
+| Denmark | Lithuania | Sweden |
+| Estonia | Luxembourg | United Kingdom (under 16) |
+| Finland | Malta |  |
+
+  Here’s an example of how to use `RestrictDirectPromptsToPurchase` to limit offers to the appropriate players:
+
+Verse
+
+```
+if (RestrictDirectPromptsToPurchase[Player1]):
+       # Player is unable to receive direct prompts to purchase.
+       ShowAvailableNowMessageToPlayer(Player1)
+    else:
+       # Player is able to receive direct prompts to purchase.
+       ShowBuyNowMessageToPlayer(Player1)
+```
+
+if (RestrictDirectPromptsToPurchase[Player1]):
+# Player is unable to receive direct prompts to purchase.
+ShowAvailableNowMessageToPlayer(Player1)
+else:
+# Player is able to receive direct prompts to purchase.
+ShowBuyNowMessageToPlayer(Player1)
+
+## In-Island Item Bundles
+
+### Brazil
+
+Brazil has certain restrictions on offering bundles. For offers available to players in Brazil, if an in-island item is sold as part of a bundle, it generally must also be made available for purchase as an individual item, unless there’s a commercial reason or necessity to do so.
+
+For example, it is likely reasonable to sell one dozen eggs together or a pair of shoes together and not sell one egg or one shoe separately. However, requiring a player to buy seven different sweaters together and not selling each sweater individually is likely not reasonable and would be prohibited. You should consult a legal advisor when determining how and when this law applies to the content you publish for Brazilian players.
+
+## Additional Optional Restrictions on Purchases
+
+You may choose to place additional restrictions on where your offers are surfaced and who can view them.  As displayed in the example below, you may decide to prohibit sales of certain items from players in Antarctica or players that are under 18 years old in Antarctica.  You may do so by using the `GetMinPurchaseAge` function.  This function permits you to add restrictions - it technically impossible for you to circumvent already existing and built-in restrictions.
+
+`GetMinPurchaseAge` is a `<computes>` function that allows a developer to use a player’s country, subdivision, and platform to determine where and how an offer can be made. This player information is provided to the developer anonymously and the function prevents the developer from saving any information on any individual player.  A developer identifies the desired country, subdivision, and platform of the player, and using `GetMinPurchaseAge` makes a yes/no call or returns a minimum age for that country, subdivision, and platform combination.  This allows a developer to specify their offers with needed information while also not providing the developer with individual player information.
+
+In the Purchase API, the `ShowOffersDialog` and `BuyOffer` functions apply logic to determine if the offer is appropriate to sell to a player.  You may optionally add restrictions logic when crafting an offer by overriding the logic using `GetMinPurchaseAge`.
+
+Below you will find an example of how to further limit offers with the `GetMinPurchaseAge` function:
+
+Verse
+
+```
+basic_sword_offer<public> := class(entitlement_offer):
+    # Offer name, description, etc...
+
+    EntitlementType<override>:concrete_subtype(entitlement) = Entitlements.basic_sword
+
+    GetMinPurchaseAge<override>(CountryCode:string, SubdivisionCode:string, PlatformFamily:string)<decides><computes>:int =
+        # A Hypothetical example where you only want to sell swords to people who don't live in Antarctica
+        CountryCode <> "AQ"
+        return 0
+```
+
+basic_sword_offer<public> := class(entitlement_offer):
+# Offer name, description, etc...
+EntitlementType<override>:concrete_subtype(entitlement) = Entitlements.basic_sword
+GetMinPurchaseAge<override>(CountryCode:string, SubdivisionCode:string, PlatformFamily:string)<decides><computes>:int =
+# A Hypothetical example where you only want to sell swords to people who don't live in Antarctica
+CountryCode <> "AQ"
+return 0

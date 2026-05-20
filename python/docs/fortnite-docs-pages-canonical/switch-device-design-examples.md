@@ -1,84 +1,113 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/switch-device-design-examples
 
-# Pinball Wizard
-Use Pinball Flippers and Pinball Bumpers to make a giant pinball machine with the players as the ball.
-![Pinball Wizard](https://dev.epicgames.com/community/api/documentation/image/e407aa9e-7d8e-40d7-90f1-b2900e1f3fc2?resizing_type=fill&width=1920&height=335)
-[![image alt text](https://dev.epicgames.com/community/api/documentation/image/f5ceae72-acf9-4f16-910e-af52a58d0aaa?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f5ceae72-acf9-4f16-910e-af52a58d0aaa?resizing_type=fit)
-The player is tasked with reaching a score of 10 as fast as possible. They are fired into an arena at the start of the game and have the Grind Power-up applied to make their feet slippery. The large green pinball bumper is worth 3 points, the blue bumpers are worth 1 point, and the red bumpers are worth minus one (-1) point, so they need to be avoided. With limited ability to adjust their own movement, players are propelled around the arena.*
-_Pinball Wizard Video_
-##  Ingredients
-**You will need:**
-  * **Pinball Bumper devices** (as many as you want)
-  * **4 Pinball Flipper devices**
-  * **4 Barrier devices**
-  * **1 Mutator Zone device**
-  * **1 Player Spawn device**
-  * **1 Speed Boost device**
-  * **Full Damage Rails** (lots, enough to fully surround your arena)
+# Switch Device Design Examples
 
-##  Method
-Full Damage Rails are used to lock off an area because they provide knock-back and some danger. Barriers surround the area on 3 sides to keep the players from jumping over the Full Damage Rails. The Grind Power-up is applied to the player on spawn. Additionally, a Mutator Zone covers the entrance to the area and toggles a Barrier to spawn behind the player on the fourth side when the player enters the area. Each of the bumpers has a score value associated with it and each is color-coded to show players which ones they want to hit.
-##  Modified Options
-###  My Island Settings
-Modified Options - Game  |
----|---
-Spawn Limit |  1
-Score to End |  10
-The Player only spawns once and needs to gain 10 points to win.
-Modified Options - UI  |
----|---
-HUD Info Type |  Score
-Scoreboard Win Condition |  Score
-Scoreboard Tiebreaker 1 |  Time
-Show the players their score, along with how long it took them to win.
-###  Grind Powerup Device Options
-Modified Options - Grind Powerup  |
----|---
-Effect Duration |  Infinite
-The Grind effect on players should last for the whole game. It is applied with a signal when players spawn.
-###  Mutator Zone Device Options
-Modified Options - Mutator Zone  |
----|---
-Allow Weapon Fire |  No
-Our Mutator Zone checks for a player moving through it, so set the **Allow Weapon Fire** option to **No** (It is **Yes** by default).
-###  Barrier Device Options
-Modified Options - Barrier  |
----|---
-Barrier Style |  Translucent
-Base Visible During Game |  Yes
-Enabled During Phase |  None
-Barrier Depth |  Size of Edge / 1
-Barrier Width |  Size of Edge / 1
-The Barriers are enabled when the player leaves the Mutator Zone. Each Barrier should be placed in the center of each side of the arena and each should have a matching depth and width so together they encompass the arena.
-###  Pinball Bumper Device Options
-Modified Options - Pinball Bumpers  |
----|---
-Knockback |  Various
-Side Bounce Lift |  None
-Allow Top Bounce |  Off
-Bumper Color |  Various
-Score Value |  Various
-For the Pinball Bumpers, switch off **Side Bounce Lift** and **Top Bounce** to keep things at ground level (this means the bumpers won't knock players upwards). The color, knockback, and score are set individually on each Pinball Bumper device, to provide an interesting challenge to players.
-###  Pinball Flipper Device Options
-Modified Options - Pinball Flipper  |
----|---
-Flip Direction |  Same
-On Bump Knockback |  Medium
-Bounce Angle Percentage |  0% (Off)
-Knockup Amount |  None
-The Pinball Flippers are placed at the edge of the player area. Here we've set the bounce angle percentage to 0% to ensure the player is always knocked in the same direction each time they touch the flipper, rather than have their direction determined by where they touch the flipper.
-###  Message Setup
-Message Setup - Channel 1  |  |
----|---|---
-Player Spawn |  |
-1 |  [Transmit] |  When Player Spawned Transmit On
-Grind Powerup |  |
-1 |  [On Receive] |  Pickup When Receiving From
-When the player spawns, we apply a Grind Power-up to them. This gives them slippery feet.
-Message Setup - Channel 2  |  |
----|---|---
-Mutator Zone |  |
-2 |  [Transmit] |  On Player Leaving Zone Transmit On
-Barriers |  |
-2 |  [On Receive] |  Enable When Receiving From
-The Mutator Zone is placed in the mouth of the arena, in the same line as the Barrier, and the player is fired through the Mutator Zone by the Speed Boost. When the player leaves the Mutator Zone, the barriers are raised which locks the players within the arena.
+Explore ways to switch up your games with switches!
+
+![Switch Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/0f0979f9-b11a-4b02-b669-11f79c9abc9c?resizing_type=fill&width=1920&height=335)
+
+###### Prerequisite topics
+
+In order to understand and use the content on this page, make sure you are familiar with the following topics:
+
+- [Switch Devices](https://dev.epicgames.com/documentation/fortnite/using-switch-devices-in-fortnite-creative)
+
+Switch devices can be operated by users to turn devices on or off, or as a game mechanic to start or stop other devices.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/a7c90ffd-b162-4a5c-a4e7-c22a47992951?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a7c90ffd-b162-4a5c-a4e7-c22a47992951?resizing_type=fit)
+
+## Simple Light Switch Mechanic
+
+One basic use of the Switch device is as a light switch as it can be easily configured to turn other devices on and off.
+
+### Devices Used
+
+- 1 x [Player Spawner](https://dev.epicgames.com/documentation/fortnite/using-player-spawn-pad-devices-in-fortnite-creative) device
+- 2 x [Customizable Light (Torch)](https://dev.epicgames.com/documentation/fortnite/using-customizable-light-devices-in-fortnite-creative) devices
+- 1 x [Switch](https://dev.epicgames.com/documentation/fortnite/using-switch-devices-in-fortnite-creative) device
+
+### Set Up the Devices
+
+### Bind Functions and Events
+
+[Direct event binding](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#directeventbinding) is how you set devices to communicate directly with other devices. This involves setting [functions](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#function) and [events](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#event) for the devices involved.
+
+You now have the basic functionality for players interacting with lights using the Switch device!
+
+### Design Tip
+
+You can connect a switch to any device. These are  useful in turning different devices on and off! A switch can be easily used to open and close a door remotely, trigger the movement of a prop, or enable or disable a vehicle.
+
+## Build a Persistent Tutorial Manager
+
+The Switch device can be configured to save its state between playthroughs, allowing for very basic and straightforward data saving.
+
+In this example, you will use a switch to create a system that automatically skips a tutorial if the player has completed it before.
+
+### Devices Used
+
+- 1 x Switch device
+- 1 x Player Spawner device
+- 1 x [Item Granter](https://dev.epicgames.com/documentation/fortnite/using-item-granter-devices-in-fortnite-creative) device
+- 1 x [Creature Spawner](https://dev.epicgames.com/documentation/fortnite/using-creature-spawner-devices-in-fortnite-creative) device
+- 2 x [Player Checkpoint](https://dev.epicgames.com/documentation/fortnite/using-player-checkpoint-devices-in-fortnite-creative) devices
+- 2 x [Teleporter](https://dev.epicgames.com/documentation/fortnite/using-teleporter-devices-in-fortnite-creative) devices
+- 1 x [Trigger](https://dev.epicgames.com/documentation/fortnite/using-trigger-devices-in-fortnite-creative) device
+
+### Set Up the Basic Gameplay
+
+You’ll begin by setting up the basic play area and gameplay functionality.
+
+### Configure the Different Start Points
+
+You’ll now use the **Teleporter** and **Player Checkpoint** devices to configure starting locations for the tutorial and gameplay segments.
+
+### Set Up the Persistent Switch
+
+Now, set up a switch to keep track of whether the player has completed the tutorial, and to save the data.
+
+### Bind Functions and Events
+
+The next step is to bind the functions and events.
+
+You now have the basic functionality for a system that uses a switch to track whether a player has completed a tutorial!
+
+### Design Tip
+
+This example showcases a Persistent Tutorial Manager in a single-player context, but the persistence functionality on the switch can easily be used for multiplayer games as well.
+
+For each player to have their own unique switch, make sure the **Store State Per Player** setting is on **Yes**. This would be great in Islands where different players can enter the game at different times, making sure that each is able to interact with the tutorial on their own.
+
+## Build a King-of-the-Hill Game!
+
+The Switch device can be used as an interactable objective in a two-player King-of-the-Hill game!
+
+In this example, you will use a Switch device to represent which player is in control of the hill. If **On**, the Blue Team is in control. If **Off**, the Red Team is in control.
+
+### Devices Used
+
+- 1 x Switch device
+- 2 x Player Spawner devices
+- 2 x Team Settings & Inventory devices
+- 2 x [End Game](https://dev.epicgames.com/documentation/fortnite/using-end-game-devices-in-fortnite-creative) devices
+- 3 x [Timer](https://dev.epicgames.com/documentation/fortnite/using-timer-devices-in-fortnite-creative) devices
+- 16 x [Customizable Light](https://dev.epicgames.com/documentation/fortnite/using-customizable-light-devices-in-fortnite-creative) (Spotlight) devices
+- 6 x [VFX Spawner](https://dev.epicgames.com/documentation/fortnite/using-vfx-spawner-devices-in-fortnite-creative) devices
+- 2 x [Skydome](https://dev.epicgames.com/documentation/fortnite/using-skydome-devices-in-fortnite-creative) devices
+- 2 x [Channel](https://dev.epicgames.com/documentation/fortnite/using-channel-devices-in-fortnite-creative) devices
+
+### Set Up the Play Area and Basic Devices
+
+### Configure the Two Teams
+
+### Set Up the VFX
+
+### Bind Functions and Events
+
+You now have a fully functioning King-of-the-Hill game!
+
+### Design Tip
+
+This example is configured for just two players, but you could add more player spawners to accomodate a larger battle.
+
+When adding more players, make sure the play space is large enough to accommodate many interactions at once, and tune the amount of time it takes players to respawn to keep the gameplay engaging!

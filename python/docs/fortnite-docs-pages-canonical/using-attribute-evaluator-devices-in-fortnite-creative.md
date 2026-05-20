@@ -1,24 +1,70 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/using-attribute-evaluator-devices-in-fortnite-creative
 
-# Futuristic Prefabs
-Design your own future by using Futuristic prefabs.
-![Futuristic Prefabs](https://dev.epicgames.com/community/api/documentation/image/fb0e5e41-d559-44ce-961e-43668783a284?resizing_type=fill&width=1920&height=335)
-All **Futuristic** [prefabs](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#prefab) share similar modern [themes](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#island-theme) of advanced structures.
-In the **Prefabs** [category](https://dev.epicgames.com/documentation/fortnite/fortnite-creative-glossary#category), you can browse for prefabricated building structures and the pieces they are made of.
-This page is a visual guide to help you find prefabs that fit this theme more quickly.
-To learn more about how to place and manipulate prefabs, and even how to use prefabs to build new environments that are uniquely your own, check out [Building Basics](https://dev.epicgames.com/documentation/fortnite/building-basics-in-fortnite-creative).
-##  Cubed Category
-|  |  |
----|---|---|---
-[![The Convergence Group D](https://dev.epicgames.com/community/api/documentation/image/8eaf3c79-b120-4dcd-8a3f-eaa991a6983a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8eaf3c79-b120-4dcd-8a3f-eaa991a6983a?resizing_type=fit) |  [![The Convergence Group C](https://dev.epicgames.com/community/api/documentation/image/79516256-14f1-4ce1-9908-e4c451987045?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/79516256-14f1-4ce1-9908-e4c451987045?resizing_type=fit) |  [![The Convergence Group B](https://dev.epicgames.com/community/api/documentation/image/82ee5885-74c9-4f52-b586-f4a4e1add72d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/82ee5885-74c9-4f52-b586-f4a4e1add72d?resizing_type=fit) |  [![The Convergence Group A](https://dev.epicgames.com/community/api/documentation/image/d6408310-3a07-44e7-a49f-e775ee02449a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d6408310-3a07-44e7-a49f-e775ee02449a?resizing_type=fit)
-**The Convergence Group D** |  **The Convergence Group C** |  **The Convergence Group B** |  **The Convergence Group A**
-##  Cyber CIty Category
-|  |  |  |  |
----|---|---|---|---|---
-[![Cyber City Building F](https://dev.epicgames.com/community/api/documentation/image/8769d67c-e07c-468d-b499-d3a2b4b49833?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8769d67c-e07c-468d-b499-d3a2b4b49833?resizing_type=fit) |  [![Cyber City Building E](https://dev.epicgames.com/community/api/documentation/image/731629b9-8673-4431-8339-57e702c904c1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/731629b9-8673-4431-8339-57e702c904c1?resizing_type=fit) |  [![Cyber City Building D](https://dev.epicgames.com/community/api/documentation/image/3dfe610e-947f-4e22-b42c-1690fbeea56f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3dfe610e-947f-4e22-b42c-1690fbeea56f?resizing_type=fit) |  [![Cyber City Building C](https://dev.epicgames.com/community/api/documentation/image/2db2c048-efdd-46ca-8afb-21d52d68b6a7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/2db2c048-efdd-46ca-8afb-21d52d68b6a7?resizing_type=fit) |  [![Cyber City Building B](https://dev.epicgames.com/community/api/documentation/image/8d3e373e-3f43-4982-8082-eaf18ff95cd6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8d3e373e-3f43-4982-8082-eaf18ff95cd6?resizing_type=fit) |  [![Cyber City Building A](https://dev.epicgames.com/community/api/documentation/image/a5e32764-cd15-4d8e-aae3-4cf7f7bf93d3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a5e32764-cd15-4d8e-aae3-4cf7f7bf93d3?resizing_type=fit)
-**Cyber City Building F** |  **Cyber City Building E** |  **Cyber City Building D** |  **Cyber City Building C** |  **Cyber City Building B** |  **Cyber City Building A**
-##  Paradise Category
-|  |  |
----|---|---|---
-[![Cloudy Condos Shops B](https://dev.epicgames.com/community/api/documentation/image/ef82f06a-6b12-42a6-8376-3719d2befcc3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ef82f06a-6b12-42a6-8376-3719d2befcc3?resizing_type=fit) |  [![Cloudy Condos Shops A](https://dev.epicgames.com/community/api/documentation/image/d8df07cd-4a9d-4d0a-a2c3-62772cbf4d34?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d8df07cd-4a9d-4d0a-a2c3-62772cbf4d34?resizing_type=fit) |  [![Cloudy Condos Knepley's Pawn Shop](https://dev.epicgames.com/community/api/documentation/image/88347f6f-8622-43d6-aa4b-4a72298cb4ce?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/88347f6f-8622-43d6-aa4b-4a72298cb4ce?resizing_type=fit) |  [![Cloudy Condos Classy Condos](https://dev.epicgames.com/community/api/documentation/image/b666a855-9d4b-4da8-ad8a-c01183f36566?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b666a855-9d4b-4da8-ad8a-c01183f36566?resizing_type=fit)
-**Cloudy Condos Shops B** |  **Cloudy Condos Shops A** |  **Cloudy Condos Knepley's Pawn Shop** |  **Cloudy Condos Classy Condos**
+# Attribute Evaluator Devices
+
+This device transmits an event based on the attributes of any triggering player.
+
+![Attribute Evaluator Devices](https://dev.epicgames.com/community/api/documentation/image/1a195103-abc3-425e-9c01-0c8d508d1919?resizing_type=fill&width=1920&height=335)
+
+The **Attribute Evaluator** only works with signals received from other devices. It acts as [branching logic](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary), and checks whether the player that sent the signal passes all of the tests that are set up for this trigger. Then the [trigger](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) sends a signal on either a success channel or a failure channel. With this trigger, you can test whether a player has reached a specific condition, and determine what happens when that occurs.
+
+The attribute evaluator checks against the stats of the player at the point it is activated. If it receives a signal from an event that changes one of the player's stats (for example, if it receives a signal from the Elimination Manager that a player has just eliminated an enemy), the player's stats might not have been updated from that event. See [Loo Roll Rush](https://dev.epicgames.com/documentation/fortnite/loo-roll-rush-in-fortnite-creative) for an example of this problem.
+
+  For help on how to find the **Attribute Evaluator** device, see [Using Devices](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-devices-in-fortnite-creative).
+
+## Device Options
+
+You can configure this device with the following options.
+
+Default values are in **bold**.
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Activating Team** | **Any**, Pick or enter a number. | Determines which team can activate the device. This replaces the Affects Team option. |
+| **Invert Team Selection** | **Off**, On | If set to **On**, the device will count all teams except the selected team. |
+| **Activating Class** | **Any**, Pick or enter a number | Determines which class can activate the device. This replaces the Affects Class option. |
+| **Invert Class Selection** | **Off**, On | If set to **On**, the device will count all but the selected class. |
+| **Min Player Eliminations** | **0**, Pick or enter a number | Set the minimum amount of eliminations the instigating player must have to pass this check. |
+| **Tracked Stat** | **Score**, Select a stat | Determines which statistic this device will track for the **Team Stat** and **Player Stat** options. |
+| **Min Player Stat** | **0**, Pick or enter a number | Sets the minimum amount of score the instigating player must have to pass this check. |
+| **Min Team Stat** | **0**, Pick or enter a number | Sets the minimum amount of score the instigating player's team must have to pass this check. |
+| **Enabled at Game Start** | **On**, Off | Determines whether the device is enabled when the game starts. |
+| **Times Can Trigger** | **Infinite**, Pick a number | Determines how many times the device can be triggered before it is disabled. |
+| **Trigger Delay** | **Instant**, Pick or enter a number | Determines the length of time the device will wait between being triggered and sending a signal. This option replaces the Delay option. |
+| **Reset Delay** | **None**, Pick an amount of time | After the device is activated, it is disabled for this amount of time before being usable again. |
+| **Visible In Game** | **On**, Off | Determines whether the device is visible during the game. |
+| **Trigger SFX** | **Enabled**, Disabled | Determines if audio effects are played when the device is activated. |
+| **Trigger VFX** | **On**, Off | Determines whether visual effects are displayed when the device is activated. |
+| **Transmit Every X Trigger** | **1**, Pick or enter a number | Sets the device to only send a signal after being triggered the specific number of times. |
+
+## Direct Event Binding
+
+**Direct event binding** allows devices to communicate directly, which makes your workflow more intuitive, and gives you more freedom to focus on your design ideas.
+
+Below are the [functions](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) and [events](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) for this device.
+
+### Functions
+
+A [**function**](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#function) listens for an event on a device then performs an action.
+
+| Option | Description |
+| --- | --- |
+| **Enable When Receiving From** | This function enables the device when an event occurs. Select the device and event that will enable the device. If more than one device or event can enable the device, you can click the **Add** button for this option, which adds another line. |
+| **Disable When Receiving From** | This function disables the device when an event occurs. Select the device and event that will disable the device. If more than one device or event can disable the device, you can click the **Add** button for this option, which adds another line. |
+| **Reset Times Triggered When Receiving From** | This function resets the number of times the device has been activated (to reset the **Transmit Every X Triggers** and **Times Can Trigger** options). |
+| **Evaluate Player When Receiving From** | This function evaluates players against the list of attributes when receiving an event. |
+
+### Events
+
+Direct event binding uses events as transmitters. An event tells another device to perform a function.
+
+| Option | Description |
+| --- | --- |
+| **On Pass Send Event To** | When a player passes a check, the device sends an event to the selected device. |
+| **On Fail Send Event To** | If a player fails a check, the device send an event to the selected device. |
+
+## Gameplay Examples Using Attribute Evaluators
+
+- [Tug of War](https://dev.epicgames.com/documentation/fortnite/tug-of-war-in-fortnite-creative)
+- [Loo Roll Rush](https://dev.epicgames.com/documentation/fortnite/loo-roll-rush-in-fortnite-creative)
+- [Top Scorer In Class](https://dev.epicgames.com/documentation/fortnite/top-scorer-in-class-in-fortnite-creative)
