@@ -1,0 +1,51 @@
+## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/fortnitedotcom/ai/sidekick_component
+
+# sidekick_component class
+
+Learn technical details about the sidekick_component class.
+
+Component to manage functionality shared by all Sidekick types.
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /Fortnite.com/AI }` |
+
+## Inheritance Hierarchy
+
+This class is derived from `component`.
+
+| Name | Description |
+| --- | --- |
+| [`component`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/component) | Base class for authoring logic and data in the SceneGraph. Using components you can author re-usable building blocks of logic and data which can then be added to entities in the scene.  Components are a very low level building block which can be used in many ways. For example:   - Exposing engine level concepts like mesh or sound - Adding gameplay capabilities like damage or interaction - Storing an inventory for a character in the game   As components are generic there is no specific way that they must be used. It is up to the needs of your experience if you use one big game component or if you break up logic into many small components.  Classes deriving from component must also specify `<final_super>` to be added to entities. This ensures the class will always derive directly from `component`. Further subclassing of the initial derived component is allowed and does not require specifying `<final_super>` on the derived classes.  Only one instance of a component from each subclass group can be added to an entity at a time. For example, given this group of components, only one light_component can exist on a single entity. To create multiple lights you should use multiple entities.  light_component := class(component){} capsule_light_component := class(light_component){} directional_light_component := class(light_component){} spot_light_component := class(light_component){} sphere_light_component := class(light_component){} rect_light_component := class(light_component){}  ============================================================================== Component Lifetime  Components move through a series of lifetime functions as they are added to entities, added to the scene, and begin running in the simulation. Components should override these methods to perform setup and run their simulation.  As a component shuts down it will then move through shutdown version of these functions, giving users the opportunity to clean up any retained state on the component before it is disposed . Lifetime Methods: OnAddedToScene OnBeginSimulation -> OnSimulate OnEndSimulation OnRemovingFromScene ============================================================================== |
+
+## Members
+
+This class has both data members and functions.
+
+### Data
+
+| Data Member Name | Type | Description |
+| --- | --- | --- |
+| `ChangeMoodEvent` | `listenable(payload)` | Signaled whenever the Sidekick's mood changes, either via the underlying mood system, or an override is applied. Returns the previous and new mood. |
+| `Entity` | `entity` | The parent entity of this component.   - Components must have a parent entity pointer provided when being constructed. - Components cannot be moved between parents. |
+| `MoodOverride` | `??sidekick_mood` | By default, Sidekicks will change their mood depending on actions in the game. This value will lock the Sidekick into the mood passed in, overriding the automatic mood system. |
+| `StartPlayReactionEvent` | `listenable(payload)` | Signaled when the Sidekick starts to play a reaction, returns the reaction that started playing. |
+| `StopPlayReactionEvent` | `listenable(payload)` | Signaled when the Sidekick ends playing a reaction, returns the reaction that played. |
+| `TickEvents` | `?tick_events` | Set callbacks to `TickEvents.PrePhysics` and `TickEvents.PostPhysics` to receive per-frame updates before and after physics is updated on your object. |
+
+### Functions
+
+| Function Name | Description |
+| --- | --- |
+| [`GetMood`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/ai/sidekick_component/getmood) | Get the Sidekick's current mood. |
+| [`IsInScene`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/component/isinscene) | Succeeds if the component is currently in the scene.   - After `OnAddedToScene` is called this call succeeds. - After `OnRemovingFromScene` is called this call fails. |
+| [`IsSimulating`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/component/issimulating) | Succeeds if the component is currently simulating.   - After `OnBeginSimulation` is called this call succeeds. - After `OnEndSimulation` is called this call fails. |
+| [`OnAddedToScene`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/component/onaddedtoscene) | Called when the component is added to the scene by parenting it under the simulation entity or another entity already in the scene.   - Querying for components in the scene is valid after this phase completes. |
+| [`OnBeginSimulation`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/component/onbeginsimulation) | Called when the component begins simulating within the scene.   - Use this to set up TickEvent callbacks or other setup that must be guaranteed to complete immediately. - `OnAddedToScene` is guaranteed to run before `OnBeginSimulation`. |
+| [`OnEndSimulation`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/component/onendsimulation) | Called when the component ends simulation within the scene.   - Simulation ends on a component when the experience resets, the parent entity is removed from the scene. - Cached TickEvents cancelables should be canceled in `OnEndSimulation`. - `OnSimulate` task will be canceled before `OnEndSimulation` is called. - `OnEndSimulation` is only called on components that have already had `OnBeginSimulation` called. |
+| [`OnReceive`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/component/onreceive) | Respond to a scene event. Return true to consume the event and halt propagation to the next entity. |
+| [`OnRemovingFromScene`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/component/onremovingfromscene) | Called when the component is about to be removed from the scene.   - Components are removed from a scene when the parent entity is removed from the scene. - `OnRemovingFromScene` is only called on components that have already had `OnAddedToScene` called. |
+| [`OnSimulate`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/component/onsimulate) | Called when the component begins simulating within the scene.   - Use this to add asynchronous/suspends update logic for a component. - `OnBeginSimulation` is guaranteed to run before `OnSimulate`. - `OnSimulate` will be cancelled before `OnEndSimulation` |
+| [`PlayReaction`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/ai/sidekick_component/playreaction) | Request to play a given reaction on the Sidekick. This reaction is not guaranteed to play immediately; instead, the StartPlayReactionEvent should be used to monitor this. This will fail if the Sidekick cannot play the given reaction. |
+| [`RemoveFromEntity`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/component/removefromentity) | Removes the component from the entity.   - Removed components are removed from the scene and can only be added back to the same entity. - Flows through `OnEndSimulation`-> `OnRemovingFromScene`. |
+| [`SendDown`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/component/senddown) | Send a scene event to this component, invoking OnReceive. Returns true if any participant consumed the event. |

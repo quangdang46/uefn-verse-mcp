@@ -1,0 +1,45 @@
+## https://dev.epicgames.com/documentation/en-us/fortnite/using-level-loader-devices-in-fortnite-creative
+
+# Level Loader Devices
+
+Load levels created and saved with the Level Instance device, then move, rotate or stack the levels on top of each other.
+
+![Level Loader Devices](https://dev.epicgames.com/community/api/documentation/image/a5b06bd0-6475-4ab8-a263-3e04b4033f3d?resizing_type=fill&width=1920&height=335)
+
+Using the **Level Loader** device, you can place levels that you've created and saved with the [Level Instance device](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#level-instance-device). You can place the Level Loader device on or off-grid, rotate it to any angle, and even place it on top of another Level Loader device! This gives you more flexibility when you place your levels on an island.
+
+Here are some examples of how you can use this device:
+
+- Make modular buildings by creating each modular piece in the Level Instance device and saving it as a level; then use the Level Loader to place and combine different modular pieces into unique structures.
+- Create and save each level of a multi-floor structure with the Level Instance device, then stack them into buildings with the Level Loader.
+- Create a customized gallery of building pieces or props using the Level Instance device, save as a level, then load and use those custom galleries with the Level Loader device.
+
+Any building piece in a level used in a Level Loader device is automatically turned into a [prop](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#prop). This means they do not [snap](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#grid-snap) to the island's [grid](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#grid), and also means that those structures do not support player building pieces.
+
+**Level Loader** device, see [Using Devices](https://dev.epicgames.com/documentation/fortnite/using-devices-in-fortnite).
+
+If you're using multiple copies of a device on an island, it can be helpful to [rename](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#rename-a-device) them. You can choose names that relate to each device's purpose, so it's easier to remember what each one does.
+
+## Device Options
+
+You can configure this device with the following options.
+
+Default values are **bold**.
+
+| Option | Value | Description |
+| --- | --- | --- |
+| **Level Instance Name** | **Choose a Level** | Click **Choose a Level** to display a list of saved levels. Select one from the list and click the checkmark to close the list.  [Pick a saved level in the list](https://dev.epicgames.com/community/api/documentation/image/9073fc57-7bb8-47de-950e-bca538585aab?resizing_type=fit) |
+| **Enable at Game Start** | **On**, Off | Determines whether or not this device is enabled when the game starts. |
+
+## Direct Event Binding
+
+Below are the functions and events for this device.
+
+### Functions
+
+A [function](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#function) listens for an event on a device then performs an action.
+
+| Option | Description |
+| --- | --- |
+| **Enable When receiving From** | Enables the device. |
+| **Disable Device When Receiving From** | Disables the device. |
