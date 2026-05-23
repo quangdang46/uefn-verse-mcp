@@ -113,12 +113,11 @@ jobs:
             git commit -m "chore(docs): refresh bundled Epic documentation"
             # Push the branch
             git push origin refs/heads/main:refs/heads/$BRANCH_NAME
-            # Create PR using gh cli
-            gh pr create \
-              --base main \
-              --head $BRANCH_NAME \
-              --title "$PR_TITLE" \
-              --body "$PR_BODY" \
-              --add-paths python/docs/** \
-              --repo "$GITHUB_REPOSITORY"
+          # Create PR using gh cli
+          gh pr create \
+            --base main \
+            --head $BRANCH_NAME \
+            --title "$PR_TITLE" \
+            --body "$PR_BODY" \
+            --repo "$GITHUB_REPOSITORY"
           fi || echo "PR may already exist or no changes"
