@@ -167,6 +167,6 @@ Creativity, Critical Thinking, Citizenship, and Communication (Optional Collabor
 This lesson plan was developed by educator Benjamin Kelly from Anglophone East School District.
 Find Ben at:
 
-- Email [[email protected]](https://dev.epicgames.com/cdn-cgi/l/email-protection#4a082f240a08081e040864292527)
+- Email [[email protected]](https://dev.epicgames.com/cdn-cgi/l/email-protection#f6b49398b6b4b4a2b8b4d895999b)
 - Twitter [@BBTNB](https://twitter.com/BBTNB)
 - LinkedIn (https://www.linkedin.com/in/benjamin-kelly-a2366154/ )
