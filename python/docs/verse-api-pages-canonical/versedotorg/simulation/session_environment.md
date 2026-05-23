@@ -1,7 +1,21 @@
 ## https://dev.epicgames.com/documentation/en-us/fortnite/verse-api/versedotorg/simulation/session_environment
 
-# Access denied
-Your request has been blocked. Please [contact us](https://www.epicgames.com/help) with your session ID and IP address if you believe that you have received this message in error.
+# session_environment enumeration
 
-**Session ID** : 9dfa504bc9c5dd55
-**IP Address** : 14.191.95.176
+Learn technical details about the session_environment enumeration.
+
+Specifies what type of environment the current session is in.
+
+|  |  |
+| --- | --- |
+| Verse `using` statement | `using { /Verse.org/Simulation }` |
+
+## Enumerators
+
+The `session_environment` enumeration includes the following enumerators:
+
+| Name | Description |
+| --- | --- |
+| `Edit` | The current session is in an Edit environment for an experience, such as a session started within UEFN. |
+| `Private` | The current session is in a Private environment for an experience, such as a playtest. |
+| `Live` | The current session is in a Live environment for an experience. |

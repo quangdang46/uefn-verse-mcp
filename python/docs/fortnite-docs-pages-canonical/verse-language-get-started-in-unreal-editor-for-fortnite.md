@@ -8,6 +8,8 @@ Get started with how to learn Verse and programming for the first time!
 
 Verse is a programming language designed with video games and game-like experiences in mind. This makes it well-suited for handling game-specific needs.
 
+If you are already familiar with programming, consider checking out the [Book of Verse](https://verselang.github.io/book/).
+
 ## Why Verse and Creative?
 
 Learning a new programming language can be intimidating, especially when one of the benefits of the [Creative toolset](https://www.epicgames.com/fortnite/en-US/creative/docs/fortnite-creative-glossary#creative-toolset) in Fortnite is not having to worry about [programming](https://dev.epicgames.com/documentation/en-us/uefn/verse-glossary#programming).
@@ -29,7 +31,7 @@ Epic Games is continuing to develop the [Verse API](https://dev.epicgames.com/do
 
 The Verse documentation can walk you through the basics of the Verse language and core programming concepts, even if you've never programmed before.
 
-If you're interested in the language, you can jump to the [Verse-Language-Quick-Reference](https://dev.epicgames.com/documentation/en-us/uefn/verse-language-quick-reference) or the full [Verse Language Reference](https://dev.epicgames.com/documentation/en-us/uefn/verse-language-reference). If you're interested in the [API](https://dev.epicgames.com/documentation/en-us/uefn/verse-api), go to the [Verse API Reference](https://dev.epicgames.com/documentation/en-us/uefn/verse-api).
+If you are interested in the Verse language, you can jump to the [Book of Verse](https://verselang.github.io/book/). If you want to learn more about Verse terms, see the [Verse Glossary](https://dev.epicgames.com/documentation/fortnite/verse-glossary). If you're interested in the [API](https://dev.epicgames.com/documentation/en-us/uefn/verse-api), go to the [Verse API Reference](https://dev.epicgames.com/documentation/en-us/uefn/verse-api).
 
 If you are new to programming, here's a video to introduce you to how programmers think!
 
