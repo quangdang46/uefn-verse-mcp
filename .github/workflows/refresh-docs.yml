@@ -83,12 +83,10 @@ jobs:
 
       - name: Create pull request
         if: steps.refresh.outcome == 'success'
-        uses: peter-evans/create-pull-request@v6
-        with:
-          branch: chore/refresh-docs
-          commit-message: "chore(docs): refresh bundled Epic documentation"
-          title: "chore(docs): refresh bundled Epic documentation"
-          body: |
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PR_TITLE: "chore(docs): refresh bundled Epic documentation"
+          PR_BODY: |
             Automated weekly refresh of `python/docs/**` from
             `dev.epicgames.com`. Source: `python/scripts/refresh_docs.py`.
 
@@ -97,6 +95,30 @@ jobs:
 
             Pages that fail to fetch (404, JS-only render, Cloudflare 403)
             keep their existing on-disk content.
-          delete-branch: true
-          add-paths: |
-            python/docs/**
+        run: |
+          # Configure git user for commits
+          git config --local user.name "quangdang46"
+          git config --local user.email "91641923+quangdang46@users.noreply.github.com"
+
+          # Date-based branch name to avoid conflicts
+          DATE_SUFFIX=$(date +%d-%m-%Y)
+          BRANCH_NAME="chore/refresh-docs-${DATE_SUFFIX}"
+          echo "Branch name: $BRANCH_NAME"
+
+          # Stage and commit the refreshed docs
+          git add python/docs/**
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore(docs): refresh bundled Epic documentation"
+            # Push the branch
+            git push origin refs/heads/main:refs/heads/$BRANCH_NAME
+            # Create PR using gh cli
+            gh pr create \
+              --base main \
+              --head $BRANCH_NAME \
+              --title "$PR_TITLE" \
+              --body "$PR_BODY" \
+              --add-paths python/docs/** \
+              --repo "$GITHUB_REPOSITORY"
+          fi || echo "PR may already exist or no changes"
