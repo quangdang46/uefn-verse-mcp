@@ -68,7 +68,7 @@ Islands that exceed the maximum Fortnite age rating in all regions will not be a
 | [**ESRB**](https://www.esrb.org/ratings-guide/) | North America | Teen |
 | [**PEGI**](https://pegi.info/what-do-the-labels-mean) | Europe and UK | PEGI 12 |
 | [**ACB**](https://www.classification.gov.au/classification-ratings/what-do-ratings-mean) | Australia | Mature |
-| [**ClassInd**](https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1) | Brazil | 15 |
+| [**ClassInd**](https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1) | Brazil | 16 |
 | [**USK**](https://usk.de/die-usk-alterskennzeichen/) | Germany | 16 |
 | [**GRAC**](https://www.grac.or.kr/english/) | South Korea | 12+ |
 | **Russia** | Russia | 12+ |
