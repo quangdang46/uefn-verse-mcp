@@ -11,7 +11,7 @@ If `rotation` is nearly identity, this will return the +Forward axis. See also `
 | --- | --- |
 | Verse `using` statement | `using { /Verse.org/SpatialMath }` |
 
-`(Rotation:rotation).GetAxis<public><native>()<reads>:`[`vector3`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/spatialmath/vector3)
+`(Rotation:rotation).GetAxis<public><native>():`[`vector3`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/spatialmath/vector3)
 
 ## Parameters
 
@@ -31,9 +31,3 @@ The following attributes, specifiers, and effects determine how you can interact
 | --- | --- |
 | `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data. |
 | `native` | Indicates that the definition details of the element are implemented in C++. Verse definitions with the `native` specifier auto-generate C++ definitions that a developer can then fill out its implementation. You can use this specifier on classes, interfaces, enums, methods, and data. |
-
-### Effects
-
-| Effect | Meaning |
-| --- | --- |
-| `reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version. |

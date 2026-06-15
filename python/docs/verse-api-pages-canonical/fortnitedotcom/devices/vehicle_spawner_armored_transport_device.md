@@ -33,6 +33,7 @@ This class has both data members and functions.
 | `DestroyedEvent` | `listenable(payload)` | Signaled when a vehicle is destroyed. |
 | `SpawnedEvent` | `listenable(payload)` | Signaled when a vehicle is spawned or respawned by this device. Sends the fort_vehicle who was spawned. |
 | `Vault` | `?bank_vault_interface` |  |
+| `Vehicle` | `??fort_vehicle` | The `fort_vehicle` currently associated with this spawner, if one exists. |
 | `VehicleDestroyedEvent` | `listenable(payload)` | Signaled when a vehicle is destroyed. Deprecated, use DestroyedEvent instead. |
 | `VehicleSpawnedEvent` | `listenable(payload)` | Signaled when a vehicle is spawned or respawned by this device. Deprecated, use SpawnedEvent instead. |
 

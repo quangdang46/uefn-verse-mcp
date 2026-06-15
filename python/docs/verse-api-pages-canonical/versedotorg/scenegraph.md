@@ -21,6 +21,27 @@ Learn technical details about the SceneGraph module.
 | [`interactable_cooldown_per_agent`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/interactable_cooldown_per_agent) | Used to set a cooldown per agent when interacted. |
 | [`interactable_duration`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/interactable_duration) | Used to set an interaction duration. |
 | [`interactable_success_limit`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/interactable_success_limit) | Used to set a limit of times to interact. |
+| [`camera_body`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/camera_body) | Camera body settings, e.g. sensor/film settings, shutter speed, etc |
+| [`camera_component`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/camera_component) | Represents the physical body, lens of the camera and other cinematographic qualities, such as sensor size, aspect ratio lock/constraint, focal length, focus distance, post-process settings, etc. |
+| [`camera_director_component`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/camera_director_component) | Responsible for selecting a camera and blending when the active camera changes. Also allows global settings to be shared between different cameras (such as post process settings) and modifications to the final blended camera state, such as camera shakes |
+| [`camera_lens`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/camera_lens) | Camera lens settings |
+| [`camera_modifier_stack`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/camera_modifier_stack) | Modifier stack for camera state. |
+| [`camera_modifier`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/camera_modifier) | Base class for objects that can modify camera state. |
+| [`camera_state`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/camera_state) |  |
+| [`camera_transition`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/camera_transition) | Controls how a camera mode transitions to another |
+| [`camera_mode_blend`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/camera_mode_blend) | Configurable blend between two camera modes |
+| [`camera_mode_blend_pop`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/camera_mode_blend_pop) | Instantly snap to target mode |
+| [`camera_mode_blend_linear`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/camera_mode_blend_linear) | Linear blend between camera modes |
+| [`camera_mode_blend_smoothstep`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/camera_mode_blend_smoothstep) | Camera mode blend that uses the smoothstep function to blend between the two camera modes |
+| [`camera_mode_blend_smootherstep`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/camera_mode_blend_smootherstep) | Camera mode blend that uses the smootherstep function to blend between the two camera modes |
+| [`camera_mode_blend_orbit`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/camera_mode_blend_orbit) | Configurable blend between two camera modes |
+| [`orthographic_camera_component`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/orthographic_camera_component) | Simple orthographic camera. |
+| [`perspective_camera_component`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/perspective_camera_component) | Simple perspective camera. |
+| [`physical_camera_component`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/physical_camera_component) | Camera that is physically based, determining its view properties in a manner more consistent with a physical camera |
+| [`skeletal_animation`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/skeletal_animation) | A modifier of skeletons, used to animate meshes using skeletal animation |
+| [`play_skeletal_animation_result`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/play_skeletal_animation_result) |  |
+| [`skeleton`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/skeleton) | Skeletons are collections of bones & sets/chains |
+| [`easing_window`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/easing_window) | An easing function combined with a relative time window |
 | [`capsule_light_component`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/capsule_light_component) | A `capsule_light_component` emits light in all directions into the scene from a capsule shaped source with a specified radius and length. A radius and length of 0 makes it a point light. You can use these to simulate any kind of light sources that emit in all directions and need an elongated source shape, such as a long light bulb. |
 | [`directional_light_component`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/directional_light_component) | A `directional_light_component` simulates light that is being emitted from a source that is infinitely far away. This means that all shadows cast by this light will be parallel, making this the ideal choice for simulating sunlight. |
 | [`light_component`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/light_component) | Base class for light components in the SceneGraph.  Dependencies:   - `transform_component` on the entity positions the light.   Examples of components implementing `light_component`:   - `directional_light_component` - `capsule_light_component` - `sphere_light_component` - `rect_light_component` - `spot_light_component` |
@@ -65,6 +86,8 @@ Learn technical details about the SceneGraph module.
 
 | Name | Description |
 | --- | --- |
+| [`has_camera_modifier`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/has_camera_modifier) | Interface for classes that own a camera modifier stack. |
+| [`easeable`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/easeable) | Interface used to trigger easing behaviors |
 | [`scene_event`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/scene_event) | An event which can be sent through the scene graph. |
 | [`origin`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/origin) | Interface to provide alternative origin to an entity which is defaulted to its parent. See `transform_component` |
 | [`has_merge_rules`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/has_merge_rules) | Merge Rules Interface. Implemented by components that want to participate in entity mergeability checks. |
@@ -72,6 +95,14 @@ Learn technical details about the SceneGraph module.
 ## Enumerations
 
 | Name | Description |
+| --- | --- |
+| [`camera_projection_mode`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/camera_projection_mode) |  |
+
+|  |  |
+| --- | --- |
+| [`camera_transition_initial_orientation`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/camera_transition_initial_orientation) | Controls how a camera mode transitions to another |
+
+|  |  |
 | --- | --- |
 | [`entity_streaming_policy`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/entity_streaming_policy) | Entity client streaming modes |
 
@@ -82,3 +113,13 @@ Learn technical details about the SceneGraph module.
 |  |  |
 | --- | --- |
 | [`collision_interaction`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/collision_interaction) | Specifies how a collision volume pair should interact. See collision_profile. |
+
+## Data
+
+| Name | Description |
+| --- | --- |
+| `GlobalModifierPosition` |  |
+
+|  |  |
+| --- | --- |
+| `VisualModifierPosition` |  |

@@ -8,6 +8,21 @@ Learn how to collaborate as a team on a project in UEFN and publish your island.
 
 Learn how to collaborate as a team and use revision control. When you're ready, playtest your island and prep your island for publishing.
 
+- [![Playtesting Your Island](https://dev.epicgames.com/community/api/documentation/image/91ac2648-2090-4bf8-966c-9e52b5e73b4b?resizing_type=fit&width=640&height=640)
+
+  Playtesting Your Island
+
+  Preview your Unreal Editor for Fortnite creation to ensure that it behaves as expected.](https://dev.epicgames.com/documentation/fortnite/playtesting-your-island-in-unreal-editor-for-fortnite)
+- [![Multiplayer Previewing](https://dev.epicgames.com/community/api/documentation/image/54022d1b-e9f7-424c-8f75-31ab1b35a3a5?resizing_type=fit&width=640&height=640)
+
+  Multiplayer Previewing
+
+  Learn how to use test players to debug multiplayer gameplay.](https://dev.epicgames.com/documentation/fortnite/multiplayer-previewing-in-unreal-editor-for-fortnite)
+- [![Publishing Projects](https://dev.epicgames.com/community/api/documentation/image/d5c72a9a-f5e8-4380-a180-a8efa07f4c9e?resizing_type=fit&width=640&height=640)
+
+  Publishing Projects
+
+  Publish your project and share it with the world.](https://dev.epicgames.com/documentation/fortnite/publishing-projects-in-unreal-editor-for-fortnite)
 - [![Collaborating in Unreal Editor for Fortnite](https://dev.epicgames.com/community/api/documentation/image/20783e6b-2928-4dc3-b51f-e2cd934c1a28?resizing_type=fit&width=640&height=640)
 
   Collaborating in Unreal Editor for Fortnite
@@ -48,21 +63,11 @@ Learn how to collaborate as a team and use revision control. When you're ready, 
   Unreal Revision Control Extensions
 
   Add Unreal Revision Control extensions to Visual Studio Code and take advantage of revision control features in your Verse files.](https://dev.epicgames.com/documentation/fortnite/unreal-revision-control-extensions-in-unreal-editor-for-fortnite)
-- [![Playtesting Your Island](https://dev.epicgames.com/community/api/documentation/image/91ac2648-2090-4bf8-966c-9e52b5e73b4b?resizing_type=fit&width=640&height=640)
-
-  Playtesting Your Island
-
-  Preview your Unreal Editor for Fortnite creation to ensure that it behaves as expected.](https://dev.epicgames.com/documentation/fortnite/playtesting-your-island-in-unreal-editor-for-fortnite)
-- [![Publishing Projects](https://dev.epicgames.com/community/api/documentation/image/d5c72a9a-f5e8-4380-a180-a8efa07f4c9e?resizing_type=fit&width=640&height=640)
-
-  Publishing Projects
-
-  Publish your project and share it with the world.](https://dev.epicgames.com/documentation/fortnite/publishing-projects-in-unreal-editor-for-fortnite)
 - [![Unreal Revision Control Viewport Status Highlighting](https://dev.epicgames.com/community/api/documentation/image/479ef82e-5081-44a3-a44b-99d4afdf91a0?resizing_type=fit&width=640&height=640)
 
   Unreal Revision Control Viewport Status Highlighting
 
-  Use status highlighting to see which assets are being edited by your colleagues.](https://dev.epicgames.com/documentation/fortnite/unreal-revision-control-viewport-status-highlighting-in-unreal-editor-for-fortnite)
+  Use status highlighting to see which assets are being edited by your colleagues.](https://dev.epicgames.com/documentation/fortnite/lore-version-control-viewport-status-highlighting-in-unreal-editor-for-fortnite)
 - [![Using Notes](https://dev.epicgames.com/community/api/documentation/image/11992ac8-870e-425f-bb7d-e522c9b81421?resizing_type=fit&width=640&height=640)
 
   Using Notes
@@ -73,11 +78,6 @@ Learn how to collaborate as a team and use revision control. When you're ready, 
   Text Localization
 
   Translate the text in your project to widen the audience of your island.](https://dev.epicgames.com/documentation/fortnite/text-localization-in-unreal-editor-for-fortnite)
-- [![Multiplayer Previewing](https://dev.epicgames.com/community/api/documentation/image/54022d1b-e9f7-424c-8f75-31ab1b35a3a5?resizing_type=fit&width=640&height=640)
-
-  Multiplayer Previewing
-
-  Learn how to use test players to debug multiplayer gameplay.](https://dev.epicgames.com/documentation/fortnite/multiplayer-previewing-in-unreal-editor-for-fortnite)
 - [![Common Branching Types](https://dev.epicgames.com/community/api/documentation/image/5959c4e7-f4d1-49cd-bd3e-3925dbbfd66a?resizing_type=fit&width=640&height=640)
 
   Common Branching Types

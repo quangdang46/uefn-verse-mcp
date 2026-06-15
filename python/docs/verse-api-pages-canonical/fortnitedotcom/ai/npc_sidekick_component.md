@@ -30,6 +30,7 @@ This class has both data members and functions.
 | `ChangeMoodEvent` | `listenable(payload)` | Signaled whenever the Sidekick's mood changes, either via the underlying mood system, or an override is applied. Returns the previous and new mood. |
 | `ChangeMoodEvent` | `listenable(payload)` | Signaled whenever the Sidekick's mood changes, either via the underlying mood system, or an override is applied. Returns the previous and new mood. |
 | `Entity` | `entity` | The parent entity of this component.   - Components must have a parent entity pointer provided when being constructed. - Components cannot be moved between parents. |
+| `IdleAnticsEnabled` | `?logic` | Enable or disable antics (idle personality animations) on the Sidekick. Enabled by default. |
 | `MoodOverride` | `??sidekick_mood` | By default, Sidekicks will change their mood depending on actions in the game. This value will lock the Sidekick into the mood passed in, overriding the automatic mood system. |
 | `MoodOverride` | `??sidekick_mood` | By default, Sidekicks will change their mood depending on actions in the game. This value will lock the Sidekick into the mood passed in, overriding the automatic mood system. |
 | `StartPlayReactionEvent` | `listenable(payload)` | Signaled when the Sidekick starts to play a reaction, returns the reaction that started playing. |
@@ -42,6 +43,7 @@ This class has both data members and functions.
 
 | Function Name | Description |
 | --- | --- |
+| [`ApplyEquippedSidekickCosmetic`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/ai/npc_sidekick_component/applyequippedsidekickcosmetic) | Apply the look and customizations of agent's currently equipped Sidekick to this Sidekick NPC. This will fail if the NPC does not use the FortniteSidekick cosmetic look or if the given agent does not have a Sidekick equipped in their locker. |
 | [`GetMood`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/ai/npc_sidekick_component/getmood) | Get the Sidekick's current mood. |
 | [`GetMood`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/ai/sidekick_component/getmood) | Get the Sidekick's current mood. |
 | [`IsInScene`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/scenegraph/component/isinscene) | Succeeds if the component is currently in the scene.   - After `OnAddedToScene` is called this call succeeds. - After `OnRemovingFromScene` is called this call fails. |

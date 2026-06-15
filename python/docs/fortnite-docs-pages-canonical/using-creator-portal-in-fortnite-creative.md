@@ -23,6 +23,16 @@ So what are you waiting for? Get busy with the business of creating islands! It'
   Creator Portal Overview
 
   Familiarize yourself with the UI and features of the Creator Portal.](https://dev.epicgames.com/documentation/fortnite/creator-portal-overview-in-fortnite-creative)
+- [![Fortnite Developer Program FAQs](https://dev.epicgames.com/community/api/documentation/image/3a7db9a2-0677-4d80-a475-a607fafaed43?resizing_type=fit&width=640&height=640)
+
+  Fortnite Developer Program FAQs
+
+  Learn more about the Fortnite Developer Program and your responsibilities as a Fortnite developer.](https://dev.epicgames.com/documentation/fortnite/fortnite-developer-program-faqs-in-fortnite)
+- [![How Discover Works](https://dev.epicgames.com/community/api/documentation/image/f8a604c2-de8c-45aa-b0b6-5c135da8b856?resizing_type=fit&width=640&height=640)
+
+  How Discover Works
+
+  Learn how you can improve visibility and engagement for your islands by understanding how player metrics impact Fortnite Discover.](https://dev.epicgames.com/documentation/fortnite/how-discover-works-in-fortnite)
 - [![Epic's Picks](https://dev.epicgames.com/community/api/documentation/image/7a122e2d-cf62-4d4d-9d95-d7132b52c8f1?resizing_type=fit&width=640&height=640)
 
   Epic's Picks
@@ -48,13 +58,3 @@ So what are you waiting for? Get busy with the business of creating islands! It'
   Monetization and Analytics
 
   Learn about island monetization and how to read and track your island analytics.](https://dev.epicgames.com/documentation/fortnite/monetization-and-analytics-in-fortnite-creative)
-- [![Fortnite Developer Program FAQs](https://dev.epicgames.com/community/api/documentation/image/3a7db9a2-0677-4d80-a475-a607fafaed43?resizing_type=fit&width=640&height=640)
-
-  Fortnite Developer Program FAQs
-
-  Learn more about the Fortnite Developer Program and your responsibilities as a Fortnite developer.](https://dev.epicgames.com/documentation/fortnite/fortnite-developer-program-faqs-in-fortnite)
-- [![How Discover Works](https://dev.epicgames.com/community/api/documentation/image/f8a604c2-de8c-45aa-b0b6-5c135da8b856?resizing_type=fit&width=640&height=640)
-
-  How Discover Works
-
-  Learn how you can improve visibility and engagement for your islands by understanding how player metrics impact Fortnite Discover.](https://dev.epicgames.com/documentation/fortnite/how-discover-works-in-fortnite)

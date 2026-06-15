@@ -8,12 +8,13 @@ Learn technical details about the Fortnite.com module.
 
   - [`UI`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/ui)
   - [`Input`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/input)
-  - [`Itemization`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/itemization)
   - [`AI`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/ai)
   - [`Devices`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices)
 
     - [`InterpolationTypes`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creativeanimation/interpolationtypes)
   - [`Marketplace`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/marketplace)
+  - [`Armory`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/armory)
+  - [`Itemization`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/itemization)
   - [`Animation`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/animation)
   - [`Characters`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/characters)
   - [`FortPlayerUtilities`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/fortplayerutilities)

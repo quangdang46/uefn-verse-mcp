@@ -10,7 +10,7 @@ For a smooth start in using **Verse** to create gameplay in **Unreal Editor for 
 
 For anyone who is new to programming, or who wants a refresher, these onboarding steps will help to make sure you get the knowledge you'll need, along with recommended best practices for writing code in Verse.
 
-If you are already familiar with programming, consider checking out the [Book of Verse](https://verselang.github.io/book/).
+If you are already familiar with programming, consider checking out the [Book of Verse](https://dev.epicgames.com/documentation/fortnite/verse-language-book-of-verse-reference).
 
 ## Step 1: Thinking Like a Programmer
 
@@ -81,5 +81,5 @@ Modify the games you created from the templates and tutorials, or recreate your 
 While you program your games, the following materials are available for reference:
 
 - A [UEFN Glossary](unreal-editor-for-fortnite-glossary) for definitions related to UEFN and a [Verse Glossary](https://dev.epicgames.com/documentation/en-us/uefn/verse-glossary) for general programming definitions and Verse-specific terms.
-- [Book of Verse](https://verselang.github.io/book/) for learning more about the Verse programming language features and how to use them.
+- [Book of Verse](https://dev.epicgames.com/documentation/fortnite/verse-language-book-of-verse-reference) for learning more about the Verse programming language features and how to use them.
 - [Verse API Reference](https://dev.epicgames.com/documentation/en-us/uefn/verse-api) for exploring the API to access functionality and objects provided by UEFN as well as common programming functionality.

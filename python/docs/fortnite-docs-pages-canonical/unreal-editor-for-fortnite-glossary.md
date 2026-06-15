@@ -443,7 +443,7 @@ F-axis
 :   In a 3D space (real or virtual), the F-axis represents horizontal forward/backward (or north/south) movement. Also see axis.
 
 face
-:   A surface comprised of three or more connected edges. The side of a cube can contain a single face, or multiple faces. Each face can be [extruded](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#extrude).
+:   A surface comprised of three or more connected edges. The side of a cube can contain a single face, or multiple faces. Each face can be [extruded](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#extrude).
 
 falloff
 :   A gradual reduction in something over space or time. This term could apply to lighting, terrain, or sound, for example.
@@ -457,7 +457,7 @@ field of view
     With a camera device, **field of view** refers to what the camera (and by extension, the player) can actually see. The field of view is represented as an angle, and is measured in degrees. Angles are two lines that join at a point called the **vertex**. With cameras, the vertex is the lens (virtual in this case) of the camera. The arms of the angle spread up and down (the vertical axis) from that vertex. The higher the number of degrees, the wider the angle, and the more the camera can see.
 
 fill light
-:   A secondary source of light in a scene that doesn't change the character of the [key light](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#keylight). Fill lights are used primarily to lighten shadows.
+:   A secondary source of light in a scene that doesn't change the character of the [key light](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#key-light). Fill lights are used primarily to lighten shadows.
 
 filter
 :   In audio signal processing, a filter determines which sound frequencies are heard. Different filters process audio in different ways. For example, a low-pass filter allows lower frequencies to be heard while reducing or eliminating higher frequencies.

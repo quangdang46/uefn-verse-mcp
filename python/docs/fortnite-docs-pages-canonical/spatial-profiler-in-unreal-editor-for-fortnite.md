@@ -6,32 +6,29 @@ Use the spatial profiler to gather metrics on your UEFN islands.
 
 ![Spatial Profiler](https://dev.epicgames.com/community/api/documentation/image/902d89c3-2c2f-4969-b4f4-7ab9208f7126?resizing_type=fill&width=1920&height=335)
 
-**What's New?**
-
-- The **Tree View** allows you to select the metrics you want to measure and get results at a glimpse.
-- The **Session system** allows you to sample multiple sources simultaneously.
-- The **Search bar** lets you quickly find the required metric.
-- You can open multiple saved sessions for easier comparison, without having to close the session that you're currently running.
-- You can capture metrics simultaneously from multiple sources.
-- The **Histogram view** lets you dive into the distribution of each metric over the sampling period.
-- Prefixes are automatically added to your saved files to make sessions easier to identify.
-
 **Unreal Editor for Fortnite (UEFN)** gives you the tools you need to understand and improve the performance of your project. Since Fortnite runs on many platforms, knowing specific metrics for your project means that you can make any necessary adjustments to ensure smooth performance across your UEFN experiences.
 
-Jump to [Launch a Sampling Session](https://dev.epicgames.com/documentation/fortnite/spatial-profiler-in-unreal-editor-for-fortnite#launch-a-sampling-session) for a quick look at the workflow, or keep reading for an in-depth look at the **Spatial Profiler** tool.
+The **Spatial Profiler** is a visualization widget that provides you with a 2D heatmap of Spatial Metrics. Here, you can also record, save, and load spatial metric samples. It collects data from the spatial metrics update function, meaning that data is updated periodically.
+
+Jump to [Using the Spatial Profiler](https://dev.epicgames.com/documentation/fortnite/spatial-profiler-in-unreal-editor-for-fortnite#using-the-spatial-profiler) for a quick look at the workflow, or keep reading for an in-depth look at the **Spatial Profiler** tool.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/32f6bb99-df24-4eff-bb27-1232d1d268b5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/32f6bb99-df24-4eff-bb27-1232d1d268b5?resizing_type=fit)
+
+Spatial Profiler in editor. UEFN Editor with the Spatial Profiler docked window.
 
 ## Useful Terms
 
 A **Spatial Metric** is measured for any property that uses a 3D spatial position in a world. It consists of a certain number of spatial values, each having a number that corresponds to a measurement, with an associated coordinate that gives the spatial position where the value was measured within the world.
 
-A **Spatial Value** is a concrete measurement of a spatial metric in a 3D location. Spatial values have three spatial coordinate values **X**,  **Y**, **Z**, and a measurement result value. Spatial values are aggregated in a Spatial Metric Sample.
+A **Spatial Value** is a concrete measurement of a spatial metric in a 3D location. Spatial values have three spatial coordinate values **X, Y, Z**, and a measurement result value. Spatial values are aggregated in a Spatial Metric Sample.
 
 A **Spatial Metric Sample** is a measurement of a concrete spatial metric over a defined period. It may contain several spatial values measured with an associated result. A sample also includes other relevant data, such as the 3D bounds enclosing all the enclosing spatial values, the distance precision used, and the date it was taken.
 
 The **Spatial Metric Properties** represent all the information included in a spatial metrics sample:
 
-| Property | Definition |
+|  |  |
 | --- | --- |
+| **Property** | **Definition** |
 | **Metric ID** | Defines the unique metric identifier, which is directly tied to the type of metric. |
 | **Min Value** | The minimum value among the recorded spatial values. |
 | **Max Value** | The maximum value among the recorded spatial values. |
@@ -39,71 +36,112 @@ The **Spatial Metric Properties** represent all the information included in a sp
 | **Spatial Precision** | The 3D cell size used in world units, so all values contained contribute to the same spatial value. Usually, the highest value is selected. |
 | **Unit** | The unit used by the recorded values, for example, milliseconds for time or meters for distance. |
 
-The **Spatial Profiler** is a visualization widget that provides you with a 2D heatmap of Spatial Metrics. Here, you can also record, save, and load spatial metric samples. It collects data from the spatial metrics update function, meaning that data is updated periodically.
+## Using the Spatial Profiler
 
-[![Spatial Profiler in editor](https://dev.epicgames.com/community/api/documentation/image/8fa895e4-3919-45fe-818f-31b562cc3120?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8fa895e4-3919-45fe-818f-31b562cc3120?resizing_type=fit)
+This section covers how to launch a live sampling session using the **Spatial Profiler** tool to monitor performance and memory usage during active sessions.
 
-Spatial Profiler in editor
+If a Spatial Profiler metric exceeds its threshold during gameplay, a performance warning icon appears in the viewport. There will be an Investigate button on this notification which opens Spatial Profiler.
 
-*UEFN Editor with the Spatial Profiler docked window.*
+1. Enable **Monitor Performance** from the [Launch Session](https://dev.epicgames.com/documentation/fortnite/user-interface-reference-for-unreal-editor-for-fortnite#8-live-edit-options) options in UEFN.
+2. Open the **Spatial Profiler** window from either:
 
-The Spatial Profiler currently supports seven spatial metrics:
+   - The **Performance** button in the bottom toolbar.
 
-| Metric | Definition | Unit |
-| --- | --- | --- |
-| **Draw Call Count** | Tracks the number of draw calls on a single frame | Draw calls |
-| **Primitive Count** | Tracks the number of primitives rendered on a single frame. Primitives are the basic drawing components used to render objects in 3D. | Primitives |
-| **Game Update Time** | Tracks the platform’s game thread, measuring the time taken to update a single frame. | Microseconds |
-| **Render Time** | Tracks the platform’s render thread, measuring the time taken to update a single frame. | Microseconds |
-| **Frame Time** | Tracks the time spent to update a single frame. Both the Game Update Time and the Render Time metrics are included in this metric. | Microseconds |
-| **GPU Time** | Tracks the platform's GPU time. | Microseconds |
-| **RHI Time** | Tracks the platform's Render Hardware Interface thread time. | Microseconds |
-| **Actor Count** | Tracks the number of actors in the world accounting for streaming events. This is especially useful for worlds with [World Partition](https://dev.epicgames.com/documentation/en-us/uefn/streaming-and-hlods-in-unreal-editor-for-fortnite) streaming enabled. Seeing inconsistent actor counts in the level can highlight the most important areas of gameplay. However, really high actor counts can also indicate an excessive number of small actors and a potential stress point for the experience.  It is a good idea to evaluate this metric together with Game Update Time to evaluate game logic complexity, or with Render Time to evaluate render complexity. | Actors |
-| **Building Count** | A specialized version of the Actor Count metric that tracks the number of actors that have been categorized as buildings. This category also includes other types of persistent static mesh actors. | Actors |
-| **Loot Container Count** | A specialized version of the Actor Count metric that tracks the number of actors that have been categorized as loot containers. This category includes actors like chests, ammo boxes and other pickup spawners. | Actors |
-| **Pickup Count** | A specialized version of the Actor Count metric that tracks the number of actors that have been categorized as pickups. This category includes lootable gameplay items. | Actors |
-| **Memory Usage** | Tracks the platform's executable memory usage. You can use this to evaluate the memory requirements of each platform the experience has to run on. | Kilobytes |
-| **Available Memory** | Tracks the platform's available physical memory. You can use this to evaluate the memory requirements of each platform the experience has to run on. | Kilobytes |
+     - [![](https://dev.epicgames.com/community/api/documentation/image/efa3e832-7bc9-4415-a410-2bfc6ea8b01d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/efa3e832-7bc9-4415-a410-2bfc6ea8b01d?resizing_type=fit)
+   - **Tools > Spatial Profiler**.
+   - The memory warning notification that pops up when a memory threshold is exceeded during a play session.
+3. Launch a local play session.
+4. In the game session, use your pawn to run around the island and play the game as intended to continuously capture performance and memory usage data. During gameplay the Spatial Profiler heatmap data updates in real time.
+
+You can then click the **Memory Snapshot** button which will take a snapshot of the live assets loaded in memory, this will present a progress dialog to show a capture is happening. To learn more, see [Memory Snapshot](https://dev.epicgames.com/documentation/fortnite/memory-snapshot-in-unreal-editor-for-fortnite) .
+
+## Save and Reopen Captures
+
+You can save **Spatial Profiler** captures and reopen them later for additional review or comparison.
+
+Spatial Profiler captures and Memory Snapshot insights are separate capture types and collect different profiling data.
+
+Saved captures help you:
+
+- Compare optimization changes
+- Revisit previous profiling sessions
+- Investigate performance regressions
+
+To save a capture:
+
+[![](https://dev.epicgames.com/community/api/documentation/image/1b8d5438-a735-4419-bdc6-439e400bbfd3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1b8d5438-a735-4419-bdc6-439e400bbfd3?resizing_type=fit)
+
+To reopen a saved capture:
+
+[![](https://dev.epicgames.com/community/api/documentation/image/461e771d-b0df-420e-b6ce-317b35354d2e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/461e771d-b0df-420e-b6ce-317b35354d2e?resizing_type=fit)
 
 ## Spatial Profiler UI
 
-The Spatial Profiler is a dockable standalone widget divided into four areas:
+The **Spatial Profiler** is a dockable standalone widget divided into four areas:
 
-[![profiler areas](https://dev.epicgames.com/community/api/documentation/image/1593dbf0-6139-4bfe-b0c1-7df8c7bae775?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1593dbf0-6139-4bfe-b0c1-7df8c7bae775?resizing_type=fit)
+[![](https://dev.epicgames.com/community/api/documentation/image/29e3474c-1840-443b-818f-6097f9257e39?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/29e3474c-1840-443b-818f-6097f9257e39?resizing_type=fit)
 
-*Spatial Profiler widget areas.*
+Spatial Profiler widget areas.
 
-### Control Toolbar
+## Control Toolbar
 
 This area contains the main interactive elements to operate the Spatial Profiler. It gives you the controls to produce, visualize, and save Spatial Metrics samples. You can use the samples you capture to generate data that can improve your UEFN experience.
 
-[![profiler toolbar](https://dev.epicgames.com/community/api/documentation/image/6f8f9c10-d025-4033-aea8-366f40ec0a53?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6f8f9c10-d025-4033-aea8-366f40ec0a53?resizing_type=fit)
+[![](https://dev.epicgames.com/community/api/documentation/image/4d5ddd3c-12a0-4338-b936-ab2a8b0babcc?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4d5ddd3c-12a0-4338-b936-ab2a8b0babcc?resizing_type=fit)
 
-*Spatial Profiler control toolbar elements.*
+Spatial Profiler control toolbar elements.
 
 The control toolbar includes the following elements:
 
-### Metrics Tree View
+1. **Live Capture:** use this button to view the active live capture from the connected session. Live Capture displays spatial metric data in real time while profiling gameplay.
+2. **Saved Captures:** this button opens a pre-existing sample file, which can contain multiple metrics. On opening, all loaded metrics are loaded into the metric browser so that you can assess the data.
+3. **Save a sample to file:** you can use this button to save active profiling sessions. It opens a save-to-file dialog and proposes a file name with the sample timestamp by default. The Spatial Profiler saves all metrics in the current sampling session to the destination file.
+4. **Start sampling:** this button starts the capture of the set of metrics the user selected. You have to be connected to a UEFN session for metrics to be sampled. During sampling, the heatmap automatically centers the view at the session’s player pawn location and focuses on the spatial values captured.
+5. **Stop sampling:** this button stops the capture of the selected metrics.
+6. **UEFN session selector:** You can have more than one client connected to a session. You can use the session selector to choose which session to connect and run metrics. The Spatial Profiler automatically connects to the client when launching a session, and then updates the session selector with the name of the user connected to that session.
+7. **Take a Memory Snapshot:** use this button to capture a [Memory Snapshot](https://dev.epicgames.com/documentation/fortnite/memory-snapshot-in-unreal-editor-for-fortnite) from the connected session. Memory Snapshot displays an estimated memory usage breakdown for loaded assets, helping you identify assets contributing to high memory usage and investigate their impact on the island.
+8. **Settings:** this button displays the Spatial Profiler preference settings. You can use this to toggle the visibility of certain widget elements.
+9. **Connected Client:** this displays the name of the client currently connected to the active profiling session. A client is an instance of Fortnite connected to UEFN during a play session. The Connected Client element updates automatically when launching or switching sessions, and can also display Disconnected clients from previous profiling sessions.
 
-This section allows you to select and deselect the metrics you want in your sampling session by clicking the check boxes to the left of the metrics.
+## Metrics Tree View
 
-The top dropdown field is used to choose between a Live Session and a previously saved session. You can switch between your current sampling session and a saved session by selecting the session you want to view from the dropdown.
+You can select and deselect the metrics you want in your sampling session by clicking the check boxes to the left of the metrics. The **Search bar** can look up a specific metric.
 
-With the second dropdown field, you can switch between the sampling targets in your live session, such as clients or the server. You can monitor the metrics for all connected clients, and can sample **multiple sources at the same time**.
-
-The **Search bar** lets you look up a specific metric.
-
-[![metric browser](https://dev.epicgames.com/community/api/documentation/image/d709edfb-14b2-46eb-a8cb-138ff55cf7bb?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d709edfb-14b2-46eb-a8cb-138ff55cf7bb?resizing_type=fit)
+[![](https://dev.epicgames.com/community/api/documentation/image/a9fb2313-80e8-4038-a257-a1459f6d3db7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a9fb2313-80e8-4038-a257-a1459f6d3db7?resizing_type=fit)
 
 When you click on a metric to select it, the Heatmap view updates to show any data samples, and Stats view updates to display the aggregate statistics for the data. The colored circles next to each metric represent their relative values based on the thresholds you set before the sampling session, showing your results at a glance.
 
-[![Draw Call Count selected and displays on the heatmap.](https://dev.epicgames.com/community/api/documentation/image/fd7f730d-29ce-48e7-9932-f0aa631e28d3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/fd7f730d-29ce-48e7-9932-f0aa631e28d3?resizing_type=fit)
+[![](https://dev.epicgames.com/community/api/documentation/image/67207def-95b2-4ecb-9ebf-695f4aa188bb?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/67207def-95b2-4ecb-9ebf-695f4aa188bb?resizing_type=fit)
 
-Draw Call Count selected and displays on the heatmap.
+Memory Usage selected and displays on the heatmap.
 
-### Heatmap View
+The following spatial metrics are available in the Spatial Profiler:
 
-The Heatmap View displays a heatmap of your chosen metric, with an overlay of all the spatial values in the sample. Each spatial value is colored according to the sample’s data. You can quickly set cutoff values for each metric to define the range of expected values.
+|  |  |  |
+| --- | --- | --- |
+| **Metric** | **Definition** | **Unit** |
+| **Actor Count** | Tracks the number of actors in the world accounting for streaming events. This is especially useful for worlds with [World Partition](https://dev.epicgames.com/documentation/fortnite/streaming-and-hlods-in-unreal-editor-for-fortnite) streaming enabled. Seeing inconsistent actor counts in the level can highlight the most important areas of gameplay. However, really high actor counts can also indicate an excessive number of small actors and a potential stress point for the experience.  It is a good idea to evaluate this metric together with Game Update Time to evaluate game logic complexity, or with Render Time to evaluate render complexity. | Actors |
+| **Scene Graph Entity** | Tracks the number of Scene Graph entities currently loaded in the world, accounting for streaming events and dynamically spawned entities. | Entities |
+| **UObject Count** | Tracks the total number of Unreal Engine objects currently loaded in memory, including actors, components, assets, materials, and other engine systems used by the island. | UObjects |
+| **Unique Collision Mesh Count** | Tracks the number of unique collision meshes currently loaded in memory. | Meshes |
+| **Building Count** | A specialized version of the Actor Count metric that tracks the number of actors that have been categorized as buildings, and includes persistent static mesh actors. | Actors |
+| **Loot Container Count** | A specialized version of the Actor Count metric that tracks the number of actors that have been categorized as loot containers. This category includes actors like chests, ammo boxes and other pickup spawners. | Actors |
+| **Pickup Count** | A specialized version of the Actor Count metric that tracks the number of actors that have been categorized as pickups. This category includes lootable gameplay items. | Actors |
+| **Available Memory** | Tracks the platform's available physical memory. You can use this to evaluate the memory requirements of each platform the experience has to run on.  Memory value display presets can be adjusted to use larger units when reviewing higher memory values. | Kilobytes |
+| **Memory Usage** | Tracks the platform's executable memory usage. You can use this to evaluate the memory requirements of each platform the experience has to run on. | Kilobytes |
+| **Texture Streaming Memory Usage** | Tracks memory usage from streamed textures. Texture streaming dynamically loads and unloads texture detail based on distance and screen size. | Mebibytes |
+| **Draw Call Count** | Tracks the number of [draw calls](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#draw-call) on a single frame | Draw calls |
+| **Primitive Count** | Tracks the number of primitives rendered on a single frame. Primitives are the basic drawing components used to render objects in 3D. | Primitives |
+| **Shaders Loaded Count** | Tracks the number of shader variations currently loaded in memory. High counts may indicate too many unique materials or overly complex material settings. | Shaders |
+| **Frame Time** | Tracks the total time required to update a single frame, including both Game Update Time and Render Time. Higher frame times can result in low FPS and less responsive gameplay. | Microseconds |
+| **Game Update Time** | Tracks the platform’s game thread, measuring the time taken to update a single frame. | Microseconds |
+| **GPU Time** | Tracks the platform's GPU time. | Microseconds |
+| **Render Time** | Tracks the platform’s render thread, measuring the time taken to update a single frame. | Microseconds |
+| **RHI Time** | Tracks the platform's Render Hardware Interface thread time. | Microseconds |
+
+## Heatmap View
+
+The Heatmap view displays a heatmap of your chosen metric, with an overlay of all the spatial values in the sample. Each spatial value is colored according to the sample’s data. You can quickly set cutoff values for each metric to define the range of expected values.
 
 You can interact with the heatmap and customize it to your preferences using the four buttons at the top:
 
@@ -112,166 +150,173 @@ You can interact with the heatmap and customize it to your preferences using the
 - Focus Player
 - Focus Bounds
 
-[![heatmap buttons](https://dev.epicgames.com/community/api/documentation/image/e23f76da-14ab-46dc-a37f-c25a71204bda?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e23f76da-14ab-46dc-a37f-c25a71204bda?resizing_type=fit)
+[![](https://dev.epicgames.com/community/api/documentation/image/16a3c299-f6a8-4c4c-a7df-089b90241d50?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/16a3c299-f6a8-4c4c-a7df-089b90241d50?resizing_type=fit)
 
-Double-clicking on any location in the Heatmap View places the Editor camera at the corresponding location within the project. If a session is launched, the player pawn teleports to the location you double-click.
+Double-clicking on any location in the Heatmap view places the Editor camera at the corresponding location within the project. If a session is launched, the player pawn teleports to the location you double-click.
 
-#### Hamburger Menu
+### Hamburger Menu
 
 This button gives you access to the heatmap visualization options, containing two sections:
 
 - Metric Settings
 - Heatmap Color Settings
 
-[![hamburger menu](https://dev.epicgames.com/community/api/documentation/image/97f87e03-cac5-4225-a810-7227188680e1?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/97f87e03-cac5-4225-a810-7227188680e1?resizing_type=fit)
-
-*Spatial Profiler hamburger menu options.*
-
 You can reset the settings in these sections by clicking the reset arrow button on the right side of each field.
 
-##### Metric Settings
+[![](https://dev.epicgames.com/community/api/documentation/image/1d5136d8-e19e-49a1-a126-3a6b9c26c2ab?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1d5136d8-e19e-49a1-a126-3a6b9c26c2ab?resizing_type=fit)
 
-The **Metric Settings**group all the settings affecting visualization of the metrics.
+Spatial Profiler hamburger menu options.
 
-| Value | Definition |
+#### Metric Settings
+
+The **Metric Settings** group all the settings affecting visualization of the metrics.
+
+|  |  |
 | --- | --- |
-| Threshold | A threshold value defines the expected maximum value for normal gameplay. |
-| Display Unit | When specified, this option defines the preferred visualization unit for a metric. If left unspecified, the tool selects the best fitting unit for each metric. The Display Unit affects the units used by the Heatmap View and the Summary View. |
-| Cell Method | This setting specifies the reduction method the tool uses to calculate each 2D cell value from the list of values that fall within each cell's boundaries. The available reduction methods are: |
-| Cell Size | This settings changes the size of the grid and can increase or decrease the level of detail for a particular sampling area. |
+| **Value** | **Definition** |
+| **Profile** | Select the active profile for the source.   - Desktop - Console(Gen 8, 9, and Portable) - Mobile - Default |
+| **Threshold** | A threshold value defines the expected maximum value for normal gameplay.  The Profile threshold values do not affect the Memory Usage values displayed in the Performance Monitor. |
+| **Display Unit** | When specified, this option defines the preferred visualization unit for a metric. If left unspecified, the tool selects the best fitting unit for each metric. The Display Unit affects the units used by the Heatmap view and the Summary view. |
+| **Cell Method** | This setting specifies the reduction method the tool uses to calculate each 2D cell value from the list of values that fall within each cell's boundaries. The available reduction methods are: |
+| **Cell Size** | This setting changes the size of the grid and can increase or decrease the level of detail for a particular sampling area. |
+| **Loading Range** | The streaming radius (in cm) used to show the loading behavior in the  [World Partition](https://dev.epicgames.com/documentation/fortnite/streaming-and-hlods-in-unreal-editor-for-fortnite)  .  The **Loading Range visualization** is not automatically synchronized with the **Loading Range values** configured in **World Settings**. If your World Settings values change, update the Loading Range setting manually to match your island configurations. |
 
-##### Heatmap Color Settings
+#### Heatmap Color Settings
 
 The **Heatmap Color Settings** contain all the settings affecting the visualization of the metrics.
 
 The **Heat Colors** offer a readable color palette with considerations for colorblindness. You can define the key colors to customize the heatmap color range.
 
-| Value | Definition |
+|  |  |
 | --- | --- |
-| Low | This color represents the low spectrum of the heatmap color range, and maps to the minimum value in a metric sample. |
-| Midpoint | This color represents the middle of the heatmap color range defined between the Minimum and the Threshold color. If a threshold value is not specified, it maps to the median spatial value in a sample. |
-| High | This color represents all values that are above the set threshold. |
-| Max | This color represents the maximum value. It’s only displayed when users define a threshold value for the represented metric. When you specify a threshold value, the heatmap adds a range that exceeds the threshold, going from white to the color set for Maximum. |
-| Min Alpha | The starting value given to spatial values. The alpha value of all spatial values in a sample increases according to their value, from the Minimum value (using Min Alpha) to the Maximum or Threshold values with maximum alpha. Using a low Min Alpha value highlights spatial values closer to the Maximum or Threshold values by making low spatial values less visible. |
-| Max Alpha | The maximum starting value given to spatial values. |
+| **Value** | **Definition** |
+| **Low** | This color represents the low spectrum of the heatmap color range, and maps to the minimum value in a metric sample. |
+| **Midpoint** | This color represents the middle of the heatmap color range defined between the Minimum and the Threshold color. If a threshold value is not specified, it maps to the median spatial value in a sample. |
+| **High** | This color represents all values that are above the set threshold. |
+| **Max** | This color represents the maximum value. It is only displayed when you define a threshold value for the represented metric. When you specify a threshold value, the heatmap adds a range that exceeds the threshold, going from white to the color set for Maximum. |
+| **Min Alpha** | The starting value given to spatial values. The alpha value of all spatial values in a sample increases according to their value, from the Minimum value (using Min Alpha) to the Maximum or Threshold values with maximum alpha. Using a low Min Alpha value highlights spatial values closer to the Maximum or Threshold values by making low spatial values less visible. |
+| **Max Alpha** | The maximum starting value given to spatial values. |
 
-The Alpha Settings show spatial values outside of the expected range. Adjusting these options becomes especially useful when looking at a metric sample with pockets of high-density spatial values, as you can get a more granular read on the metrics.
+The Alpha Settings show spatial values outside of the expected range. Adjusting these options becomes especially useful when looking at a metric sample with pockets of high-density spatial values, as you can review the metrics in more detail.
 
-#### Axes
+### Axes
 
-This option toggles the visualization of the 3D axes on the bottom-left corner corresponding to the Heatmap View’s top-down orientation. This orientation is in parity with the client’s minimap view and not with the Editor's.
+This option toggles the visualization of the 3D axes on the bottom-left corner corresponding to the Heatmap view’s top-down orientation. This orientation is in parity with the client’s minimap view and not with the Editor's.
 
-[![heatmap axes](https://dev.epicgames.com/community/api/documentation/image/00b74a28-1038-436d-95be-6f57abd9294d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/00b74a28-1038-436d-95be-6f57abd9294d?resizing_type=fit)
+[![](https://dev.epicgames.com/community/api/documentation/image/689df15b-d008-46be-9320-655fc0c1ef1e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/689df15b-d008-46be-9320-655fc0c1ef1e?resizing_type=fit)
 
-*Showing Heatmap axes*
+Showing Heatmap axes
 
-#### Grid
+### Grid
 
-Toggles the visualization of the 2D heatmap grid, subdividing the visible space into multiples of the sample value’s extents. The grid size can be modified in the hamburger menu
+Toggles the visualization of the 2D heatmap grid, subdividing the visible space into multiples of the sample value’s extents. The grid size can be modified in the hamburger menu.
 
-![No grid](https://dev.epicgames.com/community/api/documentation/image/f35f0d26-4f61-4f99-b091-da9de50f7589?resizing_type=fit&width=1920&height=1080)
+![No Grid](https://dev.epicgames.com/community/api/documentation/image/5f70cae0-4324-44f1-b67d-d36bda3512fb?resizing_type=fit&width=1920&height=1080)
 
-![Show grid](https://dev.epicgames.com/community/api/documentation/image/de4fe993-c0d0-484e-a456-2d7be3512e89?resizing_type=fit&width=1920&height=1080)
+![Grid](https://dev.epicgames.com/community/api/documentation/image/ed386fe4-6076-4942-afbe-1e48fe5dedf6?resizing_type=fit&width=1920&height=1080)
 
-#### Heatmap Legend
+### Heatmap Legend
 
-This option turns the visualization of the heatmap’s color range legend on or off at the bottom right corner of the Heatmap View.
+This option turns the visualization of the heatmap’s color range legend on or off at the bottom right corner of the Heatmap view.
 
-[![heatmap legend](https://dev.epicgames.com/community/api/documentation/image/e85499e2-f50e-4181-9f99-99db4c0fb19f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e85499e2-f50e-4181-9f99-99db4c0fb19f?resizing_type=fit)
+[![](https://dev.epicgames.com/community/api/documentation/image/eaa7557f-1476-40e6-9c0a-13175f99ad7f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/eaa7557f-1476-40e6-9c0a-13175f99ad7f?resizing_type=fit)
 
-*Displaying Heatmap color palette legend*
+Displaying Heatmap color palette legend
 
-#### Bounds
+### Bounds
 
-This option lets you toggle the 2D bounding box, which comprises all the spatial values in the sample.
+This option will toggle the 2D bounding box, which comprises all the spatial values in the sample.
 
-[![sample bounds](https://dev.epicgames.com/community/api/documentation/image/3a8891a1-d933-4a0c-b537-9207ddc6003e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/3a8891a1-d933-4a0c-b537-9207ddc6003e?resizing_type=fit)
+[![](https://dev.epicgames.com/community/api/documentation/image/1768849a-1645-48fa-9a2d-be75abb2c677?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1768849a-1645-48fa-9a2d-be75abb2c677?resizing_type=fit)
 
-*Showing sample bounds (white) on the Heatmap*
+Showing sample bounds (white) on the Heatmap
 
-#### Focus Player
+### Streaming Radius
 
-[![focus player](https://dev.epicgames.com/community/api/documentation/image/15279be6-91f9-4b20-aae7-f6d92572060a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/15279be6-91f9-4b20-aae7-f6d92572060a?resizing_type=fit)
+This displays the streaming radius used to visualize how far [World Partition](https://dev.epicgames.com/documentation/fortnite/streaming-and-hlods-in-unreal-editor-for-fortnite) tiles load around the player during analysis.
 
-This button centers the view around the player pawn in the connected session. This action requires a connected session.
+The Streaming Radius map visualization is not automatically linked to the World Settings streaming radius values. To match your island configuration accurately, manually set the Streaming Radius map values to correspond with your World Partition streaming settings.
 
-#### Focus Bounds
+[![](https://dev.epicgames.com/community/api/documentation/image/34d923df-f680-4de9-aa26-1c22920b7f26?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/34d923df-f680-4de9-aa26-1c22920b7f26?resizing_type=fit)
 
-[![focus bounds](https://dev.epicgames.com/community/api/documentation/image/e9cd8183-92b4-40ce-add4-52576254431a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e9cd8183-92b4-40ce-add4-52576254431a?resizing_type=fit)
+### Sample Values
 
-This button centers the Heatmap View around the 2D bounding box.
+This displays the calculated value for each Heatmap cell based on the samples captured within that area. By default, each cell displays the median sampled value. The displayed value is determined by the selected [Cell Method](https://dev.epicgames.com/documentation/fortnite/spatial-profiler-in-unreal-editor-for-fortnite#metric-settings) reduction setting.
 
-### Contextual Menu
+[![](https://dev.epicgames.com/community/api/documentation/image/921de887-ec11-4edd-94cd-f5884a09fdc8?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/921de887-ec11-4edd-94cd-f5884a09fdc8?resizing_type=fit)
 
-You can access the contextual menu by right-clicking on the Heatmap View area. This menu contains the following options:
+### Focus Player
+
+Use the Focus Player options to control how the Spatial Profiler view tracks the connected session or editor viewport.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/013d97c5-c2f4-4d36-8a2c-e1fad3ad39da?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/013d97c5-c2f4-4d36-8a2c-e1fad3ad39da?resizing_type=fit)
+
+The following tracking modes are available:
+
+- **Off:** Disables automatic view tracking **(enabled by default)**
+- **Track Player:** Continuously tracks the player’s viewpoint in the connected session.
+- **Track Editor Camera:** Continuously tracks the editor viewport camera position.
+- **Track Bounds:** Continuously fits the view to the bounds of the active spatial metric sample.
+
+### Focus Bounds
+
+This button centers the Heatmap view around the 2D bounding box.
+
+[![](https://dev.epicgames.com/community/api/documentation/image/27350844-d68a-41af-a5e7-bfe3c9d6cf0d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/27350844-d68a-41af-a5e7-bfe3c9d6cf0d?resizing_type=fit)
+
+## Contextual Menu
+
+You can access the contextual menu by right-clicking on the Heatmap view area. This menu contains the following options:
 
 - Teleport
 - Default View
 - Focus Bounds
-- Track Focus Location
 
-[![heatmap contextual menu](https://dev.epicgames.com/community/api/documentation/image/dbd10339-7121-4324-8c5c-f27726498c7f?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/dbd10339-7121-4324-8c5c-f27726498c7f?resizing_type=fit)
+[![](https://dev.epicgames.com/community/api/documentation/image/6e114186-b146-4e1f-9c51-fee1e9d8708c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6e114186-b146-4e1f-9c51-fee1e9d8708c?resizing_type=fit)
 
-*Spatial Profiler Heatmap View contextual menu*
+Spatial Profiler Heatmap View contextual menu
 
-#### Teleport
+|  |  |
+| --- | --- |
+| **Option Name** | **Definition** |
+| **Teleport** | You can use this option to bring both the camera view and the player pawn to a chosen right-clicked location in the Heatmap view. This action requires a connected session to teleport the player pawn. If no session is connected, it is the equivalent to double-clicking on any location in the Heatmap view, which places the Editor camera at the corresponding location within the project. |
+| **Default View** | This option resets the Heatmap view focus and zoom values to their default settings. |
+| **Focus Bounds** | You can use this option to focus the Heatmap view to include all sampled areas within the active spatial metric capture. This helps provide an overview of the full sampled region during analysis. |
 
-You can use this option to bring both the camera view and the player pawn to a chosen right-clicked location in the Heatmap View. This action requires a connected session to teleport the player pawn. If no session is connected, it is the equivalent to double-clicking on any location in the Heatmap View, which places the Editor camera at the corresponding location within the project.
+## Histogram View
 
-#### Default View
+The **histogram** helps you visualize the data as it is being collected in real time. You can to go back through your test of the level and assess each metric at a specific point in your playtest. By scrolling through the open session's histogram you can identify the location of a particular reading that you want to investigate.
 
-This option resets the Heatmap View focus and zoom values to their default settings.
-
-### Histogram View
-
-The **histogram** helps you visualize the data as it is being collected in real time. You can to go back through your test of the level and assess each metric at a specific point in your playtest. By scrolling through the open session's histogram you can identify the location of a particular reading that you want to investigate.
-
-[![histogram](https://dev.epicgames.com/community/api/documentation/image/fa6697c9-4f4b-446a-a27d-8f153f6e1854?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/fa6697c9-4f4b-446a-a27d-8f153f6e1854?resizing_type=fit)
+[![](https://dev.epicgames.com/community/api/documentation/image/e1dbcb78-1984-4bb8-8fd1-8458ecbcef79?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e1dbcb78-1984-4bb8-8fd1-8458ecbcef79?resizing_type=fit)
 
 Adjusting the values in the Hamburger menu will modify the various cutoff points displayed in the histogram.
 
-Right-clicking the histogram allows you to select **Display Threshold Guidelines**, **Auto Scroll**, **Shade Values by Cell**, choose the Next and Previous values, and **Scale Histogram**. You can change the scale of the histogram by holding **Shift + Scrolling** the mouse wheel.
+Right-clicking the histogram you can select **Display Threshold Guidelines**, **Auto Scroll**, **Shade Values by Cell**, choose the Next and Previous values, and **Scale Histogram**. You can change the scale of the histogram by holding **Shift + Scrolling** the mouse wheel.
 
-[![](https://dev.epicgames.com/community/api/documentation/image/4884e499-e474-4f2f-a6ed-4d98f460a361?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4884e499-e474-4f2f-a6ed-4d98f460a361?resizing_type=fit)
+[![](https://dev.epicgames.com/community/api/documentation/image/b07af040-8507-4013-9407-305181260c3a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b07af040-8507-4013-9407-305181260c3a?resizing_type=fit)
 
 Right-clicking the histogram displays the above options.
 
 You can also zoom in and out of the histogram to get a more detailed look at your metrics.
 
-![More Zoomed Out](https://dev.epicgames.com/community/api/documentation/image/0f534f3a-ccee-4b7a-9162-c05dee185b1b?resizing_type=fit&width=1920&height=1080)
+![More Zoomed Out](https://dev.epicgames.com/community/api/documentation/image/7ad0004b-01c0-41d6-bc39-980667ba9fea?resizing_type=fit&width=1920&height=1080)
 
-![More Zoomed In](https://dev.epicgames.com/community/api/documentation/image/f5b67efc-b085-433e-9d2a-2700a8a2bc1d?resizing_type=fit&width=1920&height=1080)
+![More Zoomed In](https://dev.epicgames.com/community/api/documentation/image/fc07edaa-0362-4d1b-b24b-4092f659d1ef?resizing_type=fit&width=1920&height=1080)
 
-When you mouse over a segment of the sample, a tooltip will display its value.
+When you hover over a segment of the sample, a tooltip will display its value.
 
-[![](https://dev.epicgames.com/community/api/documentation/image/ba332122-7338-4ea6-aae1-dee1fe109a84?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/ba332122-7338-4ea6-aae1-dee1fe109a84?resizing_type=fit)
+[![](https://dev.epicgames.com/community/api/documentation/image/03845b97-d34c-44bf-90cd-6e54a9f5092a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/03845b97-d34c-44bf-90cd-6e54a9f5092a?resizing_type=fit)
 
 Clicking on the sample segment highlights the location of the segment on the heatmap.
 
 To the right of the histogram you can see a summary of statistics for the selected metric. It displays the following stats compiled from the sample’s spatial values:
 
-| Statistic | Definition |
+|  |  |
 | --- | --- |
-| Values | The total number of spatial values included in the sample. |
-| High | The number of spatial values exceeding the threshold value, if defined. |
-| Min Value | The smallest spatial value. |
-| Max Value | The largest spatial value. |
-| Average Value | The average spatial value. |
-| Median Value | The median spatial value. |
-
-## Launch a Sampling Session
-
-This section covers how to launch a sampling session using the Spatial Profiler tool, and shows you how to save your spatial metric sample.
-
-1. Go to **Tools** > **Spatial Metrics** > **Spatial Profiler**. This opens the Spatial Profiler widget.
-2. In the **Tree View**, select the metrics that you want to measure in your sampling session.
-3. Set your sampling parameters from the Hamburger menu.
-4. Click **Launch Session** to start a game through the Fortnite client.
-5. (Optional) Once the client loads, press **End Game** to get into **Edit Mode**, which allows your pawn to fly through the level more quickly.
-6. Press **Start Sampling**.
-7. In the game session, use your pawn to run around the island and play the game as intended. The Spatial Profiler heatmap will update as you do so.
-8. Press the **Stop Sampling**button to end the sampling session.
-9. Press the **Save** icon on the Spatial Profiler widget, and choose a location inside the local directory of your project. The profiler provides read access to any sample saved in the project. Samples are organized by metric type and timestamp.
-10. You can click the **Open** icon to access any previous project sample recordings.
-
-[![](https://dev.epicgames.com/community/api/documentation/image/486c663c-31eb-4c66-b350-ac115f5567d4?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/486c663c-31eb-4c66-b350-ac115f5567d4?resizing_type=fit)
+| **Statistic** | **Definition** |
+| **Values** | The total number of spatial values included in the sample. |
+| **Outside** | The number of spatial values exceeding the threshold value, if defined. |
+| **Min Value** | The smallest spatial value. |
+| **Max Value** | The largest spatial value. |
+| **Average Value** | Displays the average value across all collected samples during the capture session. |
+| **Median Value** | Displays the middle sample value during the capture session. |

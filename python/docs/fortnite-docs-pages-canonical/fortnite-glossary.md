@@ -1420,7 +1420,7 @@ F-axis
 :   In a 3D space (real or virtual), the F-axis represents horizontal forward/backward (or north/south) movement. Also see axis.
 
 face
-:   A surface comprised of three or more connected edges. The side of a cube can contain a single face, or multiple faces. Each face can be [extruded](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#extrude).
+:   A surface comprised of three or more connected edges. The side of a cube can contain a single face, or multiple faces. Each face can be [extruded](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#extrude).
 
 fall damage
 :   Damage a player receives from falling.
@@ -1432,16 +1432,16 @@ falloff
 :   A gradual reduction in something over space or time. This term could apply to lighting, terrain, or sound, for example.
 
 fashion
-:   A game where players compete to be chosen as the best [outfit](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#outfit) by a judge.
+:   A game where players compete to be chosen as the best [outfit](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#outfit) by a judge.
 
 FBX
 :   FBX (Filmbox) is a proprietary file format (.fbx) developed by Kaydara and owned by Autodesk since 2006. It is used to provide interoperability between digital content creation applications. FBX is also part of Autodesk Gameware, a series of video game middleware.
 
 feedback
-:   A loop that occurs when a mic picks up sound from a speaker and sends it out again through the speaker, where it can once again get picked up by the mic. The [Echo Effect](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#patchworkechoeffect) device has a feedback control that simulates this kind of audio feedback look to distort the audio output.
+:   A loop that occurs when a mic picks up sound from a speaker and sends it out again through the speaker, where it can once again get picked up by the mic. The [Echo Effect](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#patchwork-echo-effect) device has a feedback control that simulates this kind of audio feedback look to distort the audio output.
 
 FFA
-:   FFA stands for free-for-all. For example, see [team FFA](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#teamffa).
+:   FFA stands for free-for-all. For example, see [team FFA](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#team-ffa).
 
 field of view
 :   Field of view, or FOV for short, is how much of the world a player can see at any given moment.
@@ -1449,10 +1449,10 @@ field of view
     With a camera device, **field of view** refers to what the camera (and by extension, the player) can actually see. The field of view is represented as an angle, and is measured in degrees. Angles are two lines that join at a point called the **vertex**. With cameras, the vertex is the lens (virtual in this case) of the camera. The arms of the angle spread up and down (the vertical axis) from that vertex. The higher the number of degrees, the wider the angle, and the more the camera can see.
 
 fiend
-:   A hostile [creature](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#creature).
+:   A hostile [creature](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#creature).
 
 fill light
-:   A secondary source of light in a scene that doesn't change the character of the [key light](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#keylight). Fill lights are used primarily to lighten shadows.
+:   A secondary source of light in a scene that doesn't change the character of the [key light](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#key-light). Fill lights are used primarily to lighten shadows.
 
 film grain
 :   A visual effect that simulates old stock film for a more cinematic look.
@@ -1461,7 +1461,7 @@ filter
 :   In audio signal processing, a filter determines which sound frequencies are heard. Different filters process audio in different ways. For example, a low-pass filter allows lower frequencies to be heard while reducing or eliminating higher frequencies.
 
 fire rate
-:   How quickly a weapon can fire again after it is shot. This is measured in [rounds per second (RPS)](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#roundspersecond).
+:   How quickly a [weapon](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#weapon) can fire again after it is shot. This is measured in [rounds per second (RPS)](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#rounds-per-second).
 
 first person mode
 :   In first person mode, the player's perspective is as though they were looking through their avatar's eyes. With this camera mode, the player usually can't see their avatar's body, but can see their hands or weapons.
@@ -1470,7 +1470,7 @@ first-person shooter
 :   A type of shooter game where the player plays from a first-person perspective in a three-dimensional space. in an FPS, the player can move within the space.
 
 Fixed Angle Camera
-:   A camera device that follows the player around the world, without rotation like the [Fixed Point Camera](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#fixedpointcamera). This camera type is useful for players exploring an open area.
+:   A camera device that follows the player around the world, without rotation like the [Fixed Point Camera](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#fixed-point-camera). This camera type is useful for players exploring an open area.
 
 Fixed Point Camera
 :   A device that positions a camera from a fixed position. You can place the camera on a stationary spot and the camera won't move from that spot. However, it can pivot towards a look-at point. This camera is useful when a player is inside a building or in conversation with an NPC.
@@ -1503,13 +1503,13 @@ Foley
 :   Sound effects created in post for film, video, or gaming. It's capitalized out of respect for Jack Foley, the man who invented many of the techniques still used.
 
 force feedback
-:   See [controller rumble](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#controllerrumble).
+:   See [controller rumble](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#controller-rumble).
 
 Fortnite
 :   An ecosystem of islands that includes games and other experiences. Some islands, like Battle Royale, are Epic-made games, but Fortnite also includes developer-made islands, with concerts, events, and just about every genre of game imaginable by developers in the Fortnite developer community.
 
 Fortnite Creative
-:   Fortnite Creative is a [sandbox game](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#sandboxgame) where you can create and save a private island. On your island, you can place or build structures, add landscaping and other [props](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#prop), and use [devices](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#device) to control, direct, and influence the player experience. As a Fortnite developer, you can also invite other players to play on your island.
+:   Fortnite Creative is a [sandbox game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#sandbox-game) where you can create and save a private island. On your island, you can place or build structures, add landscaping and other [props](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#prop), and use [devices](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#device) to control, direct, and influence the player experience. As a Fortnite developer, you can also invite other players to play on your island.
 
 Fortnite developer
 :   Someone who makes custom content for Fortnite, who combines a passion for games with a powerful collection of tools to build their own new islands that they can share with friends and followers. As a Fortnite developer, your only limits are how well you know your tools — and your imagination!
@@ -1527,7 +1527,7 @@ Fortnite island
 :   Any of the islands available in Fortnite. Some are Epic-created, and new islands are added daily by Fortnite developers.
 
 Fortnite Item Shop
-:   The Item Shop in Fortnite is where you can purchase [Battle Passes](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#battlepass), special offers and bundles, and new weapons, [outfits](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#outfit), and other [cosmetics](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#cosmetics).
+:   The Item Shop in Fortnite is where you can purchase [Battle Passes](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#battle-pass), special offers and bundles, and new [weapons](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#weapon), [outfits](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#outfit), and other [cosmetics](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#cosmetics).
 
 Fortnite Zero Build
 :   A no-build game where players focus on sharpshooting and quick reactions without any [in-game](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#in-game) building.

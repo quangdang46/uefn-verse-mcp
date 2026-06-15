@@ -29,5 +29,3 @@ Learn technical details about the Itemization module.
 | [`unequip_item_error`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/itemization/unequip_item_error) |  |
 | [`unequip_item_query_event`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/itemization/unequip_item_query_event) |  |
 | [`item_component`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/itemization/item_component) | Anything using this component should be considered an item. Required to interact with inventories. |
-| [`item_details_component`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/itemization/item_details_component) | Deprecated. Please use description_component instead. |
-| [`item_icon_component`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/itemization/item_icon_component) | Deprecated. Please use icon_component instead. |

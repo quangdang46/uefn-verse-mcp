@@ -78,5 +78,10 @@ Within UEFN you can import and assign animations to skeletal meshes. Then, using
   Making Cinematics and Cutscenes
 
   Discover all the elements you need to create satisfying and thoughtful cinematics for your game.](https://dev.epicgames.com/documentation/fortnite/making-cinematics-and-cutscenes-in-unreal-editor-for-fortnite)
+- [![Skeletal Animation in Scene Graph](https://dev.epicgames.com/community/api/documentation/image/2ee5ad28-2ce5-467c-a70a-a693bd16779c?resizing_type=fit&width=640&height=640)
+
+  Skeletal Animation in Scene Graph
+
+  Learn to play and stop skeletal animation on entities using Verse and Scene Graph.](https://dev.epicgames.com/documentation/fortnite/skeletal-animation-in-scene-graph-in-fortnite)
 
 [Take Recorder](https://dev.epicgames.com/documentation/unreal-engine/take-recorder-in-unreal-engine?application_version=5.5) is an Unreal Engine animation tool available in UEFN that works well with MetaHumans. All functionality of Take Recorder works in UEFN except Spawnables and PIE.
