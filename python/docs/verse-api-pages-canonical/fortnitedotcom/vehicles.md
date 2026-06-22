@@ -9,6 +9,12 @@ Module import path: /Fortnite.com/Vehicles
 - [`Fortnite.com`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom)
 - **`Vehicles`**
 
+## Classes and Structs
+
+| Name | Description |
+| --- | --- |
+| [`fort_vehicle_seat`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/vehicles/fort_vehicle_seat) | Represents a seat in a `fort_vehicle`. |
+
 ## Interfaces
 
 | Name | Description |

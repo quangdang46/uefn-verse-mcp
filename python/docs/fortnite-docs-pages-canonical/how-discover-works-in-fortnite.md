@@ -155,6 +155,7 @@ Selecting a game tag is not the same as selecting a genre — game tags are used
 | **Horror** | Experiences designed primarily around fear, dread, and atmosphere. These types of islands rely on jump scares and psychological elements. |
 | **Music & Rhythm** | Islands centered around music creation, performance, or rhythm-based gameplay. Players react to, perform with, or interact through music in a way that drives the core game loop. This is distinct from maps that simply have a good soundtrack. |
 | **Party & Mini Games** | Islands designed for casual, short-session multiplayer fun with a reset loop. A round ends, someone wins, everyone plays again. |
+| **Roguelike** | Islands built around run-based gameplay where players take on a series of levels or challenges, restarting from the beginning when defeated. Escalating difficulty, permanent elimination, and progression that carries between runs define the core loop. |
 | **Roleplaying & Social** | Islands built around player-driven storytelling, social interaction, and creative expression rather than structured competitive gameplay. Players inhabit a role or an identity for a character in a shared world and space. |
 | **Shooter** | Combat experiences where gunplay is the primary mechanic, but the format isn't Battle Royale. The goal is to rack up eliminations, not survival, like in free-for-alls, arenas, and training maps. |
 | **Simulation & Tycoon** | Islands where players build, manage, grow, or optimize systems over time. Progress comes from accumulation and decision-making across sessions. |

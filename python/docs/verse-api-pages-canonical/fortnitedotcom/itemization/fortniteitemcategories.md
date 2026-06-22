@@ -31,3 +31,11 @@ Module import path: /Fortnite.com/Itemization/FortniteItemCategories
 |  |  |
 | --- | --- |
 | `Resource` |  |
+
+|  |  |
+| --- | --- |
+| `WeaponMelee` |  |
+
+|  |  |
+| --- | --- |
+| `WeaponRanged` |  |

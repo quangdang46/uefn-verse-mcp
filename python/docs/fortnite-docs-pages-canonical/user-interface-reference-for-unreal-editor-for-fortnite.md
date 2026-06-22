@@ -397,7 +397,7 @@ Unreal Revision Control is a custom embedded [revision control](https://dev.epic
 
 Refer to the following documentation for more information.
 
-- **[Unreal Revision Control](https://dev.epicgames.com/documentation/fortnite/unreal-revision-control-in-unreal-editor-for-fortnite)**
+- **[Unreal Revision Control](https://dev.epicgames.com/documentation/fortnite/lore-version-control-in-unreal-editor-for-fortnite)**
 - **[Unreal Revision Control Best Practices](https://dev.epicgames.com/documentation/fortnite/unreal-revision-control-best-practices-in-unreal-editor-for-fortnite)**
 - **[Conflicts in Revision Control](https://dev.epicgames.com/documentation/fortnite/conflicts-in-unreal-revision-control-in-unreal-editor-for-fortnite)**
 

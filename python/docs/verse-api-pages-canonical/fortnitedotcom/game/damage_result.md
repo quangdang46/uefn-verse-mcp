@@ -22,3 +22,4 @@ This struct has data members, but no functions.
 | `Amount` | `float` | Amount of damage applied to `Target`. |
 | `Instigator` | `?game_action_instigator` | Player, agent, etc. that instigated the damage to `Target`. Can be false when damage is instigated by code, the environment, etc. |
 | `Source` | `?game_action_causer` | Player, weapon, vehicle, etc. that damaged `Target`. Can be false when damage is caused by code, the environment, etc. |
+| `IsWeakpointDamage` | `logic` | `true` if the damage hit a weakpoint, `false` otherwise. |

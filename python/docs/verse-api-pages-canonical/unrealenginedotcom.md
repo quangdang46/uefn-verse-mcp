@@ -9,7 +9,6 @@ Learn technical details about the UnrealEngine.com module.
   - [`Conversations`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/conversations)
   - [`Itemization`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/itemization)
   - [`WebAPI`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/webapi)
-  - [`SceneGraph`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/scenegraph)
   - [`Temporary`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/temporary)
   - [`JSON`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/json)
   - [`ControlInput`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/controlinput)

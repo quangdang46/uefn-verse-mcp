@@ -25,7 +25,7 @@ Icon Component
 
 Now when the item is picked up by a player, the Icon is used in the hotbar and Backpack UI elements.
 
-Once the [Custom Items and Inventory system](https://dev.epicgames.com/documentation/fortnite/custom-items-and-inventory-overview-in-fortnite) is enabled the `icon_component` is listed in the component dropdown list. For more information check out the [icon_component API reference](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/scenegraph) from the [Verse API](https://dev.epicgames.com/documentation/fortnite/verse-api).
+Once the [Custom Items and Inventory system](https://dev.epicgames.com/documentation/fortnite/custom-items-and-inventory-overview-in-fortnite) is enabled the `icon_component` is listed in the component dropdown list. For more information check out the icon_component API reference from the [Verse API](https://dev.epicgames.com/documentation/fortnite/verse-api).
 
 ## Verse: Icon
 

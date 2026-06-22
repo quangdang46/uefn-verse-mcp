@@ -26,7 +26,7 @@ Revision-controlled group projects in UEFN are accessible to all team members as
 
 Always [sync a group project](https://dev.epicgames.com/documentation/fortnite/collaborating-in-unreal-editor-for-fortnite) before opening and editing it in UEFN.
 
-Start by [creating and naming a new project](https://dev.epicgames.com/documentation/en-us/uefn/project-organization-in-unreal-editor-for-fortnite) then adding [Revision Control](https://dev.epicgames.com/documentation/fortnite/unreal-revision-control-in-unreal-editor-for-fortnite). Once the project opens, you can add devices and props to the viewport and save them.
+Start by [creating and naming a new project](https://dev.epicgames.com/documentation/en-us/uefn/project-organization-in-unreal-editor-for-fortnite) then adding [Revision Control](https://dev.epicgames.com/documentation/fortnite/lore-version-control-in-unreal-editor-for-fortnite). Once the project opens, you can add devices and props to the viewport and save them.
 
 [![Tick the Source Control box to add source control to your projects](https://dev.epicgames.com/community/api/documentation/image/bf15d91f-de19-44a6-bf9c-a393ef4d2c97?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/bf15d91f-de19-44a6-bf9c-a393ef4d2c97?resizing_type=fit)
 

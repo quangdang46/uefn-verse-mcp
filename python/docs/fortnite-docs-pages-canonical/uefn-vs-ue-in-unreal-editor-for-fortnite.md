@@ -108,7 +108,7 @@ Both UEFN and UE use output logs to provide information about processing request
 
 ![Unreal Revision Control in UEFN.](https://d1iv7db44yhgxn.cloudfront.net/documentation/images/814fcc48-ec47-4718-a8c7-685b1171a387/unreal-revision-control.png)
 
-[Unreal Revision Control](https://dev.epicgames.com/documentation/fortnite/unreal-revision-control-in-unreal-editor-for-fortnite) is a [revision control](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#revision-control) system that comes natively with UEFN. Revision control provides a way for teams to collaborate on projects and keep a source of truth for all assets within the project.
+[Unreal Revision Control](https://dev.epicgames.com/documentation/fortnite/lore-version-control-in-unreal-editor-for-fortnite) is a [revision control](https://dev.epicgames.com/documentation/fortnite/unreal-editor-for-fortnite-glossary#revision-control) system that comes natively with UEFN. Revision control provides a way for teams to collaborate on projects and keep a source of truth for all assets within the project.
 
 ### Bottom Toolbar
 

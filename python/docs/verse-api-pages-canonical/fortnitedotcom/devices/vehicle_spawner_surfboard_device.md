@@ -32,6 +32,7 @@ This class has both data members and functions.
 | `AgentExitsVehicleEvent` | `listenable(payload)` | Signaled when an `agent` exits the vehicle. Sends the `agent` that exited the vehicle. |
 | `DestroyedEvent` | `listenable(payload)` | Signaled when a vehicle is destroyed. |
 | `SpawnedEvent` | `listenable(payload)` | Signaled when a vehicle is spawned or respawned by this device. Sends the fort_vehicle who was spawned. |
+| `Vehicle` | `??fort_vehicle` | The `fort_vehicle` currently associated with this spawner, if one exists. |
 | `VehicleDestroyedEvent` | `listenable(payload)` | Signaled when a vehicle is destroyed. Deprecated, use DestroyedEvent instead. |
 | `VehicleSpawnedEvent` | `listenable(payload)` | Signaled when a vehicle is spawned or respawned by this device. Deprecated, use SpawnedEvent instead. |
 

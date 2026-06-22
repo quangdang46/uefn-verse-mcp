@@ -24,11 +24,6 @@ Want to see these concepts and devices in action? Check out our tutorials:
 
 - [Create Your Own NPC Medic](create-your-own-npc-medic-in-verse)
 
-- [![Stronghold Template](https://dev.epicgames.com/community/api/documentation/image/1112f8be-2134-4257-b0af-dee5b34b0bd0?resizing_type=fit&width=640&height=640)
-
-  Stronghold Template
-
-  Use Verse to create a stealth game where players must eliminate guards.](https://dev.epicgames.com/documentation/fortnite/stronghold-template-in-unreal-editor-for-fortnite)
 - [![Understanding NPC Behaviors](https://dev.epicgames.com/community/api/documentation/image/954fbfd7-ee72-4cb4-89f3-eff4d2ddfac4?resizing_type=fit&width=640&height=640)
 
   Understanding NPC Behaviors
@@ -44,23 +39,33 @@ Want to see these concepts and devices in action? Check out our tutorials:
   NPC Character Definitions
 
   Create Character Definitions to add attributes that can be imported into the NPC Spawner device.](https://dev.epicgames.com/documentation/fortnite/using-npc-character-definitions-in-unreal-editor-for-fortnite)
-- [![Using the NPC Spawner with Animations](https://dev.epicgames.com/community/api/documentation/image/1590af62-93d3-4eaf-8f3f-98ff87bd64a3?resizing_type=fit&width=640&height=640)
-
-  Using the NPC Spawner with Animations
-
-  Use custom animations and emotes with the NPC Spawner device and Verse code.](https://dev.epicgames.com/documentation/fortnite/using-the-npc-spawner-with-animations-in-unreal-editor-for-fortnite)
-- [![Create Custom NPC Behavior](https://dev.epicgames.com/community/api/documentation/image/9e99e55e-06b3-4b21-9638-015f4a17afd0?resizing_type=fit&width=640&height=640)
-
-  Create Custom NPC Behavior
-
-  Use Verse code to create your own NPC behavior unique to your game design needs!](https://dev.epicgames.com/documentation/fortnite/create-custom-npc-behavior-in-unreal-editor-for-fortnite)
-- [![NPC Types](https://dev.epicgames.com/community/api/documentation/image/e7d06166-18a5-426c-89a9-20e6a556eac6?resizing_type=fit&width=640&height=640)
-
-  NPC Types
-
-  Learn about the different types of NPCs and how each of them works.](https://dev.epicgames.com/documentation/fortnite/npc-types-in-unreal-editor-for-fortnite)
 - [![LLM Conversations](https://dev.epicgames.com/community/api/documentation/image/e08d1c24-df96-4a7e-b896-a5c05c45240c?resizing_type=fit&width=640&height=640)
 
   LLM Conversations
 
   Learn how to create unique interactive personas for your experience.](https://dev.epicgames.com/documentation/fortnite/llm-conversations-in-unreal-editor-for-fortnite)
+- [![NPC Types](https://dev.epicgames.com/community/api/documentation/image/e7d06166-18a5-426c-89a9-20e6a556eac6?resizing_type=fit&width=640&height=640)
+
+  NPC Types
+
+  Learn about the different types of NPCs and how each of them works.](https://dev.epicgames.com/documentation/fortnite/npc-types-in-unreal-editor-for-fortnite)
+- [![Create Custom NPC Behavior](https://dev.epicgames.com/community/api/documentation/image/9e99e55e-06b3-4b21-9638-015f4a17afd0?resizing_type=fit&width=640&height=640)
+
+  Create Custom NPC Behavior
+
+  Use Verse code to create your own NPC behavior unique to your game design needs!](https://dev.epicgames.com/documentation/fortnite/create-custom-npc-behavior-in-unreal-editor-for-fortnite)
+- [![Using the NPC Spawner with Animations](https://dev.epicgames.com/community/api/documentation/image/1590af62-93d3-4eaf-8f3f-98ff87bd64a3?resizing_type=fit&width=640&height=640)
+
+  Using the NPC Spawner with Animations
+
+  Use custom animations and emotes with the NPC Spawner device and Verse code.](https://dev.epicgames.com/documentation/fortnite/using-the-npc-spawner-with-animations-in-unreal-editor-for-fortnite)
+- [![Stronghold Template](https://dev.epicgames.com/community/api/documentation/image/1112f8be-2134-4257-b0af-dee5b34b0bd0?resizing_type=fit&width=640&height=640)
+
+  Stronghold Template
+
+  Use Verse to create a stealth game where players must eliminate guards.](https://dev.epicgames.com/documentation/fortnite/stronghold-template-in-unreal-editor-for-fortnite)
+- [![Using Sidekick NPCs](https://dev.epicgames.com/community/api/documentation/image/210a73a4-0789-498c-adce-05ccd178b636?resizing_type=fit&width=640&height=640)
+
+  Using Sidekick NPCs
+
+  Introducing Sidekicks in Fortnite.](https://dev.epicgames.com/documentation/fortnite/using-sidekick-npcs-in-fortnite)

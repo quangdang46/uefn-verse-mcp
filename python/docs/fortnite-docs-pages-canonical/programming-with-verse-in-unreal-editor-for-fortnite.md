@@ -67,16 +67,16 @@ Learn how to use the following Verse features in UEFN to customize your game eve
   Editable Properties
 
   Learn how to expose device properties from your Verse-authored device and modify them in Unreal Editor for Fortnite.](https://dev.epicgames.com/documentation/fortnite/editable-properties-in-verse)
-- [![Debug Your Game with Debug Draw](https://dev.epicgames.com/community/api/documentation/image/3019e832-cdf2-445f-a036-a9f3ad2695c8?resizing_type=fit&width=640&height=640)
-
-  Debug Your Game with Debug Draw
-
-  Use Verse to draw shapes to help debug your game.](https://dev.epicgames.com/documentation/fortnite/debug-your-game-with-debug-draw-in-verse)
 - [![Debugging and Troubleshooting](https://dev.epicgames.com/community/api/documentation/image/1c1b700b-09ae-4e15-8545-e1c162bf211d?resizing_type=fit&width=640&height=640)
 
   Debugging and Troubleshooting
 
   Learn how to debug and troubleshoot your Verse code.](https://dev.epicgames.com/documentation/fortnite/debugging-and-troubleshooting-in-verse)
+- [![Debug Your Game with Debug Draw](https://dev.epicgames.com/community/api/documentation/image/3019e832-cdf2-445f-a036-a9f3ad2695c8?resizing_type=fit&width=640&height=640)
+
+  Debug Your Game with Debug Draw
+
+  Use Verse to draw shapes to help debug your game.](https://dev.epicgames.com/documentation/fortnite/debug-your-game-with-debug-draw-in-verse)
 - [![Exposing Assets with Asset Reflection to Verse](https://dev.epicgames.com/community/api/documentation/image/da919d8f-a4ab-4492-bd22-4789027131c4?resizing_type=fit&width=640&height=640)
 
   Exposing Assets with Asset Reflection to Verse
@@ -87,11 +87,6 @@ Learn how to use the following Verse features in UEFN to customize your game eve
   Using Persistable Data in Verse
 
   Create custom save data that persists across game sessions in Verse.](https://dev.epicgames.com/documentation/fortnite/using-persistable-data-in-verse)
-- [![Verse Tags](https://dev.epicgames.com/community/api/documentation/image/63afe4ce-f9e4-4fcf-9c4f-9afaba0c6cd0?resizing_type=fit&width=640&height=640)
-
-  Verse Tags
-
-  Find all objects marked with a Verse Tag while the game is running, using Verse.](https://dev.epicgames.com/documentation/fortnite/verse-tags-in-fortnite)
 - [![Verse Persistence Best Practices](https://dev.epicgames.com/community/api/documentation/image/26a6a163-d255-4b2a-a3b0-656a1a4f066d?resizing_type=fit&width=640&height=640)
 
   Verse Persistence Best Practices
@@ -102,6 +97,11 @@ Learn how to use the following Verse features in UEFN to customize your game eve
   Linked Lists
 
   Use Verse to create a data structure that links nodes from head to tail](https://dev.epicgames.com/documentation/fortnite/linked-lists-in-verse)
+- [![Verse Tags](https://dev.epicgames.com/community/api/documentation/image/63afe4ce-f9e4-4fcf-9c4f-9afaba0c6cd0?resizing_type=fit&width=640&height=640)
+
+  Verse Tags
+
+  Find all objects marked with a Verse Tag while the game is running, using Verse.](https://dev.epicgames.com/documentation/fortnite/verse-tags-in-fortnite)
 - [![Stacks and Queues](https://dev.epicgames.com/community/api/documentation/image/93cd0f8e-78aa-41ab-88d0-ada099da0643?resizing_type=fit&width=640&height=640)
 
   Stacks and Queues

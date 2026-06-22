@@ -71,16 +71,6 @@ Open UEFN and select **Create a New Project** from the Project menu on the Level
   LEGO® Asset Inventory
 
   Check out the inventory of LEGO® assets available through the LEGO template islands.](https://dev.epicgames.com/documentation/fortnite/lego-asset-inventory-in-fortnite-creative)
-- [![Assembly Devices](https://dev.epicgames.com/community/api/documentation/image/179e93d7-d468-4c06-9991-a04294085b9f?resizing_type=fit&width=640&height=640)
-
-  Assembly Devices
-
-  Set up prop environments for players to build with the LEGO® Assembly device.](https://dev.epicgames.com/documentation/fortnite/using-lego-assembly-devices-in-fortnite-creative)
-- [![Collectible Devices](https://dev.epicgames.com/community/api/documentation/image/d5cb452b-49d8-412e-ad1f-8294ba308ed9?resizing_type=fit&width=640&height=640)
-
-  Collectible Devices
-
-  Award players collectible studs throughout their LEGO adventures to fulfill device and score requirements.](https://dev.epicgames.com/documentation/fortnite/using-lego-collectible-devices-in-fortnite-creative)
 - [![LEGO® Templates](https://dev.epicgames.com/community/api/documentation/image/d6970853-47c2-4129-b6a8-2bd8351d7495?resizing_type=fit&width=640&height=640)
 
   LEGO® Templates
@@ -91,3 +81,13 @@ Open UEFN and select **Create a New Project** from the Project menu on the Level
   LEGO® Brick Editor
 
   Use the LEGO® Brick Editor to build your own custom LEGO assets for your project.](https://dev.epicgames.com/documentation/fortnite/lego-brick-editor-in-fortnite)
+- [![Collectible Devices](https://dev.epicgames.com/community/api/documentation/image/d5cb452b-49d8-412e-ad1f-8294ba308ed9?resizing_type=fit&width=640&height=640)
+
+  Collectible Devices
+
+  Award players collectible studs throughout their LEGO adventures to fulfill device and score requirements.](https://dev.epicgames.com/documentation/fortnite/using-lego-collectible-devices-in-fortnite-creative)
+- [![Assembly Devices](https://dev.epicgames.com/community/api/documentation/image/179e93d7-d468-4c06-9991-a04294085b9f?resizing_type=fit&width=640&height=640)
+
+  Assembly Devices
+
+  Set up prop environments for players to build with the LEGO® Assembly device.](https://dev.epicgames.com/documentation/fortnite/using-lego-assembly-devices-in-fortnite-creative)

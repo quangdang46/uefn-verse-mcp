@@ -443,7 +443,7 @@ F-axis
 :   In a 3D space (real or virtual), the F-axis represents horizontal forward/backward (or north/south) movement. Also see axis.
 
 face
-:   A surface comprised of three or more connected edges. The side of a cube can contain a single face, or multiple faces. Each face can be [extruded](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#extrude).
+:   A surface comprised of three or more connected edges. The side of a cube can contain a single face, or multiple faces. Each face can be [extruded](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#extrude).
 
 falloff
 :   A gradual reduction in something over space or time. This term could apply to lighting, terrain, or sound, for example.
@@ -457,7 +457,7 @@ field of view
     With a camera device, **field of view** refers to what the camera (and by extension, the player) can actually see. The field of view is represented as an angle, and is measured in degrees. Angles are two lines that join at a point called the **vertex**. With cameras, the vertex is the lens (virtual in this case) of the camera. The arms of the angle spread up and down (the vertical axis) from that vertex. The higher the number of degrees, the wider the angle, and the more the camera can see.
 
 fill light
-:   A secondary source of light in a scene that doesn't change the character of the [key light](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#keylight). Fill lights are used primarily to lighten shadows.
+:   A secondary source of light in a scene that doesn't change the character of the [key light](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#key-light). Fill lights are used primarily to lighten shadows.
 
 filter
 :   In audio signal processing, a filter determines which sound frequencies are heard. Different filters process audio in different ways. For example, a low-pass filter allows lower frequencies to be heard while reducing or eliminating higher frequencies.
@@ -469,7 +469,7 @@ first-person shooter
 :   A type of shooter game where the player plays from a first-person perspective in a three-dimensional space. in an FPS, the player can move within the space.
 
 FK rigging
-:   FK (Forward Kinematics) is how the positions for different parts of a model at specified times are calculated for both position and orientation. FK refers to the effect on the child nodes as the parent moves or rotates. Compare to [IK rigging](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#ikrigging).
+:   FK (Forward Kinematics) is how the positions for different parts of a model at specified times are calculated for both position and orientation. FK refers to the effect on the child nodes as the parent moves or rotates. Compare to [IK rigging](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ik-rigging).
 
 float value
 :   A float value is a value based on a floating point number. This is a positive or negative whole number with a decimal point. For example, 5.1, 0.25, and -122.333 are all floating point numbers, but 76 and 0 are not. These are called floating point numbers because the decimal point can "float" to any position necessary.
@@ -481,7 +481,7 @@ Fortnite DS
 :   A Fortnite-dedicated server is a technical component for UEFN. Downloading projects directly from Creative is possible when a dedicated server is live with the project.
 
 FOV
-:   See [field of view](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#fieldofview).
+:   See [field of view](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#field-of-view).
 
 frame rate
 :   Frame rate, or fps (frames per second) for short, is the number of frames that appear in any kind of streaming content per second. While streaming videos and broadcast TV usually use a frame rate of 24 fps, streaming games usually use a higher rate of 30 or 60 fps. You can adjust the frame rate in Creative by pressing the Tab key, then under Menu, clicking Settings > Video > Frame Rate Limit, and selecting a different frame rate.

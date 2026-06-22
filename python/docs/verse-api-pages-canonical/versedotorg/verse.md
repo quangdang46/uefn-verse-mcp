@@ -7,6 +7,8 @@ Learn technical details about the Verse module.
 - [`Verse.org`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg)
 - **`Verse`**
 
+  - [`Easing`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/easing)
+
 ## Classes and Structs
 
 | Name | Description |
@@ -16,6 +18,7 @@ Learn technical details about the Verse module.
 | [`event(t)`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/event/event(t)) | A *recurring*, successively signaled parametric `event` with a `payload` allowing a simple mechanism to coordinate between concurrent tasks. |
 | [`locale`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/locale) | Used for message localization. |
 | [`message`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/message) | A localizable text message. |
+| [`modifier_stack(t)`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/modifier_stack/modifier_stack(t)) | Modifier stacks provide an ordered application of modifiers. |
 
 ## Interfaces
 
@@ -100,6 +103,7 @@ Learn technical details about the Verse module.
 | [`listenable`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/listenable) | A parametric interface combining `awaitable` and `subscribable`. |
 | [`listenable`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/listenable-1) | A parameterless interface combining `awaitable` and `subscribable`. |
 | [`Localize`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/localize) | Makes a `string` by localizing `Message` based on the current `locale`. |
+| [`Join`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/join) | Makes a `message` by concatenating `Separator` between the elements of `Messages`. |
 | [`Clamp`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/clamp) | Constrains the value of `Val` between `A` and `B`. Robustly handles different argument orderings. Returns the median of `Val`, `A`, and `B`, such that comparisons with `NaN` operate as if `NaN > +Inf`. |
 | [`Clamp`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/clamp-1) | Constrains the value of `Val` between `A` and `B`. Robustly handles different argument orderings. Returns the median of `Val`, `A`, and `B`. |
 | [`Min`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/min) | Returns the minimum of `X` and `Y`. |
@@ -134,11 +138,13 @@ Learn technical details about the Verse module.
 | [`MakeSuccess`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/makesuccess) |  |
 | [`MakeError`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/makeerror) |  |
 | [`signalable`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/signalable) | A parametric interface implemented by events with a `payload` that can be signaled. Can be used with `awaitable`, `subscribable`, or both (see: `listenable`). |
-| [`Join`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/join) | Makes a `string` by concatenating `Separator` between the elements of `Strings`. |
+| [`Join`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/join-1) | Makes a `string` by concatenating `Separator` between the elements of `Strings`. |
 | [`ToString`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/tostring-2) | Returns `String` without modification. |
 | [`ToString`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/tostring-3) | Makes a `string` from `Character`. |
 | [`subscribable`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/subscribable) | A parametric interface implemented by events with a `payload` that can be subscribed to. Matched with `signalable.` |
 | [`subscribable`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/subscribable-1) | A parameterless interface implemented by events that can be subscribed to. |
+| [`modifier`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/modifier) | Implemented by classes to provide a method for modification evaluation. |
+| [`modifier_stack`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/modifier_stack) | Modifier stacks provide an ordered application of modifiers. |
 
 ## Data
 

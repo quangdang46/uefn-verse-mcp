@@ -13,6 +13,11 @@ Learn how to build your own island lanscapes and environments in UEFN!
   Foliage Mode
 
   Create a breathtaking landscape quickly using Foliage Mode.](https://dev.epicgames.com/documentation/fortnite/foliage-mode-in-unreal-editor-for-fortnite)
+- [![Fortnite Tools Mode](https://dev.epicgames.com/community/api/documentation/image/bd0cbf09-402d-4f07-ba6b-4269adbcb1b4?resizing_type=fit&width=640&height=640)
+
+  Fortnite Tools Mode
+
+  Increase productivity in UEFN when building an island with the Fortnite toolset.](https://dev.epicgames.com/documentation/fortnite/fortnite-tools-mode-in-fortnite)
 - [![Procedural Building Template](https://dev.epicgames.com/community/api/documentation/image/e76fb853-0f04-4ca4-8629-787ea1ea2302?resizing_type=fit&width=640&height=640)
 
   Procedural Building Template
@@ -38,8 +43,3 @@ Learn how to build your own island lanscapes and environments in UEFN!
   Editing Landscape Material
 
   Learn how to edit landscape material to create a custom look for your terrain.](https://dev.epicgames.com/documentation/fortnite/editing-landscape-material-in-unreal-editor-for-fortnite)
-- [![Fortnite Tools Mode](https://dev.epicgames.com/community/api/documentation/image/bd0cbf09-402d-4f07-ba6b-4269adbcb1b4?resizing_type=fit&width=640&height=640)
-
-  Fortnite Tools Mode
-
-  Increase productivity in UEFN when building an island with the Fortnite toolset.](https://dev.epicgames.com/documentation/fortnite/fortnite-tools-mode-in-fortnite)

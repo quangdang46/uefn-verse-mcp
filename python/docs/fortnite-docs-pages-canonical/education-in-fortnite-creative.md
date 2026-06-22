@@ -32,6 +32,16 @@ By working with Fortnite, students have an opportunity to gain insights into gam
   Learn with LEGO® Fortnite
 
   Find lessons that lean on LEGO Islands!](https://dev.epicgames.com/documentation/fortnite/learn-with-lego-fortnite)
+- [![Explore TIME Studios' March Through Time in Fortnite](https://dev.epicgames.com/community/api/documentation/image/7fa4e440-400e-4201-9ca4-fcdc0153b46d?resizing_type=fit&width=640&height=640)
+
+  Explore TIME Studios' March Through Time in Fortnite
+
+  TIME Studios brings March Through Time to Fortnite, an interactive journey exploring Dr. King's historic impact.](https://dev.epicgames.com/documentation/fortnite/mlk-march-through-time-in-fortnite-creative)
+- [![Lives After Death: The Pyramids of Giza](https://dev.epicgames.com/community/api/documentation/image/e6578eb1-f618-4e4e-94f9-572b557ca4d4?resizing_type=fit&width=640&height=640)
+
+  Lives After Death: The Pyramids of Giza
+
+  Explore life after death in Fourth Dynasty Egypt on an island built with Unreal Editor for Fortnite, and send your students on a virtual archeological exploration.](https://dev.epicgames.com/documentation/fortnite/lesson-plan-lives-after-death-pyramids-of-giza-made-with-uefn)
 - [![Hour of Code Lessons](https://dev.epicgames.com/community/api/documentation/image/37c39b4b-4f72-4ce9-8845-4c01a33093cf?resizing_type=fit&width=640&height=640)
 
   Hour of Code Lessons
@@ -47,18 +57,8 @@ By working with Fortnite, students have an opportunity to gain insights into gam
   Science, Engineering, and Math Lessons
 
   Integrate these lessons to educate students in science, engineering, and math concepts!](https://dev.epicgames.com/documentation/fortnite/science-engineering-and-math-lesson-plans-in-fortnite-creative)
-- [![Explore TIME Studios' March Through Time in Fortnite](https://dev.epicgames.com/community/api/documentation/image/7fa4e440-400e-4201-9ca4-fcdc0153b46d?resizing_type=fit&width=640&height=640)
-
-  Explore TIME Studios' March Through Time in Fortnite
-
-  TIME Studios brings March Through Time to Fortnite, an interactive journey exploring Dr. King's historic impact.](https://dev.epicgames.com/documentation/fortnite/mlk-march-through-time-in-fortnite-creative)
 - [![Sustainable Development Goals Lesson Plans](https://dev.epicgames.com/community/api/documentation/image/e00af4e3-2d42-436d-80d8-083c4304a989?resizing_type=fit&width=640&height=640)
 
   Sustainable Development Goals Lesson Plans
 
   Use these lesson plans to engage students in learning about the Sustainable Development Goals developed by the United Nations.](https://dev.epicgames.com/documentation/fortnite/un-sustainable-development-goals-lesson-plans-in-fortnite-creative)
-- [![Lives After Death: The Pyramids of Giza](https://dev.epicgames.com/community/api/documentation/image/e6578eb1-f618-4e4e-94f9-572b557ca4d4?resizing_type=fit&width=640&height=640)
-
-  Lives After Death: The Pyramids of Giza
-
-  Explore life after death in Fourth Dynasty Egypt on an island built with Unreal Editor for Fortnite, and send your students on a virtual archeological exploration.](https://dev.epicgames.com/documentation/fortnite/lesson-plan-lives-after-death-pyramids-of-giza-made-with-uefn)

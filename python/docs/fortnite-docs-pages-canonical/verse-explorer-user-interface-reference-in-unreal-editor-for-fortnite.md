@@ -69,7 +69,7 @@ The search bar at the top of the Explorer can be used to search the directory li
 
 ## Unreal Revision Control Integration
 
-Verse Explorer works with [Unreal Revision Control](https://dev.epicgames.com/documentation/fortnite/unreal-revision-control-in-unreal-editor-for-fortnite) for version control of your Verse files and the submodules in your project.
+Verse Explorer works with [Unreal Revision Control](https://dev.epicgames.com/documentation/fortnite/lore-version-control-in-unreal-editor-for-fortnite) for version control of your Verse files and the submodules in your project.
 
 ![New menu options are available when you integrate Unreal Revision Control](https://d1iv7db44yhgxn.cloudfront.net/documentation/images/128278cd-356e-4672-bda6-565033d9b661/urc-integration.png)
 

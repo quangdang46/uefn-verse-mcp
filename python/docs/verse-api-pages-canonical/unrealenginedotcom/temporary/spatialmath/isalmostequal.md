@@ -10,7 +10,7 @@ Succeeds when each component of `V1` and `V2` are within `AbsoluteTolerance` of 
 | --- | --- |
 | Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }` |
 
-`IsAlmostEqual<public>(V1:vector2, V2:vector2, AbsoluteTolerance:float)<computes><decides>:void`
+`IsAlmostEqual<public>(V1:vector2, V2:vector2, AbsoluteTolerance:float):void`
 
 ## Parameters
 
@@ -31,12 +31,3 @@ The following specifiers determine how you can interact with `IsAlmostEqual` in 
 | Specifier | Meaning |
 | --- | --- |
 | `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data. |
-
-### Effects
-
-The following effects determine how `IsAlmostEqual` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
-
-| Effect | Meaning |
-| --- | --- |
-| `computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect. |
-| `decides` | Indicates that the function can fail, and that calling this function is a [failable expression](https://dev.epicgames.com/documentation/fortnite/failure-in-verse#failableexpression). Function definitions with the `decides` effect must also have the `transacts` effect, which means the actions performed by this function can be rolled back (as if the actions were never performed), if there’s a failure anywhere in the function. |

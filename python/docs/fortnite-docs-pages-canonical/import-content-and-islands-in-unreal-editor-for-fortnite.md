@@ -30,6 +30,11 @@ Once you finish importing and configuring your assets, they are added to your pr
   Importing Assets
 
   Import custom assets into UEFN to create unique player experiences.](https://dev.epicgames.com/documentation/fortnite/importing-assets-in-unreal-editor-for-fortnite)
+- [![Interchange Import System](https://dev.epicgames.com/community/api/documentation/image/4a15b067-fa19-4c7a-9054-8301104a55b3?resizing_type=fit&width=640&height=640)
+
+  Interchange Import System
+
+  Learn how to customize your import settings for FBX files and more using the Interchange import system.](https://dev.epicgames.com/documentation/fortnite/interchange-import-system-in-fortnite)
 - [![Configuring Collision for a Static Mesh](https://dev.epicgames.com/community/api/documentation/image/693dff9d-9574-4b46-9d6a-e21c7b148446?resizing_type=fit&width=640&height=640)
 
   Configuring Collision for a Static Mesh
@@ -55,8 +60,3 @@ Once you finish importing and configuring your assets, they are added to your pr
   Importing Fortnite Islands
 
   Bring your Fortnite islands into Unreal Editor for Fortnite to make them even better.](https://dev.epicgames.com/documentation/fortnite/importing-fortnite-islands-into-unreal-editor-for-fortnite)
-- [![Interchange Import System](https://dev.epicgames.com/community/api/documentation/image/4a15b067-fa19-4c7a-9054-8301104a55b3?resizing_type=fit&width=640&height=640)
-
-  Interchange Import System
-
-  Learn how to customize your import settings for FBX files and more using the Interchange import system.](https://dev.epicgames.com/documentation/fortnite/interchange-import-system-in-fortnite)
