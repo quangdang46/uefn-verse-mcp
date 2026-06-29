@@ -19,26 +19,6 @@ Check out [Import Content and Islands](https://dev.epicgames.com/documentation/f
   Fortnite-Ready Assets Best Practices
 
   Learn the how to make assets that will work well when creating islands for publishing in Fortnite.](https://dev.epicgames.com/documentation/fortnite/fortniteready-assets-best-practices-in-fortnite)
-- [![Upgrading Legacy Lighting in Multi-Level Projects](https://dev.epicgames.com/community/api/documentation/image/84000121-d61d-49d8-be6d-66a0c42e8900?resizing_type=fit&width=640&height=640)
-
-  Upgrading Legacy Lighting in Multi-Level Projects
-
-  Upgrade out-of-date world lighting in multi-level projects.](https://dev.epicgames.com/documentation/fortnite/upgrading-legacy-lighting-in-multilevel-projects-in-unreal-editor-for-fortnite)
-- [![Editing Components](https://dev.epicgames.com/community/api/documentation/image/4012bf6b-5a8c-4d23-a96d-33ad6ef69b10?resizing_type=fit&width=640&height=640)
-
-  Editing Components
-
-  Optimize your project by using the Property Matrix to edit the components of a Blueprint or multiple Blueprints.](https://dev.epicgames.com/documentation/fortnite/editing-components-in-unreal-editor-for-fortnite)
-- [![Material Functions](https://dev.epicgames.com/community/api/documentation/image/59dbabe7-3e78-41c2-8807-86b342921fc5?resizing_type=fit&width=640&height=640)
-
-  Material Functions
-
-  Learn how to use material functions to create materials that perform well on low-end platforms.](https://dev.epicgames.com/documentation/fortnite/material-functions-in-unreal-editor-for-fortnite)
-- [![Memory Management](https://dev.epicgames.com/community/api/documentation/image/5f429861-1275-4a07-983d-2535274c527b?resizing_type=fit&width=640&height=640)
-
-  Memory Management
-
-  Tips to optimize memory usage when building your island.](https://dev.epicgames.com/documentation/fortnite/memory-management-in-unreal-editor-for-fortnite)
 - [![Textures Best Practices](https://dev.epicgames.com/community/api/documentation/image/493f9d0b-3118-4fc6-85b2-953fca2e53d7?resizing_type=fit&width=640&height=640)
 
   Textures Best Practices
@@ -49,23 +29,53 @@ Check out [Import Content and Islands](https://dev.epicgames.com/documentation/f
   Level of Detail (LOD) Best Practices
 
   Learn about level of detail settings for your custom assets in Fortnite.](https://dev.epicgames.com/documentation/fortnite/level-of-detail-lod-best-practices-in-fortnite)
-- [![Spatial Profiler](https://dev.epicgames.com/community/api/documentation/image/43edb981-fd10-4a42-94bd-80d297a56e8a?resizing_type=fit&width=640&height=640)
-
-  Spatial Profiler
-
-  Use the spatial profiler to gather metrics on your UEFN islands.](https://dev.epicgames.com/documentation/fortnite/spatial-profiler-in-unreal-editor-for-fortnite)
 - [![Streaming and HLODs](https://dev.epicgames.com/community/api/documentation/image/42744562-4bd0-42a1-82fc-b91268759f7c?resizing_type=fit&width=640&height=640)
 
   Streaming and HLODs
 
   The not-so-secret recipe to building larger islands than ever before.](https://dev.epicgames.com/documentation/fortnite/streaming-and-hlods-in-unreal-editor-for-fortnite)
-- [![Validation and Fix-Up Tool](https://dev.epicgames.com/community/api/documentation/image/b475050c-bf84-4ee4-a635-29693916f51e?resizing_type=fit&width=640&height=640)
+- [![Memory Management](https://dev.epicgames.com/community/api/documentation/image/5f429861-1275-4a07-983d-2535274c527b?resizing_type=fit&width=640&height=640)
 
-  Validation and Fix-Up Tool
+  Memory Management
 
-  Run your projects through the UEFN validation process to fix the things that need fixing!](https://dev.epicgames.com/documentation/fortnite/validation-and-fixup-tool-in-unreal-editor-for-fortnite)
+  Tips to optimize memory usage when building your island.](https://dev.epicgames.com/documentation/fortnite/memory-management-in-unreal-editor-for-fortnite)
+- [![Memory Snapshot](https://dev.epicgames.com/community/api/documentation/image/cdc7f80b-490c-490f-beb2-57c1db632cda?resizing_type=fit&width=640&height=640)
+
+  Memory Snapshot
+
+  Use the Memory Snapshot to analyze asset memory usage and identify high-memory assets on your UEFN islands.](https://dev.epicgames.com/documentation/fortnite/memory-snapshot-in-unreal-editor-for-fortnite)
 - [![Reducing Draw Calls](https://dev.epicgames.com/community/api/documentation/image/d2af4b23-1820-4494-abf8-e117a1577c2e?resizing_type=fit&width=640&height=640)
 
   Reducing Draw Calls
 
   Learn why it’s important to limit the number of draw calls in your projects, and how to do it.](https://dev.epicgames.com/documentation/fortnite/reducing-draw-calls-in-fortnite)
+- [![Simplify Static Meshes](https://dev.epicgames.com/community/api/documentation/image/8ad9b104-dd0a-41e8-969e-051efb1975a5?resizing_type=fit&width=640&height=640)
+
+  Simplify Static Meshes
+
+  Learn how to simplify your static meshes to avoid validation errors.](https://dev.epicgames.com/documentation/fortnite/simplify-static-meshes-in-fortnite)
+- [![Spatial Profiler](https://dev.epicgames.com/community/api/documentation/image/43edb981-fd10-4a42-94bd-80d297a56e8a?resizing_type=fit&width=640&height=640)
+
+  Spatial Profiler
+
+  Use the spatial profiler to gather metrics on your UEFN islands.](https://dev.epicgames.com/documentation/fortnite/spatial-profiler-in-unreal-editor-for-fortnite)
+- [![Material Functions](https://dev.epicgames.com/community/api/documentation/image/59dbabe7-3e78-41c2-8807-86b342921fc5?resizing_type=fit&width=640&height=640)
+
+  Material Functions
+
+  Learn how to use material functions to create materials that perform well on low-end platforms.](https://dev.epicgames.com/documentation/fortnite/material-functions-in-unreal-editor-for-fortnite)
+- [![Validation and Fix-Up Tool](https://dev.epicgames.com/community/api/documentation/image/b475050c-bf84-4ee4-a635-29693916f51e?resizing_type=fit&width=640&height=640)
+
+  Validation and Fix-Up Tool
+
+  Run your projects through the UEFN validation process to fix the things that need fixing!](https://dev.epicgames.com/documentation/fortnite/validation-and-fixup-tool-in-unreal-editor-for-fortnite)
+- [![UEFN Session Inspector](https://dev.epicgames.com/community/api/documentation/image/66ea8450-bdde-47fa-8b00-458270c1d4b3?resizing_type=fit&width=640&height=640)
+
+  UEFN Session Inspector
+
+  Debugging tool that provides greater visibility in launching sessions and live editing.](https://dev.epicgames.com/documentation/fortnite/uefn-session-inspector)
+- [![Editing Components](https://dev.epicgames.com/community/api/documentation/image/4012bf6b-5a8c-4d23-a96d-33ad6ef69b10?resizing_type=fit&width=640&height=640)
+
+  Editing Components
+
+  Optimize your project by using the Property Matrix to edit the components of a Blueprint or multiple Blueprints.](https://dev.epicgames.com/documentation/fortnite/editing-components-in-unreal-editor-for-fortnite)

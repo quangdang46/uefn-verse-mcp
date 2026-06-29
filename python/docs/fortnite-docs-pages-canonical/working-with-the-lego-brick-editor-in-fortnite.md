@@ -14,7 +14,7 @@ Get started by opening the **LEGO Brick Editor**:
 
 - In the toolbar, navigate to the **Selection Mode** dropdown, and select **LEGO**®**Brick Editor**.
 
-  [![Open the LEGO Brick Editor form the Selection dropdown menu.](https://dev.epicgames.com/community/api/documentation/image/1888a3f8-49f2-4815-b58c-e7b15d534057?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1888a3f8-49f2-4815-b58c-e7b15d534057?resizing_type=fit)
+  [![Open the LEGO Brick Editor form the Selection dropdown menu.](https://dev.epicgames.com/community/api/documentation/image/aa36cd37-f5cb-4f76-8ab7-ca57e8e61fe3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/aa36cd37-f5cb-4f76-8ab7-ca57e8e61fe3?resizing_type=fit)
 
   Click to enlarge image.
 
@@ -28,7 +28,7 @@ The LEGO Brick Editor adds a UI panel to the left of the viewport containing all
 
 The LEGO Brick Editor uses the regular editor features of UEFN such as the Outliner, Details panel, and Content Browser. The LEGO Brick Editor also works with all islands that are based on a LEGO template in the Brand Templates tab in the Project Browser.
 
-[![LEGO template islands can be found in the Project Browser under the Brand Template tile.](https://dev.epicgames.com/community/api/documentation/image/551f8d3a-7c0d-4110-a78e-a87289bcf6f9?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/551f8d3a-7c0d-4110-a78e-a87289bcf6f9?resizing_type=fit)
+[![LEGO template islands can be found in the Project Browser under the Brand Template tile.](https://dev.epicgames.com/community/api/documentation/image/044f4352-f4dd-45a6-8353-94c7d7350077?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/044f4352-f4dd-45a6-8353-94c7d7350077?resizing_type=fit)
 
 The LEGO Brick Editor panel has three major sections:
 
@@ -36,7 +36,7 @@ The LEGO Brick Editor panel has three major sections:
 - **Brick Color**
 - **Brick Search and Index**
 
-[![The LEGO Brick Editor panel appears on the left hand side of the screen when you change the mode to LEGO Brick Editor.](https://dev.epicgames.com/community/api/documentation/image/c36dc7e5-c5d5-4e43-904e-65ed82de8ee9?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c36dc7e5-c5d5-4e43-904e-65ed82de8ee9?resizing_type=fit)
+[![The LEGO Brick Editor panel appears on the left hand side of the screen when you change the mode to LEGO Brick Editor.](https://dev.epicgames.com/community/api/documentation/image/b664a1cc-6fb8-4dbc-a840-3ff79b57c28d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b664a1cc-6fb8-4dbc-a840-3ff79b57c28d?resizing_type=fit)
 
 Click to enlarge image.
 
@@ -48,13 +48,13 @@ For more information on Kragle, see the Kragle section below.
 
 ### Brick Color
 
-[![Brick Color has tools that provide a way for you to change the color of bricks already in the viewport, or the bricks you drag out of the brick index.](https://dev.epicgames.com/community/api/documentation/image/5ff65ee5-53f6-4495-bed7-fbaf5ce7dab5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5ff65ee5-53f6-4495-bed7-fbaf5ce7dab5?resizing_type=fit)
+[![Brick Color has tools that provide a way for you to change the color of bricks already in the viewport, or the bricks you drag out of the brick index.](https://dev.epicgames.com/community/api/documentation/image/0d0dead0-5d1a-4b24-9804-a35ac524fd96?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0d0dead0-5d1a-4b24-9804-a35ac524fd96?resizing_type=fit)
 
 Brick Color includes the following features:
 
 After placing a brick, you can change its color from the **Details** panel.
 
-[![Brick color can be changed through the Details panel as well. Select the Static Mesh from the Details panel breakdown window, then change the brick color from the section entitled Color.](https://dev.epicgames.com/community/api/documentation/image/d7b9ac25-940e-4370-9322-a613c0781d21?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d7b9ac25-940e-4370-9322-a613c0781d21?resizing_type=fit)
+[![Brick color can be changed through the Details panel as well. Select the Static Mesh from the Details panel breakdown window, then change the brick color from the section entitled Color.](https://dev.epicgames.com/community/api/documentation/image/78cd7e87-c619-477a-86e9-364ed7a1ed9e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/78cd7e87-c619-477a-86e9-364ed7a1ed9e?resizing_type=fit)
 
 Click to enlarge image.
 
@@ -62,7 +62,7 @@ Click to enlarge image.
 
 The LEGO Brick Editor index lists all available bricks. Scroll through the index to find just the right brick or narrow down your search by typing the name of the brick in the search bar.
 
-[![The brick index has a search bar feature and scrollable window that contains all the available bricks.](https://dev.epicgames.com/community/api/documentation/image/f62ea93d-8273-4b5b-82f3-80b4dbe9dd86?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f62ea93d-8273-4b5b-82f3-80b4dbe9dd86?resizing_type=fit)
+[![The brick index has a search bar feature and scrollable window that contains all the available bricks.](https://dev.epicgames.com/community/api/documentation/image/336b9057-f7f9-4722-b641-32871f2a9c73?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/336b9057-f7f9-4722-b641-32871f2a9c73?resizing_type=fit)
 
 Click to enlarge image.
 
@@ -75,27 +75,7 @@ Why can’t you scale the bricks, you ask? LEGO bricks must maintain a uniform s
 
 As you build, you may want to duplicate the brick or set of bricks you have selected. To do so, press **Ctrl+D** on the keyboard and a copy will spawn adjacent to your selection. You’ll end up using this shortcut a lot as you build.
 
-### The LEGO Brick Index
-
-Below is an overview of all available LEGO bricks in the editor.
-
-| Available LEGO Bricks |  |  |  |  |
-| --- | --- | --- | --- | --- |
-| [An example of a 1 x 1 brick.](https://dev.epicgames.com/community/api/documentation/image/5c17e117-3330-4ea9-98fe-4117808db632?resizing_type=fit)  Brick 1 x 1 | [An example of a 1 x 2 brick.](https://dev.epicgames.com/community/api/documentation/image/31162b05-343d-4690-bd78-122a455fab27?resizing_type=fit)  Brick 1 x 2 | [An example of a 1 x 3 brick.](https://dev.epicgames.com/community/api/documentation/image/52115714-934c-4d5a-84eb-8d8ad2512b14?resizing_type=fit)  Brick 1 x 3 | [An example of a 1 x 4 brick.](https://dev.epicgames.com/community/api/documentation/image/ca262cd9-656e-4d5e-b144-03e69ba43c87?resizing_type=fit)  Brick 1 x 4 | [An example of a 2 x 2 brick.](https://dev.epicgames.com/community/api/documentation/image/0a744883-6f62-4592-b7d5-fbb9062c5073?resizing_type=fit)  Brick 2 x 2 |
-| [An example of a 2 x 3 brick.](https://dev.epicgames.com/community/api/documentation/image/c4aaf3c3-be0e-4124-8c34-44aafd492c47?resizing_type=fit)  Brick 2 x 3 | [An example of a 2 x 4 brick.](https://dev.epicgames.com/community/api/documentation/image/3346a7ac-ffea-4195-ba79-2ccc0a746fdc?resizing_type=fit)  Brick 2 x 4 | [An exampleof a 1 x 4 brick with a bow.](https://dev.epicgames.com/community/api/documentation/image/a65456f3-1c11-4ebd-a8c9-5c847610cb06?resizing_type=fit)  Brick with Bow   1 x 4 | [An example of a 1 x 2 x 1 brick with bow and cutout.](https://dev.epicgames.com/community/api/documentation/image/0fa2bd2e-deb0-4c75-9620-6fd0baa1f86f?resizing_type=fit)  Brick  1 x 2 x 1 Bow, with Cutout | [An example of a small 1 x 1 Nose Cone.](https://dev.epicgames.com/community/api/documentation/image/efb5bb43-584f-4ee7-bcd4-a295389679a9?resizing_type=fit)  Nose Cone Small 1 x 1 |
-| [An example of a 1 x 1 round brick.](https://dev.epicgames.com/community/api/documentation/image/ab5c31b9-aec3-4dab-8858-2a0016598946?resizing_type=fit)  Round Brick  1 x 1 | [An example of a 16 with Cross](https://dev.epicgames.com/community/api/documentation/image/3add9d2c-14a5-433d-b61d-95cd6793dda8?resizing_type=fit)  Brick 16 with Cross | [An example of a 2 x 2 x 2 Nose Cone.](https://dev.epicgames.com/community/api/documentation/image/258dc970-6e3c-4330-9708-3e6c52f7fd5f?resizing_type=fit)  Nose Cone  2 x 2 x 2 | [An example of a 1 x 1 plate.](https://dev.epicgames.com/community/api/documentation/image/bdb89641-41f5-4215-a0a5-776cd7dc6c4c?resizing_type=fit)  Plate 1 x 1 | [An example of a 1 x 2 plate.](https://dev.epicgames.com/community/api/documentation/image/68ed2448-cc3e-4a20-a0fb-f8757b3691ea?resizing_type=fit)  Plate 1 x 2 |
-| [An example of a 1 x 3 plate.](https://dev.epicgames.com/community/api/documentation/image/daa47af8-fc46-435d-a530-b203c1654bb7?resizing_type=fit)  Plate 1 x 3 | [An example of a 1 x 4 plate.](https://dev.epicgames.com/community/api/documentation/image/05273a15-8071-423f-bb84-51046b7f7c6e?resizing_type=fit)  Plate 1 x 4 | [An example of a 1 x 8 plate.](https://dev.epicgames.com/community/api/documentation/image/4870b5ee-3cc1-4701-84c9-d6e03ba5569e?resizing_type=fit)  Plate 1 x 8 | [An example of a 2 x 2 plate.](https://dev.epicgames.com/community/api/documentation/image/ef5abce0-6c32-4017-8171-4f7aee407efe?resizing_type=fit)  Plate 2 x 2 | [An example of a 2 x 3 plate.](https://dev.epicgames.com/community/api/documentation/image/4fb8cf47-e305-4152-aca1-082efc155415?resizing_type=fit)  Plate 2 x 3 |
-| [An example of a 2 x 4 plate.](https://dev.epicgames.com/community/api/documentation/image/ec280dc8-5bfd-494c-907b-ae7748856451?resizing_type=fit)  Plate 2 x 4 | [An example of a 2 x 8 plate.](https://dev.epicgames.com/community/api/documentation/image/a96d95ce-840e-4bf1-aedc-195859b063d2?resizing_type=fit)  Plate 2 x 8 | [An example of a 4 x 6 plate.](https://dev.epicgames.com/community/api/documentation/image/4d58204e-0cff-4983-8961-0c806f5c0dfc?resizing_type=fit)  Plate 4 x 6 | [An example of a n 8 x 8 plate.](https://dev.epicgames.com/community/api/documentation/image/55ceef0a-aede-4730-a801-d3a93f43b52b?resizing_type=fit)  Plate 8 x 8 | [An example of a 1 x 2 x 2 corner plate.](https://dev.epicgames.com/community/api/documentation/image/8cd282c6-963b-4d47-8ac1-01128ba5321d?resizing_type=fit)  Corner Plate  1 x 2 x 2 |
-| [An example of a 2 x 2 45 degree angle Corner Plate.](https://dev.epicgames.com/community/api/documentation/image/49540983-8c32-41db-b84a-07ac7dc717bf?resizing_type=fit)  Corner Plate  2 x 2 45° Angle | [An example of a 3 x 3 corner plate with a 45 degree angle.](https://dev.epicgames.com/community/api/documentation/image/e7832ae3-c214-4737-8613-431307c5e588?resizing_type=fit)  Corner Plate  3 x 3 45° Angle | [An example of a 1 x 1 round brick.](https://dev.epicgames.com/community/api/documentation/image/4607e353-53bd-4aea-9ef9-74ed19d99338?resizing_type=fit)  Round Brick  1 x 1 | [An example of a 2 x 2 round plate.](https://dev.epicgames.com/community/api/documentation/image/c424afbe-6a2e-4b38-b1fd-1dd9ba0954cc?resizing_type=fit)  Round Brick  2 x 2 | [An example of a 1 x 1 plate with tooth.](https://dev.epicgames.com/community/api/documentation/image/f8fb3c9e-25ab-456e-ab3f-fe3156fe25e1?resizing_type=fit)  Plate 1 x 1 with Tooth |
-| [An example of a 1 x 2 plate with one knob.](https://dev.epicgames.com/community/api/documentation/image/9119bbad-6d2a-47b4-b499-95f599f016e2?resizing_type=fit)  Plate 1 x 2  with 1 Knob | [An example of a 2 x 2 plate with one knob.](https://dev.epicgames.com/community/api/documentation/image/73f8f2f2-7f02-4c2b-be05-f89b17457508?resizing_type=fit)  Plate 2 x 2 with 1 Knob | [An example of a 16 satellite dish](https://dev.epicgames.com/community/api/documentation/image/4bfe594b-0ea5-4f18-9d6e-7e32ccae3781?resizing_type=fit)  Satellite Dish 16 | [An example fo a 1 x 1 flat tile.](https://dev.epicgames.com/community/api/documentation/image/b1c99ff3-4cdb-4fe1-b2dd-379dc1a521b2?resizing_type=fit)  Flat Tile 1 x 1 | [An example of a 1 x 1 flat tile.](https://dev.epicgames.com/community/api/documentation/image/4d01da49-2b04-4da8-9416-1b4d5d638be5?resizing_type=fit)  Flat Tile 1 x 2 |
-| [An example of a 1 x 3 flat tile.](https://dev.epicgames.com/community/api/documentation/image/24b1fbee-f3ee-494e-a615-d8f933f5438e?resizing_type=fit)  Flat Tile 1 x 3 | [An example of a 1 x 4 flat tile.](https://dev.epicgames.com/community/api/documentation/image/262b97a9-9c32-4171-9e60-7ff5b59feea1?resizing_type=fit)  Flat Tile 1 x 4 | [An example of a 2 x 2 flat tile.](https://dev.epicgames.com/community/api/documentation/image/882b9365-c5f1-4a84-91d5-1643e8c65018?resizing_type=fit)  Flat Tile 2 x 2 | [An example of a 1 x 2 radiator grille.](https://dev.epicgames.com/community/api/documentation/image/3dc27623-eb43-4388-b088-4f59096fcf41?resizing_type=fit)  Radiator Grille  1 x 2 | [An example of a 1 x 1 flat round tile.](https://dev.epicgames.com/community/api/documentation/image/fcd355d4-f78d-4027-92c2-ac06333dfa53?resizing_type=fit)  Flat Tile 1 x 1 Round |
-| [An example of a 2 x 2 falt round tile.](https://dev.epicgames.com/community/api/documentation/image/74d9c910-4978-4f1f-b037-ca1c38b3722b?resizing_type=fit)  Flat Tile 2 x 2 Round | [An example of a quarter 1 x 1 circle tile.](https://dev.epicgames.com/community/api/documentation/image/7fcd02b4-a1c3-4ba9-b8d3-803f79b0a210?resizing_type=fit)  ¼ Circle Tile 1X1 | [An example of a 2 x 2 tile with bow.](https://dev.epicgames.com/community/api/documentation/image/fb9724aa-f7a4-4a81-b6d4-da7053b853db?resizing_type=fit)  Tile 2 x 2 with Bow | [An example of 2 x 3 flat tile with angle.](https://dev.epicgames.com/community/api/documentation/image/c37e6bb5-11a1-4f78-a9e7-2a8640c0a158?resizing_type=fit)  Flat Tile 2X3 with Angle | [An example of a 1 x 1 x](https://dev.epicgames.com/community/api/documentation/image/d2e327ba-d8c0-4c19-a8f0-7ab46cc0f117?resizing_type=fit)  Roof Tile  1 x 1 x ⅔ |
-| [An example of a 1 x 1 x ⅔ roof tile.](https://dev.epicgames.com/community/api/documentation/image/3bcd33cd-14b0-4279-802c-3b2717c50d83?resizing_type=fit)  Roof Tile  1 x 2 x ⅔ | [An example of a 1 x 2 45 degree angle roof tile.](https://dev.epicgames.com/community/api/documentation/image/4ff2fe8f-b690-4d8a-866b-2d53d9bd8b21?resizing_type=fit)  Roof Tile 1 x 2 with 45° Angle | [An example of a 1 x 3 roof tile with a 45 degree angle.](https://dev.epicgames.com/community/api/documentation/image/3018c3a0-e55f-471a-8899-174a54f9ed87?resizing_type=fit)  Roof Tile 1 x 3 with 45° Angle | [An example of an 1 x 2 inverted roof tile.](https://dev.epicgames.com/community/api/documentation/image/e1776761-5fc5-4c15-953e-489cc3a45227?resizing_type=fit)  Roof Tile 1 x 2 Inverted | [An example of a 1 x 3 inverted roof tile with 25 degree angle.](https://dev.epicgames.com/community/api/documentation/image/5337ae3a-ab62-40fe-948f-3d96b96ca19c?resizing_type=fit)  Roof Tile 1 x 3 Inverted with 25° Angle |
-| Profile Brick 1 x 2 | Profile Brick 1 x 2 Single Gro. | Palisade Brick  1 x 2 | Column 1 x 1 x 6 | Double Sphere 2 x 2 x 1 2/3, with Knob |
-| Pyramid Ridged Tile 1 x 1 x 2/3 | Roof Tile with Lattice  1 x 2 x 2/3 | Roof Tile 1 x 2 45° Angle, without Knobs | Roof Tile 1 x 2 Inverted, 45° Angle, with Cut | Plate 2 x 2 x 2/3 Bow, Inverted Bow |
-| Brick 1 x 3 x 3 Inside Arch, with Cutout, Knob | Brick 1 x 3 Outside Half Arch | Brick 1 x 3 x 2 with Inside Bow | Brick with Bow  1 x 5 x 4 Inv. | Brick with Bow  1 x 3 x 3 |
-| Brick with Bow  1 x 4 x 3 | Brick with Bow  1 x 5 x 4 | Window Arch | Window Arch Corner | Fence 1 x 4 x 2 with 4 Knobs |
-| Fence 1 x 4 x 2 with Shaft | Vegetable | Kitchen Equipment |  |  |
+To discover all the bricks available in the Brick Editor, see **[LEGO® Brick Index](https://dev.epicgames.com/documentation/fortnite/lego-brick-index-in-fortnite)**.
 
 ## Brick Building
 
@@ -128,15 +108,15 @@ LEGO® Brick snapping is only in effect when using the LEGO Brick Editor mode. T
 - Snap to Present Angle
 - Scaling Resize Ratios
 
-![Default UEFN Editor](https://dev.epicgames.com/community/api/documentation/image/4348a0bd-5b27-40f8-b5fd-0ea3278a58f6?resizing_type=fit&width=1920&height=1080)
+![Default UEFN Editor](https://dev.epicgames.com/community/api/documentation/image/333835f1-7c3c-47b9-988a-7ee9137bfef6?resizing_type=fit&width=1920&height=1080)
 
-![LEGO Brick Editor](https://dev.epicgames.com/community/api/documentation/image/f8ac4bdb-44bf-49d1-ae21-7e953152bdf9?resizing_type=fit&width=1920&height=1080)
+![LEGO Brick Editor](https://dev.epicgames.com/community/api/documentation/image/52eac276-6607-4c13-ba64-2e9797f9e279?resizing_type=fit&width=1920&height=1080)
 
 ### Advanced Snapping Settings
 
 You can find the advanced snapping settings in the **Mesh Element Selection** settings in the viewport toolbar.
 
-[![Advanced snap settings can be found in the viewport toolbar under the Snap dropdown menu.](https://dev.epicgames.com/community/api/documentation/image/1c3b0a37-8171-42f7-a60f-357388bd67c6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1c3b0a37-8171-42f7-a60f-357388bd67c6?resizing_type=fit)
+[![Advanced snap settings can be found in the viewport toolbar under the Snap dropdown menu.](https://dev.epicgames.com/community/api/documentation/image/9e728729-f4fc-44fb-8bc1-59b2183d8534?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9e728729-f4fc-44fb-8bc1-59b2183d8534?resizing_type=fit)
 
 | Setting | Function |
 | --- | --- |
@@ -159,7 +139,7 @@ For example, when creating a building, you can kragle the different wall pieces 
 
 For creating items for your experience, kragle the basic structure together, then add different bricks to embellish and distinguish one item from another.
 
-[![An example of a complete structure made of kragled parts.](https://dev.epicgames.com/community/api/documentation/image/1ee2b0a8-22e9-4eca-bbab-b5f81a956876?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1ee2b0a8-22e9-4eca-bbab-b5f81a956876?resizing_type=fit)
+[![An example of a complete structure made of kragled parts.](https://dev.epicgames.com/community/api/documentation/image/438d1e21-723a-4ed0-a578-1b205ec67dc5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/438d1e21-723a-4ed0-a578-1b205ec67dc5?resizing_type=fit)
 
 When you kragle assets, all your kragled meshes collect in the Content Browser.
 
@@ -181,9 +161,9 @@ Kragled bricks are considered custom built assets by the editor. Depending on th
 
 A kragled model has a larger imprint than a model that isn’t kragled. The un-kragled model instances the repeated parts, even at the brick level. When a model is kragled into one object, it’s no longer able to instance the individual bricks, so it uses more memory.
 
-![No Kragle](https://dev.epicgames.com/community/api/documentation/image/3f1f9694-d89b-42a6-a8cc-b4f13267fe00?resizing_type=fit&width=1920&height=1080)
+![No Kragle](https://dev.epicgames.com/community/api/documentation/image/8a3129f2-ad7c-4086-94cd-7ccbd56d94c6?resizing_type=fit&width=1920&height=1080)
 
-![With Kragle](https://dev.epicgames.com/community/api/documentation/image/b8f709db-1970-4227-8c31-04ae35c1c162?resizing_type=fit&width=1920&height=1080)
+![With Kragle](https://dev.epicgames.com/community/api/documentation/image/618309d0-9ada-4f39-b959-f9417570caac?resizing_type=fit&width=1920&height=1080)
 
 So why would you want to kragle your brick-built assets? Kragling makes the building process faster! When you kragle key pieces of your design together you create a repeating pattern that can be joined together to make a larger object. You also avoid dragging each individual brick into place in the viewport when you want to move the structure you built.
 

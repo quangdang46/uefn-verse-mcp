@@ -34,6 +34,11 @@ Scene Graph is a Verse native system that takes advantage of Verse characteristi
   Creating Your Own Component using Verse
 
   Define custom behaviors for entities in Scene Graph by creating your own component using Verse.](https://dev.epicgames.com/documentation/fortnite/creating-your-own-component-using-verse-in-unreal-editor-for-fortnite)
+- [![Custom Items and Inventories with Scene Graph](https://dev.epicgames.com/community/api/documentation/image/8836af8c-c995-4875-8396-3b351b5c6357?resizing_type=fit&width=640&height=640)
+
+  Custom Items and Inventories with Scene Graph
+
+  Learn how to use Verse and Scene Graph to create custom items, customize the Fortnite player inventory, and more!](https://dev.epicgames.com/documentation/fortnite/custom-items-and-inventories-with-scene-graph-in-uefn)
 - [![Scene Events](https://dev.epicgames.com/community/api/documentation/image/8c2edb2b-364b-465d-ab27-0f3ad4aa8c85?resizing_type=fit&width=640&height=640)
 
   Scene Events
@@ -59,6 +64,11 @@ Scene Graph is a Verse native system that takes advantage of Verse characteristi
   Components
 
   Components allow you to add functionality and behavior to your Scene Graph entities.](https://dev.epicgames.com/documentation/fortnite/components-in-unreal-editor-for-fortnite)
+- [![Scene Graph Best Practices](https://dev.epicgames.com/community/api/documentation/image/214d3d2f-59d8-4646-9a0d-f579c68af11f?resizing_type=fit&width=640&height=640)
+
+  Scene Graph Best Practices
+
+  A collection of best practices you can use when developing your projects using Scene Graph.](https://dev.epicgames.com/documentation/fortnite/scene-graph-best-practices-in-fortnite)
 - [![Scene Graph Known Issues](https://dev.epicgames.com/community/api/documentation/image/5161bfe6-8ddf-4203-b5df-3c7227ca8fad?resizing_type=fit&width=640&height=640)
 
   Scene Graph Known Issues
@@ -69,13 +79,8 @@ Scene Graph is a Verse native system that takes advantage of Verse characteristi
   Data Recovery System
 
   Learn how UEFN provides a way to safely revert changes to class schema without losing your data.](https://dev.epicgames.com/documentation/fortnite/data-recovery-system-in-unreal-editor-for-fortnite)
-- [![Custom Items and Inventories with Scene Graph](https://dev.epicgames.com/community/api/documentation/image/8836af8c-c995-4875-8396-3b351b5c6357?resizing_type=fit&width=640&height=640)
+- [![Scene Graph Experimental Features](https://dev.epicgames.com/community/api/documentation/image/9d40655d-a7b1-4846-abd2-bebfdf2e0fd8?resizing_type=fit&width=640&height=640)
 
-  Custom Items and Inventories with Scene Graph
+  Scene Graph Experimental Features
 
-  Learn how to use Verse and Scene Graph to create custom items, customize the Fortnite player inventory, and more!](https://dev.epicgames.com/documentation/fortnite/custom-items-and-inventories-with-scene-graph-in-uefn)
-- [![Scene Graph Best Practices](images/static/document_list/empty_thumbnail.svg)
-
-  Scene Graph Best Practices
-
-  A collection of best practices you can use when developing your projects using Scene Graph.](https://dev.epicgames.com/documentation/fortnite/scene-graph-best-practices-in-fortnite)
+  Features that are still in flux and not quite ready for use in shipping projects.](https://dev.epicgames.com/documentation/fortnite/scene-graph-experimental-features-in-fortnite)

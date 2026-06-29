@@ -28,6 +28,7 @@ This class has both data members and functions.
 | --- | --- | --- |
 | `ChangeMoodEvent` | `listenable(payload)` | Signaled whenever the Sidekick's mood changes, either via the underlying mood system, or an override is applied. Returns the previous and new mood. |
 | `Entity` | `entity` | The parent entity of this component.   - Components must have a parent entity pointer provided when being constructed. - Components cannot be moved between parents. |
+| `IdleAnticsEnabled` | `?logic` | Enable or disable antics (idle personality animations) on the Sidekick. Enabled by default. |
 | `MoodOverride` | `??sidekick_mood` | By default, Sidekicks will change their mood depending on actions in the game. This value will lock the Sidekick into the mood passed in, overriding the automatic mood system. |
 | `StartPlayReactionEvent` | `listenable(payload)` | Signaled when the Sidekick starts to play a reaction, returns the reaction that started playing. |
 | `StopPlayReactionEvent` | `listenable(payload)` | Signaled when the Sidekick ends playing a reaction, returns the reaction that played. |

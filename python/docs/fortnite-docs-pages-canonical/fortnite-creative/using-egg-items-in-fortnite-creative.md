@@ -21,7 +21,7 @@ Egg items include:
 
 Clicking **Equip** will add the item to your [Equipment bar](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary). When you're back in Create mode, you can view any items you've [equipped](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#equip) by pressing the **F** key. You can select equipped items by scrolling your middle mouse button or by pressing the corresponding number on your keyboard.
 
-From the [Chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) tab, you can select either **Create Chest** or **Create Llama** to store the items in a [chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#chest) or a [llama](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#llama) for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game).
+From the [Chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) tab, you can select either **Create Chest** or **Create Llama** to store the items in a [chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#chest) or a [llama](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#llama) for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame).
 
 [![Egg Items Chest](https://dev.epicgames.com/community/api/documentation/image/520df657-1307-4ef3-bc64-2a1633b9b261?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/520df657-1307-4ef3-bc64-2a1633b9b261?resizing_type=fit)
 

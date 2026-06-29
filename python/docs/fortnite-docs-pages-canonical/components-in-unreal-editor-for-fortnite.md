@@ -16,6 +16,16 @@ Components have editable properties that can be physical, like a static mesh and
 
 The following is the full list of components that are part of Scene Graph in UEFN:
 
+- [![Interactable Components](https://dev.epicgames.com/community/api/documentation/image/e07eb6c2-c804-4b20-959a-fa48771bfa04?resizing_type=fit&width=640&height=640)
+
+  Interactable Components
+
+  Components that enable interactions using Scene Graph.](https://dev.epicgames.com/documentation/fortnite/interactable-components)
+- [![Keyframed Movement Component](https://dev.epicgames.com/community/api/documentation/image/9b144a8c-33bf-4d06-bd1f-9fd2325dbea4?resizing_type=fit&width=640&height=640)
+
+  Keyframed Movement Component
+
+  The Keyframed Movement component lets you animate entities by adding keyframes in Unreal Editor for Fortnite.](https://dev.epicgames.com/documentation/fortnite/keyframed-movement-component-in-unreal-editor-for-fortnite)
 - [![Light Components](https://dev.epicgames.com/community/api/documentation/image/282abe38-4d8b-4bcf-af6d-c83057ad9dea?resizing_type=fit&width=640&height=640)
 
   Light Components
@@ -36,16 +46,6 @@ The following is the full list of components that are part of Scene Graph in UEF
   Sound Component
 
   Use the sound component to add sound to your project.](https://dev.epicgames.com/documentation/fortnite/sound-component-in-unreal-editor-for-fortnite)
-- [![Keyframed Movement Component](https://dev.epicgames.com/community/api/documentation/image/9b144a8c-33bf-4d06-bd1f-9fd2325dbea4?resizing_type=fit&width=640&height=640)
-
-  Keyframed Movement Component
-
-  The Keyframed Movement component lets you animate entities by adding keyframes in Unreal Editor for Fortnite.](https://dev.epicgames.com/documentation/fortnite/keyframed-movement-component-in-unreal-editor-for-fortnite)
-- [![Interactable Components](https://dev.epicgames.com/community/api/documentation/image/e07eb6c2-c804-4b20-959a-fa48771bfa04?resizing_type=fit&width=640&height=640)
-
-  Interactable Components
-
-  Components that enable interactions using Scene Graph.](https://dev.epicgames.com/documentation/fortnite/interactable-components)
 - [![Inventory Component](https://dev.epicgames.com/community/api/documentation/image/7edc88ec-c687-41ef-89d3-97c83f0b0d88?resizing_type=fit&width=640&height=640)
 
   Inventory Component

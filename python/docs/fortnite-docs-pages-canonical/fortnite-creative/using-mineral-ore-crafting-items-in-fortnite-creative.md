@@ -51,7 +51,7 @@ Clicking **Equip** will add the item to your [Resources bar](https://dev.epicgam
 
 You may want to offer an item bundle to players through a [chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#chest) or [llama](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#llama). Selecting **Add To Chest** will add the item to the [Chest tab](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary). Each time you click it, the item count will increase by one, shown in a yellow box on the **Chest** tab.
 
-From the **Chest** tab, you can select either **Create Chest** or **Create Llama** to store the items in a Chest or a Llama for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game).
+From the **Chest** tab, you can select either **Create Chest** or **Create Llama** to store the items in a Chest or a Llama for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame).
 
 You can add up to fifteen items to the **Chest** tab. When it’s full, the **Add To Chest** tab will disappear. To add more items, you first have to remove items from the **Chest** tab.
 

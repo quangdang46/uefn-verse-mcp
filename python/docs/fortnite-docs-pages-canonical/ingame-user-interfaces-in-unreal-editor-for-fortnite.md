@@ -92,13 +92,13 @@ All UI elements are created and built using [**Unreal Motion Graphics** (UMG)](h
   Mission Selection Screen
 
   Learn how to create a mission selection screen that drops players into their mission.](https://dev.epicgames.com/documentation/fortnite/making-a-mission-selection-screen-in-unreal-editor-for-fortnite)
-- [![Creating UI with Verse](https://dev.epicgames.com/community/api/documentation/image/32f2441a-c88c-4046-ba13-5d7d159deaf7?resizing_type=fit&width=640&height=640)
-
-  Creating UI with Verse
-
-  Create custom UI with the power of Verse.](https://dev.epicgames.com/documentation/fortnite/creating-ui-with-verse-in-unreal-editor-for-fortnite)
 - [![UI Materials Collection](https://dev.epicgames.com/community/api/documentation/image/69a00f85-3325-4191-8a26-2f32ef7cc8e5?resizing_type=fit&width=640&height=640)
 
   UI Materials Collection
 
   Create customized materials for stat tracking and customizing a UI.](https://dev.epicgames.com/documentation/fortnite/ui-materials-collection-in-fortnite)
+- [![Creating UI with Verse](https://dev.epicgames.com/community/api/documentation/image/32f2441a-c88c-4046-ba13-5d7d159deaf7?resizing_type=fit&width=640&height=640)
+
+  Creating UI with Verse
+
+  Create custom UI with the power of Verse.](https://dev.epicgames.com/documentation/fortnite/creating-ui-with-verse-in-unreal-editor-for-fortnite)

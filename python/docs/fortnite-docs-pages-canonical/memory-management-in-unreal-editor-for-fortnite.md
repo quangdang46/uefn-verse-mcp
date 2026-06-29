@@ -14,7 +14,7 @@ In **Unreal Editor for Fortnite (UEFN)**, you can use expanded memory capabiliti
 
 **World Partition** is the magic behind building a large island experience. This feature automatically divides the world into a grid, and streams only the necessary cells.
 
-[![world partition](https://dev.epicgames.com/community/api/documentation/image/0a907ed8-2039-4b8c-99ab-34d1b19f68de?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0a907ed8-2039-4b8c-99ab-34d1b19f68de?resizing_type=fit)
+[![world partition](https://dev.epicgames.com/community/api/documentation/image/1e5ac884-3277-4808-850b-18efc472415e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1e5ac884-3277-4808-850b-18efc472415e?resizing_type=fit)
 
 World Partition uses **Streaming**, which loads and unloads cells, and **Hierarchical Level of Detail (HLOD)**, that groups and decreases the amount of detail on assets as the player camera moves away.
 
@@ -30,7 +30,7 @@ However, custom runtime logic can lead to high memory use that can cause issues 
 
 ## The Session Layout
 
-[![New HUD Image](https://dev.epicgames.com/community/api/documentation/image/f05cc2c3-cb33-40cd-b168-549b001f4acf?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f05cc2c3-cb33-40cd-b168-549b001f4acf?resizing_type=fit)
+[![New HUD Image](https://dev.epicgames.com/community/api/documentation/image/87314d62-a749-4075-acc8-a2f750e5d638?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/87314d62-a749-4075-acc8-a2f750e5d638?resizing_type=fit)
 
  When you load into your session, you see a **Current Memory Usage** bar on your HUD.
 
@@ -53,7 +53,7 @@ The system requires up-to-date cooked data to calculate memory usage accurately.
 
 Until you push changes, the usage bar will continue to update but show an out-of-date value. The cost of content modifications will not be reflected.
 
-[![](https://dev.epicgames.com/community/api/documentation/image/6976a790-1017-4b90-a7c8-55216dc1b625?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/6976a790-1017-4b90-a7c8-55216dc1b625?resizing_type=fit)
+[![](https://dev.epicgames.com/community/api/documentation/image/9bf8ce9f-e9d0-42df-ad6f-fc0f1cb5f856?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9bf8ce9f-e9d0-42df-ad6f-fc0f1cb5f856?resizing_type=fit)
 
 ## Launch a Memory Calculation
 
@@ -61,7 +61,7 @@ Your island needs to be able to run on all supported hardware platforms for you 
 
 Before publishing, it is vital to make sure your project does not exceed memory limits. From the **Project** dropdown, select **Launch Memory Calculation**.
 
-[![Launch Memory Calculation](https://dev.epicgames.com/community/api/documentation/image/a22a1fd5-e0d5-41e7-ac61-85abc0264329?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a22a1fd5-e0d5-41e7-ac61-85abc0264329?resizing_type=fit)
+[![Launch Memory Calculation](https://dev.epicgames.com/community/api/documentation/image/22ee14c3-38dc-4829-9a9d-591aed557597?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/22ee14c3-38dc-4829-9a9d-591aed557597?resizing_type=fit)
 
 This process calculates the memory used in every cell.
 
@@ -77,7 +77,7 @@ There are many strategies to save on memory once you hit the limit. Try any comb
 
 - After the memory calculation, you can open a sheet with top 100 memory-heavy assets on your island. Go to **Window** > **Message Log** > **Memory Test Results**.
 
-  [![memory calculation results](https://dev.epicgames.com/community/api/documentation/image/4bfa0e8e-3538-46e1-a785-57bfd015cd1d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/4bfa0e8e-3538-46e1-a785-57bfd015cd1d?resizing_type=fit)
+  [![memory calculation results](https://dev.epicgames.com/community/api/documentation/image/64443728-9e5e-4638-abd0-cf859042f172?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/64443728-9e5e-4638-abd0-cf859042f172?resizing_type=fit)
 
   The table below defines each term:
 
@@ -92,25 +92,59 @@ There are many strategies to save on memory once you hit the limit. Try any comb
 - **[Turn Streaming ON](https://dev.epicgames.com/documentation/fortnite/streaming-and-hlods-in-unreal-editor-for-fortnite)** in the World Partition panel. Although this is a must for large islands, smaller islands may also benefit from streaming, especially if the content gets too dense.
 - When streaming is turned on, make sure that actors have Is Spatially Loaded enabled where possible. If not, they will be cooked into the main level package and will always be loaded. This is specially relevant for Landscape streaming proxy actors, as these can contain a lot of collision data that you generally want to stream in on demand.
 
-  [![](https://dev.epicgames.com/community/api/documentation/image/8b32726b-ba15-429c-83eb-e3f1895e02cd?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8b32726b-ba15-429c-83eb-e3f1895e02cd?resizing_type=fit)
+  [![](https://dev.epicgames.com/community/api/documentation/image/98fea9cd-4f6a-400e-8f45-04163adebd57?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/98fea9cd-4f6a-400e-8f45-04163adebd57?resizing_type=fit)
 - Spread your island's content evenly. Concentrating too many actors in a small area will not allow content to be streamed out, and will contribute to exceeding your memory budget.
 - **Reduce the number of devices your island is using**. Devices are among the most expensive actors you can place. However, placing instances of the same device incurs a much lower memory cost.
 - Take a look at the Project Size window. If you see some memory-heavy objects on disk, chances are they’ll also be heavy on memory at runtime. To check your project size, click the **Project** dropdown and select **Project Size**.
 
-  [![project size](https://dev.epicgames.com/community/api/documentation/image/e5015d53-1657-4bdc-aae4-4976310f4252?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e5015d53-1657-4bdc-aae4-4976310f4252?resizing_type=fit)
+  [![project size](https://dev.epicgames.com/community/api/documentation/image/f50b0b52-1b23-47f1-9e42-344eb7ed2127?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f50b0b52-1b23-47f1-9e42-344eb7ed2127?resizing_type=fit)
 - [Reduce the quality level on custom asset LODs](setting-the-level-of-detail-in-unreal-editor-for-fortnite), especially on those assets that are only visible from a distance.
 - **Reuse assets multiple times**. In a forest made of 100 trees, use 5 variations and duplicate them around instead of using 100 unique trees. This will make a huge difference on the memory footprint.
 - If using [HLODs](https://dev.epicgames.com/documentation/fortnite/streaming-and-hlods-in-unreal-editor-for-fortnite), generate them throughout the process of the project and ensure that you're only generating them for objects you can see from far away.
 - Make use of [Data Layers](https://dev.epicgames.com/documentation/fortnite/streaming-and-hlods-in-unreal-editor-for-fortnite) if your islands can be subdivided into configurations that aren't all meant to be displayed all at once. For example, an underground dungeon that isn't reachable unless the player enters a shrine.
 - Lower the mesh complexity of your custom content. High-poly meshes incur a higher memory cost. Edit the mesh by double-clicking on it in the Content Browser, and adjust the **Keep Triangle Percent** value under **Nanite Settings**. Using a lower value will lower the complexity of the mesh and reduce the actor's memory cost.
 
-  [![Lower Triangle Percent](https://dev.epicgames.com/community/api/documentation/image/1c79a53f-c258-4030-9587-33bb3a71ba89?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1c79a53f-c258-4030-9587-33bb3a71ba89?resizing_type=fit)
+  [![Lower Triangle Percent](https://dev.epicgames.com/community/api/documentation/image/a0354aa2-d9e1-48ca-abdd-b7736038d26b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a0354aa2-d9e1-48ca-abdd-b7736038d26b?resizing_type=fit)
+
+### Use Profiling and Analysis Tools
+
+If your island exceeds its memory budget, use UEFN's profiling and analysis tools to identify the assets and systems contributing to memory usage.
+
+To use Spatial Profiler and Memory Snapshot you must first enable the **Monitor Performance** option from the **Launch Session** menu before starting a play session.
+
+#### Investigate High Memory Usage
+
+Use **Memory Snapshot** to capture the memory currently used by assets in your island. Memory Snapshot provides a breakdown of estimated memory usage and helps identify assets that contribute most to memory consumption.
+
+You can review memory usage by asset type, locate actors that reference high-memory assets, and navigate directly to those actors in your project for further investigation.
+
+To learn more, see [Memory Snapshot](https://dev.epicgames.com/documentation/fortnite/memory-snapshot-in-unreal-editor-for-fortnite).
+
+#### Analyze Memory Hotspots
+
+Use **Spatial Profiler** to visualize memory and performance metrics across your island. Spatial Profiler helps identify where memory usage occurs during gameplay and highlights areas that may require optimization.
+
+When used together, Spatial Profiler and Memory Snapshot can help connect performance warnings with the assets and locations contributing to memory usage.
+
+To learn more, see [Spatial Profiler](https://dev.epicgames.com/documentation/fortnite/spatial-profiler-in-unreal-editor-for-fortnite).
+
+### Optimize Assets for Lower Memory Usage
+
+After identifying high-memory assets, review them for opportunities to reduce their impact on your island.
+
+Common optimization techniques include:
+
+- Reducing texture resolutions where high-detail textures are not required.
+- Simplifying complex static meshes.
+- Removing unused assets and actors from the project.
+- Reviewing assets that are loaded frequently across multiple areas of the island.
+
+Static meshes with high vertex counts can increase memory usage and impact performance. UEFN includes asset validation warnings that help identify meshes that may require optimization.
+
+To learn more about optimizing meshes, See [Simplify Static Meshes](https://dev.epicgames.com/documentation/fortnite/simplify-static-meshes-in-fortnite).
+
+If your island targets mobile devices, see [Designing for Mobile](https://dev.epicgames.com/documentation/fortnite/designing-for-mobile-in-fortnite) for additional guidance on best practices for optimization.
 
 ## Troubleshooting Other Issues
 
 For proper validation, creators are expected to have streaming enabled, and also expected to have mipmaps being generated for textures. If any of your textures had the **MipGenSettings** option set to **No Mipmaps**, previously it was not flagged when your island is submitted for publishing. However, now if a texture in your project has MipGenSettings set to No Mipmaps, it will fail validation.
-
-Note the following exceptions to this requirement for streaming and mipmaps:
-
-- This rule only applies to textures with more than 1 million texels. So for example, if a texture's dimensions, when multiplied, come out to less than 1,048,576 then it will pass validation even with **MipGenSettings** set to **No Mipmaps.**
-- Textures in the UI group are not required to have streaming enabled.

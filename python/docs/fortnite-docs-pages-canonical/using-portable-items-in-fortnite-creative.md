@@ -33,7 +33,7 @@ Clicking **Equip** will add the item to your [Equipment bar](https://dev.epicgam
 
 When you're back in [Create mode](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#create-mode), you can view any items you've [equipped](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) by pressing the **F** key. You can select equipped items by either scrolling your middle mouse button or by pressing its corresponding number on your keyboard.
 
-From the [Chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) tab, you can select either **Create Chest** or **Create Llama** to store the items in a [chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#chest) or a [llama](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#llama) for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game).
+From the [Chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) tab, you can select either **Create Chest** or **Create Llama** to store the items in a [chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#chest) or a [llama](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#llama) for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame).
 
 [![Portable Chest](https://dev.epicgames.com/community/api/documentation/image/d42cda3e-4321-4f85-a3f9-1e9e161f4308?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d42cda3e-4321-4f85-a3f9-1e9e161f4308?resizing_type=fit)
 

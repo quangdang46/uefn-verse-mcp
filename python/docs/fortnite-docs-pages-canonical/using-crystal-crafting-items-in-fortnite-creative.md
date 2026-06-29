@@ -45,13 +45,13 @@ Visit our [video tutorials](https://mediaspace.unrealengine.com/playlist/dedicat
 
 Clicking EQUIP will add the item to your [Equipment bar](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#equipment-bar). (When you're back in Create mode, you can view any items you've [equipped](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#equip) by pressing the **F** key.)
 
-From the CHEST tab, you can select either CREATE CHEST or CREATE LLAMA to store the items in a Chest or a Llama for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game).
+From the CHEST tab, you can select either CREATE CHEST or CREATE LLAMA to store the items in a Chest or a Llama for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame).
 
 Clicking EQUIP will add the item to your [Resources bar](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#resources-bar). (When you're back in Create mode, you can view items in your Resources bar by pressing the **Tab** key and selecting **Play**)
 
 You may want to offer an item bundle to players through a [chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#chest) or [llama](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#llama). Selecting **Add To Chest** will add the item to the [Chest tab](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary). Each time you click it, the item count will increase by one, shown in a yellow box on the **Chest** tab.
 
-From the **Chest** tab, you can select either **Create Chest** or **Create Llama** to store the items in a Chest or a Llama for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game).
+From the **Chest** tab, you can select either **Create Chest** or **Create Llama** to store the items in a Chest or a Llama for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame).
 
 You can add up to fifteen items to the **Chest** tab. When it’s full, the **Add To Chest** tab will disappear. To add more items, you first have to remove items from the **Chest** tab.
 
@@ -92,7 +92,7 @@ This pair of devices can be set up for players to exchange Blast Powder and Rain
 
 To register items to a device, you must stand directly on or immediately beside the device.
 
-To register an item for this kind of device, follow the steps below. (You can also watch a [video tutorial](https://mediaspace.unrealengine.com/media/RegisteringCraftingConsumablesinFortniteCreative/1_zpmj3v0g) that shows you how to register items, for [crafting](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#crafting) or other [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game) use.)
+To register an item for this kind of device, follow the steps below. (You can also watch a [video tutorial](https://mediaspace.unrealengine.com/media/RegisteringCraftingConsumablesinFortniteCreative/1_zpmj3v0g) that shows you how to register items, for [crafting](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#crafting) or other [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame) use.)
 
 The compatible device will automatically register the dropped item.
 

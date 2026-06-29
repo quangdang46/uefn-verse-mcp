@@ -15,7 +15,7 @@ Returns the sign of `Val`:
 | --- | --- |
 | Verse `using` statement | `using { /Verse.org/Verse }` |
 
-`Sgn<public>(Val:float)<computes>:float`
+`Sgn<public>(Val:float):float`
 
 ## Parameters
 
@@ -34,11 +34,3 @@ The following specifiers determine how you can interact with `Sgn` in your progr
 | Specifier | Meaning |
 | --- | --- |
 | `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data. |
-
-### Effects
-
-The following effects determine how `Sgn` behaves in your programs. For the complete list of effects, see the Effect Specifers section of the [Specifiers Page](https://dev.epicgames.com/documentation/fortnite/specifiers-and-attributes-in-verse).
-
-| Effect | Meaning |
-| --- | --- |
-| `computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect. |

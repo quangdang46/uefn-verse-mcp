@@ -252,6 +252,6 @@ This lesson plan was developed by educator Benjamin Kelly from Anglophone East S
 
 Find Ben at:
 
-- Email: [[email protected]](https://dev.epicgames.com/cdn-cgi/l/email-protection#2d6f48436d6f6f79636f034e4240)
+- Email: [[email protected]](https://dev.epicgames.com/cdn-cgi/l/email-protection#cd8fa8a38d8f8f99838fe3aea2a0)
 - Twitter: [@BBTNB](https://twitter.com/BBTNB)
 - LinkedIn: [benjamin-kelly-a2366154](https://www.linkedin.com/in/benjamin-kelly-a2366154/)

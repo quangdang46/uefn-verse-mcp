@@ -4,13 +4,13 @@
 
 Learn technical details about the Join function.
 
-Makes a `string` by concatenating `Separator` between the elements of `Strings`.
+Makes a `message` by concatenating `Separator` between the elements of `Messages`.
 
 |  |  |
 | --- | --- |
 | Verse `using` statement | `using { /Verse.org/Verse }` |
 
-`Join<public><native>(Strings:[][]char, Separator:[]char)<computes>:[]char`
+`Join<public><native>(Messages:[]message, Separator:message)<transacts>:`[`message`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/verse/message)
 
 ## Parameters
 
@@ -18,8 +18,8 @@ Makes a `string` by concatenating `Separator` between the elements of `Strings`.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `Strings` | `[][]char` |  |
-| `Separator` | `[]char` |  |
+| `Messages` | `[]message` |  |
+| `Separator` | `message` |  |
 
 ## Attributes, Specifiers, and Effects
 
@@ -38,4 +38,4 @@ The following effects determine how `Join` behaves in your programs. For the com
 
 | Effect | Meaning |
 | --- | --- |
-| `computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect. |
+| `transacts` | This effect indicates that any actions performed by the function can be rolled back. The transacts effect is required any time a mutable variable (`var`) is written. You’ll be notified when you compile your code if the `transacts` effect was added to a function that can’t be rolled back. Note that this check is not done for functions with the `native` specifier. |

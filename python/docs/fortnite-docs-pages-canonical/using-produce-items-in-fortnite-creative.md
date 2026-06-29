@@ -26,7 +26,7 @@ Produce items include:
 
 Clicking **Equip** will add the item to your [Equipment bar](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary). When you're back in [Create mode](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#create-mode), you can view any items you've [equipped](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) by pressing the **F** key. You can select equipped items by either scrolling your middle mouse button or by pressing its corresponding number on your keyboard.
 
-From the [Chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) tab, you can select either **Create Chest** or **Create Llama** to store the items in a [chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#chest) or a [llama](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#llama) for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game).
+From the [Chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) tab, you can select either **Create Chest** or **Create Llama** to store the items in a [chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#chest) or a [llama](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#llama) for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame).
 
 [![Objective Chest](https://dev.epicgames.com/community/api/documentation/image/9d7e9fa1-c38f-4cdd-ba1c-153146b3f7d5?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9d7e9fa1-c38f-4cdd-ba1c-153146b3f7d5?resizing_type=fit)
 
