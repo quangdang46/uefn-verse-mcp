@@ -52,7 +52,7 @@ Any changes made by the fix-up feature are fully [transacted](unreal-editor-for-
 
 Automatic fix-up provides a report showing which properties were reverted, why, and what their original value was. This provides a way for you to make an informed decision on whether to keep the automatic fix-up result, or undo it and manually fix things yourself.
 
-Validation issues are not all expected to go away when you run the **Fix-Up button**. For example, resolving a Texture validation issue has its own process. To learn more about Texture validation, see [**Resizing Textures**](resizing-textures-in-unreal-editor-for-fortnite).
+Validation issues are not all expected to go away when you run the **Fix-Up button**. For example, resolving a Static Mesh or Texture validation issue has its own process. To learn more about Static Mesh validation and Texture validation, see [Simplify Static Meshes](https://dev.epicgames.com/documentation/fortnite/simplify-static-meshes-in-fortnite) and  [**Resizing Textures**](resizing-textures-in-unreal-editor-for-fortnite).
 
 ## Validation Fix-Up Tool
 
@@ -66,22 +66,22 @@ Automatic fix-up runs over one or more objects to automatically find and revert 
 
 If UEFN detects validation errors prior to uploading your project, it offers you the option to run automatic fix-up over the set of failed assets/actors.
 
-[![If UEFN detects validation errors prior to uploading your project, it offers you the option to run automatic fix-up over the set of failed assets/actors.](https://dev.epicgames.com/community/api/documentation/image/83770e37-e9c6-461b-b8c7-09b2708c8910?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/83770e37-e9c6-461b-b8c7-09b2708c8910?resizing_type=fit)
+[![If UEFN detects validation errors prior to uploading your project, it offers you the option to run automatic fix-up over the set of failed assets/actors.](https://dev.epicgames.com/community/api/documentation/image/1a31ca1f-bb4c-4e80-98da-73ad8d57668c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1a31ca1f-bb4c-4e80-98da-73ad8d57668c?resizing_type=fit)
 
 ### Asset Fix-Up
 
 You can run automatic fix-up over a given asset (or set of assets) via the **Content Browser** by selecting the asset(s) you want to process and selecting **Asset Actions** > **Fix Validation Issues** from the asset context menu.
 
-[![You can run automatic fix-up over a given asset (or set of assets) via the **Content Browser**.](https://dev.epicgames.com/community/api/documentation/image/54303896-1e39-4d48-a7f8-4f3b4588cd1e?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/54303896-1e39-4d48-a7f8-4f3b4588cd1e?resizing_type=fit)
+[![You can run automatic fix-up over a given asset (or set of assets) via the **Content Browser**.](https://dev.epicgames.com/community/api/documentation/image/d869dec4-810e-4270-a716-da04301099bb?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d869dec4-810e-4270-a716-da04301099bb?resizing_type=fit)
 
 ### Actor Fix-Up
 
 You can run automatic fix-up over a given actor (or set of actors) via the **Scene Outliner**, by selecting the actor(s) you want to process and running **Fix Validation Issues** from the actor context menu.
 
-[![You can run the automatic fix-up over a given actor (or set of actors) via the **Scene Outliner**.](https://dev.epicgames.com/community/api/documentation/image/c931bffd-0daa-4b34-ae64-800709279166?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/c931bffd-0daa-4b34-ae64-800709279166?resizing_type=fit)
+[![You can run the automatic fix-up over a given actor (or set of actors) via the **Scene Outliner**.](https://dev.epicgames.com/community/api/documentation/image/d49623d2-a95c-482c-a08d-4b7c5e3e0529?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/d49623d2-a95c-482c-a08d-4b7c5e3e0529?resizing_type=fit)
 
 ### Manual Fix-Up
 
 You can run manual fix-up on a single invalid property by clicking **Reset Property to Default** below supported validation warnings or errors.
 
-[![You can run manual fix-up on a single invalid property by clicking **Reset Property to Default** below supported validation warnings or errors.](https://dev.epicgames.com/community/api/documentation/image/53a4410c-49ae-4a1f-be57-8b049ece7a65?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/53a4410c-49ae-4a1f-be57-8b049ece7a65?resizing_type=fit)
+[![You can run manual fix-up on a single invalid property by clicking **Reset Property to Default** below supported validation warnings or errors.](https://dev.epicgames.com/community/api/documentation/image/36990e0f-9ef1-4626-bf6e-52729db7fe5a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/36990e0f-9ef1-4626-bf6e-52729db7fe5a?resizing_type=fit)

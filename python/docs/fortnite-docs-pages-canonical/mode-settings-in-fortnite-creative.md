@@ -137,11 +137,26 @@ Some settings are grayed out. This usually indicates that another setting must b
 
 | Option | Values | Description |
 | --- | --- | --- |
-| Voice Chat Scope | Team, All, None | This defines the behavior of the Game Channel. Island Settings never affect the Party Channel. Individual players' settings and permissions may further restrict with whom a player can communicate. Values for this setting:All: Chat on the Game Channel is unrestricted.Team: Players see only their team members on the Game Channel.None: Disables the Game Channel for all players. |
-| Proximity Chat | On, Off | This setting enables or disables Proximity Chat in the Game Channel for this island. If this is set to On, additional settings for customizing proximity chat will display.The Active Speaker HUD widget is automatically enabled and cannot be disabled. |
-| Full Volume Distance | 15 meters, Pick a distance | This setting only shows if the Proximity Chat setting is set to On. This determines the maximum distance at which players will hear each other at full volume. |
-| Falloff Distance | 15 meters, Pick a distance | This setting only shows if the Proximity Chat setting is set to On. This determines the distance at which the volume of players' voices will start to gradually decrease to zero. |
-| Keep Spectators in Team Chat | On, Off | Determines whether spectating players stay in their team's voice chat when Voice Chat Scope is Team.If false, the spectators are moved to a separate chat. |
+| Voice Chat Scope | Team, All, None | This defines the behavior of the Game Channel. Island Settings never affect the Party Channel. Individual players' settings and permissions may further restrict with whom a player can communicate.  **All**: Chat on the Game Channel is unrestricted.  **Team**: Players see only their team members on the Game Channel.  **None**: Disables the Game Channel for all players. |
+| Attenuate Voice | On, Off | This setting enables or disables Attenuation Voice in the Game Channel for this island.  When enabled, the speaker’s voice is heard at full volume up to Full Volume Distance and fades to inaudible at the Falloff Distance.  When disabled, the speaker’s voice is heard at a constant volume level to all listeners, regardless of their relative positions. |
+| Attenuation Shape | Sphere, Cone and Sphere | Determines the shape of the speaking player’s voice.  **Sphere**: Radiates in a distance around the speaker.  **Cone**: Projected outward from the speaker, like a megaphone. |
+| Full Volume Distance | 5 meters, Pick a distance | This setting only shows if the Proximity Chat setting is set to On. This determines the maximum distance at which players will hear each other at full volume. |
+| Falloff Distance | 35 meters, Pick a distance | This setting only shows if the Proximity Chat setting is set to On. This determines the distance at which the volume of players' voices will start to gradually decrease to zero. |
+| Keep Spectators in Team Chat | **On**, Off | Determines whether spectating players stay in their team's voice chat when Voice Chat Scope is Team. If disabled, the spectators are moved to a separate chat. |
+| Full Volume Cone Angle | **45** degrees, Pick an angle 0-180 degrees | Defines the width of a conical volume in front of the player within which the speaker's voice is heard at full volume. The angle starts from the forward angle of the character. |
+| Falloff Cone Angle | **90** degrees, Pick an angle 0-180 degrees | Defines the additional width beyond the full volume cone angle at which the volume of a speaker's voice falls to the minimum. |
+| Full Volume Sphere Distance | **1** meters, Pick a distance | Defines how far away a speaker's voice can be heard at full volume outside of the cone angle. |
+| Falloff Sphere Distance | **25** meters, Pick a distance | Defines the distance beyond the far volume distance at which the volume of a speaker's voice falls silent outside of the sphere. |
+| Attenuation Function | **Linear**, Log Reverse, Natural | The rate a speaker's voice fades out from full volume at distance to the falloff distance over a curve.  **Linear**: The falloff is even and constant.  **Log Reverse**: The falloff is greater at close distances and lesser at far distances.  **Natural Sound**: Models a more natural falloff sound. |
+| Spatialize Voice | On, **Off** | When enabled the speaker's voice emits from their pawn within the game and pans as the listener moves around the speaker. This allows players to use audio to locate each other. When disabled, speakers' voices are monophonic. |
+| Occlude Voice | On, **Off** | Reduces the volume of speakers who are behind obstacles, only affects spatialized speakers. |
+| Occlusion Volume Multiplier | **0.3**, Pick a multiplier 0-1.0 | Defines the impact to the volume of a speaker when they are occluded. |
+| Occlusion Low Pass Filter Frequency | 0-20k | Defines how much a voice is muffled when being included. The lower the value, the more extreme and noticeable the effect. |
+| Occlusion Interpolation Time | **1.0** seconds, Pick a time in seconds | Defines the time it takes for a speaker's volume to fade out or in when becoming obstructed or not obstructed. The lower the value the more responsive the fade. High values can result in speakers being heard long after they become included or not heard for a time after being unobstructed. |
+| Focused Listening | **On**, Off | Available when voices are spatialized. When enabled a listener uses a volume to hear what is in front of them more clearly to achieve a more natural hearing experience. Outside of that volume the speaking player's voice volume drops to a specified minimum level. |
+| Full Volume Listening Angle | **20** degrees, Pick an angle 0-60 degrees | Defines the width in front of a listening player where the other speaking player's voices are heard at full volume. |
+| Falloff Listening Angle | **90** degrees, Pick an angle 0-90 degrees | Defines the width beyond the listening half-volume angle over which voice volume fades to the minimum. Helps simulate how people hear more clearly what is in front of them. |
+| Minimum Listening Multiplier | **0.3**, Pick a multiplier 0-1.0 | Defines the minimum volume for speakers outside the listener's full focus angle. Zero completely mutes the speaking players. |
 
 ## Text Chat Settings
 

@@ -13,7 +13,7 @@ that you can reuse across multiple NPC Spawner devices.
 
 Include NPCs, characters with artificial intelligence (AI), in your gameplay to add an extra layer of immersion. You can customize NPCs to perform various actions, from reviving teammates to following players.
 
-[![NPC Spawner in UEFN](https://dev.epicgames.com/community/api/documentation/image/61ea479c-9ed3-4600-bdfc-f7b4aec2be6d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/61ea479c-9ed3-4600-bdfc-f7b4aec2be6d?resizing_type=fit)
+[![NPC Spawner in UEFN](https://dev.epicgames.com/community/api/documentation/image/66c3ea00-4197-400b-a5fd-b4a5019afed2?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/66c3ea00-4197-400b-a5fd-b4a5019afed2?resizing_type=fit)
 
 The NPC Spawner is different from the [Character device](https://dev.epicgames.com/documentation/fortnite/using-character-devices-in-fortnite-creative),  in that you can make custom configurations that alter how a character looks, moves, and behaves with the NPC Spawner.
 
@@ -34,13 +34,29 @@ Branded assets have specific rules and guidelines for use. Check the brand rules
 
 You can only use brand assets in a project specific to the relevant IP property.
 
+## Using Sidekick NPCs
+
+Sidekicks are available in the NPC Spawner through a [Custom character definition](https://dev.epicgames.com/documentation/fortnite/npc-types-in-unreal-editor-for-fortnite#custom).
+
+You can add the Fortnite original Sidekick characters to the **Cosmetic** modifier and create custom Sidekick behavior in Verse using the [Sidekick API](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/ai/npc_actions_component). Each Sidekick character has its own personality and character channels to control behaviors and animations specific to that character.
+
+Sidekicks have a variety of basic animations and interactions to choose from, including:
+
+|  |  |
+| --- | --- |
+| **Animation** | **Interaction** |
+| Eat | Can fetch items / objects |
+| Sleep | Can move to a target |
+| Attack | Can attack |
+| Damage | Can follow |
+
 ## Contextual Filtering
 
 Some devices are affected by a feature called contextual filtering. This feature highlights or shades options depending on the values selected for certain related options. This feature reduces clutter in the Details panel and makes options easier to manage and navigate.
 
 ## User Options
 
-[![User Options](https://dev.epicgames.com/community/api/documentation/image/49f09ba0-4e4a-4358-9ec9-d34f32f082e6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/49f09ba0-4e4a-4358-9ec9-d34f32f082e6?resizing_type=fit)
+[![User Options](https://dev.epicgames.com/community/api/documentation/image/99756471-103a-4c46-be5e-6977b0aad27a?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/99756471-103a-4c46-be5e-6977b0aad27a?resizing_type=fit)
 
 With the User Options settings, you can set the spawn conditions, reference character definitions, and designate functions and events.
 
@@ -116,3 +132,7 @@ To use this code in your UEFN experience, follow these steps.
 ### NPC Spawner Device API
 
 See the [`npc_spawner_device`](https://dev.epicgames.com/documentation/en-us/uefn/verse-api/fortnitedotcom/devices/npc_spawner_device) API Reference for more information on using the NPC Spawner device in Verse.
+
+### Sidekick API
+
+See the Sidekick function API reference for more information on using Sidekicks with the NPC Spawner device in Verse.

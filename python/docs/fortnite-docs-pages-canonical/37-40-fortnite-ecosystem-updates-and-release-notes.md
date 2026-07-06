@@ -62,7 +62,7 @@ Learn more in [Custom Inventory and Items Overview](https://dev.epicgames.com/do
 
 ## Best Practices for Building Mobile-First Islands
 
-This [new documentation](https://dev.epicgames.com/documentation/fortnite/mobile-design-and-optimization-in-fortnite) aims to guide developers with design best practices and tips to optimize island performance for mobile devices. As UEFN continues to enhance the mobile development experience for developers, we’ll update and expand this content as needed.
+This [new documentation](https://dev.epicgames.com/documentation/fortnite/mobile-optimization-in-fortnite) aims to guide developers with design best practices and tips to optimize island performance for mobile devices. As UEFN continues to enhance the mobile development experience for developers, we’ll update and expand this content as needed.
 
 ## Hive Lobbers
 

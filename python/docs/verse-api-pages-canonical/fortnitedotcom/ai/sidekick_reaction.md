@@ -21,3 +21,7 @@ The `sidekick_reaction` enumeration includes the following enumerators:
 | `Emote` |  |
 | `Angry` |  |
 | `Worried` |  |
+| `Attack` |  |
+| `HitReact` |  |
+| `Sleeping` |  |
+| `Eat` |  |

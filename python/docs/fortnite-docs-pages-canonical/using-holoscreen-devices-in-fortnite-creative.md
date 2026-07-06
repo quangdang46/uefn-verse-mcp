@@ -36,6 +36,6 @@ Default values are **bold**.
 | **Bend** | **None**, Small, Medium, Large, XLarge, XXLarge | This determines the curve (bend) for the holoscreen. |
 | **Distance** | **1.0**, Select a distance | The distance the holoscreen is from the projector. |
 | **Projector Visible In Game** | **No**, Yes | Determines whether the projector will be visible to players during the game. |
-| Holo Screen Image | Clock, Clock Rotate, Select an option | Other options include advertising and signage for various [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game) Fortnite businesses. |
+| Holo Screen Image | Clock, Clock Rotate, Select an option | Other options include advertising and signage for various [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame) Fortnite businesses. |
 | Width | 1.0, Pick a width | The width of the holoscreen, measured in grids. |
 | Height | 1.0, Pick a height | The height of the holoscreen. |

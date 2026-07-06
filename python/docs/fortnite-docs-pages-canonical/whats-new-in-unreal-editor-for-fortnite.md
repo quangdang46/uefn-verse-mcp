@@ -8,6 +8,16 @@ Learn about the latest features and news in Unreal Editor for Fortnite!
 
 Stay tuned for updates on the latest Unreal Editor for Fortnite Release Notes!
 
+- [![41.10 Fortnite Ecosystem Updates and Release Notes](https://dev.epicgames.com/community/api/documentation/image/9f534007-caff-4869-8367-1f10306569ec?resizing_type=fit&width=640&height=640)
+
+  41.10 Fortnite Ecosystem Updates and Release Notes
+
+  Find out what's new with the 41.10 release of Fortnite on June 25, 2026.](https://dev.epicgames.com/documentation/fortnite/41-10-fortnite-ecosystem-updates-and-release-notes)
+- [![41.00 Fortnite Ecosystem Updates and Release Notes](https://dev.epicgames.com/community/api/documentation/image/2c327ddc-5791-45a1-9741-cc2605afbfd7?resizing_type=fit&width=640&height=640)
+
+  41.00 Fortnite Ecosystem Updates and Release Notes
+
+  Find out what's new with the 41.00 release of Fortnite on June 5th!](https://dev.epicgames.com/documentation/fortnite/41-00-fortnite-ecosystem-updates-and-release-notes)
 - [![40.40 Fortnite Ecosystem Updates and Release Notes](https://dev.epicgames.com/community/api/documentation/image/2bf4edfb-3344-4fa8-924b-0c96f93bca15?resizing_type=fit&width=640&height=640)
 
   40.40 Fortnite Ecosystem Updates and Release Notes

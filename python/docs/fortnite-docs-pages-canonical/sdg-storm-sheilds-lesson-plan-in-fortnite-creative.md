@@ -151,5 +151,5 @@ Fortnite offers adjustable settings to meet various accessibility needs:
 
 This lesson plan was developed by educator Benjamin Kelly from Anglophone East School District. Find Ben at:
 
-- Email [[email protected]](https://dev.epicgames.com/cdn-cgi/l/email-protection#175572795755554359553974787a)
+- Email [[email protected]](https://dev.epicgames.com/cdn-cgi/l/email-protection#f8ba9d96b8babaacb6bad69b9795)
 - Twitter [@BBTNB](https://twitter.com/BBTNB)

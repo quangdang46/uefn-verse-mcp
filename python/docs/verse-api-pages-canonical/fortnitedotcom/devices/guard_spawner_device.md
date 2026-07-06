@@ -46,7 +46,7 @@ This class has both data members and functions.
 | `ObeyCommands` | `?logic` | Determines if the guard obeys ping commands from its hired player. |
 | `PatrolRange` | `?float` | Distance in centimeters from its spawn position from which the guard will peacefully roam. This value is clamped between 200.0 and 25000.0. |
 | `RestoreHealthAndShieldOnHire` | `?logic` | Determines if the guard is healed when it is hired. |
-| `ShowHealthBar` | `?logic` | If true, displays the guard’s health to players. |
+| `ShowHealthBar` | `?logic` | If true, displays the guard's health to players. |
 | `SpawnedEvent` | `listenable(payload)` | Signaled when a guard is spawned. Sends the `agent` guard who was spawned. |
 | `SuspiciousEvent` | `listenable(payload)` | Signaled when a guard becomes suspicious. Sends the `agent` guard who is suspicious. |
 | `TargetLostEvent` | `listenable(payload)` | Signaled when a guard has lost track of a target. `Source` is the guard that lost track of a target. `Target` is the `agent` no longer targeted by the guard. |

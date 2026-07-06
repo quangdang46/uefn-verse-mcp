@@ -13,7 +13,7 @@ Module import path: /Verse.org/SpatialMath
 
 | Name | Description |
 | --- | --- |
-| [`rotation`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/spatialmath/rotation) |  |
+| [`rotation`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/spatialmath/rotation) | An abstract representation of an orientation change in 3d-space. |
 | [`transform`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/spatialmath/transform) | A combination of scale, rotation, and translation, applied in that order. |
 | [`vector3`](https://dev.epicgames.com/documentation/fortnite/verse-api/versedotorg/spatialmath/vector3) | 3-dimensional vector with `float` components. |
 

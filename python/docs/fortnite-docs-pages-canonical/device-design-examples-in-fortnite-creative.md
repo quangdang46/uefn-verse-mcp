@@ -10,6 +10,11 @@ You've learned about devices, now take it to the next level! In this section you
 
 For design examples and ways to use Fortnite Patchwork, see [Composing with Patchwork](composing-with-patchwork-in-fortnite-creative).
 
+- [![Exploring Gameplay](https://dev.epicgames.com/community/api/documentation/image/a30e90e6-b77d-49ea-b9a1-c91a6cc2da6f?resizing_type=fit&width=640&height=640)
+
+  Exploring Gameplay
+
+  Combine several devices to create a specific interaction or trigger an event!](https://dev.epicgames.com/documentation/fortnite/exploring-gameplay-in-fortnite-creative)
 - [![Air Vent Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/5ab42626-7a60-436d-bc41-2d281dae6790?resizing_type=fit&width=640&height=640)
 
   Air Vent Device Design Examples
@@ -55,6 +60,21 @@ For design examples and ways to use Fortnite Patchwork, see [Composing with Patc
   Campfire Device Design Example
 
   Make a racing game where players compete with ATKs!](https://dev.epicgames.com/documentation/fortnite/campfire-device-design-example-in-fortnite-creative)
+- [![Cannon Spawner Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/6b0eb706-d0e9-42c3-ac12-dc2a866f3f7f?resizing_type=fit&width=640&height=640)
+
+  Cannon Spawner Device Design Examples
+
+  Let your players shoot, ride, and catapult — all from a single device!](https://dev.epicgames.com/documentation/fortnite/cannon-spawner-device-design-examples-in-fortnite)
+- [![Chair Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/7f0c4b3e-9b45-48f6-aa5f-57d64177f23b?resizing_type=fit&width=640&height=640)
+
+  Chair Device Design Examples
+
+  Employ some fun game mechanics when you shoot players out of a chair and into the air!](https://dev.epicgames.com/documentation/fortnite/chair-device-design-examples)
+- [![Cinematic Sequence Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/dd63fb87-5221-4485-aeca-c82121bbb336?resizing_type=fit&width=640&height=640)
+
+  Cinematic Sequence Device Design Examples
+
+  See several ways you can make use of engaging in-game cutscenes for your island.](https://dev.epicgames.com/documentation/fortnite/cinematic-sequenceples-in-fortnite)
 - [![Color Changing Tile Device Design Example](https://dev.epicgames.com/community/api/documentation/image/8cd13848-20d5-4ebb-95ab-9978670a82f2?resizing_type=fit&width=640&height=640)
 
   Color Changing Tile Device Design Example
@@ -65,16 +85,36 @@ For design examples and ways to use Fortnite Patchwork, see [Composing with Patc
   Conditional Button Device Design Examples
 
   Explore several examples of how to use the Conditional Button device in your gameplay!](https://dev.epicgames.com/documentation/fortnite/conditional-button-device-design-examples-in-fortnite-creative)
+- [![Conversation Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/6e0d1a15-4018-4bc8-b043-d784e5ecf145?resizing_type=fit&width=640&height=640)
+
+  Conversation Device Design Examples
+
+  Want to add interactive conversations to your island? See several ways you use this powerful device in Fortnite!](https://dev.epicgames.com/documentation/fortnite/conversation-device-design-examples)
 - [![Creature Manager Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/41b97125-c9f9-4617-a0b2-8829ed372831?resizing_type=fit&width=640&height=640)
 
   Creature Manager Device Design Examples
 
   Customize your creatures to support your island theme!](https://dev.epicgames.com/documentation/fortnite/creature-manager-device-design-examples-in-fortnite-creative)
+- [![Creature Placer Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/295f5f1a-6a9b-4f9e-a7b8-9e2c28dd3cfa?resizing_type=fit&width=640&height=640)
+
+  Creature Placer Device Design Examples
+
+  Get ready for some novel ways to employ creatures in your game!](https://dev.epicgames.com/documentation/fortnite/creature-placer-device-design-examples-in-fortnite)
+- [![Creature Spawner Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/8b9570dc-a271-48a8-832b-de1bec61a2f0?resizing_type=fit&width=640&height=640)
+
+  Creature Spawner Device Design Examples
+
+  See some ways to use this device to create interesting gameplay.](https://dev.epicgames.com/documentation/fortnite/creature-spawner-device-design-examples-in-fortnite)
 - [![D-Launcher Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/48347710-c74b-4288-a13c-ee5538a149f4?resizing_type=fit&width=640&height=640)
 
   D-Launcher Device Design Examples
 
   Explore some examples of how to put the D-Launcher to good use!](https://dev.epicgames.com/documentation/fortnite/dlauncher-device-design-examples-in-fortnite-creative)
+- [![Damage Volume Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/cdf2cdbd-10fa-486d-9ed3-0f3fe5bae2ca?resizing_type=fit&width=640&height=640)
+
+  Damage Volume Device Design Examples
+
+  See several ways to damage or eliminate players who go out of bounds!](https://dev.epicgames.com/documentation/fortnite/damage-volume-design-examples-in-fortnite)
 - [![Down But Not Out Device Design Example](https://dev.epicgames.com/community/api/documentation/image/da8838cc-77dc-4675-9bd4-2b00cfc1c786?resizing_type=fit&width=640&height=640)
 
   Down But Not Out Device Design Example
@@ -95,6 +135,11 @@ For design examples and ways to use Fortnite Patchwork, see [Composing with Patc
   First Person Camera Device Design Examples
 
   This camera view is perfect for shooter games and other fun applications!](https://dev.epicgames.com/documentation/fortnite/first-person-camera-device-design-examples-in-fortnite-creative)
+- [![Fishing Zone Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/2a3e4671-5db7-4429-9dbe-5a93e967d177?resizing_type=fit&width=640&height=640)
+
+  Fishing Zone Device Design Examples
+
+  See some cool ways to add a fishing game loop to your game.](https://dev.epicgames.com/documentation/fortnite/fishing-zone-device-design-examples-in-fortnite)
 - [![Grind Rail Device Design Example](https://dev.epicgames.com/community/api/documentation/image/40a26128-667e-4472-b209-51ee9341f5d5?resizing_type=fit&width=640&height=640)
 
   Grind Rail Device Design Example
@@ -105,116 +150,26 @@ For design examples and ways to use Fortnite Patchwork, see [Composing with Patc
   Grind Vine Device Design Example
 
   Build a mini-game where players shoot targets as they grind through bumpy terrain.](https://dev.epicgames.com/documentation/fortnite/grind-vine-device-design-example-in-fortnite-creative)
-- [![HUD Message Device Design Example](https://dev.epicgames.com/community/api/documentation/image/7d281f7f-b660-47dd-922f-b2a1e5f70e3a?resizing_type=fit&width=640&height=640)
-
-  HUD Message Device Design Example
-
-  Warm, warmer, hot! Learn how to build a hot-and-cold game that features HUD Message devices!](https://dev.epicgames.com/documentation/fortnite/hud-message-device-design-example-in-fortnite-creative)
-- [![Item Remover Device Design Example](https://dev.epicgames.com/community/api/documentation/image/7014b16b-36fd-466e-b6eb-134bd72afd2b?resizing_type=fit&width=640&height=640)
-
-  Item Remover Device Design Example
-
-  Take away a player's weapons and other items if their health drops too low!](https://dev.epicgames.com/documentation/fortnite/item-remover-device-design-example-in-fortnite-creative)
-- [![Orbit Camera Device Design Example](https://dev.epicgames.com/community/api/documentation/image/d46d3d31-0c46-48a3-9ea0-e5dc4b554413?resizing_type=fit&width=640&height=640)
-
-  Orbit Camera Device Design Example
-
-  See how to incorporate the Orbit Camera in a game of hide-and-seek!](https://dev.epicgames.com/documentation/fortnite/orbit-camera-device-design-example-in-fortnite-creative)
-- [![Tracker Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/3afe808f-9250-4d34-a50b-dde66de18810?resizing_type=fit&width=640&height=640)
-
-  Tracker Device Design Examples
-
-  Explore ideas from shooting objectives to farm games using the tracker device!](https://dev.epicgames.com/documentation/fortnite/tracker-device-design-examples)
-- [![Switch Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/3430a18d-be0e-41e5-a0ef-6f3217376aed?resizing_type=fit&width=640&height=640)
-
-  Switch Device Design Examples
-
-  Explore ways to switch up your games with switches!](https://dev.epicgames.com/documentation/fortnite/switch-device-design-examples)
-- [![Trigger Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/d1ad28f9-75e8-42f4-8bd9-200f73b69e81?resizing_type=fit&width=640&height=640)
-
-  Trigger Device Design Examples
-
-  Explore some interesting ways to use Trigger devices in your gameplay!](https://dev.epicgames.com/documentation/fortnite/trigger-device-design-examples)
-- [![Wildlife Spawner Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/d5d12a8a-4caf-4bdf-a7aa-f92aba7620b8?resizing_type=fit&width=640&height=640)
-
-  Wildlife Spawner Device Design Examples
-
-  Find new ways to integrate various types of wildlife into your game play, from chasing chickens to riding raptors!](https://dev.epicgames.com/documentation/fortnite/wildlife-spawner-device-design-examples)
-- [![Skilled Interaction Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/8c3f4d08-6c6d-4de6-9034-3d0704be58d3?resizing_type=fit&width=640&height=640)
-
-  Skilled Interaction Device Design Examples
-
-  See how to create fun mini-games where players can practice various in-game skills.](https://dev.epicgames.com/documentation/fortnite/skilled-interaction-device-design-examples)
-- [![Stat Creator Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/1ae6edb2-69e6-44ac-9af3-3d56dc886bf3?resizing_type=fit&width=640&height=640)
-
-  Stat Creator Device Design Examples
-
-  Want some new ways to track player progress across your games?](https://dev.epicgames.com/documentation/fortnite/stat-creator-design-examples)
-- [![Stat Counter Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/b3e48823-f0ad-4d0e-ab12-b01c8e814d00?resizing_type=fit&width=640&height=640)
-
-  Stat Counter Device Design Examples
-
-  Set statistic (stat) limits, then trigger events when those limits are met!](https://dev.epicgames.com/documentation/fortnite/stat-counter-design-examples-in-fortnite-creative)
-- [![Stat Powerup Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/e29c6fc5-2b83-4cdc-9c84-1392714750fe?resizing_type=fit&width=640&height=640)
-
-  Stat Powerup Device Design Examples
-
-  See how you can use this device in conjunction with the Stat Creator device for custom stats or deliver pre-made stats for your players!](https://dev.epicgames.com/documentation/fortnite/stat-powerup-device-design-examples-in-fortnite)
-- [![Exploring Gameplay](https://dev.epicgames.com/community/api/documentation/image/a30e90e6-b77d-49ea-b9a1-c91a6cc2da6f?resizing_type=fit&width=640&height=640)
-
-  Exploring Gameplay
-
-  Combine several devices to create a specific interaction or trigger an event!](https://dev.epicgames.com/documentation/fortnite/exploring-gameplay-in-fortnite-creative)
-- [![Cannon Spawner Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/6b0eb706-d0e9-42c3-ac12-dc2a866f3f7f?resizing_type=fit&width=640&height=640)
-
-  Cannon Spawner Device Design Examples
-
-  Let your players shoot, ride, and catapult — all from a single device!](https://dev.epicgames.com/documentation/fortnite/cannon-spawner-device-design-examples-in-fortnite)
-- [![Chair Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/7f0c4b3e-9b45-48f6-aa5f-57d64177f23b?resizing_type=fit&width=640&height=640)
-
-  Chair Device Design Examples
-
-  Employ some fun game mechanics when you shoot players out of a chair and into the air!](https://dev.epicgames.com/documentation/fortnite/chair-device-design-examples)
-- [![Cinematic Sequence Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/dd63fb87-5221-4485-aeca-c82121bbb336?resizing_type=fit&width=640&height=640)
-
-  Cinematic Sequence Device Design Examples
-
-  See several ways you can make use of engaging in-game cutscenes for your island.](https://dev.epicgames.com/documentation/fortnite/cinematic-sequenceples-in-fortnite)
-- [![Conversation Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/6e0d1a15-4018-4bc8-b043-d784e5ecf145?resizing_type=fit&width=640&height=640)
-
-  Conversation Device Design Examples
-
-  Want to add interactive conversations to your island? See several ways you use this powerful device in Fortnite!](https://dev.epicgames.com/documentation/fortnite/conversation-device-design-examples)
-- [![Creature Placer Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/295f5f1a-6a9b-4f9e-a7b8-9e2c28dd3cfa?resizing_type=fit&width=640&height=640)
-
-  Creature Placer Device Design Examples
-
-  Get ready for some novel ways to employ creatures in your game!](https://dev.epicgames.com/documentation/fortnite/creature-placer-device-design-examples-in-fortnite)
-- [![Creature Spawner Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/8b9570dc-a271-48a8-832b-de1bec61a2f0?resizing_type=fit&width=640&height=640)
-
-  Creature Spawner Device Design Examples
-
-  See some ways to use this device to create interesting gameplay.](https://dev.epicgames.com/documentation/fortnite/creature-spawner-device-design-examples-in-fortnite)
-- [![Damage Volume Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/cdf2cdbd-10fa-486d-9ed3-0f3fe5bae2ca?resizing_type=fit&width=640&height=640)
-
-  Damage Volume Device Design Examples
-
-  See several ways to damage or eliminate players who go out of bounds!](https://dev.epicgames.com/documentation/fortnite/damage-volume-design-examples-in-fortnite)
-- [![Fishing Zone Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/2a3e4671-5db7-4429-9dbe-5a93e967d177?resizing_type=fit&width=640&height=640)
-
-  Fishing Zone Device Design Examples
-
-  See some cool ways to add a fishing game loop to your game.](https://dev.epicgames.com/documentation/fortnite/fishing-zone-device-design-examples-in-fortnite)
 - [![Health Powerup Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/6d599ab6-d807-41b7-9135-6fdaccc782a0?resizing_type=fit&width=640&height=640)
 
   Health Powerup Device Design Examples
 
   Reward players with increased health for themselves and their shields.](https://dev.epicgames.com/documentation/fortnite/health-powerup-design-examples-in-fortnite)
+- [![HUD Message Device Design Example](https://dev.epicgames.com/community/api/documentation/image/7d281f7f-b660-47dd-922f-b2a1e5f70e3a?resizing_type=fit&width=640&height=640)
+
+  HUD Message Device Design Example
+
+  Warm, warmer, hot! Learn how to build a hot-and-cold game that features HUD Message devices!](https://dev.epicgames.com/documentation/fortnite/hud-message-device-design-example-in-fortnite-creative)
 - [![Item Granter Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/9c81bc70-3bca-4c2b-9fce-9f5f3281b675?resizing_type=fit&width=640&height=640)
 
   Item Granter Device Design Examples
 
   See some novel ways to use the Item Granter device on your island.](https://dev.epicgames.com/documentation/fortnite/item-granter-device-design-examples-in-fortnite)
+- [![Item Remover Device Design Example](https://dev.epicgames.com/community/api/documentation/image/7014b16b-36fd-466e-b6eb-134bd72afd2b?resizing_type=fit&width=640&height=640)
+
+  Item Remover Device Design Example
+
+  Take away a player's weapons and other items if their health drops too low!](https://dev.epicgames.com/documentation/fortnite/item-remover-device-design-example-in-fortnite-creative)
 - [![Lock Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/3c57e5f4-ba9c-42e0-8bd0-6ac9448aaa4c?resizing_type=fit&width=640&height=640)
 
   Lock Device Design Examples
@@ -225,6 +180,11 @@ For design examples and ways to use Fortnite Patchwork, see [Composing with Patc
   Objective Devices Design Examples
 
   Explore ways you can set up distinct objectives in a game.](https://dev.epicgames.com/documentation/fortnite/objective-devices-design-examples-in-fortnite)
+- [![Orbit Camera Device Design Example](https://dev.epicgames.com/community/api/documentation/image/d46d3d31-0c46-48a3-9ea0-e5dc4b554413?resizing_type=fit&width=640&height=640)
+
+  Orbit Camera Device Design Example
+
+  See how to incorporate the Orbit Camera in a game of hide-and-seek!](https://dev.epicgames.com/documentation/fortnite/orbit-camera-device-design-example-in-fortnite-creative)
 - [![Post Process Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/61edf607-3271-4516-9db7-fb6a6b64fbad?resizing_type=fit&width=640&height=640)
 
   Post Process Device Design Examples
@@ -235,11 +195,46 @@ For design examples and ways to use Fortnite Patchwork, see [Composing with Patc
   Prop Manipulator Device Design Examples
 
   Explore some novel ways to use customized props in your gameplay!](https://dev.epicgames.com/documentation/fortnite/prop-manipulator-device-design-examples-in-fortnite)
+- [![Skilled Interaction Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/8c3f4d08-6c6d-4de6-9034-3d0704be58d3?resizing_type=fit&width=640&height=640)
+
+  Skilled Interaction Device Design Examples
+
+  See how to create fun mini-games where players can practice various in-game skills.](https://dev.epicgames.com/documentation/fortnite/skilled-interaction-device-design-examples)
+- [![Stat Counter Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/b3e48823-f0ad-4d0e-ab12-b01c8e814d00?resizing_type=fit&width=640&height=640)
+
+  Stat Counter Device Design Examples
+
+  Set statistic (stat) limits, then trigger events when those limits are met!](https://dev.epicgames.com/documentation/fortnite/stat-counter-design-examples-in-fortnite-creative)
+- [![Stat Creator Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/1ae6edb2-69e6-44ac-9af3-3d56dc886bf3?resizing_type=fit&width=640&height=640)
+
+  Stat Creator Device Design Examples
+
+  Want some new ways to track player progress across your games?](https://dev.epicgames.com/documentation/fortnite/stat-creator-design-examples)
+- [![Stat Powerup Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/e29c6fc5-2b83-4cdc-9c84-1392714750fe?resizing_type=fit&width=640&height=640)
+
+  Stat Powerup Device Design Examples
+
+  See how you can use this device in conjunction with the Stat Creator device for custom stats or deliver pre-made stats for your players!](https://dev.epicgames.com/documentation/fortnite/stat-powerup-device-design-examples-in-fortnite)
+- [![Switch Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/3430a18d-be0e-41e5-a0ef-6f3217376aed?resizing_type=fit&width=640&height=640)
+
+  Switch Device Design Examples
+
+  Explore ways to switch up your games with switches!](https://dev.epicgames.com/documentation/fortnite/switch-device-design-examples)
 - [![Timer Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/4d0e5595-b45c-4f85-aaf9-c3bdaffa410a?resizing_type=fit&width=640&height=640)
 
   Timer Device Design Examples
 
   Explore examples of how timers can be used with other devices for creating suspense and raising stakes for your players!](https://dev.epicgames.com/documentation/fortnite/timer-device-design-examples-in-fortnite)
+- [![Tracker Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/3afe808f-9250-4d34-a50b-dde66de18810?resizing_type=fit&width=640&height=640)
+
+  Tracker Device Design Examples
+
+  Explore ideas from shooting objectives to farm games using the tracker device!](https://dev.epicgames.com/documentation/fortnite/tracker-device-design-examples)
+- [![Trigger Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/d1ad28f9-75e8-42f4-8bd9-200f73b69e81?resizing_type=fit&width=640&height=640)
+
+  Trigger Device Design Examples
+
+  Explore some interesting ways to use Trigger devices in your gameplay!](https://dev.epicgames.com/documentation/fortnite/trigger-device-design-examples)
 - [![Vehicle Mod Box Spawner Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/3a3c56ba-232b-4c08-88cb-63ca6361d0d5?resizing_type=fit&width=640&height=640)
 
   Vehicle Mod Box Spawner Device Design Examples
@@ -255,3 +250,8 @@ For design examples and ways to use Fortnite Patchwork, see [Composing with Patc
   Visual Effect Powerup Device Design Examples
 
   Let players know when they've accomplished something cool with a visual effect!](https://dev.epicgames.com/documentation/fortnite/visual-effect-powerup-device-design-examples-in-fortnite)
+- [![Wildlife Spawner Device Design Examples](https://dev.epicgames.com/community/api/documentation/image/d5d12a8a-4caf-4bdf-a7aa-f92aba7620b8?resizing_type=fit&width=640&height=640)
+
+  Wildlife Spawner Device Design Examples
+
+  Find new ways to integrate various types of wildlife into your game play, from chasing chickens to riding raptors!](https://dev.epicgames.com/documentation/fortnite/wildlife-spawner-device-design-examples)

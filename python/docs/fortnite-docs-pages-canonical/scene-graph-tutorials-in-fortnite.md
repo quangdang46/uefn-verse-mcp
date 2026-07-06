@@ -14,11 +14,6 @@ The tutorials below teach you how to use the different features of Scene Graph i
 
 From UEFN, you can playtest your project directly in a Creative client, and live edit as you go.
 
-- [![Spawning a Grid of Platforms with Scene Graph](https://dev.epicgames.com/community/api/documentation/image/21a2ad16-cee6-4bca-86a7-35c44c1b395a?resizing_type=fit&width=640&height=640)
-
-  Spawning a Grid of Platforms with Scene Graph
-
-  Learn how to spawn multiple prefabs in the world using Scene Graph and Verse.](https://dev.epicgames.com/documentation/fortnite/spawning-a-grid-of-platforms-with-scene-graph-in-unreal-editor-for-fortnite)
 - [![Scene Graph Sample Tutorial](https://dev.epicgames.com/community/api/documentation/image/a5001ecb-c9bd-4695-9663-53344dd6c810?resizing_type=fit&width=640&height=640)
 
   Scene Graph Sample Tutorial
@@ -34,3 +29,8 @@ From UEFN, you can playtest your project directly in a Creative client, and liv
   Lights and Bridges Puzzle
 
   Use Scene Graph to create extensible puzzles in UEFN with Verse.](https://dev.epicgames.com/documentation/fortnite/lights-and-bridges-puzzle-in-fortnite)
+- [![Spawning a Grid of Platforms with Scene Graph](https://dev.epicgames.com/community/api/documentation/image/21a2ad16-cee6-4bca-86a7-35c44c1b395a?resizing_type=fit&width=640&height=640)
+
+  Spawning a Grid of Platforms with Scene Graph
+
+  Learn how to spawn multiple prefabs in the world using Scene Graph and Verse.](https://dev.epicgames.com/documentation/fortnite/spawning-a-grid-of-platforms-with-scene-graph-in-unreal-editor-for-fortnite)

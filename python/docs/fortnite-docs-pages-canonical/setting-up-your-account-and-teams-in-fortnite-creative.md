@@ -37,6 +37,11 @@ Find links to the different account services in each document:
   Profile Pages
 
   See your personal Profile Page in Discover!](https://dev.epicgames.com/documentation/fortnite/creator-pages-in-fortnite-creative)
+- [![Creating Teams in Creator Portal](https://dev.epicgames.com/community/api/documentation/image/9afc14d0-c7e4-4262-88f4-7e9b9d6d3a2e?resizing_type=fit&width=640&height=640)
+
+  Creating Teams in Creator Portal
+
+  Make a team of developers to track island edits, QA tasks, and more with the Creator Portal.](https://dev.epicgames.com/documentation/fortnite/creating-teams-in-creator-portal-in-unreal-editor-for-fortnite)
 - [![Setting Up Teams](https://dev.epicgames.com/community/api/documentation/image/0e1e6116-d50f-4052-9ef6-f03b5ff19bb1?resizing_type=fit&width=640&height=640)
 
   Setting Up Teams
@@ -47,11 +52,6 @@ Find links to the different account services in each document:
   Adding Playtesters
 
   Set up playtesters to ensure the quality of your island gameplay.](https://dev.epicgames.com/documentation/fortnite/adding-playtesters-in-fortnite-creative)
-- [![Creating Teams in Creator Portal](https://dev.epicgames.com/community/api/documentation/image/9afc14d0-c7e4-4262-88f4-7e9b9d6d3a2e?resizing_type=fit&width=640&height=640)
-
-  Creating Teams in Creator Portal
-
-  Make a team of developers to track island edits, QA tasks, and more with the Creator Portal.](https://dev.epicgames.com/documentation/fortnite/creating-teams-in-creator-portal-in-unreal-editor-for-fortnite)
 - [![Games and Game Tags](https://dev.epicgames.com/community/api/documentation/image/6526e91b-aa89-4827-ae1a-76ac0b104963?resizing_type=fit&width=640&height=640)
 
   Games and Game Tags

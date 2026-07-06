@@ -14,7 +14,7 @@ To learn more about your island’s memory usage, see the [Memory Management](ht
 
 ## Project Size Tool
 
-To see a project’s size, the island first has to [cook](unreal-editor-for-fortnite-glossary#cook), [render](unreal-editor-for-fortnite-glossary#render), and play to calculate how the assets in your project contribute to memory usage.
+To see a project’s size, the island first has to [cook](unreal-editor-for-fortnite-glossary#cook) to calculate how the assets in your project contribute to memory usage.
 
 [Launching](https://dev.epicgames.com/documentation/fortnite/playtesting-your-island-in-unreal-editor-for-fortnite) a [playtest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#playtest) session provides a way for you to cook your assets and access the Project Size tool.
 
@@ -22,7 +22,7 @@ To see a project’s size, the island first has to [cook](unreal-editor-for-fort
 
 The **Project Size tab** displays all project assets that add to a project’s size, and provides statistics on your island’s size. The more variety of assets there are in the project, the longer the list of assets will be.
 
-[![Project Size tab in By Package view.](https://dev.epicgames.com/community/api/documentation/image/1784dd4a-f452-4f7d-a150-96683e6a18b3?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1784dd4a-f452-4f7d-a150-96683e6a18b3?resizing_type=fit)
+[![Project Size tab in By Package view.](https://dev.epicgames.com/community/api/documentation/image/60502dcd-680a-4366-8bf1-daeefceec41d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/60502dcd-680a-4366-8bf1-daeefceec41d?resizing_type=fit)
 
 *Click image to enlarge.*
 
@@ -34,7 +34,7 @@ The project’s comprehensive size is recorded in a box below the **Statistics**
 
 The bar graph shows the list of asset types beside each asset’s data usage. You can change the data shown in the Project Size graph by clicking **Settings** in the Statistics bar and selecting different criteria based on group or data usage.
 
-[![The Settings menu.](https://dev.epicgames.com/community/api/documentation/image/5885506e-319e-4c31-8f37-a58ff8bcdbfc?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5885506e-319e-4c31-8f37-a58ff8bcdbfc?resizing_type=fit)
+[![The Settings menu.](https://dev.epicgames.com/community/api/documentation/image/b98a500d-6af0-4736-98cd-2cbd8a496f06?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/b98a500d-6af0-4736-98cd-2cbd8a496f06?resizing_type=fit)
 
 - **By Type** - Collapses the graph by asset types and their data use.
 - **By Package** - Displays the individual assets by name and their data use.
