@@ -10,6 +10,16 @@ Use Building Basics to learn Creative's [core systems](https://dev.epicgames.com
 
 Make sure to check back periodically for updates!
 
+- [![How To Design a Game](https://dev.epicgames.com/community/api/documentation/image/978b22de-83d0-4242-8106-ee13e4b1b4a6?resizing_type=fit&width=640&height=640)
+
+  How To Design a Game
+
+  Never designed a game before? Looking for a refresher on the basics? Here's your 101 on game design!](https://dev.epicgames.com/documentation/fortnite/how-to-design-a-game-in-fortnite-creative)
+- [![Level Design Best Practices](https://dev.epicgames.com/community/api/documentation/image/1766248a-9ea8-44ba-8f60-c8faadbcfb4f?resizing_type=fit&width=640&height=640)
+
+  Level Design Best Practices
+
+  What to think about when you're designing a level in Fortnite Creative](https://dev.epicgames.com/documentation/fortnite/level-design-best-practices-in-fortnite-creative)
 - [![Building Arenas](https://dev.epicgames.com/community/api/documentation/image/1520669c-2a4f-4130-b903-f7f683432843?resizing_type=fit&width=640&height=640)
 
   Building Arenas
@@ -25,6 +35,11 @@ Make sure to check back periodically for updates!
   Designing with Cameras and Controls
 
   Learn to use different camera devices and level up your game design skills!](https://dev.epicgames.com/documentation/fortnite/designing-with-cameras-and-controls-in-fortnite-creative)
+- [![Fortnite Weapons Primer](https://dev.epicgames.com/community/api/documentation/image/5958db23-2990-43b7-bd44-5d0ea2f29755?resizing_type=fit&width=640&height=640)
+
+  Fortnite Weapons Primer
+
+  All weapons are not created equal — learn how to make the most of weapons in Fortnite gameplay!](https://dev.epicgames.com/documentation/fortnite/fortnite-weapons-primer)
 - [![Getting Started with Direct Event Binding](https://dev.epicgames.com/community/api/documentation/image/eade80db-4a4d-4d84-9698-34dceb6ab255?resizing_type=fit&width=640&height=640)
 
   Getting Started with Direct Event Binding
@@ -40,31 +55,6 @@ Make sure to check back periodically for updates!
   Player Movements
 
   Find out some of the cool ways a player can move, and the impact different movements could have on your game design or island experience.](https://dev.epicgames.com/documentation/fortnite/player-movements-in-fortnite-creative)
-- [![Using the Overshield](https://dev.epicgames.com/community/api/documentation/image/ac822f18-eb2b-440c-b5a9-08ab753e7ab0?resizing_type=fit&width=640&height=640)
-
-  Using the Overshield
-
-  Learn about the Overshield and how it can be used in your games.](https://dev.epicgames.com/documentation/fortnite/using-the-overshield-in-fortnite-creative)
-- [![Using the Spatial Thermometer Heatmap](https://dev.epicgames.com/community/api/documentation/image/6a2fbf16-a680-40aa-b6ff-cb7cce1ef575?resizing_type=fit&width=640&height=640)
-
-  Using the Spatial Thermometer Heatmap
-
-  You can use the different heatmap views to balance and redistribute memory in different parts of your island.](https://dev.epicgames.com/documentation/fortnite/using-the-spatial-thermometer-in-fortnite-creative)
-- [![How To Design a Game](https://dev.epicgames.com/community/api/documentation/image/978b22de-83d0-4242-8106-ee13e4b1b4a6?resizing_type=fit&width=640&height=640)
-
-  How To Design a Game
-
-  Never designed a game before? Looking for a refresher on the basics? Here's your 101 on game design!](https://dev.epicgames.com/documentation/fortnite/how-to-design-a-game-in-fortnite-creative)
-- [![Level Design Best Practices](https://dev.epicgames.com/community/api/documentation/image/1766248a-9ea8-44ba-8f60-c8faadbcfb4f?resizing_type=fit&width=640&height=640)
-
-  Level Design Best Practices
-
-  What to think about when you're designing a level in Fortnite Creative](https://dev.epicgames.com/documentation/fortnite/level-design-best-practices-in-fortnite-creative)
-- [![Fortnite Weapons Primer](https://dev.epicgames.com/community/api/documentation/image/5958db23-2990-43b7-bd44-5d0ea2f29755?resizing_type=fit&width=640&height=640)
-
-  Fortnite Weapons Primer
-
-  All weapons are not created equal — learn how to make the most of weapons in Fortnite gameplay!](https://dev.epicgames.com/documentation/fortnite/fortnite-weapons-primer)
 - [![Matchmaking Queue Controls](https://dev.epicgames.com/community/api/documentation/image/b1c1ecb8-a949-48a8-acb4-31ab46bc743b?resizing_type=fit&width=640&height=640)
 
   Matchmaking Queue Controls
@@ -75,3 +65,13 @@ Make sure to check back periodically for updates!
   Onboarding Players
 
   Learn how to make a smooth onboarding experience for your players.](https://dev.epicgames.com/documentation/fortnite/onboarding-players-in-fortnite-creative)
+- [![Using the Overshield](https://dev.epicgames.com/community/api/documentation/image/ac822f18-eb2b-440c-b5a9-08ab753e7ab0?resizing_type=fit&width=640&height=640)
+
+  Using the Overshield
+
+  Learn about the Overshield and how it can be used in your games.](https://dev.epicgames.com/documentation/fortnite/using-the-overshield-in-fortnite-creative)
+- [![Using the Spatial Thermometer Heatmap](https://dev.epicgames.com/community/api/documentation/image/6a2fbf16-a680-40aa-b6ff-cb7cce1ef575?resizing_type=fit&width=640&height=640)
+
+  Using the Spatial Thermometer Heatmap
+
+  You can use the different heatmap views to balance and redistribute memory in different parts of your island.](https://dev.epicgames.com/documentation/fortnite/using-the-spatial-thermometer-in-fortnite-creative)

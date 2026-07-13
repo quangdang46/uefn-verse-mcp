@@ -18,6 +18,11 @@ Accessibility starts at the design phase. To avoid creating content that can lea
 - Keep any flashing areas small; generally to an area less than 25% of 10 degrees of visual field. A 10 degree visual field on a 1024 X 768 display that is 15-17 inches diagonally and viewed at 22-26 inches away is 341 X 256 pixels. Thus, the combined area of flashes occurring concurrently should occupy no more than a total of one quarter of any 341 X 256 pixel rectangles anywhere on the displayed screen area when the content is viewed at 1024 x 768 pixels.
 - Measure the flashes, strobing, or pulsing sections using online tools.
 
+- [![Coordinate Battle Tutorial](https://dev.epicgames.com/community/api/documentation/image/5b829846-76f5-4901-b1c6-691588555fca?resizing_type=fit&width=640&height=640)
+
+  Coordinate Battle Tutorial
+
+  Learn how to use mathematics to create engaging, reusable gameplay experiences.](https://dev.epicgames.com/documentation/fortnite/coordinate-battle-tutorial)
 - [![Box Fight](https://dev.epicgames.com/community/api/documentation/image/35336727-b98c-4790-a08c-b9d95c683629?resizing_type=fit&width=640&height=640)
 
   Box Fight
@@ -93,8 +98,3 @@ Accessibility starts at the design phase. To avoid creating content that can lea
   Party Game
 
   Follow this tutorial to create a Party Game island full of mini-games!](https://dev.epicgames.com/documentation/fortnite/party-game-in-unreal-editor-for-fortnite)
-- [![Coordinate Battle Tutorial](https://dev.epicgames.com/community/api/documentation/image/5b829846-76f5-4901-b1c6-691588555fca?resizing_type=fit&width=640&height=640)
-
-  Coordinate Battle Tutorial
-
-  Learn how to use mathematics to create engaging, reusable gameplay experiences.](https://dev.epicgames.com/documentation/fortnite/coordinate-battle-tutorial)

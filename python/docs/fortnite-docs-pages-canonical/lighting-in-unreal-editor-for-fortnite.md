@@ -53,3 +53,8 @@ Learn how to use the lighting tools in UEFN to craft custom environments for you
   Lighting Scalability Manager
 
   Show and hide lights and post process volumes based on specific scalability settings.](https://dev.epicgames.com/documentation/fortnite/lighting-scalability-manager-in-unreal-editor-for-fortnite)
+- [![Upgrading Legacy Lighting in Multi-Level Projects](https://dev.epicgames.com/community/api/documentation/image/84000121-d61d-49d8-be6d-66a0c42e8900?resizing_type=fit&width=640&height=640)
+
+  Upgrading Legacy Lighting in Multi-Level Projects
+
+  Upgrade out-of-date world lighting in multi-level projects.](https://dev.epicgames.com/documentation/fortnite/upgrading-legacy-lighting-in-multilevel-projects-in-unreal-editor-for-fortnite)

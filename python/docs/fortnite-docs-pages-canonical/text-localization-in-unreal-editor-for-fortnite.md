@@ -16,9 +16,9 @@ Export is the process of collecting the localizable text from your project’s c
 
 Export is triggered via **Build** > **Export Localization**. If you haven’t yet configured the localization settings for your project (**Projec**t > **Project Settings**), then you’ll be prompted to do so before moving on.
 
-![Default Settings](https://dev.epicgames.com/community/api/documentation/image/6ce2647f-5b46-49a3-8810-809465a87ac9?resizing_type=fit&width=1920&height=1080)
+![Default Settings](https://dev.epicgames.com/community/api/documentation/image/986e34da-c570-45f9-a0fc-f37d0a842110?resizing_type=fit&width=1920&height=1080)
 
-![Custom Settings](https://dev.epicgames.com/community/api/documentation/image/4c271526-70a0-4b67-8b0e-c1a0d4d43f45?resizing_type=fit&width=1920&height=1080)
+![Custom Settings](https://dev.epicgames.com/community/api/documentation/image/d168d1a1-2ff9-47ab-83a5-8507c733c1dc?resizing_type=fit&width=1920&height=1080)
 
 The settings relevant for export are:
 
@@ -37,15 +37,13 @@ The settings relevant for export are:
 
 The export process runs synchronously in your local editor. You’ll see a progress notification while the export is running.
 
-[![The export process runs synchronously in your local editor. You’ll see a progress notification while the export is running.](https://dev.epicgames.com/community/api/documentation/image/70a3f0a9-2f06-45a7-a17f-ff445bb9b9ec?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/70a3f0a9-2f06-45a7-a17f-ff445bb9b9ec?resizing_type=fit)
+[![The export process runs synchronously in your local editor. You’ll see a progress notification while the export is running.](https://dev.epicgames.com/community/api/documentation/image/eaf9a71f-a0e6-4e20-abb6-774216ce004d?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/eaf9a71f-a0e6-4e20-abb6-774216ce004d?resizing_type=fit)
 
 When the export has finished you’ll find the per-language PO files under the **Localization** folder in your project’s content. These files are part of your projects’ content, and should be managed like any other content in your project.
 
-Submit these files to source control or turn on [Unreal Revision Control](unreal-revision-control-in-unreal-editor-for-fortnite) in your projects.
+Submit these files to source control or turn on [Lore Version Control](https://dev.epicgames.com/documentation/fortnite/lore-version-control-viewport-status-highlighting-in-unreal-editor-for-fortnite) in your projects.
 
-[![When the export has finished you’ll find the per-language PO files under the **Localization** folder in your project’s content.](https://dev.epicgames.com/community/api/documentation/image/efedea5f-7198-4f12-87eb-f51b08ead97c?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/efedea5f-7198-4f12-87eb-f51b08ead97c?resizing_type=fit)
-
-*Click image to enlarge.*
+[![When the export has finished you’ll find the per-language PO files under the **Localization** folder in your project’s content.](https://dev.epicgames.com/community/api/documentation/image/106982ec-566d-4ce2-bed6-72a9a88312a6?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/106982ec-566d-4ce2-bed6-72a9a88312a6?resizing_type=fit)
 
 These PO files are included when uploading your project, and are automatically converted to their runtime format by the cooking process.
 
@@ -59,9 +57,9 @@ These PO files are included when uploading your project, and are automatically c
 
 Auto Localization is triggered via **Build** > **Build Auto Localization**. If you haven’t yet configured the Auto Localization settings for your project (**Project** > **Project Settings**), then you’ll be prompted to do so before moving on.
 
-![Default Settings](https://dev.epicgames.com/community/api/documentation/image/6e6e3e12-a72f-4170-8144-9cf8ddc2b9f7?resizing_type=fit&width=1920&height=1080)
+![Default Settings](https://dev.epicgames.com/community/api/documentation/image/8ad7314e-bbd7-453a-813e-ae34af2d5bb8?resizing_type=fit&width=1920&height=1080)
 
-![Custom Settings](https://dev.epicgames.com/community/api/documentation/image/46f07c4a-ade2-4eb6-b385-cbf37e487e5c?resizing_type=fit&width=1920&height=1080)
+![Custom Settings](https://dev.epicgames.com/community/api/documentation/image/5a4d952b-7818-4e8c-9c99-b4ae78dabf9e?resizing_type=fit&width=1920&height=1080)
 
 The settings relevant for Auto Localization are:
 
@@ -76,11 +74,11 @@ The settings relevant for Auto Localization are:
 
 The translation process runs asynchronously via an online service, and you are not required to keep your project or UEFN open while it is running. You will see a notification while the translation process is running.
 
-[![You will see a notification while the translation process is running.](https://dev.epicgames.com/community/api/documentation/image/e4521e00-bfc4-45af-92e9-d58fa0c58800?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/e4521e00-bfc4-45af-92e9-d58fa0c58800?resizing_type=fit)
+[![You will see a notification while the translation process is running.](https://dev.epicgames.com/community/api/documentation/image/0dd7b4f4-61cb-423a-b1b9-5a9b4c83190b?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/0dd7b4f4-61cb-423a-b1b9-5a9b4c83190b?resizing_type=fit)
 
 When the translation process has finished you will be prompted to import the result. This will update your PO files on disk with the new translation data.
 
-[![When the translation process has finished you will be prompted to import the result.](https://dev.epicgames.com/community/api/documentation/image/9c666793-e453-4370-abb7-428773a4dfee?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/9c666793-e453-4370-abb7-428773a4dfee?resizing_type=fit)
+[![When the translation process has finished you will be prompted to import the result.](https://dev.epicgames.com/community/api/documentation/image/f712a936-9386-411e-9d0e-b854f426c6a2?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/f712a936-9386-411e-9d0e-b854f426c6a2?resizing_type=fit)
 
 ### Manual Localization
 
@@ -96,7 +94,7 @@ The automatic export and translate option is enabled by default in UEFN. You can
 
 If you haven’t started to export the first version of your island, the first Private Version you generate requires you to specify the **Native Language** for the localization of your project. This option only appears when the Native Language hasn’t already been set, and mirrors the Native Language setting found in the **Project Setting**s.
 
-[![Select the language for the Native Language option in the Project Settings.](https://dev.epicgames.com/community/api/documentation/image/8e6f9158-808d-4353-abd3-01e107da3007?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/8e6f9158-808d-4353-abd3-01e107da3007?resizing_type=fit)
+[![Select the language for the Native Language option in the Project Settings.](https://dev.epicgames.com/community/api/documentation/image/46e54f13-8fd8-409e-a333-ed019d0802fd?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/46e54f13-8fd8-409e-a333-ed019d0802fd?resizing_type=fit)
 
 Click image to enlarge.
 

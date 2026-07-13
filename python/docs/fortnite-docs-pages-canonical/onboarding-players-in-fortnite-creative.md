@@ -80,7 +80,7 @@ Following are some of the informational devices available and suggestions of whe
 
 ### Billboards
 
-A [**Billboard** device](using-billboard-devices-in-fortnite-creative) can display short messages to players. They are typically used for onboarding in the pre-game lobby, or providing [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game) instructions.
+A [**Billboard** device](using-billboard-devices-in-fortnite-creative) can display short messages to players. They are typically used for onboarding in the pre-game lobby, or providing [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame) instructions.
 
 A billboard can hold up to 150 characters.You can control the appearance of both the billboard and the text displayed.
 

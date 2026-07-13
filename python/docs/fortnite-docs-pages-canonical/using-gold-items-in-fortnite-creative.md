@@ -14,7 +14,7 @@ You can use this item as required currency for devices like:
 - **Item Spawner**
 - **Vending Machine**
 
-While [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game), you can offer gold throughout the world for players to collect by through devices like the **Item Spawner** or **Item Granter**.
+While [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame), you can offer gold throughout the world for players to collect by through devices like the **Item Spawner** or **Item Granter**.
 
 Through the [My Island - Settings menu](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary), you can adjust multiple settings for gold allocation on your island. You can change settings like **Show Gold Resource Count** to determine if gold will show on the player's HUD.
 
@@ -46,7 +46,7 @@ Each time you click **ADD TO CHEST**, the item count will increase by one, shown
 
 You can add up to fifteen items to the **CHEST** tab. When it’s full, the **ADD TO CHEST** tab will disappear. To add more items, you first have to remove items from the **CHEST** tab.
 
-From the **CHEST** tab, you can select either **CREATE CHEST** or **CREATE LLAMA** to store the items in a Chest or a Llama for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game).
+From the **CHEST** tab, you can select either **CREATE CHEST** or **CREATE LLAMA** to store the items in a Chest or a Llama for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame).
 
 ## Managing Items
 

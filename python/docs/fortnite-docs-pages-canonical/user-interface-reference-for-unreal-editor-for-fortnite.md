@@ -386,8 +386,8 @@ In the Settings menu, you can enable World Wrapping, clear the output log on PIE
 
 Unreal Revision Control is a custom embedded [revision control](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#revision-control) feature in UEFN. Revision control creates [snapshots](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#snapshot) of your project as it progresses and has many features that make working collaboratively easy:
 
-- [Snapshot History](https://dev.epicgames.com/documentation/fortnite/revision-history-and-conflict-resolution-in-unreal-editor-for-fortnite#snapshot-history-tab)
-- [Conflict Resolution](https://dev.epicgames.com/documentation/fortnite/revision-history-and-conflict-resolution-in-unreal-editor-for-fortnite#conflict-resolution)
+- [Snapshot History](https://dev.epicgames.com/documentation/fortnite/version-history-and-conflict-resolution-in-unreal-editor-for-fortnite#snapshot-history-tab)
+- [Conflict Resolution](https://dev.epicgames.com/documentation/fortnite/version-history-and-conflict-resolution-in-unreal-editor-for-fortnite#conflict-resolution)
 - Auto Check-out
 - Auto-undo
 - [Notes](https://dev.epicgames.com/documentation/fortnite/using-notes-in-unreal-editor-for-fortnite#creating-notes)
@@ -397,9 +397,9 @@ Unreal Revision Control is a custom embedded [revision control](https://dev.epic
 
 Refer to the following documentation for more information.
 
-- **[Unreal Revision Control](https://dev.epicgames.com/documentation/fortnite/unreal-revision-control-in-unreal-editor-for-fortnite)**
-- **[Unreal Revision Control Best Practices](https://dev.epicgames.com/documentation/fortnite/unreal-revision-control-best-practices-in-unreal-editor-for-fortnite)**
-- **[Conflicts in Revision Control](https://dev.epicgames.com/documentation/fortnite/conflicts-in-unreal-revision-control-in-unreal-editor-for-fortnite)**
+- **[Unreal Revision Control](https://dev.epicgames.com/documentation/fortnite/lore-version-control-in-unreal-editor-for-fortnite)**
+- **[Unreal Revision Control Best Practices](https://dev.epicgames.com/documentation/fortnite/lore-version-control-best-practices-in-unreal-editor-for-fortnite)**
+- **[Conflicts in Revision Control](https://dev.epicgames.com/documentation/fortnite/conflicts-in-lore-version-control-in-unreal-editor-for-fortnite)**
 
 ## Ask AI
 

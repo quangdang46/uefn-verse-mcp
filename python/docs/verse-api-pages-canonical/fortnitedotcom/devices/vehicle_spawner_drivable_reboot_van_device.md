@@ -48,6 +48,7 @@ This class has both data members and functions.
 | `RechargeTimerLength` | `?float` | The length of the recharge timer in seconds, regardless of the timer's current state. Clamped between `0.0` and `3600.0`. |
 | `ReviveCompleteEvent` | `listenable(payload)` | Triggers when Reboot Van has finished reviving a player from DBNO.   - `agent` is the player that was just revived. |
 | `SpawnedEvent` | `listenable(payload)` | Signaled when a vehicle is spawned or respawned by this device. Sends the fort_vehicle who was spawned. |
+| `Vehicle` | `??fort_vehicle` | The `fort_vehicle` currently associated with this spawner, if one exists. |
 | `VehicleDestroyedEvent` | `listenable(payload)` | Signaled when a vehicle is destroyed. Deprecated, use DestroyedEvent instead. |
 | `VehicleSpawnedEvent` | `listenable(payload)` | Signaled when a vehicle is spawned or respawned by this device. Deprecated, use SpawnedEvent instead. |
 

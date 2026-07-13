@@ -36,7 +36,7 @@ Trap items include:
 
    - Clicking **Equip** will add the trap to your [Equipment bar](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary).
    - Clicking **Add to Chest** will add the trap you selected to a new chest. You can see this chest by backing out to the main list of Categories, and clicking **Chest**.
-5. From the [Chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) category, you can see the items you've selected. Click either **Create Chest** or **Create Llama** to store the selected traps in a [chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#chest) or a [llama](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#llama) for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game).
+5. From the [Chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) category, you can see the items you've selected. Click either **Create Chest** or **Create Llama** to store the selected traps in a [chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#chest) or a [llama](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#llama) for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame).
 
 [![Trap Items in a Chest](https://dev.epicgames.com/community/api/documentation/image/1b68d64b-7faf-4884-aedc-5884bdbf89fd?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/1b68d64b-7faf-4884-aedc-5884bdbf89fd?resizing_type=fit)
 

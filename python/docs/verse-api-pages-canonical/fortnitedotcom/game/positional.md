@@ -19,3 +19,4 @@ This interface has functions, but no data members.
 | Function Name | Description |
 | --- | --- |
 | [`GetTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/game/positional/gettransform) | Returns the transform of the object. |
+| [`GetGlobalTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/game/positional/getglobaltransform) | Returns the transform of the object. |

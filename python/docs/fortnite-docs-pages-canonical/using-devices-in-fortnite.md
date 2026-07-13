@@ -28,6 +28,21 @@ Ever wondered why devices are important to gameplay?
 
 For information on **Fortnite Patchwork devices**, see [Patchwork Devices](https://dev.epicgames.com/documentation/fortnite/using-patchwork-devices-in-fortnite-creative).
 
+- [![Creating Gameplay with Devices](https://dev.epicgames.com/community/api/documentation/image/dd93842a-2aa4-4641-af27-896e3b4cf4a2?resizing_type=fit&width=640&height=640)
+
+  Creating Gameplay with Devices
+
+  Find out what devices actually are, how they work, and why they can save you hours of unnecessary programming!](https://dev.epicgames.com/documentation/fortnite/creating-gameplay-with-devices-in-fortnite)
+- [![Getting Started with Devices](images/static/document_list/empty_thumbnail.svg)
+
+  Getting Started with Devices
+
+  Learn how to add and modify devices in Fortnite, and how to use Verse to expand device functionality!](https://dev.epicgames.com/documentation/fortnite/getting-started-with-devices-in-fortnite)
+- [![UEFN-Only Devices](https://dev.epicgames.com/community/api/documentation/image/31683279-4587-456a-b24b-f749f32e89ee?resizing_type=fit&width=640&height=640)
+
+  UEFN-Only Devices
+
+  Learn about using devices in UEFN and Verse!](https://dev.epicgames.com/documentation/fortnite/uefnonly-devices-in-fortnite)
 - [![Accolades Devices](https://dev.epicgames.com/community/api/documentation/image/2a421b0c-d329-476c-9bba-7c191e907ac6?resizing_type=fit&width=640&height=640)
 
   Accolades Devices
@@ -188,6 +203,11 @@ For information on **Fortnite Patchwork devices**, see [Patchwork Devices](https
   Capture Item Spawner Devices
 
   Spawn and track a single capturable item as your game objective.](https://dev.epicgames.com/documentation/fortnite/using-capture-item-spawner-devices-in-fortnite-creative)
+- [![Carryable Spawner Devices](https://dev.epicgames.com/community/api/documentation/image/7aa844d4-d46f-4b97-94df-9dbb71611e3f?resizing_type=fit&width=640&height=640)
+
+  Carryable Spawner Devices
+
+  Use the Carryable device to give players objects they can throw at other players.](https://dev.epicgames.com/documentation/fortnite/using-carryable-spawner-devices-in-fortnite)
 - [![Chair Devices](https://dev.epicgames.com/community/api/documentation/image/62667acb-f88b-48b3-90be-19c399b4b9ff?resizing_type=fit&width=640&height=640)
 
   Chair Devices
@@ -318,6 +338,11 @@ For information on **Fortnite Patchwork devices**, see [Patchwork Devices](https
   Dirt Bike Spawner Devices
 
   Place a fast, agile vehicle that players can ride.](https://dev.epicgames.com/documentation/fortnite/using-dirt-bike-spawner-devices-in-fortnite-creative)
+- [![Disguise Devices](https://dev.epicgames.com/community/api/documentation/image/4d68df4b-48b2-425f-9525-c7529b0adfb6?resizing_type=fit&width=640&height=640)
+
+  Disguise Devices
+
+  Use the Disguise device to provide players the option to hide their true identity.](https://dev.epicgames.com/documentation/fortnite/using-disguise-devices-in-fortnite)
 - [![Down But Not Out Devices](https://dev.epicgames.com/community/api/documentation/image/736913bd-560e-4ae6-b066-3eef697105ce?resizing_type=fit&width=640&height=640)
 
   Down But Not Out Devices
@@ -408,6 +433,11 @@ For information on **Fortnite Patchwork devices**, see [Patchwork Devices](https
   Guard Spawner Devices
 
   Raise the stakes for your players by spawning guards to attack them!](https://dev.epicgames.com/documentation/fortnite/using-guard-spawner-devices-in-fortnite-creative)
+- [![Hammerhead Choppa Spawner Devices](https://dev.epicgames.com/community/api/documentation/image/c0db8a4b-6c6d-49d4-8400-88b04cd12daf?resizing_type=fit&width=640&height=640)
+
+  Hammerhead Choppa Spawner Devices
+
+  Let players move across your island in a flying tactical vehicle.](https://dev.epicgames.com/documentation/fortnite/using-hammerhead-choppa-spawner-devices-in-fortnite)
 - [![Healing Cactus Devices](https://dev.epicgames.com/community/api/documentation/image/a56906bd-b317-4ea1-8ef2-0f4830654836?resizing_type=fit&width=640&height=640)
 
   Healing Cactus Devices
@@ -428,6 +458,11 @@ For information on **Fortnite Patchwork devices**, see [Patchwork Devices](https
   Helicopter Spawner Devices
 
   Move across your island in style with a helicopter!](https://dev.epicgames.com/documentation/fortnite/using-helicopter-spawner-devices-in-fortnite-creative)
+- [![Hero Device](https://dev.epicgames.com/community/api/documentation/image/9da563a6-0144-4aaa-978b-e6fbfa7ba4c7?resizing_type=fit&width=640&height=640)
+
+  Hero Device
+
+  Add powered characters that players can transform into with the Hero device.](https://dev.epicgames.com/documentation/fortnite/using-hero-devices-in-fortnite)
 - [![Hiding Prop Gallery Devices](https://dev.epicgames.com/community/api/documentation/image/2b2af2c5-d8c8-40ae-9fab-d3d933b7dab9?resizing_type=fit&width=640&height=640)
 
   Hiding Prop Gallery Devices
@@ -563,6 +598,11 @@ For information on **Fortnite Patchwork devices**, see [Patchwork Devices](https
   Orbit Camera Devices
 
   Set up a camera that follows a character but that the player can rotate freely.](https://dev.epicgames.com/documentation/fortnite/using-orbit-camera-devices-in-fortnite-creative)
+- [![Overlord Spire Devices](https://dev.epicgames.com/community/api/documentation/image/386518eb-d370-409e-b645-89ffa178283c?resizing_type=fit&width=640&height=640)
+
+  Overlord Spire Devices
+
+  Use the Overlord Spire to create large boss-like encounters that really challenge your players!](https://dev.epicgames.com/documentation/fortnite/using-overlord-spire-devices-in-fortnite)
 - [![Perception Trigger Devices](https://dev.epicgames.com/community/api/documentation/image/3697beb8-bab8-4627-a7c1-8f43802b9e41?resizing_type=fit&width=640&height=640)
 
   Perception Trigger Devices
@@ -638,6 +678,11 @@ For information on **Fortnite Patchwork devices**, see [Patchwork Devices](https
   Post Process Devices
 
   Add effects to set a mood or enhance your game mechanics.](https://dev.epicgames.com/documentation/fortnite/using-post-processing-devices-in-fortnite-creative)
+- [![Progress Based Mesh Devices](https://dev.epicgames.com/community/api/documentation/image/3aef5f53-b5aa-4ee1-895a-75ed55bd284f?resizing_type=fit&width=640&height=640)
+
+  Progress Based Mesh Devices
+
+  Learn to use the Progress Based Mesh device to create a visual representation of progress.](https://dev.epicgames.com/documentation/fortnite/using-progress-based-mesh-devices-in-fortnite)
 - [![Prop Manipulator Devices](https://dev.epicgames.com/community/api/documentation/image/3485eb7a-4a4f-4ecf-97fc-622ecc4ba47d?resizing_type=fit&width=640&height=640)
 
   Prop Manipulator Devices
@@ -688,16 +733,41 @@ For information on **Fortnite Patchwork devices**, see [Patchwork Devices](https
   Reboot Van Spawner Devices
 
   Place a device that spawns Reboot Vans in your islands to give players a way to revive eliminated team members!](https://dev.epicgames.com/documentation/fortnite/using-reboot-van-spawner-devices-in-fortnite-creative)
+- [![Rift Point Volume Devices](https://dev.epicgames.com/community/api/documentation/image/9e6e3be5-7611-44b2-8625-5c2dbf33101c?resizing_type=fit&width=640&height=640)
+
+  Rift Point Volume Devices
+
+  Use the Rift Point Volume device to use a bomb similar to the one used in Ballistic.](https://dev.epicgames.com/documentation/fortnite/using-rift-point-volume-devices-in-fortnite-creative)
 - [![Rocket Boost Powerup Devices](https://dev.epicgames.com/community/api/documentation/image/1742acb1-c5fd-4800-b172-90b36230001d?resizing_type=fit&width=640&height=640)
 
   Rocket Boost Powerup Devices
 
   Use this to fuel up the Boost in your Octane vehicles.](https://dev.epicgames.com/documentation/fortnite/usingrocketboostpowerupdevicesinfortnitecreative)
+- [![Rocket Racing Boost Pad Devices](https://dev.epicgames.com/community/api/documentation/image/bc87160e-be39-4d7c-87e3-ca8830942088?resizing_type=fit&width=640&height=640)
+
+  Rocket Racing Boost Pad Devices
+
+  Give all players a uniform speed boost during the race!](https://dev.epicgames.com/documentation/fortnite/using-rocket-racing-boost-pad-devices-in-unreal-editor-for-fortnite)
+- [![Rocket Racing EMP Volume Hazard Devices](https://dev.epicgames.com/community/api/documentation/image/bdd3a0a9-b333-4a3d-8d4b-6221e7cbc770?resizing_type=fit&width=640&height=640)
+
+  Rocket Racing EMP Volume Hazard Devices
+
+  Slow players down in your races with this device.](https://dev.epicgames.com/documentation/fortnite/using-rocket-racing-emp-volume-devices-in-unreal-editor-for-fortnite)
+- [![Rocket Racing Track Devices](https://dev.epicgames.com/community/api/documentation/image/681e46d4-cc6f-4093-b213-1e3c6e9a8527?resizing_type=fit&width=640&height=640)
+
+  Rocket Racing Track Devices
+
+  Add and manipulate tracks for your RR racing game.](https://dev.epicgames.com/documentation/fortnite/using-rocket-racing-track-devices-in-unreal-editor-for-fortnite)
 - [![Rocket Racing Vehicle Spawner Device](https://dev.epicgames.com/community/api/documentation/image/f752ac21-ad3e-4084-9797-24ad631934a4?resizing_type=fit&width=640&height=640)
 
   Rocket Racing Vehicle Spawner Device
 
   Customize this vehicle to use the same game mechanics as Rocket Racing, but on your own island.](https://dev.epicgames.com/documentation/fortnite/using-rocket-racing-vehicle-spawner-devices-in-fortnite-creative)
+- [![Roly Poly Devices](https://dev.epicgames.com/community/api/documentation/image/328fb92c-8cb9-479f-8002-192c4818de02?resizing_type=fit&width=640&height=640)
+
+  Roly Poly Devices
+
+  Add Roly Poly devices to your island for a bug filled adventure.](https://dev.epicgames.com/documentation/fortnite/using-roly-poly-devices-in-fortnite)
 - [![Round Settings Devices](https://dev.epicgames.com/community/api/documentation/image/848c2d0a-d1a7-45ba-a00b-2c79f58b7c03?resizing_type=fit&width=640&height=640)
 
   Round Settings Devices
@@ -713,6 +783,11 @@ For information on **Fortnite Patchwork devices**, see [Patchwork Devices](https
   Score Manager Devices
 
   This device sets or changes player scores when activated.](https://dev.epicgames.com/documentation/fortnite/using-score-manager-devices-in-fortnite-creative)
+- [![Scout Spire Devices](https://dev.epicgames.com/community/api/documentation/image/e6113b8e-ff84-463f-998f-1754cde376c4?resizing_type=fit&width=640&height=640)
+
+  Scout Spire Devices
+
+  The Scout Spire adds a challenge to any environment with its charged, player tracking lasers and customizability.](https://dev.epicgames.com/documentation/fortnite/using-scout-spire-devices-in-fortnite)
 - [![Sedan Spawner Devices](https://dev.epicgames.com/community/api/documentation/image/74c043a9-cc72-494a-9862-6a57fdf83070?resizing_type=fit&width=640&height=640)
 
   Sedan Spawner Devices
@@ -923,6 +998,11 @@ For information on **Fortnite Patchwork devices**, see [Patchwork Devices](https
   Volume Devices
 
   Use the Volume to create large areas where events can be triggered upon entering or exiting.](https://dev.epicgames.com/documentation/fortnite/using-volume-devices-in-fortnite-creative)
+- [![Voting Group and Voting Options Devices](https://dev.epicgames.com/community/api/documentation/image/ffbb5272-552c-4fd5-92e5-9820f3ba83fa?resizing_type=fit&width=640&height=640)
+
+  Voting Group and Voting Options Devices
+
+  Set up a voting system on your island that players can participate in!](https://dev.epicgames.com/documentation/fortnite/using-voting-group-and-voting-options-devices-in-fortnite)
 - [![War Bus Spawner Devices](https://dev.epicgames.com/community/api/documentation/image/e49b58b8-dade-43b4-b2e7-958ec71e6278?resizing_type=fit&width=640&height=640)
 
   War Bus Spawner Devices
@@ -948,83 +1028,3 @@ For information on **Fortnite Patchwork devices**, see [Patchwork Devices](https
   Zipline Devices
 
   Use ziplines to give your players fun and interesting ways to traverse the environment on your island.](https://dev.epicgames.com/documentation/fortnite/using-zipline-devices-in-fortnite-creative)
-- [![Rift Point Volume Devices](https://dev.epicgames.com/community/api/documentation/image/9e6e3be5-7611-44b2-8625-5c2dbf33101c?resizing_type=fit&width=640&height=640)
-
-  Rift Point Volume Devices
-
-  Use the Rift Point Volume device to use a bomb similar to the one used in Ballistic.](https://dev.epicgames.com/documentation/fortnite/using-rift-point-volume-devices-in-fortnite-creative)
-- [![Creating Gameplay with Devices](https://dev.epicgames.com/community/api/documentation/image/dd93842a-2aa4-4641-af27-896e3b4cf4a2?resizing_type=fit&width=640&height=640)
-
-  Creating Gameplay with Devices
-
-  Find out what devices actually are, how they work, and why they can save you hours of unnecessary programming!](https://dev.epicgames.com/documentation/fortnite/creating-gameplay-with-devices-in-fortnite)
-- [![Getting Started with Devices](images/static/document_list/empty_thumbnail.svg)
-
-  Getting Started with Devices
-
-  Learn how to add and modify devices in Fortnite, and how to use Verse to expand device functionality!](https://dev.epicgames.com/documentation/fortnite/getting-started-with-devices-in-fortnite)
-- [![UEFN-Only Devices](https://dev.epicgames.com/community/api/documentation/image/31683279-4587-456a-b24b-f749f32e89ee?resizing_type=fit&width=640&height=640)
-
-  UEFN-Only Devices
-
-  Learn about using devices in UEFN and Verse!](https://dev.epicgames.com/documentation/fortnite/uefnonly-devices-in-fortnite)
-- [![Carryable Spawner Devices](https://dev.epicgames.com/community/api/documentation/image/7aa844d4-d46f-4b97-94df-9dbb71611e3f?resizing_type=fit&width=640&height=640)
-
-  Carryable Spawner Devices
-
-  Use the Carryable device to give players objects they can throw at other players.](https://dev.epicgames.com/documentation/fortnite/using-carryable-spawner-devices-in-fortnite)
-- [![Disguise Devices](https://dev.epicgames.com/community/api/documentation/image/4d68df4b-48b2-425f-9525-c7529b0adfb6?resizing_type=fit&width=640&height=640)
-
-  Disguise Devices
-
-  Use the Disguise device to provide players the option to hide their true identity.](https://dev.epicgames.com/documentation/fortnite/using-disguise-devices-in-fortnite)
-- [![Hammerhead Choppa Spawner Devices](https://dev.epicgames.com/community/api/documentation/image/c0db8a4b-6c6d-49d4-8400-88b04cd12daf?resizing_type=fit&width=640&height=640)
-
-  Hammerhead Choppa Spawner Devices
-
-  Let players move across your island in a flying tactical vehicle.](https://dev.epicgames.com/documentation/fortnite/using-hammerhead-choppa-spawner-devices-in-fortnite)
-- [![Hero Device](https://dev.epicgames.com/community/api/documentation/image/9da563a6-0144-4aaa-978b-e6fbfa7ba4c7?resizing_type=fit&width=640&height=640)
-
-  Hero Device
-
-  Add powered characters that players can transform into with the Hero device.](https://dev.epicgames.com/documentation/fortnite/using-hero-devices-in-fortnite)
-- [![Overlord Spire Devices](https://dev.epicgames.com/community/api/documentation/image/386518eb-d370-409e-b645-89ffa178283c?resizing_type=fit&width=640&height=640)
-
-  Overlord Spire Devices
-
-  Use the Overlord Spire to create large boss-like encounters that really challenge your players!](https://dev.epicgames.com/documentation/fortnite/using-overlord-spire-devices-in-fortnite)
-- [![Progress Based Mesh Devices](https://dev.epicgames.com/community/api/documentation/image/3aef5f53-b5aa-4ee1-895a-75ed55bd284f?resizing_type=fit&width=640&height=640)
-
-  Progress Based Mesh Devices
-
-  Learn to use the Progress Based Mesh device to create a visual representation of progress.](https://dev.epicgames.com/documentation/fortnite/using-progress-based-mesh-devices-in-fortnite)
-- [![Rocket Racing Boost Pad Devices](https://dev.epicgames.com/community/api/documentation/image/bc87160e-be39-4d7c-87e3-ca8830942088?resizing_type=fit&width=640&height=640)
-
-  Rocket Racing Boost Pad Devices
-
-  Give all players a uniform speed boost during the race!](https://dev.epicgames.com/documentation/fortnite/using-rocket-racing-boost-pad-devices-in-unreal-editor-for-fortnite)
-- [![Rocket Racing EMP Volume Hazard Devices](https://dev.epicgames.com/community/api/documentation/image/bdd3a0a9-b333-4a3d-8d4b-6221e7cbc770?resizing_type=fit&width=640&height=640)
-
-  Rocket Racing EMP Volume Hazard Devices
-
-  Slow players down in your races with this device.](https://dev.epicgames.com/documentation/fortnite/using-rocket-racing-emp-volume-devices-in-unreal-editor-for-fortnite)
-- [![Rocket Racing Track Devices](https://dev.epicgames.com/community/api/documentation/image/681e46d4-cc6f-4093-b213-1e3c6e9a8527?resizing_type=fit&width=640&height=640)
-
-  Rocket Racing Track Devices
-
-  Add and manipulate tracks for your RR racing game.](https://dev.epicgames.com/documentation/fortnite/using-rocket-racing-track-devices-in-unreal-editor-for-fortnite)
-- [![Roly Poly Devices](https://dev.epicgames.com/community/api/documentation/image/328fb92c-8cb9-479f-8002-192c4818de02?resizing_type=fit&width=640&height=640)
-
-  Roly Poly Devices
-
-  Add Roly Poly devices to your island for a bug filled adventure.](https://dev.epicgames.com/documentation/fortnite/using-roly-poly-devices-in-fortnite)
-- [![Scout Spire Devices](https://dev.epicgames.com/community/api/documentation/image/e6113b8e-ff84-463f-998f-1754cde376c4?resizing_type=fit&width=640&height=640)
-
-  Scout Spire Devices
-
-  The Scout Spire adds a challenge to any environment with its charged, player tracking lasers and customizability.](https://dev.epicgames.com/documentation/fortnite/using-scout-spire-devices-in-fortnite)
-- [![Voting Group and Voting Options Devices](https://dev.epicgames.com/community/api/documentation/image/ffbb5272-552c-4fd5-92e5-9820f3ba83fa?resizing_type=fit&width=640&height=640)
-
-  Voting Group and Voting Options Devices
-
-  Set up a voting system on your island that players can participate in!](https://dev.epicgames.com/documentation/fortnite/using-voting-group-and-voting-options-devices-in-fortnite)

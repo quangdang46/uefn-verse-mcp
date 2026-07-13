@@ -6,7 +6,7 @@ Learn how to use Island Settings to improve the game or experience for your play
 
 ![Island Settings in Fortnite Creative](https://dev.epicgames.com/community/api/documentation/image/e65f4f71-a497-4b04-86f9-10a9e6289a09?resizing_type=fill&width=1920&height=335)
 
-**Island Settings** are the settings you can control that affect the island you're developing. These settings are available when you're in [Create mode](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#create-mode) and are inaccessible [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game), with a few exceptions.
+**Island Settings** are the settings you can control that affect the island you're developing. These settings are available when you're in [Create mode](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#create-mode) and are inaccessible [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame), with a few exceptions.
 
 Island Settings is one of the tabs available on the **Creative menu** nav bar. From Create mode:
 

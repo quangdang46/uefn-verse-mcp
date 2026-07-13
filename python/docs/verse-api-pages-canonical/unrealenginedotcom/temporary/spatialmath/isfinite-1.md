@@ -11,7 +11,7 @@ Fails if any of the components are not finite.
 | --- | --- |
 | Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }` |
 
-`(V:vector2).IsFinite<public>()<computes><decides>:`[`vector2`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/vector2)
+`(V:vector2).IsFinite<public>():`[`vector2`](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/temporary/spatialmath/vector2)
 
 ## Parameters
 
@@ -30,10 +30,3 @@ The following attributes, specifiers, and effects determine how you can interact
 | Specifier | Meaning |
 | --- | --- |
 | `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data. |
-
-### Effects
-
-| Effect | Meaning |
-| --- | --- |
-| `computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect. |
-| `decides` | Indicates that the function can fail, and that calling this function is a [failable expression](https://dev.epicgames.com/documentation/fortnite/failure-in-verse#failableexpression). Function definitions with the `decides` effect must also have the `transacts` effect, which means the actions performed by this function can be rolled back (as if the actions were never performed), if there’s a failure anywhere in the function. |

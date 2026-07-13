@@ -1420,7 +1420,7 @@ F-axis
 :   In a 3D space (real or virtual), the F-axis represents horizontal forward/backward (or north/south) movement. Also see axis.
 
 face
-:   A surface comprised of three or more connected edges. The side of a cube can contain a single face, or multiple faces. Each face can be [extruded](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#extrude).
+:   A surface comprised of three or more connected edges. The side of a cube can contain a single face, or multiple faces. Each face can be [extruded](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#extrude).
 
 fall damage
 :   Damage a player receives from falling.
@@ -1432,16 +1432,16 @@ falloff
 :   A gradual reduction in something over space or time. This term could apply to lighting, terrain, or sound, for example.
 
 fashion
-:   A game where players compete to be chosen as the best [outfit](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#outfit) by a judge.
+:   A game where players compete to be chosen as the best [outfit](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#outfit) by a judge.
 
 FBX
 :   FBX (Filmbox) is a proprietary file format (.fbx) developed by Kaydara and owned by Autodesk since 2006. It is used to provide interoperability between digital content creation applications. FBX is also part of Autodesk Gameware, a series of video game middleware.
 
 feedback
-:   A loop that occurs when a mic picks up sound from a speaker and sends it out again through the speaker, where it can once again get picked up by the mic. The [Echo Effect](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#patchworkechoeffect) device has a feedback control that simulates this kind of audio feedback look to distort the audio output.
+:   A loop that occurs when a mic picks up sound from a speaker and sends it out again through the speaker, where it can once again get picked up by the mic. The [Echo Effect](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#patchwork-echo-effect) device has a feedback control that simulates this kind of audio feedback look to distort the audio output.
 
 FFA
-:   FFA stands for free-for-all. For example, see [team FFA](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#teamffa).
+:   FFA stands for free-for-all. For example, see [team FFA](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#team-ffa).
 
 field of view
 :   Field of view, or FOV for short, is how much of the world a player can see at any given moment.
@@ -1449,10 +1449,10 @@ field of view
     With a camera device, **field of view** refers to what the camera (and by extension, the player) can actually see. The field of view is represented as an angle, and is measured in degrees. Angles are two lines that join at a point called the **vertex**. With cameras, the vertex is the lens (virtual in this case) of the camera. The arms of the angle spread up and down (the vertical axis) from that vertex. The higher the number of degrees, the wider the angle, and the more the camera can see.
 
 fiend
-:   A hostile [creature](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#creature).
+:   A hostile [creature](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#creature).
 
 fill light
-:   A secondary source of light in a scene that doesn't change the character of the [key light](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#keylight). Fill lights are used primarily to lighten shadows.
+:   A secondary source of light in a scene that doesn't change the character of the [key light](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#key-light). Fill lights are used primarily to lighten shadows.
 
 film grain
 :   A visual effect that simulates old stock film for a more cinematic look.
@@ -1461,7 +1461,7 @@ filter
 :   In audio signal processing, a filter determines which sound frequencies are heard. Different filters process audio in different ways. For example, a low-pass filter allows lower frequencies to be heard while reducing or eliminating higher frequencies.
 
 fire rate
-:   How quickly a weapon can fire again after it is shot. This is measured in [rounds per second (RPS)](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#roundspersecond).
+:   How quickly a [weapon](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#weapon) can fire again after it is shot. This is measured in [rounds per second (RPS)](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#rounds-per-second).
 
 first person mode
 :   In first person mode, the player's perspective is as though they were looking through their avatar's eyes. With this camera mode, the player usually can't see their avatar's body, but can see their hands or weapons.
@@ -1470,25 +1470,25 @@ first-person shooter
 :   A type of shooter game where the player plays from a first-person perspective in a three-dimensional space. in an FPS, the player can move within the space.
 
 Fixed Angle Camera
-:   A camera device that follows the player around the world, without rotation like the [Fixed Point Camera](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#fixedpointcamera). This camera type is useful for players exploring an open area.
+:   A camera device that follows the player around the world, without rotation like the [Fixed Point Camera](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#fixed-point-camera). This camera type is useful for players exploring an open area.
 
 Fixed Point Camera
 :   A device that positions a camera from a fixed position. You can place the camera on a stationary spot and the camera won't move from that spot. However, it can pivot towards a look-at point. This camera is useful when a player is inside a building or in conversation with an NPC.
 
 FK rigging
-:   FK (Forward Kinematics) is how the positions for different parts of a model at specified times are calculated for both position and orientation. FK refers to the effect on the child nodes as the parent moves or rotates. Compare to [IK rigging](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#ikrigging).
+:   FK (Forward Kinematics) is how the positions for different parts of a model at specified times are calculated for both position and orientation. FK refers to the effect on the child nodes as the parent moves or rotates. Compare to [IK rigging](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ik-rigging).
 
 Flashlight
-:   Although it inflicts no damage, the Flashlight is considered a [ranged weapon](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#rangedweapon).
+:   Although it inflicts no damage, the Flashlight is considered a [ranged weapon](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ranged-weapon).
 
 flavor text
-:   A phrase or sentence that adds to the "flavor" of the game. While flavor text does not impact the game mechanics, it provides atmosphere and [lore](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#lore). You can find flavor text in game descriptions, on billboards, and other spots that contribute to the game's backstory. Flavor text is usually very brief.
+:   A phrase or sentence that adds to the "flavor" of the game. While flavor text does not impact the game mechanics, it provides atmosphere and [lore](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#lore). You can find flavor text in game descriptions, on billboards, and other spots that contribute to the game's backstory. Flavor text is usually very brief.
 
 float value
 :   A float value is a value based on a floating point number. This is a positive or negative whole number with a decimal point. For example, 5.1, 0.25, and -122.333 are all floating point numbers, but 76 and 0 are not. These are called floating point numbers because the decimal point can "float" to any position necessary.
 
 fly mode
-:   In fly mode, you can move quickly through your island while in [Create mode](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#createmode), with a view of the island below. You can also place props on the island while in fly mode. Double-tap your jump key to start flying, and double-tap again to stop fly mode. On a keyboard, your default jump key is the spacebar. Also see [phase](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#phase).
+:   In fly mode, you can move quickly through your island while in [Create mode](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#create-mode), with a view of the island below. You can also place props on the island while in fly mode. Double-tap your jump key to start flying, and double-tap again to stop fly mode. On a keyboard, your default jump key is the spacebar. Also see [phase](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#phase).
 
 flythrough
 :   A video that quickly shows a landscape from an overview perspective.
@@ -1503,13 +1503,13 @@ Foley
 :   Sound effects created in post for film, video, or gaming. It's capitalized out of respect for Jack Foley, the man who invented many of the techniques still used.
 
 force feedback
-:   See [controller rumble](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#controllerrumble).
+:   See [controller rumble](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#controller-rumble).
 
 Fortnite
 :   An ecosystem of islands that includes games and other experiences. Some islands, like Battle Royale, are Epic-made games, but Fortnite also includes developer-made islands, with concerts, events, and just about every genre of game imaginable by developers in the Fortnite developer community.
 
 Fortnite Creative
-:   Fortnite Creative is a [sandbox game](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#sandboxgame) where you can create and save a private island. On your island, you can place or build structures, add landscaping and other [props](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#prop), and use [devices](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#device) to control, direct, and influence the player experience. As a Fortnite developer, you can also invite other players to play on your island.
+:   Fortnite Creative is a [sandbox game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#sandbox-game) where you can create and save a private island. On your island, you can place or build structures, add landscaping and other [props](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#prop), and use [devices](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#device) to control, direct, and influence the player experience. As a Fortnite developer, you can also invite other players to play on your island.
 
 Fortnite developer
 :   Someone who makes custom content for Fortnite, who combines a passion for games with a powerful collection of tools to build their own new islands that they can share with friends and followers. As a Fortnite developer, your only limits are how well you know your tools — and your imagination!
@@ -1527,16 +1527,16 @@ Fortnite island
 :   Any of the islands available in Fortnite. Some are Epic-created, and new islands are added daily by Fortnite developers.
 
 Fortnite Item Shop
-:   The Item Shop in Fortnite is where you can purchase [Battle Passes](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#battlepass), special offers and bundles, and new weapons, [outfits](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#outfit), and other [cosmetics](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#cosmetics).
+:   The Item Shop in Fortnite is where you can purchase [Battle Passes](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#battle-pass), special offers and bundles, and new [weapons](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#weapon), [outfits](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#outfit), and other [cosmetics](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#cosmetics).
 
 Fortnite Zero Build
-:   A no-build game where players focus on sharpshooting and quick reactions without any [in-game](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#in-game) building.
+:   A no-build game where players focus on sharpshooting and quick reactions without any [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame) building.
 
 FOV
-:   See [field of view](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#fieldofview).
+:   See [field of view](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#field-of-view).
 
 FPS
-:   See [first-person shooter](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#first-personshooter).
+:   See [first-person shooter](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#first-person-shooter).
 
 frame rate
 :   Frame rate, or fps (frames per second) for short, is the number of frames that appear in any kind of streaming content per second. While streaming videos and broadcast TV usually use a frame rate of 24 fps, streaming games usually use a higher rate of 30 or 60 fps. You can adjust the frame rate in Creative by pressing the Tab key, then under Menu, clicking Settings > Video > Frame Rate Limit, and selecting a different frame rate.
@@ -1547,15 +1547,15 @@ free-for-all
 friendly
 
 full island tutorial
-:   A set of instructions that takes you on a deep dive into the mechanics of how to build a specific [game type](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#gametype). These tutorials usually include an [island code](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#islandcode) where you can go to a [sample island](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#sampleisland) to see what the player experiences with the [game mechanics](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#gamemechanics) fully in place. The tutorial itself in a step-by-step guide to creating a game with those mechanics.
+:   A set of instructions that takes you on a deep dive into the mechanics of how to build a specific [game type](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#game-type). These tutorials usually include an [island code](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#island-code) where you can go to a [sample island](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#sample-island) to see what the player experiences with the [game mechanics](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#game-mechanics) fully in place. The tutorial itself in a step-by-step guide to creating a game with those mechanics.
 
 function
 :   Functions are things devices do. This includes starting or stopping actions or conditions, changing player attributes, and customizing gameplay in other ways. For a device function to be triggered, you have to bind it to an event on another device. This is how you use devices to create gameplay.
 
-    Compare to [event](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#event).
+    Compare to [event](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#event).
 
 gain
-:   While gain and volume are closely related, there are differences. Volume is how loud something is, while gain is how much an audio signal is increased by an amplifier. Adjusting the volume does not affect the [waveform](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#waveform). However, increasing the gain does, and this can cause [distortion](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#distortion).
+:   While gain and volume are closely related, there are differences. Volume is how loud something is, while gain is how much an audio signal is increased by an amplifier. Adjusting the volume does not affect the [waveform](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#waveform). However, increasing the gain does, and this can cause [distortion](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#distortion).
 
 gallery
 :   In Creative, a gallery is a collection of items. Each gallery has a theme, and each can contain one or dozens of items. Depending on the type of gallery, the items can be used to build other things: landscapes, structures, and so on.
@@ -1566,19 +1566,19 @@ Game Channel
 :   In-game, you can switch between chat channels using the Social menu: Party Channel connects players in the same party (queued up in the lobby together). Game Channel connects players on the same team but in different parties (filled into a team-based game mode).
 
 game client
-:   A game client in multiplayer video games connects an individual user to the main game [server](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#server).
+:   A game client in multiplayer video games connects an individual user to the main game [server](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#server).
 
 game controller
-:   See [controller](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#controller).
+:   See [controller](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#controller).
 
 game countdown
-:   When a game starts, the players spawn and are locked in place for a countdown — usually three seconds. This is the game countdown [phase](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#gamephase).
+:   When a game starts, the players spawn and are locked in place for a countdown — usually three seconds. This is the game countdown [phase](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#phase).
 
 Game Data folder
 :   Game data includes any game or user info that's generated through use. The Game Data folder is where this info is stored.
 
 game end
-:   After the last round has completed (or a game end has been triggered by other means) the game end [state](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#gamestates) begins. An overall winner is declared and players are shown the end screen.
+:   After the last round has completed (or a game end has been triggered by other means) the game end [state](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#game-states) begins. An overall winner is declared and players are shown the end screen.
 
 game genre
 :   A game genre is a specific type of game experience. Think of the genre as a broad category of similar games. Examples of genres include shooter, racing, or puzzle games. If shooter games is the genre, then within that genre you would have sub-genres like elimination match or first-person shooter. Sometimes a game can belong to more than one genre.
@@ -1590,31 +1590,31 @@ game mode
 :   In Fortnite, mode is about who can play, and how. For example, for some games you can pick a mode for how many players are on your team: solo, duo, trio, or squad. Another mode option is where the game is public or private.
 
 game phase
-:   A phase is a separate part of something. There are three distinct game phases: [pre-game](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#pre-gamephase) (players are loaded in but the match hasn't started), [warm-up](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#warm-upphase) (the three-second countdown at the beginning of the match), and [gameplay](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#gameplayphase) (when the game is running). Game phases are a subset of [game states](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#gamestates).
+:   A phase is a separate part of something. There are three distinct game phases: [pre-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#pre-game-phase) (players are loaded in but the match hasn't started), [warm-up](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#warm-up-phase) (the three-second countdown at the beginning of the match), and [gameplay](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#gameplay-phase) (when the game is running). Game phases are a subset of [game states](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#game-states).
 
 game start
-:   See [game states](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#gamestates).
+:   See [game states](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#game-states).
 
 game states
-:   A game state is the stage, or state, a game is in at any point. This would include [Create mode](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#createmode), [Play mode](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#playmode), Lobby (pre-game), Warm-Up, Game Start, In Progress, Round End, and Game End.
+:   A game state is the stage, or state, a game is in at any point. This would include [Create mode](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#create-mode), [Play mode](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#play-mode), Lobby (pre-game), Warm-Up, Game Start, In Progress, Round End, and Game End.
 
 game type
-:   See [game genre](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#gamegenre).
+:   See [game genre](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#game-genre).
 
 gameboard
 :   The surface on which a game is played. Traditionally, the term gameboard has applied to tabletop games. However, it is becoming more common to use it to describe video game levels. In video game development, gameboard levels can be split into different areas or zones, with different shapes, arrangements or terrains. As with tabletop gameboards, players can move characters or objects around the board (level) to progress through the game.
 
 gameplay
-:   The way a game is played — the rules, objectives, and (where there is one) the storyline. Gameplay can also include strategies for winning. [Game mechanics](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#gamemechanics) is a part of gameplay.
+:   The way a game is played — the rules, objectives, and (where there is one) the storyline. Gameplay can also include strategies for winning. [Game mechanics](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#game-mechanics) is a part of gameplay.
 
 gameplay example
-:   An instructional example of how to combine devices to make different components and interactions in a game or other experience. While a [full island tutorial](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#fullislandtutorial) shows you how to create a complete game from start to finish, a gameplay example focuses on a specific [game mechanics](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#gamemechanics) or set of related mechanics for a specific aspect of [gameplay](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#gameplay).
+:   An instructional example of how to combine devices to make different components and interactions in a game or other experience. While a [full island tutorial](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#full-island-tutorial) shows you how to create a complete game from start to finish, a gameplay example focuses on a specific [game mechanic](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#game-mechanics) or set of related mechanics for a specific aspect of [gameplay](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#gameplay).
 
 gameplay loop
 :   A gameplay loop is the experience a player goes through, over and over, until the objective is reached. A good gameplay loop would include a player action, a reward or some other feedback for that action, and an expansion of that reward or feedback through repeated action. This could mean more loot, better weapons, more knowledge revealed, or other incentives to continue the player's engagement. The gameplay loop is the core experience of a game, and the thing that keeps players coming back for more.
 
 gameplay phase
-:   The phase when a game is running. See [game phase](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#gamephase).
+:   The phase when a game is running. See [game phase](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#game-phase).
 
 gameplay tag
 :   Gameplay tags are conceptual, hierarchical labels with user-defined names. These tags can have any number of hierarchical levels, separated by the "." character; for example, a gameplay tag with three levels would take the form of "Family.Genus.Species", with "Family" being the broadest identifier in the hierarchy, and "Species" being the most specific.
@@ -1622,7 +1622,7 @@ gameplay tag
     For more info, see [Gameplay Tags](https://dev.epicgames.com/documentation/en-us/uefn/gameplay-tags-in-verse).
 
 gamertag
-:   Your [Epic Games display name](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#epicgamesdisplayname).
+:   Your [Epic Games display name](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#epic-games-display-name).
 
 gaming
 :   A broad term that covers any type of video game across all platforms.
@@ -1631,13 +1631,13 @@ gamut
 :   Color gamut is a way of describing a range of colors that can be used within a [color space](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#colorspace). Available gamuts are determined in part by the number of colors a monitor can display. A **wide gamut** is a larger color space.
 
 gank
-:   When one player is overwhelmed and eliminated by a group of players or [NPCs](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#npc).
+:   When one player is overwhelmed and eliminated by a group of players or [NPCs](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#non-player-character).
 
 GBL
 :   Short for game-based learning, GBL is an educational approach for using games to engage students and make learning fun.
 
 genre
-:   See [game genre](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#gamegenre).
+:   See [game genre](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#game-genre).
 
 geometry
 :   See [level geometry](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#levelgeometry).
@@ -1652,7 +1652,7 @@ global illumination
 :   Provides more realistic lighting in your scene by using algorithms that account for both light originating from a light source and reflections off of nearby objects.
 
 global settings
-:   The [Patchwork Music Manager](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#patchworkmusicmanager) device provides global control over three user settings: [tempo](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#tempo) (in beats per minute, or bpm), [key](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#key), and major or minor mode. Changing any of these will globally affect other devices. For example, the global key can shift the notes shown on a [Note Sequencer](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#patchworknotesequencer) device.
+:   The [Patchwork Music Manager](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#patchwork-music-manager) device provides global control over three user settings: [tempo](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#tempo) (in beats per minute, or bpm), [key](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#key), and major or minor mode. Changing any of these will globally affect other devices. For example, the global key can shift the notes shown on a [Note Sequencer](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#patchwork-note-sequencer) device.
 
 glTF
 :   This file format name comes from Graphics Language Transmission Format. It is a standard file format for 3D scenes and models. A glTF file uses one of two possible file extensions: .gltf (JSON/ASCII) or .glb (binary). Both .gltf and .glb files can reference external binary and texture resources. Alternatively, both formats may be self-contained by directly embedding binary data buffers (as base64-encoded strings in .gltf files or as raw byte arrays in .glb files). This is an open standard developed and maintained by the Khronos Group, and it supports 3D model geometry, appearance, scene graph hierarchy, and animation.
@@ -1661,7 +1661,7 @@ GOAT
 :   The greatest of all time, or GOAT, is a term that refers to someone or something amazing. If someone says you're goated, take it as a high compliment.
 
 gold
-:   A [resource](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#resource) that can be used [in-game](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#in-game) as a currency or to fill other [register](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#register) requirements.
+:   A [resource](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#release) that can be used [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame) as a currency or to fill other [register](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#register) requirements.
 
 golden path
 :   A golden path is a procedure that doesn't go off in unexpected directions. Think of it as the straightest line from point A to point B.
@@ -1669,13 +1669,13 @@ golden path
     Another definition for golden path is playing or testing a game using [cooked](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#cook) data with a [dedicated server](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#fortniteds) and [client](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#client) running separately, not via play-in-editor (PIE). This is the closest you can get to testing exactly what will happen in-game.
 
 golden rift
-:   The rift in the Creative hub that takes you to your own islands. Only one rift is a golden rift. This is the only rift that you can customize to create and access your personal islands. Most rifts have a white glow, but your personal rift has a golden glow. Also see [personal rift](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#personalrift).
+:   The rift in the Creative hub that takes you to your own islands. Only one rift is a golden rift. This is the only rift that you can customize to create and access your personal islands. Most rifts have a white glow, but your personal rift has a golden glow. Also see [personal rift](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#personal-rift).
 
 graffiti
-:   See [spray](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#spray).
+:   See [spray](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#spray).
 
 grant
-:   To grant means to give or allow something. You can grant items into player inventories automatically during a game or grant [power-ups](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#power-up) or [boosts](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#boost) for increased attributes or increased damage. You can also grant items from devices such as the [Vending Machine](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#vendingmachine).
+:   To grant means to give or allow something. You can grant items into player inventories automatically during a game or grant [power-ups](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#power-up) or [boosts](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#boost) for increased attributes or increased damage. You can also grant items from devices such as the [Vending Machine](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#vending-machine).
 
 grappler
 :   A grappler is a utility weapon that launches a plunger when fired. If it connects to a surface, it will pull the player up and toward it. Players can use this to quickly move both vertically and horizontally.
@@ -1690,7 +1690,7 @@ Grenade Launcher
 :   A rifle that shoots grenades.
 
 greybox
-:   See [grayboxing](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#grayboxing).
+:   See [grayboxing](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#grayboxing).
 
 grid
 :   A level is marked with lines in a grid pattern. You can use these grid lines to position [props](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#prop) and [devices](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#device), and to measure distances. Each grid area is called a tile. Grids are measured in [UUs](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#unrealunits), and one tile equals 512 UU.
@@ -1710,10 +1710,10 @@ Grind Powerup
 :   A device that makes the player who picks it up slip and slide as they run.
 
 grinding
-:   When a player focuses on [looting](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#looting) only [item drops](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#itemdrop), this is called grinding.
+:   When a player focuses on [looting](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#looting) only [item drops](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#item-drop), this is called grinding.
 
 ground pound
-:   A type of [charge attack](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#chargeattack) where the player jumps into the air, performs an aerial flip, then slams their weapon down with increased force.
+:   A type of [charge attack](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#charge-attack) where the player jumps into the air, performs an aerial flip, then slams their weapon down with increased force.
 
 Guard Spawner device
 :   The Guard Spawner can spawn a group of enemies that patrol an area to protect it from players. Like sentries, guards have a detection system. This means players can disguise themselves or engage in stealth tactics, which gives players more strategic options for gameplay. Unlike sentries, however, guards will act as a team to attack players, or help other guards on their team.
@@ -1728,52 +1728,52 @@ Hand Cannon
 :   A handgun that holds 7 bullets.
 
 haptics
-:   Haptics is a technology used to enhance a game experience by adding a tactile sensation — usually vibrations — in sync with an event in the game. Haptics, sometimes called game rumble, is generally delivered through the [controller](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#controller).
+:   Haptics is a technology used to enhance a game experience by adding a tactile sensation — usually vibrations — in sync with an event in the game. Haptics, sometimes called game rumble, is generally delivered through the [controller](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#controller).
 
 hardcore
 :   Refers to any game where a player will not respawn if eliminated.
 
 harmony
-:   A combination of notes played at the same time that make up a [chord](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#chordprogression). Compare to [melody](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#melody).
+:   A combination of notes played at the same time that make up a [chord](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#chord-progression). Compare to [melody](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#melody).
 
 harvest
-:   To collect or gather [crafting items](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#craftingitem) during a game. Harvested items can't be used directly, but can be exchanged for other items.
+:   To collect or gather [crafting items](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#crafting-item) during a game. Harvested items can't be used directly, but can be exchanged for other items.
 
 harvesting tool
-:   The tool a player uses [in-game](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#in-game) to harvest [resources](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#resource) like wood, stone, and metal. The default harvesting tool is the [Pickaxe](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#pickaxe).
+:   The tool a player uses [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame) to harvest [resources](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#resource) like wood, stone, and metal. The default harvesting tool is the [Pickaxe](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#pickaxe).
 
 hazard
-:   Any device or item that can damage a player. This would include things like storms, enemy [NPCs](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#npc), and [traps](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#trap).
+:   Any device or item that can damage a player. This would include things like storms, enemy [NPCs](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#non-player-character), and [traps](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#trap).
 
 HDR
 :   High dynamic range, or HDR, expands the range of dark and light tones on a display for more vibrant and lifelike images.
 
 heal
-:   To restore [health](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#health) to a player or object.
+:   To restore [health](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#health) to a player or object.
 
 Healing device
-:   A device that heals players. In Creative, [Campfire](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-campfire-devices-in-fortnite-creative) is an example of a healing device.
+:   A device that heals players. In Creative, [Campfire](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#campfire) is an example of a healing device.
 
 health
-:   A player's health is a measurable quantity. This quantity can be lowered by taking damage during a game. If the player's health drops low enough, the player will [despawn](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#despawn) or be eliminated. Health can be increased by interacting with some devices and [items](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#item). Health can also be applied to other things, such as vehicles, or anything else that can be harmed or destroyed.
+:   A player's health is a measurable quantity. This quantity can be lowered by taking damage during a game. If the player's health drops low enough, the player will [despawn](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#despawn) or be eliminated. Health can be increased by interacting with some devices and [items](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#item). Health can also be applied to other things, such as vehicles, or anything else that can be harmed or destroyed.
 
 health bar
-:   A bar in the [HUD](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#hud) that shows a player's health.
+:   A bar in the [HUD](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#hud) that shows a player's health.
 
 health points
-:   See [HP](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#hp).
+:   See [HP](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#hp).
 
 Health Powerup
-:   A device that regenerates a player's health, their shields, or both. Also see [Powerup](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#powerup).
+:   A device that regenerates a player's health, their shields, or both. Also see [Powerup](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#powerup).
 
 health regen
-:   Health regeneration, or health regen, is a feature that allows a player to take [damage](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#damage), then regain (regenerate) their [health](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#health) if they wait without taking more damage.
+:   Health regeneration, or health regen, is a feature that allows a player to take [damage](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#damage), then regain (regenerate) their [health](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#health) if they wait without taking more damage.
 
 Heat Map
-:   On [XL islands](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#xlisland), the Heat Map shows a color-coded representation of the cells on your island that indicates the memory used in each cell.
+:   On [XL islands](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#xl-island), the Heat Map shows a color-coded representation of the cells on your island that indicates the memory used in each cell.
 
 heavy bullets
-:   An [ammo type](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#ammotypes) for weapons that use high-caliber bullets, typically used in sniper rifles.
+:   An [ammo type](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ammo-types) for weapons that use high-caliber bullets, typically used in sniper rifles.
 
 heightmap
 :   A raster image (two dimensional) used for elevation modeling. Each pixel stores values, such as surface elevation data, for display in 3D computer graphics. Heightmaps are widely used in terrain rendering software and modern video games, and are ideal for storing digital terrain elevations; compared to a regular polygonal mesh, they require substantially less memory for a given level of detail.
@@ -1782,13 +1782,13 @@ Helicopter Spawner
 :   A device that spawns helicopters onto an island.
 
 hero shooter
-:   Hero shooter is a subcategory under [shooter](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#shooter) games, with players select pre-set characters (heroes) that have distinctive attributes, skills, weapons, and abilities.
+:   Hero shooter is a subcategory under [shooter](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#shooter) games, with players select pre-set characters (heroes) that have distinctive attributes, skills, weapons, and abilities.
 
 heroes
 :   A game mode where the player characters have special, superhero-like abilities
 
 hide and seek
-:   A basic hide-and-seek game is usually on a fairly complex island with lots of places for players to hide. You can add combat elements by providing weapons to seekers, hiders, or both. You can also equip hiders with a [Prop-O-Matic](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#prop-o-matic) weapon, which expands the potential number of hiding spots to a whole new level.
+:   A basic hide-and-seek game is usually on a fairly complex island with lots of places for players to hide. You can add combat elements by providing weapons to seekers, hiders, or both. You can also equip hiders with a [Prop-O-Matic](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#prop-o-matic) weapon, which expands the potential number of hiding spots to a whole new level.
 
 hierarchical
 :   Having clear levels or hierarchies of rank, importance, or control. Common hierarchical relationships are parent/child or superclass/subclass.
@@ -1800,7 +1800,7 @@ high-tier
 :   In gaming weaponry, a high-tier weapon would be one that inflicts more damage, has better aim, or other features that make players want to equip it.
 
 hit points
-:   See [HP](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#hp).
+:   See [HP](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#hp).
 
 hitbox
 :   The geometry that indicates [collision](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#collision) boundaries. In Fortnite, a hitbox registers damage and drops a resource to the player that damages it.
@@ -1815,59 +1815,57 @@ horde
 :   A large group of enemies.
 
 horde game
-:   A game mode where individuals or teams defend against hordes of enemies and eliminate as many as possible. [Zombie horde](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#zombiehorde) games are a popular type of game in this mode.
+:   A game mode where individuals or teams defend against hordes of enemies and eliminate as many as possible. [Zombie horde](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#zombie-horde) games are a popular type of game in this mode.
 
 horizontal composition
-:   In [adaptive music](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#adaptivemusic), horizontal composition, or resequencing, is where segments of music can be resequenced based on player actions or other triggers. Unlike [vertical composition](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#verticalcomposition), where a basic music track plays continuously while other elements are added to or removed from it, the musical segments used in horizontal composition are separate from each other.
+:   In [adaptive music](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#adaptive-music), horizontal composition, or resequencing, is where segments of music can be resequenced based on player actions or other triggers. Unlike [vertical composition](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#vertical-composition), where a basic music track plays continuously while other elements are added to or removed from it, the musical segments used in horizontal composition are separate from each other.
 
 horror game
 :   Any game that features a horror theme designed to scare players. Elements might include dark locations, scary sound effects, moving props, and spooky storylines.
 
 hostile
-:   A hostile is a player or [bot](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#bot) that's against a player or team. Friendly players are on the same team. Hostile players are on opposing teams.
+:   A hostile is a player or [bot](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#bot) that's against a player or team. Friendly players are on the same team. Hostile players are on opposing teams.
 
 hotbar
-:   See [quick bar](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#quickbar).
+:   See [quick bar](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#quick-bar).
 
 hotfix
 :   A small piece of code that can be replaced directly in a live game or playtest. These are usually things like [CVars](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#cvar).
 
 hotkey
-:   A hotkey is a key or key combination that provides quick access to a specific function. These are also called shortcut keys or key bindings. Also see [Create mode hotkeys](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#createmodehotkeys).
-
-    A key or combination of keys that provides quick access to a function. Also see [Create mode hotkeys](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#createmodehotkeys) and [mapping controls](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#mappingcontrols).
+:   A hotkey is a key or key combination that provides quick access to a specific function. These are also called shortcut keys or key bindings. Also see [Create mode hotkeys](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#create-mode-hotkeys) and [mapping controls](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#mapping-controls).
 
 Hover Platform
 :   A device that you can use as a foundation for building something in the air.
 
 hoverboard
-:   Accessible from the [Driftboard Spawner](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#driftboardspawner) device, this is a device that a player can ride in air.
+:   Accessible from the [Driftboard Spawner](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#driftboard-spawner) device, this is a device that a player can ride in air.
 
 HP
 :   Short for hit points, this is how much attack a player or object can take before it is eliminated or destroyed. It is sometimes called health points.
 
 hub
-:   he hub is where you can access your existing islands in [Create mode](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#createmode) or start new ones.
+:   The hub is where you can access your existing islands in [Create mode](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#create-mode) or start new ones.
 
 HUD
 :   The heads-up display, or HUD, is a status bar that shows the player information during a game, such as the character’s health and possessions, ammunition indicator, and the score or game progression. It's a heads up because you can see the info on your screen without looking away from the game. It also gives you a heads-up or warning when certain player resources are running low.
 
 HUD Controller
-:   A device that you can use to show or hide parts of a player's [HUD](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#hud), or to turn off the HUD elements completely.
+:   A device that you can use to show or hide parts of a player's [HUD](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#hud), or to turn off the HUD elements completely.
 
 HUD marker
-:   A marker that appears above some devices, such as [Objective devices](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#objectivedevicegallery). Information displayed in a marker is usually customizable.
+:   A marker that appears above some devices, such as [Objective devices](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#objective-device-gallery). Information displayed in a marker is usually customizable.
 
-    [![](https://dev.epicgames.com/community/api/documentation/image/7dd620a0-3e6c-428d-855c-28e38f4db4cf?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/7dd620a0-3e6c-428d-855c-28e38f4db4cf?resizing_type=fit)
+    [![](https://dev.epicgames.com/community/api/documentation/image/5a69a82c-13a1-479e-a626-f5eaa550f5c7?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/5a69a82c-13a1-479e-a626-f5eaa550f5c7?resizing_type=fit)
 
 HUD message
-:   A customized message that displays on the [HUD](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#hud) at a specific point in the game.
+:   A customized message that displays on the [HUD](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#hud) at a specific point in the game.
 
 HUD Message device
-:   The device used to create and place a HUD message. The device uses timers and [triggers](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#trigger) to control when players see messages.
+:   The device used to create and place a HUD message. The device uses [timers](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#timer) and [triggers](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#trigger) to control when players see messages.
 
 hurdle
-:   With the hurdle feature active, players automatically hurdle over or onto obstacles when [sprinting](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#sprint) into them. You can turn hurdling on or off using the Allow Hurdling option in the Settings tab of My Island, and with the Class Designer or Team Settings & Inventory devices. Existing islands have Allow Hurdling set to Off by default.
+:   With the hurdle feature active, players automatically hurdle over or onto obstacles when [sprinting](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#sprint) into them. You can turn hurdling on or off using the Allow Hurdling option in the Settings tab of My Island, and with the [Class Designer](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#class-designer) or Team Settings & Inventory devices. Existing islands have Allow Hurdling set to Off by default.
 
 hype
 :   Something that creates excitement. *Sliding is a hype move,* or *Check out the hype Zero Build game.*
@@ -1876,7 +1874,7 @@ Hyperwallet
 :   A digital way of issuing payouts.
 
 icon picker
-:   Some devices have options that can display information in the [HUD](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#hud). For those devices, you can also pick an icon to go with the text.
+:   Some devices have options that can display information in the [HUD](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#hud). For those devices, you can also pick an icon to go with the text.
 
 iconography
 :   Graphic symbols (icons) used to convey information. An icon communicates in a visually recognizable way in a game, and can represent a quality or an action.
@@ -1894,7 +1892,7 @@ impressions-to-clicks-to-plays
 :   The impressions-to-clicks-to-plays flow for an island involves generating awareness (impressions), capturing interest (clicks), and driving action (plays).
 
 in-game
-:   Refers to anything that happens while a game is in progress, or when the player is in [Play mode](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#playmode).
+:   Refers to anything that happens while a game is in progress, or when the player is in [Play mode](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#play-mode).
 
 in-game resolution
 :   Resolution is the number of pixels per inch that display on a monitor. While different consoles have different resolution settings, a video game runs at its own in-game resolution regardless of console settings. What this means is that the in-game resolution directly affects performance. Higher in-game resolution causes the GPU to work harder to render more pixels, resulting in lower frame rates. Console resolution does not affect gaming performance.
@@ -1912,7 +1910,7 @@ infinite ammo
 :   A way of configuring certain weapons so players will never run out of ammo while playing.
 
 Infinity Blade
-:   A [melee weapon](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#meleeweapon), the Infinity Blade has Mythic [rarity](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#rarity) (the most rare).
+:   A [melee weapon](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#melee-weapon), the Infinity Blade has Mythic [rarity](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#rarity) (the most rare).
 
 influencer
 :   In social media, an influencer is someone who's established a reliable reputation for expert knowledge on a specific topic. They usually make regular posts on their preferred social channels, and have large, enthusiastic followings of people who are interested in their opinions.
@@ -1921,7 +1919,7 @@ Informational devices
 :   Informational devices include a timer, a scoreboard, a customizable billboard, and several other devices that can be used to provide information to players.
 
 ingredients list
-:   A list of props or devices needed to copy a [gameplay example](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#gameplayexample) or island tutorial.
+:   A list of [props](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#prop) or [devices](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#device) needed to copy a [gameplay example](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#gameplay-example) or [island tutorial](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#island-tutorial).
 
 INI file
 :   A file that contains configuration information for computer software. INI is short for initialization, which is the assignment of an initial value when a program launches.
@@ -1940,7 +1938,7 @@ instantiate
     In Verse, instantiate is to to create an [instance](https://dev.epicgames.com/documentation/en-us/uefn/verse-glossary#instance) or value of a data structure or type such as a class or structure. Also see [archetype instantiation](https://dev.epicgames.com/documentation/en-us/uefn/verse-glossary#archetypeinstantiation).
 
 instigator
-:   An instigator is an [event](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#event) that causes, or instigates, a [function](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#function) to occur. An instigator is often [triggered](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#trigger) by a player's actions.
+:   An instigator is an [event](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#event) that causes, or instigates, a [function](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#function) to occur. An instigator is often [triggered](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#trigger) by a player's actions.
 
 intellectual property
 :   An idea, invention, or process that comes from the mind or intellect, and that can be protected through copyright. This could include creations like characters, music, and stories.
@@ -1975,40 +1973,40 @@ island template
 :   In Unreal Editor for Fortnite, an island template is basically an empty island with terrain or other environmental features, much like the starter islands available in Fortnite. These templates are available on the **Project Browser** screen in UEFN.
 
 island theme
-:   Each starter island in Fortnite has a visual theme. For example, Arctic Island is a snowy area with some mountains, while Wasteland Island is a flat, sandy desert. [Props](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#prop) are designed to work with different island themes. When you start adding [objects](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#object) to your island, they should stay within a similar theme. For example, it might be a little wierd to put palm trees on an arctic island, or an arctic test lab on a desert island. Themes extend throughout all of the objects and [items](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#item) that you can place on the island.
+:   Each starter island in Fortnite has a visual theme. For example, Arctic Island is a snowy area with some mountains, while Wasteland Island is a flat, sandy desert. [Props](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#prop) are designed to work with different island themes. When you start adding [objects](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#object) to your island, they should stay within a similar theme. For example, it might be a little weird to put palm trees on an arctic island, or an arctic test lab on a desert island. Themes extend throughout all of the objects and [items](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#item) that you can place on the island.
 
 island tutorial
-:   See [full island tutorial](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#fullislandtutorial).
+:   See [full island tutorial](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#full-island-tutorial).
 
 item
 :   An item is anything a player can collect and use to do things in the game.
 
     For **UEFN**, an item is an object that can be owned and used by players and [agents](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#agent).
 
-    On the **Creative Menu**[Content tab](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#contenttab), items are distinguished from prefabs, galleries, devices and weapons, and contain many subcategories.
+    On the **Creative Menu**[Content tab](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#content-tab), items are distinguished from prefabs, galleries, devices and weapons, and contain many subcategories.
 
 item drop
 :   When a player is eliminated, any items the player is carrying are dropped. In some cases, these items can be picked up by other players
 
 Item Granter
-:   A device that automatically places items directly into a player's inventory during a game. Compare to [Item Spawner](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#itemspawner).
+:   A device that automatically places items directly into a player's inventory during a game. Compare to [Item Spawner](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#item-spawner).
 
 Item Spawner
-:   A device in Creative that, when placed, lets you register items on it by dropping them on the spawner. While an [Item Granter](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#itemgranter) adds items directly into a player's inventory, an Item Spawner drops an item on the island when triggered, and the player must pick it up.
+:   A device in Creative that, when placed, lets you register items on it by dropping them on the spawner. While an [Item Granter](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#item-granter) adds items directly into a player's inventory, an Item Spawner drops an item on the island when triggered, and the player must pick it up.
 
-    For more info, see [Item Spawner Devices](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-item-spawner-devices-in-fortnite-creative). Also compare to [Capture Item Spawner Devices](https://dev.epicgames.com/documentation/en-us/fortnite-creative/using-capture-item-spawner-devices-in-fortnite-creative).
+    For more info, see [Item Spawner Devices](https://dev.epicgames.com/documentation/fortnite/using-item-spawner-devices-in-fortnite-creative). Also compare to [Capture Item Spawner Devices](https://dev.epicgames.com/documentation/fortnite/using-capture-item-spawner-devices-in-fortnite-creative).
 
 Items category
-:   In [Create mode](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#createmode), pressing the Tab key will open the [Content tab](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#contenttab) for the Creative Menu. The [Items (#item) category includes a wide selection of assets, from ammo to world resources.
+:   In [Create mode](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#create-mode), pressing the Tab key will open the [Content tab](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#content-tab) for the Creative Menu. The [Items](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#item) category includes a wide selection of assets, from ammo to world resources.
 
 jank
 :   Not working consistently or properly. If a game is janky, it's glitchy or buggy, or has other wierd issues. Anti-jank is the quest of every game builder to remove the janks and create a smooth and rewarding player experience.
 
 jewel thief
-:   A [game mode](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#gamemode) where players capture an enemy team jewel and bring it back to their own base. It's similar to capture the flag, but with jewel instead of flag.
+:   A [game mode](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#game-mode) where players capture an enemy team jewel and bring it back to their own base. It's similar to capture the flag, but with jewel instead of flag.
 
 job simulation
-:   A [simulation](https://dev.epicgames.com/documentation/en-us/fortnite-creative/fortnite-creative-glossary#simulation) game with a specified theme.
+:   A [simulation](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#simulation) game with a specified theme.
 
 jump
 :   In Rocket Racing, the jump button causes the vehicle to jump off the ground.
@@ -3199,7 +3197,7 @@ revision
 :   In UEFN, this refs to a specific version of a file. Also see [revision control](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#revisioncontrol).
 
 revision control
-:   Revision control (also known as source code control or version control), is a way to track and manage changes to software code. This is useful when you have teams of programmers working on the same project. If someone makes a mistake, version control makes it possible to compare earlier versions of the code to find and correct the problem without interrupting everyone else’s work.
+:   See [version control](https://dev.epicgames.com/documentation/fortnite/version-control).
 
 Revolver
 :   A type of pistol that shoots one round at a time. A revolver magazine holds six shots. Revolvers are a type of pistol. There are several six-shooters for each rarity, and Damage and Fire Rate vary. They all use medium bullets.
@@ -4061,7 +4059,7 @@ Verse file
 :   A file in UEFN that contains Verse code.
 
 version control
-:   See [revision control](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#revisioncontrol).
+:   Version control (also known as source control or revision control), is a way to track and manage changes to software code. This is useful when you have teams of programmers working on the same project. If someone makes a mistake, version control makes it possible to compare earlier versions of the code to find and correct the problem without interrupting everyone else’s work.
 
 vertex
 :   A single point. Also see [vertices](https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-glossary#vertices).

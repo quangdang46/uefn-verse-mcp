@@ -26,7 +26,7 @@ Grenade items include:
 
 Clicking **Equip** will add the item to your [Equipment bar](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary). When you're back in Create mode, you can view any items you've [equipped](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) by pressing the **F** key. You can select equipped items by either scrolling your middle mouse button or by pressing its corresponding number on your keyboard.
 
-From the [Chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) tab, you can select either **Create Chest** or **Create Llama** to store the items in a [chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#chest) or a [llama](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#llama) for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game).
+From the [Chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) tab, you can select either **Create Chest** or **Create Llama** to store the items in a [chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#chest) or a [llama](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#llama) for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame).
 
 [![Grenade Items Chest](https://dev.epicgames.com/community/api/documentation/image/a36edbc4-a90c-40ac-a55b-fa8e1287da99?resizing_type=fit)](https://dev.epicgames.com/community/api/documentation/image/a36edbc4-a90c-40ac-a55b-fa8e1287da99?resizing_type=fit)
 
@@ -70,7 +70,7 @@ You can drop items directly onto devices that can either hold or [grant](https:/
 
 *To register items to a device, stand directly on or immediately beside the device.*
 
-To register an item for this kind of device, follow the steps below. (You can also watch a [video tutorial](https://mediaspace.unrealengine.com/media/RegisteringCraftingConsumablesinFortniteCreative/1_zpmj3v0g) that shows you how to register items, for [crafting](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#crafting) or other [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game) use.)
+To register an item for this kind of device, follow the steps below. (You can also watch a [video tutorial](https://mediaspace.unrealengine.com/media/RegisteringCraftingConsumablesinFortniteCreative/1_zpmj3v0g) that shows you how to register items, for [crafting](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#crafting) or other [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame) use.)
 
 The compatible device will automatically register the dropped item. Compatible devices that can hold items include:
 

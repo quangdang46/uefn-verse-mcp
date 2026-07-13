@@ -14,7 +14,7 @@ World Resource items are:
 - **Stone**
 - **Metal**
 
-While [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game), you can offer these resources throughout the world for players to gather by using devices like the **Item Spawner** or **Item Granter**.
+While [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame), you can offer these resources throughout the world for players to gather by using devices like the **Item Spawner** or **Item Granter**.
 
 Through the [My Island - Settings menu](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary), you can adjust multiple settings that can alter resource allocations for your island. You can also change settings like **Infinite Resources** to determine whether resouces will be unlimited or not.
 

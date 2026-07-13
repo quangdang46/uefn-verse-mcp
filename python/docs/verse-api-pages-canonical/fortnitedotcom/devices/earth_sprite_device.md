@@ -43,10 +43,10 @@ This class has both data members and functions.
 | Function Name | Description |
 | --- | --- |
 | [`Disable`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/earth_sprite_device/disable) | Disable the device. |
-| [`DisableItemGranting`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/earth_sprite_device/disableitemgranting) | Disable the device’s ability to grant items. Can still interact and consume weapons. |
+| [`DisableItemGranting`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/earth_sprite_device/disableitemgranting) | Disable the device's ability to grant items. Can still interact and consume weapons. |
 | [`DisableTradingForPlayer`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/earth_sprite_device/disabletradingforplayer) | Prevents the `agent` from trading. |
 | [`Enable`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/earth_sprite_device/enable) | Enable the device, and resets all trade counts the Sprite is tracking. |
-| [`EnableItemGranting`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/earth_sprite_device/enableitemgranting) | Enable the device’s ability to grant items. |
+| [`EnableItemGranting`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/earth_sprite_device/enableitemgranting) | Enable the device's ability to grant items. |
 | [`EnableTradingForPlayer`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/earth_sprite_device/enabletradingforplayer) | Allows a `agent` to trade, and will reset the `agent`'s trade count for this Sprite. |
 | [`GetGlobalTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/getglobaltransform) | Gets the global transform of this object. |
 | [`GetTransform`](https://dev.epicgames.com/documentation/fortnite/verse-api/fortnitedotcom/devices/creative_object/gettransform) | Returns the transform of the `creative_object` with units in cm. You must check `creative_object.IsValid` before calling this if there is a possibility the object has been disposed or destroyed by gameplay. Otherwise a runtime error will result. |

@@ -45,7 +45,7 @@ Default values are **bold**. Values that trigger contextual filtering are *itali
 | **Number Of Laps** | **1 Lap**, Pick a Number | How many times that player must complete the active sequence of Race Checkpoints to complete the race. |
 | **Start Race On Game Start** | **Yes**, No | Determines whether or the not the race will immediately start when the game is started. |
 | Navigation Arrow On HUD | **Visible**, Hidden | Determines whether or not to display the navigation arrow on the HUD during gameplay. |
-| **Display Checkpoint Markers** | **Yes**, No | Displays markers [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game) and on the map, showing players the location of active Race Checkpoints. |
+| **Display Checkpoint Markers** | **Yes**, No | Displays markers [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame) and on the map, showing players the location of active Race Checkpoints. |
 | **Display Race HUD** | **Yes**, No | Determines whether the race progress is displayed during the race. |
 | **Display Race Progress on HUD** | **Yes**, No | If set to **Yes**, the HUD displays how many laps the player has completed and the total number of laps in the race. If there are no laps in the game, the HUD displays the total number of Checkpoints instead. |
 | **Display Race Time on HUD** | **Yes**, No | If set to **Yes**, the HUD displays the amount of time since the race started, as well as the player's most recent lap time. |

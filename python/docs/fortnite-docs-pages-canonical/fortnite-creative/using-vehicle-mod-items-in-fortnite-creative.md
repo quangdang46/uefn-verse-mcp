@@ -31,7 +31,7 @@ Clicking **Equip** will add the item to your [Equipment bar](https://dev.epicgam
 
 When you're back in [Create mode](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#create-mode), you can view any items you've [equipped](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) by pressing the **F** key. You can select equipped items by either scrolling your middle mouse button or by pressing its corresponding number on your keyboard.
 
-From the [Chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) tab, you can select either **Create Chest** or **Create Llama** to store the items in a [chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#chest) or a [llama](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#llama) for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game).
+From the [Chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary) tab, you can select either **Create Chest** or **Create Llama** to store the items in a [chest](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#chest) or a [llama](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#llama) for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame).
 
 Chests and llamas are a great way to offer item bundles to players. Selecting **Add To Chest** will add the item to the [Chest tab](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary). Each time you click **Add To Chest**, the item count will increase by one, shown as a yellow box on the Chest tab.
 

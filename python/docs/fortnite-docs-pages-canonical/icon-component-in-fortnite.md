@@ -12,7 +12,7 @@ The `icon_component` is a Scene Graph [component](https://dev.epicgames.com/do
 
 ## Class Description
 
-The `icon_component` uses a **[Texture](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#texture)** [asset](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#asset) as a visual reference for the entity [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game). 
+The `icon_component` uses a **[Texture](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#texture)** [asset](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#asset) as a visual reference for the entity [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame). 
 It could be an item icon inside a backpack, a character portrait or an ability icon for a [hotbar](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#hotbar). The component holds a single field, Icon, which can be set in the [Prefab Editor](https://dev.epicgames.com/documentation/fortnite/prefab-editor-user-interface-in-unreal-editor-for-fortnite) or through [Verse](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#verse) script.
 
 ## Example
@@ -25,7 +25,7 @@ Icon Component
 
 Now when the item is picked up by a player, the Icon is used in the hotbar and Backpack UI elements.
 
-Once the [Custom Items and Inventory system](https://dev.epicgames.com/documentation/fortnite/custom-items-and-inventory-overview-in-fortnite) is enabled the `icon_component` is listed in the component dropdown list. For more information check out the [icon_component API reference](https://dev.epicgames.com/documentation/fortnite/verse-api/unrealenginedotcom/scenegraph) from the [Verse API](https://dev.epicgames.com/documentation/fortnite/verse-api).
+Once the [Custom Items and Inventory system](https://dev.epicgames.com/documentation/fortnite/custom-items-and-inventory-overview-in-fortnite) is enabled the `icon_component` is listed in the component dropdown list. For more information check out the icon_component API reference from the [Verse API](https://dev.epicgames.com/documentation/fortnite/verse-api).
 
 ## Verse: Icon
 

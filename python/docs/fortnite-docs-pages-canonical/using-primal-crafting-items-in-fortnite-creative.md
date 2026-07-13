@@ -50,7 +50,7 @@ You may want to create an item bundle to players through a [chest](https://dev.e
 
 You can add up to fifteen items to the Chest tab. When it’s full, the Add To Chest tab will disappear. To add more items, you first have to remove items from the Chest tab.
 
-From the Chest tab, you can select either Create Chest or Create Llama to store the items in a Chest or a Llama for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#in-game).
+From the Chest tab, you can select either Create Chest or Create Llama to store the items in a Chest or a Llama for use [in-game](https://dev.epicgames.com/documentation/fortnite/fortnite-glossary#ingame).
 
 ## Managing Items
 

@@ -157,6 +157,11 @@ You will find more information on the various themes for both prefabs and galler
   Nature and Terrain Galleries
 
   Use Nature and Terrain galleries to decorate your island.](https://dev.epicgames.com/documentation/fortnite/nature-and-terrain-galleries-in-fortnite-creative)
+- [![Pacific Break Galleries](https://dev.epicgames.com/community/api/documentation/image/fb32d6a8-0cba-41e4-86a9-5ba1e98e714d?resizing_type=fit&width=640&height=640)
+
+  Pacific Break Galleries
+
+  Design your island with West Coast themed galleries.](https://dev.epicgames.com/documentation/fortnite/pacific-break-galleries-in-fortnite)
 - [![Prehistoric Galleries](https://dev.epicgames.com/community/api/documentation/image/0a778eda-a4f9-4449-9a70-68d8bbfa7e87?resizing_type=fit&width=640&height=640)
 
   Prehistoric Galleries
@@ -232,8 +237,3 @@ You will find more information on the various themes for both prefabs and galler
   Western Prefabs
 
   Recreate the American Old West and get ready for a wild shootout!](https://dev.epicgames.com/documentation/fortnite/western-prefabs-in-fortnite-creative)
-- [![Pacific Break Galleries](https://dev.epicgames.com/community/api/documentation/image/fb32d6a8-0cba-41e4-86a9-5ba1e98e714d?resizing_type=fit&width=640&height=640)
-
-  Pacific Break Galleries
-
-  Design your island with West Coast themed galleries.](https://dev.epicgames.com/documentation/fortnite/pacific-break-galleries-in-fortnite)

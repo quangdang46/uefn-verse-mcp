@@ -88,7 +88,7 @@ This class has both data members and functions.
 | `SlamShockwaveDuration` | `?float` | Determines the time it takes for the slam attack's shockwave to reach the maximum radius.   - Values are clamped between `1.0` and `30.0` seconds |
 | `SlamShockwaveMaxRadius` | `?float` | Determines the maximum radius that the slam attack's shockwave can spread   - Values are clamped between `100.0` and `5000.0` meters |
 | `SpawnEvent` | `listenable(payload)` | Triggers when the Spire is spawned, either from players entering the `Activation Distance` or by events. |
-| `TargetChangeEvent` | `listenable(payload)` | Triggers when the Spire’s player target is changed to a different player |
+| `TargetChangeEvent` | `listenable(payload)` | Triggers when the Spire's player target is changed to a different player |
 | `WaitForAllProjectilesToSpawnBeforeNextAttack` | `?logic` | Succeeds if the Spire must wait until all projectiles have spawned before moving on to the next attack   - Fails if the Spire will move on to the next attack when it finishes the spawning animation. - This setting is useful to make the encounter more challenging by allowing the Spire to shoot a large number of homing projectiles and to move on to another attack while they are still spawning |
 
 ### Functions

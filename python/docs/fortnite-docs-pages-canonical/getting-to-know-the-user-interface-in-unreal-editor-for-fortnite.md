@@ -15,6 +15,16 @@ If you've used Unreal Engine before, you'll find the UI is already familiar. But
   User Interface Reference
 
   Start learning the Unreal Editor for Fortnite UI as the first step to a new level of creative possibilities.](https://dev.epicgames.com/documentation/fortnite/user-interface-reference-for-unreal-editor-for-fortnite)
+- [![Live Edit and Iteration Improvements](https://dev.epicgames.com/community/api/documentation/image/8708cfa1-4b11-4094-81ee-bb4669d77f37?resizing_type=fit&width=640&height=640)
+
+  Live Edit and Iteration Improvements
+
+  Learn more about the improved Live Edit and Session updates.](https://dev.epicgames.com/documentation/fortnite/live-edit-and-iteration-improvements-in-fortnite)
+- [![Viewport Toolbar](https://dev.epicgames.com/community/api/documentation/image/9884c655-8eef-42f2-a531-63e51a3073f6?resizing_type=fit&width=640&height=640)
+
+  Viewport Toolbar
+
+  An reference for the viewport toolbar and its functionality with the Unreal Editor.](https://dev.epicgames.com/documentation/fortnite/viewport-toolbar)
 - [![UEFN Controls for Creative Users](https://dev.epicgames.com/community/api/documentation/image/0eafef10-dbe4-4f5d-bb58-1854a7db28ad?resizing_type=fit&width=640&height=640)
 
   UEFN Controls for Creative Users
@@ -35,8 +45,3 @@ If you've used Unreal Engine before, you'll find the UI is already familiar. But
   Verse Explorer User Interface Reference
 
   Use this tool to create new Verse files from templates, and organize, rename and delete files.](https://dev.epicgames.com/documentation/fortnite/verse-explorer-user-interface-reference-in-unreal-editor-for-fortnite)
-- [![Viewport Toolbar](https://dev.epicgames.com/community/api/documentation/image/9884c655-8eef-42f2-a531-63e51a3073f6?resizing_type=fit&width=640&height=640)
-
-  Viewport Toolbar
-
-  An reference for the viewport toolbar and its functionality with the Unreal Editor.](https://dev.epicgames.com/documentation/fortnite/viewport-toolbar)

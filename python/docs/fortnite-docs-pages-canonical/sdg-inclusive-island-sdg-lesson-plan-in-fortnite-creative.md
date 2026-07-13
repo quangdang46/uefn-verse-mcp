@@ -164,5 +164,5 @@ Relevant content areas include:
 
 This lesson plan was developed by educator Benjamin Kelly from Anglophone East School District. Find Ben at:
 
-- Email [[email protected]](https://dev.epicgames.com/cdn-cgi/l/email-protection#296b4c47696b6b7d676b074a4644)
+- Email [[email protected]](https://dev.epicgames.com/cdn-cgi/l/email-protection#efad8a81afadadbba1adc18c8082)
 - Twitter [@BBTNB](https://twitter.com/BBTNB)

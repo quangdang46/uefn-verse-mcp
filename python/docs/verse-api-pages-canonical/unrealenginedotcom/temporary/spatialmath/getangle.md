@@ -10,7 +10,7 @@ Returns the radians of `rotation` around the axis of `rotation`. See also `GetAx
 | --- | --- |
 | Verse `using` statement | `using { /UnrealEngine.com/Temporary/SpatialMath }` |
 
-`(Rotation:rotation).GetAngle<public><native>()<reads><computes>:float`
+`(Rotation:rotation).GetAngle<public><native>():float`
 
 ## Parameters
 
@@ -30,10 +30,3 @@ The following attributes, specifiers, and effects determine how you can interact
 | --- | --- |
 | `public` | The identifier is universally accessible. You can use this on modules, classes, interfaces, structs, enums, methods, and data. |
 | `native` | Indicates that the definition details of the element are implemented in C++. Verse definitions with the `native` specifier auto-generate C++ definitions that a developer can then fill out its implementation. You can use this specifier on classes, interfaces, enums, methods, and data. |
-
-### Effects
-
-| Effect | Meaning |
-| --- | --- |
-| `reads` | This effect indicates that the same inputs to the function may not always produce the same output. The behavior depends on factors external to the specified inputs, such as memory or the containing package version. |
-| `computes` | This effect requires that the function has no side effects, and is not guaranteed to complete. There’s an unchecked requirement that the function, when provided with the same arguments, produces the same result. Any function that doesn’t have the `native` specifier that would otherwise have the `converges` effect is a good example of using the `computes` effect. |

@@ -45,6 +45,11 @@ Get started by pressing the **1 key** to go to the first hallway and enter Room 
   UMG Widgets
 
   Take an in-depth look at how UMG widgets are used to create unique user interfaces.](https://dev.epicgames.com/documentation/fortnite/umg-widgets-in-unreal-editor-for-fortnite)
+- [![Verse Fields Examples](https://dev.epicgames.com/community/api/documentation/image/41fb4131-e124-4b5d-b4b2-a2b5cd0021c3?resizing_type=fit&width=640&height=640)
+
+  Verse Fields Examples
+
+  Learn how to use Verse fields to create custom UI for your next project.](https://dev.epicgames.com/documentation/fortnite/verse-fields-examples-in-fortnite)
 - [![Material Assets](https://dev.epicgames.com/community/api/documentation/image/19804710-3962-45e1-a5a1-243b6ba94c00?resizing_type=fit&width=640&height=640)
 
   Material Assets
@@ -55,8 +60,3 @@ Get started by pressing the **1 key** to go to the first hallway and enter Room 
   Migrating Template Assets
 
   Learn how to migrate assets from the template for use in your own projects.](https://dev.epicgames.com/documentation/fortnite/migrating-template-assets-in-unreal-editor-for-fortnite)
-- [![Verse Fields Examples](https://dev.epicgames.com/community/api/documentation/image/41fb4131-e124-4b5d-b4b2-a2b5cd0021c3?resizing_type=fit&width=640&height=640)
-
-  Verse Fields Examples
-
-  Learn how to use Verse fields to create custom UI for your next project.](https://dev.epicgames.com/documentation/fortnite/verse-fields-examples-in-fortnite)
